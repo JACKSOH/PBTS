@@ -27,8 +27,8 @@ Partial Class StaffReservation
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.btnAbout = New System.Windows.Forms.Button()
-        Me.lblTitle = New System.Windows.Forms.Label()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.lblTitle = New System.Windows.Forms.Label()
         Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
         Me.FlowLayoutPanel3 = New System.Windows.Forms.FlowLayoutPanel()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -45,8 +45,22 @@ Partial Class StaffReservation
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.Button5 = New System.Windows.Forms.Button()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.pbExit = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.pbFerry = New System.Windows.Forms.PictureBox()
+        Me.pbBus = New System.Windows.Forms.PictureBox()
+        Me.pbTrain = New System.Windows.Forms.PictureBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.gbTrain = New System.Windows.Forms.GroupBox()
+        Me.TextBox5 = New System.Windows.Forms.TextBox()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.TextBox4 = New System.Windows.Forms.TextBox()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Button6 = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.FlowLayoutPanel1.SuspendLayout()
@@ -57,7 +71,11 @@ Partial Class StaffReservation
         CType(Me.pbPurchase, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbStaffPromotion, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pbExit, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pbFerry, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pbBus, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pbTrain, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.gbTrain.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
@@ -129,6 +147,17 @@ Partial Class StaffReservation
         Me.btnAbout.Text = "About Us"
         Me.btnAbout.UseVisualStyleBackColor = False
         '
+        'PictureBox2
+        '
+        Me.PictureBox2.Image = Global.PublicTransportTicketingSystem.My.Resources.Resources.logout__1_
+        Me.PictureBox2.Location = New System.Drawing.Point(720, 15)
+        Me.PictureBox2.Margin = New System.Windows.Forms.Padding(13, 4, 4, 25)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(37, 38)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox2.TabIndex = 4
+        Me.PictureBox2.TabStop = False
+        '
         'lblTitle
         '
         Me.lblTitle.AutoSize = True
@@ -140,17 +169,6 @@ Partial Class StaffReservation
         Me.lblTitle.Size = New System.Drawing.Size(145, 33)
         Me.lblTitle.TabIndex = 0
         Me.lblTitle.Text = "Promotion"
-        '
-        'PictureBox2
-        '
-        Me.PictureBox2.Image = Global.PublicTransportTicketingSystem.My.Resources.Resources.logout__1_
-        Me.PictureBox2.Location = New System.Drawing.Point(720, 15)
-        Me.PictureBox2.Margin = New System.Windows.Forms.Padding(13, 4, 4, 25)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(37, 38)
-        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox2.TabIndex = 4
-        Me.PictureBox2.TabStop = False
         '
         'FlowLayoutPanel1
         '
@@ -220,6 +238,7 @@ Partial Class StaffReservation
         'btnHome
         '
         Me.btnHome.AllowDrop = True
+        Me.btnHome.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnHome.FlatAppearance.BorderSize = 0
         Me.btnHome.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -236,6 +255,7 @@ Partial Class StaffReservation
         '
         'pbReserve
         '
+        Me.pbReserve.BackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(53, Byte), Integer), CType(CType(65, Byte), Integer))
         Me.pbReserve.Image = Global.PublicTransportTicketingSystem.My.Resources.Resources.reserve
         Me.pbReserve.Location = New System.Drawing.Point(13, 179)
         Me.pbReserve.Margin = New System.Windows.Forms.Padding(13, 4, 4, 25)
@@ -248,19 +268,23 @@ Partial Class StaffReservation
         'btnReservation
         '
         Me.btnReservation.AllowDrop = True
+        Me.btnReservation.BackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(53, Byte), Integer), CType(CType(65, Byte), Integer))
+        Me.btnReservation.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnReservation.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(53, Byte), Integer), CType(CType(65, Byte), Integer))
         Me.btnReservation.FlatAppearance.BorderSize = 0
         Me.btnReservation.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.btnReservation.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(53, Byte), Integer), CType(CType(65, Byte), Integer))
         Me.btnReservation.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnReservation.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnReservation.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.btnReservation.Location = New System.Drawing.Point(73, 177)
         Me.btnReservation.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnReservation.Name = "btnReservation"
-        Me.btnReservation.Size = New System.Drawing.Size(192, 48)
+        Me.btnReservation.Size = New System.Drawing.Size(201, 48)
         Me.btnReservation.TabIndex = 7
         Me.btnReservation.Text = "Ticket Reservation"
         Me.btnReservation.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnReservation.UseVisualStyleBackColor = True
+        Me.btnReservation.UseVisualStyleBackColor = False
         '
         'pbPurchase
         '
@@ -276,6 +300,7 @@ Partial Class StaffReservation
         'btnTransaction
         '
         Me.btnTransaction.AllowDrop = True
+        Me.btnTransaction.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnTransaction.FlatAppearance.BorderSize = 0
         Me.btnTransaction.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.btnTransaction.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -304,6 +329,7 @@ Partial Class StaffReservation
         'btnStaffPromotion
         '
         Me.btnStaffPromotion.AllowDrop = True
+        Me.btnStaffPromotion.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnStaffPromotion.FlatAppearance.BorderSize = 0
         Me.btnStaffPromotion.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.btnStaffPromotion.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -324,7 +350,7 @@ Partial Class StaffReservation
         Me.Panel2.Controls.Add(Me.Button3)
         Me.Panel2.Controls.Add(Me.Button4)
         Me.Panel2.Controls.Add(Me.Button5)
-        Me.Panel2.Controls.Add(Me.PictureBox1)
+        Me.Panel2.Controls.Add(Me.pbExit)
         Me.Panel2.Controls.Add(Me.Label1)
         Me.Panel2.Location = New System.Drawing.Point(289, 1)
         Me.Panel2.Margin = New System.Windows.Forms.Padding(4)
@@ -336,12 +362,13 @@ Partial Class StaffReservation
         '
         Me.Button3.AllowDrop = True
         Me.Button3.BackColor = System.Drawing.Color.White
+        Me.Button3.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Button3.FlatAppearance.BorderSize = 0
         Me.Button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button3.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(53, Byte), Integer), CType(CType(65, Byte), Integer))
-        Me.Button3.Location = New System.Drawing.Point(340, 20)
+        Me.Button3.Location = New System.Drawing.Point(382, 20)
         Me.Button3.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(124, 46)
@@ -353,12 +380,13 @@ Partial Class StaffReservation
         '
         Me.Button4.AllowDrop = True
         Me.Button4.BackColor = System.Drawing.Color.White
+        Me.Button4.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Button4.FlatAppearance.BorderSize = 0
         Me.Button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button4.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(53, Byte), Integer), CType(CType(65, Byte), Integer))
-        Me.Button4.Location = New System.Drawing.Point(469, 15)
+        Me.Button4.Location = New System.Drawing.Point(512, 15)
         Me.Button4.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(177, 55)
@@ -371,12 +399,13 @@ Partial Class StaffReservation
         '
         Me.Button5.AllowDrop = True
         Me.Button5.BackColor = System.Drawing.Color.White
+        Me.Button5.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Button5.FlatAppearance.BorderSize = 0
         Me.Button5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.Button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button5.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(53, Byte), Integer), CType(CType(65, Byte), Integer))
-        Me.Button5.Location = New System.Drawing.Point(232, 20)
+        Me.Button5.Location = New System.Drawing.Point(275, 19)
         Me.Button5.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Button5.Name = "Button5"
         Me.Button5.Size = New System.Drawing.Size(103, 46)
@@ -384,16 +413,17 @@ Partial Class StaffReservation
         Me.Button5.Text = "About Us"
         Me.Button5.UseVisualStyleBackColor = False
         '
-        'PictureBox1
+        'pbExit
         '
-        Me.PictureBox1.Image = Global.PublicTransportTicketingSystem.My.Resources.Resources.logout__1_
-        Me.PictureBox1.Location = New System.Drawing.Point(720, 15)
-        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(13, 4, 4, 25)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(37, 38)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 4
-        Me.PictureBox1.TabStop = False
+        Me.pbExit.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.pbExit.Image = Global.PublicTransportTicketingSystem.My.Resources.Resources.logout__1_
+        Me.pbExit.Location = New System.Drawing.Point(720, 15)
+        Me.pbExit.Margin = New System.Windows.Forms.Padding(13, 4, 4, 25)
+        Me.pbExit.Name = "pbExit"
+        Me.pbExit.Size = New System.Drawing.Size(37, 38)
+        Me.pbExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.pbExit.TabIndex = 4
+        Me.pbExit.TabStop = False
         '
         'Label1
         '
@@ -403,15 +433,195 @@ Partial Class StaffReservation
         Me.Label1.Location = New System.Drawing.Point(19, 23)
         Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(145, 33)
+        Me.Label1.Size = New System.Drawing.Size(249, 33)
         Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Promotion"
+        Me.Label1.Text = "Ticket Reservation"
+        '
+        'pbFerry
+        '
+        Me.pbFerry.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.pbFerry.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.pbFerry.Image = Global.PublicTransportTicketingSystem.My.Resources.Resources.ferry
+        Me.pbFerry.Location = New System.Drawing.Point(443, 162)
+        Me.pbFerry.Margin = New System.Windows.Forms.Padding(4)
+        Me.pbFerry.Name = "pbFerry"
+        Me.pbFerry.Size = New System.Drawing.Size(79, 62)
+        Me.pbFerry.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.pbFerry.TabIndex = 17
+        Me.pbFerry.TabStop = False
+        '
+        'pbBus
+        '
+        Me.pbBus.BackColor = System.Drawing.SystemColors.Control
+        Me.pbBus.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.pbBus.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.pbBus.Image = Global.PublicTransportTicketingSystem.My.Resources.Resources.bus
+        Me.pbBus.Location = New System.Drawing.Point(564, 163)
+        Me.pbBus.Margin = New System.Windows.Forms.Padding(4)
+        Me.pbBus.Name = "pbBus"
+        Me.pbBus.Size = New System.Drawing.Size(77, 61)
+        Me.pbBus.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.pbBus.TabIndex = 16
+        Me.pbBus.TabStop = False
+        '
+        'pbTrain
+        '
+        Me.pbTrain.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.pbTrain.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.pbTrain.Image = Global.PublicTransportTicketingSystem.My.Resources.Resources.train
+        Me.pbTrain.Location = New System.Drawing.Point(329, 162)
+        Me.pbTrain.Margin = New System.Windows.Forms.Padding(4)
+        Me.pbTrain.Name = "pbTrain"
+        Me.pbTrain.Size = New System.Drawing.Size(79, 62)
+        Me.pbTrain.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.pbTrain.TabIndex = 15
+        Me.pbTrain.TabStop = False
+        Me.pbTrain.Tag = "Train"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Tw Cen MT", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.Black
+        Me.Label3.Location = New System.Drawing.Point(325, 113)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(78, 22)
+        Me.Label3.TabIndex = 14
+        Me.Label3.Text = "Choose :"
+        '
+        'gbTrain
+        '
+        Me.gbTrain.BackColor = System.Drawing.SystemColors.Control
+        Me.gbTrain.Controls.Add(Me.TextBox5)
+        Me.gbTrain.Controls.Add(Me.Label8)
+        Me.gbTrain.Controls.Add(Me.TextBox4)
+        Me.gbTrain.Controls.Add(Me.Label7)
+        Me.gbTrain.Controls.Add(Me.TextBox2)
+        Me.gbTrain.Controls.Add(Me.Label5)
+        Me.gbTrain.Controls.Add(Me.TextBox1)
+        Me.gbTrain.Controls.Add(Me.Label4)
+        Me.gbTrain.Font = New System.Drawing.Font("Modern No. 20", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.gbTrain.Location = New System.Drawing.Point(329, 253)
+        Me.gbTrain.Name = "gbTrain"
+        Me.gbTrain.Size = New System.Drawing.Size(663, 147)
+        Me.gbTrain.TabIndex = 18
+        Me.gbTrain.TabStop = False
+        Me.gbTrain.Text = "Train Ticket"
+        '
+        'TextBox5
+        '
+        Me.TextBox5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox5.ForeColor = System.Drawing.Color.Black
+        Me.TextBox5.Location = New System.Drawing.Point(494, 82)
+        Me.TextBox5.Margin = New System.Windows.Forms.Padding(4)
+        Me.TextBox5.Name = "TextBox5"
+        Me.TextBox5.Size = New System.Drawing.Size(132, 23)
+        Me.TextBox5.TabIndex = 17
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Tw Cen MT", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.ForeColor = System.Drawing.Color.Black
+        Me.Label8.Location = New System.Drawing.Point(490, 56)
+        Me.Label8.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(48, 22)
+        Me.Label8.TabIndex = 16
+        Me.Label8.Text = "Time"
+        '
+        'TextBox4
+        '
+        Me.TextBox4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox4.ForeColor = System.Drawing.Color.Black
+        Me.TextBox4.Location = New System.Drawing.Point(354, 82)
+        Me.TextBox4.Margin = New System.Windows.Forms.Padding(4)
+        Me.TextBox4.Name = "TextBox4"
+        Me.TextBox4.Size = New System.Drawing.Size(132, 23)
+        Me.TextBox4.TabIndex = 15
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Tw Cen MT", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.ForeColor = System.Drawing.Color.Black
+        Me.Label7.Location = New System.Drawing.Point(350, 56)
+        Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(46, 22)
+        Me.Label7.TabIndex = 14
+        Me.Label7.Text = "Date"
+        '
+        'TextBox2
+        '
+        Me.TextBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox2.ForeColor = System.Drawing.Color.Black
+        Me.TextBox2.Location = New System.Drawing.Point(174, 82)
+        Me.TextBox2.Margin = New System.Windows.Forms.Padding(4)
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.Size = New System.Drawing.Size(132, 23)
+        Me.TextBox2.TabIndex = 11
+        Me.TextBox2.Text = "Destination"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Tw Cen MT", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.Black
+        Me.Label5.Location = New System.Drawing.Point(170, 56)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(29, 22)
+        Me.Label5.TabIndex = 10
+        Me.Label5.Text = "To"
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox1.ForeColor = System.Drawing.Color.Black
+        Me.TextBox1.Location = New System.Drawing.Point(34, 82)
+        Me.TextBox1.Margin = New System.Windows.Forms.Padding(4)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(132, 23)
+        Me.TextBox1.TabIndex = 9
+        Me.TextBox1.Text = "Origin"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Tw Cen MT", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.Color.Black
+        Me.Label4.Location = New System.Drawing.Point(30, 56)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(50, 22)
+        Me.Label4.TabIndex = 8
+        Me.Label4.Text = "From"
+        '
+        'Button6
+        '
+        Me.Button6.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Button6.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.Button6.Font = New System.Drawing.Font("Modern No. 20", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button6.Location = New System.Drawing.Point(363, 441)
+        Me.Button6.Name = "Button6"
+        Me.Button6.Size = New System.Drawing.Size(124, 35)
+        Me.Button6.TabIndex = 19
+        Me.Button6.Text = "Search"
+        Me.Button6.UseVisualStyleBackColor = False
         '
         'StaffReservation
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1067, 708)
+        Me.Controls.Add(Me.Button6)
+        Me.Controls.Add(Me.gbTrain)
+        Me.Controls.Add(Me.pbFerry)
+        Me.Controls.Add(Me.pbBus)
+        Me.Controls.Add(Me.pbTrain)
+        Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.FlowLayoutPanel1)
         Me.Controls.Add(Me.Panel1)
@@ -430,8 +640,14 @@ Partial Class StaffReservation
         CType(Me.pbStaffPromotion, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pbExit, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pbFerry, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pbBus, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pbTrain, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.gbTrain.ResumeLayout(False)
+        Me.gbTrain.PerformLayout()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents Panel1 As Panel
@@ -456,6 +672,20 @@ Partial Class StaffReservation
     Friend WithEvents Button3 As Button
     Friend WithEvents Button4 As Button
     Friend WithEvents Button5 As Button
-    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents pbExit As PictureBox
     Friend WithEvents Label1 As Label
+    Friend WithEvents pbFerry As PictureBox
+    Friend WithEvents pbBus As PictureBox
+    Friend WithEvents pbTrain As PictureBox
+    Friend WithEvents Label3 As Label
+    Friend WithEvents gbTrain As GroupBox
+    Friend WithEvents Button6 As Button
+    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents Label4 As Label
+    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents Label5 As Label
+    Friend WithEvents TextBox5 As TextBox
+    Friend WithEvents Label8 As Label
+    Friend WithEvents TextBox4 As TextBox
+    Friend WithEvents Label7 As Label
 End Class

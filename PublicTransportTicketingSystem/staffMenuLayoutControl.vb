@@ -1,4 +1,4 @@
-﻿Public Class MenuLayoutControl
+﻿Public Class staffMenuLayoutControl
     Private Sub MenuLayoutControl_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub

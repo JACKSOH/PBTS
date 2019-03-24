@@ -89,10 +89,10 @@
     <Compile Include="ManagerInterface.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MenuLayoutControl.Designer.vb">
-      <DependentUpon>MenuLayoutControl.vb</DependentUpon>
+    <Compile Include="staffMenuLayoutControl.Designer.vb">
+      <DependentUpon>staffMenuLayoutControl.vb</DependentUpon>
     </Compile>
-    <Compile Include="MenuLayoutControl.vb">
+    <Compile Include="staffMenuLayoutControl.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Splash.Designer.vb">
@@ -142,8 +142,8 @@
     <EmbeddedResource Include="ManagerInterface.resx">
       <DependentUpon>ManagerInterface.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MenuLayoutControl.resx">
-      <DependentUpon>MenuLayoutControl.vb</DependentUpon>
+    <EmbeddedResource Include="staffMenuLayoutControl.resx">
+      <DependentUpon>staffMenuLayoutControl.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Splash.resx">
       <DependentUpon>Splash.vb</DependentUpon>

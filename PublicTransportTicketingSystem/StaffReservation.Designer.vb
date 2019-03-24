@@ -89,10 +89,9 @@ Partial Class StaffReservation
         Me.Panel1.Controls.Add(Me.btnAbout)
         Me.Panel1.Controls.Add(Me.PictureBox2)
         Me.Panel1.Controls.Add(Me.lblTitle)
-        Me.Panel1.Location = New System.Drawing.Point(160, -129)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(4)
+        Me.Panel1.Location = New System.Drawing.Point(120, -105)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(18, 47)
+        Me.Panel1.Size = New System.Drawing.Size(14, 38)
         Me.Panel1.TabIndex = 6
         '
         'Button2
@@ -104,10 +103,10 @@ Partial Class StaffReservation
         Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button2.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(53, Byte), Integer), CType(CType(65, Byte), Integer))
-        Me.Button2.Location = New System.Drawing.Point(340, 20)
-        Me.Button2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Button2.Location = New System.Drawing.Point(255, 16)
+        Me.Button2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(124, 46)
+        Me.Button2.Size = New System.Drawing.Size(93, 37)
         Me.Button2.TabIndex = 10
         Me.Button2.Text = "Contact Us"
         Me.Button2.UseVisualStyleBackColor = False
@@ -121,10 +120,10 @@ Partial Class StaffReservation
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button1.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(53, Byte), Integer), CType(CType(65, Byte), Integer))
-        Me.Button1.Location = New System.Drawing.Point(469, 15)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Button1.Location = New System.Drawing.Point(352, 12)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(177, 55)
+        Me.Button1.Size = New System.Drawing.Size(133, 45)
         Me.Button1.TabIndex = 9
         Me.Button1.Text = "Manage Account"
         Me.Button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -139,10 +138,10 @@ Partial Class StaffReservation
         Me.btnAbout.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAbout.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAbout.ForeColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(53, Byte), Integer), CType(CType(65, Byte), Integer))
-        Me.btnAbout.Location = New System.Drawing.Point(232, 20)
-        Me.btnAbout.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnAbout.Location = New System.Drawing.Point(174, 16)
+        Me.btnAbout.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnAbout.Name = "btnAbout"
-        Me.btnAbout.Size = New System.Drawing.Size(103, 46)
+        Me.btnAbout.Size = New System.Drawing.Size(77, 37)
         Me.btnAbout.TabIndex = 7
         Me.btnAbout.Text = "About Us"
         Me.btnAbout.UseVisualStyleBackColor = False
@@ -150,10 +149,10 @@ Partial Class StaffReservation
         'PictureBox2
         '
         Me.PictureBox2.Image = Global.PublicTransportTicketingSystem.My.Resources.Resources.logout__1_
-        Me.PictureBox2.Location = New System.Drawing.Point(720, 15)
-        Me.PictureBox2.Margin = New System.Windows.Forms.Padding(13, 4, 4, 25)
+        Me.PictureBox2.Location = New System.Drawing.Point(540, 12)
+        Me.PictureBox2.Margin = New System.Windows.Forms.Padding(10, 3, 3, 20)
         Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(37, 38)
+        Me.PictureBox2.Size = New System.Drawing.Size(28, 31)
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox2.TabIndex = 4
         Me.PictureBox2.TabStop = False
@@ -163,10 +162,9 @@ Partial Class StaffReservation
         Me.lblTitle.AutoSize = True
         Me.lblTitle.Font = New System.Drawing.Font("Century Gothic", 15.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTitle.ForeColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(53, Byte), Integer), CType(CType(65, Byte), Integer))
-        Me.lblTitle.Location = New System.Drawing.Point(19, 23)
-        Me.lblTitle.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblTitle.Location = New System.Drawing.Point(14, 19)
         Me.lblTitle.Name = "lblTitle"
-        Me.lblTitle.Size = New System.Drawing.Size(145, 33)
+        Me.lblTitle.Size = New System.Drawing.Size(114, 25)
         Me.lblTitle.TabIndex = 0
         Me.lblTitle.Text = "Promotion"
         '
@@ -186,7 +184,7 @@ Partial Class StaffReservation
         Me.FlowLayoutPanel1.Location = New System.Drawing.Point(0, -2)
         Me.FlowLayoutPanel1.Margin = New System.Windows.Forms.Padding(0)
         Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
-        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(292, 713)
+        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(219, 579)
         Me.FlowLayoutPanel1.TabIndex = 7
         '
         'FlowLayoutPanel3
@@ -195,9 +193,9 @@ Partial Class StaffReservation
         Me.FlowLayoutPanel3.Controls.Add(Me.Label2)
         Me.FlowLayoutPanel3.Controls.Add(Me.PictureBox3)
         Me.FlowLayoutPanel3.Location = New System.Drawing.Point(0, 0)
-        Me.FlowLayoutPanel3.Margin = New System.Windows.Forms.Padding(0, 0, 0, 25)
+        Me.FlowLayoutPanel3.Margin = New System.Windows.Forms.Padding(0, 0, 0, 20)
         Me.FlowLayoutPanel3.Name = "FlowLayoutPanel3"
-        Me.FlowLayoutPanel3.Size = New System.Drawing.Size(292, 74)
+        Me.FlowLayoutPanel3.Size = New System.Drawing.Size(219, 60)
         Me.FlowLayoutPanel3.TabIndex = 2
         '
         'Label2
@@ -205,10 +203,10 @@ Partial Class StaffReservation
         Me.Label2.Font = New System.Drawing.Font("Century Gothic", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.Label2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Label2.Location = New System.Drawing.Point(13, 12)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(13, 12, 0, 0)
+        Me.Label2.Location = New System.Drawing.Point(10, 10)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(10, 10, 0, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(160, 62)
+        Me.Label2.Size = New System.Drawing.Size(120, 50)
         Me.Label2.TabIndex = 3
         Me.Label2.Text = "Public Transport Ticketing System"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -217,20 +215,20 @@ Partial Class StaffReservation
         '
         Me.PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), System.Drawing.Image)
         Me.PictureBox3.ImageLocation = ""
-        Me.PictureBox3.Location = New System.Drawing.Point(180, 12)
-        Me.PictureBox3.Margin = New System.Windows.Forms.Padding(7, 12, 7, 6)
+        Me.PictureBox3.Location = New System.Drawing.Point(135, 10)
+        Me.PictureBox3.Margin = New System.Windows.Forms.Padding(5, 10, 5, 5)
         Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(67, 59)
+        Me.PictureBox3.Size = New System.Drawing.Size(50, 48)
         Me.PictureBox3.TabIndex = 2
         Me.PictureBox3.TabStop = False
         '
         'pbHome
         '
         Me.pbHome.Image = Global.PublicTransportTicketingSystem.My.Resources.Resources.home
-        Me.pbHome.Location = New System.Drawing.Point(13, 103)
-        Me.pbHome.Margin = New System.Windows.Forms.Padding(13, 4, 4, 25)
+        Me.pbHome.Location = New System.Drawing.Point(10, 83)
+        Me.pbHome.Margin = New System.Windows.Forms.Padding(10, 3, 3, 20)
         Me.pbHome.Name = "pbHome"
-        Me.pbHome.Size = New System.Drawing.Size(53, 47)
+        Me.pbHome.Size = New System.Drawing.Size(40, 38)
         Me.pbHome.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.pbHome.TabIndex = 3
         Me.pbHome.TabStop = False
@@ -244,10 +242,10 @@ Partial Class StaffReservation
         Me.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnHome.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnHome.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnHome.Location = New System.Drawing.Point(73, 101)
-        Me.btnHome.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnHome.Location = New System.Drawing.Point(55, 82)
+        Me.btnHome.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnHome.Name = "btnHome"
-        Me.btnHome.Size = New System.Drawing.Size(192, 48)
+        Me.btnHome.Size = New System.Drawing.Size(144, 39)
         Me.btnHome.TabIndex = 0
         Me.btnHome.Text = "Home"
         Me.btnHome.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -257,10 +255,10 @@ Partial Class StaffReservation
         '
         Me.pbReserve.BackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(53, Byte), Integer), CType(CType(65, Byte), Integer))
         Me.pbReserve.Image = Global.PublicTransportTicketingSystem.My.Resources.Resources.reserve
-        Me.pbReserve.Location = New System.Drawing.Point(13, 179)
-        Me.pbReserve.Margin = New System.Windows.Forms.Padding(13, 4, 4, 25)
+        Me.pbReserve.Location = New System.Drawing.Point(10, 144)
+        Me.pbReserve.Margin = New System.Windows.Forms.Padding(10, 3, 3, 20)
         Me.pbReserve.Name = "pbReserve"
-        Me.pbReserve.Size = New System.Drawing.Size(53, 47)
+        Me.pbReserve.Size = New System.Drawing.Size(40, 38)
         Me.pbReserve.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.pbReserve.TabIndex = 5
         Me.pbReserve.TabStop = False
@@ -277,10 +275,10 @@ Partial Class StaffReservation
         Me.btnReservation.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnReservation.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnReservation.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnReservation.Location = New System.Drawing.Point(73, 177)
-        Me.btnReservation.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnReservation.Location = New System.Drawing.Point(55, 143)
+        Me.btnReservation.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnReservation.Name = "btnReservation"
-        Me.btnReservation.Size = New System.Drawing.Size(201, 48)
+        Me.btnReservation.Size = New System.Drawing.Size(151, 39)
         Me.btnReservation.TabIndex = 7
         Me.btnReservation.Text = "Ticket Reservation"
         Me.btnReservation.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -289,10 +287,10 @@ Partial Class StaffReservation
         'pbPurchase
         '
         Me.pbPurchase.Image = Global.PublicTransportTicketingSystem.My.Resources.Resources.purchase2
-        Me.pbPurchase.Location = New System.Drawing.Point(13, 255)
-        Me.pbPurchase.Margin = New System.Windows.Forms.Padding(13, 4, 4, 25)
+        Me.pbPurchase.Location = New System.Drawing.Point(10, 205)
+        Me.pbPurchase.Margin = New System.Windows.Forms.Padding(10, 3, 3, 20)
         Me.pbPurchase.Name = "pbPurchase"
-        Me.pbPurchase.Size = New System.Drawing.Size(53, 47)
+        Me.pbPurchase.Size = New System.Drawing.Size(40, 38)
         Me.pbPurchase.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.pbPurchase.TabIndex = 8
         Me.pbPurchase.TabStop = False
@@ -306,10 +304,10 @@ Partial Class StaffReservation
         Me.btnTransaction.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnTransaction.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnTransaction.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnTransaction.Location = New System.Drawing.Point(73, 253)
-        Me.btnTransaction.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnTransaction.Location = New System.Drawing.Point(55, 204)
+        Me.btnTransaction.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnTransaction.Name = "btnTransaction"
-        Me.btnTransaction.Size = New System.Drawing.Size(192, 48)
+        Me.btnTransaction.Size = New System.Drawing.Size(144, 39)
         Me.btnTransaction.TabIndex = 9
         Me.btnTransaction.Text = "Transaction History"
         Me.btnTransaction.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -318,10 +316,10 @@ Partial Class StaffReservation
         'pbStaffPromotion
         '
         Me.pbStaffPromotion.Image = Global.PublicTransportTicketingSystem.My.Resources.Resources._2
-        Me.pbStaffPromotion.Location = New System.Drawing.Point(13, 331)
-        Me.pbStaffPromotion.Margin = New System.Windows.Forms.Padding(13, 4, 4, 25)
+        Me.pbStaffPromotion.Location = New System.Drawing.Point(10, 266)
+        Me.pbStaffPromotion.Margin = New System.Windows.Forms.Padding(10, 3, 3, 20)
         Me.pbStaffPromotion.Name = "pbStaffPromotion"
-        Me.pbStaffPromotion.Size = New System.Drawing.Size(53, 47)
+        Me.pbStaffPromotion.Size = New System.Drawing.Size(40, 38)
         Me.pbStaffPromotion.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.pbStaffPromotion.TabIndex = 12
         Me.pbStaffPromotion.TabStop = False
@@ -335,10 +333,10 @@ Partial Class StaffReservation
         Me.btnStaffPromotion.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnStaffPromotion.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnStaffPromotion.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnStaffPromotion.Location = New System.Drawing.Point(73, 329)
-        Me.btnStaffPromotion.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnStaffPromotion.Location = New System.Drawing.Point(55, 265)
+        Me.btnStaffPromotion.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnStaffPromotion.Name = "btnStaffPromotion"
-        Me.btnStaffPromotion.Size = New System.Drawing.Size(192, 48)
+        Me.btnStaffPromotion.Size = New System.Drawing.Size(144, 39)
         Me.btnStaffPromotion.TabIndex = 13
         Me.btnStaffPromotion.Text = " Promotion"
         Me.btnStaffPromotion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -352,10 +350,9 @@ Partial Class StaffReservation
         Me.Panel2.Controls.Add(Me.Button5)
         Me.Panel2.Controls.Add(Me.pbExit)
         Me.Panel2.Controls.Add(Me.Label1)
-        Me.Panel2.Location = New System.Drawing.Point(289, 1)
-        Me.Panel2.Margin = New System.Windows.Forms.Padding(4)
+        Me.Panel2.Location = New System.Drawing.Point(217, 1)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(780, 71)
+        Me.Panel2.Size = New System.Drawing.Size(585, 58)
         Me.Panel2.TabIndex = 8
         '
         'Button3
@@ -368,10 +365,10 @@ Partial Class StaffReservation
         Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button3.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(53, Byte), Integer), CType(CType(65, Byte), Integer))
-        Me.Button3.Location = New System.Drawing.Point(382, 20)
-        Me.Button3.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Button3.Location = New System.Drawing.Point(286, 16)
+        Me.Button3.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(124, 46)
+        Me.Button3.Size = New System.Drawing.Size(93, 37)
         Me.Button3.TabIndex = 10
         Me.Button3.Text = "Contact Us"
         Me.Button3.UseVisualStyleBackColor = False
@@ -386,10 +383,10 @@ Partial Class StaffReservation
         Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button4.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(53, Byte), Integer), CType(CType(65, Byte), Integer))
-        Me.Button4.Location = New System.Drawing.Point(512, 15)
-        Me.Button4.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Button4.Location = New System.Drawing.Point(384, 12)
+        Me.Button4.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(177, 55)
+        Me.Button4.Size = New System.Drawing.Size(133, 45)
         Me.Button4.TabIndex = 9
         Me.Button4.Text = "Manage Account"
         Me.Button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -405,10 +402,10 @@ Partial Class StaffReservation
         Me.Button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button5.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(53, Byte), Integer), CType(CType(65, Byte), Integer))
-        Me.Button5.Location = New System.Drawing.Point(275, 19)
-        Me.Button5.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Button5.Location = New System.Drawing.Point(206, 15)
+        Me.Button5.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(103, 46)
+        Me.Button5.Size = New System.Drawing.Size(77, 37)
         Me.Button5.TabIndex = 7
         Me.Button5.Text = "About Us"
         Me.Button5.UseVisualStyleBackColor = False
@@ -417,10 +414,10 @@ Partial Class StaffReservation
         '
         Me.pbExit.Cursor = System.Windows.Forms.Cursors.Hand
         Me.pbExit.Image = Global.PublicTransportTicketingSystem.My.Resources.Resources.logout__1_
-        Me.pbExit.Location = New System.Drawing.Point(720, 15)
-        Me.pbExit.Margin = New System.Windows.Forms.Padding(13, 4, 4, 25)
+        Me.pbExit.Location = New System.Drawing.Point(540, 12)
+        Me.pbExit.Margin = New System.Windows.Forms.Padding(10, 3, 3, 20)
         Me.pbExit.Name = "pbExit"
-        Me.pbExit.Size = New System.Drawing.Size(37, 38)
+        Me.pbExit.Size = New System.Drawing.Size(28, 31)
         Me.pbExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.pbExit.TabIndex = 4
         Me.pbExit.TabStop = False
@@ -430,10 +427,9 @@ Partial Class StaffReservation
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Century Gothic", 15.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(53, Byte), Integer), CType(CType(65, Byte), Integer))
-        Me.Label1.Location = New System.Drawing.Point(19, 23)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label1.Location = New System.Drawing.Point(14, 19)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(249, 33)
+        Me.Label1.Size = New System.Drawing.Size(193, 25)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Ticket Reservation"
         '
@@ -442,10 +438,9 @@ Partial Class StaffReservation
         Me.pbFerry.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.pbFerry.Cursor = System.Windows.Forms.Cursors.Hand
         Me.pbFerry.Image = Global.PublicTransportTicketingSystem.My.Resources.Resources.ferry
-        Me.pbFerry.Location = New System.Drawing.Point(443, 162)
-        Me.pbFerry.Margin = New System.Windows.Forms.Padding(4)
+        Me.pbFerry.Location = New System.Drawing.Point(332, 132)
         Me.pbFerry.Name = "pbFerry"
-        Me.pbFerry.Size = New System.Drawing.Size(79, 62)
+        Me.pbFerry.Size = New System.Drawing.Size(60, 51)
         Me.pbFerry.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.pbFerry.TabIndex = 17
         Me.pbFerry.TabStop = False
@@ -456,10 +451,9 @@ Partial Class StaffReservation
         Me.pbBus.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.pbBus.Cursor = System.Windows.Forms.Cursors.Hand
         Me.pbBus.Image = Global.PublicTransportTicketingSystem.My.Resources.Resources.bus
-        Me.pbBus.Location = New System.Drawing.Point(564, 163)
-        Me.pbBus.Margin = New System.Windows.Forms.Padding(4)
+        Me.pbBus.Location = New System.Drawing.Point(423, 132)
         Me.pbBus.Name = "pbBus"
-        Me.pbBus.Size = New System.Drawing.Size(77, 61)
+        Me.pbBus.Size = New System.Drawing.Size(58, 50)
         Me.pbBus.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.pbBus.TabIndex = 16
         Me.pbBus.TabStop = False
@@ -469,10 +463,9 @@ Partial Class StaffReservation
         Me.pbTrain.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.pbTrain.Cursor = System.Windows.Forms.Cursors.Hand
         Me.pbTrain.Image = Global.PublicTransportTicketingSystem.My.Resources.Resources.train
-        Me.pbTrain.Location = New System.Drawing.Point(329, 162)
-        Me.pbTrain.Margin = New System.Windows.Forms.Padding(4)
+        Me.pbTrain.Location = New System.Drawing.Point(247, 132)
         Me.pbTrain.Name = "pbTrain"
-        Me.pbTrain.Size = New System.Drawing.Size(79, 62)
+        Me.pbTrain.Size = New System.Drawing.Size(60, 51)
         Me.pbTrain.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.pbTrain.TabIndex = 15
         Me.pbTrain.TabStop = False
@@ -483,10 +476,9 @@ Partial Class StaffReservation
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Tw Cen MT", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.Black
-        Me.Label3.Location = New System.Drawing.Point(325, 113)
-        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label3.Location = New System.Drawing.Point(244, 92)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(78, 22)
+        Me.Label3.Size = New System.Drawing.Size(62, 17)
         Me.Label3.TabIndex = 14
         Me.Label3.Text = "Choose :"
         '
@@ -502,9 +494,11 @@ Partial Class StaffReservation
         Me.gbTrain.Controls.Add(Me.TextBox1)
         Me.gbTrain.Controls.Add(Me.Label4)
         Me.gbTrain.Font = New System.Drawing.Font("Modern No. 20", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.gbTrain.Location = New System.Drawing.Point(329, 253)
+        Me.gbTrain.Location = New System.Drawing.Point(247, 206)
+        Me.gbTrain.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.gbTrain.Name = "gbTrain"
-        Me.gbTrain.Size = New System.Drawing.Size(663, 147)
+        Me.gbTrain.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.gbTrain.Size = New System.Drawing.Size(497, 119)
         Me.gbTrain.TabIndex = 18
         Me.gbTrain.TabStop = False
         Me.gbTrain.Text = "Train Ticket"
@@ -513,10 +507,9 @@ Partial Class StaffReservation
         '
         Me.TextBox5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox5.ForeColor = System.Drawing.Color.Black
-        Me.TextBox5.Location = New System.Drawing.Point(494, 82)
-        Me.TextBox5.Margin = New System.Windows.Forms.Padding(4)
+        Me.TextBox5.Location = New System.Drawing.Point(370, 67)
         Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(132, 23)
+        Me.TextBox5.Size = New System.Drawing.Size(100, 20)
         Me.TextBox5.TabIndex = 17
         '
         'Label8
@@ -524,10 +517,9 @@ Partial Class StaffReservation
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Tw Cen MT", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.Black
-        Me.Label8.Location = New System.Drawing.Point(490, 56)
-        Me.Label8.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label8.Location = New System.Drawing.Point(368, 46)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(48, 22)
+        Me.Label8.Size = New System.Drawing.Size(38, 17)
         Me.Label8.TabIndex = 16
         Me.Label8.Text = "Time"
         '
@@ -535,10 +527,9 @@ Partial Class StaffReservation
         '
         Me.TextBox4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox4.ForeColor = System.Drawing.Color.Black
-        Me.TextBox4.Location = New System.Drawing.Point(354, 82)
-        Me.TextBox4.Margin = New System.Windows.Forms.Padding(4)
+        Me.TextBox4.Location = New System.Drawing.Point(266, 67)
         Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(132, 23)
+        Me.TextBox4.Size = New System.Drawing.Size(100, 20)
         Me.TextBox4.TabIndex = 15
         '
         'Label7
@@ -546,10 +537,9 @@ Partial Class StaffReservation
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Tw Cen MT", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.Color.Black
-        Me.Label7.Location = New System.Drawing.Point(350, 56)
-        Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label7.Location = New System.Drawing.Point(262, 46)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(46, 22)
+        Me.Label7.Size = New System.Drawing.Size(37, 17)
         Me.Label7.TabIndex = 14
         Me.Label7.Text = "Date"
         '
@@ -557,10 +547,9 @@ Partial Class StaffReservation
         '
         Me.TextBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox2.ForeColor = System.Drawing.Color.Black
-        Me.TextBox2.Location = New System.Drawing.Point(174, 82)
-        Me.TextBox2.Margin = New System.Windows.Forms.Padding(4)
+        Me.TextBox2.Location = New System.Drawing.Point(130, 67)
         Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(132, 23)
+        Me.TextBox2.Size = New System.Drawing.Size(100, 20)
         Me.TextBox2.TabIndex = 11
         Me.TextBox2.Text = "Destination"
         '
@@ -569,10 +558,9 @@ Partial Class StaffReservation
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Tw Cen MT", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.Black
-        Me.Label5.Location = New System.Drawing.Point(170, 56)
-        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label5.Location = New System.Drawing.Point(128, 46)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(29, 22)
+        Me.Label5.Size = New System.Drawing.Size(23, 17)
         Me.Label5.TabIndex = 10
         Me.Label5.Text = "To"
         '
@@ -580,10 +568,9 @@ Partial Class StaffReservation
         '
         Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox1.ForeColor = System.Drawing.Color.Black
-        Me.TextBox1.Location = New System.Drawing.Point(34, 82)
-        Me.TextBox1.Margin = New System.Windows.Forms.Padding(4)
+        Me.TextBox1.Location = New System.Drawing.Point(26, 67)
         Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(132, 23)
+        Me.TextBox1.Size = New System.Drawing.Size(100, 20)
         Me.TextBox1.TabIndex = 9
         Me.TextBox1.Text = "Origin"
         '
@@ -592,10 +579,9 @@ Partial Class StaffReservation
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Tw Cen MT", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.Black
-        Me.Label4.Location = New System.Drawing.Point(30, 56)
-        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label4.Location = New System.Drawing.Point(22, 46)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(50, 22)
+        Me.Label4.Size = New System.Drawing.Size(40, 17)
         Me.Label4.TabIndex = 8
         Me.Label4.Text = "From"
         '
@@ -604,18 +590,19 @@ Partial Class StaffReservation
         Me.Button6.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.Button6.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.Button6.Font = New System.Drawing.Font("Modern No. 20", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button6.Location = New System.Drawing.Point(363, 441)
+        Me.Button6.Location = New System.Drawing.Point(272, 358)
+        Me.Button6.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Button6.Name = "Button6"
-        Me.Button6.Size = New System.Drawing.Size(124, 35)
+        Me.Button6.Size = New System.Drawing.Size(93, 28)
         Me.Button6.TabIndex = 19
         Me.Button6.Text = "Search"
         Me.Button6.UseVisualStyleBackColor = False
         '
         'StaffReservation
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1067, 708)
+        Me.ClientSize = New System.Drawing.Size(800, 575)
         Me.Controls.Add(Me.Button6)
         Me.Controls.Add(Me.gbTrain)
         Me.Controls.Add(Me.pbFerry)
@@ -626,6 +613,7 @@ Partial Class StaffReservation
         Me.Controls.Add(Me.FlowLayoutPanel1)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Name = "StaffReservation"
         Me.Text = "StaffReservation"
         Me.Panel1.ResumeLayout(False)

@@ -41,4 +41,8 @@
     Private Sub btnReservation_Click(sender As Object, e As EventArgs) Handles btnReservation.Click
 
     End Sub
+
+    Private Sub StaffReservation_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
 End Class

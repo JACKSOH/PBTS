@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class ManagerInterface
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+Partial Class ManagerCreatePT
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()>
+    <System.Diagnostics.DebuggerNonUserCode()> _
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,40 +20,37 @@ Partial Class ManagerInterface
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()>
+    <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ManagerInterface))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ManagerCreatePT))
+        Me.btnManageSchedule = New System.Windows.Forms.Button()
+        Me.FlowLayoutPanel3 = New System.Windows.Forms.FlowLayoutPanel()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.btnHome = New System.Windows.Forms.Button()
         Me.btnReport = New System.Windows.Forms.Button()
         Me.btnManageStaff = New System.Windows.Forms.Button()
-        Me.btnManageSchedule = New System.Windows.Forms.Button()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.FlowLayoutPanel3 = New System.Windows.Forms.FlowLayoutPanel()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.btnManagePromotion = New System.Windows.Forms.Button()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
         Me.pbHome = New System.Windows.Forms.PictureBox()
         Me.pbReport = New System.Windows.Forms.PictureBox()
         Me.pbManageStaff = New System.Windows.Forms.PictureBox()
         Me.pbManageSchedule = New System.Windows.Forms.PictureBox()
         Me.pbManagePromotion = New System.Windows.Forms.PictureBox()
-        Me.btnManagePromotion = New System.Windows.Forms.Button()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.btnAbout = New System.Windows.Forms.Button()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.lblTitle = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.gbBus = New System.Windows.Forms.GroupBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.PictureBox6 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox5 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
+        Me.pbTrain = New System.Windows.Forms.PictureBox()
+        Me.pbBus = New System.Windows.Forms.PictureBox()
+        Me.pbFerry = New System.Windows.Forms.PictureBox()
+        Me.Button4 = New System.Windows.Forms.Button()
         Me.FlowLayoutPanel3.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.FlowLayoutPanel1.SuspendLayout()
@@ -65,10 +62,64 @@ Partial Class ManagerInterface
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pbTrain, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pbBus, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pbFerry, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
+        '
+        'btnManageSchedule
+        '
+        Me.btnManageSchedule.AllowDrop = True
+        Me.btnManageSchedule.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnManageSchedule.FlatAppearance.BorderSize = 0
+        Me.btnManageSchedule.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.btnManageSchedule.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnManageSchedule.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnManageSchedule.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnManageSchedule.Location = New System.Drawing.Point(73, 329)
+        Me.btnManageSchedule.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnManageSchedule.Name = "btnManageSchedule"
+        Me.btnManageSchedule.Size = New System.Drawing.Size(192, 48)
+        Me.btnManageSchedule.TabIndex = 9
+        Me.btnManageSchedule.Text = "Manage Schedule"
+        Me.btnManageSchedule.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnManageSchedule.UseVisualStyleBackColor = True
+        '
+        'FlowLayoutPanel3
+        '
+        Me.FlowLayoutPanel3.AllowDrop = True
+        Me.FlowLayoutPanel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(229, Byte), Integer), CType(CType(116, Byte), Integer), CType(CType(49, Byte), Integer))
+        Me.FlowLayoutPanel3.Controls.Add(Me.Label1)
+        Me.FlowLayoutPanel3.Controls.Add(Me.PictureBox1)
+        Me.FlowLayoutPanel3.Location = New System.Drawing.Point(0, 0)
+        Me.FlowLayoutPanel3.Margin = New System.Windows.Forms.Padding(0, 0, 0, 25)
+        Me.FlowLayoutPanel3.Name = "FlowLayoutPanel3"
+        Me.FlowLayoutPanel3.Size = New System.Drawing.Size(319, 74)
+        Me.FlowLayoutPanel3.TabIndex = 2
+        '
+        'Label1
+        '
+        Me.Label1.Font = New System.Drawing.Font("Century Gothic", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Label1.Location = New System.Drawing.Point(13, 12)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(13, 12, 0, 0)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(160, 62)
+        Me.Label1.TabIndex = 3
+        Me.Label1.Text = "Public Transport Ticketing System"
+        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.ImageLocation = ""
+        Me.PictureBox1.Location = New System.Drawing.Point(180, 12)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(7, 12, 7, 6)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(67, 59)
+        Me.PictureBox1.TabIndex = 2
+        Me.PictureBox1.TabStop = False
         '
         'btnHome
         '
@@ -124,59 +175,53 @@ Partial Class ManagerInterface
         Me.btnManageStaff.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnManageStaff.UseVisualStyleBackColor = True
         '
-        'btnManageSchedule
+        'btnManagePromotion
         '
-        Me.btnManageSchedule.AllowDrop = True
-        Me.btnManageSchedule.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnManageSchedule.FlatAppearance.BorderSize = 0
-        Me.btnManageSchedule.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.btnManageSchedule.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnManageSchedule.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnManageSchedule.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnManageSchedule.Location = New System.Drawing.Point(73, 329)
-        Me.btnManageSchedule.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.btnManageSchedule.Name = "btnManageSchedule"
-        Me.btnManageSchedule.Size = New System.Drawing.Size(192, 48)
-        Me.btnManageSchedule.TabIndex = 9
-        Me.btnManageSchedule.Text = "Manage Schedule"
-        Me.btnManageSchedule.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnManageSchedule.UseVisualStyleBackColor = True
+        Me.btnManagePromotion.AllowDrop = True
+        Me.btnManagePromotion.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnManagePromotion.FlatAppearance.BorderSize = 0
+        Me.btnManagePromotion.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.btnManagePromotion.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnManagePromotion.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnManagePromotion.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnManagePromotion.Location = New System.Drawing.Point(73, 405)
+        Me.btnManagePromotion.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnManagePromotion.Name = "btnManagePromotion"
+        Me.btnManagePromotion.Size = New System.Drawing.Size(192, 48)
+        Me.btnManagePromotion.TabIndex = 11
+        Me.btnManagePromotion.Text = "Manage Promotion"
+        Me.btnManagePromotion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnManagePromotion.UseVisualStyleBackColor = True
         '
-        'Label1
+        'Button3
         '
-        Me.Label1.Font = New System.Drawing.Font("Century Gothic", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Label1.Location = New System.Drawing.Point(13, 12)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(13, 12, 0, 0)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(160, 62)
-        Me.Label1.TabIndex = 3
-        Me.Label1.Text = "Public Transport Ticketing System"
-        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.Button3.AllowDrop = True
+        Me.Button3.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button3.FlatAppearance.BorderSize = 0
+        Me.Button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button3.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button3.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Button3.Location = New System.Drawing.Point(73, 481)
+        Me.Button3.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(219, 48)
+        Me.Button3.TabIndex = 12
+        Me.Button3.Text = "Manage Public Transport"
+        Me.Button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button3.UseVisualStyleBackColor = True
         '
-        'FlowLayoutPanel3
+        'Label2
         '
-        Me.FlowLayoutPanel3.AllowDrop = True
-        Me.FlowLayoutPanel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(229, Byte), Integer), CType(CType(116, Byte), Integer), CType(CType(49, Byte), Integer))
-        Me.FlowLayoutPanel3.Controls.Add(Me.Label1)
-        Me.FlowLayoutPanel3.Controls.Add(Me.PictureBox1)
-        Me.FlowLayoutPanel3.Location = New System.Drawing.Point(0, 0)
-        Me.FlowLayoutPanel3.Margin = New System.Windows.Forms.Padding(0, 0, 0, 25)
-        Me.FlowLayoutPanel3.Name = "FlowLayoutPanel3"
-        Me.FlowLayoutPanel3.Size = New System.Drawing.Size(303, 74)
-        Me.FlowLayoutPanel3.TabIndex = 2
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.ImageLocation = ""
-        Me.PictureBox1.Location = New System.Drawing.Point(180, 12)
-        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(7, 12, 7, 6)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(67, 59)
-        Me.PictureBox1.TabIndex = 2
-        Me.PictureBox1.TabStop = False
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Tw Cen MT", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.Black
+        Me.Label2.Location = New System.Drawing.Point(313, 128)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(78, 22)
+        Me.Label2.TabIndex = 28
+        Me.Label2.Text = "Choose :"
         '
         'FlowLayoutPanel1
         '
@@ -198,8 +243,8 @@ Partial Class ManagerInterface
         Me.FlowLayoutPanel1.Location = New System.Drawing.Point(0, 0)
         Me.FlowLayoutPanel1.Margin = New System.Windows.Forms.Padding(0)
         Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
-        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(301, 705)
-        Me.FlowLayoutPanel1.TabIndex = 4
+        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(308, 708)
+        Me.FlowLayoutPanel1.TabIndex = 26
         '
         'pbHome
         '
@@ -256,24 +301,6 @@ Partial Class ManagerInterface
         Me.pbManagePromotion.TabIndex = 10
         Me.pbManagePromotion.TabStop = False
         '
-        'btnManagePromotion
-        '
-        Me.btnManagePromotion.AllowDrop = True
-        Me.btnManagePromotion.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnManagePromotion.FlatAppearance.BorderSize = 0
-        Me.btnManagePromotion.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.btnManagePromotion.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnManagePromotion.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnManagePromotion.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnManagePromotion.Location = New System.Drawing.Point(73, 405)
-        Me.btnManagePromotion.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.btnManagePromotion.Name = "btnManagePromotion"
-        Me.btnManagePromotion.Size = New System.Drawing.Size(192, 48)
-        Me.btnManagePromotion.TabIndex = 11
-        Me.btnManagePromotion.Text = "Manage Promotion"
-        Me.btnManagePromotion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnManagePromotion.UseVisualStyleBackColor = True
-        '
         'PictureBox3
         '
         Me.PictureBox3.Image = Global.PublicTransportTicketingSystem.My.Resources.Resources.pubic_trans
@@ -284,39 +311,6 @@ Partial Class ManagerInterface
         Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox3.TabIndex = 13
         Me.PictureBox3.TabStop = False
-        '
-        'Button3
-        '
-        Me.Button3.AllowDrop = True
-        Me.Button3.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button3.FlatAppearance.BorderSize = 0
-        Me.Button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button3.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button3.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Button3.Location = New System.Drawing.Point(73, 481)
-        Me.Button3.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(219, 48)
-        Me.Button3.TabIndex = 12
-        Me.Button3.Text = "Manage Public Transport"
-        Me.Button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button3.UseVisualStyleBackColor = True
-        '
-        'Panel1
-        '
-        Me.Panel1.BackColor = System.Drawing.Color.White
-        Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel1.Controls.Add(Me.Button2)
-        Me.Panel1.Controls.Add(Me.Button1)
-        Me.Panel1.Controls.Add(Me.btnAbout)
-        Me.Panel1.Controls.Add(Me.PictureBox2)
-        Me.Panel1.Controls.Add(Me.lblTitle)
-        Me.Panel1.Location = New System.Drawing.Point(301, 0)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(0)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(766, 73)
-        Me.Panel1.TabIndex = 5
         '
         'Button2
         '
@@ -370,17 +364,6 @@ Partial Class ManagerInterface
         Me.btnAbout.Text = "About Us"
         Me.btnAbout.UseVisualStyleBackColor = False
         '
-        'PictureBox2
-        '
-        Me.PictureBox2.Image = Global.PublicTransportTicketingSystem.My.Resources.Resources.logout__1_
-        Me.PictureBox2.Location = New System.Drawing.Point(712, 15)
-        Me.PictureBox2.Margin = New System.Windows.Forms.Padding(13, 4, 4, 25)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(37, 38)
-        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox2.TabIndex = 4
-        Me.PictureBox2.TabStop = False
-        '
         'lblTitle
         '
         Me.lblTitle.AutoSize = True
@@ -393,137 +376,113 @@ Partial Class ManagerInterface
         Me.lblTitle.TabIndex = 0
         Me.lblTitle.Text = "Promotion"
         '
-        'Label2
+        'Panel1
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Tw Cen MT", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.Black
-        Me.Label2.Location = New System.Drawing.Point(323, 128)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(78, 22)
-        Me.Label2.TabIndex = 6
-        Me.Label2.Text = "Choose :"
+        Me.Panel1.BackColor = System.Drawing.Color.White
+        Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel1.Controls.Add(Me.Button2)
+        Me.Panel1.Controls.Add(Me.Button1)
+        Me.Panel1.Controls.Add(Me.btnAbout)
+        Me.Panel1.Controls.Add(Me.PictureBox2)
+        Me.Panel1.Controls.Add(Me.lblTitle)
+        Me.Panel1.Location = New System.Drawing.Point(307, 0)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(0)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(761, 73)
+        Me.Panel1.TabIndex = 27
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.Image = Global.PublicTransportTicketingSystem.My.Resources.Resources.logout__1_
+        Me.PictureBox2.Location = New System.Drawing.Point(712, 15)
+        Me.PictureBox2.Margin = New System.Windows.Forms.Padding(13, 4, 4, 25)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(37, 38)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox2.TabIndex = 4
+        Me.PictureBox2.TabStop = False
         '
         'gbBus
         '
         Me.gbBus.Font = New System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.gbBus.Location = New System.Drawing.Point(327, 251)
+        Me.gbBus.Location = New System.Drawing.Point(354, 251)
         Me.gbBus.Margin = New System.Windows.Forms.Padding(4)
         Me.gbBus.Name = "gbBus"
         Me.gbBus.Padding = New System.Windows.Forms.Padding(4)
-        Me.gbBus.Size = New System.Drawing.Size(621, 181)
-        Me.gbBus.TabIndex = 10
+        Me.gbBus.Size = New System.Drawing.Size(647, 264)
+        Me.gbBus.TabIndex = 29
         Me.gbBus.TabStop = False
-        Me.gbBus.Text = "Bus Promotion"
+        Me.gbBus.Text = "Create New Train"
         '
-        'TextBox2
+        'pbTrain
         '
-        Me.TextBox2.ForeColor = System.Drawing.Color.Black
-        Me.TextBox2.Location = New System.Drawing.Point(344, 560)
-        Me.TextBox2.Margin = New System.Windows.Forms.Padding(4)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(132, 22)
-        Me.TextBox2.TabIndex = 9
+        Me.pbTrain.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.pbTrain.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.pbTrain.Image = Global.PublicTransportTicketingSystem.My.Resources.Resources.train
+        Me.pbTrain.Location = New System.Drawing.Point(317, 162)
+        Me.pbTrain.Margin = New System.Windows.Forms.Padding(4)
+        Me.pbTrain.Name = "pbTrain"
+        Me.pbTrain.Size = New System.Drawing.Size(79, 62)
+        Me.pbTrain.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.pbTrain.TabIndex = 30
+        Me.pbTrain.TabStop = False
+        Me.pbTrain.Tag = "Train"
         '
-        'Label4
+        'pbBus
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Tw Cen MT", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.Color.Black
-        Me.Label4.Location = New System.Drawing.Point(341, 535)
-        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(87, 22)
-        Me.Label4.TabIndex = 8
-        Me.Label4.Text = "Password"
+        Me.pbBus.BackColor = System.Drawing.SystemColors.Control
+        Me.pbBus.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.pbBus.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.pbBus.Image = Global.PublicTransportTicketingSystem.My.Resources.Resources.bus
+        Me.pbBus.Location = New System.Drawing.Point(575, 162)
+        Me.pbBus.Margin = New System.Windows.Forms.Padding(4)
+        Me.pbBus.Name = "pbBus"
+        Me.pbBus.Size = New System.Drawing.Size(77, 61)
+        Me.pbBus.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.pbBus.TabIndex = 31
+        Me.pbBus.TabStop = False
         '
-        'TextBox1
+        'pbFerry
         '
-        Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.ForeColor = System.Drawing.Color.Black
-        Me.TextBox1.Location = New System.Drawing.Point(343, 501)
-        Me.TextBox1.Margin = New System.Windows.Forms.Padding(4)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(132, 23)
-        Me.TextBox1.TabIndex = 7
-        Me.TextBox1.Text = "Example"
+        Me.pbFerry.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.pbFerry.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.pbFerry.Image = Global.PublicTransportTicketingSystem.My.Resources.Resources.ferry
+        Me.pbFerry.Location = New System.Drawing.Point(445, 162)
+        Me.pbFerry.Margin = New System.Windows.Forms.Padding(4)
+        Me.pbFerry.Name = "pbFerry"
+        Me.pbFerry.Size = New System.Drawing.Size(79, 62)
+        Me.pbFerry.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.pbFerry.TabIndex = 32
+        Me.pbFerry.TabStop = False
         '
-        'Label3
+        'Button4
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Tw Cen MT", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.Color.Black
-        Me.Label3.Location = New System.Drawing.Point(340, 476)
-        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(112, 22)
-        Me.Label3.TabIndex = 6
-        Me.Label3.Text = "Label Format"
+        Me.Button4.Font = New System.Drawing.Font("Modern No. 20", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button4.Image = Global.PublicTransportTicketingSystem.My.Resources.Resources.right
+        Me.Button4.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Button4.Location = New System.Drawing.Point(777, 610)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(262, 42)
+        Me.Button4.TabIndex = 33
+        Me.Button4.Text = "Create New Public Transport"
+        Me.Button4.UseVisualStyleBackColor = True
         '
-        'PictureBox6
-        '
-        Me.PictureBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.PictureBox6.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox6.Image = Global.PublicTransportTicketingSystem.My.Resources.Resources.ferry
-        Me.PictureBox6.Location = New System.Drawing.Point(455, 162)
-        Me.PictureBox6.Margin = New System.Windows.Forms.Padding(4)
-        Me.PictureBox6.Name = "PictureBox6"
-        Me.PictureBox6.Size = New System.Drawing.Size(79, 62)
-        Me.PictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox6.TabIndex = 13
-        Me.PictureBox6.TabStop = False
-        '
-        'PictureBox5
-        '
-        Me.PictureBox5.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.PictureBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.PictureBox5.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox5.Image = Global.PublicTransportTicketingSystem.My.Resources.Resources.bus
-        Me.PictureBox5.Location = New System.Drawing.Point(585, 162)
-        Me.PictureBox5.Margin = New System.Windows.Forms.Padding(4)
-        Me.PictureBox5.Name = "PictureBox5"
-        Me.PictureBox5.Size = New System.Drawing.Size(77, 61)
-        Me.PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox5.TabIndex = 12
-        Me.PictureBox5.TabStop = False
-        '
-        'PictureBox4
-        '
-        Me.PictureBox4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.PictureBox4.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox4.Image = Global.PublicTransportTicketingSystem.My.Resources.Resources.train
-        Me.PictureBox4.Location = New System.Drawing.Point(327, 162)
-        Me.PictureBox4.Margin = New System.Windows.Forms.Padding(4)
-        Me.PictureBox4.Name = "PictureBox4"
-        Me.PictureBox4.Size = New System.Drawing.Size(79, 62)
-        Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox4.TabIndex = 11
-        Me.PictureBox4.TabStop = False
-        Me.PictureBox4.Tag = "Train"
-        '
-        'ManagerInterface
+        'ManagerCreatePT
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(1067, 705)
-        Me.Controls.Add(Me.TextBox2)
-        Me.Controls.Add(Me.PictureBox6)
-        Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.PictureBox5)
-        Me.Controls.Add(Me.TextBox1)
-        Me.Controls.Add(Me.PictureBox4)
-        Me.Controls.Add(Me.Label3)
+        Me.ClientSize = New System.Drawing.Size(1067, 708)
+        Me.Controls.Add(Me.pbTrain)
+        Me.Controls.Add(Me.pbBus)
+        Me.Controls.Add(Me.pbFerry)
         Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.FlowLayoutPanel1)
+        Me.Controls.Add(Me.Button4)
+        Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.gbBus)
-        Me.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Margin = New System.Windows.Forms.Padding(4)
-        Me.Name = "ManagerInterface"
-        Me.Text = "ManagerInterface"
+        Me.Name = "ManagerCreatePT"
+        Me.Text = "ManagerCreatePT"
         Me.FlowLayoutPanel3.ResumeLayout(False)
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.FlowLayoutPanel1.ResumeLayout(False)
@@ -536,42 +495,40 @@ Partial Class ManagerInterface
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pbTrain, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pbBus, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pbFerry, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
+
     Friend WithEvents pbHome As PictureBox
     Friend WithEvents pbReport As PictureBox
     Friend WithEvents pbManageStaff As PictureBox
     Friend WithEvents pbManageSchedule As PictureBox
+    Friend WithEvents btnManageSchedule As Button
     Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents pbTrain As PictureBox
+    Friend WithEvents FlowLayoutPanel3 As FlowLayoutPanel
+    Friend WithEvents Label1 As Label
+    Friend WithEvents pbBus As PictureBox
     Friend WithEvents btnHome As Button
     Friend WithEvents btnReport As Button
     Friend WithEvents btnManageStaff As Button
-    Friend WithEvents btnManageSchedule As Button
-    Friend WithEvents Label1 As Label
-    Friend WithEvents FlowLayoutPanel3 As FlowLayoutPanel
-    Friend WithEvents FlowLayoutPanel1 As FlowLayoutPanel
-    Friend WithEvents Panel1 As Panel
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Button1 As Button
-    Friend WithEvents btnAbout As Button
-    Friend WithEvents PictureBox2 As PictureBox
-    Friend WithEvents lblTitle As Label
     Friend WithEvents pbManagePromotion As PictureBox
     Friend WithEvents btnManagePromotion As Button
+    Friend WithEvents pbFerry As PictureBox
     Friend WithEvents PictureBox3 As PictureBox
     Friend WithEvents Button3 As Button
     Friend WithEvents Label2 As Label
+    Friend WithEvents FlowLayoutPanel1 As FlowLayoutPanel
+    Friend WithEvents Button2 As Button
+    Friend WithEvents Button1 As Button
+    Friend WithEvents btnAbout As Button
+    Friend WithEvents lblTitle As Label
+    Friend WithEvents Button4 As Button
+    Friend WithEvents Panel1 As Panel
     Friend WithEvents gbBus As GroupBox
-    Friend WithEvents PictureBox4 As PictureBox
-    Friend WithEvents PictureBox5 As PictureBox
-    Friend WithEvents PictureBox6 As PictureBox
-    Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents Label4 As Label
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents Label3 As Label
 End Class

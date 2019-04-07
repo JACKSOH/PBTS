@@ -30,9 +30,9 @@ Partial Class staffMenuLayoutControl
         Me.btnAbout = New System.Windows.Forms.Button()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.lblTitle = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
         Me.pbHome = New System.Windows.Forms.PictureBox()
         Me.btnHome = New System.Windows.Forms.Button()
@@ -45,8 +45,8 @@ Partial Class staffMenuLayoutControl
         Me.TableLayoutPanel1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.FlowLayoutPanel1.SuspendLayout()
         CType(Me.pbHome, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbReserve, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -85,7 +85,7 @@ Partial Class staffMenuLayoutControl
         Me.Panel1.Location = New System.Drawing.Point(223, 0)
         Me.Panel1.Margin = New System.Windows.Forms.Padding(0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(577, 73)
+        Me.Panel1.Size = New System.Drawing.Size(577, 74)
         Me.Panel1.TabIndex = 4
         '
         'Button2
@@ -156,11 +156,34 @@ Partial Class staffMenuLayoutControl
         Me.lblTitle.AutoSize = True
         Me.lblTitle.Font = New System.Drawing.Font("Century Gothic", 15.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTitle.ForeColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(53, Byte), Integer), CType(CType(65, Byte), Integer))
-        Me.lblTitle.Location = New System.Drawing.Point(14, 19)
+        Me.lblTitle.Location = New System.Drawing.Point(45, 19)
         Me.lblTitle.Name = "lblTitle"
-        Me.lblTitle.Size = New System.Drawing.Size(50, 25)
+        Me.lblTitle.Size = New System.Drawing.Size(55, 25)
         Me.lblTitle.TabIndex = 0
-        Me.lblTitle.Text = "Title"
+        Me.lblTitle.Text = "Staff"
+        '
+        'Panel2
+        '
+        Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(229, Byte), Integer), CType(CType(116, Byte), Integer), CType(CType(49, Byte), Integer))
+        Me.Panel2.Controls.Add(Me.PictureBox1)
+        Me.Panel2.Controls.Add(Me.Label1)
+        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel2.Location = New System.Drawing.Point(0, 0)
+        Me.Panel2.Margin = New System.Windows.Forms.Padding(0)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(223, 74)
+        Me.Panel2.TabIndex = 5
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.ImageLocation = ""
+        Me.PictureBox1.Location = New System.Drawing.Point(145, 19)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(5, 10, 5, 5)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(50, 48)
+        Me.PictureBox1.TabIndex = 2
+        Me.PictureBox1.TabStop = False
         '
         'Label1
         '
@@ -175,29 +198,6 @@ Partial Class staffMenuLayoutControl
         Me.Label1.Text = "Public Transport Ticketing System"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.ImageLocation = ""
-        Me.PictureBox1.Location = New System.Drawing.Point(145, 19)
-        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(5, 10, 5, 5)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(50, 48)
-        Me.PictureBox1.TabIndex = 2
-        Me.PictureBox1.TabStop = False
-        '
-        'Panel2
-        '
-        Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(229, Byte), Integer), CType(CType(116, Byte), Integer), CType(CType(49, Byte), Integer))
-        Me.Panel2.Controls.Add(Me.PictureBox1)
-        Me.Panel2.Controls.Add(Me.Label1)
-        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel2.Location = New System.Drawing.Point(0, 0)
-        Me.Panel2.Margin = New System.Windows.Forms.Padding(0)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(223, 73)
-        Me.Panel2.TabIndex = 5
-        '
         'FlowLayoutPanel1
         '
         Me.FlowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(53, Byte), Integer), CType(CType(65, Byte), Integer))
@@ -210,10 +210,10 @@ Partial Class staffMenuLayoutControl
         Me.FlowLayoutPanel1.Controls.Add(Me.pbStaffPromotion)
         Me.FlowLayoutPanel1.Controls.Add(Me.btnStaffPromotion)
         Me.FlowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.FlowLayoutPanel1.Location = New System.Drawing.Point(0, 73)
+        Me.FlowLayoutPanel1.Location = New System.Drawing.Point(0, 74)
         Me.FlowLayoutPanel1.Margin = New System.Windows.Forms.Padding(0)
         Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
-        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(223, 502)
+        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(223, 501)
         Me.FlowLayoutPanel1.TabIndex = 8
         '
         'pbHome
@@ -336,20 +336,20 @@ Partial Class staffMenuLayoutControl
         Me.btnStaffPromotion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnStaffPromotion.UseVisualStyleBackColor = True
         '
-        'MenuLayoutControl
+        'staffMenuLayoutControl
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.Controls.Add(Me.TableLayoutPanel1)
         Me.Margin = New System.Windows.Forms.Padding(0)
-        Me.Name = "MenuLayoutControl"
+        Me.Name = "staffMenuLayoutControl"
         Me.Size = New System.Drawing.Size(800, 575)
         Me.TableLayoutPanel1.ResumeLayout(False)
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.FlowLayoutPanel1.ResumeLayout(False)
         CType(Me.pbHome, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pbReserve, System.ComponentModel.ISupportInitialize).EndInit()

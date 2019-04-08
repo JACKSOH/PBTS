@@ -22,9 +22,9 @@ Partial Class StaffViewPromotion
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.btnCreatePromotionPage = New System.Windows.Forms.Button()
         Me.gbBus = New System.Windows.Forms.GroupBox()
         Me.btnRemove = New System.Windows.Forms.Button()
@@ -40,22 +40,10 @@ Partial Class StaffViewPromotion
         Me.eventName = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PromotionSchedule = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Discount = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.lblTrainPromotion = New System.Windows.Forms.Label()
-        Me.lblFerryPromotion = New System.Windows.Forms.Label()
-        Me.lblBusPromotion = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.pbFerry = New System.Windows.Forms.PictureBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.pbBus = New System.Windows.Forms.PictureBox()
-        Me.pbTrain = New System.Windows.Forms.PictureBox()
         Me.StaffMenuLayoutControl1 = New PublicTransportTicketingSystem.staffMenuLayoutControl()
+        Me.TranportSelection1 = New PublicTransportTicketingSystem.TranportSelection()
         Me.gbBus.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupBox1.SuspendLayout()
-        CType(Me.pbFerry, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.pbBus, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.pbTrain, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnCreatePromotionPage
@@ -173,30 +161,30 @@ Partial Class StaffViewPromotion
         '
         Me.DataGridView1.AllowUserToDeleteRows = False
         Me.DataGridView1.BackgroundColor = System.Drawing.SystemColors.ControlLightLight
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.GrayText
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.GrayText
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.promotionID, Me.promoteDateRange, Me.eventName, Me.PromotionSchedule, Me.Discount})
         Me.DataGridView1.Location = New System.Drawing.Point(21, 100)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView1.RowHeadersDefaultCellStyle = DataGridViewCellStyle2
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Silver
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White
-        Me.DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView1.RowHeadersDefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Silver
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White
+        Me.DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle6
         Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DataGridView1.Size = New System.Drawing.Size(494, 133)
         Me.DataGridView1.TabIndex = 0
@@ -237,114 +225,6 @@ Partial Class StaffViewPromotion
         Me.Discount.ReadOnly = True
         Me.Discount.Width = 80
         '
-        'GroupBox1
-        '
-        Me.GroupBox1.Controls.Add(Me.lblTrainPromotion)
-        Me.GroupBox1.Controls.Add(Me.lblFerryPromotion)
-        Me.GroupBox1.Controls.Add(Me.lblBusPromotion)
-        Me.GroupBox1.Controls.Add(Me.TextBox1)
-        Me.GroupBox1.Controls.Add(Me.pbFerry)
-        Me.GroupBox1.Controls.Add(Me.Label1)
-        Me.GroupBox1.Controls.Add(Me.pbBus)
-        Me.GroupBox1.Controls.Add(Me.pbTrain)
-        Me.GroupBox1.Location = New System.Drawing.Point(242, 82)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(537, 104)
-        Me.GroupBox1.TabIndex = 39
-        Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Choose a tranport type,"
-        '
-        'lblTrainPromotion
-        '
-        Me.lblTrainPromotion.BackColor = System.Drawing.Color.Transparent
-        Me.lblTrainPromotion.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTrainPromotion.ForeColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(53, Byte), Integer), CType(CType(65, Byte), Integer))
-        Me.lblTrainPromotion.Location = New System.Drawing.Point(13, 72)
-        Me.lblTrainPromotion.Name = "lblTrainPromotion"
-        Me.lblTrainPromotion.Size = New System.Drawing.Size(76, 24)
-        Me.lblTrainPromotion.TabIndex = 32
-        Me.lblTrainPromotion.Text = "TRAIN"
-        Me.lblTrainPromotion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'lblFerryPromotion
-        '
-        Me.lblFerryPromotion.BackColor = System.Drawing.Color.Transparent
-        Me.lblFerryPromotion.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblFerryPromotion.ForeColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(53, Byte), Integer), CType(CType(65, Byte), Integer))
-        Me.lblFerryPromotion.Location = New System.Drawing.Point(132, 72)
-        Me.lblFerryPromotion.Name = "lblFerryPromotion"
-        Me.lblFerryPromotion.Size = New System.Drawing.Size(75, 24)
-        Me.lblFerryPromotion.TabIndex = 31
-        Me.lblFerryPromotion.Text = "FERRY"
-        Me.lblFerryPromotion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'lblBusPromotion
-        '
-        Me.lblBusPromotion.BackColor = System.Drawing.Color.Transparent
-        Me.lblBusPromotion.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblBusPromotion.ForeColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(53, Byte), Integer), CType(CType(65, Byte), Integer))
-        Me.lblBusPromotion.Location = New System.Drawing.Point(244, 72)
-        Me.lblBusPromotion.Name = "lblBusPromotion"
-        Me.lblBusPromotion.Size = New System.Drawing.Size(66, 24)
-        Me.lblBusPromotion.TabIndex = 30
-        Me.lblBusPromotion.Text = "BUS"
-        Me.lblBusPromotion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'TextBox1
-        '
-        Me.TextBox1.Enabled = False
-        Me.TextBox1.Location = New System.Drawing.Point(431, 18)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox1.TabIndex = 3
-        '
-        'pbFerry
-        '
-        Me.pbFerry.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.pbFerry.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.pbFerry.Image = Global.PublicTransportTicketingSystem.My.Resources.Resources.ferry
-        Me.pbFerry.Location = New System.Drawing.Point(136, 18)
-        Me.pbFerry.Name = "pbFerry"
-        Me.pbFerry.Size = New System.Drawing.Size(60, 51)
-        Me.pbFerry.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.pbFerry.TabIndex = 20
-        Me.pbFerry.TabStop = False
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(325, 21)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(100, 13)
-        Me.Label1.TabIndex = 2
-        Me.Label1.Text = "Selected Transport:"
-        '
-        'pbBus
-        '
-        Me.pbBus.BackColor = System.Drawing.SystemColors.Control
-        Me.pbBus.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.pbBus.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.pbBus.Image = Global.PublicTransportTicketingSystem.My.Resources.Resources.bus
-        Me.pbBus.Location = New System.Drawing.Point(248, 18)
-        Me.pbBus.Name = "pbBus"
-        Me.pbBus.Size = New System.Drawing.Size(58, 50)
-        Me.pbBus.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.pbBus.TabIndex = 19
-        Me.pbBus.TabStop = False
-        '
-        'pbTrain
-        '
-        Me.pbTrain.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.pbTrain.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.pbTrain.Image = Global.PublicTransportTicketingSystem.My.Resources.Resources.train
-        Me.pbTrain.Location = New System.Drawing.Point(29, 18)
-        Me.pbTrain.Name = "pbTrain"
-        Me.pbTrain.Size = New System.Drawing.Size(60, 51)
-        Me.pbTrain.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.pbTrain.TabIndex = 18
-        Me.pbTrain.TabStop = False
-        Me.pbTrain.Tag = "Train"
-        '
         'StaffMenuLayoutControl1
         '
         Me.StaffMenuLayoutControl1.Dock = System.Windows.Forms.DockStyle.Fill
@@ -354,14 +234,21 @@ Partial Class StaffViewPromotion
         Me.StaffMenuLayoutControl1.Size = New System.Drawing.Size(800, 575)
         Me.StaffMenuLayoutControl1.TabIndex = 42
         '
+        'TranportSelection1
+        '
+        Me.TranportSelection1.Location = New System.Drawing.Point(243, 90)
+        Me.TranportSelection1.Name = "TranportSelection1"
+        Me.TranportSelection1.Size = New System.Drawing.Size(537, 104)
+        Me.TranportSelection1.TabIndex = 43
+        '
         'StaffViewPromotion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 575)
+        Me.Controls.Add(Me.TranportSelection1)
         Me.Controls.Add(Me.btnCreatePromotionPage)
         Me.Controls.Add(Me.gbBus)
-        Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.StaffMenuLayoutControl1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "StaffViewPromotion"
@@ -369,11 +256,6 @@ Partial Class StaffViewPromotion
         Me.gbBus.ResumeLayout(False)
         Me.gbBus.PerformLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GroupBox1.ResumeLayout(False)
-        Me.GroupBox1.PerformLayout()
-        CType(Me.pbFerry, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.pbBus, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.pbTrain, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -393,14 +275,6 @@ Partial Class StaffViewPromotion
     Friend WithEvents eventName As DataGridViewTextBoxColumn
     Friend WithEvents PromotionSchedule As DataGridViewTextBoxColumn
     Friend WithEvents Discount As DataGridViewTextBoxColumn
-    Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents lblTrainPromotion As Label
-    Friend WithEvents lblFerryPromotion As Label
-    Friend WithEvents lblBusPromotion As Label
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents pbFerry As PictureBox
-    Friend WithEvents Label1 As Label
-    Friend WithEvents pbBus As PictureBox
-    Friend WithEvents pbTrain As PictureBox
     Friend WithEvents StaffMenuLayoutControl1 As staffMenuLayoutControl
+    Friend WithEvents TranportSelection1 As TranportSelection
 End Class

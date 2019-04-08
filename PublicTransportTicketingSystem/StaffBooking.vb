@@ -44,4 +44,17 @@ Public Class StaffBooking
             MessageBox.Show(ex.Message)
         End Try
     End Sub
+
+    Private Sub TranportSelection1_Load(sender As Object, e As EventArgs) Handles ts1.Load
+
+    End Sub
+
+    Private Sub TranportSelection1_Click(sender As Object, e As EventArgs) Handles ts1.Click
+        gbTranport.Text = ts1.selectedType
+
+    End Sub
+
+    Private Sub StaffMenuLayoutControl1_Load_1(sender As Object, e As EventArgs) Handles StaffMenuLayoutControl1.Load
+
+    End Sub
 End Class

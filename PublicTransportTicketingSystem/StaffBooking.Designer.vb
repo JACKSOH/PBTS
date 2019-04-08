@@ -23,7 +23,7 @@ Partial Class StaffBooking
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.StaffMenuLayoutControl1 = New PublicTransportTicketingSystem.staffMenuLayoutControl()
-        Me.gbTrain = New System.Windows.Forms.GroupBox()
+        Me.gbTranport = New System.Windows.Forms.GroupBox()
         Me.cboDestination = New System.Windows.Forms.ComboBox()
         Me.cboOrigin = New System.Windows.Forms.ComboBox()
         Me.dtpDeparture = New System.Windows.Forms.DateTimePicker()
@@ -31,8 +31,8 @@ Partial Class StaffBooking
         Me.De = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.TranportSelection1 = New PublicTransportTicketingSystem.TranportSelection()
-        Me.gbTrain.SuspendLayout()
+        Me.ts1 = New PublicTransportTicketingSystem.TranportSelection()
+        Me.gbTranport.SuspendLayout()
         Me.SuspendLayout()
         '
         'StaffMenuLayoutControl1
@@ -44,25 +44,25 @@ Partial Class StaffBooking
         Me.StaffMenuLayoutControl1.Size = New System.Drawing.Size(800, 575)
         Me.StaffMenuLayoutControl1.TabIndex = 0
         '
-        'gbTrain
+        'gbTranport
         '
-        Me.gbTrain.BackColor = System.Drawing.SystemColors.Control
-        Me.gbTrain.Controls.Add(Me.cboDestination)
-        Me.gbTrain.Controls.Add(Me.cboOrigin)
-        Me.gbTrain.Controls.Add(Me.dtpDeparture)
-        Me.gbTrain.Controls.Add(Me.Label8)
-        Me.gbTrain.Controls.Add(Me.De)
-        Me.gbTrain.Controls.Add(Me.Label5)
-        Me.gbTrain.Controls.Add(Me.Label4)
-        Me.gbTrain.Font = New System.Drawing.Font("Tw Cen MT", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.gbTrain.Location = New System.Drawing.Point(237, 212)
-        Me.gbTrain.Margin = New System.Windows.Forms.Padding(2)
-        Me.gbTrain.Name = "gbTrain"
-        Me.gbTrain.Padding = New System.Windows.Forms.Padding(2)
-        Me.gbTrain.Size = New System.Drawing.Size(537, 134)
-        Me.gbTrain.TabIndex = 41
-        Me.gbTrain.TabStop = False
-        Me.gbTrain.Text = "Train Ticket"
+        Me.gbTranport.BackColor = System.Drawing.SystemColors.Control
+        Me.gbTranport.Controls.Add(Me.cboDestination)
+        Me.gbTranport.Controls.Add(Me.cboOrigin)
+        Me.gbTranport.Controls.Add(Me.dtpDeparture)
+        Me.gbTranport.Controls.Add(Me.Label8)
+        Me.gbTranport.Controls.Add(Me.De)
+        Me.gbTranport.Controls.Add(Me.Label5)
+        Me.gbTranport.Controls.Add(Me.Label4)
+        Me.gbTranport.Font = New System.Drawing.Font("Tw Cen MT", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.gbTranport.Location = New System.Drawing.Point(237, 212)
+        Me.gbTranport.Margin = New System.Windows.Forms.Padding(2)
+        Me.gbTranport.Name = "gbTranport"
+        Me.gbTranport.Padding = New System.Windows.Forms.Padding(2)
+        Me.gbTranport.Size = New System.Drawing.Size(537, 134)
+        Me.gbTranport.TabIndex = 41
+        Me.gbTranport.TabStop = False
+        Me.gbTranport.Text = "Train Ticket"
         '
         'cboDestination
         '
@@ -135,32 +135,32 @@ Partial Class StaffBooking
         Me.Label4.TabIndex = 8
         Me.Label4.Text = "From"
         '
-        'TranportSelection1
+        'ts1
         '
-        Me.TranportSelection1.Location = New System.Drawing.Point(237, 91)
-        Me.TranportSelection1.Name = "TranportSelection1"
-        Me.TranportSelection1.Size = New System.Drawing.Size(537, 104)
-        Me.TranportSelection1.TabIndex = 42
+        Me.ts1.Location = New System.Drawing.Point(237, 91)
+        Me.ts1.Name = "ts1"
+        Me.ts1.Size = New System.Drawing.Size(537, 104)
+        Me.ts1.TabIndex = 42
         '
         'StaffBooking
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 575)
-        Me.Controls.Add(Me.TranportSelection1)
-        Me.Controls.Add(Me.gbTrain)
+        Me.Controls.Add(Me.ts1)
+        Me.Controls.Add(Me.gbTranport)
         Me.Controls.Add(Me.StaffMenuLayoutControl1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "StaffBooking"
         Me.Text = "StaffBooking"
-        Me.gbTrain.ResumeLayout(False)
-        Me.gbTrain.PerformLayout()
+        Me.gbTranport.ResumeLayout(False)
+        Me.gbTranport.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
 
     Friend WithEvents StaffMenuLayoutControl1 As staffMenuLayoutControl
-    Friend WithEvents gbTrain As GroupBox
+    Friend WithEvents gbTranport As GroupBox
     Friend WithEvents dtpDeparture As DateTimePicker
     Friend WithEvents Label8 As Label
     Friend WithEvents De As Label
@@ -168,5 +168,5 @@ Partial Class StaffBooking
     Friend WithEvents Label4 As Label
     Friend WithEvents cboDestination As ComboBox
     Friend WithEvents cboOrigin As ComboBox
-    Friend WithEvents TranportSelection1 As TranportSelection
+    Friend WithEvents ts1 As TranportSelection
 End Class

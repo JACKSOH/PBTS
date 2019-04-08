@@ -110,6 +110,22 @@
     <Compile Include="ManagerPT.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ManagerViewSchdule.Designer.vb">
+      <DependentUpon>ManagerViewSchdule.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerViewSchdule.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PTTSDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PTTSDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PTTSDataSet1.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PTTSDataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="staffMenuLayoutControl.Designer.vb">
       <DependentUpon>staffMenuLayoutControl.vb</DependentUpon>
     </Compile>
@@ -149,6 +165,12 @@
     <Compile Include="StaffReservation.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="StaffViewSchedule.Designer.vb">
+      <DependentUpon>StaffViewSchedule.vb</DependentUpon>
+    </Compile>
+    <Compile Include="StaffViewSchedule.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="managerIndex.resx">
@@ -159,6 +181,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ManagerPT.resx">
       <DependentUpon>ManagerPT.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerViewSchdule.resx">
+      <DependentUpon>ManagerViewSchdule.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="staffMenuLayoutControl.resx">
       <DependentUpon>staffMenuLayoutControl.vb</DependentUpon>
@@ -178,6 +203,9 @@
     <EmbeddedResource Include="StaffReservation.resx">
       <DependentUpon>StaffReservation.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="StaffViewSchedule.resx">
+      <DependentUpon>StaffViewSchedule.vb</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <None Include="My Project\Application.myapp">
@@ -192,6 +220,28 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="PTTSDataSet.xsc">
+      <DependentUpon>PTTSDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="PTTSDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PTTSDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PTTSDataSet.xss">
+      <DependentUpon>PTTSDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="PTTSDataSet1.xsc">
+      <DependentUpon>PTTSDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="PTTSDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PTTSDataSet1.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PTTSDataSet1.xss">
+      <DependentUpon>PTTSDataSet1.xsd</DependentUpon>
+    </None>
     <None Include="Resources\2.png" />
   </ItemGroup>
   <ItemGroup>

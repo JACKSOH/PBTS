@@ -30,7 +30,7 @@ Partial Class StaffViewSchedule
         Me.Label1 = New System.Windows.Forms.Label()
         Me.pbBus = New System.Windows.Forms.PictureBox()
         Me.pbTrain = New System.Windows.Forms.PictureBox()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+
         Me.ScheduleIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.OriginIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DestinationIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -38,12 +38,7 @@ Partial Class StaffViewSchedule
         Me.ArrivalDateTImeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TransportIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ScheduleBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.PTTSDataSet = New PublicTransportTicketingSystem.PTTSDataSet()
-        Me.PTTSDataSet1 = New PublicTransportTicketingSystem.PTTSDataSet1()
-        Me.ScheduleTableAdapter1 = New PublicTransportTicketingSystem.PTTSDataSet1TableAdapters.ScheduleTableAdapter()
-        Me.TableAdapterManager = New PublicTransportTicketingSystem.PTTSDataSet1TableAdapters.TableAdapterManager()
-        Me.ScheduleTableAdapter = New PublicTransportTicketingSystem.PTTSDataSetTableAdapters.ScheduleTableAdapter()
-        Me.PTTSDataSetBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+
         Me.gbTrain = New System.Windows.Forms.GroupBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.De = New System.Windows.Forms.Label()
@@ -56,11 +51,9 @@ Partial Class StaffViewSchedule
         CType(Me.pbFerry, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbBus, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbTrain, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+
         CType(Me.ScheduleBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PTTSDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PTTSDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PTTSDataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+
         Me.gbTrain.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -142,17 +135,7 @@ Partial Class StaffViewSchedule
         Me.pbTrain.TabStop = False
         Me.pbTrain.Tag = "Train"
         '
-        'DataGridView1
-        '
-        Me.DataGridView1.AutoGenerateColumns = False
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ScheduleIDDataGridViewTextBoxColumn, Me.OriginIDDataGridViewTextBoxColumn, Me.DestinationIDDataGridViewTextBoxColumn, Me.DepartureDateTimeDataGridViewTextBoxColumn, Me.ArrivalDateTImeDataGridViewTextBoxColumn, Me.TransportIDDataGridViewTextBoxColumn})
-        Me.DataGridView1.DataSource = Me.ScheduleBindingSource
-        Me.DataGridView1.Location = New System.Drawing.Point(239, 359)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.ReadOnly = True
-        Me.DataGridView1.Size = New System.Drawing.Size(537, 169)
-        Me.DataGridView1.TabIndex = 2
+
         '
         'ScheduleIDDataGridViewTextBoxColumn
         '
@@ -199,38 +182,9 @@ Partial Class StaffViewSchedule
         'ScheduleBindingSource
         '
         Me.ScheduleBindingSource.DataMember = "Schedule"
-        Me.ScheduleBindingSource.DataSource = Me.PTTSDataSet
+
         '
-        'PTTSDataSet
-        '
-        Me.PTTSDataSet.DataSetName = "PTTSDataSet"
-        Me.PTTSDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'PTTSDataSet1
-        '
-        Me.PTTSDataSet1.DataSetName = "PTTSDataSet1"
-        Me.PTTSDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'ScheduleTableAdapter1
-        '
-        Me.ScheduleTableAdapter1.ClearBeforeFill = True
-        '
-        'TableAdapterManager
-        '
-        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
-        Me.TableAdapterManager.LocationTableAdapter = Nothing
-        Me.TableAdapterManager.ScheduleTableAdapter = Me.ScheduleTableAdapter1
-        Me.TableAdapterManager.SeatTableAdapter = Nothing
-        Me.TableAdapterManager.UpdateOrder = PublicTransportTicketingSystem.PTTSDataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
-        '
-        'ScheduleTableAdapter
-        '
-        Me.ScheduleTableAdapter.ClearBeforeFill = True
-        '
-        'PTTSDataSetBindingSource
-        '
-        Me.PTTSDataSetBindingSource.DataSource = Me.PTTSDataSet
-        Me.PTTSDataSetBindingSource.Position = 0
+
         '
         'gbTrain
         '
@@ -328,7 +282,7 @@ Partial Class StaffViewSchedule
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 575)
         Me.Controls.Add(Me.gbTrain)
-        Me.Controls.Add(Me.DataGridView1)
+
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.StaffMenuLayoutControl1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
@@ -339,11 +293,9 @@ Partial Class StaffViewSchedule
         CType(Me.pbFerry, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pbBus, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pbTrain, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+
         CType(Me.ScheduleBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PTTSDataSet, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PTTSDataSet1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PTTSDataSetBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+
         Me.gbTrain.ResumeLayout(False)
         Me.gbTrain.PerformLayout()
         Me.ResumeLayout(False)
@@ -357,14 +309,9 @@ Partial Class StaffViewSchedule
     Friend WithEvents Label1 As Label
     Friend WithEvents pbBus As PictureBox
     Friend WithEvents pbTrain As PictureBox
-    Friend WithEvents DataGridView1 As DataGridView
-    Friend WithEvents PTTSDataSet As PTTSDataSet
+
     Friend WithEvents ScheduleBindingSource As BindingSource
-    Friend WithEvents ScheduleTableAdapter As PTTSDataSetTableAdapters.ScheduleTableAdapter
-    Friend WithEvents PTTSDataSetBindingSource As BindingSource
-    Friend WithEvents PTTSDataSet1 As PTTSDataSet1
-    Friend WithEvents ScheduleTableAdapter1 As PTTSDataSet1TableAdapters.ScheduleTableAdapter
-    Friend WithEvents TableAdapterManager As PTTSDataSet1TableAdapters.TableAdapterManager
+
     Friend WithEvents ScheduleIDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents OriginIDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents DestinationIDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn

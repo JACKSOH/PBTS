@@ -27,8 +27,8 @@ Partial Class TranportSelection
         Me.lblFerryPromotion = New System.Windows.Forms.Label()
         Me.lblBusPromotion = New System.Windows.Forms.Label()
         Me.txtTransType = New System.Windows.Forms.TextBox()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.pbFerry = New System.Windows.Forms.PictureBox()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.pbBus = New System.Windows.Forms.PictureBox()
         Me.pbTrain = New System.Windows.Forms.PictureBox()
         Me.GroupBox1.SuspendLayout()
@@ -99,15 +99,6 @@ Partial Class TranportSelection
         Me.txtTransType.Size = New System.Drawing.Size(100, 20)
         Me.txtTransType.TabIndex = 3
         '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(325, 21)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(100, 13)
-        Me.Label1.TabIndex = 2
-        Me.Label1.Text = "Selected Transport:"
-        '
         'pbFerry
         '
         Me.pbFerry.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
@@ -119,6 +110,15 @@ Partial Class TranportSelection
         Me.pbFerry.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.pbFerry.TabIndex = 20
         Me.pbFerry.TabStop = False
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(325, 21)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(100, 13)
+        Me.Label1.TabIndex = 2
+        Me.Label1.Text = "Selected Transport:"
         '
         'pbBus
         '

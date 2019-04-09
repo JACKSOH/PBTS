@@ -25,18 +25,19 @@ Partial Class managerIndex
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(managerIndex))
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.BackPanel = New System.Windows.Forms.Panel()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.txtPassword = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.txtIC = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Panel1.SuspendLayout()
-        Me.BackPanel.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.BackPanel.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
@@ -47,8 +48,19 @@ Partial Class managerIndex
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(244, 56)
+        Me.Panel1.Size = New System.Drawing.Size(250, 56)
         Me.Panel1.TabIndex = 0
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.ImageLocation = ""
+        Me.PictureBox1.Location = New System.Drawing.Point(31, 8)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(2)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(50, 48)
+        Me.PictureBox1.TabIndex = 4
+        Me.PictureBox1.TabStop = False
         '
         'Label1
         '
@@ -66,24 +78,35 @@ Partial Class managerIndex
         'BackPanel
         '
         Me.BackPanel.BackColor = System.Drawing.Color.SlateGray
-        Me.BackPanel.Controls.Add(Me.TextBox2)
+        Me.BackPanel.Controls.Add(Me.Button1)
+        Me.BackPanel.Controls.Add(Me.txtPassword)
         Me.BackPanel.Controls.Add(Me.Label4)
         Me.BackPanel.Controls.Add(Me.Label3)
-        Me.BackPanel.Controls.Add(Me.TextBox1)
+        Me.BackPanel.Controls.Add(Me.txtIC)
         Me.BackPanel.Controls.Add(Me.Label2)
         Me.BackPanel.Controls.Add(Me.Panel1)
         Me.BackPanel.Dock = System.Windows.Forms.DockStyle.Fill
         Me.BackPanel.Location = New System.Drawing.Point(0, 0)
         Me.BackPanel.Name = "BackPanel"
-        Me.BackPanel.Size = New System.Drawing.Size(244, 255)
+        Me.BackPanel.Size = New System.Drawing.Size(250, 269)
         Me.BackPanel.TabIndex = 6
         '
-        'TextBox2
+        'Button1
         '
-        Me.TextBox2.Location = New System.Drawing.Point(63, 191)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox2.TabIndex = 5
+        Me.Button1.Font = New System.Drawing.Font("Tw Cen MT", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.Location = New System.Drawing.Point(74, 228)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(77, 29)
+        Me.Button1.TabIndex = 7
+        Me.Button1.Text = "&Login"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'txtPassword
+        '
+        Me.txtPassword.Location = New System.Drawing.Point(63, 191)
+        Me.txtPassword.Name = "txtPassword"
+        Me.txtPassword.Size = New System.Drawing.Size(100, 20)
+        Me.txtPassword.TabIndex = 5
         '
         'Label4
         '
@@ -101,18 +124,18 @@ Partial Class managerIndex
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Tw Cen MT", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label3.Location = New System.Drawing.Point(59, 87)
+        Me.Label3.Location = New System.Drawing.Point(43, 79)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(141, 24)
         Me.Label3.TabIndex = 3
         Me.Label3.Text = "Manager Login"
         '
-        'TextBox1
+        'txtIC
         '
-        Me.TextBox1.Location = New System.Drawing.Point(62, 143)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox1.TabIndex = 2
+        Me.txtIC.Location = New System.Drawing.Point(62, 143)
+        Me.txtIC.Name = "txtIC"
+        Me.txtIC.Size = New System.Drawing.Size(100, 20)
+        Me.txtIC.TabIndex = 2
         '
         'Label2
         '
@@ -125,17 +148,6 @@ Partial Class managerIndex
         Me.Label2.TabIndex = 1
         Me.Label2.Text = "IC"
         '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.ImageLocation = ""
-        Me.PictureBox1.Location = New System.Drawing.Point(31, 8)
-        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(2)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(50, 48)
-        Me.PictureBox1.TabIndex = 4
-        Me.PictureBox1.TabStop = False
-        '
         'Timer1
         '
         '
@@ -143,14 +155,16 @@ Partial Class managerIndex
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(244, 255)
+        Me.ClientSize = New System.Drawing.Size(250, 269)
         Me.Controls.Add(Me.BackPanel)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "managerIndex"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "managerIndex"
         Me.Panel1.ResumeLayout(False)
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.BackPanel.ResumeLayout(False)
         Me.BackPanel.PerformLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -159,10 +173,11 @@ Partial Class managerIndex
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Label1 As Label
     Friend WithEvents BackPanel As Panel
-    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents txtPassword As TextBox
     Friend WithEvents Label4 As Label
     Friend WithEvents Label3 As Label
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents txtIC As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents Timer1 As Timer
+    Friend WithEvents Button1 As Button
 End Class

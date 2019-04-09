@@ -41,6 +41,7 @@
     <NoWarn>
     </NoWarn>
     <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
+    <RegisterForComInterop>true</RegisterForComInterop>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -53,6 +54,7 @@
     <NoWarn>
     </NoWarn>
     <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
+    <RegisterForComInterop>true</RegisterForComInterop>
   </PropertyGroup>
   <PropertyGroup>
     <OptionExplicit>On</OptionExplicit>
@@ -93,6 +95,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApplicationEvents.vb" />
     <Compile Include="ManagerCreatePromotion.Designer.vb">
       <DependentUpon>ManagerCreatePromotion.vb</DependentUpon>
     </Compile>
@@ -103,6 +106,12 @@
       <DependentUpon>managerIndex.vb</DependentUpon>
     </Compile>
     <Compile Include="managerIndex.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerManageLocation.Designer.vb">
+      <DependentUpon>ManagerManageLocation.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerManageLocation.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="managerMenuLayoutControl.Designer.vb">
@@ -128,6 +137,11 @@
     </Compile>
     <Compile Include="ManagerViewSchdule.vb">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PBTS.designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PBTS.dbml</DependentUpon>
     </Compile>
     <Compile Include="StaffBooking.Designer.vb">
       <DependentUpon>StaffBooking.vb</DependentUpon>
@@ -194,6 +208,9 @@
     <EmbeddedResource Include="managerIndex.resx">
       <DependentUpon>managerIndex.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ManagerManageLocation.resx">
+      <DependentUpon>ManagerManageLocation.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="managerMenuLayoutControl.resx">
       <DependentUpon>managerMenuLayoutControl.vb</DependentUpon>
     </EmbeddedResource>
@@ -247,6 +264,14 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="PBTS.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>PBTS.designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PBTS.dbml.layout">
+      <DependentUpon>PBTS.dbml</DependentUpon>
+    </None>
     <None Include="Resources\2.png" />
   </ItemGroup>
   <ItemGroup>

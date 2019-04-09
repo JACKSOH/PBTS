@@ -29,10 +29,10 @@ Partial Class StaffIndex
         Me.Label1 = New System.Windows.Forms.Label()
         Me.BackPanel = New System.Windows.Forms.Panel()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.txtPassword = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.txtIC = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Panel1.SuspendLayout()
@@ -45,7 +45,6 @@ Partial Class StaffIndex
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.Panel1.Controls.Add(Me.PictureBox1)
         Me.Panel1.Controls.Add(Me.Label1)
-        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(234, 56)
@@ -55,7 +54,7 @@ Partial Class StaffIndex
         '
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
         Me.PictureBox1.ImageLocation = ""
-        Me.PictureBox1.Location = New System.Drawing.Point(2, 2)
+        Me.PictureBox1.Location = New System.Drawing.Point(19, 2)
         Me.PictureBox1.Margin = New System.Windows.Forms.Padding(2)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(50, 48)
@@ -67,7 +66,7 @@ Partial Class StaffIndex
         Me.Label1.Font = New System.Drawing.Font("Century Gothic", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.Label1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Label1.Location = New System.Drawing.Point(54, 2)
+        Me.Label1.Location = New System.Drawing.Point(73, 2)
         Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(130, 48)
@@ -79,10 +78,10 @@ Partial Class StaffIndex
         '
         Me.BackPanel.BackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(65, Byte), Integer))
         Me.BackPanel.Controls.Add(Me.Button1)
-        Me.BackPanel.Controls.Add(Me.TextBox2)
+        Me.BackPanel.Controls.Add(Me.txtPassword)
         Me.BackPanel.Controls.Add(Me.Label4)
         Me.BackPanel.Controls.Add(Me.Label3)
-        Me.BackPanel.Controls.Add(Me.TextBox1)
+        Me.BackPanel.Controls.Add(Me.txtIC)
         Me.BackPanel.Controls.Add(Me.Label2)
         Me.BackPanel.Controls.Add(Me.Panel1)
         Me.BackPanel.Dock = System.Windows.Forms.DockStyle.Fill
@@ -93,19 +92,20 @@ Partial Class StaffIndex
         '
         'Button1
         '
+        Me.Button1.Font = New System.Drawing.Font("Tw Cen MT", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.Location = New System.Drawing.Point(76, 229)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.Size = New System.Drawing.Size(77, 29)
         Me.Button1.TabIndex = 6
         Me.Button1.Text = "&Login"
         Me.Button1.UseVisualStyleBackColor = True
         '
-        'TextBox2
+        'txtPassword
         '
-        Me.TextBox2.Location = New System.Drawing.Point(63, 191)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox2.TabIndex = 5
+        Me.txtPassword.Location = New System.Drawing.Point(63, 191)
+        Me.txtPassword.Name = "txtPassword"
+        Me.txtPassword.Size = New System.Drawing.Size(100, 20)
+        Me.txtPassword.TabIndex = 5
         '
         'Label4
         '
@@ -129,12 +129,12 @@ Partial Class StaffIndex
         Me.Label3.TabIndex = 3
         Me.Label3.Text = "Staff Login"
         '
-        'TextBox1
+        'txtIC
         '
-        Me.TextBox1.Location = New System.Drawing.Point(62, 143)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox1.TabIndex = 2
+        Me.txtIC.Location = New System.Drawing.Point(62, 143)
+        Me.txtIC.Name = "txtIC"
+        Me.txtIC.Size = New System.Drawing.Size(100, 20)
+        Me.txtIC.TabIndex = 2
         '
         'Label2
         '
@@ -157,7 +157,9 @@ Partial Class StaffIndex
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(234, 285)
         Me.Controls.Add(Me.BackPanel)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "StaffIndex"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Index"
         Me.Panel1.ResumeLayout(False)
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -171,10 +173,10 @@ Partial Class StaffIndex
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Label1 As Label
     Friend WithEvents BackPanel As Panel
-    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents txtPassword As TextBox
     Friend WithEvents Label4 As Label
     Friend WithEvents Label3 As Label
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents txtIC As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents Button1 As Button
     Friend WithEvents Timer1 As Timer

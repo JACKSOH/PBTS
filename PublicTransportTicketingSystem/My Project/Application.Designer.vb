@@ -32,12 +32,12 @@ Namespace My
         
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _
         Protected Overrides Sub OnCreateMainForm()
-            Me.MainForm = Global.PublicTransportTicketingSystem.StaffIndex
+            Me.MainForm = Global.PublicTransportTicketingSystem.ManagerManageLocation
         End Sub
         
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _
         Protected Overrides Sub OnCreateSplashScreen()
-            Me.SplashScreen = Global.PublicTransportTicketingSystem.Splash
+            Me.SplashScreen = Global.PublicTransportTicketingSystem.ManagerViewSchdule
         End Sub
     End Class
 End Namespace

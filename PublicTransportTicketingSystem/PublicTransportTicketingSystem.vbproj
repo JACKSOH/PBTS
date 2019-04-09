@@ -69,6 +69,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
@@ -132,6 +133,12 @@
       <DependentUpon>StaffBooking.vb</DependentUpon>
     </Compile>
     <Compile Include="StaffBooking.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="staffBookingSchedule.Designer.vb">
+      <DependentUpon>staffBookingSchedule.vb</DependentUpon>
+    </Compile>
+    <Compile Include="staffBookingSchedule.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="staffMenuLayoutControl.Designer.vb">
@@ -201,6 +208,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="StaffBooking.resx">
       <DependentUpon>StaffBooking.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="staffBookingSchedule.resx">
+      <DependentUpon>staffBookingSchedule.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="staffMenuLayoutControl.resx">
       <DependentUpon>staffMenuLayoutControl.vb</DependentUpon>
@@ -294,11 +304,8 @@
     <None Include="Resources\icons8-down-arrow-30.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="PTTS.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <Content Include="PTTS.mdf" />
     <Content Include="PTTS_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>PTTS.mdf</DependentUpon>
     </Content>
   </ItemGroup>
@@ -313,6 +320,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

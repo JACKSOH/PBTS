@@ -2,9 +2,15 @@
 
 Public Class StaffBooking
     Dim SqlConnection As New SqlConnection
+    Public Const connection As String = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\chunl\OneDrive\Desktop\PBTS\PublicTransportTicketingSystem\PTTS.mdf;Integrated Security=True"
+    Public retrieveLocation As String
+    Public selectedDate As Date
+    Public selectedOrigin As String
+    Public selectedDestination As String
+
     Private Sub StaffMenuLayoutControl1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
-            SqlConnection.ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\boonk\source\repos\JACKSOH\PBTS\PublicTransportTicketingSystem\PTTS.mdf;Integrated Security=True"
+            SqlConnection.ConnectionString = connection
             SqlConnection.Open()
             Dim command As New SqlCommand("select * from Location", SqlConnection)
             Dim adapter As New SqlDataAdapter(command)
@@ -12,7 +18,8 @@ Public Class StaffBooking
             reader = command.ExecuteReader
 
             While reader.Read
-                cboOrigin.Items.Add(reader.GetString(1))
+                retrieveLocation = reader.GetString(1)
+                cboOrigin.Items.Add(retrieveLocation)
             End While
 
             SqlConnection.Close()
@@ -20,11 +27,13 @@ Public Class StaffBooking
             MessageBox.Show(ex.Message)
         End Try
 
+        dtpDeparture.MinDate = DateTime.Today
+        dtpDeparture.MaxDate = DateTime.Today.AddMonths(1)
     End Sub
 
     Private Sub cboOrigin_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboOrigin.SelectedIndexChanged
         Try
-            SqlConnection.ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\boonk\source\repos\JACKSOH\PBTS\PublicTransportTicketingSystem\PTTS.mdf;Integrated Security=True"
+            SqlConnection.ConnectionString = connection
             SqlConnection.Open()
             Dim command As New SqlCommand("select * from Location where locationName !=@selectedOrigin", SqlConnection)
             command.Parameters.Add("@selectedOrigin", SqlDbType.VarChar).Value = cboOrigin.SelectedItem
@@ -44,4 +53,32 @@ Public Class StaffBooking
             MessageBox.Show(ex.Message)
         End Try
     End Sub
+
+    Private Sub TranportSelection1_Load(sender As Object, e As EventArgs) Handles TranportSelection1.MouseClick
+
+
+    End Sub
+
+    Private Sub btnSearch_Click(sender As Object, e As EventArgs) Handles btnSearch.Click
+        Dim selectedDateTime As DateTime = dtpDeparture.Value
+        selectedDate = selectedDateTime.Date
+
+        If cboOrigin.SelectedIndex = -1 Then
+            cboOrigin.Select()
+            MessageBox.Show("Please select the Origin..", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End If
+
+        If cboDestination.SelectedIndex = -1 Then
+            cboDestination.Select()
+            MessageBox.Show("Please select the Destination..", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End If
+
+        selectedOrigin = cboOrigin.SelectedItem.ToString
+        selectedDestination = cboDestination.SelectedItem.ToString
+
+        staffBookingSchedule.Show()
+        Me.Hide()
+    End Sub
+
+
 End Class

@@ -41,8 +41,7 @@ Public Class staffBookingSchedule
 
 
 
-            Dim query = From schedule In PTTSDataSet.Schedule
-                        Where schedule.originID = originID And schedule.destinationID = desID And 
+
 
         Catch ex As Exception
             MessageBox.Show(ex.Message)

@@ -26,14 +26,13 @@ Partial Class staffBookingSchedule
         Me.StaffMenuLayoutControl1 = New PublicTransportTicketingSystem.staffMenuLayoutControl()
         Me.dgvSchedule = New System.Windows.Forms.DataGridView()
         Me.ScheduleBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.PTTSDataSet = New PublicTransportTicketingSystem.PTTSDataSet()
-        Me.ScheduleTableAdapter = New PublicTransportTicketingSystem.PTTSDataSetTableAdapters.ScheduleTableAdapter()
+
         Me.departureDateTime = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.OriginIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DestinationIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.dgvSchedule, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ScheduleBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PTTSDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+
         Me.SuspendLayout()
         '
         'StaffMenuLayoutControl1
@@ -62,18 +61,8 @@ Partial Class staffBookingSchedule
         'ScheduleBindingSource
         '
         Me.ScheduleBindingSource.DataMember = "Schedule"
-        Me.ScheduleBindingSource.DataSource = Me.PTTSDataSet
-        '
-        'PTTSDataSet
-        '
-        Me.PTTSDataSet.DataSetName = "PTTSDataSet"
-        Me.PTTSDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'ScheduleTableAdapter
-        '
-        Me.ScheduleTableAdapter.ClearBeforeFill = True
-        '
-        'departureDateTime
+
+
         '
         Me.departureDateTime.DataPropertyName = "departureDateTime"
         Me.departureDateTime.HeaderText = "DepartureTime"
@@ -106,16 +95,14 @@ Partial Class staffBookingSchedule
         Me.Text = "staffBookingSchedule"
         CType(Me.dgvSchedule, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ScheduleBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PTTSDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
 
     Friend WithEvents StaffMenuLayoutControl1 As staffMenuLayoutControl
     Friend WithEvents dgvSchedule As DataGridView
-    Friend WithEvents PTTSDataSet As PTTSDataSet
+
     Friend WithEvents ScheduleBindingSource As BindingSource
-    Friend WithEvents ScheduleTableAdapter As PTTSDataSetTableAdapters.ScheduleTableAdapter
     Friend WithEvents departureDateTime As DataGridViewTextBoxColumn
     Friend WithEvents OriginIDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents DestinationIDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn

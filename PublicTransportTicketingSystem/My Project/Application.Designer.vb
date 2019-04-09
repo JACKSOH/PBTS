@@ -11,6 +11,7 @@ Option Explicit On
 '------------------------------------------------------------------------------
 
 Imports Microsoft.VisualBasic.ApplicationServices
+Imports Microsoft.VisualBasic.Devices
 
 Namespace My
 
@@ -40,9 +41,6 @@ Namespace My
             Me.SplashScreen = Global.PublicTransportTicketingSystem.ManagerViewSchdule
         End Sub
 
-        Private Sub MyApplication_Startup(sender As Object, e As StartupEventArgs) Handles Me.Startup
-            Dim path As String = AppDomain.CurrentDomain.BaseDirectory.Replace("bin\debug\", "")
-            AppDomain.CurrentDomain.SetData("DataDirectory", path)
-        End Sub
+
     End Class
 End Namespace

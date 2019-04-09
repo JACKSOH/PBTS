@@ -23,7 +23,7 @@ Partial Class StaffBooking
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
 
-        Me.gbTrain = New System.Windows.Forms.GroupBox()
+
         Me.btnSearch = New System.Windows.Forms.Button()
 
         Me.cboDestination = New System.Windows.Forms.ComboBox()
@@ -36,28 +36,10 @@ Partial Class StaffBooking
 
         Me.TranportSelection1 = New PublicTransportTicketingSystem.TranportSelection()
         Me.StaffMenuLayoutControl1 = New PublicTransportTicketingSystem.staffMenuLayoutControl()
-        Me.gbTrain.SuspendLayout()
+
         Me.SuspendLayout()
         '
-        'gbTrain
-        '
-        Me.gbTrain.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.gbTrain.Controls.Add(Me.btnSearch)
-        Me.gbTrain.Controls.Add(Me.cboDestination)
-        Me.gbTrain.Controls.Add(Me.cboOrigin)
-        Me.gbTrain.Controls.Add(Me.dtpDeparture)
-        Me.gbTrain.Controls.Add(Me.Label8)
-        Me.gbTrain.Controls.Add(Me.De)
-        Me.gbTrain.Controls.Add(Me.Label5)
-        Me.gbTrain.Controls.Add(Me.Label4)
-        Me.gbTrain.Font = New System.Drawing.Font("Tw Cen MT", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.gbTrain.Location = New System.Drawing.Point(316, 261)
-        Me.gbTrain.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.gbTrain.Name = "gbTrain"
-        Me.gbTrain.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.gbTrain.Size = New System.Drawing.Size(716, 165)
-        Me.gbTrain.TabIndex = 41
-        Me.gbTrain.TabStop = False
+
         '
         'btnSearch
         '
@@ -178,7 +160,7 @@ Partial Class StaffBooking
 
         Me.ClientSize = New System.Drawing.Size(1067, 708)
         Me.Controls.Add(Me.TranportSelection1)
-        Me.Controls.Add(Me.gbTrain)
+
 
         Me.Controls.Add(Me.StaffMenuLayoutControl1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None

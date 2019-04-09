@@ -22,173 +22,173 @@ Imports System.Linq.Expressions
 Imports System.Reflection
 
 
-<Global.System.Data.Linq.Mapping.DatabaseAttribute(Name:="PTTS")>  _
+<Global.System.Data.Linq.Mapping.DatabaseAttribute(Name:="PTTS")>
 Partial Public Class PBTSDataContext
-	Inherits System.Data.Linq.DataContext
-	
-	Private Shared mappingSource As System.Data.Linq.Mapping.MappingSource = New AttributeMappingSource()
-	
-  #Region "Extensibility Method Definitions"
-  Partial Private Sub OnCreated()
-  End Sub
-  Partial Private Sub InsertLocation(instance As Location)
+    Inherits System.Data.Linq.DataContext
+
+    Private Shared mappingSource As System.Data.Linq.Mapping.MappingSource = New AttributeMappingSource()
+
+#Region "Extensibility Method Definitions"
+    Partial Private Sub OnCreated()
     End Sub
-  Partial Private Sub UpdateLocation(instance As Location)
+    Partial Private Sub InsertLocation(instance As Location)
     End Sub
-  Partial Private Sub DeleteLocation(instance As Location)
+    Partial Private Sub UpdateLocation(instance As Location)
     End Sub
-  Partial Private Sub InsertLocationList(instance As LocationList)
+    Partial Private Sub DeleteLocation(instance As Location)
     End Sub
-  Partial Private Sub UpdateLocationList(instance As LocationList)
+    Partial Private Sub InsertLocationList(instance As LocationList)
     End Sub
-  Partial Private Sub DeleteLocationList(instance As LocationList)
+    Partial Private Sub UpdateLocationList(instance As LocationList)
     End Sub
-  Partial Private Sub InsertpromoteSchedule(instance As promoteSchedule)
+    Partial Private Sub DeleteLocationList(instance As LocationList)
     End Sub
-  Partial Private Sub UpdatepromoteSchedule(instance As promoteSchedule)
+    Partial Private Sub InsertpromoteSchedule(instance As promoteSchedule)
     End Sub
-  Partial Private Sub DeletepromoteSchedule(instance As promoteSchedule)
+    Partial Private Sub UpdatepromoteSchedule(instance As promoteSchedule)
     End Sub
-  Partial Private Sub InsertPromotion(instance As Promotion)
+    Partial Private Sub DeletepromoteSchedule(instance As promoteSchedule)
     End Sub
-  Partial Private Sub UpdatePromotion(instance As Promotion)
+    Partial Private Sub InsertPromotion(instance As Promotion)
     End Sub
-  Partial Private Sub DeletePromotion(instance As Promotion)
+    Partial Private Sub UpdatePromotion(instance As Promotion)
     End Sub
-  Partial Private Sub InsertSchedule(instance As Schedule)
+    Partial Private Sub DeletePromotion(instance As Promotion)
     End Sub
-  Partial Private Sub UpdateSchedule(instance As Schedule)
+    Partial Private Sub InsertSchedule(instance As Schedule)
     End Sub
-  Partial Private Sub DeleteSchedule(instance As Schedule)
+    Partial Private Sub UpdateSchedule(instance As Schedule)
     End Sub
-  Partial Private Sub InsertSeat(instance As Seat)
+    Partial Private Sub DeleteSchedule(instance As Schedule)
     End Sub
-  Partial Private Sub UpdateSeat(instance As Seat)
+    Partial Private Sub InsertSeat(instance As Seat)
     End Sub
-  Partial Private Sub DeleteSeat(instance As Seat)
+    Partial Private Sub UpdateSeat(instance As Seat)
     End Sub
-  Partial Private Sub InsertTable(instance As Table)
+    Partial Private Sub DeleteSeat(instance As Seat)
     End Sub
-  Partial Private Sub UpdateTable(instance As Table)
+    Partial Private Sub InsertTable(instance As Table)
     End Sub
-  Partial Private Sub DeleteTable(instance As Table)
+    Partial Private Sub UpdateTable(instance As Table)
     End Sub
-  Partial Private Sub InsertTicket(instance As Ticket)
+    Partial Private Sub DeleteTable(instance As Table)
     End Sub
-  Partial Private Sub UpdateTicket(instance As Ticket)
+    Partial Private Sub InsertTicket(instance As Ticket)
     End Sub
-  Partial Private Sub DeleteTicket(instance As Ticket)
+    Partial Private Sub UpdateTicket(instance As Ticket)
     End Sub
-  Partial Private Sub InsertTransport(instance As Transport)
+    Partial Private Sub DeleteTicket(instance As Ticket)
     End Sub
-  Partial Private Sub UpdateTransport(instance As Transport)
+    Partial Private Sub InsertTransport(instance As Transport)
     End Sub
-  Partial Private Sub DeleteTransport(instance As Transport)
+    Partial Private Sub UpdateTransport(instance As Transport)
     End Sub
-  Partial Private Sub InsertBooking(instance As Booking)
+    Partial Private Sub DeleteTransport(instance As Transport)
     End Sub
-  Partial Private Sub UpdateBooking(instance As Booking)
+    Partial Private Sub InsertBooking(instance As Booking)
     End Sub
-  Partial Private Sub DeleteBooking(instance As Booking)
+    Partial Private Sub UpdateBooking(instance As Booking)
     End Sub
-  Partial Private Sub InsertEmployee(instance As Employee)
+    Partial Private Sub DeleteBooking(instance As Booking)
     End Sub
-  Partial Private Sub UpdateEmployee(instance As Employee)
+    Partial Private Sub InsertEmployee(instance As Employee)
     End Sub
-  Partial Private Sub DeleteEmployee(instance As Employee)
+    Partial Private Sub UpdateEmployee(instance As Employee)
     End Sub
-  #End Region
-	
-	Public Sub New()
-		MyBase.New(Global.PublicTransportTicketingSystem.My.MySettings.Default.PTTSConnectionString, mappingSource)
-		OnCreated
-	End Sub
-	
-	Public Sub New(ByVal connection As String)
-		MyBase.New(connection, mappingSource)
-		OnCreated
-	End Sub
-	
-	Public Sub New(ByVal connection As System.Data.IDbConnection)
-		MyBase.New(connection, mappingSource)
-		OnCreated
-	End Sub
-	
-	Public Sub New(ByVal connection As String, ByVal mappingSource As System.Data.Linq.Mapping.MappingSource)
-		MyBase.New(connection, mappingSource)
-		OnCreated
-	End Sub
-	
-	Public Sub New(ByVal connection As System.Data.IDbConnection, ByVal mappingSource As System.Data.Linq.Mapping.MappingSource)
-		MyBase.New(connection, mappingSource)
-		OnCreated
-	End Sub
-	
-	Public ReadOnly Property Locations() As System.Data.Linq.Table(Of Location)
-		Get
-			Return Me.GetTable(Of Location)
-		End Get
-	End Property
-	
-	Public ReadOnly Property LocationLists() As System.Data.Linq.Table(Of LocationList)
-		Get
-			Return Me.GetTable(Of LocationList)
-		End Get
-	End Property
-	
-	Public ReadOnly Property promoteSchedules() As System.Data.Linq.Table(Of promoteSchedule)
-		Get
-			Return Me.GetTable(Of promoteSchedule)
-		End Get
-	End Property
-	
-	Public ReadOnly Property Promotions() As System.Data.Linq.Table(Of Promotion)
-		Get
-			Return Me.GetTable(Of Promotion)
-		End Get
-	End Property
-	
-	Public ReadOnly Property Schedules() As System.Data.Linq.Table(Of Schedule)
-		Get
-			Return Me.GetTable(Of Schedule)
-		End Get
-	End Property
-	
-	Public ReadOnly Property Seats() As System.Data.Linq.Table(Of Seat)
-		Get
-			Return Me.GetTable(Of Seat)
-		End Get
-	End Property
-	
-	Public ReadOnly Property Tables() As System.Data.Linq.Table(Of Table)
-		Get
-			Return Me.GetTable(Of Table)
-		End Get
-	End Property
-	
-	Public ReadOnly Property Tickets() As System.Data.Linq.Table(Of Ticket)
-		Get
-			Return Me.GetTable(Of Ticket)
-		End Get
-	End Property
-	
-	Public ReadOnly Property Transports() As System.Data.Linq.Table(Of Transport)
-		Get
-			Return Me.GetTable(Of Transport)
-		End Get
-	End Property
-	
-	Public ReadOnly Property Bookings() As System.Data.Linq.Table(Of Booking)
-		Get
-			Return Me.GetTable(Of Booking)
-		End Get
-	End Property
-	
-	Public ReadOnly Property Employees() As System.Data.Linq.Table(Of Employee)
-		Get
-			Return Me.GetTable(Of Employee)
-		End Get
-	End Property
+    Partial Private Sub DeleteEmployee(instance As Employee)
+    End Sub
+#End Region
+
+    Public Sub New()
+        MyBase.New(Global.PublicTransportTicketingSystem.My.MySettings.Default.PTTSConnectionString, mappingSource)
+        OnCreated()
+    End Sub
+
+    Public Sub New(ByVal connection As String)
+        MyBase.New(connection, mappingSource)
+        OnCreated()
+    End Sub
+
+    Public Sub New(ByVal connection As System.Data.IDbConnection)
+        MyBase.New(connection, mappingSource)
+        OnCreated()
+    End Sub
+
+    Public Sub New(ByVal connection As String, ByVal mappingSource As System.Data.Linq.Mapping.MappingSource)
+        MyBase.New(connection, mappingSource)
+        OnCreated()
+    End Sub
+
+    Public Sub New(ByVal connection As System.Data.IDbConnection, ByVal mappingSource As System.Data.Linq.Mapping.MappingSource)
+        MyBase.New(connection, mappingSource)
+        OnCreated()
+    End Sub
+
+    Public ReadOnly Property Locations() As System.Data.Linq.Table(Of Location)
+        Get
+            Return Me.GetTable(Of Location)
+        End Get
+    End Property
+
+    Public ReadOnly Property LocationLists() As System.Data.Linq.Table(Of LocationList)
+        Get
+            Return Me.GetTable(Of LocationList)
+        End Get
+    End Property
+
+    Public ReadOnly Property promoteSchedules() As System.Data.Linq.Table(Of promoteSchedule)
+        Get
+            Return Me.GetTable(Of promoteSchedule)
+        End Get
+    End Property
+
+    Public ReadOnly Property Promotions() As System.Data.Linq.Table(Of Promotion)
+        Get
+            Return Me.GetTable(Of Promotion)
+        End Get
+    End Property
+
+    Public ReadOnly Property Schedules() As System.Data.Linq.Table(Of Schedule)
+        Get
+            Return Me.GetTable(Of Schedule)
+        End Get
+    End Property
+
+    Public ReadOnly Property Seats() As System.Data.Linq.Table(Of Seat)
+        Get
+            Return Me.GetTable(Of Seat)
+        End Get
+    End Property
+
+    Public ReadOnly Property Tables() As System.Data.Linq.Table(Of Table)
+        Get
+            Return Me.GetTable(Of Table)
+        End Get
+    End Property
+
+    Public ReadOnly Property Tickets() As System.Data.Linq.Table(Of Ticket)
+        Get
+            Return Me.GetTable(Of Ticket)
+        End Get
+    End Property
+
+    Public ReadOnly Property Transports() As System.Data.Linq.Table(Of Transport)
+        Get
+            Return Me.GetTable(Of Transport)
+        End Get
+    End Property
+
+    Public ReadOnly Property Bookings() As System.Data.Linq.Table(Of Booking)
+        Get
+            Return Me.GetTable(Of Booking)
+        End Get
+    End Property
+
+    Public ReadOnly Property Employees() As System.Data.Linq.Table(Of Employee)
+        Get
+            Return Me.GetTable(Of Employee)
+        End Get
+    End Property
 End Class
 
 <Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.Location")>  _

@@ -25,7 +25,7 @@ Option Explicit On
 Partial Public Class PTTSDataSet
     Inherits Global.System.Data.DataSet
     
-    Private tableSchedule As ScheduleDataTable
+    Private tableLocation As LocationDataTable
     
     Private _schemaSerializationMode As Global.System.Data.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
     
@@ -56,8 +56,8 @@ Partial Public Class PTTSDataSet
         If (Me.DetermineSchemaSerializationMode(info, context) = Global.System.Data.SchemaSerializationMode.IncludeSchema) Then
             Dim ds As Global.System.Data.DataSet = New Global.System.Data.DataSet()
             ds.ReadXmlSchema(New Global.System.Xml.XmlTextReader(New Global.System.IO.StringReader(strSchema)))
-            If (Not (ds.Tables("Schedule")) Is Nothing) Then
-                MyBase.Tables.Add(New ScheduleDataTable(ds.Tables("Schedule")))
+            If (Not (ds.Tables("Location")) Is Nothing) Then
+                MyBase.Tables.Add(New LocationDataTable(ds.Tables("Location")))
             End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
@@ -80,9 +80,9 @@ Partial Public Class PTTSDataSet
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
      Global.System.ComponentModel.Browsable(false),  _
      Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
-    Public ReadOnly Property Schedule() As ScheduleDataTable
+    Public ReadOnly Property Location() As LocationDataTable
         Get
-            Return Me.tableSchedule
+            Return Me.tableLocation
         End Get
     End Property
     
@@ -153,8 +153,8 @@ Partial Public Class PTTSDataSet
             Me.Reset
             Dim ds As Global.System.Data.DataSet = New Global.System.Data.DataSet()
             ds.ReadXml(reader)
-            If (Not (ds.Tables("Schedule")) Is Nothing) Then
-                MyBase.Tables.Add(New ScheduleDataTable(ds.Tables("Schedule")))
+            If (Not (ds.Tables("Location")) Is Nothing) Then
+                MyBase.Tables.Add(New LocationDataTable(ds.Tables("Location")))
             End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
@@ -188,10 +188,10 @@ Partial Public Class PTTSDataSet
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
     Friend Overloads Sub InitVars(ByVal initTable As Boolean)
-        Me.tableSchedule = CType(MyBase.Tables("Schedule"),ScheduleDataTable)
+        Me.tableLocation = CType(MyBase.Tables("Location"),LocationDataTable)
         If (initTable = true) Then
-            If (Not (Me.tableSchedule) Is Nothing) Then
-                Me.tableSchedule.InitVars
+            If (Not (Me.tableLocation) Is Nothing) Then
+                Me.tableLocation.InitVars
             End If
         End If
     End Sub
@@ -204,13 +204,13 @@ Partial Public Class PTTSDataSet
         Me.Namespace = "http://tempuri.org/PTTSDataSet.xsd"
         Me.EnforceConstraints = true
         Me.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
-        Me.tableSchedule = New ScheduleDataTable()
-        MyBase.Tables.Add(Me.tableSchedule)
+        Me.tableLocation = New LocationDataTable()
+        MyBase.Tables.Add(Me.tableLocation)
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-    Private Function ShouldSerializeSchedule() As Boolean
+    Private Function ShouldSerializeLocation() As Boolean
         Return false
     End Function
     
@@ -273,33 +273,27 @@ Partial Public Class PTTSDataSet
     End Function
     
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-    Public Delegate Sub ScheduleRowChangeEventHandler(ByVal sender As Object, ByVal e As ScheduleRowChangeEvent)
+    Public Delegate Sub LocationRowChangeEventHandler(ByVal sender As Object, ByVal e As LocationRowChangeEvent)
     
     '''<summary>
     '''Represents the strongly named DataTable class.
     '''</summary>
     <Global.System.Serializable(),  _
      Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
-    Partial Public Class ScheduleDataTable
-        Inherits Global.System.Data.TypedTableBase(Of ScheduleRow)
+    Partial Public Class LocationDataTable
+        Inherits Global.System.Data.TypedTableBase(Of LocationRow)
         
-        Private columnscheduleID As Global.System.Data.DataColumn
+        Private columnlocationID As Global.System.Data.DataColumn
         
-        Private columnoriginID As Global.System.Data.DataColumn
+        Private columnlocationName As Global.System.Data.DataColumn
         
-        Private columndestinationID As Global.System.Data.DataColumn
-        
-        Private columndepartureDateTime As Global.System.Data.DataColumn
-        
-        Private columnarrivalDateTIme As Global.System.Data.DataColumn
-        
-        Private columntransportID As Global.System.Data.DataColumn
+        Private columnlocationType As Global.System.Data.DataColumn
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Sub New()
             MyBase.New
-            Me.TableName = "Schedule"
+            Me.TableName = "Location"
             Me.BeginInit
             Me.InitClass
             Me.EndInit
@@ -332,49 +326,25 @@ Partial Public Class PTTSDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property scheduleIDColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property locationIDColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnscheduleID
+                Return Me.columnlocationID
             End Get
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property originIDColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property locationNameColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnoriginID
+                Return Me.columnlocationName
             End Get
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property destinationIDColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property locationTypeColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columndestinationID
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property departureDateTimeColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columndepartureDateTime
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property arrivalDateTImeColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnarrivalDateTIme
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property transportIDColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columntransportID
+                Return Me.columnlocationType
             End Get
         End Property
         
@@ -389,50 +359,50 @@ Partial Public Class PTTSDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Default ReadOnly Property Item(ByVal index As Integer) As ScheduleRow
+        Public Default ReadOnly Property Item(ByVal index As Integer) As LocationRow
             Get
-                Return CType(Me.Rows(index),ScheduleRow)
+                Return CType(Me.Rows(index),LocationRow)
             End Get
         End Property
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Event ScheduleRowChanging As ScheduleRowChangeEventHandler
+        Public Event LocationRowChanging As LocationRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Event ScheduleRowChanged As ScheduleRowChangeEventHandler
+        Public Event LocationRowChanged As LocationRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Event ScheduleRowDeleting As ScheduleRowChangeEventHandler
+        Public Event LocationRowDeleting As LocationRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Event ScheduleRowDeleted As ScheduleRowChangeEventHandler
+        Public Event LocationRowDeleted As LocationRowChangeEventHandler
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Overloads Sub AddScheduleRow(ByVal row As ScheduleRow)
+        Public Overloads Sub AddLocationRow(ByVal row As LocationRow)
             Me.Rows.Add(row)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Overloads Function AddScheduleRow(ByVal scheduleID As String, ByVal originID As String, ByVal destinationID As String, ByVal departureDateTime As Date, ByVal arrivalDateTIme As Date, ByVal transportID As String) As ScheduleRow
-            Dim rowScheduleRow As ScheduleRow = CType(Me.NewRow,ScheduleRow)
-            Dim columnValuesArray() As Object = New Object() {scheduleID, originID, destinationID, departureDateTime, arrivalDateTIme, transportID}
-            rowScheduleRow.ItemArray = columnValuesArray
-            Me.Rows.Add(rowScheduleRow)
-            Return rowScheduleRow
+        Public Overloads Function AddLocationRow(ByVal locationID As String, ByVal locationName As String, ByVal locationType As String) As LocationRow
+            Dim rowLocationRow As LocationRow = CType(Me.NewRow,LocationRow)
+            Dim columnValuesArray() As Object = New Object() {locationID, locationName, locationType}
+            rowLocationRow.ItemArray = columnValuesArray
+            Me.Rows.Add(rowLocationRow)
+            Return rowLocationRow
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Function FindByscheduleID(ByVal scheduleID As String) As ScheduleRow
-            Return CType(Me.Rows.Find(New Object() {scheduleID}),ScheduleRow)
+        Public Function FindBylocationID(ByVal locationID As String) As LocationRow
+            Return CType(Me.Rows.Find(New Object() {locationID}),LocationRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Overrides Function Clone() As Global.System.Data.DataTable
-            Dim cln As ScheduleDataTable = CType(MyBase.Clone,ScheduleDataTable)
+            Dim cln As LocationDataTable = CType(MyBase.Clone,LocationDataTable)
             cln.InitVars
             Return cln
         End Function
@@ -440,68 +410,58 @@ Partial Public Class PTTSDataSet
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
-            Return New ScheduleDataTable()
+            Return New LocationDataTable()
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Friend Sub InitVars()
-            Me.columnscheduleID = MyBase.Columns("scheduleID")
-            Me.columnoriginID = MyBase.Columns("originID")
-            Me.columndestinationID = MyBase.Columns("destinationID")
-            Me.columndepartureDateTime = MyBase.Columns("departureDateTime")
-            Me.columnarrivalDateTIme = MyBase.Columns("arrivalDateTIme")
-            Me.columntransportID = MyBase.Columns("transportID")
+            Me.columnlocationID = MyBase.Columns("locationID")
+            Me.columnlocationName = MyBase.Columns("locationName")
+            Me.columnlocationType = MyBase.Columns("locationType")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Private Sub InitClass()
-            Me.columnscheduleID = New Global.System.Data.DataColumn("scheduleID", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnscheduleID)
-            Me.columnoriginID = New Global.System.Data.DataColumn("originID", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnoriginID)
-            Me.columndestinationID = New Global.System.Data.DataColumn("destinationID", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columndestinationID)
-            Me.columndepartureDateTime = New Global.System.Data.DataColumn("departureDateTime", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columndepartureDateTime)
-            Me.columnarrivalDateTIme = New Global.System.Data.DataColumn("arrivalDateTIme", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnarrivalDateTIme)
-            Me.columntransportID = New Global.System.Data.DataColumn("transportID", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columntransportID)
-            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnscheduleID}, true))
-            Me.columnscheduleID.AllowDBNull = false
-            Me.columnscheduleID.Unique = true
-            Me.columnscheduleID.MaxLength = 10
-            Me.columnoriginID.MaxLength = 50
-            Me.columndestinationID.MaxLength = 50
-            Me.columntransportID.MaxLength = 10
+            Me.columnlocationID = New Global.System.Data.DataColumn("locationID", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnlocationID)
+            Me.columnlocationName = New Global.System.Data.DataColumn("locationName", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnlocationName)
+            Me.columnlocationType = New Global.System.Data.DataColumn("locationType", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnlocationType)
+            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnlocationID}, true))
+            Me.columnlocationID.AllowDBNull = false
+            Me.columnlocationID.Unique = true
+            Me.columnlocationID.MaxLength = 10
+            Me.columnlocationName.MaxLength = 50
+            Me.columnlocationType.MaxLength = 50
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Function NewScheduleRow() As ScheduleRow
-            Return CType(Me.NewRow,ScheduleRow)
+        Public Function NewLocationRow() As LocationRow
+            Return CType(Me.NewRow,LocationRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
-            Return New ScheduleRow(builder)
+            Return New LocationRow(builder)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Protected Overrides Function GetRowType() As Global.System.Type
-            Return GetType(ScheduleRow)
+            Return GetType(LocationRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowChanged(e)
-            If (Not (Me.ScheduleRowChangedEvent) Is Nothing) Then
-                RaiseEvent ScheduleRowChanged(Me, New ScheduleRowChangeEvent(CType(e.Row,ScheduleRow), e.Action))
+            If (Not (Me.LocationRowChangedEvent) Is Nothing) Then
+                RaiseEvent LocationRowChanged(Me, New LocationRowChangeEvent(CType(e.Row,LocationRow), e.Action))
             End If
         End Sub
         
@@ -509,8 +469,8 @@ Partial Public Class PTTSDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowChanging(e)
-            If (Not (Me.ScheduleRowChangingEvent) Is Nothing) Then
-                RaiseEvent ScheduleRowChanging(Me, New ScheduleRowChangeEvent(CType(e.Row,ScheduleRow), e.Action))
+            If (Not (Me.LocationRowChangingEvent) Is Nothing) Then
+                RaiseEvent LocationRowChanging(Me, New LocationRowChangeEvent(CType(e.Row,LocationRow), e.Action))
             End If
         End Sub
         
@@ -518,8 +478,8 @@ Partial Public Class PTTSDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowDeleted(e)
-            If (Not (Me.ScheduleRowDeletedEvent) Is Nothing) Then
-                RaiseEvent ScheduleRowDeleted(Me, New ScheduleRowChangeEvent(CType(e.Row,ScheduleRow), e.Action))
+            If (Not (Me.LocationRowDeletedEvent) Is Nothing) Then
+                RaiseEvent LocationRowDeleted(Me, New LocationRowChangeEvent(CType(e.Row,LocationRow), e.Action))
             End If
         End Sub
         
@@ -527,14 +487,14 @@ Partial Public Class PTTSDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowDeleting(e)
-            If (Not (Me.ScheduleRowDeletingEvent) Is Nothing) Then
-                RaiseEvent ScheduleRowDeleting(Me, New ScheduleRowChangeEvent(CType(e.Row,ScheduleRow), e.Action))
+            If (Not (Me.LocationRowDeletingEvent) Is Nothing) Then
+                RaiseEvent LocationRowDeleting(Me, New LocationRowChangeEvent(CType(e.Row,LocationRow), e.Action))
             End If
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub RemoveScheduleRow(ByVal row As ScheduleRow)
+        Public Sub RemoveLocationRow(ByVal row As LocationRow)
             Me.Rows.Remove(row)
         End Sub
         
@@ -561,7 +521,7 @@ Partial Public Class PTTSDataSet
             type.Attributes.Add(attribute1)
             Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
             attribute2.Name = "tableTypeName"
-            attribute2.FixedValue = "ScheduleDataTable"
+            attribute2.FixedValue = "LocationDataTable"
             type.Attributes.Add(attribute2)
             type.Particle = sequence
             Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
@@ -608,162 +568,81 @@ Partial Public Class PTTSDataSet
     '''<summary>
     '''Represents strongly named DataRow class.
     '''</summary>
-    Partial Public Class ScheduleRow
+    Partial Public Class LocationRow
         Inherits Global.System.Data.DataRow
         
-        Private tableSchedule As ScheduleDataTable
+        Private tableLocation As LocationDataTable
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
             MyBase.New(rb)
-            Me.tableSchedule = CType(Me.Table,ScheduleDataTable)
+            Me.tableLocation = CType(Me.Table,LocationDataTable)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property scheduleID() As String
+        Public Property locationID() As String
             Get
-                Return CType(Me(Me.tableSchedule.scheduleIDColumn),String)
+                Return CType(Me(Me.tableLocation.locationIDColumn),String)
             End Get
             Set
-                Me(Me.tableSchedule.scheduleIDColumn) = value
+                Me(Me.tableLocation.locationIDColumn) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property originID() As String
+        Public Property locationName() As String
             Get
                 Try 
-                    Return CType(Me(Me.tableSchedule.originIDColumn),String)
+                    Return CType(Me(Me.tableLocation.locationNameColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'originID' in table 'Schedule' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'locationName' in table 'Location' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tableSchedule.originIDColumn) = value
+                Me(Me.tableLocation.locationNameColumn) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property destinationID() As String
+        Public Property locationType() As String
             Get
                 Try 
-                    Return CType(Me(Me.tableSchedule.destinationIDColumn),String)
+                    Return CType(Me(Me.tableLocation.locationTypeColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'destinationID' in table 'Schedule' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'locationType' in table 'Location' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tableSchedule.destinationIDColumn) = value
+                Me(Me.tableLocation.locationTypeColumn) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property departureDateTime() As Date
-            Get
-                Try 
-                    Return CType(Me(Me.tableSchedule.departureDateTimeColumn),Date)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'departureDateTime' in table 'Schedule' is DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tableSchedule.departureDateTimeColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property arrivalDateTIme() As Date
-            Get
-                Try 
-                    Return CType(Me(Me.tableSchedule.arrivalDateTImeColumn),Date)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'arrivalDateTIme' in table 'Schedule' is DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tableSchedule.arrivalDateTImeColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property transportID() As String
-            Get
-                Try 
-                    Return CType(Me(Me.tableSchedule.transportIDColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'transportID' in table 'Schedule' is DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tableSchedule.transportIDColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Function IsoriginIDNull() As Boolean
-            Return Me.IsNull(Me.tableSchedule.originIDColumn)
+        Public Function IslocationNameNull() As Boolean
+            Return Me.IsNull(Me.tableLocation.locationNameColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub SetoriginIDNull()
-            Me(Me.tableSchedule.originIDColumn) = Global.System.Convert.DBNull
+        Public Sub SetlocationNameNull()
+            Me(Me.tableLocation.locationNameColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Function IsdestinationIDNull() As Boolean
-            Return Me.IsNull(Me.tableSchedule.destinationIDColumn)
+        Public Function IslocationTypeNull() As Boolean
+            Return Me.IsNull(Me.tableLocation.locationTypeColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub SetdestinationIDNull()
-            Me(Me.tableSchedule.destinationIDColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Function IsdepartureDateTimeNull() As Boolean
-            Return Me.IsNull(Me.tableSchedule.departureDateTimeColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub SetdepartureDateTimeNull()
-            Me(Me.tableSchedule.departureDateTimeColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Function IsarrivalDateTImeNull() As Boolean
-            Return Me.IsNull(Me.tableSchedule.arrivalDateTImeColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub SetarrivalDateTImeNull()
-            Me(Me.tableSchedule.arrivalDateTImeColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Function IstransportIDNull() As Boolean
-            Return Me.IsNull(Me.tableSchedule.transportIDColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub SettransportIDNull()
-            Me(Me.tableSchedule.transportIDColumn) = Global.System.Convert.DBNull
+        Public Sub SetlocationTypeNull()
+            Me(Me.tableLocation.locationTypeColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -771,16 +650,16 @@ Partial Public Class PTTSDataSet
     '''Row event argument class
     '''</summary>
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-    Public Class ScheduleRowChangeEvent
+    Public Class LocationRowChangeEvent
         Inherits Global.System.EventArgs
         
-        Private eventRow As ScheduleRow
+        Private eventRow As LocationRow
         
         Private eventAction As Global.System.Data.DataRowAction
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub New(ByVal row As ScheduleRow, ByVal action As Global.System.Data.DataRowAction)
+        Public Sub New(ByVal row As LocationRow, ByVal action As Global.System.Data.DataRowAction)
             MyBase.New
             Me.eventRow = row
             Me.eventAction = action
@@ -788,7 +667,7 @@ Partial Public Class PTTSDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property Row() As ScheduleRow
+        Public ReadOnly Property Row() As LocationRow
             Get
                 Return Me.eventRow
             End Get
@@ -815,7 +694,7 @@ Namespace PTTSDataSetTableAdapters
      Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
      Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-    Partial Public Class ScheduleTableAdapter
+    Partial Public Class LocationTableAdapter
         Inherits Global.System.ComponentModel.Component
         
         Private WithEvents _adapter As Global.System.Data.SqlClient.SqlDataAdapter
@@ -932,82 +811,49 @@ Namespace PTTSDataSetTableAdapters
             Me._adapter = New Global.System.Data.SqlClient.SqlDataAdapter()
             Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
             tableMapping.SourceTable = "Table"
-            tableMapping.DataSetTable = "Schedule"
-            tableMapping.ColumnMappings.Add("scheduleID", "scheduleID")
-            tableMapping.ColumnMappings.Add("originID", "originID")
-            tableMapping.ColumnMappings.Add("destinationID", "destinationID")
-            tableMapping.ColumnMappings.Add("departureDateTime", "departureDateTime")
-            tableMapping.ColumnMappings.Add("arrivalDateTIme", "arrivalDateTIme")
-            tableMapping.ColumnMappings.Add("transportID", "transportID")
+            tableMapping.DataSetTable = "Location"
+            tableMapping.ColumnMappings.Add("locationID", "locationID")
+            tableMapping.ColumnMappings.Add("locationName", "locationName")
+            tableMapping.ColumnMappings.Add("locationType", "locationType")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
-            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Schedule] WHERE (([scheduleID] = @Original_scheduleID) AND ((@"& _ 
-                "IsNull_originID = 1 AND [originID] IS NULL) OR ([originID] = @Original_originID)"& _ 
-                ") AND ((@IsNull_destinationID = 1 AND [destinationID] IS NULL) OR ([destinationI"& _ 
-                "D] = @Original_destinationID)) AND ((@IsNull_departureDateTime = 1 AND [departur"& _ 
-                "eDateTime] IS NULL) OR ([departureDateTime] = @Original_departureDateTime)) AND "& _ 
-                "((@IsNull_arrivalDateTIme = 1 AND [arrivalDateTIme] IS NULL) OR ([arrivalDateTIm"& _ 
-                "e] = @Original_arrivalDateTIme)) AND ((@IsNull_transportID = 1 AND [transportID]"& _ 
-                " IS NULL) OR ([transportID] = @Original_transportID)))"
+            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Location] WHERE (([locationID] = @Original_locationID) AND ((@"& _ 
+                "IsNull_locationName = 1 AND [locationName] IS NULL) OR ([locationName] = @Origin"& _ 
+                "al_locationName)) AND ((@IsNull_locationType = 1 AND [locationType] IS NULL) OR "& _ 
+                "([locationType] = @Original_locationType)))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_scheduleID", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "scheduleID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_originID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "originID", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_originID", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "originID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_destinationID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "destinationID", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_destinationID", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "destinationID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_departureDateTime", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "departureDateTime", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_departureDateTime", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "departureDateTime", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_arrivalDateTIme", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "arrivalDateTIme", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_arrivalDateTIme", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "arrivalDateTIme", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_transportID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "transportID", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_transportID", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "transportID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_locationID", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "locationID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_locationName", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "locationName", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_locationName", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "locationName", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_locationType", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "locationType", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_locationType", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "locationType", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Schedule] ([scheduleID], [originID], [destinationID], [departu"& _ 
-                "reDateTime], [arrivalDateTIme], [transportID]) VALUES (@scheduleID, @originID, @"& _ 
-                "destinationID, @departureDateTime, @arrivalDateTIme, @transportID);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT sche"& _ 
-                "duleID, originID, destinationID, departureDateTime, arrivalDateTIme, transportID"& _ 
-                " FROM Schedule WHERE (scheduleID = @scheduleID)"
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Location] ([locationID], [locationName], [locationType]) VALUE"& _ 
+                "S (@locationID, @locationName, @locationType);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT locationID, locationName,"& _ 
+                " locationType FROM Location WHERE (locationID = @locationID)"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@scheduleID", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "scheduleID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@originID", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "originID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@destinationID", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "destinationID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@departureDateTime", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "departureDateTime", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@arrivalDateTIme", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "arrivalDateTIme", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@transportID", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "transportID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@locationID", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "locationID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@locationName", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "locationName", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@locationType", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "locationType", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[Schedule] SET [scheduleID] = @scheduleID, [originID] = @originID, ["& _ 
-                "destinationID] = @destinationID, [departureDateTime] = @departureDateTime, [arri"& _ 
-                "valDateTIme] = @arrivalDateTIme, [transportID] = @transportID WHERE (([scheduleI"& _ 
-                "D] = @Original_scheduleID) AND ((@IsNull_originID = 1 AND [originID] IS NULL) OR"& _ 
-                " ([originID] = @Original_originID)) AND ((@IsNull_destinationID = 1 AND [destina"& _ 
-                "tionID] IS NULL) OR ([destinationID] = @Original_destinationID)) AND ((@IsNull_d"& _ 
-                "epartureDateTime = 1 AND [departureDateTime] IS NULL) OR ([departureDateTime] = "& _ 
-                "@Original_departureDateTime)) AND ((@IsNull_arrivalDateTIme = 1 AND [arrivalDate"& _ 
-                "TIme] IS NULL) OR ([arrivalDateTIme] = @Original_arrivalDateTIme)) AND ((@IsNull"& _ 
-                "_transportID = 1 AND [transportID] IS NULL) OR ([transportID] = @Original_transp"& _ 
-                "ortID)));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT scheduleID, originID, destinationID, departureDateTime, arriva"& _ 
-                "lDateTIme, transportID FROM Schedule WHERE (scheduleID = @scheduleID)"
+            Me._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[Location] SET [locationID] = @locationID, [locationName] = @locatio"& _ 
+                "nName, [locationType] = @locationType WHERE (([locationID] = @Original_locationI"& _ 
+                "D) AND ((@IsNull_locationName = 1 AND [locationName] IS NULL) OR ([locationName]"& _ 
+                " = @Original_locationName)) AND ((@IsNull_locationType = 1 AND [locationType] IS"& _ 
+                " NULL) OR ([locationType] = @Original_locationType)));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT locationID, locat"& _ 
+                "ionName, locationType FROM Location WHERE (locationID = @locationID)"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@scheduleID", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "scheduleID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@originID", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "originID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@destinationID", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "destinationID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@departureDateTime", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "departureDateTime", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@arrivalDateTIme", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "arrivalDateTIme", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@transportID", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "transportID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_scheduleID", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "scheduleID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_originID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "originID", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_originID", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "originID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_destinationID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "destinationID", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_destinationID", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "destinationID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_departureDateTime", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "departureDateTime", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_departureDateTime", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "departureDateTime", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_arrivalDateTIme", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "arrivalDateTIme", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_arrivalDateTIme", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "arrivalDateTIme", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_transportID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "transportID", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_transportID", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "transportID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@locationID", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "locationID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@locationName", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "locationName", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@locationType", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "locationType", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_locationID", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "locationID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_locationName", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "locationName", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_locationName", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "locationName", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_locationType", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "locationType", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_locationType", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "locationType", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1020,33 +866,18 @@ Namespace PTTSDataSetTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(2) {}
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT scheduleID, originID, destinationID, departureDateTime, arrivalDateTIme, t"& _ 
-                "ransportID FROM dbo.Schedule"
+            Me._commandCollection(0).CommandText = "SELECT locationID, locationName, locationType FROM dbo.Location"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
-            Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
-            Me._commandCollection(1).Connection = Me.Connection
-            Me._commandCollection(1).CommandText = "SELECT        Schedule.scheduleID, Schedule.originID, Schedule.destinationID, Sch"& _ 
-                "edule.departureDateTime, Schedule.arrivalDateTIme, Schedule.transportID"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM   "& _ 
-                "         Schedule INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         Location ON Schedule.orig"& _ 
-                "inID = Location.locationID AND Schedule.destinationID = Location.locationID INNE"& _ 
-                "R JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         Location AS Location_1 ON Schedule.originID = L"& _ 
-                "ocation_1.locationID AND Schedule.destinationID = Location_1.locationID"
-            Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
-            Me._commandCollection(2) = New Global.System.Data.SqlClient.SqlCommand()
-            Me._commandCollection(2).Connection = Me.Connection
-            Me._commandCollection(2).CommandText = "SELECT scheduleID, originID, destinationID, departureDateTime, arrivalDateTIme, t"& _ 
-                "ransportID FROM dbo.Schedule"
-            Me._commandCollection(2).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
-        Public Overloads Overridable Function Fill(ByVal dataTable As PTTSDataSet.ScheduleDataTable) As Integer
+        Public Overloads Overridable Function Fill(ByVal dataTable As PTTSDataSet.LocationDataTable) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
             If (Me.ClearBeforeFill = true) Then
                 dataTable.Clear
@@ -1059,43 +890,17 @@ Namespace PTTSDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function GetData() As PTTSDataSet.ScheduleDataTable
+        Public Overloads Overridable Function GetData() As PTTSDataSet.LocationDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            Dim dataTable As PTTSDataSet.ScheduleDataTable = New PTTSDataSet.ScheduleDataTable()
+            Dim dataTable As PTTSDataSet.LocationDataTable = New PTTSDataSet.LocationDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
-        Public Overloads Overridable Function FillBy(ByVal dataTable As PTTSDataSet.ScheduleDataTable) As Integer
-            Me.Adapter.SelectCommand = Me.CommandCollection(1)
-            If (Me.ClearBeforeFill = true) Then
-                dataTable.Clear
-            End If
-            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
-            Return returnValue
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
-        Public Overloads Overridable Function FillBy1(ByVal dataTable As PTTSDataSet.ScheduleDataTable) As Integer
-            Me.Adapter.SelectCommand = Me.CommandCollection(2)
-            If (Me.ClearBeforeFill = true) Then
-                dataTable.Clear
-            End If
-            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
-            Return returnValue
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataTable As PTTSDataSet.ScheduleDataTable) As Integer
+        Public Overloads Overridable Function Update(ByVal dataTable As PTTSDataSet.LocationDataTable) As Integer
             Return Me.Adapter.Update(dataTable)
         End Function
         
@@ -1103,7 +908,7 @@ Namespace PTTSDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
         Public Overloads Overridable Function Update(ByVal dataSet As PTTSDataSet) As Integer
-            Return Me.Adapter.Update(dataSet, "Schedule")
+            Return Me.Adapter.Update(dataSet, "Location")
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1124,46 +929,25 @@ Namespace PTTSDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal Original_scheduleID As String, ByVal Original_originID As String, ByVal Original_destinationID As String, ByVal Original_departureDateTime As Global.System.Nullable(Of Date), ByVal Original_arrivalDateTIme As Global.System.Nullable(Of Date), ByVal Original_transportID As String) As Integer
-            If (Original_scheduleID Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("Original_scheduleID")
+        Public Overloads Overridable Function Delete(ByVal Original_locationID As String, ByVal Original_locationName As String, ByVal Original_locationType As String) As Integer
+            If (Original_locationID Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Original_locationID")
             Else
-                Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_scheduleID,String)
+                Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_locationID,String)
             End If
-            If (Original_originID Is Nothing) Then
+            If (Original_locationName Is Nothing) Then
                 Me.Adapter.DeleteCommand.Parameters(1).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(2).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.DeleteCommand.Parameters(1).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(2).Value = CType(Original_originID,String)
+                Me.Adapter.DeleteCommand.Parameters(2).Value = CType(Original_locationName,String)
             End If
-            If (Original_destinationID Is Nothing) Then
+            If (Original_locationType Is Nothing) Then
                 Me.Adapter.DeleteCommand.Parameters(3).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(4).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.DeleteCommand.Parameters(3).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(4).Value = CType(Original_destinationID,String)
-            End If
-            If (Original_departureDateTime.HasValue = true) Then
-                Me.Adapter.DeleteCommand.Parameters(5).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(6).Value = CType(Original_departureDateTime.Value,Date)
-            Else
-                Me.Adapter.DeleteCommand.Parameters(5).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(6).Value = Global.System.DBNull.Value
-            End If
-            If (Original_arrivalDateTIme.HasValue = true) Then
-                Me.Adapter.DeleteCommand.Parameters(7).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(8).Value = CType(Original_arrivalDateTIme.Value,Date)
-            Else
-                Me.Adapter.DeleteCommand.Parameters(7).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(8).Value = Global.System.DBNull.Value
-            End If
-            If (Original_transportID Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(9).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(10).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.DeleteCommand.Parameters(9).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(10).Value = CType(Original_transportID,String)
+                Me.Adapter.DeleteCommand.Parameters(4).Value = CType(Original_locationType,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
             If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
@@ -1184,36 +968,21 @@ Namespace PTTSDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal scheduleID As String, ByVal originID As String, ByVal destinationID As String, ByVal departureDateTime As Global.System.Nullable(Of Date), ByVal arrivalDateTIme As Global.System.Nullable(Of Date), ByVal transportID As String) As Integer
-            If (scheduleID Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("scheduleID")
+        Public Overloads Overridable Function Insert(ByVal locationID As String, ByVal locationName As String, ByVal locationType As String) As Integer
+            If (locationID Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("locationID")
             Else
-                Me.Adapter.InsertCommand.Parameters(0).Value = CType(scheduleID,String)
+                Me.Adapter.InsertCommand.Parameters(0).Value = CType(locationID,String)
             End If
-            If (originID Is Nothing) Then
+            If (locationName Is Nothing) Then
                 Me.Adapter.InsertCommand.Parameters(1).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.InsertCommand.Parameters(1).Value = CType(originID,String)
+                Me.Adapter.InsertCommand.Parameters(1).Value = CType(locationName,String)
             End If
-            If (destinationID Is Nothing) Then
+            If (locationType Is Nothing) Then
                 Me.Adapter.InsertCommand.Parameters(2).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.InsertCommand.Parameters(2).Value = CType(destinationID,String)
-            End If
-            If (departureDateTime.HasValue = true) Then
-                Me.Adapter.InsertCommand.Parameters(3).Value = CType(departureDateTime.Value,Date)
-            Else
-                Me.Adapter.InsertCommand.Parameters(3).Value = Global.System.DBNull.Value
-            End If
-            If (arrivalDateTIme.HasValue = true) Then
-                Me.Adapter.InsertCommand.Parameters(4).Value = CType(arrivalDateTIme.Value,Date)
-            Else
-                Me.Adapter.InsertCommand.Parameters(4).Value = Global.System.DBNull.Value
-            End If
-            If (transportID Is Nothing) Then
-                Me.Adapter.InsertCommand.Parameters(5).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.InsertCommand.Parameters(5).Value = CType(transportID,String)
+                Me.Adapter.InsertCommand.Parameters(2).Value = CType(locationType,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
             If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
@@ -1234,76 +1003,40 @@ Namespace PTTSDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal scheduleID As String, ByVal originID As String, ByVal destinationID As String, ByVal departureDateTime As Global.System.Nullable(Of Date), ByVal arrivalDateTIme As Global.System.Nullable(Of Date), ByVal transportID As String, ByVal Original_scheduleID As String, ByVal Original_originID As String, ByVal Original_destinationID As String, ByVal Original_departureDateTime As Global.System.Nullable(Of Date), ByVal Original_arrivalDateTIme As Global.System.Nullable(Of Date), ByVal Original_transportID As String) As Integer
-            If (scheduleID Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("scheduleID")
+        Public Overloads Overridable Function Update(ByVal locationID As String, ByVal locationName As String, ByVal locationType As String, ByVal Original_locationID As String, ByVal Original_locationName As String, ByVal Original_locationType As String) As Integer
+            If (locationID Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("locationID")
             Else
-                Me.Adapter.UpdateCommand.Parameters(0).Value = CType(scheduleID,String)
+                Me.Adapter.UpdateCommand.Parameters(0).Value = CType(locationID,String)
             End If
-            If (originID Is Nothing) Then
+            If (locationName Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(1).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(1).Value = CType(originID,String)
+                Me.Adapter.UpdateCommand.Parameters(1).Value = CType(locationName,String)
             End If
-            If (destinationID Is Nothing) Then
+            If (locationType Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(2).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(2).Value = CType(destinationID,String)
+                Me.Adapter.UpdateCommand.Parameters(2).Value = CType(locationType,String)
             End If
-            If (departureDateTime.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(departureDateTime.Value,Date)
+            If (Original_locationID Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Original_locationID")
             Else
-                Me.Adapter.UpdateCommand.Parameters(3).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(Original_locationID,String)
             End If
-            If (arrivalDateTIme.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(arrivalDateTIme.Value,Date)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(4).Value = Global.System.DBNull.Value
-            End If
-            If (transportID Is Nothing) Then
+            If (Original_locationName Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(5).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(transportID,String)
+                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(Original_locationName,String)
             End If
-            If (Original_scheduleID Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("Original_scheduleID")
+            If (Original_locationType Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(7).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(Original_scheduleID,String)
-            End If
-            If (Original_originID Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(8).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(Original_originID,String)
-            End If
-            If (Original_destinationID Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(10).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(Original_destinationID,String)
-            End If
-            If (Original_departureDateTime.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(Original_departureDateTime.Value,Date)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(12).Value = Global.System.DBNull.Value
-            End If
-            If (Original_arrivalDateTIme.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(Original_arrivalDateTIme.Value,Date)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(14).Value = Global.System.DBNull.Value
-            End If
-            If (Original_transportID Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(16).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(Original_transportID,String)
+                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(Original_locationType,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
             If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
@@ -1324,8 +1057,8 @@ Namespace PTTSDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal originID As String, ByVal destinationID As String, ByVal departureDateTime As Global.System.Nullable(Of Date), ByVal arrivalDateTIme As Global.System.Nullable(Of Date), ByVal transportID As String, ByVal Original_scheduleID As String, ByVal Original_originID As String, ByVal Original_destinationID As String, ByVal Original_departureDateTime As Global.System.Nullable(Of Date), ByVal Original_arrivalDateTIme As Global.System.Nullable(Of Date), ByVal Original_transportID As String) As Integer
-            Return Me.Update(Original_scheduleID, originID, destinationID, departureDateTime, arrivalDateTIme, transportID, Original_scheduleID, Original_originID, Original_destinationID, Original_departureDateTime, Original_arrivalDateTIme, Original_transportID)
+        Public Overloads Overridable Function Update(ByVal locationName As String, ByVal locationType As String, ByVal Original_locationID As String, ByVal Original_locationName As String, ByVal Original_locationType As String) As Integer
+            Return Me.Update(Original_locationID, locationName, locationType, Original_locationID, Original_locationName, Original_locationType)
         End Function
     End Class
     
@@ -1342,7 +1075,7 @@ Namespace PTTSDataSetTableAdapters
         
         Private _updateOrder As UpdateOrderOption
         
-        Private _scheduleTableAdapter As ScheduleTableAdapter
+        Private _locationTableAdapter As LocationTableAdapter
         
         Private _backupDataSetBeforeUpdate As Boolean
         
@@ -1364,12 +1097,12 @@ Namespace PTTSDataSetTableAdapters
          Global.System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso"& _ 
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3"& _ 
             "a", "System.Drawing.Design.UITypeEditor")>  _
-        Public Property ScheduleTableAdapter() As ScheduleTableAdapter
+        Public Property LocationTableAdapter() As LocationTableAdapter
             Get
-                Return Me._scheduleTableAdapter
+                Return Me._locationTableAdapter
             End Get
             Set
-                Me._scheduleTableAdapter = value
+                Me._locationTableAdapter = value
             End Set
         End Property
         
@@ -1392,9 +1125,9 @@ Namespace PTTSDataSetTableAdapters
                 If (Not (Me._connection) Is Nothing) Then
                     Return Me._connection
                 End If
-                If ((Not (Me._scheduleTableAdapter) Is Nothing)  _
-                            AndAlso (Not (Me._scheduleTableAdapter.Connection) Is Nothing)) Then
-                    Return Me._scheduleTableAdapter.Connection
+                If ((Not (Me._locationTableAdapter) Is Nothing)  _
+                            AndAlso (Not (Me._locationTableAdapter.Connection) Is Nothing)) Then
+                    Return Me._locationTableAdapter.Connection
                 End If
                 Return Nothing
             End Get
@@ -1409,7 +1142,7 @@ Namespace PTTSDataSetTableAdapters
         Public ReadOnly Property TableAdapterInstanceCount() As Integer
             Get
                 Dim count As Integer = 0
-                If (Not (Me._scheduleTableAdapter) Is Nothing) Then
+                If (Not (Me._locationTableAdapter) Is Nothing) Then
                     count = (count + 1)
                 End If
                 Return count
@@ -1423,12 +1156,12 @@ Namespace PTTSDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Private Function UpdateUpdatedRows(ByVal dataSet As PTTSDataSet, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow), ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
-            If (Not (Me._scheduleTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.Schedule.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+            If (Not (Me._locationTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.Location.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
                 updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
                 If ((Not (updatedRows) Is Nothing)  _
                             AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._scheduleTableAdapter.Update(updatedRows))
+                    result = (result + Me._locationTableAdapter.Update(updatedRows))
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
@@ -1442,11 +1175,11 @@ Namespace PTTSDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Private Function UpdateInsertedRows(ByVal dataSet As PTTSDataSet, ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
-            If (Not (Me._scheduleTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.Schedule.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+            If (Not (Me._locationTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.Location.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
                 If ((Not (addedRows) Is Nothing)  _
                             AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._scheduleTableAdapter.Update(addedRows))
+                    result = (result + Me._locationTableAdapter.Update(addedRows))
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
@@ -1460,11 +1193,11 @@ Namespace PTTSDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Private Function UpdateDeletedRows(ByVal dataSet As PTTSDataSet, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
-            If (Not (Me._scheduleTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.Schedule.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+            If (Not (Me._locationTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.Location.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
                 If ((Not (deletedRows) Is Nothing)  _
                             AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._scheduleTableAdapter.Update(deletedRows))
+                    result = (result + Me._locationTableAdapter.Update(deletedRows))
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
@@ -1509,8 +1242,8 @@ Namespace PTTSDataSetTableAdapters
             If (dataSet.HasChanges = false) Then
                 Return 0
             End If
-            If ((Not (Me._scheduleTableAdapter) Is Nothing)  _
-                        AndAlso (Me.MatchTableAdapterConnection(Me._scheduleTableAdapter.Connection) = false)) Then
+            If ((Not (Me._locationTableAdapter) Is Nothing)  _
+                        AndAlso (Me.MatchTableAdapterConnection(Me._locationTableAdapter.Connection) = false)) Then
                 Throw New Global.System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s"& _ 
                         "tring.")
             End If
@@ -1546,13 +1279,13 @@ Namespace PTTSDataSetTableAdapters
             Try 
                 '---- Prepare for update -----------
                 '
-                If (Not (Me._scheduleTableAdapter) Is Nothing) Then
-                    revertConnections.Add(Me._scheduleTableAdapter, Me._scheduleTableAdapter.Connection)
-                    Me._scheduleTableAdapter.Connection = CType(workConnection,Global.System.Data.SqlClient.SqlConnection)
-                    Me._scheduleTableAdapter.Transaction = CType(workTransaction,Global.System.Data.SqlClient.SqlTransaction)
-                    If Me._scheduleTableAdapter.Adapter.AcceptChangesDuringUpdate Then
-                        Me._scheduleTableAdapter.Adapter.AcceptChangesDuringUpdate = false
-                        adaptersWithAcceptChangesDuringUpdate.Add(Me._scheduleTableAdapter.Adapter)
+                If (Not (Me._locationTableAdapter) Is Nothing) Then
+                    revertConnections.Add(Me._locationTableAdapter, Me._locationTableAdapter.Connection)
+                    Me._locationTableAdapter.Connection = CType(workConnection,Global.System.Data.SqlClient.SqlConnection)
+                    Me._locationTableAdapter.Transaction = CType(workTransaction,Global.System.Data.SqlClient.SqlTransaction)
+                    If Me._locationTableAdapter.Adapter.AcceptChangesDuringUpdate Then
+                        Me._locationTableAdapter.Adapter.AcceptChangesDuringUpdate = false
+                        adaptersWithAcceptChangesDuringUpdate.Add(Me._locationTableAdapter.Adapter)
                     End If
                 End If
                 '
@@ -1615,9 +1348,9 @@ Namespace PTTSDataSetTableAdapters
                 If workConnOpened Then
                     workConnection.Close
                 End If
-                If (Not (Me._scheduleTableAdapter) Is Nothing) Then
-                    Me._scheduleTableAdapter.Connection = CType(revertConnections(Me._scheduleTableAdapter),Global.System.Data.SqlClient.SqlConnection)
-                    Me._scheduleTableAdapter.Transaction = Nothing
+                If (Not (Me._locationTableAdapter) Is Nothing) Then
+                    Me._locationTableAdapter.Connection = CType(revertConnections(Me._locationTableAdapter),Global.System.Data.SqlClient.SqlConnection)
+                    Me._locationTableAdapter.Transaction = Nothing
                 End If
                 If (0 < adaptersWithAcceptChangesDuringUpdate.Count) Then
                     Dim adapters((adaptersWithAcceptChangesDuringUpdate.Count) - 1) As Global.System.Data.Common.DataAdapter

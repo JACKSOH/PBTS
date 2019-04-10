@@ -97,9 +97,8 @@
       <Column Name="bookingID" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="customerIC" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
       <Column Name="customerContactNo" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
-      <Column Name="customerEmail" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="customerEmail" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
       <Column Name="ticketID" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
-      <Column Name="customerID" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
       <Column Name="employeeID" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
       <Association Name="Ticket_Booking" Member="Ticket" ThisKey="ticketID" OtherKey="ticketID" Type="Ticket" IsForeignKey="true" />
       <Association Name="Employee_Booking" Member="Employee" ThisKey="employeeID" OtherKey="employeeID" Type="Employee" IsForeignKey="true" />

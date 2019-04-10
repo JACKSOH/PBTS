@@ -10,7 +10,7 @@ Namespace My
     Partial Friend Class MyApplication
         Private Sub MyApplication_Startup(sender As Object, e As StartupEventArgs) Handles Me.Startup
             Dim path As String = AppDomain.CurrentDomain.BaseDirectory.Replace("bin\Debug\", "")
-            AppDomain.CurrentDomain.SetData("DataDirectory", path)
+            AppDomain.CurrentDomain.SetData("Data Directory", path)
         End Sub
     End Class
 End Namespace

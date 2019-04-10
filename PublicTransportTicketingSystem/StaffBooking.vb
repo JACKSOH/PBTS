@@ -61,8 +61,7 @@ Public Class StaffBooking
     End Sub
 
     Private Sub btnSearch_Click(sender As Object, e As EventArgs) Handles btnSearch.Click
-        Dim selectedDateTime As DateTime = dtpDeparture.Value
-        selectedDate = selectedDateTime.Date
+
 
         If cboOrigin.SelectedIndex = -1 Then
             cboOrigin.Select()
@@ -74,12 +73,15 @@ Public Class StaffBooking
             MessageBox.Show("Please select the Destination..", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End If
 
-        selectedOrigin = cboOrigin.SelectedItem.ToString
-        selectedDestination = cboDestination.SelectedItem.ToString
+        If cboDestination.SelectedIndex > -1 And cboOrigin.SelectedIndex > -1 Then
+            Dim selectedDateTime As DateTime = dtpDeparture.Value
+            selectedDate = selectedDateTime.Date
+            selectedOrigin = cboOrigin.SelectedItem.ToString
+            selectedDestination = cboDestination.SelectedItem.ToString
 
-        staffBookingSchedule.Show()
-        Me.Hide()
+            staffBookingSchedule.Show()
+            Me.Hide()
+        End If
+
     End Sub
-
-
 End Class

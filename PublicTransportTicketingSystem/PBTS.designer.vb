@@ -1909,8 +1909,6 @@ Partial Public Class Booking
 	
 	Private _ticketID As String
 	
-	Private _customerID As String
-	
 	Private _employeeID As String
 	
 	Private _Ticket As EntityRef(Of Ticket)
@@ -1943,10 +1941,6 @@ Partial Public Class Booking
     Partial Private Sub OnticketIDChanging(value As String)
     End Sub
     Partial Private Sub OnticketIDChanged()
-    End Sub
-    Partial Private Sub OncustomerIDChanging(value As String)
-    End Sub
-    Partial Private Sub OncustomerIDChanged()
     End Sub
     Partial Private Sub OnemployeeIDChanging(value As String)
     End Sub
@@ -2009,7 +2003,7 @@ Partial Public Class Booking
 		End Set
 	End Property
 	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_customerEmail", DbType:="VarChar(MAX)")>  _
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_customerEmail", DbType:="VarChar(60)")>  _
 	Public Property customerEmail() As String
 		Get
 			Return Me._customerEmail
@@ -2040,22 +2034,6 @@ Partial Public Class Booking
 				Me._ticketID = value
 				Me.SendPropertyChanged("ticketID")
 				Me.OnticketIDChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_customerID", DbType:="VarChar(10) NOT NULL", CanBeNull:=false)>  _
-	Public Property customerID() As String
-		Get
-			Return Me._customerID
-		End Get
-		Set
-			If (String.Equals(Me._customerID, value) = false) Then
-				Me.OncustomerIDChanging(value)
-				Me.SendPropertyChanging
-				Me._customerID = value
-				Me.SendPropertyChanged("customerID")
-				Me.OncustomerIDChanged
 			End If
 		End Set
 	End Property

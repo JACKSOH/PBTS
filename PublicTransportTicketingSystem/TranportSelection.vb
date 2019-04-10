@@ -8,6 +8,7 @@
         pbBus.BorderStyle = BorderStyle.FixedSingle
         selectedType = "Train"
         txtTransType.Text = "Train"
+
     End Sub
 
     Private Sub pbFerry_Click(sender As Object, e As EventArgs) Handles pbFerry.Click
@@ -17,6 +18,7 @@
         pbBus.BorderStyle = BorderStyle.FixedSingle
         selectedType = "Ferry"
         txtTransType.Text = "Ferry"
+
     End Sub
 
     Private Sub pbBus_Click(sender As Object, e As EventArgs) Handles pbBus.Click
@@ -26,9 +28,12 @@
         pbBus.BorderStyle = BorderStyle.Fixed3D
         selectedType = "Bus"
         txtTransType.Text = "Bus"
+
     End Sub
+    ' create even to to raise the transport change 
+    Public Event TransportChange(ByVal sender As Object, ByVal e As System.EventArgs)
 
-    Private Sub GroupBox1_Enter(sender As Object, e As EventArgs) Handles GroupBox1.Enter
-
+    Private Sub txtTransType_TextChanged(sender As Object, e As EventArgs) Handles txtTransType.TextChanged
+        RaiseEvent TransportChange(sender, e)
     End Sub
 End Class

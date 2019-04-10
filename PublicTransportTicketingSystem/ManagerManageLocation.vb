@@ -13,6 +13,7 @@
         txtTest.Text = ts.selectedType.ToString
 
 
+
     End Sub
 
 
@@ -69,10 +70,11 @@
         End If
     End Sub
 
-
-    Public Sub RaisePostBackEvent()
-        txtTest.Text = "hi"
+    Private Sub ChangeTranport() Handles ts.TransportChange
+        txtTest.Text = ts.selectedType.ToString
     End Sub
+
+
 
 
 End Class

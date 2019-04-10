@@ -4,6 +4,7 @@ Imports System.Data.SqlClient
 Public Class staffBookingSchedule
     Dim SqlConnection As New SqlConnection
 
+
     Dim originID As String
     Dim desID As String
     Private Sub staffBookingSchedule_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -39,10 +40,16 @@ Public Class staffBookingSchedule
 
             SqlConnection.Close()
 
+            Dim db As New PBTSDataContext()
 
+            Dim query = From origin In db.LocationLists
+                        Join schedule In db.Schedules On origin.scheduleID Equals (schedule.scheduleID)
+                        Join des In db.LocationLists On des.scheduleID Equals (origin.scheduleID)
+                        Where origin.locationID = originID
+                        Select schedule.scheduleID
 
-
-
+            dgvSchedule.DataSource = query
+            dgvSchedule.Refresh()
         Catch ex As Exception
             MessageBox.Show(ex.Message)
         End Try
@@ -50,4 +57,7 @@ Public Class staffBookingSchedule
 
     End Sub
 
+    Private Sub StaffMenuLayoutControl1_Load(sender As Object, e As EventArgs) Handles StaffMenuLayoutControl1.Load
+
+    End Sub
 End Class

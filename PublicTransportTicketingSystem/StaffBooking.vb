@@ -2,13 +2,21 @@
 
 Public Class StaffBooking
     Dim SqlConnection As New SqlConnection
-    Public Const connection As String = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\chunl\OneDrive\Desktop\PBTS\PublicTransportTicketingSystem\PTTS.mdf;Integrated Security=True"
+    Public Const connection As String = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\boonk\Source\Repos\JACKSOH\PBTS\PublicTransportTicketingSystem\PTTS.mdf;Integrated Security=True"
     Public retrieveLocation As String
     Public selectedDate As Date
     Public selectedOrigin As String
     Public selectedDestination As String
 
     Private Sub StaffMenuLayoutControl1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: This line of code loads data into the 'PTTSDataSet.Location' table. You can move, or remove it, as needed.
+        RetrieveOrigin()
+
+        dtpDeparture.MinDate = DateTime.Today
+        dtpDeparture.MaxDate = DateTime.Today.AddMonths(1)
+    End Sub
+    Private Sub RetrieveOrigin()
+        Me.LocationTableAdapter.Fill(Me.PTTSDataSet.Location)
         Try
             SqlConnection.ConnectionString = connection
             SqlConnection.Open()
@@ -27,8 +35,7 @@ Public Class StaffBooking
             MessageBox.Show(ex.Message)
         End Try
 
-        dtpDeparture.MinDate = DateTime.Today
-        dtpDeparture.MaxDate = DateTime.Today.AddMonths(1)
+
     End Sub
 
     Private Sub cboOrigin_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboOrigin.SelectedIndexChanged
@@ -49,16 +56,14 @@ Public Class StaffBooking
             End While
 
             SqlConnection.Close()
+            LocationTableAdapter.FillBySelectedOrigin(PTTSDataSet.Location, cboOrigin.SelectedItem.ToString)
+
         Catch ex As Exception
             MessageBox.Show(ex.Message)
         End Try
     End Sub
 
 
-    Private Sub TranportSelection1_Load(sender As Object, e As EventArgs) Handles TranportSelection1.MouseClick
-
-
-    End Sub
 
     Private Sub btnSearch_Click(sender As Object, e As EventArgs) Handles btnSearch.Click
         Dim selectedDateTime As DateTime = dtpDeparture.Value

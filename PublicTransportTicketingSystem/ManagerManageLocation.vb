@@ -36,7 +36,7 @@
             LocationBindingSource.EndEdit()
             LocationTableAdapter1.Update(PTTSDataSet.Location)
 
-            btnAdd.Enabled = False
+            btnAdd.Enabled = True
             dgv.ReadOnly = True
         End If
     End Sub

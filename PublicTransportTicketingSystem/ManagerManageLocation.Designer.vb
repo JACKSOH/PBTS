@@ -37,10 +37,12 @@ Partial Class ManagerManageLocation
         Me.txtTest = New System.Windows.Forms.TextBox()
         Me.ts = New PublicTransportTicketingSystem.TranportSelection()
         Me.ManagerMenuLayoutControl1 = New PublicTransportTicketingSystem.managerMenuLayoutControl()
+        Me.gbTranport = New System.Windows.Forms.GroupBox()
         CType(Me.dgv, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LocationBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PTTSDataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PTTSDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.gbTranport.SuspendLayout()
         Me.SuspendLayout()
         '
         'dgv
@@ -95,9 +97,9 @@ Partial Class ManagerManageLocation
         'btnUpdate
         '
         Me.btnUpdate.Font = New System.Drawing.Font("Tw Cen MT Condensed", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnUpdate.Location = New System.Drawing.Point(674, 359)
+        Me.btnUpdate.Location = New System.Drawing.Point(421, 239)
         Me.btnUpdate.Name = "btnUpdate"
-        Me.btnUpdate.Size = New System.Drawing.Size(79, 25)
+        Me.btnUpdate.Size = New System.Drawing.Size(81, 38)
         Me.btnUpdate.TabIndex = 2
         Me.btnUpdate.Text = "&Update"
         Me.btnUpdate.UseVisualStyleBackColor = True
@@ -108,11 +110,11 @@ Partial Class ManagerManageLocation
         '
         'btnAdd
         '
-        Me.btnAdd.BackColor = System.Drawing.SystemColors.AppWorkspace
+        Me.btnAdd.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.btnAdd.Font = New System.Drawing.Font("Tw Cen MT Condensed", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAdd.Location = New System.Drawing.Point(674, 297)
+        Me.btnAdd.Location = New System.Drawing.Point(421, 196)
         Me.btnAdd.Name = "btnAdd"
-        Me.btnAdd.Size = New System.Drawing.Size(81, 25)
+        Me.btnAdd.Size = New System.Drawing.Size(81, 37)
         Me.btnAdd.TabIndex = 3
         Me.btnAdd.Text = "&Add"
         Me.btnAdd.UseVisualStyleBackColor = False
@@ -120,16 +122,16 @@ Partial Class ManagerManageLocation
         'btnDeleteCancel
         '
         Me.btnDeleteCancel.Font = New System.Drawing.Font("Tw Cen MT Condensed", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnDeleteCancel.Location = New System.Drawing.Point(674, 500)
+        Me.btnDeleteCancel.Location = New System.Drawing.Point(368, 317)
         Me.btnDeleteCancel.Name = "btnDeleteCancel"
-        Me.btnDeleteCancel.Size = New System.Drawing.Size(81, 25)
+        Me.btnDeleteCancel.Size = New System.Drawing.Size(59, 33)
         Me.btnDeleteCancel.TabIndex = 4
         Me.btnDeleteCancel.Text = "&Delete"
         Me.btnDeleteCancel.UseVisualStyleBackColor = True
         '
         'txtTest
         '
-        Me.txtTest.Location = New System.Drawing.Point(688, 225)
+        Me.txtTest.Location = New System.Drawing.Point(674, 240)
         Me.txtTest.Name = "txtTest"
         Me.txtTest.Size = New System.Drawing.Size(100, 20)
         Me.txtTest.TabIndex = 6
@@ -149,6 +151,18 @@ Partial Class ManagerManageLocation
         Me.ManagerMenuLayoutControl1.Size = New System.Drawing.Size(800, 575)
         Me.ManagerMenuLayoutControl1.TabIndex = 0
         '
+        'gbTranport
+        '
+        Me.gbTranport.Controls.Add(Me.btnDeleteCancel)
+        Me.gbTranport.Controls.Add(Me.btnUpdate)
+        Me.gbTranport.Controls.Add(Me.btnAdd)
+        Me.gbTranport.Location = New System.Drawing.Point(241, 207)
+        Me.gbTranport.Name = "gbTranport"
+        Me.gbTranport.Size = New System.Drawing.Size(547, 356)
+        Me.gbTranport.TabIndex = 7
+        Me.gbTranport.TabStop = False
+        Me.gbTranport.Text = "Tranport Details"
+        '
         'ManagerManageLocation
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -156,10 +170,8 @@ Partial Class ManagerManageLocation
         Me.ClientSize = New System.Drawing.Size(800, 575)
         Me.Controls.Add(Me.txtTest)
         Me.Controls.Add(Me.ts)
-        Me.Controls.Add(Me.btnDeleteCancel)
-        Me.Controls.Add(Me.btnAdd)
-        Me.Controls.Add(Me.btnUpdate)
         Me.Controls.Add(Me.dgv)
+        Me.Controls.Add(Me.gbTranport)
         Me.Controls.Add(Me.ManagerMenuLayoutControl1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "ManagerManageLocation"
@@ -169,6 +181,7 @@ Partial Class ManagerManageLocation
         CType(Me.LocationBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PTTSDataSetBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PTTSDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.gbTranport.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -188,4 +201,5 @@ Partial Class ManagerManageLocation
     Friend WithEvents LocationTypeDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents ts As TranportSelection
     Friend WithEvents txtTest As TextBox
+    Friend WithEvents gbTranport As GroupBox
 End Class

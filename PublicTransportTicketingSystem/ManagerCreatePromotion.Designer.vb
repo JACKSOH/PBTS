@@ -27,23 +27,23 @@ Partial Class ManagerCreatePromotion
         Me.txtPromotionDesc = New System.Windows.Forms.TextBox()
         Me.txtPromotionName = New System.Windows.Forms.TextBox()
         Me.gbPromotionDate = New System.Windows.Forms.GroupBox()
+        Me.nupPromotionDuration = New System.Windows.Forms.NumericUpDown()
+        Me.dpPromotionStartDate = New System.Windows.Forms.DateTimePicker()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.gpDiscountRate = New System.Windows.Forms.GroupBox()
+        Me.nupCustomDiscount = New System.Windows.Forms.NumericUpDown()
+        Me.radCustomDiscount = New System.Windows.Forms.RadioButton()
+        Me.radFullDiscount = New System.Windows.Forms.RadioButton()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btnCancel = New System.Windows.Forms.Button()
         Me.btnNext = New System.Windows.Forms.Button()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.dpPromotionStartDate = New System.Windows.Forms.DateTimePicker()
-        Me.nupPromotionDuration = New System.Windows.Forms.NumericUpDown()
-        Me.radFullDiscount = New System.Windows.Forms.RadioButton()
-        Me.radCustomDiscount = New System.Windows.Forms.RadioButton()
-        Me.nupCustomDiscount = New System.Windows.Forms.NumericUpDown()
         Me.ManagerMenuLayoutControl1 = New PublicTransportTicketingSystem.managerMenuLayoutControl()
         Me.gbCreatePromotion.SuspendLayout()
         Me.gbPromotionDate.SuspendLayout()
-        Me.gpDiscountRate.SuspendLayout()
         CType(Me.nupPromotionDuration, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.gpDiscountRate.SuspendLayout()
         CType(Me.nupCustomDiscount, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -107,6 +107,43 @@ Partial Class ManagerCreatePromotion
         Me.gbPromotionDate.TabStop = False
         Me.gbPromotionDate.Text = "Date"
         '
+        'nupPromotionDuration
+        '
+        Me.nupPromotionDuration.Location = New System.Drawing.Point(9, 114)
+        Me.nupPromotionDuration.Maximum = New Decimal(New Integer() {7, 0, 0, 0})
+        Me.nupPromotionDuration.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.nupPromotionDuration.Name = "nupPromotionDuration"
+        Me.nupPromotionDuration.Size = New System.Drawing.Size(59, 24)
+        Me.nupPromotionDuration.TabIndex = 40
+        Me.nupPromotionDuration.Value = New Decimal(New Integer() {1, 0, 0, 0})
+        '
+        'dpPromotionStartDate
+        '
+        Me.dpPromotionStartDate.Location = New System.Drawing.Point(6, 54)
+        Me.dpPromotionStartDate.MinDate = New Date(2019, 4, 11, 0, 0, 0, 0)
+        Me.dpPromotionStartDate.Name = "dpPromotionStartDate"
+        Me.dpPromotionStartDate.Size = New System.Drawing.Size(217, 24)
+        Me.dpPromotionStartDate.TabIndex = 39
+        Me.dpPromotionStartDate.Value = New Date(2019, 4, 11, 12, 30, 3, 0)
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(6, 92)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(102, 18)
+        Me.Label5.TabIndex = 38
+        Me.Label5.Text = "Duration (Days)*"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(6, 33)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(87, 18)
+        Me.Label4.TabIndex = 37
+        Me.Label4.Text = "Starting Date*"
+        '
         'gpDiscountRate
         '
         Me.gpDiscountRate.Controls.Add(Me.nupCustomDiscount)
@@ -118,6 +155,39 @@ Partial Class ManagerCreatePromotion
         Me.gpDiscountRate.TabIndex = 32
         Me.gpDiscountRate.TabStop = False
         Me.gpDiscountRate.Text = "Discount"
+        '
+        'nupCustomDiscount
+        '
+        Me.nupCustomDiscount.Enabled = False
+        Me.nupCustomDiscount.Location = New System.Drawing.Point(38, 110)
+        Me.nupCustomDiscount.Maximum = New Decimal(New Integer() {99, 0, 0, 0})
+        Me.nupCustomDiscount.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.nupCustomDiscount.Name = "nupCustomDiscount"
+        Me.nupCustomDiscount.Size = New System.Drawing.Size(59, 24)
+        Me.nupCustomDiscount.TabIndex = 41
+        Me.nupCustomDiscount.Value = New Decimal(New Integer() {1, 0, 0, 0})
+        '
+        'radCustomDiscount
+        '
+        Me.radCustomDiscount.AutoSize = True
+        Me.radCustomDiscount.Location = New System.Drawing.Point(18, 82)
+        Me.radCustomDiscount.Name = "radCustomDiscount"
+        Me.radCustomDiscount.Size = New System.Drawing.Size(112, 22)
+        Me.radCustomDiscount.TabIndex = 1
+        Me.radCustomDiscount.Text = "Custom Set (%)"
+        Me.radCustomDiscount.UseVisualStyleBackColor = True
+        '
+        'radFullDiscount
+        '
+        Me.radFullDiscount.AutoSize = True
+        Me.radFullDiscount.Checked = True
+        Me.radFullDiscount.Location = New System.Drawing.Point(18, 44)
+        Me.radFullDiscount.Name = "radFullDiscount"
+        Me.radFullDiscount.Size = New System.Drawing.Size(127, 22)
+        Me.radFullDiscount.TabIndex = 0
+        Me.radFullDiscount.TabStop = True
+        Me.radFullDiscount.Text = "Free Ride / Board"
+        Me.radFullDiscount.UseVisualStyleBackColor = True
         '
         'Label2
         '
@@ -140,6 +210,7 @@ Partial Class ManagerCreatePromotion
         'btnCancel
         '
         Me.btnCancel.BackColor = System.Drawing.Color.Gray
+        Me.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnCancel.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.btnCancel.Location = New System.Drawing.Point(374, 378)
@@ -159,78 +230,8 @@ Partial Class ManagerCreatePromotion
         Me.btnNext.Name = "btnNext"
         Me.btnNext.Size = New System.Drawing.Size(100, 36)
         Me.btnNext.TabIndex = 26
-        Me.btnNext.Text = "&Next"
+        Me.btnNext.Text = "&NEXT"
         Me.btnNext.UseVisualStyleBackColor = False
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(6, 33)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(87, 18)
-        Me.Label4.TabIndex = 37
-        Me.Label4.Text = "Starting Date*"
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(6, 92)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(102, 18)
-        Me.Label5.TabIndex = 38
-        Me.Label5.Text = "Duration (Days)*"
-        '
-        'dpPromotionStartDate
-        '
-        Me.dpPromotionStartDate.Location = New System.Drawing.Point(6, 54)
-        Me.dpPromotionStartDate.MinDate = New Date(2019, 4, 11, 0, 0, 0, 0)
-        Me.dpPromotionStartDate.Name = "dpPromotionStartDate"
-        Me.dpPromotionStartDate.Size = New System.Drawing.Size(217, 24)
-        Me.dpPromotionStartDate.TabIndex = 39
-        Me.dpPromotionStartDate.Value = New Date(2019, 4, 11, 12, 30, 3, 0)
-        '
-        'nupPromotionDuration
-        '
-        Me.nupPromotionDuration.Location = New System.Drawing.Point(9, 114)
-        Me.nupPromotionDuration.Maximum = New Decimal(New Integer() {7, 0, 0, 0})
-        Me.nupPromotionDuration.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
-        Me.nupPromotionDuration.Name = "nupPromotionDuration"
-        Me.nupPromotionDuration.Size = New System.Drawing.Size(59, 24)
-        Me.nupPromotionDuration.TabIndex = 40
-        Me.nupPromotionDuration.Value = New Decimal(New Integer() {1, 0, 0, 0})
-        '
-        'radFullDiscount
-        '
-        Me.radFullDiscount.AutoSize = True
-        Me.radFullDiscount.Checked = True
-        Me.radFullDiscount.Location = New System.Drawing.Point(18, 44)
-        Me.radFullDiscount.Name = "radFullDiscount"
-        Me.radFullDiscount.Size = New System.Drawing.Size(127, 22)
-        Me.radFullDiscount.TabIndex = 0
-        Me.radFullDiscount.TabStop = True
-        Me.radFullDiscount.Text = "Free Ride / Board"
-        Me.radFullDiscount.UseVisualStyleBackColor = True
-        '
-        'radCustomDiscount
-        '
-        Me.radCustomDiscount.AutoSize = True
-        Me.radCustomDiscount.Location = New System.Drawing.Point(18, 82)
-        Me.radCustomDiscount.Name = "radCustomDiscount"
-        Me.radCustomDiscount.Size = New System.Drawing.Size(112, 22)
-        Me.radCustomDiscount.TabIndex = 1
-        Me.radCustomDiscount.Text = "Custom Set (%)"
-        Me.radCustomDiscount.UseVisualStyleBackColor = True
-        '
-        'nupCustomDiscount
-        '
-        Me.nupCustomDiscount.Enabled = False
-        Me.nupCustomDiscount.Location = New System.Drawing.Point(38, 110)
-        Me.nupCustomDiscount.Maximum = New Decimal(New Integer() {99, 0, 0, 0})
-        Me.nupCustomDiscount.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
-        Me.nupCustomDiscount.Name = "nupCustomDiscount"
-        Me.nupCustomDiscount.Size = New System.Drawing.Size(59, 24)
-        Me.nupCustomDiscount.TabIndex = 41
-        Me.nupCustomDiscount.Value = New Decimal(New Integer() {1, 0, 0, 0})
         '
         'ManagerMenuLayoutControl1
         '
@@ -242,8 +243,10 @@ Partial Class ManagerCreatePromotion
         '
         'ManagerCreatePromotion
         '
+        Me.AcceptButton = Me.btnNext
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.CancelButton = Me.btnCancel
         Me.ClientSize = New System.Drawing.Size(800, 575)
         Me.Controls.Add(Me.gbCreatePromotion)
         Me.Controls.Add(Me.ManagerMenuLayoutControl1)
@@ -254,9 +257,9 @@ Partial Class ManagerCreatePromotion
         Me.gbCreatePromotion.PerformLayout()
         Me.gbPromotionDate.ResumeLayout(False)
         Me.gbPromotionDate.PerformLayout()
+        CType(Me.nupPromotionDuration, System.ComponentModel.ISupportInitialize).EndInit()
         Me.gpDiscountRate.ResumeLayout(False)
         Me.gpDiscountRate.PerformLayout()
-        CType(Me.nupPromotionDuration, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.nupCustomDiscount, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 

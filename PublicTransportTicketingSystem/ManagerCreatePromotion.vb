@@ -25,7 +25,8 @@
             ErrorName.Visible = True
         Else
             ErrorName.Visible = False
-
+            ManageCreatePromotionPart2.Show()
+            Me.Hide()
         End If
     End Sub
 End Class

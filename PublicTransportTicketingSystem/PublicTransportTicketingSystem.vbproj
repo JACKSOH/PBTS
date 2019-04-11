@@ -97,6 +97,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="ManageCreatePromotionPart2.Designer.vb">
+      <DependentUpon>ManageCreatePromotionPart2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ManageCreatePromotionPart2.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ManagerCreatePromotion.Designer.vb">
       <DependentUpon>ManagerCreatePromotion.vb</DependentUpon>
     </Compile>
@@ -208,6 +214,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="ManageCreatePromotionPart2.resx">
+      <DependentUpon>ManageCreatePromotionPart2.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ManagerCreatePromotion.resx">
       <DependentUpon>ManagerCreatePromotion.vb</DependentUpon>
     </EmbeddedResource>

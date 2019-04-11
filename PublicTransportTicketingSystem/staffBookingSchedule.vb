@@ -43,13 +43,24 @@ Public Class staffBookingSchedule
             Dim db As New PBTSDataContext()
 
             Dim query = From origin In db.LocationLists
-                        Join schedule In db.Schedules On origin.scheduleID Equals (schedule.scheduleID)
-                        Join des In db.LocationLists On des.scheduleID Equals (origin.scheduleID)
                         Where origin.locationID = originID
-                        Select schedule.scheduleID
+                        Join schedule In db.Schedules On schedule.scheduleID Equals (origin.scheduleID)
+                        Join des In db.LocationLists On des.scheduleID Equals (origin.scheduleID)
+                        Join originLocation In db.Locations On originLocation.locationID Equals (origin.locationID)
+                        Join desLocation In db.Locations On desLocation.locationID Equals (des.locationID)
+                        Select originLocation.locationName, schedule.departureDateTime, schedule.arrivalDateTIme
 
-            dgvSchedule.DataSource = query
-            dgvSchedule.Refresh()
+            Dim dt As New DataTable
+            '' Create 3 typed columns in the DataTable.
+            dt.Columns.Add("Origin", GetType(String))
+            dt.Columns.Add("Departure Date", GetType(Date))
+            dt.Columns.Add("Arrival Date", GetType(Date))
+
+
+
+            dt.LoadDataRow(New Object() {query.First.locationName, query.First.departureDateTime, query.First.arrivalDateTIme}, True)
+            dgvSchedule.DataSource = dt
+
         Catch ex As Exception
             MessageBox.Show(ex.Message)
         End Try

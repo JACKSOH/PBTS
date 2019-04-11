@@ -2,7 +2,7 @@
 
 Public Class StaffBooking
     Dim SqlConnection As New SqlConnection
-    Public Const connection As String = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\boonk\Source\Repos\JACKSOH\PBTS\PublicTransportTicketingSystem\PTTS.mdf;Integrated Security=True"
+    Public Const connection As String = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\chunl\OneDrive\Desktop\PBTS\PublicTransportTicketingSystem\PTTS.mdf;Integrated Security=True"
     Public retrieveLocation As String
     Public selectedDate As Date
     Public selectedOrigin As String

@@ -23,58 +23,47 @@ Partial Class staffBookingSchedule
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Me.StaffMenuLayoutControl1 = New PublicTransportTicketingSystem.staffMenuLayoutControl()
         Me.dgvSchedule = New System.Windows.Forms.DataGridView()
-        Me.departureDateTime = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ScheduleBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.StaffMenuLayoutControl1 = New PublicTransportTicketingSystem.staffMenuLayoutControl()
         CType(Me.dgvSchedule, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ScheduleBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
+        '
+        'dgvSchedule
+        '
+        Me.dgvSchedule.AllowUserToAddRows = False
+        Me.dgvSchedule.AllowUserToDeleteRows = False
+        Me.dgvSchedule.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvSchedule.Location = New System.Drawing.Point(434, 137)
+        Me.dgvSchedule.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.dgvSchedule.Name = "dgvSchedule"
+        Me.dgvSchedule.ReadOnly = True
+        Me.dgvSchedule.RowTemplate.Height = 24
+        Me.dgvSchedule.Size = New System.Drawing.Size(509, 330)
+        Me.dgvSchedule.TabIndex = 1
+        '
+        'ScheduleBindingSource
+        '
+        Me.ScheduleBindingSource.DataMember = "Schedule"
         '
         'StaffMenuLayoutControl1
         '
         Me.StaffMenuLayoutControl1.Location = New System.Drawing.Point(0, 0)
         Me.StaffMenuLayoutControl1.Margin = New System.Windows.Forms.Padding(0)
         Me.StaffMenuLayoutControl1.Name = "StaffMenuLayoutControl1"
-        Me.StaffMenuLayoutControl1.Size = New System.Drawing.Size(800, 575)
+        Me.StaffMenuLayoutControl1.Size = New System.Drawing.Size(1067, 708)
         Me.StaffMenuLayoutControl1.TabIndex = 0
-        '
-        'dgvSchedule
-        '
-        Me.dgvSchedule.AllowUserToAddRows = False
-        Me.dgvSchedule.AllowUserToDeleteRows = False
-        Me.dgvSchedule.AutoGenerateColumns = False
-        Me.dgvSchedule.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvSchedule.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.departureDateTime})
-        Me.dgvSchedule.DataSource = Me.ScheduleBindingSource
-        Me.dgvSchedule.Location = New System.Drawing.Point(256, 200)
-        Me.dgvSchedule.Margin = New System.Windows.Forms.Padding(2)
-        Me.dgvSchedule.Name = "dgvSchedule"
-        Me.dgvSchedule.ReadOnly = True
-        Me.dgvSchedule.RowTemplate.Height = 24
-        Me.dgvSchedule.Size = New System.Drawing.Size(262, 268)
-        Me.dgvSchedule.TabIndex = 1
-        '
-        'departureDateTime
-        '
-        Me.departureDateTime.DataPropertyName = "departureDateTime"
-        Me.departureDateTime.HeaderText = "DepartureTime"
-        Me.departureDateTime.Name = "departureDateTime"
-        Me.departureDateTime.ReadOnly = True
-        '
-        'ScheduleBindingSource
-        '
-        Me.ScheduleBindingSource.DataMember = "Schedule"
         '
         'staffBookingSchedule
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(802, 592)
+        Me.ClientSize = New System.Drawing.Size(1069, 729)
         Me.Controls.Add(Me.dgvSchedule)
         Me.Controls.Add(Me.StaffMenuLayoutControl1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Margin = New System.Windows.Forms.Padding(2)
+        Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "staffBookingSchedule"
         Me.Text = "staffBookingSchedule"
         CType(Me.dgvSchedule, System.ComponentModel.ISupportInitialize).EndInit()
@@ -87,7 +76,6 @@ Partial Class staffBookingSchedule
     Friend WithEvents dgvSchedule As DataGridView
 
     Friend WithEvents ScheduleBindingSource As BindingSource
-    Friend WithEvents departureDateTime As DataGridViewTextBoxColumn
     Friend WithEvents OriginIDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents DestinationIDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
 End Class

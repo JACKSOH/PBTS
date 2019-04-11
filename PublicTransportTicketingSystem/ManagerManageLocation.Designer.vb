@@ -24,9 +24,6 @@ Partial Class ManagerManageLocation
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.dgv = New System.Windows.Forms.DataGridView()
-        Me.LocationIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.LocationNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.LocationTypeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.LocationBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.PTTSDataSetBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.PTTSDataSet = New PublicTransportTicketingSystem.PTTSDataSet()
@@ -38,6 +35,9 @@ Partial Class ManagerManageLocation
         Me.ts = New PublicTransportTicketingSystem.TranportSelection()
         Me.ManagerMenuLayoutControl1 = New PublicTransportTicketingSystem.managerMenuLayoutControl()
         Me.gbTranport = New System.Windows.Forms.GroupBox()
+        Me.LocationIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.LocationNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.LocationTypeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.dgv, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LocationBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PTTSDataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -55,29 +55,6 @@ Partial Class ManagerManageLocation
         Me.dgv.Name = "dgv"
         Me.dgv.Size = New System.Drawing.Size(413, 300)
         Me.dgv.TabIndex = 1
-        '
-        'LocationIDDataGridViewTextBoxColumn
-        '
-        Me.LocationIDDataGridViewTextBoxColumn.DataPropertyName = "locationID"
-        Me.LocationIDDataGridViewTextBoxColumn.HeaderText = "locationID"
-        Me.LocationIDDataGridViewTextBoxColumn.MinimumWidth = 8
-        Me.LocationIDDataGridViewTextBoxColumn.Name = "LocationIDDataGridViewTextBoxColumn"
-        '
-        'LocationNameDataGridViewTextBoxColumn
-        '
-        Me.LocationNameDataGridViewTextBoxColumn.DataPropertyName = "locationName"
-        Me.LocationNameDataGridViewTextBoxColumn.HeaderText = "locationName"
-        Me.LocationNameDataGridViewTextBoxColumn.MinimumWidth = 120
-        Me.LocationNameDataGridViewTextBoxColumn.Name = "LocationNameDataGridViewTextBoxColumn"
-        Me.LocationNameDataGridViewTextBoxColumn.Width = 120
-        '
-        'LocationTypeDataGridViewTextBoxColumn
-        '
-        Me.LocationTypeDataGridViewTextBoxColumn.DataPropertyName = "locationType"
-        Me.LocationTypeDataGridViewTextBoxColumn.HeaderText = "locationType"
-        Me.LocationTypeDataGridViewTextBoxColumn.MinimumWidth = 150
-        Me.LocationTypeDataGridViewTextBoxColumn.Name = "LocationTypeDataGridViewTextBoxColumn"
-        Me.LocationTypeDataGridViewTextBoxColumn.Width = 150
         '
         'LocationBindingSource
         '
@@ -121,13 +98,15 @@ Partial Class ManagerManageLocation
         '
         'btnDeleteCancel
         '
+        Me.btnDeleteCancel.BackColor = System.Drawing.Color.Red
         Me.btnDeleteCancel.Font = New System.Drawing.Font("Tw Cen MT Condensed", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnDeleteCancel.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.btnDeleteCancel.Location = New System.Drawing.Point(368, 317)
         Me.btnDeleteCancel.Name = "btnDeleteCancel"
         Me.btnDeleteCancel.Size = New System.Drawing.Size(59, 33)
         Me.btnDeleteCancel.TabIndex = 4
         Me.btnDeleteCancel.Text = "&Delete"
-        Me.btnDeleteCancel.UseVisualStyleBackColor = True
+        Me.btnDeleteCancel.UseVisualStyleBackColor = False
         '
         'txtTest
         '
@@ -138,9 +117,9 @@ Partial Class ManagerManageLocation
         '
         'ts
         '
-        Me.ts.Location = New System.Drawing.Point(251, 96)
+        Me.ts.Location = New System.Drawing.Point(241, 96)
         Me.ts.Name = "ts"
-        Me.ts.Size = New System.Drawing.Size(537, 104)
+        Me.ts.Size = New System.Drawing.Size(547, 104)
         Me.ts.TabIndex = 5
         '
         'ManagerMenuLayoutControl1
@@ -161,7 +140,30 @@ Partial Class ManagerManageLocation
         Me.gbTranport.Size = New System.Drawing.Size(547, 356)
         Me.gbTranport.TabIndex = 7
         Me.gbTranport.TabStop = False
-        Me.gbTranport.Text = "Tranport Details"
+        Me.gbTranport.Text = "Location Details"
+        '
+        'LocationIDDataGridViewTextBoxColumn
+        '
+        Me.LocationIDDataGridViewTextBoxColumn.DataPropertyName = "locationID"
+        Me.LocationIDDataGridViewTextBoxColumn.HeaderText = "ID"
+        Me.LocationIDDataGridViewTextBoxColumn.MinimumWidth = 8
+        Me.LocationIDDataGridViewTextBoxColumn.Name = "LocationIDDataGridViewTextBoxColumn"
+        '
+        'LocationNameDataGridViewTextBoxColumn
+        '
+        Me.LocationNameDataGridViewTextBoxColumn.DataPropertyName = "locationName"
+        Me.LocationNameDataGridViewTextBoxColumn.HeaderText = "Name"
+        Me.LocationNameDataGridViewTextBoxColumn.MinimumWidth = 120
+        Me.LocationNameDataGridViewTextBoxColumn.Name = "LocationNameDataGridViewTextBoxColumn"
+        Me.LocationNameDataGridViewTextBoxColumn.Width = 120
+        '
+        'LocationTypeDataGridViewTextBoxColumn
+        '
+        Me.LocationTypeDataGridViewTextBoxColumn.DataPropertyName = "locationType"
+        Me.LocationTypeDataGridViewTextBoxColumn.HeaderText = "Type"
+        Me.LocationTypeDataGridViewTextBoxColumn.MinimumWidth = 150
+        Me.LocationTypeDataGridViewTextBoxColumn.Name = "LocationTypeDataGridViewTextBoxColumn"
+        Me.LocationTypeDataGridViewTextBoxColumn.Width = 150
         '
         'ManagerManageLocation
         '
@@ -196,10 +198,10 @@ Partial Class ManagerManageLocation
     Friend WithEvents LocationBindingSource As BindingSource
     Friend WithEvents btnAdd As Button
     Friend WithEvents btnDeleteCancel As Button
-    Friend WithEvents LocationIDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents LocationNameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents LocationTypeDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents ts As TranportSelection
     Friend WithEvents txtTest As TextBox
     Friend WithEvents gbTranport As GroupBox
+    Friend WithEvents LocationIDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents LocationNameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents LocationTypeDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
 End Class

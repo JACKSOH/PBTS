@@ -109,6 +109,12 @@
     <Compile Include="managerIndex.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ManagerLocationInsert.Designer.vb">
+      <DependentUpon>ManagerLocationInsert.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerLocationInsert.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ManagerManageLocation.Designer.vb">
       <DependentUpon>ManagerManageLocation.vb</DependentUpon>
     </Compile>
@@ -127,6 +133,12 @@
     <Compile Include="ManagerPT.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ManagerTranportInsert.Designer.vb">
+      <DependentUpon>ManagerTranportInsert.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerTranportInsert.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ManagerViewPromotion.Designer.vb">
       <DependentUpon>ManagerViewPromotion.vb</DependentUpon>
     </Compile>
@@ -139,6 +151,7 @@
     <Compile Include="ManagerViewSchdule.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="App.vb" />
     <Compile Include="PBTS.designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -222,6 +235,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ManagerPT.resx">
       <DependentUpon>ManagerPT.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerTranportInsert.resx">
+      <DependentUpon>ManagerTranportInsert.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ManagerViewPromotion.resx">
       <DependentUpon>ManagerViewPromotion.vb</DependentUpon>

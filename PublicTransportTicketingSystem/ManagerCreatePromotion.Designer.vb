@@ -90,7 +90,7 @@ Partial Class ManagerCreatePromotion
         Me.btnCancel.BackColor = System.Drawing.Color.Gray
         Me.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnCancel.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.btnCancel.Location = New System.Drawing.Point(289, 303)
+        Me.btnCancel.Location = New System.Drawing.Point(325, 309)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.Size = New System.Drawing.Size(100, 36)
         Me.btnCancel.TabIndex = 29

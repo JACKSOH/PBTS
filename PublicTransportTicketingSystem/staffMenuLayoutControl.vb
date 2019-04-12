@@ -35,7 +35,7 @@
 
     End Sub
 
-    Private Sub lblTitle_Click(sender As Object, e As EventArgs) Handles lblTitle.Click
+    Private Sub lblTitle_Click(sender As Object, e As EventArgs)
 
     End Sub
 
@@ -56,6 +56,7 @@
     End Sub
 
     Private Sub btnReservation_Click(sender As Object, e As EventArgs) Handles btnReservation.Click
+        StaffBooking.Show()
 
     End Sub
 

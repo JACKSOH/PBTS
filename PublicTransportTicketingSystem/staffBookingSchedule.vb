@@ -3,7 +3,7 @@ Imports System.Data.SqlClient
 
 Public Class staffBookingSchedule
     Dim SqlConnection As New SqlConnection
-
+    Public scheduleID As String
 
     Dim originID As String
     Dim desID As String
@@ -20,7 +20,6 @@ Public Class staffBookingSchedule
 
             While originReader.Read
                 originID = originReader.GetString(0)
-                MessageBox.Show(originID)
             End While
 
             SqlConnection.Close()
@@ -35,7 +34,6 @@ Public Class staffBookingSchedule
 
             While desReader.Read
                 desID = desReader.GetString(0)
-                MessageBox.Show(desID)
             End While
 
             SqlConnection.Close()
@@ -43,23 +41,31 @@ Public Class staffBookingSchedule
             Dim db As New PBTSDataContext()
 
             Dim query = From origin In db.LocationLists
-                        Where origin.locationID = originID
                         Join schedule In db.Schedules On schedule.scheduleID Equals (origin.scheduleID)
-                        Join des In db.LocationLists On des.scheduleID Equals (origin.scheduleID)
+                        Join des In db.LocationLists On schedule.scheduleID Equals (des.scheduleID)
                         Join originLocation In db.Locations On originLocation.locationID Equals (origin.locationID)
                         Join desLocation In db.Locations On desLocation.locationID Equals (des.locationID)
-                        Select originLocation.locationName, schedule.departureDateTime, schedule.arrivalDateTIme
-
-            Dim dt As New DataTable
-            '' Create 3 typed columns in the DataTable.
-            dt.Columns.Add("Origin", GetType(String))
-            dt.Columns.Add("Departure Date", GetType(Date))
-            dt.Columns.Add("Arrival Date", GetType(Date))
+                        Where origin.locationID = originID And origin.locationType = "Origin" And des.locationID = desID And schedule.departureDateTime.Value.Date = StaffBooking.selectedDate
+                        Select originLocation.locationName, schedule.departureDateTime, schedule.arrivalDateTIme, schedule.scheduleID
 
 
 
-            dt.LoadDataRow(New Object() {query.First.locationName, query.First.departureDateTime, query.First.arrivalDateTIme}, True)
-            dgvSchedule.DataSource = dt
+            Dim col As New DataGridViewTextBoxColumn
+            col.DataPropertyName = "Destination"
+            col.HeaderText = "Destination"
+            col.Name = "colDes"
+            Dim i As Integer
+
+
+            dgvSchedule.DataSource = query
+            dgvSchedule.Columns("locationName").HeaderText = "Origin"
+            dgvSchedule.Columns("departureDateTime").HeaderText = "Departure Date Time"
+            dgvSchedule.Columns.Add(col)
+            For i = 0 To (query.Count - 1)
+                dgvSchedule.Rows(i).Cells(4).Value = StaffBooking.selectedDestination
+            Next
+
+            dgvSchedule.Columns("arrivalDateTIme").HeaderText = "Arrival Date Time"
 
         Catch ex As Exception
             MessageBox.Show(ex.Message)
@@ -68,7 +74,10 @@ Public Class staffBookingSchedule
 
     End Sub
 
-    Private Sub StaffMenuLayoutControl1_Load(sender As Object, e As EventArgs) Handles StaffMenuLayoutControl1.Load
+    Private Sub dgvSchedule_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvSchedule.CellDoubleClick
+        scheduleID = dgvSchedule.SelectedRows(0).Cells(3).Value.ToString
+        staffSeatSelection.ShowDialog()
+        'Me.Hide()
 
     End Sub
 End Class

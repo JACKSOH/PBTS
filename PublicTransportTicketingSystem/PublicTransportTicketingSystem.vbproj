@@ -155,6 +155,12 @@
     <Compile Include="StaffBooking.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="staffBookingCustomerDetail.Designer.vb">
+      <DependentUpon>staffBookingCustomerDetail.vb</DependentUpon>
+    </Compile>
+    <Compile Include="staffBookingCustomerDetail.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="staffBookingSchedule.Designer.vb">
       <DependentUpon>staffBookingSchedule.vb</DependentUpon>
     </Compile>
@@ -194,6 +200,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="staffSeatSelection.Designer.vb">
+      <DependentUpon>staffSeatSelection.vb</DependentUpon>
+    </Compile>
+    <Compile Include="staffSeatSelection.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="StaffViewPromotion.Designer.vb">
       <DependentUpon>StaffViewPromotion.vb</DependentUpon>
     </Compile>
@@ -232,6 +244,9 @@
     <EmbeddedResource Include="StaffBooking.resx">
       <DependentUpon>StaffBooking.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="staffBookingCustomerDetail.resx">
+      <DependentUpon>staffBookingCustomerDetail.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="staffBookingSchedule.resx">
       <DependentUpon>staffBookingSchedule.vb</DependentUpon>
     </EmbeddedResource>
@@ -249,6 +264,9 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="staffSeatSelection.resx">
+      <DependentUpon>staffSeatSelection.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StaffViewPromotion.resx">
       <DependentUpon>StaffViewPromotion.vb</DependentUpon>

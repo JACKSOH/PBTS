@@ -24,8 +24,8 @@ Partial Class staffBookingSchedule
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.dgvSchedule = New System.Windows.Forms.DataGridView()
-        Me.ScheduleBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.StaffMenuLayoutControl1 = New PublicTransportTicketingSystem.staffMenuLayoutControl()
+        Me.ScheduleBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         CType(Me.dgvSchedule, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ScheduleBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -34,26 +34,34 @@ Partial Class staffBookingSchedule
         '
         Me.dgvSchedule.AllowUserToAddRows = False
         Me.dgvSchedule.AllowUserToDeleteRows = False
+        Me.dgvSchedule.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.dgvSchedule.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.dgvSchedule.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
+        Me.dgvSchedule.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
         Me.dgvSchedule.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvSchedule.Location = New System.Drawing.Point(434, 137)
+        Me.dgvSchedule.Location = New System.Drawing.Point(346, 136)
         Me.dgvSchedule.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.dgvSchedule.MultiSelect = False
         Me.dgvSchedule.Name = "dgvSchedule"
         Me.dgvSchedule.ReadOnly = True
         Me.dgvSchedule.RowTemplate.Height = 24
-        Me.dgvSchedule.Size = New System.Drawing.Size(509, 330)
+        Me.dgvSchedule.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dgvSchedule.Size = New System.Drawing.Size(670, 357)
         Me.dgvSchedule.TabIndex = 1
-        '
-        'ScheduleBindingSource
-        '
-        Me.ScheduleBindingSource.DataMember = "Schedule"
         '
         'StaffMenuLayoutControl1
         '
         Me.StaffMenuLayoutControl1.Location = New System.Drawing.Point(0, 0)
         Me.StaffMenuLayoutControl1.Margin = New System.Windows.Forms.Padding(0)
         Me.StaffMenuLayoutControl1.Name = "StaffMenuLayoutControl1"
-        Me.StaffMenuLayoutControl1.Size = New System.Drawing.Size(1067, 708)
+        Me.StaffMenuLayoutControl1.Size = New System.Drawing.Size(1067, 730)
         Me.StaffMenuLayoutControl1.TabIndex = 0
+        '
+        'ScheduleBindingSource
+        '
+        Me.ScheduleBindingSource.DataMember = "Schedule"
         '
         'staffBookingSchedule
         '

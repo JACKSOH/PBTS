@@ -47,18 +47,9 @@
       <Column Name="transportID" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
       <Association Name="Schedule_LocationList" Member="LocationLists" ThisKey="scheduleID" OtherKey="scheduleID" Type="LocationList" />
       <Association Name="Schedule_promoteSchedule" Member="promoteSchedules" ThisKey="scheduleID" OtherKey="scheduleID" Type="promoteSchedule" />
-      <Association Name="Schedule_Seat" Member="Seats" ThisKey="scheduleID" OtherKey="scheduleID" Type="Seat" />
       <Association Name="Schedule_Table" Member="Tables" ThisKey="scheduleID" OtherKey="scheduleID" Type="Table" />
+      <Association Name="Schedule_Seat" Member="Seats" ThisKey="scheduleID" OtherKey="scheduleID" Type="Seat" />
       <Association Name="Transport_Schedule" Member="Transport" ThisKey="transportID" OtherKey="transportID" Type="Transport" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Seat" Member="Seats">
-    <Type Name="Seat">
-      <Column Name="seatID" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="scheduleID" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
-      <Column Name="seatStatus" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
-      <Association Name="Seat_Ticket" Member="Tickets" ThisKey="seatID" OtherKey="seatID" Type="Ticket" />
-      <Association Name="Schedule_Seat" Member="Schedule" ThisKey="scheduleID" OtherKey="scheduleID" Type="Schedule" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.[Table]" Member="Tables">
@@ -69,16 +60,6 @@
       <Column Name="locationType" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Association Name="Schedule_Table" Member="Schedule" ThisKey="scheduleID" OtherKey="scheduleID" Type="Schedule" IsForeignKey="true" />
       <Association Name="Location_Table" Member="Location" ThisKey="locationID" OtherKey="locationID" Type="Location" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Ticket" Member="Tickets">
-    <Type Name="Ticket">
-      <Column Name="ticketID" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="seatID" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
-      <Column Name="purchaseDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="ticketPrice" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
-      <Association Name="Ticket_Booking" Member="Bookings" ThisKey="ticketID" OtherKey="ticketID" Type="Booking" />
-      <Association Name="Seat_Ticket" Member="Seat" ThisKey="seatID" OtherKey="seatID" Type="Seat" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Transport" Member="Transports">
@@ -92,19 +73,6 @@
       <Association Name="Transport_Schedule" Member="Schedules" ThisKey="transportID" OtherKey="transportID" Type="Schedule" />
     </Type>
   </Table>
-  <Table Name="dbo.Booking" Member="Bookings">
-    <Type Name="Booking">
-      <Column Name="bookingID" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="customerIC" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
-      <Column Name="customerContactNo" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
-      <Column Name="customerEmail" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="ticketID" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
-      <Column Name="customerID" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
-      <Column Name="employeeID" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
-      <Association Name="Ticket_Booking" Member="Ticket" ThisKey="ticketID" OtherKey="ticketID" Type="Ticket" IsForeignKey="true" />
-      <Association Name="Employee_Booking" Member="Employee" ThisKey="employeeID" OtherKey="employeeID" Type="Employee" IsForeignKey="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.Employee" Member="Employees">
     <Type Name="Employee">
       <Column Name="employeeID" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -116,6 +84,38 @@
       <Column Name="type" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="password" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
       <Association Name="Employee_Booking" Member="Bookings" ThisKey="employeeID" OtherKey="employeeID" Type="Booking" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Seat" Member="Seats">
+    <Type Name="Seat">
+      <Column Name="seatID" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="scheduleID" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="seatStatus" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="seatNumber" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Seat_Ticket" Member="Tickets" ThisKey="seatID" OtherKey="seatID" Type="Ticket" />
+      <Association Name="Schedule_Seat" Member="Schedule" ThisKey="scheduleID" OtherKey="scheduleID" Type="Schedule" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Booking" Member="Bookings">
+    <Type Name="Booking">
+      <Column Name="bookingID" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="customerIC" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+      <Column Name="customerContactNo" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+      <Column Name="customerEmail" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Column Name="employeeID" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Association Name="Booking_Ticket" Member="Tickets" ThisKey="bookingID" OtherKey="bookingID" Type="Ticket" />
+      <Association Name="Employee_Booking" Member="Employee" ThisKey="employeeID" OtherKey="employeeID" Type="Employee" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Ticket" Member="Tickets">
+    <Type Name="Ticket">
+      <Column Name="ticketID" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="seatID" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="purchaseDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ticketPrice" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="bookingID" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Association Name="Booking_Ticket" Member="Booking" ThisKey="bookingID" OtherKey="bookingID" Type="Booking" IsForeignKey="true" />
+      <Association Name="Seat_Ticket" Member="Seat" ThisKey="seatID" OtherKey="seatID" Type="Seat" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

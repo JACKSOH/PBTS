@@ -5,7 +5,7 @@
     Friend promotionDesc As String
     Friend startDate As Date
     Dim days As Integer
-    Dim customDiscount As Double
+    Dim customDiscount As Double = 1
 
     Private Sub radFullDiscount_CheckedChanged(sender As Object, e As EventArgs) Handles radFullDiscount.CheckedChanged
         nupCustomDiscount.Enabled = False
@@ -14,6 +14,7 @@
 
     Private Sub radCustomDiscount_CheckedChanged(sender As Object, e As EventArgs) Handles radCustomDiscount.CheckedChanged
         nupCustomDiscount.Enabled = True
+        discountRate = customDiscount
     End Sub
 
     Private Sub btnNext_Click(sender As Object, e As EventArgs) Handles btnNext.Click
@@ -23,6 +24,8 @@
             promotionName = txtPromotionName.Text
             promotionDesc = txtPromotionDesc.Text
             ErrorName.Visible = False
+            endDate = startDate
+            endDate = endDate.AddDays(days)
             ManageCreatePromotionPart2.Show()
             Me.Hide()
         End If
@@ -39,7 +42,6 @@
 
     Private Sub nupPromotionDuration_ValueChanged(sender As Object, e As EventArgs) Handles nupPromotionDuration.ValueChanged
         days = Integer.Parse(nupPromotionDuration.Value.ToString)
-        endDate = dpPromotionStartDate.Value.Date.AddDays(days)
     End Sub
 
     Private Sub nupCustomDiscount_ValueChanged(sender As Object, e As EventArgs) Handles nupCustomDiscount.ValueChanged

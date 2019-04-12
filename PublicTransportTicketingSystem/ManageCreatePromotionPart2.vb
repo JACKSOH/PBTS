@@ -3,12 +3,15 @@
 Public Class ManageCreatePromotionPart2
 
     Dim SqlConnection As New SqlConnection
-    Dim selectedTransport As String
+    Private selectedTransport As String
+    Private startDate As Date = ManagerCreatePromotion.startDate.Date
+    Private EndDate As Date = ManagerCreatePromotion.endDate.Date
+    Private count As Integer
 
     Private Sub ManagerMenuLayoutControl1_Load(sender As Object, e As EventArgs) Handles ManagerMenuLayoutControl1.Load
         lblPromotionName.Text = ManagerCreatePromotion.promotionName
-        lblPromotionStart.Text = ManagerCreatePromotion.startDate.ToString
-        lblEndDate.Text = ManagerCreatePromotion.endDate.ToString
+        lblPromotionStart.Text = ManagerCreatePromotion.startDate.Date.ToString("dd/MM/yyyy")
+        lblEndDate.Text = ManagerCreatePromotion.endDate.Date.ToString("dd/MM/yyyy")
 
         If (ManagerCreatePromotion.discountRate = 100) Then
             lblDiscountRate.Text = "Free Ride / Board "
@@ -39,14 +42,68 @@ Public Class ManageCreatePromotionPart2
         Try
             Dim db As New PBTSDataContext()
 
-            Dim query = From transport In db.Transports
-                        Where transport.transportType = selectedTransport
+            Debug.Print(ManagerCreatePromotion.startDate.Date.ToString)
+
+            Dim query = From transport In db.Transports, s In db.Schedules
+                        Where s.departureDateTime.Value.Date = ManagerCreatePromotion.startDate And transport.transportType = selectedTransport
                         Join schedule In db.Schedules On transport.transportID Equals (schedule.transportID)
                         Select schedule.scheduleID, schedule.departureDateTime, transport.transportID, transport.transportType
             dgvSchedule.DataSource = query
+            dgvSchedule.Columns("scheduleID").HeaderText = "Schedule"
+            dgvSchedule.Columns("departureDateTime").HeaderText = "Date"
+            dgvSchedule.Columns("transportID").HeaderText = "Transport"
+            dgvSchedule.Columns("transportType").HeaderText = "Type"
             lblCount.Text = query.Count.ToString("0 record(s)")
+
+            count = query.Count - 1
+
         Catch ex As Exception
 
         End Try
+    End Sub
+
+    Private Sub btnAddPromotion_Click(sender As Object, e As EventArgs) Handles btnAddPromotion.Click
+
+        Dim con As New SqlConnection
+        Dim cmd As New SqlCommand
+        Dim cmd2 As New SqlCommand
+
+        Try
+            con.ConnectionString = StaffBooking.connection
+            con.Open()
+            cmd.Connection = con
+            Dim promotionID As String = App.GetNextPromotionId
+
+            cmd = New SqlCommand("insert into promotion ([promotionID],[promotionName], [promotionStartDate], [promotionEndDate], [promotionDesc]) values (@promotionID, @promotionName, @promotionStartDate, @promotionEndDate, @promotionDesc)", con)
+            cmd.Parameters.Add(New SqlParameter("promotionID", promotionID))
+            cmd.Parameters.Add(New SqlParameter("promotionName", ManagerCreatePromotion.promotionName))
+            cmd.Parameters.Add(New SqlParameter("promotionStartDate", ManagerCreatePromotion.startDate))
+            cmd.Parameters.Add(New SqlParameter("promotionEndDate", ManagerCreatePromotion.endDate))
+            cmd.Parameters.Add(New SqlParameter("promotionDesc", ManagerCreatePromotion.promotionDesc))
+
+            cmd.ExecuteNonQuery()
+            MessageBox.Show("Created Successfully")
+
+            For value As Integer = 0 To count
+                cmd2 = New SqlCommand("insert into promoteSchedule ([promoteScheduleID],[promotionID],[scheduleID], [discountRate]) values (@promoteScheduleID, @promotionID, @scheduleID, @discountRate)", con)
+                cmd2.Parameters.Add(New SqlParameter("promoteScheduleID", App.GetNextPromoteScheduleId))
+                cmd2.Parameters.Add(New SqlParameter("promotionID", promotionID))
+                cmd2.Parameters.Add(New SqlParameter("scheduleID", dgvSchedule.Rows(value).Cells(0).Value.ToString))
+                cmd2.Parameters.Add(New SqlParameter("discountRate", ManagerCreatePromotion.discountRate))
+
+                cmd2.ExecuteNonQuery()
+                Debug.Print(promotionID)
+                Debug.Print(dgvSchedule.Rows(value).Cells(0).Value.ToString)
+            Next
+
+        Catch ex As Exception
+            MessageBox.Show("Invalid" & ex.Message)
+        Finally
+            con.Close()
+        End Try
+        'Me.RecordsTableAdapter.Fill(Me.TrialDataSet1.records)
+
+
+
     End Sub
 End Class

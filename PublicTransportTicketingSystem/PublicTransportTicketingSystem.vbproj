@@ -145,6 +145,7 @@
     <Compile Include="ManagerViewSchdule.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="App.vb" />
     <Compile Include="PBTS.designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

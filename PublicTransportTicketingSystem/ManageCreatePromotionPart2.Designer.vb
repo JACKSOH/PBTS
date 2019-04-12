@@ -22,6 +22,9 @@ Partial Class ManageCreatePromotionPart2
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.cboTransport = New System.Windows.Forms.ComboBox()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -56,13 +59,14 @@ Partial Class ManageCreatePromotionPart2
         'cboTransport
         '
         Me.cboTransport.DisplayMember = "bus"
+        Me.cboTransport.Font = New System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboTransport.FormattingEnabled = True
         Me.cboTransport.Items.AddRange(New Object() {"Bus", "Ferry", "Train"})
         Me.cboTransport.Location = New System.Drawing.Point(504, 239)
         Me.cboTransport.Name = "cboTransport"
-        Me.cboTransport.Size = New System.Drawing.Size(121, 21)
+        Me.cboTransport.Size = New System.Drawing.Size(121, 26)
         Me.cboTransport.TabIndex = 2
-        Me.cboTransport.Text = "bus"
+        Me.cboTransport.Text = "Bus"
         '
         'Label2
         '
@@ -120,9 +124,9 @@ Partial Class ManageCreatePromotionPart2
         Me.lblPromotionStart.Font = New System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblPromotionStart.Location = New System.Drawing.Point(501, 119)
         Me.lblPromotionStart.Name = "lblPromotionStart"
-        Me.lblPromotionStart.Size = New System.Drawing.Size(40, 18)
+        Me.lblPromotionStart.Size = New System.Drawing.Size(80, 18)
         Me.lblPromotionStart.TabIndex = 10
-        Me.lblPromotionStart.Text = "Name"
+        Me.lblPromotionStart.Text = "starting date"
         '
         'lblEndDate
         '
@@ -130,9 +134,9 @@ Partial Class ManageCreatePromotionPart2
         Me.lblEndDate.Font = New System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblEndDate.Location = New System.Drawing.Point(501, 153)
         Me.lblEndDate.Name = "lblEndDate"
-        Me.lblEndDate.Size = New System.Drawing.Size(40, 18)
+        Me.lblEndDate.Size = New System.Drawing.Size(56, 18)
         Me.lblEndDate.TabIndex = 11
-        Me.lblEndDate.Text = "Name"
+        Me.lblEndDate.Text = "end date"
         '
         'lblDiscountRate
         '
@@ -140,9 +144,9 @@ Partial Class ManageCreatePromotionPart2
         Me.lblDiscountRate.Font = New System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblDiscountRate.Location = New System.Drawing.Point(501, 188)
         Me.lblDiscountRate.Name = "lblDiscountRate"
-        Me.lblDiscountRate.Size = New System.Drawing.Size(40, 18)
+        Me.lblDiscountRate.Size = New System.Drawing.Size(81, 18)
         Me.lblDiscountRate.TabIndex = 12
-        Me.lblDiscountRate.Text = "Name"
+        Me.lblDiscountRate.Text = "discount rate"
         '
         'btnAddPromotion
         '
@@ -204,10 +208,37 @@ Partial Class ManageCreatePromotionPart2
         'dgvSchedule
         '
         Me.dgvSchedule.AllowUserToDeleteRows = False
+        Me.dgvSchedule.BackgroundColor = System.Drawing.SystemColors.ButtonFace
+        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle7.Font = New System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Desktop
+        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.ControlLightLight
+        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvSchedule.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle7
         Me.dgvSchedule.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle8.Font = New System.Drawing.Font("Tw Cen MT", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvSchedule.DefaultCellStyle = DataGridViewCellStyle8
+        Me.dgvSchedule.GridColor = System.Drawing.SystemColors.Control
         Me.dgvSchedule.Location = New System.Drawing.Point(269, 282)
         Me.dgvSchedule.Name = "dgvSchedule"
         Me.dgvSchedule.ReadOnly = True
+        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle9.BackColor = System.Drawing.Color.Snow
+        DataGridViewCellStyle9.Font = New System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle9.ForeColor = System.Drawing.Color.Maroon
+        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvSchedule.RowHeadersDefaultCellStyle = DataGridViewCellStyle9
+        Me.dgvSchedule.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvSchedule.Size = New System.Drawing.Size(445, 150)
         Me.dgvSchedule.TabIndex = 34
         '

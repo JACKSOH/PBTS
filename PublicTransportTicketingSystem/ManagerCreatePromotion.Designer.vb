@@ -120,11 +120,11 @@ Partial Class ManagerCreatePromotion
         'dpPromotionStartDate
         '
         Me.dpPromotionStartDate.Location = New System.Drawing.Point(6, 54)
-        Me.dpPromotionStartDate.MinDate = New Date(2019, 4, 11, 0, 0, 0, 0)
+        Me.dpPromotionStartDate.MinDate = New Date(2019, 4, 12, 0, 0, 0, 0)
         Me.dpPromotionStartDate.Name = "dpPromotionStartDate"
         Me.dpPromotionStartDate.Size = New System.Drawing.Size(217, 24)
         Me.dpPromotionStartDate.TabIndex = 39
-        Me.dpPromotionStartDate.Value = New Date(2019, 4, 11, 12, 30, 3, 0)
+        Me.dpPromotionStartDate.Value = New Date(2019, 4, 12, 0, 0, 0, 0)
         '
         'Label5
         '

@@ -22,7 +22,6 @@ Partial Class ManageCreatePromotionPart2
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.ManagerMenuLayoutControl1 = New PublicTransportTicketingSystem.managerMenuLayoutControl()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.cboTransport = New System.Windows.Forms.ComboBox()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -33,18 +32,16 @@ Partial Class ManageCreatePromotionPart2
         Me.lblPromotionStart = New System.Windows.Forms.Label()
         Me.lblEndDate = New System.Windows.Forms.Label()
         Me.lblDiscountRate = New System.Windows.Forms.Label()
-        Me.ListBox1 = New System.Windows.Forms.ListBox()
         Me.btnAddPromotion = New System.Windows.Forms.Button()
         Me.btnCancel = New System.Windows.Forms.Button()
         Me.btnBack = New System.Windows.Forms.Button()
+        Me.lblCount = New System.Windows.Forms.Label()
+        Me.PttsDataSet1 = New PublicTransportTicketingSystem.PTTSDataSet()
+        Me.dgvSchedule = New System.Windows.Forms.DataGridView()
+        Me.ManagerMenuLayoutControl1 = New PublicTransportTicketingSystem.managerMenuLayoutControl()
+        CType(Me.PttsDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvSchedule, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'ManagerMenuLayoutControl1
-        '
-        Me.ManagerMenuLayoutControl1.Location = New System.Drawing.Point(0, 0)
-        Me.ManagerMenuLayoutControl1.Name = "ManagerMenuLayoutControl1"
-        Me.ManagerMenuLayoutControl1.Size = New System.Drawing.Size(809, 573)
-        Me.ManagerMenuLayoutControl1.TabIndex = 0
         '
         'Label1
         '
@@ -58,13 +55,14 @@ Partial Class ManageCreatePromotionPart2
         '
         'cboTransport
         '
-        Me.cboTransport.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cboTransport.DisplayMember = "bus"
         Me.cboTransport.FormattingEnabled = True
-        Me.cboTransport.Items.AddRange(New Object() {"All", "Bus", "Ferry", "Train"})
+        Me.cboTransport.Items.AddRange(New Object() {"Bus", "Ferry", "Train"})
         Me.cboTransport.Location = New System.Drawing.Point(504, 239)
         Me.cboTransport.Name = "cboTransport"
         Me.cboTransport.Size = New System.Drawing.Size(121, 21)
         Me.cboTransport.TabIndex = 2
+        Me.cboTransport.Text = "bus"
         '
         'Label2
         '
@@ -146,16 +144,6 @@ Partial Class ManageCreatePromotionPart2
         Me.lblDiscountRate.TabIndex = 12
         Me.lblDiscountRate.Text = "Name"
         '
-        'ListBox1
-        '
-        Me.ListBox1.Font = New System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ListBox1.FormattingEnabled = True
-        Me.ListBox1.ItemHeight = 18
-        Me.ListBox1.Location = New System.Drawing.Point(269, 286)
-        Me.ListBox1.Name = "ListBox1"
-        Me.ListBox1.Size = New System.Drawing.Size(399, 166)
-        Me.ListBox1.TabIndex = 13
-        '
         'btnAddPromotion
         '
         Me.btnAddPromotion.AccessibleRole = System.Windows.Forms.AccessibleRole.Pane
@@ -198,15 +186,48 @@ Partial Class ManageCreatePromotionPart2
         Me.btnBack.Text = "&BACK"
         Me.btnBack.UseVisualStyleBackColor = False
         '
+        'lblCount
+        '
+        Me.lblCount.AutoSize = True
+        Me.lblCount.Font = New System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblCount.Location = New System.Drawing.Point(266, 435)
+        Me.lblCount.Name = "lblCount"
+        Me.lblCount.Size = New System.Drawing.Size(69, 18)
+        Me.lblCount.TabIndex = 33
+        Me.lblCount.Text = "X record(s)"
+        '
+        'PttsDataSet1
+        '
+        Me.PttsDataSet1.DataSetName = "PTTSDataSet"
+        Me.PttsDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'dgvSchedule
+        '
+        Me.dgvSchedule.AllowUserToDeleteRows = False
+        Me.dgvSchedule.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvSchedule.Location = New System.Drawing.Point(269, 282)
+        Me.dgvSchedule.Name = "dgvSchedule"
+        Me.dgvSchedule.ReadOnly = True
+        Me.dgvSchedule.Size = New System.Drawing.Size(445, 150)
+        Me.dgvSchedule.TabIndex = 34
+        '
+        'ManagerMenuLayoutControl1
+        '
+        Me.ManagerMenuLayoutControl1.Location = New System.Drawing.Point(0, 1)
+        Me.ManagerMenuLayoutControl1.Name = "ManagerMenuLayoutControl1"
+        Me.ManagerMenuLayoutControl1.Size = New System.Drawing.Size(793, 546)
+        Me.ManagerMenuLayoutControl1.TabIndex = 0
+        '
         'ManageCreatePromotionPart2
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 576)
+        Me.ClientSize = New System.Drawing.Size(794, 576)
+        Me.Controls.Add(Me.dgvSchedule)
+        Me.Controls.Add(Me.lblCount)
         Me.Controls.Add(Me.btnBack)
         Me.Controls.Add(Me.btnCancel)
         Me.Controls.Add(Me.btnAddPromotion)
-        Me.Controls.Add(Me.ListBox1)
         Me.Controls.Add(Me.lblDiscountRate)
         Me.Controls.Add(Me.lblEndDate)
         Me.Controls.Add(Me.lblPromotionStart)
@@ -221,6 +242,8 @@ Partial Class ManageCreatePromotionPart2
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "ManageCreatePromotionPart2"
         Me.Text = "ManageCreatePromotionPart2"
+        CType(Me.PttsDataSet1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvSchedule, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -237,8 +260,10 @@ Partial Class ManageCreatePromotionPart2
     Friend WithEvents lblPromotionStart As Label
     Friend WithEvents lblEndDate As Label
     Friend WithEvents lblDiscountRate As Label
-    Friend WithEvents ListBox1 As ListBox
     Friend WithEvents btnAddPromotion As Button
     Friend WithEvents btnCancel As Button
     Friend WithEvents btnBack As Button
+    Friend WithEvents lblCount As Label
+    Friend WithEvents PttsDataSet1 As PTTSDataSet
+    Friend WithEvents dgvSchedule As DataGridView
 End Class

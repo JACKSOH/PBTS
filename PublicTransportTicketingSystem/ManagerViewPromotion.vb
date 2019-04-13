@@ -1,7 +1,8 @@
 ﻿Public Class ManagerViewPromotion
-    Private selectedTransport As String
+    Friend selectedTransport As String
     Private promotionDate As Date = Today.Date
     Private contain As String
+    Friend id As String
 
     Private Sub DataBindSearch()
         Try
@@ -93,5 +94,11 @@
     Private Sub btnCreatePromotionPage_Click(sender As Object, e As EventArgs) Handles btnCreatePromotionPage.Click
         ManagerCreatePromotion.Show()
         Me.Hide()
+    End Sub
+
+    Private Sub dgvPromotionList_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvPromotionList.CellDoubleClick
+        Dim i As Integer = dgvPromotionList.CurrentRow.Index
+        id = dgvPromotionList.Item(0, i).Value.ToString
+        ManagerModifyPromotion.Show()
     End Sub
 End Class

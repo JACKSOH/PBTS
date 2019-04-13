@@ -132,6 +132,12 @@
     <Compile Include="managerMenuLayoutControl.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="ManagerModifyPromotion.Designer.vb">
+      <DependentUpon>ManagerModifyPromotion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerModifyPromotion.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ManagerPT.Designer.vb">
       <DependentUpon>ManagerPT.vb</DependentUpon>
     </Compile>
@@ -239,6 +245,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="managerMenuLayoutControl.resx">
       <DependentUpon>managerMenuLayoutControl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerModifyPromotion.resx">
+      <DependentUpon>ManagerModifyPromotion.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ManagerPT.resx">
       <DependentUpon>ManagerPT.vb</DependentUpon>

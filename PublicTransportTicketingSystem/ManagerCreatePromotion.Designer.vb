@@ -100,7 +100,7 @@ Partial Class ManagerCreatePromotion
         Me.gbPromotionDate.Controls.Add(Me.dpPromotionStartDate)
         Me.gbPromotionDate.Controls.Add(Me.Label5)
         Me.gbPromotionDate.Controls.Add(Me.Label4)
-        Me.gbPromotionDate.Location = New System.Drawing.Point(16, 180)
+        Me.gbPromotionDate.Location = New System.Drawing.Point(16, 190)
         Me.gbPromotionDate.Name = "gbPromotionDate"
         Me.gbPromotionDate.Size = New System.Drawing.Size(232, 159)
         Me.gbPromotionDate.TabIndex = 33

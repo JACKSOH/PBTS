@@ -188,6 +188,7 @@ Partial Class ManagerTranportInsert
         '
         'err
         '
+        Me.err.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink
         Me.err.ContainerControl = Me
         '
         'mskColumn
@@ -221,7 +222,7 @@ Partial Class ManagerTranportInsert
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 19.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.btnCancel
-        Me.ClientSize = New System.Drawing.Size(389, 436)
+        Me.ClientSize = New System.Drawing.Size(400, 450)
         Me.Controls.Add(Me.mskSeatPrice)
         Me.Controls.Add(Me.mskRow)
         Me.Controls.Add(Me.mskColumn)

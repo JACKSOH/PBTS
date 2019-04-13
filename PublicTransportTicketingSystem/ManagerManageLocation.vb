@@ -62,12 +62,11 @@
     End Sub
 
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
-        Dim yesno = MessageBox.Show("Create a new record?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
-        If yesno = DialogResult.Yes Then
-            'add record and update database
-            LocationBindingSource.EndEdit()
-            LocationBindingSource.AddNew()
-        End If
+        Dim db As New PBTSDataContext
+        'lbltest.Text = db.Transports.OrderByDescending(Function(o) o.transportID).Select(Function(i) i.transportID).First().ToString.Substring(2, 6)
+        ManagerLocationInsert.newId = App.GenerateNextId(db.Locations.OrderByDescending(Function(o) o.locationID).Select(Function(i) i.locationID).First().ToString)
+        ManagerLocationInsert.ShowDialog()
+
     End Sub
 
     Private Sub ChangeTranport() Handles ts.TransportChange

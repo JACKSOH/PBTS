@@ -26,8 +26,17 @@
             btnDeleteCancel.Text = "&Cancel"
             btnAdd.Enabled = False
             dgv.ReadOnly = False
+            btnDeleteCancel.Visible = True
 
-        Else
+        End If
+    End Sub
+
+    Private Sub dgv_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv.CellContentClick
+
+    End Sub
+
+    Private Sub btnDeleteCancel_Click(sender As Object, e As EventArgs) Handles btnDeleteCancel.Click
+        If btnDeleteCancel.Text = "&Cancel" Then
             btnUpdate.Text = "&Update"
             btnDeleteCancel.Text = "&Delete"
             'update database
@@ -36,10 +45,9 @@
 
             btnAdd.Enabled = True
             dgv.ReadOnly = True
-        End If
-    End Sub
+            btnDeleteCancel.Visible = False
 
-    Private Sub dgv_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv.CellContentClick
+        End If
 
     End Sub
 End Class

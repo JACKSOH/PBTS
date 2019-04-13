@@ -23,39 +23,30 @@ Partial Class ManagerPT
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Me.PTTSDataSetBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.PTTSDataSet = New PublicTransportTicketingSystem.PTTSDataSet()
         Me.gbTranport = New System.Windows.Forms.GroupBox()
+        Me.lbltest = New System.Windows.Forms.Label()
         Me.dgv = New System.Windows.Forms.DataGridView()
+        Me.TransportBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.btnUpdate = New System.Windows.Forms.Button()
+        Me.btnAdd = New System.Windows.Forms.Button()
+        Me.btnDeleteCancel = New System.Windows.Forms.Button()
+        Me.Status = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TransportNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.LicensePlateDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TranportColumnDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TranportRowDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TransportTypeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.TransportBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.btnUpdate = New System.Windows.Forms.Button()
-        Me.btnAdd = New System.Windows.Forms.Button()
-        Me.btnDeleteCancel = New System.Windows.Forms.Button()
+        Me.PTTSDataSetBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.PTTSDataSet = New PublicTransportTicketingSystem.PTTSDataSet()
         Me.TransportTableAdapter = New PublicTransportTicketingSystem.PTTSDataSetTableAdapters.TransportTableAdapter()
         Me.ts = New PublicTransportTicketingSystem.TranportSelection()
         Me.ManagerMenuLayoutControl1 = New PublicTransportTicketingSystem.managerMenuLayoutControl()
-        Me.lbltest = New System.Windows.Forms.Label()
-        CType(Me.PTTSDataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PTTSDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbTranport.SuspendLayout()
         CType(Me.dgv, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TransportBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PTTSDataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PTTSDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'PTTSDataSetBindingSource
-        '
-        Me.PTTSDataSetBindingSource.DataSource = Me.PTTSDataSet
-        Me.PTTSDataSetBindingSource.Position = 0
-        '
-        'PTTSDataSet
-        '
-        Me.PTTSDataSet.DataSetName = "PTTSDataSet"
-        Me.PTTSDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'gbTranport
         '
@@ -71,58 +62,27 @@ Partial Class ManagerPT
         Me.gbTranport.TabStop = False
         Me.gbTranport.Text = "Tranport Details"
         '
+        'lbltest
+        '
+        Me.lbltest.AutoSize = True
+        Me.lbltest.Location = New System.Drawing.Point(443, 74)
+        Me.lbltest.Name = "lbltest"
+        Me.lbltest.Size = New System.Drawing.Size(39, 13)
+        Me.lbltest.TabIndex = 7
+        Me.lbltest.Text = "Label1"
+        '
         'dgv
         '
         Me.dgv.AllowUserToAddRows = False
         Me.dgv.AllowUserToDeleteRows = False
         Me.dgv.AutoGenerateColumns = False
         Me.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgv.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.TransportNameDataGridViewTextBoxColumn, Me.LicensePlateDataGridViewTextBoxColumn, Me.TranportColumnDataGridViewTextBoxColumn, Me.TranportRowDataGridViewTextBoxColumn, Me.TransportTypeDataGridViewTextBoxColumn})
+        Me.dgv.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.TransportNameDataGridViewTextBoxColumn, Me.Status, Me.LicensePlateDataGridViewTextBoxColumn, Me.TranportColumnDataGridViewTextBoxColumn, Me.TranportRowDataGridViewTextBoxColumn, Me.TransportTypeDataGridViewTextBoxColumn})
         Me.dgv.DataSource = Me.TransportBindingSource
         Me.dgv.Location = New System.Drawing.Point(19, 19)
         Me.dgv.Name = "dgv"
         Me.dgv.Size = New System.Drawing.Size(385, 303)
         Me.dgv.TabIndex = 5
-        '
-        'TransportNameDataGridViewTextBoxColumn
-        '
-        Me.TransportNameDataGridViewTextBoxColumn.DataPropertyName = "transportName"
-        Me.TransportNameDataGridViewTextBoxColumn.HeaderText = "Carrier"
-        Me.TransportNameDataGridViewTextBoxColumn.MinimumWidth = 120
-        Me.TransportNameDataGridViewTextBoxColumn.Name = "TransportNameDataGridViewTextBoxColumn"
-        Me.TransportNameDataGridViewTextBoxColumn.Width = 120
-        '
-        'LicensePlateDataGridViewTextBoxColumn
-        '
-        Me.LicensePlateDataGridViewTextBoxColumn.DataPropertyName = "licensePlate"
-        Me.LicensePlateDataGridViewTextBoxColumn.HeaderText = "Plate"
-        Me.LicensePlateDataGridViewTextBoxColumn.MinimumWidth = 50
-        Me.LicensePlateDataGridViewTextBoxColumn.Name = "LicensePlateDataGridViewTextBoxColumn"
-        Me.LicensePlateDataGridViewTextBoxColumn.Width = 50
-        '
-        'TranportColumnDataGridViewTextBoxColumn
-        '
-        Me.TranportColumnDataGridViewTextBoxColumn.DataPropertyName = "tranportColumn"
-        Me.TranportColumnDataGridViewTextBoxColumn.HeaderText = "Seat Column"
-        Me.TranportColumnDataGridViewTextBoxColumn.MinimumWidth = 50
-        Me.TranportColumnDataGridViewTextBoxColumn.Name = "TranportColumnDataGridViewTextBoxColumn"
-        Me.TranportColumnDataGridViewTextBoxColumn.Width = 50
-        '
-        'TranportRowDataGridViewTextBoxColumn
-        '
-        Me.TranportRowDataGridViewTextBoxColumn.DataPropertyName = "tranportRow"
-        Me.TranportRowDataGridViewTextBoxColumn.HeaderText = "Seat Row"
-        Me.TranportRowDataGridViewTextBoxColumn.MinimumWidth = 50
-        Me.TranportRowDataGridViewTextBoxColumn.Name = "TranportRowDataGridViewTextBoxColumn"
-        Me.TranportRowDataGridViewTextBoxColumn.Width = 50
-        '
-        'TransportTypeDataGridViewTextBoxColumn
-        '
-        Me.TransportTypeDataGridViewTextBoxColumn.DataPropertyName = "transportType"
-        Me.TransportTypeDataGridViewTextBoxColumn.HeaderText = "Type"
-        Me.TransportTypeDataGridViewTextBoxColumn.MinimumWidth = 70
-        Me.TransportTypeDataGridViewTextBoxColumn.Name = "TransportTypeDataGridViewTextBoxColumn"
-        Me.TransportTypeDataGridViewTextBoxColumn.Width = 70
         '
         'TransportBindingSource
         '
@@ -162,6 +122,69 @@ Partial Class ManagerPT
         Me.btnDeleteCancel.Text = "&Delete"
         Me.btnDeleteCancel.UseVisualStyleBackColor = False
         '
+        'Status
+        '
+        Me.Status.DataPropertyName = "transportStatus"
+        Me.Status.HeaderText = "Status"
+        Me.Status.MaxInputLength = 30
+        Me.Status.Name = "Status"
+        Me.Status.Width = 50
+        '
+        'TransportNameDataGridViewTextBoxColumn
+        '
+        Me.TransportNameDataGridViewTextBoxColumn.DataPropertyName = "transportName"
+        Me.TransportNameDataGridViewTextBoxColumn.HeaderText = "Carrier"
+        Me.TransportNameDataGridViewTextBoxColumn.MaxInputLength = 30
+        Me.TransportNameDataGridViewTextBoxColumn.MinimumWidth = 120
+        Me.TransportNameDataGridViewTextBoxColumn.Name = "TransportNameDataGridViewTextBoxColumn"
+        Me.TransportNameDataGridViewTextBoxColumn.Width = 120
+        '
+        'LicensePlateDataGridViewTextBoxColumn
+        '
+        Me.LicensePlateDataGridViewTextBoxColumn.DataPropertyName = "licensePlate"
+        Me.LicensePlateDataGridViewTextBoxColumn.HeaderText = "Plate"
+        Me.LicensePlateDataGridViewTextBoxColumn.MaxInputLength = 10
+        Me.LicensePlateDataGridViewTextBoxColumn.MinimumWidth = 50
+        Me.LicensePlateDataGridViewTextBoxColumn.Name = "LicensePlateDataGridViewTextBoxColumn"
+        Me.LicensePlateDataGridViewTextBoxColumn.Width = 50
+        '
+        'TranportColumnDataGridViewTextBoxColumn
+        '
+        Me.TranportColumnDataGridViewTextBoxColumn.DataPropertyName = "tranportColumn"
+        Me.TranportColumnDataGridViewTextBoxColumn.HeaderText = "Seat Column"
+        Me.TranportColumnDataGridViewTextBoxColumn.MaxInputLength = 2
+        Me.TranportColumnDataGridViewTextBoxColumn.MinimumWidth = 50
+        Me.TranportColumnDataGridViewTextBoxColumn.Name = "TranportColumnDataGridViewTextBoxColumn"
+        Me.TranportColumnDataGridViewTextBoxColumn.Width = 50
+        '
+        'TranportRowDataGridViewTextBoxColumn
+        '
+        Me.TranportRowDataGridViewTextBoxColumn.DataPropertyName = "tranportRow"
+        Me.TranportRowDataGridViewTextBoxColumn.HeaderText = "Seat Row"
+        Me.TranportRowDataGridViewTextBoxColumn.MaxInputLength = 20
+        Me.TranportRowDataGridViewTextBoxColumn.MinimumWidth = 50
+        Me.TranportRowDataGridViewTextBoxColumn.Name = "TranportRowDataGridViewTextBoxColumn"
+        Me.TranportRowDataGridViewTextBoxColumn.Width = 50
+        '
+        'TransportTypeDataGridViewTextBoxColumn
+        '
+        Me.TransportTypeDataGridViewTextBoxColumn.DataPropertyName = "transportType"
+        Me.TransportTypeDataGridViewTextBoxColumn.HeaderText = "Type"
+        Me.TransportTypeDataGridViewTextBoxColumn.MaxInputLength = 30
+        Me.TransportTypeDataGridViewTextBoxColumn.MinimumWidth = 70
+        Me.TransportTypeDataGridViewTextBoxColumn.Name = "TransportTypeDataGridViewTextBoxColumn"
+        Me.TransportTypeDataGridViewTextBoxColumn.Width = 70
+        '
+        'PTTSDataSetBindingSource
+        '
+        Me.PTTSDataSetBindingSource.DataSource = Me.PTTSDataSet
+        Me.PTTSDataSetBindingSource.Position = 0
+        '
+        'PTTSDataSet
+        '
+        Me.PTTSDataSet.DataSetName = "PTTSDataSet"
+        Me.PTTSDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
         'TransportTableAdapter
         '
         Me.TransportTableAdapter.ClearBeforeFill = True
@@ -181,15 +204,6 @@ Partial Class ManagerPT
         Me.ManagerMenuLayoutControl1.Size = New System.Drawing.Size(800, 575)
         Me.ManagerMenuLayoutControl1.TabIndex = 0
         '
-        'lbltest
-        '
-        Me.lbltest.AutoSize = True
-        Me.lbltest.Location = New System.Drawing.Point(443, 74)
-        Me.lbltest.Name = "lbltest"
-        Me.lbltest.Size = New System.Drawing.Size(39, 13)
-        Me.lbltest.TabIndex = 7
-        Me.lbltest.Text = "Label1"
-        '
         'ManagerPT
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -202,12 +216,12 @@ Partial Class ManagerPT
         Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "ManagerPT"
         Me.Text = "ManagerPT"
-        CType(Me.PTTSDataSetBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PTTSDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.gbTranport.ResumeLayout(False)
         Me.gbTranport.PerformLayout()
         CType(Me.dgv, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TransportBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PTTSDataSetBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PTTSDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -222,11 +236,12 @@ Partial Class ManagerPT
     Friend WithEvents btnAdd As Button
     Friend WithEvents TransportBindingSource As BindingSource
     Friend WithEvents TransportTableAdapter As PTTSDataSetTableAdapters.TransportTableAdapter
+    Friend WithEvents btnDeleteCancel As Button
+    Friend WithEvents lbltest As Label
     Friend WithEvents TransportNameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents Status As DataGridViewTextBoxColumn
     Friend WithEvents LicensePlateDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents TranportColumnDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents TranportRowDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents TransportTypeDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents btnDeleteCancel As Button
-    Friend WithEvents lbltest As Label
 End Class

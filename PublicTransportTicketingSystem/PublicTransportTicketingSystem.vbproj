@@ -227,6 +227,9 @@
     <EmbeddedResource Include="managerIndex.resx">
       <DependentUpon>managerIndex.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ManagerLocationInsert.resx">
+      <DependentUpon>ManagerLocationInsert.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ManagerManageLocation.resx">
       <DependentUpon>ManagerManageLocation.vb</DependentUpon>
     </EmbeddedResource>

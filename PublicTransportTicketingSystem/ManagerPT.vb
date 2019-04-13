@@ -3,8 +3,8 @@
     Private Sub ManagerPT_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: This line of code loads data into the 'PTTSDataSet.Transport' table. You can move, or remove it, as needed.
         Me.TransportTableAdapter.Fill(Me.PTTSDataSet.Transport)
-
-
+        dgv.ReadOnly = True
+        TransportTableAdapter.FillBy1(PTTSDataSet.Transport, ts.selectedType.ToLower)
     End Sub
 
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
@@ -13,12 +13,7 @@
         ManagerTranportInsert.newId = App.GenerateNextId(db.Transports.OrderByDescending(Function(o) o.transportID).Select(Function(i) i.transportID).First().ToString)
         ManagerTranportInsert.ShowDialog()
     End Sub
-    Private Sub Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        dgv.ReadOnly = True
-    End Sub
-    Private Sub ManagerMenuLayoutControl1_Load(sender As Object, e As EventArgs) Handles ManagerMenuLayoutControl1.Load
 
-    End Sub
 
     Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
         If btnUpdate.Text = "&Update" Then
@@ -30,7 +25,11 @@
 
         End If
     End Sub
+    Private Sub ChangeTransportType() Handles ts.TransportChange
 
+        TransportTableAdapter.FillBy1(PTTSDataSet.Transport, ts.selectedType.ToLower)
+
+    End Sub
     Private Sub dgv_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv.CellContentClick
 
     End Sub
@@ -49,5 +48,20 @@
 
         End If
 
+    End Sub
+
+    Private Sub ChangeTransportType(sender As Object, e As EventArgs) Handles ts.TransportChange
+
+    End Sub
+
+    Private Sub ManagerMenuLayoutControl1_Load(sender As Object, e As EventArgs)
+
+    End Sub
+
+
+
+    Private Sub txtSearch_TextChanged_1(sender As Object, e As EventArgs) Handles txtSearch.TextChanged
+
+        TransportTableAdapter.FillBy2(PTTSDataSet.Transport, "%" + txtSearch.Text + "%", ts.selectedType)
     End Sub
 End Class

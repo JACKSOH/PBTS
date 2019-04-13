@@ -121,6 +121,12 @@
     <Compile Include="ManagerManageLocation.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ManagerManageSchedule.Designer.vb">
+      <DependentUpon>ManagerManageSchedule.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerManageSchedule.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="managerMenuLayoutControl.Designer.vb">
       <DependentUpon>managerMenuLayoutControl.vb</DependentUpon>
     </Compile>
@@ -131,6 +137,12 @@
       <DependentUpon>ManagerPT.vb</DependentUpon>
     </Compile>
     <Compile Include="ManagerPT.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerSchduleInsert.Designer.vb">
+      <DependentUpon>ManagerSchduleInsert.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerSchduleInsert.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ManagerTranportInsert.Designer.vb">
@@ -160,6 +172,9 @@
     <Compile Include="PTTSDataSet.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
+      <DependentUpon>PTTSDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PTTSDataSet.vb">
       <DependentUpon>PTTSDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="StaffBooking.Designer.vb">
@@ -233,11 +248,17 @@
     <EmbeddedResource Include="ManagerManageLocation.resx">
       <DependentUpon>ManagerManageLocation.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ManagerManageSchedule.resx">
+      <DependentUpon>ManagerManageSchedule.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="managerMenuLayoutControl.resx">
       <DependentUpon>managerMenuLayoutControl.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ManagerPT.resx">
       <DependentUpon>ManagerPT.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerSchduleInsert.resx">
+      <DependentUpon>ManagerSchduleInsert.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ManagerTranportInsert.resx">
       <DependentUpon>ManagerTranportInsert.vb</DependentUpon>
@@ -369,6 +390,7 @@
     <Content Include="PTTS_log.ldf">
       <DependentUpon>PTTS.mdf</DependentUpon>
     </Content>
+    <Content Include="Resources\search.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">

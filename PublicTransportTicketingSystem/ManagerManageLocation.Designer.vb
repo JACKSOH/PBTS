@@ -24,6 +24,9 @@ Partial Class ManagerManageLocation
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.dgv = New System.Windows.Forms.DataGridView()
+        Me.LocationIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.LocationNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.LocationTypeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.LocationBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.PTTSDataSetBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.PTTSDataSet = New PublicTransportTicketingSystem.PTTSDataSet()
@@ -35,9 +38,6 @@ Partial Class ManagerManageLocation
         Me.ts = New PublicTransportTicketingSystem.TranportSelection()
         Me.ManagerMenuLayoutControl1 = New PublicTransportTicketingSystem.managerMenuLayoutControl()
         Me.gbTranport = New System.Windows.Forms.GroupBox()
-        Me.LocationIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.LocationNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.LocationTypeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.dgv, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LocationBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PTTSDataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -55,6 +55,29 @@ Partial Class ManagerManageLocation
         Me.dgv.Name = "dgv"
         Me.dgv.Size = New System.Drawing.Size(413, 300)
         Me.dgv.TabIndex = 1
+        '
+        'LocationIDDataGridViewTextBoxColumn
+        '
+        Me.LocationIDDataGridViewTextBoxColumn.DataPropertyName = "locationID"
+        Me.LocationIDDataGridViewTextBoxColumn.HeaderText = "ID"
+        Me.LocationIDDataGridViewTextBoxColumn.MinimumWidth = 8
+        Me.LocationIDDataGridViewTextBoxColumn.Name = "LocationIDDataGridViewTextBoxColumn"
+        '
+        'LocationNameDataGridViewTextBoxColumn
+        '
+        Me.LocationNameDataGridViewTextBoxColumn.DataPropertyName = "locationName"
+        Me.LocationNameDataGridViewTextBoxColumn.HeaderText = "Name"
+        Me.LocationNameDataGridViewTextBoxColumn.MinimumWidth = 120
+        Me.LocationNameDataGridViewTextBoxColumn.Name = "LocationNameDataGridViewTextBoxColumn"
+        Me.LocationNameDataGridViewTextBoxColumn.Width = 120
+        '
+        'LocationTypeDataGridViewTextBoxColumn
+        '
+        Me.LocationTypeDataGridViewTextBoxColumn.DataPropertyName = "locationType"
+        Me.LocationTypeDataGridViewTextBoxColumn.HeaderText = "Type"
+        Me.LocationTypeDataGridViewTextBoxColumn.MinimumWidth = 150
+        Me.LocationTypeDataGridViewTextBoxColumn.Name = "LocationTypeDataGridViewTextBoxColumn"
+        Me.LocationTypeDataGridViewTextBoxColumn.Width = 150
         '
         'LocationBindingSource
         '
@@ -117,7 +140,7 @@ Partial Class ManagerManageLocation
         '
         'ts
         '
-        Me.ts.Location = New System.Drawing.Point(241, 96)
+        Me.ts.Location = New System.Drawing.Point(239, 80)
         Me.ts.Name = "ts"
         Me.ts.Size = New System.Drawing.Size(547, 104)
         Me.ts.TabIndex = 5
@@ -141,29 +164,6 @@ Partial Class ManagerManageLocation
         Me.gbTranport.TabIndex = 7
         Me.gbTranport.TabStop = False
         Me.gbTranport.Text = "Location Details"
-        '
-        'LocationIDDataGridViewTextBoxColumn
-        '
-        Me.LocationIDDataGridViewTextBoxColumn.DataPropertyName = "locationID"
-        Me.LocationIDDataGridViewTextBoxColumn.HeaderText = "ID"
-        Me.LocationIDDataGridViewTextBoxColumn.MinimumWidth = 8
-        Me.LocationIDDataGridViewTextBoxColumn.Name = "LocationIDDataGridViewTextBoxColumn"
-        '
-        'LocationNameDataGridViewTextBoxColumn
-        '
-        Me.LocationNameDataGridViewTextBoxColumn.DataPropertyName = "locationName"
-        Me.LocationNameDataGridViewTextBoxColumn.HeaderText = "Name"
-        Me.LocationNameDataGridViewTextBoxColumn.MinimumWidth = 120
-        Me.LocationNameDataGridViewTextBoxColumn.Name = "LocationNameDataGridViewTextBoxColumn"
-        Me.LocationNameDataGridViewTextBoxColumn.Width = 120
-        '
-        'LocationTypeDataGridViewTextBoxColumn
-        '
-        Me.LocationTypeDataGridViewTextBoxColumn.DataPropertyName = "locationType"
-        Me.LocationTypeDataGridViewTextBoxColumn.HeaderText = "Type"
-        Me.LocationTypeDataGridViewTextBoxColumn.MinimumWidth = 150
-        Me.LocationTypeDataGridViewTextBoxColumn.Name = "LocationTypeDataGridViewTextBoxColumn"
-        Me.LocationTypeDataGridViewTextBoxColumn.Width = 150
         '
         'ManagerManageLocation
         '

@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class ManagerPT
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,17 +20,19 @@ Partial Class ManagerPT
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.gbTranport = New System.Windows.Forms.GroupBox()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.lbltest = New System.Windows.Forms.Label()
         Me.dgv = New System.Windows.Forms.DataGridView()
+        Me.Status = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TransportBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.txtSearch = New System.Windows.Forms.TextBox()
         Me.btnUpdate = New System.Windows.Forms.Button()
         Me.btnAdd = New System.Windows.Forms.Button()
         Me.btnDeleteCancel = New System.Windows.Forms.Button()
-        Me.Status = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TransportNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.LicensePlateDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TranportColumnDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -38,23 +40,29 @@ Partial Class ManagerPT
         Me.TransportTypeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PTTSDataSetBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.PTTSDataSet = New PublicTransportTicketingSystem.PTTSDataSet()
-        Me.TransportTableAdapter = New PublicTransportTicketingSystem.PTTSDataSetTableAdapters.TransportTableAdapter()
         Me.ts = New PublicTransportTicketingSystem.TranportSelection()
         Me.ManagerMenuLayoutControl1 = New PublicTransportTicketingSystem.managerMenuLayoutControl()
+        Me.TransportTableAdapter = New PublicTransportTicketingSystem.PTTSDataSetTableAdapters.TransportTableAdapter()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.gbTranport.SuspendLayout()
         CType(Me.dgv, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TransportBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PTTSDataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PTTSDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'gbTranport
         '
+        Me.gbTranport.Controls.Add(Me.PictureBox1)
+        Me.gbTranport.Controls.Add(Me.Label1)
         Me.gbTranport.Controls.Add(Me.lbltest)
         Me.gbTranport.Controls.Add(Me.dgv)
+        Me.gbTranport.Controls.Add(Me.txtSearch)
         Me.gbTranport.Controls.Add(Me.btnUpdate)
         Me.gbTranport.Controls.Add(Me.btnAdd)
         Me.gbTranport.Controls.Add(Me.btnDeleteCancel)
+        Me.gbTranport.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.gbTranport.Location = New System.Drawing.Point(241, 207)
         Me.gbTranport.Name = "gbTranport"
         Me.gbTranport.Size = New System.Drawing.Size(547, 356)
@@ -62,12 +70,22 @@ Partial Class ManagerPT
         Me.gbTranport.TabStop = False
         Me.gbTranport.Text = "Tranport Details"
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(407, 40)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(86, 18)
+        Me.Label1.TabIndex = 13
+        Me.Label1.Text = "Search carrier"
+        '
         'lbltest
         '
         Me.lbltest.AutoSize = True
-        Me.lbltest.Location = New System.Drawing.Point(443, 74)
+        Me.lbltest.Location = New System.Drawing.Point(442, 16)
         Me.lbltest.Name = "lbltest"
-        Me.lbltest.Size = New System.Drawing.Size(39, 13)
+        Me.lbltest.Size = New System.Drawing.Size(45, 15)
         Me.lbltest.TabIndex = 7
         Me.lbltest.Text = "Label1"
         '
@@ -81,13 +99,28 @@ Partial Class ManagerPT
         Me.dgv.DataSource = Me.TransportBindingSource
         Me.dgv.Location = New System.Drawing.Point(19, 19)
         Me.dgv.Name = "dgv"
-        Me.dgv.Size = New System.Drawing.Size(385, 303)
+        Me.dgv.Size = New System.Drawing.Size(383, 331)
         Me.dgv.TabIndex = 5
+        '
+        'Status
+        '
+        Me.Status.DataPropertyName = "transportStatus"
+        Me.Status.HeaderText = "Status"
+        Me.Status.MaxInputLength = 30
+        Me.Status.Name = "Status"
+        Me.Status.Width = 50
         '
         'TransportBindingSource
         '
         Me.TransportBindingSource.DataMember = "Transport"
         Me.TransportBindingSource.DataSource = Me.PTTSDataSetBindingSource
+        '
+        'txtSearch
+        '
+        Me.txtSearch.Location = New System.Drawing.Point(441, 61)
+        Me.txtSearch.Name = "txtSearch"
+        Me.txtSearch.Size = New System.Drawing.Size(100, 21)
+        Me.txtSearch.TabIndex = 11
         '
         'btnUpdate
         '
@@ -115,20 +148,12 @@ Partial Class ManagerPT
         Me.btnDeleteCancel.BackColor = System.Drawing.Color.Red
         Me.btnDeleteCancel.Font = New System.Drawing.Font("Tw Cen MT Condensed", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnDeleteCancel.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.btnDeleteCancel.Location = New System.Drawing.Point(345, 317)
+        Me.btnDeleteCancel.Location = New System.Drawing.Point(400, 323)
         Me.btnDeleteCancel.Name = "btnDeleteCancel"
         Me.btnDeleteCancel.Size = New System.Drawing.Size(59, 33)
         Me.btnDeleteCancel.TabIndex = 6
         Me.btnDeleteCancel.Text = "&Delete"
         Me.btnDeleteCancel.UseVisualStyleBackColor = False
-        '
-        'Status
-        '
-        Me.Status.DataPropertyName = "transportStatus"
-        Me.Status.HeaderText = "Status"
-        Me.Status.MaxInputLength = 30
-        Me.Status.Name = "Status"
-        Me.Status.Width = 50
         '
         'TransportNameDataGridViewTextBoxColumn
         '
@@ -185,13 +210,9 @@ Partial Class ManagerPT
         Me.PTTSDataSet.DataSetName = "PTTSDataSet"
         Me.PTTSDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
-        'TransportTableAdapter
-        '
-        Me.TransportTableAdapter.ClearBeforeFill = True
-        '
         'ts
         '
-        Me.ts.Location = New System.Drawing.Point(241, 90)
+        Me.ts.Location = New System.Drawing.Point(241, 74)
         Me.ts.Name = "ts"
         Me.ts.Size = New System.Drawing.Size(547, 104)
         Me.ts.TabIndex = 6
@@ -203,6 +224,19 @@ Partial Class ManagerPT
         Me.ManagerMenuLayoutControl1.Name = "ManagerMenuLayoutControl1"
         Me.ManagerMenuLayoutControl1.Size = New System.Drawing.Size(800, 575)
         Me.ManagerMenuLayoutControl1.TabIndex = 0
+        '
+        'TransportTableAdapter
+        '
+        Me.TransportTableAdapter.ClearBeforeFill = True
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Location = New System.Drawing.Point(408, 61)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(27, 22)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 12
+        Me.PictureBox1.TabStop = False
         '
         'ManagerPT
         '
@@ -222,6 +256,7 @@ Partial Class ManagerPT
         CType(Me.TransportBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PTTSDataSetBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PTTSDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -244,4 +279,7 @@ Partial Class ManagerPT
     Friend WithEvents TranportColumnDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents TranportRowDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents TransportTypeDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents Label1 As Label
+    Friend WithEvents txtSearch As TextBox
 End Class

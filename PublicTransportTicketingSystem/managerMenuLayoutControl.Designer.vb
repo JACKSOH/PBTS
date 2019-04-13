@@ -25,38 +25,38 @@ Partial Class managerMenuLayoutControl
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(managerMenuLayoutControl))
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
-        Me.pbHome = New System.Windows.Forms.PictureBox()
         Me.btnHome = New System.Windows.Forms.Button()
-        Me.pbReport = New System.Windows.Forms.PictureBox()
         Me.btnReport = New System.Windows.Forms.Button()
-        Me.pbManageStaff = New System.Windows.Forms.PictureBox()
         Me.btnManageStaff = New System.Windows.Forms.Button()
-        Me.pbManageSchedule = New System.Windows.Forms.PictureBox()
         Me.btnManageSchedule = New System.Windows.Forms.Button()
-        Me.pbManagePromotion = New System.Windows.Forms.PictureBox()
         Me.btnManagePromotion = New System.Windows.Forms.Button()
-        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.btnAbout = New System.Windows.Forms.Button()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.lblTitle = New System.Windows.Forms.Label()
+        Me.pbHome = New System.Windows.Forms.PictureBox()
+        Me.pbReport = New System.Windows.Forms.PictureBox()
+        Me.pbManageStaff = New System.Windows.Forms.PictureBox()
+        Me.pbManageSchedule = New System.Windows.Forms.PictureBox()
+        Me.pbManagePromotion = New System.Windows.Forms.PictureBox()
+        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.FlowLayoutPanel1.SuspendLayout()
+        Me.Panel2.SuspendLayout()
+        Me.Panel1.SuspendLayout()
         CType(Me.pbHome, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbReport, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbManageStaff, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbManageSchedule, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbManagePromotion, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel2.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel1.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -100,17 +100,6 @@ Partial Class managerMenuLayoutControl
         Me.FlowLayoutPanel1.Size = New System.Drawing.Size(229, 503)
         Me.FlowLayoutPanel1.TabIndex = 11
         '
-        'pbHome
-        '
-        Me.pbHome.Image = Global.PublicTransportTicketingSystem.My.Resources.Resources.home
-        Me.pbHome.Location = New System.Drawing.Point(10, 3)
-        Me.pbHome.Margin = New System.Windows.Forms.Padding(10, 3, 3, 20)
-        Me.pbHome.Name = "pbHome"
-        Me.pbHome.Size = New System.Drawing.Size(40, 38)
-        Me.pbHome.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.pbHome.TabIndex = 3
-        Me.pbHome.TabStop = False
-        '
         'btnHome
         '
         Me.btnHome.AllowDrop = True
@@ -128,17 +117,6 @@ Partial Class managerMenuLayoutControl
         Me.btnHome.Text = "Home"
         Me.btnHome.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnHome.UseVisualStyleBackColor = True
-        '
-        'pbReport
-        '
-        Me.pbReport.Image = Global.PublicTransportTicketingSystem.My.Resources.Resources.report
-        Me.pbReport.Location = New System.Drawing.Point(10, 64)
-        Me.pbReport.Margin = New System.Windows.Forms.Padding(10, 3, 3, 20)
-        Me.pbReport.Name = "pbReport"
-        Me.pbReport.Size = New System.Drawing.Size(40, 38)
-        Me.pbReport.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.pbReport.TabIndex = 4
-        Me.pbReport.TabStop = False
         '
         'btnReport
         '
@@ -158,17 +136,6 @@ Partial Class managerMenuLayoutControl
         Me.btnReport.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnReport.UseVisualStyleBackColor = True
         '
-        'pbManageStaff
-        '
-        Me.pbManageStaff.Image = Global.PublicTransportTicketingSystem.My.Resources.Resources.reserve
-        Me.pbManageStaff.Location = New System.Drawing.Point(10, 125)
-        Me.pbManageStaff.Margin = New System.Windows.Forms.Padding(10, 3, 3, 20)
-        Me.pbManageStaff.Name = "pbManageStaff"
-        Me.pbManageStaff.Size = New System.Drawing.Size(40, 38)
-        Me.pbManageStaff.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.pbManageStaff.TabIndex = 5
-        Me.pbManageStaff.TabStop = False
-        '
         'btnManageStaff
         '
         Me.btnManageStaff.AllowDrop = True
@@ -186,17 +153,6 @@ Partial Class managerMenuLayoutControl
         Me.btnManageStaff.Text = "Manage Staff"
         Me.btnManageStaff.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnManageStaff.UseVisualStyleBackColor = True
-        '
-        'pbManageSchedule
-        '
-        Me.pbManageSchedule.Image = Global.PublicTransportTicketingSystem.My.Resources.Resources.schedule
-        Me.pbManageSchedule.Location = New System.Drawing.Point(10, 186)
-        Me.pbManageSchedule.Margin = New System.Windows.Forms.Padding(10, 3, 3, 20)
-        Me.pbManageSchedule.Name = "pbManageSchedule"
-        Me.pbManageSchedule.Size = New System.Drawing.Size(40, 38)
-        Me.pbManageSchedule.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.pbManageSchedule.TabIndex = 8
-        Me.pbManageSchedule.TabStop = False
         '
         'btnManageSchedule
         '
@@ -216,17 +172,6 @@ Partial Class managerMenuLayoutControl
         Me.btnManageSchedule.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnManageSchedule.UseVisualStyleBackColor = True
         '
-        'pbManagePromotion
-        '
-        Me.pbManagePromotion.Image = Global.PublicTransportTicketingSystem.My.Resources.Resources._2
-        Me.pbManagePromotion.Location = New System.Drawing.Point(10, 247)
-        Me.pbManagePromotion.Margin = New System.Windows.Forms.Padding(10, 3, 3, 20)
-        Me.pbManagePromotion.Name = "pbManagePromotion"
-        Me.pbManagePromotion.Size = New System.Drawing.Size(40, 38)
-        Me.pbManagePromotion.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.pbManagePromotion.TabIndex = 10
-        Me.pbManagePromotion.TabStop = False
-        '
         'btnManagePromotion
         '
         Me.btnManagePromotion.AllowDrop = True
@@ -244,17 +189,6 @@ Partial Class managerMenuLayoutControl
         Me.btnManagePromotion.Text = "Manage Promotion"
         Me.btnManagePromotion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnManagePromotion.UseVisualStyleBackColor = True
-        '
-        'PictureBox4
-        '
-        Me.PictureBox4.Image = Global.PublicTransportTicketingSystem.My.Resources.Resources.pubic_trans
-        Me.PictureBox4.Location = New System.Drawing.Point(10, 308)
-        Me.PictureBox4.Margin = New System.Windows.Forms.Padding(10, 3, 3, 20)
-        Me.PictureBox4.Name = "PictureBox4"
-        Me.PictureBox4.Size = New System.Drawing.Size(40, 38)
-        Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox4.TabIndex = 13
-        Me.PictureBox4.TabStop = False
         '
         'Button3
         '
@@ -285,17 +219,6 @@ Partial Class managerMenuLayoutControl
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(229, 72)
         Me.Panel2.TabIndex = 6
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.ImageLocation = ""
-        Me.PictureBox1.Location = New System.Drawing.Point(145, 19)
-        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(5, 10, 5, 5)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(50, 48)
-        Me.PictureBox1.TabIndex = 2
-        Me.PictureBox1.TabStop = False
         '
         'Label1
         '
@@ -378,17 +301,6 @@ Partial Class managerMenuLayoutControl
         Me.btnAbout.Text = "About Us"
         Me.btnAbout.UseVisualStyleBackColor = False
         '
-        'PictureBox2
-        '
-        Me.PictureBox2.Image = Global.PublicTransportTicketingSystem.My.Resources.Resources.logout__1_
-        Me.PictureBox2.Location = New System.Drawing.Point(534, 12)
-        Me.PictureBox2.Margin = New System.Windows.Forms.Padding(10, 3, 3, 20)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(28, 31)
-        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox2.TabIndex = 4
-        Me.PictureBox2.TabStop = False
-        '
         'lblTitle
         '
         Me.lblTitle.AutoSize = True
@@ -400,6 +312,94 @@ Partial Class managerMenuLayoutControl
         Me.lblTitle.TabIndex = 0
         Me.lblTitle.Text = "Manager"
         '
+        'pbHome
+        '
+        Me.pbHome.Image = Global.PublicTransportTicketingSystem.My.Resources.Resources.home
+        Me.pbHome.Location = New System.Drawing.Point(10, 3)
+        Me.pbHome.Margin = New System.Windows.Forms.Padding(10, 3, 3, 20)
+        Me.pbHome.Name = "pbHome"
+        Me.pbHome.Size = New System.Drawing.Size(40, 38)
+        Me.pbHome.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.pbHome.TabIndex = 3
+        Me.pbHome.TabStop = False
+        '
+        'pbReport
+        '
+        Me.pbReport.Image = Global.PublicTransportTicketingSystem.My.Resources.Resources.report
+        Me.pbReport.Location = New System.Drawing.Point(10, 64)
+        Me.pbReport.Margin = New System.Windows.Forms.Padding(10, 3, 3, 20)
+        Me.pbReport.Name = "pbReport"
+        Me.pbReport.Size = New System.Drawing.Size(40, 38)
+        Me.pbReport.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.pbReport.TabIndex = 4
+        Me.pbReport.TabStop = False
+        '
+        'pbManageStaff
+        '
+        Me.pbManageStaff.Image = Global.PublicTransportTicketingSystem.My.Resources.Resources.reserve
+        Me.pbManageStaff.Location = New System.Drawing.Point(10, 125)
+        Me.pbManageStaff.Margin = New System.Windows.Forms.Padding(10, 3, 3, 20)
+        Me.pbManageStaff.Name = "pbManageStaff"
+        Me.pbManageStaff.Size = New System.Drawing.Size(40, 38)
+        Me.pbManageStaff.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.pbManageStaff.TabIndex = 5
+        Me.pbManageStaff.TabStop = False
+        '
+        'pbManageSchedule
+        '
+        Me.pbManageSchedule.Image = Global.PublicTransportTicketingSystem.My.Resources.Resources.schedule
+        Me.pbManageSchedule.Location = New System.Drawing.Point(10, 186)
+        Me.pbManageSchedule.Margin = New System.Windows.Forms.Padding(10, 3, 3, 20)
+        Me.pbManageSchedule.Name = "pbManageSchedule"
+        Me.pbManageSchedule.Size = New System.Drawing.Size(40, 38)
+        Me.pbManageSchedule.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.pbManageSchedule.TabIndex = 8
+        Me.pbManageSchedule.TabStop = False
+        '
+        'pbManagePromotion
+        '
+        Me.pbManagePromotion.Image = Global.PublicTransportTicketingSystem.My.Resources.Resources._2
+        Me.pbManagePromotion.Location = New System.Drawing.Point(10, 247)
+        Me.pbManagePromotion.Margin = New System.Windows.Forms.Padding(10, 3, 3, 20)
+        Me.pbManagePromotion.Name = "pbManagePromotion"
+        Me.pbManagePromotion.Size = New System.Drawing.Size(40, 38)
+        Me.pbManagePromotion.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.pbManagePromotion.TabIndex = 10
+        Me.pbManagePromotion.TabStop = False
+        '
+        'PictureBox4
+        '
+        Me.PictureBox4.Image = Global.PublicTransportTicketingSystem.My.Resources.Resources.pubic_trans
+        Me.PictureBox4.Location = New System.Drawing.Point(10, 308)
+        Me.PictureBox4.Margin = New System.Windows.Forms.Padding(10, 3, 3, 20)
+        Me.PictureBox4.Name = "PictureBox4"
+        Me.PictureBox4.Size = New System.Drawing.Size(40, 38)
+        Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox4.TabIndex = 13
+        Me.PictureBox4.TabStop = False
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.ImageLocation = ""
+        Me.PictureBox1.Location = New System.Drawing.Point(145, 19)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(5, 10, 5, 5)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(50, 48)
+        Me.PictureBox1.TabIndex = 2
+        Me.PictureBox1.TabStop = False
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.Image = Global.PublicTransportTicketingSystem.My.Resources.Resources.logout__1_
+        Me.PictureBox2.Location = New System.Drawing.Point(527, 16)
+        Me.PictureBox2.Margin = New System.Windows.Forms.Padding(10, 3, 3, 20)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(28, 31)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox2.TabIndex = 4
+        Me.PictureBox2.TabStop = False
+        '
         'managerMenuLayoutControl
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -409,16 +409,16 @@ Partial Class managerMenuLayoutControl
         Me.Size = New System.Drawing.Size(800, 575)
         Me.TableLayoutPanel1.ResumeLayout(False)
         Me.FlowLayoutPanel1.ResumeLayout(False)
+        Me.Panel2.ResumeLayout(False)
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         CType(Me.pbHome, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pbReport, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pbManageStaff, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pbManageSchedule, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pbManagePromotion, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel2.ResumeLayout(False)
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 

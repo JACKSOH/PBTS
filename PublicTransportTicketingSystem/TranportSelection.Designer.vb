@@ -48,6 +48,7 @@ Partial Class TranportSelection
         Me.GroupBox1.Controls.Add(Me.pbBus)
         Me.GroupBox1.Controls.Add(Me.pbTrain)
         Me.GroupBox1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.GroupBox1.Font = New System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.Location = New System.Drawing.Point(0, 0)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(537, 104)
@@ -116,7 +117,7 @@ Partial Class TranportSelection
         Me.Label1.AutoSize = True
         Me.Label1.Location = New System.Drawing.Point(325, 21)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(100, 13)
+        Me.Label1.Size = New System.Drawing.Size(93, 14)
         Me.Label1.TabIndex = 2
         Me.Label1.Text = "Selected Transport:"
         '

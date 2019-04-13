@@ -17,11 +17,6 @@
     End Sub
 
 
-
-    Private Sub ManagerMenuLayoutControl1_Load(sender As Object, e As EventArgs) Handles ManagerMenuLayoutControl1.Load
-
-    End Sub
-
     Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
         If btnUpdate.Text = "&Update" Then
             btnUpdate.Text = "&Save"
@@ -72,8 +67,6 @@
     Private Sub ChangeTranport() Handles ts.TransportChange
         txtTest.Text = ts.selectedType.ToString
     End Sub
-
-
 
 
 End Class

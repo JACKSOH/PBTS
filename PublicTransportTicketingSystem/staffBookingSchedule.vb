@@ -4,7 +4,7 @@ Imports System.Data.SqlClient
 Public Class staffBookingSchedule
     Dim SqlConnection As New SqlConnection
     Public scheduleID As String
-    Public departureDate As String 'for payment
+    Public departureDate As DateTime 'for payment
 
     Dim originID As String
     Dim desID As String
@@ -16,6 +16,7 @@ Public Class staffBookingSchedule
 
     Private Sub dgvSchedule_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvSchedule.CellDoubleClick
         scheduleID = dgvSchedule.SelectedRows(0).Cells(2).Value.ToString
+        departureDate = Convert.ToDateTime(dgvSchedule.SelectedRows(0).Cells(1).Value)
         staffSeatSelection.ShowDialog()
         'Me.Hide()
 
@@ -65,8 +66,6 @@ Public Class staffBookingSchedule
 
             SqlConnection.Close()
 
-            MessageBox.Show(desID, originID)
-
             Dim db As New PBTSDataContext()
 
             Dim query = From origin In db.LocationLists
@@ -77,7 +76,6 @@ Public Class staffBookingSchedule
                         Where origin.locationID = originID And origin.locationStatus.ToLower = "origin" And des.locationID = desID And schedule.departureDateTime.Value.Date = StaffBooking.selectedDate.Date
                         Select originLocation.locationName, schedule.departureDateTime, schedule.scheduleID
 
-            MessageBox.Show(query.First.locationName)
 
             Dim col As New DataGridViewTextBoxColumn
             col.DataPropertyName = "Destination"

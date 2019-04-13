@@ -22,11 +22,9 @@ Partial Class PaymentMake
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-
-        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-
         Me.lblLicensePlate = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.dgvSeatPrice = New System.Windows.Forms.DataGridView()
@@ -47,17 +45,15 @@ Partial Class PaymentMake
         Me.lblPassengerName = New System.Windows.Forms.Label()
         Me.grpPayment = New System.Windows.Forms.GroupBox()
         Me.lblDiscount = New System.Windows.Forms.Label()
-
         Me.lblChange = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
-
         Me.Label9 = New System.Windows.Forms.Label()
         Me.lblTotalPrice = New System.Windows.Forms.Label()
         Me.btnGenerateTicket = New System.Windows.Forms.Button()
         Me.lblCashPaidHint = New System.Windows.Forms.Label()
         Me.txtCashPaid = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
-
+        Me.btnCancel = New System.Windows.Forms.Button()
         Me.GroupBox2.SuspendLayout()
         CType(Me.dgvSeatPrice, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.grpPayment.SuspendLayout()
@@ -113,22 +109,22 @@ Partial Class PaymentMake
         'dgvSeatPrice
         '
         Me.dgvSeatPrice.AllowUserToDeleteRows = False
-        DataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control
-        Me.dgvSeatPrice.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle11
+        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control
+        Me.dgvSeatPrice.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle5
         Me.dgvSeatPrice.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgvSeatPrice.BackgroundColor = System.Drawing.SystemColors.Control
         Me.dgvSeatPrice.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dgvSeatPrice.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvSeatPrice.ColumnHeadersVisible = False
         Me.dgvSeatPrice.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Seat, Me.Price})
-        DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle12.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        DataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvSeatPrice.DefaultCellStyle = DataGridViewCellStyle12
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        DataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvSeatPrice.DefaultCellStyle = DataGridViewCellStyle6
         Me.dgvSeatPrice.GridColor = System.Drawing.SystemColors.ControlDarkDark
         Me.dgvSeatPrice.Location = New System.Drawing.Point(39, 423)
         Me.dgvSeatPrice.Name = "dgvSeatPrice"
@@ -241,7 +237,6 @@ Partial Class PaymentMake
         Me.Label10.TabIndex = 17
         Me.Label10.Text = "Departure Time"
         '
-
         'lblDepartureDate
         '
         Me.lblDepartureDate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
@@ -282,6 +277,7 @@ Partial Class PaymentMake
         '
         'grpPayment
         '
+        Me.grpPayment.Controls.Add(Me.btnCancel)
         Me.grpPayment.Controls.Add(Me.lblDiscount)
         Me.grpPayment.Controls.Add(Me.lblChange)
         Me.grpPayment.Controls.Add(Me.Label8)
@@ -304,7 +300,6 @@ Partial Class PaymentMake
         Me.lblDiscount.AutoSize = True
         Me.lblDiscount.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblDiscount.ForeColor = System.Drawing.Color.Black
-
         Me.lblDiscount.Location = New System.Drawing.Point(173, 189)
         Me.lblDiscount.Name = "lblDiscount"
         Me.lblDiscount.Size = New System.Drawing.Size(0, 17)
@@ -327,7 +322,6 @@ Partial Class PaymentMake
         Me.Label8.Size = New System.Drawing.Size(83, 24)
         Me.Label8.TabIndex = 30
         Me.Label8.Text = "Change"
-
         '
         'Label9
         '
@@ -351,7 +345,7 @@ Partial Class PaymentMake
         'btnGenerateTicket
         '
         Me.btnGenerateTicket.Enabled = False
-        Me.btnGenerateTicket.Location = New System.Drawing.Point(176, 360)
+        Me.btnGenerateTicket.Location = New System.Drawing.Point(226, 369)
         Me.btnGenerateTicket.Name = "btnGenerateTicket"
         Me.btnGenerateTicket.Size = New System.Drawing.Size(163, 26)
         Me.btnGenerateTicket.TabIndex = 25
@@ -385,7 +379,15 @@ Partial Class PaymentMake
         Me.Label5.TabIndex = 18
         Me.Label5.Text = "Cash Paid"
         '
-
+        'btnCancel
+        '
+        Me.btnCancel.Location = New System.Drawing.Point(36, 369)
+        Me.btnCancel.Name = "btnCancel"
+        Me.btnCancel.Size = New System.Drawing.Size(163, 26)
+        Me.btnCancel.TabIndex = 33
+        Me.btnCancel.Text = "Cancel"
+        Me.btnCancel.UseVisualStyleBackColor = True
+        '
         'PaymentMake
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -434,4 +436,5 @@ Partial Class PaymentMake
     Friend WithEvents lblCashPaidHint As Label
     Friend WithEvents txtCashPaid As TextBox
     Friend WithEvents Label5 As Label
+    Friend WithEvents btnCancel As Button
 End Class

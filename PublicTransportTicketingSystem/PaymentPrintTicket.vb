@@ -11,6 +11,21 @@
     End Sub
 
     Private Sub PaymentPrintTicket_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        lblPassengerName.Text = PaymentMake.lblPassengerName.Text
+        lblCarrier.Text = PaymentMake.lblCompany.Text & " - " & PaymentMake.lblLicensePlate.Text
+        lblOrigin.Text = PaymentMake.lblOrigin.Text
+        lblDestination.Text = PaymentMake.lblDestination.Text
+        lblDepartureDateTime.Text = PaymentMake.lblDepartureDate.Text & ", " & PaymentMake.lblDepartureTime.Text
+        lblEstimatedDuration.Text = PaymentMake.duration & " hours"
+        lblPrice.Text = PaymentMake.discountedPrice.ToString("RM0.00")
+        lblGenerated.Text = "This ticket was generated at " & DateTime.Now.ToShortTimeString & " on " & DateTime.Now.ToShortDateString & "."
+
+        lblPrice.Text = PaymentMake.dgvSeatPrice.Rows(PaymentMake.ticketNo).Cells(1).Value.ToString
+        lblSeat.Text = PaymentMake.dgvSeatPrice.Rows(PaymentMake.ticketNo).Cells(0).Value.ToString
+
+        lblTicketID.Text = PaymentMake.ticketID
+        lblTicketTitle.Text = "--" & StaffBooking.selectedType.ToUpper & " TICKET--"
+
         CaptureScreen()
         Me.PrintDocument1.Print()
         Me.Close()

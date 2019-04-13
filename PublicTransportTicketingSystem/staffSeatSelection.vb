@@ -98,6 +98,7 @@
         staffBookingCustomerDetail.Show()
         Me.Hide()
         staffBookingSchedule.Hide()
+        StaffBooking.Hide()
 
     End Sub
 End Class

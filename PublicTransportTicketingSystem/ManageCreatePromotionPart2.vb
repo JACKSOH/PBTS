@@ -107,10 +107,15 @@ Public Class ManageCreatePromotionPart2
                 cmd.Parameters.Add(New SqlParameter("promotionStatus", "Active"))
 
                 cmd.ExecuteNonQuery()
+                Dim id As String = ""
+                Try
+                    id = db.promoteSchedules.OrderByDescending(Function(o) o.promoteScheduleID).FirstOrDefault.promoteScheduleID.ToString
+                Catch ex As Exception
 
+                End Try
                 For value As Integer = 0 To count
                     cmd2 = New SqlCommand("insert into promoteSchedule ([promoteScheduleID],[promotionID],[scheduleID], [discountRate]) values (@promoteScheduleID, @promotionID, @scheduleID, @discountRate)", con)
-                    cmd2.Parameters.Add(New SqlParameter("promoteScheduleID", App.GenerateNextId(db.promoteSchedules.OrderByDescending(Function(o) o.promoteScheduleID).FirstOrDefault.promoteScheduleID.ToString)))
+                    cmd2.Parameters.Add(New SqlParameter("promoteScheduleID", App.GenerateNextId(id)))
                     cmd2.Parameters.Add(New SqlParameter("promotionID", promotionID))
                     cmd2.Parameters.Add(New SqlParameter("scheduleID", dgvSchedule.Rows(value).Cells(0).Value.ToString))
                     cmd2.Parameters.Add(New SqlParameter("discountRate", ManagerCreatePromotion.discountRate))

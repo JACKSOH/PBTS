@@ -109,4 +109,9 @@
         Me.Close()
 
     End Sub
+
+
+    Private Sub txtPosition_Validating(sender As Object, e As System.ComponentModel.CancelEventArgs)
+
+    End Sub
 End Class

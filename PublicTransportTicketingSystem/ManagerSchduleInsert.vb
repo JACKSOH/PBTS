@@ -1,62 +1,58 @@
 ﻿Public Class ManagerSchduleInsert
     Public newId As String
     Public selectedType As String = ManagerManageSchedule.TranportSelection1.selectedType
-    Public selectedIndex As Integer
+
+
+    Public Sub BindcboTranport()
+        TransportTableAdapter.FillBy1(PTTSDataSet.Transport, cboType.Text)
+    End Sub
+    Public Sub BindcboDestinationOrigin()
+
+        Me.LocationTableAdapter.FillBy2(PTTSDataSet.Location, cboType.Text)
+        Me.LocationTableAdapter.FillBy3(PTTSDataSet.Location, cboType.Text)
+    End Sub
 
     Private Sub ManagerSchduleInsert_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'TODO: This line of code loads data into the 'PTTSDataSet.Location' table. You can move, or remove it, as needed.
-        'Me.LocationTableAdapter.Fill(Me.PTTSDataSet.Location)
-        Me.LocationTableAdapter.FillBy2(PTTSDataSet.Location, selectedType)
-        'To avoid the exception
-        selectedIndex += 1
-        '  cboOrigin.SelectedIndex = 1
-        Me.LocationTableAdapter.FillBy3(PTTSDataSet.Location, selectedType)
-
+        cboType.SelectedIndex = 0
+        BindcboTranport()
+        BindcboDestinationOrigin()
+        'only allow to choose time
+        dtpTime.ShowUpDown = True
+        dtpTime.MinDate = DateTime.Today
+        dtpDate.MaxDate = DateTime.Today.AddMonths(1)
+        dtpDate.MinDate = DateTime.Today
+        lblNewId.Text = App.GenerateNextId("")
+        'refresh the table index
     End Sub
 
-    Private Sub DateTimePicker1_ValueChanged(sender As Object, e As EventArgs) Handles dtpDeparture.ValueChanged
-
-    End Sub
 
     Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
         Me.Close()
     End Sub
 
+    Private Sub cboDestination_Validating(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles cboDestination.Validating
+        If cboDestination.Text = cboOrigin.Text Then
+            err.SetError(cboDestination, "Origin and destionation could not be same!!")
+            e.Cancel = True
+        Else
+            err.SetError(cboDestination, Nothing)
 
-
-    Private Sub DateTimePicker1_ValueChanged_1(sender As Object, e As EventArgs) Handles DateTimePicker1.ValueChanged
-
+        End If
     End Sub
 
-    Private Sub cboOrigin_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboOrigin.SelectedIndexChanged
+    Private Sub cboOrigin_Validating(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles cboOrigin.Validating
+        If cboDestination.Text = cboOrigin.Text Then
+            err.SetError(cboOrigin, "Origin and destionation could not be same!!")
+            e.Cancel = True
+        Else
+            err.SetError(cboOrigin, Nothing)
 
-
-
-
-
-
-
+        End If
     End Sub
 
-    Private Sub FillToolStripButton_Click(sender As Object, e As EventArgs) Handles FillToolStripButton.Click
-        Try
-            Me.LocationTableAdapter.Fill(Me.PTTSDataSet.Location)
-        Catch ex As System.Exception
-            System.Windows.Forms.MessageBox.Show(ex.Message)
-        End Try
+    Private Sub cboType_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboType.SelectedIndexChanged
+        BindcboDestinationOrigin()
+        BindcboTranport()
 
-    End Sub
-
-    Private Sub FillToolStripButton1_Click(sender As Object, e As EventArgs) Handles FillToolStripButton1.Click
-        Try
-            Me.LocationTableAdapter.Fill(Me.PTTSDataSet.Location)
-        Catch ex As System.Exception
-            System.Windows.Forms.MessageBox.Show(ex.Message)
-        End Try
-
-    End Sub
-
-    Private Sub ManagerSchduleInsert_Shown(sender As Object, e As EventArgs) Handles MyBase.Shown
-        test.Text += "a"
     End Sub
 End Class

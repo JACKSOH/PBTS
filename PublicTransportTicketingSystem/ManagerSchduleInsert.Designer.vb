@@ -25,7 +25,7 @@ Partial Class ManagerSchduleInsert
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ManagerSchduleInsert))
         Me.label = New System.Windows.Forms.Label()
-        Me.dtpDeparture = New System.Windows.Forms.DateTimePicker()
+        Me.dtpTime = New System.Windows.Forms.DateTimePicker()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -33,15 +33,16 @@ Partial Class ManagerSchduleInsert
         Me.cboType = New System.Windows.Forms.ComboBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.cboCarrier = New System.Windows.Forms.ComboBox()
+        Me.TransportBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.PTTSDataSet = New PublicTransportTicketingSystem.PTTSDataSet()
         Me.cboOrigin = New System.Windows.Forms.ComboBox()
         Me.LocationBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.PTTSDataSet = New PublicTransportTicketingSystem.PTTSDataSet()
         Me.cboDestination = New System.Windows.Forms.ComboBox()
         Me.LocationBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.lblNewId = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
+        Me.dtpDate = New System.Windows.Forms.DateTimePicker()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.btnCancel = New System.Windows.Forms.Button()
@@ -49,17 +50,13 @@ Partial Class ManagerSchduleInsert
         Me.err = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.LocationTableAdapter = New PublicTransportTicketingSystem.PTTSDataSetTableAdapters.LocationTableAdapter()
         Me.test = New System.Windows.Forms.TextBox()
-        Me.FillToolStrip = New System.Windows.Forms.ToolStrip()
-        Me.FillToolStripButton = New System.Windows.Forms.ToolStripButton()
-        Me.FillToolStrip1 = New System.Windows.Forms.ToolStrip()
-        Me.FillToolStripButton1 = New System.Windows.Forms.ToolStripButton()
-        CType(Me.LocationBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TransportTableAdapter = New PublicTransportTicketingSystem.PTTSDataSetTableAdapters.TransportTableAdapter()
+        CType(Me.TransportBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PTTSDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LocationBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LocationBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.err, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.FillToolStrip.SuspendLayout()
-        Me.FillToolStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'label
@@ -73,15 +70,15 @@ Partial Class ManagerSchduleInsert
         Me.label.TabIndex = 0
         Me.label.Text = "New Schedule ID :"
         '
-        'dtpDeparture
+        'dtpTime
         '
-        Me.dtpDeparture.Format = System.Windows.Forms.DateTimePickerFormat.Time
-        Me.dtpDeparture.Location = New System.Drawing.Point(310, 275)
-        Me.dtpDeparture.Margin = New System.Windows.Forms.Padding(4)
-        Me.dtpDeparture.MaxDate = New Date(2020, 12, 31, 0, 0, 0, 0)
-        Me.dtpDeparture.Name = "dtpDeparture"
-        Me.dtpDeparture.Size = New System.Drawing.Size(128, 25)
-        Me.dtpDeparture.TabIndex = 2
+        Me.dtpTime.Format = System.Windows.Forms.DateTimePickerFormat.Time
+        Me.dtpTime.Location = New System.Drawing.Point(310, 275)
+        Me.dtpTime.Margin = New System.Windows.Forms.Padding(4)
+        Me.dtpTime.MaxDate = New Date(2020, 12, 31, 0, 0, 0, 0)
+        Me.dtpTime.Name = "dtpTime"
+        Me.dtpTime.Size = New System.Drawing.Size(128, 25)
+        Me.dtpTime.TabIndex = 2
         '
         'Label2
         '
@@ -131,6 +128,7 @@ Partial Class ManagerSchduleInsert
         '
         Me.cboType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboType.FormattingEnabled = True
+        Me.cboType.Items.AddRange(New Object() {"bus", "ferry", "train"})
         Me.cboType.Location = New System.Drawing.Point(109, 136)
         Me.cboType.Name = "cboType"
         Me.cboType.Size = New System.Drawing.Size(121, 27)
@@ -149,12 +147,25 @@ Partial Class ManagerSchduleInsert
         '
         'cboCarrier
         '
+        Me.cboCarrier.DataBindings.Add(New System.Windows.Forms.Binding("SelectedValue", Me.TransportBindingSource, "transportID", True))
+        Me.cboCarrier.DataSource = Me.TransportBindingSource
+        Me.cboCarrier.DisplayMember = "transportName"
         Me.cboCarrier.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboCarrier.FormattingEnabled = True
         Me.cboCarrier.Location = New System.Drawing.Point(291, 136)
         Me.cboCarrier.Name = "cboCarrier"
-        Me.cboCarrier.Size = New System.Drawing.Size(121, 27)
+        Me.cboCarrier.Size = New System.Drawing.Size(351, 27)
         Me.cboCarrier.TabIndex = 10
+        '
+        'TransportBindingSource
+        '
+        Me.TransportBindingSource.DataMember = "Transport"
+        Me.TransportBindingSource.DataSource = Me.PTTSDataSet
+        '
+        'PTTSDataSet
+        '
+        Me.PTTSDataSet.DataSetName = "PTTSDataSet"
+        Me.PTTSDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'cboOrigin
         '
@@ -172,11 +183,6 @@ Partial Class ManagerSchduleInsert
         '
         Me.LocationBindingSource.DataMember = "Location"
         Me.LocationBindingSource.DataSource = Me.PTTSDataSet
-        '
-        'PTTSDataSet
-        '
-        Me.PTTSDataSet.DataSetName = "PTTSDataSet"
-        Me.PTTSDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'cboDestination
         '
@@ -226,19 +232,19 @@ Partial Class ManagerSchduleInsert
         Me.Label6.TabIndex = 17
         Me.Label6.Text = "Time"
         '
-        'DateTimePicker1
+        'dtpDate
         '
-        Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DateTimePicker1.Location = New System.Drawing.Point(109, 275)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(161, 25)
-        Me.DateTimePicker1.TabIndex = 18
+        Me.dtpDate.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dtpDate.Location = New System.Drawing.Point(109, 275)
+        Me.dtpDate.Name = "dtpDate"
+        Me.dtpDate.Size = New System.Drawing.Size(161, 25)
+        Me.dtpDate.TabIndex = 18
         '
         'ComboBox1
         '
         Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Items.AddRange(New Object() {"Does not repeat", "Weekly on X (within this week)", "Everyday on this week"})
+        Me.ComboBox1.Items.AddRange(New Object() {"Does not repeat", "Weekly on X (within this month)", "Everyday on this week"})
         Me.ComboBox1.Location = New System.Drawing.Point(109, 340)
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(239, 27)
@@ -283,6 +289,7 @@ Partial Class ManagerSchduleInsert
         '
         'err
         '
+        Me.err.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink
         Me.err.ContainerControl = Me
         '
         'LocationTableAdapter
@@ -296,51 +303,21 @@ Partial Class ManagerSchduleInsert
         Me.test.Size = New System.Drawing.Size(100, 25)
         Me.test.TabIndex = 36
         '
-        'FillToolStrip
+        'TransportTableAdapter
         '
-        Me.FillToolStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FillToolStripButton})
-        Me.FillToolStrip.Location = New System.Drawing.Point(0, 0)
-        Me.FillToolStrip.Name = "FillToolStrip"
-        Me.FillToolStrip.Size = New System.Drawing.Size(654, 25)
-        Me.FillToolStrip.TabIndex = 37
-        Me.FillToolStrip.Text = "FillToolStrip"
-        '
-        'FillToolStripButton
-        '
-        Me.FillToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
-        Me.FillToolStripButton.Name = "FillToolStripButton"
-        Me.FillToolStripButton.Size = New System.Drawing.Size(26, 22)
-        Me.FillToolStripButton.Text = "Fill"
-        '
-        'FillToolStrip1
-        '
-        Me.FillToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FillToolStripButton1})
-        Me.FillToolStrip1.Location = New System.Drawing.Point(0, 25)
-        Me.FillToolStrip1.Name = "FillToolStrip1"
-        Me.FillToolStrip1.Size = New System.Drawing.Size(654, 25)
-        Me.FillToolStrip1.TabIndex = 38
-        Me.FillToolStrip1.Text = "FillToolStrip1"
-        '
-        'FillToolStripButton1
-        '
-        Me.FillToolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
-        Me.FillToolStripButton1.Name = "FillToolStripButton1"
-        Me.FillToolStripButton1.Size = New System.Drawing.Size(26, 22)
-        Me.FillToolStripButton1.Text = "Fill"
+        Me.TransportTableAdapter.ClearBeforeFill = True
         '
         'ManagerSchduleInsert
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 19.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(654, 468)
-        Me.Controls.Add(Me.FillToolStrip1)
-        Me.Controls.Add(Me.FillToolStrip)
         Me.Controls.Add(Me.test)
         Me.Controls.Add(Me.btnCancel)
         Me.Controls.Add(Me.btnAdd)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.ComboBox1)
-        Me.Controls.Add(Me.DateTimePicker1)
+        Me.Controls.Add(Me.dtpDate)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.lblNewId)
         Me.Controls.Add(Me.PictureBox1)
@@ -353,28 +330,25 @@ Partial Class ManagerSchduleInsert
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.dtpDeparture)
+        Me.Controls.Add(Me.dtpTime)
         Me.Controls.Add(Me.label)
         Me.Font = New System.Drawing.Font("Tw Cen MT", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "ManagerSchduleInsert"
         Me.Text = "ManagerSchduleInsert"
-        CType(Me.LocationBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TransportBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PTTSDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LocationBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LocationBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.err, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.FillToolStrip.ResumeLayout(False)
-        Me.FillToolStrip.PerformLayout()
-        Me.FillToolStrip1.ResumeLayout(False)
-        Me.FillToolStrip1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
     Friend WithEvents label As Label
-    Friend WithEvents dtpDeparture As DateTimePicker
+    Friend WithEvents dtpTime As DateTimePicker
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents Label4 As Label
@@ -387,7 +361,7 @@ Partial Class ManagerSchduleInsert
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents lblNewId As Label
     Friend WithEvents Label6 As Label
-    Friend WithEvents DateTimePicker1 As DateTimePicker
+    Friend WithEvents dtpDate As DateTimePicker
     Friend WithEvents ComboBox1 As ComboBox
     Friend WithEvents Label7 As Label
     Friend WithEvents btnCancel As Button
@@ -398,8 +372,6 @@ Partial Class ManagerSchduleInsert
     Friend WithEvents LocationTableAdapter As PTTSDataSetTableAdapters.LocationTableAdapter
     Friend WithEvents LocationBindingSource1 As BindingSource
     Friend WithEvents test As TextBox
-    Friend WithEvents FillToolStrip As ToolStrip
-    Friend WithEvents FillToolStripButton As ToolStripButton
-    Friend WithEvents FillToolStrip1 As ToolStrip
-    Friend WithEvents FillToolStripButton1 As ToolStripButton
+    Friend WithEvents TransportBindingSource As BindingSource
+    Friend WithEvents TransportTableAdapter As PTTSDataSetTableAdapters.TransportTableAdapter
 End Class

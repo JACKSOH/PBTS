@@ -27,23 +27,14 @@
       <Association Name="Employee_Booking" Member="Bookings" ThisKey="employeeID" OtherKey="employeeID" Type="Booking" />
     </Type>
   </Table>
-  <Table Name="dbo.Location" Member="Locations">
-    <Type Name="Location">
-      <Column Name="locationID" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="locationName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="locationType" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="locationStatus" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Association Name="Location_LocationList" Member="LocationLists" ThisKey="locationID" OtherKey="locationID" Type="LocationList" />
-    </Type>
-  </Table>
   <Table Name="dbo.LocationList" Member="LocationLists">
     <Type Name="LocationList">
       <Column Name="locationListID" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="scheduleID" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
       <Column Name="locationID" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
       <Column Name="locationStatus" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Association Name="Location_LocationList" Member="Location" ThisKey="locationID" OtherKey="locationID" Type="Location" IsForeignKey="true" />
       <Association Name="Schedule_LocationList" Member="Schedule" ThisKey="scheduleID" OtherKey="scheduleID" Type="Schedule" IsForeignKey="true" />
+      <Association Name="Location_LocationList" Member="Location" ThisKey="locationID" OtherKey="locationID" Type="Location" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.promoteSchedule" Member="promoteSchedules">
@@ -104,7 +95,7 @@
     <Type Name="Transport">
       <Column Name="transportID" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="seatPrice" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
-      <Column Name="transportName" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="transportName" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
       <Column Name="transportType" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
       <Column Name="licensePlate" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
       <Column Name="totalSeat" Type="System.Int32" DbType="Int" CanBeNull="true" />
@@ -112,6 +103,16 @@
       <Column Name="tranportColumn" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="transportStatus" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Association Name="Transport_Schedule" Member="Schedules" ThisKey="transportID" OtherKey="transportID" Type="Schedule" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Location" Member="Locations">
+    <Type Name="Location">
+      <Column Name="locationID" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="locationName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="locationType" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="locationStatus" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="position" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Location_LocationList" Member="LocationLists" ThisKey="locationID" OtherKey="locationID" Type="LocationList" />
     </Type>
   </Table>
 </Database>

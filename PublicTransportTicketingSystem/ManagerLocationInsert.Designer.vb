@@ -33,6 +33,9 @@ Partial Class ManagerLocationInsert
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.cboType = New System.Windows.Forms.ComboBox()
+        Me.txtPosition = New System.Windows.Forms.TextBox()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.lblsuggest = New System.Windows.Forms.Label()
         CType(Me.err, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -56,7 +59,7 @@ Partial Class ManagerLocationInsert
         Me.btnCancel.CausesValidation = False
         Me.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.btnCancel.Font = New System.Drawing.Font("Tw Cen MT Condensed", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCancel.Location = New System.Drawing.Point(179, 250)
+        Me.btnCancel.Location = New System.Drawing.Point(179, 260)
         Me.btnCancel.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.Size = New System.Drawing.Size(72, 23)
@@ -87,7 +90,7 @@ Partial Class ManagerLocationInsert
         Me.btnAdd.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.btnAdd.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.btnAdd.Font = New System.Drawing.Font("Tw Cen MT Condensed", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAdd.Location = New System.Drawing.Point(86, 239)
+        Me.btnAdd.Location = New System.Drawing.Point(86, 249)
         Me.btnAdd.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.btnAdd.Name = "btnAdd"
         Me.btnAdd.Size = New System.Drawing.Size(87, 34)
@@ -135,11 +138,43 @@ Partial Class ManagerLocationInsert
         Me.cboType.Size = New System.Drawing.Size(121, 21)
         Me.cboType.TabIndex = 34
         '
+        'txtPosition
+        '
+        Me.txtPosition.Location = New System.Drawing.Point(88, 221)
+        Me.txtPosition.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.txtPosition.MaxLength = 10
+        Me.txtPosition.Name = "txtPosition"
+        Me.txtPosition.Size = New System.Drawing.Size(60, 20)
+        Me.txtPosition.TabIndex = 36
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Tw Cen MT Condensed", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.Location = New System.Drawing.Point(84, 198)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(64, 19)
+        Me.Label9.TabIndex = 35
+        Me.Label9.Text = "&Position :"
+        '
+        'lblsuggest
+        '
+        Me.lblsuggest.AutoSize = True
+        Me.lblsuggest.Font = New System.Drawing.Font("Tw Cen MT", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblsuggest.Location = New System.Drawing.Point(154, 226)
+        Me.lblsuggest.Name = "lblsuggest"
+        Me.lblsuggest.Size = New System.Drawing.Size(106, 15)
+        Me.lblsuggest.TabIndex = 37
+        Me.lblsuggest.Text = "Suggested position"
+        '
         'ManagerLocationInsert
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(364, 303)
+        Me.Controls.Add(Me.lblsuggest)
+        Me.Controls.Add(Me.txtPosition)
+        Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.cboType)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.btnCancel)
@@ -168,4 +203,7 @@ Partial Class ManagerLocationInsert
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents cboType As ComboBox
+    Friend WithEvents txtPosition As TextBox
+    Friend WithEvents Label9 As Label
+    Friend WithEvents lblsuggest As Label
 End Class

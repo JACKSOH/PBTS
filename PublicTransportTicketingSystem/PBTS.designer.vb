@@ -43,12 +43,6 @@ Partial Public Class PBTSDataContext
     End Sub
   Partial Private Sub DeleteEmployee(instance As Employee)
     End Sub
-  Partial Private Sub InsertLocation(instance As Location)
-    End Sub
-  Partial Private Sub UpdateLocation(instance As Location)
-    End Sub
-  Partial Private Sub DeleteLocation(instance As Location)
-    End Sub
   Partial Private Sub InsertLocationList(instance As LocationList)
     End Sub
   Partial Private Sub UpdateLocationList(instance As LocationList)
@@ -91,6 +85,12 @@ Partial Public Class PBTSDataContext
     End Sub
   Partial Private Sub DeleteTransport(instance As Transport)
     End Sub
+  Partial Private Sub InsertLocation(instance As Location)
+    End Sub
+  Partial Private Sub UpdateLocation(instance As Location)
+    End Sub
+  Partial Private Sub DeleteLocation(instance As Location)
+    End Sub
   #End Region
 	
 	Public Sub New()
@@ -127,12 +127,6 @@ Partial Public Class PBTSDataContext
 	Public ReadOnly Property Employees() As System.Data.Linq.Table(Of Employee)
 		Get
 			Return Me.GetTable(Of Employee)
-		End Get
-	End Property
-	
-	Public ReadOnly Property Locations() As System.Data.Linq.Table(Of Location)
-		Get
-			Return Me.GetTable(Of Location)
 		End Get
 	End Property
 	
@@ -175,6 +169,12 @@ Partial Public Class PBTSDataContext
 	Public ReadOnly Property Transports() As System.Data.Linq.Table(Of Transport)
 		Get
 			Return Me.GetTable(Of Transport)
+		End Get
+	End Property
+	
+	Public ReadOnly Property Locations() As System.Data.Linq.Table(Of Location)
+		Get
+			Return Me.GetTable(Of Location)
 		End Get
 	End Property
 End Class
@@ -700,156 +700,6 @@ Partial Public Class Employee
 	End Sub
 End Class
 
-<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.Location")>  _
-Partial Public Class Location
-	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
-	
-	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
-	
-	Private _locationID As String
-	
-	Private _locationName As String
-	
-	Private _locationType As String
-	
-	Private _locationStatus As String
-	
-	Private _LocationLists As EntitySet(Of LocationList)
-	
-    #Region "Extensibility Method Definitions"
-    Partial Private Sub OnLoaded()
-    End Sub
-    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
-    End Sub
-    Partial Private Sub OnCreated()
-    End Sub
-    Partial Private Sub OnlocationIDChanging(value As String)
-    End Sub
-    Partial Private Sub OnlocationIDChanged()
-    End Sub
-    Partial Private Sub OnlocationNameChanging(value As String)
-    End Sub
-    Partial Private Sub OnlocationNameChanged()
-    End Sub
-    Partial Private Sub OnlocationTypeChanging(value As String)
-    End Sub
-    Partial Private Sub OnlocationTypeChanged()
-    End Sub
-    Partial Private Sub OnlocationStatusChanging(value As String)
-    End Sub
-    Partial Private Sub OnlocationStatusChanged()
-    End Sub
-    #End Region
-	
-	Public Sub New()
-		MyBase.New
-		Me._LocationLists = New EntitySet(Of LocationList)(AddressOf Me.attach_LocationLists, AddressOf Me.detach_LocationLists)
-		OnCreated
-	End Sub
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_locationID", DbType:="VarChar(10) NOT NULL", CanBeNull:=false, IsPrimaryKey:=true)>  _
-	Public Property locationID() As String
-		Get
-			Return Me._locationID
-		End Get
-		Set
-			If (String.Equals(Me._locationID, value) = false) Then
-				Me.OnlocationIDChanging(value)
-				Me.SendPropertyChanging
-				Me._locationID = value
-				Me.SendPropertyChanged("locationID")
-				Me.OnlocationIDChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_locationName", DbType:="VarChar(50)")>  _
-	Public Property locationName() As String
-		Get
-			Return Me._locationName
-		End Get
-		Set
-			If (String.Equals(Me._locationName, value) = false) Then
-				Me.OnlocationNameChanging(value)
-				Me.SendPropertyChanging
-				Me._locationName = value
-				Me.SendPropertyChanged("locationName")
-				Me.OnlocationNameChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_locationType", DbType:="VarChar(50)")>  _
-	Public Property locationType() As String
-		Get
-			Return Me._locationType
-		End Get
-		Set
-			If (String.Equals(Me._locationType, value) = false) Then
-				Me.OnlocationTypeChanging(value)
-				Me.SendPropertyChanging
-				Me._locationType = value
-				Me.SendPropertyChanged("locationType")
-				Me.OnlocationTypeChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_locationStatus", DbType:="VarChar(50)")>  _
-	Public Property locationStatus() As String
-		Get
-			Return Me._locationStatus
-		End Get
-		Set
-			If (String.Equals(Me._locationStatus, value) = false) Then
-				Me.OnlocationStatusChanging(value)
-				Me.SendPropertyChanging
-				Me._locationStatus = value
-				Me.SendPropertyChanged("locationStatus")
-				Me.OnlocationStatusChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="Location_LocationList", Storage:="_LocationLists", ThisKey:="locationID", OtherKey:="locationID")>  _
-	Public Property LocationLists() As EntitySet(Of LocationList)
-		Get
-			Return Me._LocationLists
-		End Get
-		Set
-			Me._LocationLists.Assign(value)
-		End Set
-	End Property
-	
-	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
-	
-	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
-	
-	Protected Overridable Sub SendPropertyChanging()
-		If ((Me.PropertyChangingEvent Is Nothing)  _
-					= false) Then
-			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
-		End If
-	End Sub
-	
-	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
-		If ((Me.PropertyChangedEvent Is Nothing)  _
-					= false) Then
-			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
-		End If
-	End Sub
-	
-	Private Sub attach_LocationLists(ByVal entity As LocationList)
-		Me.SendPropertyChanging
-		entity.Location = Me
-	End Sub
-	
-	Private Sub detach_LocationLists(ByVal entity As LocationList)
-		Me.SendPropertyChanging
-		entity.Location = Nothing
-	End Sub
-End Class
-
 <Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.LocationList")>  _
 Partial Public Class LocationList
 	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
@@ -864,9 +714,9 @@ Partial Public Class LocationList
 	
 	Private _locationStatus As String
 	
-	Private _Location As EntityRef(Of Location)
-	
 	Private _Schedule As EntityRef(Of Schedule)
+	
+	Private _Location As EntityRef(Of Location)
 	
     #Region "Extensibility Method Definitions"
     Partial Private Sub OnLoaded()
@@ -895,8 +745,8 @@ Partial Public Class LocationList
 	
 	Public Sub New()
 		MyBase.New
-		Me._Location = CType(Nothing, EntityRef(Of Location))
 		Me._Schedule = CType(Nothing, EntityRef(Of Schedule))
+		Me._Location = CType(Nothing, EntityRef(Of Location))
 		OnCreated
 	End Sub
 	
@@ -970,34 +820,6 @@ Partial Public Class LocationList
 		End Set
 	End Property
 	
-	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="Location_LocationList", Storage:="_Location", ThisKey:="locationID", OtherKey:="locationID", IsForeignKey:=true)>  _
-	Public Property Location() As Location
-		Get
-			Return Me._Location.Entity
-		End Get
-		Set
-			Dim previousValue As Location = Me._Location.Entity
-			If ((Object.Equals(previousValue, value) = false)  _
-						OrElse (Me._Location.HasLoadedOrAssignedValue = false)) Then
-				Me.SendPropertyChanging
-				If ((previousValue Is Nothing)  _
-							= false) Then
-					Me._Location.Entity = Nothing
-					previousValue.LocationLists.Remove(Me)
-				End If
-				Me._Location.Entity = value
-				If ((value Is Nothing)  _
-							= false) Then
-					value.LocationLists.Add(Me)
-					Me._locationID = value.locationID
-				Else
-					Me._locationID = CType(Nothing, String)
-				End If
-				Me.SendPropertyChanged("Location")
-			End If
-		End Set
-	End Property
-	
 	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="Schedule_LocationList", Storage:="_Schedule", ThisKey:="scheduleID", OtherKey:="scheduleID", IsForeignKey:=true)>  _
 	Public Property Schedule() As Schedule
 		Get
@@ -1022,6 +844,34 @@ Partial Public Class LocationList
 					Me._scheduleID = CType(Nothing, String)
 				End If
 				Me.SendPropertyChanged("Schedule")
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="Location_LocationList", Storage:="_Location", ThisKey:="locationID", OtherKey:="locationID", IsForeignKey:=true)>  _
+	Public Property Location() As Location
+		Get
+			Return Me._Location.Entity
+		End Get
+		Set
+			Dim previousValue As Location = Me._Location.Entity
+			If ((Object.Equals(previousValue, value) = false)  _
+						OrElse (Me._Location.HasLoadedOrAssignedValue = false)) Then
+				Me.SendPropertyChanging
+				If ((previousValue Is Nothing)  _
+							= false) Then
+					Me._Location.Entity = Nothing
+					previousValue.LocationLists.Remove(Me)
+				End If
+				Me._Location.Entity = value
+				If ((value Is Nothing)  _
+							= false) Then
+					value.LocationLists.Add(Me)
+					Me._locationID = value.locationID
+				Else
+					Me._locationID = CType(Nothing, String)
+				End If
+				Me.SendPropertyChanged("Location")
 			End If
 		End Set
 	End Property
@@ -2164,7 +2014,7 @@ Partial Public Class Transport
 		End Set
 	End Property
 	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_transportName", DbType:="VarChar(10)")>  _
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_transportName", DbType:="VarChar(30)")>  _
 	Public Property transportName() As String
 		Get
 			Return Me._transportName
@@ -2312,5 +2162,177 @@ Partial Public Class Transport
 	Private Sub detach_Schedules(ByVal entity As Schedule)
 		Me.SendPropertyChanging
 		entity.Transport = Nothing
+	End Sub
+End Class
+
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.Location")>  _
+Partial Public Class Location
+	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
+	
+	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
+	
+	Private _locationID As String
+	
+	Private _locationName As String
+	
+	Private _locationType As String
+	
+	Private _locationStatus As String
+	
+	Private _position As System.Nullable(Of Integer)
+	
+	Private _LocationLists As EntitySet(Of LocationList)
+	
+    #Region "Extensibility Method Definitions"
+    Partial Private Sub OnLoaded()
+    End Sub
+    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
+    End Sub
+    Partial Private Sub OnCreated()
+    End Sub
+    Partial Private Sub OnlocationIDChanging(value As String)
+    End Sub
+    Partial Private Sub OnlocationIDChanged()
+    End Sub
+    Partial Private Sub OnlocationNameChanging(value As String)
+    End Sub
+    Partial Private Sub OnlocationNameChanged()
+    End Sub
+    Partial Private Sub OnlocationTypeChanging(value As String)
+    End Sub
+    Partial Private Sub OnlocationTypeChanged()
+    End Sub
+    Partial Private Sub OnlocationStatusChanging(value As String)
+    End Sub
+    Partial Private Sub OnlocationStatusChanged()
+    End Sub
+    Partial Private Sub OnpositionChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnpositionChanged()
+    End Sub
+    #End Region
+	
+	Public Sub New()
+		MyBase.New
+		Me._LocationLists = New EntitySet(Of LocationList)(AddressOf Me.attach_LocationLists, AddressOf Me.detach_LocationLists)
+		OnCreated
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_locationID", DbType:="VarChar(10) NOT NULL", CanBeNull:=false, IsPrimaryKey:=true)>  _
+	Public Property locationID() As String
+		Get
+			Return Me._locationID
+		End Get
+		Set
+			If (String.Equals(Me._locationID, value) = false) Then
+				Me.OnlocationIDChanging(value)
+				Me.SendPropertyChanging
+				Me._locationID = value
+				Me.SendPropertyChanged("locationID")
+				Me.OnlocationIDChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_locationName", DbType:="VarChar(50)")>  _
+	Public Property locationName() As String
+		Get
+			Return Me._locationName
+		End Get
+		Set
+			If (String.Equals(Me._locationName, value) = false) Then
+				Me.OnlocationNameChanging(value)
+				Me.SendPropertyChanging
+				Me._locationName = value
+				Me.SendPropertyChanged("locationName")
+				Me.OnlocationNameChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_locationType", DbType:="VarChar(50)")>  _
+	Public Property locationType() As String
+		Get
+			Return Me._locationType
+		End Get
+		Set
+			If (String.Equals(Me._locationType, value) = false) Then
+				Me.OnlocationTypeChanging(value)
+				Me.SendPropertyChanging
+				Me._locationType = value
+				Me.SendPropertyChanged("locationType")
+				Me.OnlocationTypeChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_locationStatus", DbType:="VarChar(50)")>  _
+	Public Property locationStatus() As String
+		Get
+			Return Me._locationStatus
+		End Get
+		Set
+			If (String.Equals(Me._locationStatus, value) = false) Then
+				Me.OnlocationStatusChanging(value)
+				Me.SendPropertyChanging
+				Me._locationStatus = value
+				Me.SendPropertyChanged("locationStatus")
+				Me.OnlocationStatusChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_position", DbType:="Int")>  _
+	Public Property position() As System.Nullable(Of Integer)
+		Get
+			Return Me._position
+		End Get
+		Set
+			If (Me._position.Equals(value) = false) Then
+				Me.OnpositionChanging(value)
+				Me.SendPropertyChanging
+				Me._position = value
+				Me.SendPropertyChanged("position")
+				Me.OnpositionChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="Location_LocationList", Storage:="_LocationLists", ThisKey:="locationID", OtherKey:="locationID")>  _
+	Public Property LocationLists() As EntitySet(Of LocationList)
+		Get
+			Return Me._LocationLists
+		End Get
+		Set
+			Me._LocationLists.Assign(value)
+		End Set
+	End Property
+	
+	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
+	
+	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+	
+	Protected Overridable Sub SendPropertyChanging()
+		If ((Me.PropertyChangingEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
+		End If
+	End Sub
+	
+	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
+		If ((Me.PropertyChangedEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
+		End If
+	End Sub
+	
+	Private Sub attach_LocationLists(ByVal entity As LocationList)
+		Me.SendPropertyChanging
+		entity.Location = Me
+	End Sub
+	
+	Private Sub detach_LocationLists(ByVal entity As LocationList)
+		Me.SendPropertyChanging
+		entity.Location = Nothing
 	End Sub
 End Class

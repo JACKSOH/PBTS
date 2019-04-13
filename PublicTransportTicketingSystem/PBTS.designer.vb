@@ -22,173 +22,173 @@ Imports System.Linq.Expressions
 Imports System.Reflection
 
 
-<Global.System.Data.Linq.Mapping.DatabaseAttribute(Name:="PTTS")>
+<Global.System.Data.Linq.Mapping.DatabaseAttribute(Name:="PTTS")>  _
 Partial Public Class PBTSDataContext
-    Inherits System.Data.Linq.DataContext
-
-    Private Shared mappingSource As System.Data.Linq.Mapping.MappingSource = New AttributeMappingSource()
-
-#Region "Extensibility Method Definitions"
-    Partial Private Sub OnCreated()
+	Inherits System.Data.Linq.DataContext
+	
+	Private Shared mappingSource As System.Data.Linq.Mapping.MappingSource = New AttributeMappingSource()
+	
+  #Region "Extensibility Method Definitions"
+  Partial Private Sub OnCreated()
+  End Sub
+  Partial Private Sub InsertLocation(instance As Location)
     End Sub
-    Partial Private Sub InsertLocation(instance As Location)
+  Partial Private Sub UpdateLocation(instance As Location)
     End Sub
-    Partial Private Sub UpdateLocation(instance As Location)
+  Partial Private Sub DeleteLocation(instance As Location)
     End Sub
-    Partial Private Sub DeleteLocation(instance As Location)
+  Partial Private Sub InsertLocationList(instance As LocationList)
     End Sub
-    Partial Private Sub InsertLocationList(instance As LocationList)
+  Partial Private Sub UpdateLocationList(instance As LocationList)
     End Sub
-    Partial Private Sub UpdateLocationList(instance As LocationList)
+  Partial Private Sub DeleteLocationList(instance As LocationList)
     End Sub
-    Partial Private Sub DeleteLocationList(instance As LocationList)
+  Partial Private Sub InsertpromoteSchedule(instance As promoteSchedule)
     End Sub
-    Partial Private Sub InsertpromoteSchedule(instance As promoteSchedule)
+  Partial Private Sub UpdatepromoteSchedule(instance As promoteSchedule)
     End Sub
-    Partial Private Sub UpdatepromoteSchedule(instance As promoteSchedule)
+  Partial Private Sub DeletepromoteSchedule(instance As promoteSchedule)
     End Sub
-    Partial Private Sub DeletepromoteSchedule(instance As promoteSchedule)
+  Partial Private Sub InsertSchedule(instance As Schedule)
     End Sub
-    Partial Private Sub InsertPromotion(instance As Promotion)
+  Partial Private Sub UpdateSchedule(instance As Schedule)
     End Sub
-    Partial Private Sub UpdatePromotion(instance As Promotion)
+  Partial Private Sub DeleteSchedule(instance As Schedule)
     End Sub
-    Partial Private Sub DeletePromotion(instance As Promotion)
+  Partial Private Sub InsertTable(instance As Table)
     End Sub
-    Partial Private Sub InsertSchedule(instance As Schedule)
+  Partial Private Sub UpdateTable(instance As Table)
     End Sub
-    Partial Private Sub UpdateSchedule(instance As Schedule)
+  Partial Private Sub DeleteTable(instance As Table)
     End Sub
-    Partial Private Sub DeleteSchedule(instance As Schedule)
+  Partial Private Sub InsertTransport(instance As Transport)
     End Sub
-    Partial Private Sub InsertSeat(instance As Seat)
+  Partial Private Sub UpdateTransport(instance As Transport)
     End Sub
-    Partial Private Sub UpdateSeat(instance As Seat)
+  Partial Private Sub DeleteTransport(instance As Transport)
     End Sub
-    Partial Private Sub DeleteSeat(instance As Seat)
+  Partial Private Sub InsertEmployee(instance As Employee)
     End Sub
-    Partial Private Sub InsertTable(instance As Table)
+  Partial Private Sub UpdateEmployee(instance As Employee)
     End Sub
-    Partial Private Sub UpdateTable(instance As Table)
+  Partial Private Sub DeleteEmployee(instance As Employee)
     End Sub
-    Partial Private Sub DeleteTable(instance As Table)
+  Partial Private Sub InsertSeat(instance As Seat)
     End Sub
-    Partial Private Sub InsertTicket(instance As Ticket)
+  Partial Private Sub UpdateSeat(instance As Seat)
     End Sub
-    Partial Private Sub UpdateTicket(instance As Ticket)
+  Partial Private Sub DeleteSeat(instance As Seat)
     End Sub
-    Partial Private Sub DeleteTicket(instance As Ticket)
+  Partial Private Sub InsertBooking(instance As Booking)
     End Sub
-    Partial Private Sub InsertTransport(instance As Transport)
+  Partial Private Sub UpdateBooking(instance As Booking)
     End Sub
-    Partial Private Sub UpdateTransport(instance As Transport)
+  Partial Private Sub DeleteBooking(instance As Booking)
     End Sub
-    Partial Private Sub DeleteTransport(instance As Transport)
+  Partial Private Sub InsertTicket(instance As Ticket)
     End Sub
-    Partial Private Sub InsertBooking(instance As Booking)
+  Partial Private Sub UpdateTicket(instance As Ticket)
     End Sub
-    Partial Private Sub UpdateBooking(instance As Booking)
+  Partial Private Sub DeleteTicket(instance As Ticket)
     End Sub
-    Partial Private Sub DeleteBooking(instance As Booking)
+  Partial Private Sub InsertPromotion(instance As Promotion)
     End Sub
-    Partial Private Sub InsertEmployee(instance As Employee)
+  Partial Private Sub UpdatePromotion(instance As Promotion)
     End Sub
-    Partial Private Sub UpdateEmployee(instance As Employee)
+  Partial Private Sub DeletePromotion(instance As Promotion)
     End Sub
-    Partial Private Sub DeleteEmployee(instance As Employee)
-    End Sub
-#End Region
-
-    Public Sub New()
-        MyBase.New(Global.PublicTransportTicketingSystem.My.MySettings.Default.PTTSConnectionString, mappingSource)
-        OnCreated()
-    End Sub
-
-    Public Sub New(ByVal connection As String)
-        MyBase.New(connection, mappingSource)
-        OnCreated()
-    End Sub
-
-    Public Sub New(ByVal connection As System.Data.IDbConnection)
-        MyBase.New(connection, mappingSource)
-        OnCreated()
-    End Sub
-
-    Public Sub New(ByVal connection As String, ByVal mappingSource As System.Data.Linq.Mapping.MappingSource)
-        MyBase.New(connection, mappingSource)
-        OnCreated()
-    End Sub
-
-    Public Sub New(ByVal connection As System.Data.IDbConnection, ByVal mappingSource As System.Data.Linq.Mapping.MappingSource)
-        MyBase.New(connection, mappingSource)
-        OnCreated()
-    End Sub
-
-    Public ReadOnly Property Locations() As System.Data.Linq.Table(Of Location)
-        Get
-            Return Me.GetTable(Of Location)
-        End Get
-    End Property
-
-    Public ReadOnly Property LocationLists() As System.Data.Linq.Table(Of LocationList)
-        Get
-            Return Me.GetTable(Of LocationList)
-        End Get
-    End Property
-
-    Public ReadOnly Property promoteSchedules() As System.Data.Linq.Table(Of promoteSchedule)
-        Get
-            Return Me.GetTable(Of promoteSchedule)
-        End Get
-    End Property
-
-    Public ReadOnly Property Promotions() As System.Data.Linq.Table(Of Promotion)
-        Get
-            Return Me.GetTable(Of Promotion)
-        End Get
-    End Property
-
-    Public ReadOnly Property Schedules() As System.Data.Linq.Table(Of Schedule)
-        Get
-            Return Me.GetTable(Of Schedule)
-        End Get
-    End Property
-
-    Public ReadOnly Property Seats() As System.Data.Linq.Table(Of Seat)
-        Get
-            Return Me.GetTable(Of Seat)
-        End Get
-    End Property
-
-    Public ReadOnly Property Tables() As System.Data.Linq.Table(Of Table)
-        Get
-            Return Me.GetTable(Of Table)
-        End Get
-    End Property
-
-    Public ReadOnly Property Tickets() As System.Data.Linq.Table(Of Ticket)
-        Get
-            Return Me.GetTable(Of Ticket)
-        End Get
-    End Property
-
-    Public ReadOnly Property Transports() As System.Data.Linq.Table(Of Transport)
-        Get
-            Return Me.GetTable(Of Transport)
-        End Get
-    End Property
-
-    Public ReadOnly Property Bookings() As System.Data.Linq.Table(Of Booking)
-        Get
-            Return Me.GetTable(Of Booking)
-        End Get
-    End Property
-
-    Public ReadOnly Property Employees() As System.Data.Linq.Table(Of Employee)
-        Get
-            Return Me.GetTable(Of Employee)
-        End Get
-    End Property
+  #End Region
+	
+	Public Sub New()
+		MyBase.New(Global.PublicTransportTicketingSystem.My.MySettings.Default.PTTSConnectionString, mappingSource)
+		OnCreated
+	End Sub
+	
+	Public Sub New(ByVal connection As String)
+		MyBase.New(connection, mappingSource)
+		OnCreated
+	End Sub
+	
+	Public Sub New(ByVal connection As System.Data.IDbConnection)
+		MyBase.New(connection, mappingSource)
+		OnCreated
+	End Sub
+	
+	Public Sub New(ByVal connection As String, ByVal mappingSource As System.Data.Linq.Mapping.MappingSource)
+		MyBase.New(connection, mappingSource)
+		OnCreated
+	End Sub
+	
+	Public Sub New(ByVal connection As System.Data.IDbConnection, ByVal mappingSource As System.Data.Linq.Mapping.MappingSource)
+		MyBase.New(connection, mappingSource)
+		OnCreated
+	End Sub
+	
+	Public ReadOnly Property Locations() As System.Data.Linq.Table(Of Location)
+		Get
+			Return Me.GetTable(Of Location)
+		End Get
+	End Property
+	
+	Public ReadOnly Property LocationLists() As System.Data.Linq.Table(Of LocationList)
+		Get
+			Return Me.GetTable(Of LocationList)
+		End Get
+	End Property
+	
+	Public ReadOnly Property promoteSchedules() As System.Data.Linq.Table(Of promoteSchedule)
+		Get
+			Return Me.GetTable(Of promoteSchedule)
+		End Get
+	End Property
+	
+	Public ReadOnly Property Schedules() As System.Data.Linq.Table(Of Schedule)
+		Get
+			Return Me.GetTable(Of Schedule)
+		End Get
+	End Property
+	
+	Public ReadOnly Property Tables() As System.Data.Linq.Table(Of Table)
+		Get
+			Return Me.GetTable(Of Table)
+		End Get
+	End Property
+	
+	Public ReadOnly Property Transports() As System.Data.Linq.Table(Of Transport)
+		Get
+			Return Me.GetTable(Of Transport)
+		End Get
+	End Property
+	
+	Public ReadOnly Property Employees() As System.Data.Linq.Table(Of Employee)
+		Get
+			Return Me.GetTable(Of Employee)
+		End Get
+	End Property
+	
+	Public ReadOnly Property Seats() As System.Data.Linq.Table(Of Seat)
+		Get
+			Return Me.GetTable(Of Seat)
+		End Get
+	End Property
+	
+	Public ReadOnly Property Bookings() As System.Data.Linq.Table(Of Booking)
+		Get
+			Return Me.GetTable(Of Booking)
+		End Get
+	End Property
+	
+	Public ReadOnly Property Tickets() As System.Data.Linq.Table(Of Ticket)
+		Get
+			Return Me.GetTable(Of Ticket)
+		End Get
+	End Property
+	
+	Public ReadOnly Property Promotions() As System.Data.Linq.Table(Of Promotion)
+		Get
+			Return Me.GetTable(Of Promotion)
+		End Get
+	End Property
 End Class
 
 <Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.Location")>  _
@@ -551,9 +551,9 @@ Partial Public Class promoteSchedule
 	
 	Private _discountRate As System.Nullable(Of Integer)
 	
-	Private _Promotion As EntityRef(Of Promotion)
-	
 	Private _Schedule As EntityRef(Of Schedule)
+	
+	Private _Promotion As EntityRef(Of Promotion)
 	
     #Region "Extensibility Method Definitions"
     Partial Private Sub OnLoaded()
@@ -582,8 +582,8 @@ Partial Public Class promoteSchedule
 	
 	Public Sub New()
 		MyBase.New
-		Me._Promotion = CType(Nothing, EntityRef(Of Promotion))
 		Me._Schedule = CType(Nothing, EntityRef(Of Schedule))
+		Me._Promotion = CType(Nothing, EntityRef(Of Promotion))
 		OnCreated
 	End Sub
 	
@@ -658,34 +658,6 @@ Partial Public Class promoteSchedule
 		End Set
 	End Property
 	
-	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="Promotion_promoteSchedule", Storage:="_Promotion", ThisKey:="promotionID", OtherKey:="promotionID", IsForeignKey:=true)>  _
-	Public Property Promotion() As Promotion
-		Get
-			Return Me._Promotion.Entity
-		End Get
-		Set
-			Dim previousValue As Promotion = Me._Promotion.Entity
-			If ((Object.Equals(previousValue, value) = false)  _
-						OrElse (Me._Promotion.HasLoadedOrAssignedValue = false)) Then
-				Me.SendPropertyChanging
-				If ((previousValue Is Nothing)  _
-							= false) Then
-					Me._Promotion.Entity = Nothing
-					previousValue.promoteSchedules.Remove(Me)
-				End If
-				Me._Promotion.Entity = value
-				If ((value Is Nothing)  _
-							= false) Then
-					value.promoteSchedules.Add(Me)
-					Me._promotionID = value.promotionID
-				Else
-					Me._promotionID = CType(Nothing, String)
-				End If
-				Me.SendPropertyChanged("Promotion")
-			End If
-		End Set
-	End Property
-	
 	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="Schedule_promoteSchedule", Storage:="_Schedule", ThisKey:="scheduleID", OtherKey:="scheduleID", IsForeignKey:=true)>  _
 	Public Property Schedule() As Schedule
 		Get
@@ -714,165 +686,31 @@ Partial Public Class promoteSchedule
 		End Set
 	End Property
 	
-	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
-	
-	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
-	
-	Protected Overridable Sub SendPropertyChanging()
-		If ((Me.PropertyChangingEvent Is Nothing)  _
-					= false) Then
-			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
-		End If
-	End Sub
-	
-	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
-		If ((Me.PropertyChangedEvent Is Nothing)  _
-					= false) Then
-			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
-		End If
-	End Sub
-End Class
-
-<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.Promotion")>  _
-Partial Public Class Promotion
-	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
-	
-	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
-	
-	Private _promotionID As String
-	
-	Private _promotionName As System.Data.Linq.Binary
-	
-	Private _promotionStartDate As System.Nullable(Of Date)
-	
-	Private _promotionEndDate As System.Nullable(Of Date)
-	
-	Private _promotionDesc As String
-	
-	Private _promoteSchedules As EntitySet(Of promoteSchedule)
-	
-    #Region "Extensibility Method Definitions"
-    Partial Private Sub OnLoaded()
-    End Sub
-    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
-    End Sub
-    Partial Private Sub OnCreated()
-    End Sub
-    Partial Private Sub OnpromotionIDChanging(value As String)
-    End Sub
-    Partial Private Sub OnpromotionIDChanged()
-    End Sub
-    Partial Private Sub OnpromotionNameChanging(value As System.Data.Linq.Binary)
-    End Sub
-    Partial Private Sub OnpromotionNameChanged()
-    End Sub
-    Partial Private Sub OnpromotionStartDateChanging(value As System.Nullable(Of Date))
-    End Sub
-    Partial Private Sub OnpromotionStartDateChanged()
-    End Sub
-    Partial Private Sub OnpromotionEndDateChanging(value As System.Nullable(Of Date))
-    End Sub
-    Partial Private Sub OnpromotionEndDateChanged()
-    End Sub
-    Partial Private Sub OnpromotionDescChanging(value As String)
-    End Sub
-    Partial Private Sub OnpromotionDescChanged()
-    End Sub
-    #End Region
-	
-	Public Sub New()
-		MyBase.New
-		Me._promoteSchedules = New EntitySet(Of promoteSchedule)(AddressOf Me.attach_promoteSchedules, AddressOf Me.detach_promoteSchedules)
-		OnCreated
-	End Sub
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_promotionID", DbType:="VarChar(10) NOT NULL", CanBeNull:=false, IsPrimaryKey:=true)>  _
-	Public Property promotionID() As String
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="Promotion_promoteSchedule", Storage:="_Promotion", ThisKey:="promotionID", OtherKey:="promotionID", IsForeignKey:=true)>  _
+	Public Property Promotion() As Promotion
 		Get
-			Return Me._promotionID
+			Return Me._Promotion.Entity
 		End Get
 		Set
-			If (String.Equals(Me._promotionID, value) = false) Then
-				Me.OnpromotionIDChanging(value)
+			Dim previousValue As Promotion = Me._Promotion.Entity
+			If ((Object.Equals(previousValue, value) = false)  _
+						OrElse (Me._Promotion.HasLoadedOrAssignedValue = false)) Then
 				Me.SendPropertyChanging
-				Me._promotionID = value
-				Me.SendPropertyChanged("promotionID")
-				Me.OnpromotionIDChanged
+				If ((previousValue Is Nothing)  _
+							= false) Then
+					Me._Promotion.Entity = Nothing
+					previousValue.promoteSchedules.Remove(Me)
+				End If
+				Me._Promotion.Entity = value
+				If ((value Is Nothing)  _
+							= false) Then
+					value.promoteSchedules.Add(Me)
+					Me._promotionID = value.promotionID
+				Else
+					Me._promotionID = CType(Nothing, String)
+				End If
+				Me.SendPropertyChanged("Promotion")
 			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_promotionName", DbType:="VarBinary(50)", UpdateCheck:=UpdateCheck.Never)>  _
-	Public Property promotionName() As System.Data.Linq.Binary
-		Get
-			Return Me._promotionName
-		End Get
-		Set
-			If (Object.Equals(Me._promotionName, value) = false) Then
-				Me.OnpromotionNameChanging(value)
-				Me.SendPropertyChanging
-				Me._promotionName = value
-				Me.SendPropertyChanged("promotionName")
-				Me.OnpromotionNameChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_promotionStartDate", DbType:="Date")>  _
-	Public Property promotionStartDate() As System.Nullable(Of Date)
-		Get
-			Return Me._promotionStartDate
-		End Get
-		Set
-			If (Me._promotionStartDate.Equals(value) = false) Then
-				Me.OnpromotionStartDateChanging(value)
-				Me.SendPropertyChanging
-				Me._promotionStartDate = value
-				Me.SendPropertyChanged("promotionStartDate")
-				Me.OnpromotionStartDateChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_promotionEndDate", DbType:="Date")>  _
-	Public Property promotionEndDate() As System.Nullable(Of Date)
-		Get
-			Return Me._promotionEndDate
-		End Get
-		Set
-			If (Me._promotionEndDate.Equals(value) = false) Then
-				Me.OnpromotionEndDateChanging(value)
-				Me.SendPropertyChanging
-				Me._promotionEndDate = value
-				Me.SendPropertyChanged("promotionEndDate")
-				Me.OnpromotionEndDateChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_promotionDesc", DbType:="VarChar(MAX)")>  _
-	Public Property promotionDesc() As String
-		Get
-			Return Me._promotionDesc
-		End Get
-		Set
-			If (String.Equals(Me._promotionDesc, value) = false) Then
-				Me.OnpromotionDescChanging(value)
-				Me.SendPropertyChanging
-				Me._promotionDesc = value
-				Me.SendPropertyChanged("promotionDesc")
-				Me.OnpromotionDescChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="Promotion_promoteSchedule", Storage:="_promoteSchedules", ThisKey:="promotionID", OtherKey:="promotionID")>  _
-	Public Property promoteSchedules() As EntitySet(Of promoteSchedule)
-		Get
-			Return Me._promoteSchedules
-		End Get
-		Set
-			Me._promoteSchedules.Assign(value)
 		End Set
 	End Property
 	
@@ -892,16 +730,6 @@ Partial Public Class Promotion
 					= false) Then
 			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
 		End If
-	End Sub
-	
-	Private Sub attach_promoteSchedules(ByVal entity As promoteSchedule)
-		Me.SendPropertyChanging
-		entity.Promotion = Me
-	End Sub
-	
-	Private Sub detach_promoteSchedules(ByVal entity As promoteSchedule)
-		Me.SendPropertyChanging
-		entity.Promotion = Nothing
 	End Sub
 End Class
 
@@ -923,9 +751,9 @@ Partial Public Class Schedule
 	
 	Private _promoteSchedules As EntitySet(Of promoteSchedule)
 	
-	Private _Seats As EntitySet(Of Seat)
-	
 	Private _Tables As EntitySet(Of Table)
+	
+	Private _Seats As EntitySet(Of Seat)
 	
 	Private _Transport As EntityRef(Of Transport)
 	
@@ -958,8 +786,8 @@ Partial Public Class Schedule
 		MyBase.New
 		Me._LocationLists = New EntitySet(Of LocationList)(AddressOf Me.attach_LocationLists, AddressOf Me.detach_LocationLists)
 		Me._promoteSchedules = New EntitySet(Of promoteSchedule)(AddressOf Me.attach_promoteSchedules, AddressOf Me.detach_promoteSchedules)
-		Me._Seats = New EntitySet(Of Seat)(AddressOf Me.attach_Seats, AddressOf Me.detach_Seats)
 		Me._Tables = New EntitySet(Of Table)(AddressOf Me.attach_Tables, AddressOf Me.detach_Tables)
+		Me._Seats = New EntitySet(Of Seat)(AddressOf Me.attach_Seats, AddressOf Me.detach_Seats)
 		Me._Transport = CType(Nothing, EntityRef(Of Transport))
 		OnCreated
 	End Sub
@@ -1051,16 +879,6 @@ Partial Public Class Schedule
 		End Set
 	End Property
 	
-	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="Schedule_Seat", Storage:="_Seats", ThisKey:="scheduleID", OtherKey:="scheduleID")>  _
-	Public Property Seats() As EntitySet(Of Seat)
-		Get
-			Return Me._Seats
-		End Get
-		Set
-			Me._Seats.Assign(value)
-		End Set
-	End Property
-	
 	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="Schedule_Table", Storage:="_Tables", ThisKey:="scheduleID", OtherKey:="scheduleID")>  _
 	Public Property Tables() As EntitySet(Of Table)
 		Get
@@ -1068,6 +886,16 @@ Partial Public Class Schedule
 		End Get
 		Set
 			Me._Tables.Assign(value)
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="Schedule_Seat", Storage:="_Seats", ThisKey:="scheduleID", OtherKey:="scheduleID")>  _
+	Public Property Seats() As EntitySet(Of Seat)
+		Get
+			Return Me._Seats
+		End Get
+		Set
+			Me._Seats.Assign(value)
 		End Set
 	End Property
 	
@@ -1137,16 +965,6 @@ Partial Public Class Schedule
 		entity.Schedule = Nothing
 	End Sub
 	
-	Private Sub attach_Seats(ByVal entity As Seat)
-		Me.SendPropertyChanging
-		entity.Schedule = Me
-	End Sub
-	
-	Private Sub detach_Seats(ByVal entity As Seat)
-		Me.SendPropertyChanging
-		entity.Schedule = Nothing
-	End Sub
-	
 	Private Sub attach_Tables(ByVal entity As Table)
 		Me.SendPropertyChanging
 		entity.Schedule = Me
@@ -1156,167 +974,15 @@ Partial Public Class Schedule
 		Me.SendPropertyChanging
 		entity.Schedule = Nothing
 	End Sub
-End Class
-
-<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.Seat")>  _
-Partial Public Class Seat
-	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
 	
-	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
-	
-	Private _seatID As String
-	
-	Private _scheduleID As String
-	
-	Private _seatStatus As String
-	
-	Private _Tickets As EntitySet(Of Ticket)
-	
-	Private _Schedule As EntityRef(Of Schedule)
-	
-    #Region "Extensibility Method Definitions"
-    Partial Private Sub OnLoaded()
-    End Sub
-    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
-    End Sub
-    Partial Private Sub OnCreated()
-    End Sub
-    Partial Private Sub OnseatIDChanging(value As String)
-    End Sub
-    Partial Private Sub OnseatIDChanged()
-    End Sub
-    Partial Private Sub OnscheduleIDChanging(value As String)
-    End Sub
-    Partial Private Sub OnscheduleIDChanged()
-    End Sub
-    Partial Private Sub OnseatStatusChanging(value As String)
-    End Sub
-    Partial Private Sub OnseatStatusChanged()
-    End Sub
-    #End Region
-	
-	Public Sub New()
-		MyBase.New
-		Me._Tickets = New EntitySet(Of Ticket)(AddressOf Me.attach_Tickets, AddressOf Me.detach_Tickets)
-		Me._Schedule = CType(Nothing, EntityRef(Of Schedule))
-		OnCreated
-	End Sub
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_seatID", DbType:="VarChar(10) NOT NULL", CanBeNull:=false, IsPrimaryKey:=true)>  _
-	Public Property seatID() As String
-		Get
-			Return Me._seatID
-		End Get
-		Set
-			If (String.Equals(Me._seatID, value) = false) Then
-				Me.OnseatIDChanging(value)
-				Me.SendPropertyChanging
-				Me._seatID = value
-				Me.SendPropertyChanged("seatID")
-				Me.OnseatIDChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_scheduleID", DbType:="VarChar(10)")>  _
-	Public Property scheduleID() As String
-		Get
-			Return Me._scheduleID
-		End Get
-		Set
-			If (String.Equals(Me._scheduleID, value) = false) Then
-				If Me._Schedule.HasLoadedOrAssignedValue Then
-					Throw New System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException()
-				End If
-				Me.OnscheduleIDChanging(value)
-				Me.SendPropertyChanging
-				Me._scheduleID = value
-				Me.SendPropertyChanged("scheduleID")
-				Me.OnscheduleIDChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_seatStatus", DbType:="VarChar(20)")>  _
-	Public Property seatStatus() As String
-		Get
-			Return Me._seatStatus
-		End Get
-		Set
-			If (String.Equals(Me._seatStatus, value) = false) Then
-				Me.OnseatStatusChanging(value)
-				Me.SendPropertyChanging
-				Me._seatStatus = value
-				Me.SendPropertyChanged("seatStatus")
-				Me.OnseatStatusChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="Seat_Ticket", Storage:="_Tickets", ThisKey:="seatID", OtherKey:="seatID")>  _
-	Public Property Tickets() As EntitySet(Of Ticket)
-		Get
-			Return Me._Tickets
-		End Get
-		Set
-			Me._Tickets.Assign(value)
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="Schedule_Seat", Storage:="_Schedule", ThisKey:="scheduleID", OtherKey:="scheduleID", IsForeignKey:=true)>  _
-	Public Property Schedule() As Schedule
-		Get
-			Return Me._Schedule.Entity
-		End Get
-		Set
-			Dim previousValue As Schedule = Me._Schedule.Entity
-			If ((Object.Equals(previousValue, value) = false)  _
-						OrElse (Me._Schedule.HasLoadedOrAssignedValue = false)) Then
-				Me.SendPropertyChanging
-				If ((previousValue Is Nothing)  _
-							= false) Then
-					Me._Schedule.Entity = Nothing
-					previousValue.Seats.Remove(Me)
-				End If
-				Me._Schedule.Entity = value
-				If ((value Is Nothing)  _
-							= false) Then
-					value.Seats.Add(Me)
-					Me._scheduleID = value.scheduleID
-				Else
-					Me._scheduleID = CType(Nothing, String)
-				End If
-				Me.SendPropertyChanged("Schedule")
-			End If
-		End Set
-	End Property
-	
-	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
-	
-	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
-	
-	Protected Overridable Sub SendPropertyChanging()
-		If ((Me.PropertyChangingEvent Is Nothing)  _
-					= false) Then
-			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
-		End If
-	End Sub
-	
-	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
-		If ((Me.PropertyChangedEvent Is Nothing)  _
-					= false) Then
-			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
-		End If
-	End Sub
-	
-	Private Sub attach_Tickets(ByVal entity As Ticket)
+	Private Sub attach_Seats(ByVal entity As Seat)
 		Me.SendPropertyChanging
-		entity.Seat = Me
+		entity.Schedule = Me
 	End Sub
 	
-	Private Sub detach_Tickets(ByVal entity As Ticket)
+	Private Sub detach_Seats(ByVal entity As Seat)
 		Me.SendPropertyChanging
-		entity.Seat = Nothing
+		entity.Schedule = Nothing
 	End Sub
 End Class
 
@@ -1515,190 +1181,6 @@ Partial Public Class Table
 	End Sub
 End Class
 
-<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.Ticket")>  _
-Partial Public Class Ticket
-	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
-	
-	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
-	
-	Private _ticketID As String
-	
-	Private _seatID As String
-	
-	Private _purchaseDateTime As System.Nullable(Of Date)
-	
-	Private _ticketPrice As System.Nullable(Of Decimal)
-	
-	Private _Bookings As EntitySet(Of Booking)
-	
-	Private _Seat As EntityRef(Of Seat)
-	
-    #Region "Extensibility Method Definitions"
-    Partial Private Sub OnLoaded()
-    End Sub
-    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
-    End Sub
-    Partial Private Sub OnCreated()
-    End Sub
-    Partial Private Sub OnticketIDChanging(value As String)
-    End Sub
-    Partial Private Sub OnticketIDChanged()
-    End Sub
-    Partial Private Sub OnseatIDChanging(value As String)
-    End Sub
-    Partial Private Sub OnseatIDChanged()
-    End Sub
-    Partial Private Sub OnpurchaseDateTimeChanging(value As System.Nullable(Of Date))
-    End Sub
-    Partial Private Sub OnpurchaseDateTimeChanged()
-    End Sub
-    Partial Private Sub OnticketPriceChanging(value As System.Nullable(Of Decimal))
-    End Sub
-    Partial Private Sub OnticketPriceChanged()
-    End Sub
-    #End Region
-	
-	Public Sub New()
-		MyBase.New
-		Me._Bookings = New EntitySet(Of Booking)(AddressOf Me.attach_Bookings, AddressOf Me.detach_Bookings)
-		Me._Seat = CType(Nothing, EntityRef(Of Seat))
-		OnCreated
-	End Sub
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ticketID", DbType:="VarChar(10) NOT NULL", CanBeNull:=false, IsPrimaryKey:=true)>  _
-	Public Property ticketID() As String
-		Get
-			Return Me._ticketID
-		End Get
-		Set
-			If (String.Equals(Me._ticketID, value) = false) Then
-				Me.OnticketIDChanging(value)
-				Me.SendPropertyChanging
-				Me._ticketID = value
-				Me.SendPropertyChanged("ticketID")
-				Me.OnticketIDChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_seatID", DbType:="VarChar(10)")>  _
-	Public Property seatID() As String
-		Get
-			Return Me._seatID
-		End Get
-		Set
-			If (String.Equals(Me._seatID, value) = false) Then
-				If Me._Seat.HasLoadedOrAssignedValue Then
-					Throw New System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException()
-				End If
-				Me.OnseatIDChanging(value)
-				Me.SendPropertyChanging
-				Me._seatID = value
-				Me.SendPropertyChanged("seatID")
-				Me.OnseatIDChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_purchaseDateTime", DbType:="DateTime")>  _
-	Public Property purchaseDateTime() As System.Nullable(Of Date)
-		Get
-			Return Me._purchaseDateTime
-		End Get
-		Set
-			If (Me._purchaseDateTime.Equals(value) = false) Then
-				Me.OnpurchaseDateTimeChanging(value)
-				Me.SendPropertyChanging
-				Me._purchaseDateTime = value
-				Me.SendPropertyChanged("purchaseDateTime")
-				Me.OnpurchaseDateTimeChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ticketPrice", DbType:="Decimal(18,0)")>  _
-	Public Property ticketPrice() As System.Nullable(Of Decimal)
-		Get
-			Return Me._ticketPrice
-		End Get
-		Set
-			If (Me._ticketPrice.Equals(value) = false) Then
-				Me.OnticketPriceChanging(value)
-				Me.SendPropertyChanging
-				Me._ticketPrice = value
-				Me.SendPropertyChanged("ticketPrice")
-				Me.OnticketPriceChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="Ticket_Booking", Storage:="_Bookings", ThisKey:="ticketID", OtherKey:="ticketID")>  _
-	Public Property Bookings() As EntitySet(Of Booking)
-		Get
-			Return Me._Bookings
-		End Get
-		Set
-			Me._Bookings.Assign(value)
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="Seat_Ticket", Storage:="_Seat", ThisKey:="seatID", OtherKey:="seatID", IsForeignKey:=true)>  _
-	Public Property Seat() As Seat
-		Get
-			Return Me._Seat.Entity
-		End Get
-		Set
-			Dim previousValue As Seat = Me._Seat.Entity
-			If ((Object.Equals(previousValue, value) = false)  _
-						OrElse (Me._Seat.HasLoadedOrAssignedValue = false)) Then
-				Me.SendPropertyChanging
-				If ((previousValue Is Nothing)  _
-							= false) Then
-					Me._Seat.Entity = Nothing
-					previousValue.Tickets.Remove(Me)
-				End If
-				Me._Seat.Entity = value
-				If ((value Is Nothing)  _
-							= false) Then
-					value.Tickets.Add(Me)
-					Me._seatID = value.seatID
-				Else
-					Me._seatID = CType(Nothing, String)
-				End If
-				Me.SendPropertyChanged("Seat")
-			End If
-		End Set
-	End Property
-	
-	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
-	
-	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
-	
-	Protected Overridable Sub SendPropertyChanging()
-		If ((Me.PropertyChangingEvent Is Nothing)  _
-					= false) Then
-			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
-		End If
-	End Sub
-	
-	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
-		If ((Me.PropertyChangedEvent Is Nothing)  _
-					= false) Then
-			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
-		End If
-	End Sub
-	
-	Private Sub attach_Bookings(ByVal entity As Booking)
-		Me.SendPropertyChanging
-		entity.Ticket = Me
-	End Sub
-	
-	Private Sub detach_Bookings(ByVal entity As Booking)
-		Me.SendPropertyChanging
-		entity.Ticket = Nothing
-	End Sub
-End Class
-
 <Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.Transport")>  _
 Partial Public Class Transport
 	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
@@ -1890,267 +1372,6 @@ Partial Public Class Transport
 	Private Sub detach_Schedules(ByVal entity As Schedule)
 		Me.SendPropertyChanging
 		entity.Transport = Nothing
-	End Sub
-End Class
-
-<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.Booking")>  _
-Partial Public Class Booking
-	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
-	
-	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
-	
-	Private _bookingID As String
-	
-	Private _customerIC As String
-	
-	Private _customerContactNo As String
-	
-	Private _customerEmail As String
-	
-	Private _ticketID As String
-	
-	Private _customerID As String
-	
-	Private _employeeID As String
-	
-	Private _Ticket As EntityRef(Of Ticket)
-	
-	Private _Employee As EntityRef(Of Employee)
-	
-    #Region "Extensibility Method Definitions"
-    Partial Private Sub OnLoaded()
-    End Sub
-    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
-    End Sub
-    Partial Private Sub OnCreated()
-    End Sub
-    Partial Private Sub OnbookingIDChanging(value As String)
-    End Sub
-    Partial Private Sub OnbookingIDChanged()
-    End Sub
-    Partial Private Sub OncustomerICChanging(value As String)
-    End Sub
-    Partial Private Sub OncustomerICChanged()
-    End Sub
-    Partial Private Sub OncustomerContactNoChanging(value As String)
-    End Sub
-    Partial Private Sub OncustomerContactNoChanged()
-    End Sub
-    Partial Private Sub OncustomerEmailChanging(value As String)
-    End Sub
-    Partial Private Sub OncustomerEmailChanged()
-    End Sub
-    Partial Private Sub OnticketIDChanging(value As String)
-    End Sub
-    Partial Private Sub OnticketIDChanged()
-    End Sub
-    Partial Private Sub OncustomerIDChanging(value As String)
-    End Sub
-    Partial Private Sub OncustomerIDChanged()
-    End Sub
-    Partial Private Sub OnemployeeIDChanging(value As String)
-    End Sub
-    Partial Private Sub OnemployeeIDChanged()
-    End Sub
-    #End Region
-	
-	Public Sub New()
-		MyBase.New
-		Me._Ticket = CType(Nothing, EntityRef(Of Ticket))
-		Me._Employee = CType(Nothing, EntityRef(Of Employee))
-		OnCreated
-	End Sub
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_bookingID", DbType:="VarChar(10) NOT NULL", CanBeNull:=false, IsPrimaryKey:=true)>  _
-	Public Property bookingID() As String
-		Get
-			Return Me._bookingID
-		End Get
-		Set
-			If (String.Equals(Me._bookingID, value) = false) Then
-				Me.OnbookingIDChanging(value)
-				Me.SendPropertyChanging
-				Me._bookingID = value
-				Me.SendPropertyChanged("bookingID")
-				Me.OnbookingIDChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_customerIC", DbType:="VarChar(12)")>  _
-	Public Property customerIC() As String
-		Get
-			Return Me._customerIC
-		End Get
-		Set
-			If (String.Equals(Me._customerIC, value) = false) Then
-				Me.OncustomerICChanging(value)
-				Me.SendPropertyChanging
-				Me._customerIC = value
-				Me.SendPropertyChanged("customerIC")
-				Me.OncustomerICChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_customerContactNo", DbType:="VarChar(12)")>  _
-	Public Property customerContactNo() As String
-		Get
-			Return Me._customerContactNo
-		End Get
-		Set
-			If (String.Equals(Me._customerContactNo, value) = false) Then
-				Me.OncustomerContactNoChanging(value)
-				Me.SendPropertyChanging
-				Me._customerContactNo = value
-				Me.SendPropertyChanged("customerContactNo")
-				Me.OncustomerContactNoChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_customerEmail", DbType:="VarChar(MAX)")>  _
-	Public Property customerEmail() As String
-		Get
-			Return Me._customerEmail
-		End Get
-		Set
-			If (String.Equals(Me._customerEmail, value) = false) Then
-				Me.OncustomerEmailChanging(value)
-				Me.SendPropertyChanging
-				Me._customerEmail = value
-				Me.SendPropertyChanged("customerEmail")
-				Me.OncustomerEmailChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ticketID", DbType:="VarChar(10)")>  _
-	Public Property ticketID() As String
-		Get
-			Return Me._ticketID
-		End Get
-		Set
-			If (String.Equals(Me._ticketID, value) = false) Then
-				If Me._Ticket.HasLoadedOrAssignedValue Then
-					Throw New System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException()
-				End If
-				Me.OnticketIDChanging(value)
-				Me.SendPropertyChanging
-				Me._ticketID = value
-				Me.SendPropertyChanged("ticketID")
-				Me.OnticketIDChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_customerID", DbType:="VarChar(10) NOT NULL", CanBeNull:=false)>  _
-	Public Property customerID() As String
-		Get
-			Return Me._customerID
-		End Get
-		Set
-			If (String.Equals(Me._customerID, value) = false) Then
-				Me.OncustomerIDChanging(value)
-				Me.SendPropertyChanging
-				Me._customerID = value
-				Me.SendPropertyChanged("customerID")
-				Me.OncustomerIDChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_employeeID", DbType:="VarChar(10) NOT NULL", CanBeNull:=false)>  _
-	Public Property employeeID() As String
-		Get
-			Return Me._employeeID
-		End Get
-		Set
-			If (String.Equals(Me._employeeID, value) = false) Then
-				If Me._Employee.HasLoadedOrAssignedValue Then
-					Throw New System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException()
-				End If
-				Me.OnemployeeIDChanging(value)
-				Me.SendPropertyChanging
-				Me._employeeID = value
-				Me.SendPropertyChanged("employeeID")
-				Me.OnemployeeIDChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="Ticket_Booking", Storage:="_Ticket", ThisKey:="ticketID", OtherKey:="ticketID", IsForeignKey:=true)>  _
-	Public Property Ticket() As Ticket
-		Get
-			Return Me._Ticket.Entity
-		End Get
-		Set
-			Dim previousValue As Ticket = Me._Ticket.Entity
-			If ((Object.Equals(previousValue, value) = false)  _
-						OrElse (Me._Ticket.HasLoadedOrAssignedValue = false)) Then
-				Me.SendPropertyChanging
-				If ((previousValue Is Nothing)  _
-							= false) Then
-					Me._Ticket.Entity = Nothing
-					previousValue.Bookings.Remove(Me)
-				End If
-				Me._Ticket.Entity = value
-				If ((value Is Nothing)  _
-							= false) Then
-					value.Bookings.Add(Me)
-					Me._ticketID = value.ticketID
-				Else
-					Me._ticketID = CType(Nothing, String)
-				End If
-				Me.SendPropertyChanged("Ticket")
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="Employee_Booking", Storage:="_Employee", ThisKey:="employeeID", OtherKey:="employeeID", IsForeignKey:=true)>  _
-	Public Property Employee() As Employee
-		Get
-			Return Me._Employee.Entity
-		End Get
-		Set
-			Dim previousValue As Employee = Me._Employee.Entity
-			If ((Object.Equals(previousValue, value) = false)  _
-						OrElse (Me._Employee.HasLoadedOrAssignedValue = false)) Then
-				Me.SendPropertyChanging
-				If ((previousValue Is Nothing)  _
-							= false) Then
-					Me._Employee.Entity = Nothing
-					previousValue.Bookings.Remove(Me)
-				End If
-				Me._Employee.Entity = value
-				If ((value Is Nothing)  _
-							= false) Then
-					value.Bookings.Add(Me)
-					Me._employeeID = value.employeeID
-				Else
-					Me._employeeID = CType(Nothing, String)
-				End If
-				Me.SendPropertyChanged("Employee")
-			End If
-		End Set
-	End Property
-	
-	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
-	
-	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
-	
-	Protected Overridable Sub SendPropertyChanging()
-		If ((Me.PropertyChangingEvent Is Nothing)  _
-					= false) Then
-			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
-		End If
-	End Sub
-	
-	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
-		If ((Me.PropertyChangedEvent Is Nothing)  _
-					= false) Then
-			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
-		End If
 	End Sub
 End Class
 
@@ -2389,5 +1610,806 @@ Partial Public Class Employee
 	Private Sub detach_Bookings(ByVal entity As Booking)
 		Me.SendPropertyChanging
 		entity.Employee = Nothing
+	End Sub
+End Class
+
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.Seat")>  _
+Partial Public Class Seat
+	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
+	
+	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
+	
+	Private _seatID As String
+	
+	Private _scheduleID As String
+	
+	Private _seatStatus As String
+	
+	Private _seatNumber As System.Nullable(Of Integer)
+	
+	Private _Tickets As EntitySet(Of Ticket)
+	
+	Private _Schedule As EntityRef(Of Schedule)
+	
+    #Region "Extensibility Method Definitions"
+    Partial Private Sub OnLoaded()
+    End Sub
+    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
+    End Sub
+    Partial Private Sub OnCreated()
+    End Sub
+    Partial Private Sub OnseatIDChanging(value As String)
+    End Sub
+    Partial Private Sub OnseatIDChanged()
+    End Sub
+    Partial Private Sub OnscheduleIDChanging(value As String)
+    End Sub
+    Partial Private Sub OnscheduleIDChanged()
+    End Sub
+    Partial Private Sub OnseatStatusChanging(value As String)
+    End Sub
+    Partial Private Sub OnseatStatusChanged()
+    End Sub
+    Partial Private Sub OnseatNumberChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnseatNumberChanged()
+    End Sub
+    #End Region
+	
+	Public Sub New()
+		MyBase.New
+		Me._Tickets = New EntitySet(Of Ticket)(AddressOf Me.attach_Tickets, AddressOf Me.detach_Tickets)
+		Me._Schedule = CType(Nothing, EntityRef(Of Schedule))
+		OnCreated
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_seatID", DbType:="VarChar(10) NOT NULL", CanBeNull:=false, IsPrimaryKey:=true)>  _
+	Public Property seatID() As String
+		Get
+			Return Me._seatID
+		End Get
+		Set
+			If (String.Equals(Me._seatID, value) = false) Then
+				Me.OnseatIDChanging(value)
+				Me.SendPropertyChanging
+				Me._seatID = value
+				Me.SendPropertyChanged("seatID")
+				Me.OnseatIDChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_scheduleID", DbType:="VarChar(10)")>  _
+	Public Property scheduleID() As String
+		Get
+			Return Me._scheduleID
+		End Get
+		Set
+			If (String.Equals(Me._scheduleID, value) = false) Then
+				If Me._Schedule.HasLoadedOrAssignedValue Then
+					Throw New System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException()
+				End If
+				Me.OnscheduleIDChanging(value)
+				Me.SendPropertyChanging
+				Me._scheduleID = value
+				Me.SendPropertyChanged("scheduleID")
+				Me.OnscheduleIDChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_seatStatus", DbType:="VarChar(20)")>  _
+	Public Property seatStatus() As String
+		Get
+			Return Me._seatStatus
+		End Get
+		Set
+			If (String.Equals(Me._seatStatus, value) = false) Then
+				Me.OnseatStatusChanging(value)
+				Me.SendPropertyChanging
+				Me._seatStatus = value
+				Me.SendPropertyChanged("seatStatus")
+				Me.OnseatStatusChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_seatNumber", DbType:="Int")>  _
+	Public Property seatNumber() As System.Nullable(Of Integer)
+		Get
+			Return Me._seatNumber
+		End Get
+		Set
+			If (Me._seatNumber.Equals(value) = false) Then
+				Me.OnseatNumberChanging(value)
+				Me.SendPropertyChanging
+				Me._seatNumber = value
+				Me.SendPropertyChanged("seatNumber")
+				Me.OnseatNumberChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="Seat_Ticket", Storage:="_Tickets", ThisKey:="seatID", OtherKey:="seatID")>  _
+	Public Property Tickets() As EntitySet(Of Ticket)
+		Get
+			Return Me._Tickets
+		End Get
+		Set
+			Me._Tickets.Assign(value)
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="Schedule_Seat", Storage:="_Schedule", ThisKey:="scheduleID", OtherKey:="scheduleID", IsForeignKey:=true)>  _
+	Public Property Schedule() As Schedule
+		Get
+			Return Me._Schedule.Entity
+		End Get
+		Set
+			Dim previousValue As Schedule = Me._Schedule.Entity
+			If ((Object.Equals(previousValue, value) = false)  _
+						OrElse (Me._Schedule.HasLoadedOrAssignedValue = false)) Then
+				Me.SendPropertyChanging
+				If ((previousValue Is Nothing)  _
+							= false) Then
+					Me._Schedule.Entity = Nothing
+					previousValue.Seats.Remove(Me)
+				End If
+				Me._Schedule.Entity = value
+				If ((value Is Nothing)  _
+							= false) Then
+					value.Seats.Add(Me)
+					Me._scheduleID = value.scheduleID
+				Else
+					Me._scheduleID = CType(Nothing, String)
+				End If
+				Me.SendPropertyChanged("Schedule")
+			End If
+		End Set
+	End Property
+	
+	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
+	
+	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+	
+	Protected Overridable Sub SendPropertyChanging()
+		If ((Me.PropertyChangingEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
+		End If
+	End Sub
+	
+	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
+		If ((Me.PropertyChangedEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
+		End If
+	End Sub
+	
+	Private Sub attach_Tickets(ByVal entity As Ticket)
+		Me.SendPropertyChanging
+		entity.Seat = Me
+	End Sub
+	
+	Private Sub detach_Tickets(ByVal entity As Ticket)
+		Me.SendPropertyChanging
+		entity.Seat = Nothing
+	End Sub
+End Class
+
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.Booking")>  _
+Partial Public Class Booking
+	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
+	
+	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
+	
+	Private _bookingID As String
+	
+	Private _customerIC As String
+	
+	Private _customerContactNo As String
+	
+	Private _customerEmail As String
+	
+	Private _employeeID As String
+	
+	Private _Tickets As EntitySet(Of Ticket)
+	
+	Private _Employee As EntityRef(Of Employee)
+	
+    #Region "Extensibility Method Definitions"
+    Partial Private Sub OnLoaded()
+    End Sub
+    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
+    End Sub
+    Partial Private Sub OnCreated()
+    End Sub
+    Partial Private Sub OnbookingIDChanging(value As String)
+    End Sub
+    Partial Private Sub OnbookingIDChanged()
+    End Sub
+    Partial Private Sub OncustomerICChanging(value As String)
+    End Sub
+    Partial Private Sub OncustomerICChanged()
+    End Sub
+    Partial Private Sub OncustomerContactNoChanging(value As String)
+    End Sub
+    Partial Private Sub OncustomerContactNoChanged()
+    End Sub
+    Partial Private Sub OncustomerEmailChanging(value As String)
+    End Sub
+    Partial Private Sub OncustomerEmailChanged()
+    End Sub
+    Partial Private Sub OnemployeeIDChanging(value As String)
+    End Sub
+    Partial Private Sub OnemployeeIDChanged()
+    End Sub
+    #End Region
+	
+	Public Sub New()
+		MyBase.New
+		Me._Tickets = New EntitySet(Of Ticket)(AddressOf Me.attach_Tickets, AddressOf Me.detach_Tickets)
+		Me._Employee = CType(Nothing, EntityRef(Of Employee))
+		OnCreated
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_bookingID", DbType:="VarChar(10) NOT NULL", CanBeNull:=false, IsPrimaryKey:=true)>  _
+	Public Property bookingID() As String
+		Get
+			Return Me._bookingID
+		End Get
+		Set
+			If (String.Equals(Me._bookingID, value) = false) Then
+				Me.OnbookingIDChanging(value)
+				Me.SendPropertyChanging
+				Me._bookingID = value
+				Me.SendPropertyChanged("bookingID")
+				Me.OnbookingIDChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_customerIC", DbType:="VarChar(12)")>  _
+	Public Property customerIC() As String
+		Get
+			Return Me._customerIC
+		End Get
+		Set
+			If (String.Equals(Me._customerIC, value) = false) Then
+				Me.OncustomerICChanging(value)
+				Me.SendPropertyChanging
+				Me._customerIC = value
+				Me.SendPropertyChanged("customerIC")
+				Me.OncustomerICChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_customerContactNo", DbType:="VarChar(12)")>  _
+	Public Property customerContactNo() As String
+		Get
+			Return Me._customerContactNo
+		End Get
+		Set
+			If (String.Equals(Me._customerContactNo, value) = false) Then
+				Me.OncustomerContactNoChanging(value)
+				Me.SendPropertyChanging
+				Me._customerContactNo = value
+				Me.SendPropertyChanged("customerContactNo")
+				Me.OncustomerContactNoChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_customerEmail", DbType:="VarChar(60)")>  _
+	Public Property customerEmail() As String
+		Get
+			Return Me._customerEmail
+		End Get
+		Set
+			If (String.Equals(Me._customerEmail, value) = false) Then
+				Me.OncustomerEmailChanging(value)
+				Me.SendPropertyChanging
+				Me._customerEmail = value
+				Me.SendPropertyChanged("customerEmail")
+				Me.OncustomerEmailChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_employeeID", DbType:="VarChar(10) NOT NULL", CanBeNull:=false)>  _
+	Public Property employeeID() As String
+		Get
+			Return Me._employeeID
+		End Get
+		Set
+			If (String.Equals(Me._employeeID, value) = false) Then
+				If Me._Employee.HasLoadedOrAssignedValue Then
+					Throw New System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException()
+				End If
+				Me.OnemployeeIDChanging(value)
+				Me.SendPropertyChanging
+				Me._employeeID = value
+				Me.SendPropertyChanged("employeeID")
+				Me.OnemployeeIDChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="Booking_Ticket", Storage:="_Tickets", ThisKey:="bookingID", OtherKey:="bookingID")>  _
+	Public Property Tickets() As EntitySet(Of Ticket)
+		Get
+			Return Me._Tickets
+		End Get
+		Set
+			Me._Tickets.Assign(value)
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="Employee_Booking", Storage:="_Employee", ThisKey:="employeeID", OtherKey:="employeeID", IsForeignKey:=true)>  _
+	Public Property Employee() As Employee
+		Get
+			Return Me._Employee.Entity
+		End Get
+		Set
+			Dim previousValue As Employee = Me._Employee.Entity
+			If ((Object.Equals(previousValue, value) = false)  _
+						OrElse (Me._Employee.HasLoadedOrAssignedValue = false)) Then
+				Me.SendPropertyChanging
+				If ((previousValue Is Nothing)  _
+							= false) Then
+					Me._Employee.Entity = Nothing
+					previousValue.Bookings.Remove(Me)
+				End If
+				Me._Employee.Entity = value
+				If ((value Is Nothing)  _
+							= false) Then
+					value.Bookings.Add(Me)
+					Me._employeeID = value.employeeID
+				Else
+					Me._employeeID = CType(Nothing, String)
+				End If
+				Me.SendPropertyChanged("Employee")
+			End If
+		End Set
+	End Property
+	
+	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
+	
+	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+	
+	Protected Overridable Sub SendPropertyChanging()
+		If ((Me.PropertyChangingEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
+		End If
+	End Sub
+	
+	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
+		If ((Me.PropertyChangedEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
+		End If
+	End Sub
+	
+	Private Sub attach_Tickets(ByVal entity As Ticket)
+		Me.SendPropertyChanging
+		entity.Booking = Me
+	End Sub
+	
+	Private Sub detach_Tickets(ByVal entity As Ticket)
+		Me.SendPropertyChanging
+		entity.Booking = Nothing
+	End Sub
+End Class
+
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.Ticket")>  _
+Partial Public Class Ticket
+	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
+	
+	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
+	
+	Private _ticketID As String
+	
+	Private _seatID As String
+	
+	Private _purchaseDateTime As System.Nullable(Of Date)
+	
+	Private _ticketPrice As System.Nullable(Of Decimal)
+	
+	Private _bookingID As String
+	
+	Private _Booking As EntityRef(Of Booking)
+	
+	Private _Seat As EntityRef(Of Seat)
+	
+    #Region "Extensibility Method Definitions"
+    Partial Private Sub OnLoaded()
+    End Sub
+    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
+    End Sub
+    Partial Private Sub OnCreated()
+    End Sub
+    Partial Private Sub OnticketIDChanging(value As String)
+    End Sub
+    Partial Private Sub OnticketIDChanged()
+    End Sub
+    Partial Private Sub OnseatIDChanging(value As String)
+    End Sub
+    Partial Private Sub OnseatIDChanged()
+    End Sub
+    Partial Private Sub OnpurchaseDateTimeChanging(value As System.Nullable(Of Date))
+    End Sub
+    Partial Private Sub OnpurchaseDateTimeChanged()
+    End Sub
+    Partial Private Sub OnticketPriceChanging(value As System.Nullable(Of Decimal))
+    End Sub
+    Partial Private Sub OnticketPriceChanged()
+    End Sub
+    Partial Private Sub OnbookingIDChanging(value As String)
+    End Sub
+    Partial Private Sub OnbookingIDChanged()
+    End Sub
+    #End Region
+	
+	Public Sub New()
+		MyBase.New
+		Me._Booking = CType(Nothing, EntityRef(Of Booking))
+		Me._Seat = CType(Nothing, EntityRef(Of Seat))
+		OnCreated
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ticketID", DbType:="VarChar(10) NOT NULL", CanBeNull:=false, IsPrimaryKey:=true)>  _
+	Public Property ticketID() As String
+		Get
+			Return Me._ticketID
+		End Get
+		Set
+			If (String.Equals(Me._ticketID, value) = false) Then
+				Me.OnticketIDChanging(value)
+				Me.SendPropertyChanging
+				Me._ticketID = value
+				Me.SendPropertyChanged("ticketID")
+				Me.OnticketIDChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_seatID", DbType:="VarChar(10)")>  _
+	Public Property seatID() As String
+		Get
+			Return Me._seatID
+		End Get
+		Set
+			If (String.Equals(Me._seatID, value) = false) Then
+				If Me._Seat.HasLoadedOrAssignedValue Then
+					Throw New System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException()
+				End If
+				Me.OnseatIDChanging(value)
+				Me.SendPropertyChanging
+				Me._seatID = value
+				Me.SendPropertyChanged("seatID")
+				Me.OnseatIDChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_purchaseDateTime", DbType:="DateTime")>  _
+	Public Property purchaseDateTime() As System.Nullable(Of Date)
+		Get
+			Return Me._purchaseDateTime
+		End Get
+		Set
+			If (Me._purchaseDateTime.Equals(value) = false) Then
+				Me.OnpurchaseDateTimeChanging(value)
+				Me.SendPropertyChanging
+				Me._purchaseDateTime = value
+				Me.SendPropertyChanged("purchaseDateTime")
+				Me.OnpurchaseDateTimeChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ticketPrice", DbType:="Decimal(18,0)")>  _
+	Public Property ticketPrice() As System.Nullable(Of Decimal)
+		Get
+			Return Me._ticketPrice
+		End Get
+		Set
+			If (Me._ticketPrice.Equals(value) = false) Then
+				Me.OnticketPriceChanging(value)
+				Me.SendPropertyChanging
+				Me._ticketPrice = value
+				Me.SendPropertyChanged("ticketPrice")
+				Me.OnticketPriceChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_bookingID", DbType:="VarChar(10)")>  _
+	Public Property bookingID() As String
+		Get
+			Return Me._bookingID
+		End Get
+		Set
+			If (String.Equals(Me._bookingID, value) = false) Then
+				If Me._Booking.HasLoadedOrAssignedValue Then
+					Throw New System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException()
+				End If
+				Me.OnbookingIDChanging(value)
+				Me.SendPropertyChanging
+				Me._bookingID = value
+				Me.SendPropertyChanged("bookingID")
+				Me.OnbookingIDChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="Booking_Ticket", Storage:="_Booking", ThisKey:="bookingID", OtherKey:="bookingID", IsForeignKey:=true)>  _
+	Public Property Booking() As Booking
+		Get
+			Return Me._Booking.Entity
+		End Get
+		Set
+			Dim previousValue As Booking = Me._Booking.Entity
+			If ((Object.Equals(previousValue, value) = false)  _
+						OrElse (Me._Booking.HasLoadedOrAssignedValue = false)) Then
+				Me.SendPropertyChanging
+				If ((previousValue Is Nothing)  _
+							= false) Then
+					Me._Booking.Entity = Nothing
+					previousValue.Tickets.Remove(Me)
+				End If
+				Me._Booking.Entity = value
+				If ((value Is Nothing)  _
+							= false) Then
+					value.Tickets.Add(Me)
+					Me._bookingID = value.bookingID
+				Else
+					Me._bookingID = CType(Nothing, String)
+				End If
+				Me.SendPropertyChanged("Booking")
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="Seat_Ticket", Storage:="_Seat", ThisKey:="seatID", OtherKey:="seatID", IsForeignKey:=true)>  _
+	Public Property Seat() As Seat
+		Get
+			Return Me._Seat.Entity
+		End Get
+		Set
+			Dim previousValue As Seat = Me._Seat.Entity
+			If ((Object.Equals(previousValue, value) = false)  _
+						OrElse (Me._Seat.HasLoadedOrAssignedValue = false)) Then
+				Me.SendPropertyChanging
+				If ((previousValue Is Nothing)  _
+							= false) Then
+					Me._Seat.Entity = Nothing
+					previousValue.Tickets.Remove(Me)
+				End If
+				Me._Seat.Entity = value
+				If ((value Is Nothing)  _
+							= false) Then
+					value.Tickets.Add(Me)
+					Me._seatID = value.seatID
+				Else
+					Me._seatID = CType(Nothing, String)
+				End If
+				Me.SendPropertyChanged("Seat")
+			End If
+		End Set
+	End Property
+	
+	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
+	
+	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+	
+	Protected Overridable Sub SendPropertyChanging()
+		If ((Me.PropertyChangingEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
+		End If
+	End Sub
+	
+	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
+		If ((Me.PropertyChangedEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
+		End If
+	End Sub
+End Class
+
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.Promotion")>  _
+Partial Public Class Promotion
+	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
+	
+	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
+	
+	Private _promotionID As String
+	
+	Private _promotionName As String
+	
+	Private _promotionStartDate As System.Nullable(Of Date)
+	
+	Private _promotionEndDate As System.Nullable(Of Date)
+	
+	Private _promotionDesc As String
+	
+	Private _promotionStatus As String
+	
+	Private _promoteSchedules As EntitySet(Of promoteSchedule)
+	
+    #Region "Extensibility Method Definitions"
+    Partial Private Sub OnLoaded()
+    End Sub
+    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
+    End Sub
+    Partial Private Sub OnCreated()
+    End Sub
+    Partial Private Sub OnpromotionIDChanging(value As String)
+    End Sub
+    Partial Private Sub OnpromotionIDChanged()
+    End Sub
+    Partial Private Sub OnpromotionNameChanging(value As String)
+    End Sub
+    Partial Private Sub OnpromotionNameChanged()
+    End Sub
+    Partial Private Sub OnpromotionStartDateChanging(value As System.Nullable(Of Date))
+    End Sub
+    Partial Private Sub OnpromotionStartDateChanged()
+    End Sub
+    Partial Private Sub OnpromotionEndDateChanging(value As System.Nullable(Of Date))
+    End Sub
+    Partial Private Sub OnpromotionEndDateChanged()
+    End Sub
+    Partial Private Sub OnpromotionDescChanging(value As String)
+    End Sub
+    Partial Private Sub OnpromotionDescChanged()
+    End Sub
+    Partial Private Sub OnpromotionStatusChanging(value As String)
+    End Sub
+    Partial Private Sub OnpromotionStatusChanged()
+    End Sub
+    #End Region
+	
+	Public Sub New()
+		MyBase.New
+		Me._promoteSchedules = New EntitySet(Of promoteSchedule)(AddressOf Me.attach_promoteSchedules, AddressOf Me.detach_promoteSchedules)
+		OnCreated
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_promotionID", DbType:="VarChar(10) NOT NULL", CanBeNull:=false, IsPrimaryKey:=true)>  _
+	Public Property promotionID() As String
+		Get
+			Return Me._promotionID
+		End Get
+		Set
+			If (String.Equals(Me._promotionID, value) = false) Then
+				Me.OnpromotionIDChanging(value)
+				Me.SendPropertyChanging
+				Me._promotionID = value
+				Me.SendPropertyChanged("promotionID")
+				Me.OnpromotionIDChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_promotionName", DbType:="VarChar(50)")>  _
+	Public Property promotionName() As String
+		Get
+			Return Me._promotionName
+		End Get
+		Set
+			If (String.Equals(Me._promotionName, value) = false) Then
+				Me.OnpromotionNameChanging(value)
+				Me.SendPropertyChanging
+				Me._promotionName = value
+				Me.SendPropertyChanged("promotionName")
+				Me.OnpromotionNameChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_promotionStartDate", DbType:="Date")>  _
+	Public Property promotionStartDate() As System.Nullable(Of Date)
+		Get
+			Return Me._promotionStartDate
+		End Get
+		Set
+			If (Me._promotionStartDate.Equals(value) = false) Then
+				Me.OnpromotionStartDateChanging(value)
+				Me.SendPropertyChanging
+				Me._promotionStartDate = value
+				Me.SendPropertyChanged("promotionStartDate")
+				Me.OnpromotionStartDateChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_promotionEndDate", DbType:="Date")>  _
+	Public Property promotionEndDate() As System.Nullable(Of Date)
+		Get
+			Return Me._promotionEndDate
+		End Get
+		Set
+			If (Me._promotionEndDate.Equals(value) = false) Then
+				Me.OnpromotionEndDateChanging(value)
+				Me.SendPropertyChanging
+				Me._promotionEndDate = value
+				Me.SendPropertyChanged("promotionEndDate")
+				Me.OnpromotionEndDateChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_promotionDesc", DbType:="VarChar(MAX)")>  _
+	Public Property promotionDesc() As String
+		Get
+			Return Me._promotionDesc
+		End Get
+		Set
+			If (String.Equals(Me._promotionDesc, value) = false) Then
+				Me.OnpromotionDescChanging(value)
+				Me.SendPropertyChanging
+				Me._promotionDesc = value
+				Me.SendPropertyChanged("promotionDesc")
+				Me.OnpromotionDescChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_promotionStatus", DbType:="VarChar(15)")>  _
+	Public Property promotionStatus() As String
+		Get
+			Return Me._promotionStatus
+		End Get
+		Set
+			If (String.Equals(Me._promotionStatus, value) = false) Then
+				Me.OnpromotionStatusChanging(value)
+				Me.SendPropertyChanging
+				Me._promotionStatus = value
+				Me.SendPropertyChanged("promotionStatus")
+				Me.OnpromotionStatusChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="Promotion_promoteSchedule", Storage:="_promoteSchedules", ThisKey:="promotionID", OtherKey:="promotionID")>  _
+	Public Property promoteSchedules() As EntitySet(Of promoteSchedule)
+		Get
+			Return Me._promoteSchedules
+		End Get
+		Set
+			Me._promoteSchedules.Assign(value)
+		End Set
+	End Property
+	
+	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
+	
+	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+	
+	Protected Overridable Sub SendPropertyChanging()
+		If ((Me.PropertyChangingEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
+		End If
+	End Sub
+	
+	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
+		If ((Me.PropertyChangedEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
+		End If
+	End Sub
+	
+	Private Sub attach_promoteSchedules(ByVal entity As promoteSchedule)
+		Me.SendPropertyChanging
+		entity.Promotion = Me
+	End Sub
+	
+	Private Sub detach_promoteSchedules(ByVal entity As promoteSchedule)
+		Me.SendPropertyChanging
+		entity.Promotion = Nothing
 	End Sub
 End Class

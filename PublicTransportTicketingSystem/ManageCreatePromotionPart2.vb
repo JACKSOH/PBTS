@@ -42,9 +42,6 @@ Public Class ManageCreatePromotionPart2
         Try
             Dim db As New PBTSDataContext()
 
-            Debug.Print(ManagerCreatePromotion.startDate.Date.ToString)
-
-            'add in assignPromotionStatus in dbo.schedule
             Dim query = From transport In db.Transports
                         Join schedule In db.Schedules On transport.transportID Equals (schedule.transportID)
                         Where schedule.departureDateTime.Value.Date >= ManagerCreatePromotion.startDate And schedule.departureDateTime.Value.Date <= ManagerCreatePromotion.endDate And transport.transportType = selectedTransport

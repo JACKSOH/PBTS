@@ -25,19 +25,8 @@
       <Column Name="promotionID" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
       <Column Name="scheduleID" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
       <Column Name="discountRate" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="Promotion_promoteSchedule" Member="Promotion" ThisKey="promotionID" OtherKey="promotionID" Type="Promotion" IsForeignKey="true" />
       <Association Name="Schedule_promoteSchedule" Member="Schedule" ThisKey="scheduleID" OtherKey="scheduleID" Type="Schedule" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Promotion" Member="Promotions">
-    <Type Name="Promotion">
-      <Column Name="promotionID" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="promotionName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="promotionStartDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="promotionEndDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="promotionDesc" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="promotionStatus" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
-      <Association Name="Promotion_promoteSchedule" Member="promoteSchedules" ThisKey="promotionID" OtherKey="promotionID" Type="promoteSchedule" />
+      <Association Name="Promotion_promoteSchedule" Member="Promotion" ThisKey="promotionID" OtherKey="promotionID" Type="Promotion" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Schedule" Member="Schedules">
@@ -117,6 +106,17 @@
       <Column Name="bookingID" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
       <Association Name="Booking_Ticket" Member="Booking" ThisKey="bookingID" OtherKey="bookingID" Type="Booking" IsForeignKey="true" />
       <Association Name="Seat_Ticket" Member="Seat" ThisKey="seatID" OtherKey="seatID" Type="Seat" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Promotion" Member="Promotions">
+    <Type Name="Promotion">
+      <Column Name="promotionID" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="promotionName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="promotionStartDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="promotionEndDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="promotionDesc" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="promotionStatus" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Association Name="Promotion_promoteSchedule" Member="promoteSchedules" ThisKey="promotionID" OtherKey="promotionID" Type="promoteSchedule" />
     </Type>
   </Table>
 </Database>

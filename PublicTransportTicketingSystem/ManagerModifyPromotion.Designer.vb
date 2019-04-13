@@ -24,10 +24,12 @@ Partial Class ManagerModifyPromotion
     Private Sub InitializeComponent()
         Me.ManagerMenuLayoutControl1 = New PublicTransportTicketingSystem.managerMenuLayoutControl()
         Me.gbModifyPromotion = New System.Windows.Forms.GroupBox()
+        Me.cboDiscount = New System.Windows.Forms.ComboBox()
         Me.lstSchedule = New System.Windows.Forms.ListBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
+        Me.nupCustomDiscount = New System.Windows.Forms.NumericUpDown()
         Me.lblPromotionDate = New System.Windows.Forms.Label()
         Me.lblPromotionName = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -38,8 +40,6 @@ Partial Class ManagerModifyPromotion
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btnCancel = New System.Windows.Forms.Button()
         Me.btnUpdate = New System.Windows.Forms.Button()
-        Me.nupCustomDiscount = New System.Windows.Forms.NumericUpDown()
-        Me.cboDiscount = New System.Windows.Forms.ComboBox()
         Me.gbModifyPromotion.SuspendLayout()
         CType(Me.nupCustomDiscount, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -79,6 +79,15 @@ Partial Class ManagerModifyPromotion
         Me.gbModifyPromotion.TabStop = False
         Me.gbModifyPromotion.Text = "Modify Promotion"
         '
+        'cboDiscount
+        '
+        Me.cboDiscount.FormattingEnabled = True
+        Me.cboDiscount.Items.AddRange(New Object() {"Free Board/ Ride", "Custom Discount"})
+        Me.cboDiscount.Location = New System.Drawing.Point(35, 349)
+        Me.cboDiscount.Name = "cboDiscount"
+        Me.cboDiscount.Size = New System.Drawing.Size(121, 26)
+        Me.cboDiscount.TabIndex = 47
+        '
         'lstSchedule
         '
         Me.lstSchedule.FormattingEnabled = True
@@ -115,11 +124,23 @@ Partial Class ManagerModifyPromotion
         Me.Label10.TabIndex = 43
         Me.Label10.Text = "Discount"
         '
+        'nupCustomDiscount
+        '
+        Me.nupCustomDiscount.Enabled = False
+        Me.nupCustomDiscount.Location = New System.Drawing.Point(175, 349)
+        Me.nupCustomDiscount.Maximum = New Decimal(New Integer() {99, 0, 0, 0})
+        Me.nupCustomDiscount.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.nupCustomDiscount.Name = "nupCustomDiscount"
+        Me.nupCustomDiscount.Size = New System.Drawing.Size(59, 24)
+        Me.nupCustomDiscount.TabIndex = 41
+        Me.nupCustomDiscount.Value = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.nupCustomDiscount.Visible = False
+        '
         'lblPromotionDate
         '
         Me.lblPromotionDate.Location = New System.Drawing.Point(172, 93)
         Me.lblPromotionDate.Name = "lblPromotionDate"
-        Me.lblPromotionDate.Size = New System.Drawing.Size(210, 18)
+        Me.lblPromotionDate.Size = New System.Drawing.Size(302, 18)
         Me.lblPromotionDate.TabIndex = 41
         Me.lblPromotionDate.Text = "Name*"
         '
@@ -207,27 +228,6 @@ Partial Class ManagerModifyPromotion
         Me.btnUpdate.TabIndex = 26
         Me.btnUpdate.Text = "&UPDATE"
         Me.btnUpdate.UseVisualStyleBackColor = False
-        '
-        'nupCustomDiscount
-        '
-        Me.nupCustomDiscount.Enabled = False
-        Me.nupCustomDiscount.Location = New System.Drawing.Point(175, 349)
-        Me.nupCustomDiscount.Maximum = New Decimal(New Integer() {99, 0, 0, 0})
-        Me.nupCustomDiscount.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
-        Me.nupCustomDiscount.Name = "nupCustomDiscount"
-        Me.nupCustomDiscount.Size = New System.Drawing.Size(59, 24)
-        Me.nupCustomDiscount.TabIndex = 41
-        Me.nupCustomDiscount.Value = New Decimal(New Integer() {1, 0, 0, 0})
-        Me.nupCustomDiscount.Visible = False
-        '
-        'cboDiscount
-        '
-        Me.cboDiscount.FormattingEnabled = True
-        Me.cboDiscount.Items.AddRange(New Object() {"Free Board/ Ride", "Custom Discount"})
-        Me.cboDiscount.Location = New System.Drawing.Point(35, 349)
-        Me.cboDiscount.Name = "cboDiscount"
-        Me.cboDiscount.Size = New System.Drawing.Size(121, 26)
-        Me.cboDiscount.TabIndex = 47
         '
         'ManagerModifyPromotion
         '

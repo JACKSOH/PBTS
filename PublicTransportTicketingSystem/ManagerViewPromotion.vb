@@ -3,6 +3,13 @@
     Private promotionDate As Date = Today.Date
     Private contain As String
     Friend id As String
+    Friend pname As String
+    Friend psdate As String
+    Friend pedate As String
+    Friend pdesc As String
+    Friend status As String
+
+
 
     Private Sub DataBindSearch()
         Try
@@ -13,10 +20,10 @@
                         Join promoteSchedule In db.promoteSchedules On Schedule.scheduleID Equals (promoteSchedule.scheduleID)
                         Join promotion In db.Promotions On promoteSchedule.promotionID Equals (promotion.promotionID)
                         Where transport.transportType.Contains(contain) Or promotion.promotionID.Contains(contain) Or promotion.promotionDesc.Contains(contain) Or promotion.promotionStartDate.Value.Date.ToString.Contains(contain) Or promotion.promotionEndDate.Value.Date.ToString.Contains(contain)
-                        Select promotion.promotionID, promotion.promotionStartDate, promotion.promotionEndDate, promotion.promotionDesc, transport.transportType
+                        Select promotion.promotionID, promotion.promotionName, promotion.promotionStartDate, promotion.promotionEndDate, promotion.promotionDesc, transport.transportType
             dgvPromotionList.DataSource = query
             dgvPromotionList.Columns("promotionID").HeaderText = "ID"
-            ' dgvPromotionList.Columns("promotionName").HeaderText = "Name"
+            dgvPromotionList.Columns("promotionName").HeaderText = "Name"
             dgvPromotionList.Columns("promotionStartDate").HeaderText = "Start Date"
             dgvPromotionList.Columns("promotionEndDate").HeaderText = "End Date"
             dgvPromotionList.Columns("promotionDesc").HeaderText = "Description"
@@ -37,14 +44,15 @@
                         Join promoteSchedule In db.promoteSchedules On Schedule.scheduleID Equals (promoteSchedule.scheduleID)
                         Join promotion In db.Promotions On promoteSchedule.promotionID Equals (promotion.promotionID)
                         Where transport.transportType = selectedTransport And promotionDate >= promotion.promotionStartDate.Value.Date And promotionDate <= promotion.promotionEndDate.Value.Date
-                        Select promotion.promotionID, promotion.promotionStartDate, promotion.promotionEndDate, promotion.promotionDesc, transport.transportType
+                        Select promotion.promotionID, promotion.promotionName, promotion.promotionStartDate, promotion.promotionEndDate, transport.transportType, promotion.promotionDesc
             dgvPromotionList.DataSource = query
             dgvPromotionList.Columns("promotionID").HeaderText = "ID"
-            'dgvPromotionList.Columns("promotionName").HeaderText = "Name"
+            dgvPromotionList.Columns("promotionName").HeaderText = "Name"
             dgvPromotionList.Columns("promotionStartDate").HeaderText = "Start Date"
             dgvPromotionList.Columns("promotionEndDate").HeaderText = "End Date"
-            dgvPromotionList.Columns("promotionDesc").HeaderText = "Description"
             dgvPromotionList.Columns("transportType").HeaderText = "Type"
+            dgvPromotionList.Columns("promotionDesc").HeaderText = "Description"
+
             lblCount.Text = query.Count.ToString("0 record(s)")
 
         Catch ex As Exception
@@ -99,6 +107,12 @@
     Private Sub dgvPromotionList_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvPromotionList.CellDoubleClick
         Dim i As Integer = dgvPromotionList.CurrentRow.Index
         id = dgvPromotionList.Item(0, i).Value.ToString
+        pname = dgvPromotionList.Item(1, i).Value.ToString
+        psdate = dgvPromotionList.Item(2, i).Value.ToString
+        pedate = dgvPromotionList.Item(3, i).Value.ToString
+        pdesc = dgvPromotionList.Item(5, i).Value.ToString
+        Debug.Print(pedate)
+        Debug.Print(psdate.ToString)
         ManagerModifyPromotion.Show()
     End Sub
 End Class

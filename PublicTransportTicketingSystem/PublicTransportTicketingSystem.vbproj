@@ -69,11 +69,17 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Linq" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
@@ -97,6 +103,28 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="BookingDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BookingDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="bookingReport.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>bookingReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataSet1.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="managerBookingReport.Designer.vb">
+      <DependentUpon>managerBookingReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="managerBookingReport.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ManagerCreatePromotion.Designer.vb">
       <DependentUpon>ManagerCreatePromotion.vb</DependentUpon>
     </Compile>
@@ -125,6 +153,12 @@
       <DependentUpon>ManagerPT.vb</DependentUpon>
     </Compile>
     <Compile Include="ManagerPT.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="managerReport.Designer.vb">
+      <DependentUpon>managerReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="managerReport.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ManagerViewPromotion.Designer.vb">
@@ -220,6 +254,13 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="bookingReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>bookingReport.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="managerBookingReport.resx">
+      <DependentUpon>managerBookingReport.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ManagerCreatePromotion.resx">
       <DependentUpon>ManagerCreatePromotion.vb</DependentUpon>
     </EmbeddedResource>
@@ -234,6 +275,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ManagerPT.resx">
       <DependentUpon>ManagerPT.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="managerReport.resx">
+      <DependentUpon>managerReport.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ManagerViewPromotion.resx">
       <DependentUpon>ManagerViewPromotion.vb</DependentUpon>
@@ -276,6 +320,28 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="BookingDataSet.xsc">
+      <DependentUpon>BookingDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="BookingDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BookingDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BookingDataSet.xss">
+      <DependentUpon>BookingDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -368,6 +434,7 @@
     <Content Include="PTTS_log.ldf">
       <DependentUpon>PTTS.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\icons8_Subway_100px.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
@@ -383,6 +450,7 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

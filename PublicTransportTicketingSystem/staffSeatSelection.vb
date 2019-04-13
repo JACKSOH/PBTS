@@ -5,10 +5,7 @@
     Public selectedSeat As New List(Of Integer)
 
     Private Sub form_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        For Each Control As Control In flpSeat.Controls
-            flpSeat.Controls.Remove(Control)
-            Control.Dispose()
-        Next
+
 
         Dim retrieveSeatQuery = From seat In db.Seats
                                 Where seat.scheduleID = staffBookingSchedule.scheduleID
@@ -66,6 +63,13 @@
 
     Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
         Me.Hide()
+        'Dim list As New List(Of Control) = FlowLayoutPanel.Controls.ToList()
+        'For Each control As Control In flpSeat.Controls
+        'flpSeat.Controls.Remove(control)
+        'Control.Dispose()
+        'Next
+
+        flpSeat.Controls.Clear()
     End Sub
 
     Private Sub btnSearch_Click(sender As Object, e As EventArgs) Handles btnConfirm.Click

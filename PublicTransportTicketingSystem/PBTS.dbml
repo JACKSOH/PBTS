@@ -32,7 +32,7 @@
   <Table Name="dbo.Promotion" Member="Promotions">
     <Type Name="Promotion">
       <Column Name="promotionID" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="promotionName" Type="System.Data.Linq.Binary" DbType="VarBinary(50)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="promotionName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="promotionStartDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="promotionEndDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="promotionDesc" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />

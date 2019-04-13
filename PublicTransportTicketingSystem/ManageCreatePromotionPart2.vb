@@ -44,9 +44,9 @@ Public Class ManageCreatePromotionPart2
 
             Debug.Print(ManagerCreatePromotion.startDate.Date.ToString)
 
-            Dim query = From transport In db.Transports, s In db.Schedules
-                        Where s.departureDateTime.Value.Date = ManagerCreatePromotion.startDate And transport.transportType = selectedTransport
+            Dim query = From transport In db.Transports
                         Join schedule In db.Schedules On transport.transportID Equals (schedule.transportID)
+                        Where schedule.departureDateTime.Value.Date >= ManagerCreatePromotion.startDate And schedule.departureDateTime.Value.Date <= ManagerCreatePromotion.endDate And transport.transportType = selectedTransport
                         Select schedule.scheduleID, schedule.departureDateTime, transport.transportID, transport.transportType
             dgvSchedule.DataSource = query
             dgvSchedule.Columns("scheduleID").HeaderText = "Schedule"
@@ -64,46 +64,56 @@ Public Class ManageCreatePromotionPart2
 
     Private Sub btnAddPromotion_Click(sender As Object, e As EventArgs) Handles btnAddPromotion.Click
 
-        Dim con As New SqlConnection
-        Dim cmd As New SqlCommand
-        Dim cmd2 As New SqlCommand
+        Dim result As DialogResult = MessageBox.Show("Are you sure want to create a new promotion?", "Confirmation",
+                                                      MessageBoxButtons.YesNoCancel,
+                                                      MessageBoxIcon.Question)
 
-        Try
-            con.ConnectionString = StaffBooking.connection
-            con.Open()
-            cmd.Connection = con
-            Dim promotionID As String = App.GetNextPromotionId
-
-            cmd = New SqlCommand("insert into promotion ([promotionID],[promotionName], [promotionStartDate], [promotionEndDate], [promotionDesc]) values (@promotionID, @promotionName, @promotionStartDate, @promotionEndDate, @promotionDesc)", con)
-            cmd.Parameters.Add(New SqlParameter("promotionID", promotionID))
-            cmd.Parameters.Add(New SqlParameter("promotionName", ManagerCreatePromotion.promotionName))
-            cmd.Parameters.Add(New SqlParameter("promotionStartDate", ManagerCreatePromotion.startDate))
-            cmd.Parameters.Add(New SqlParameter("promotionEndDate", ManagerCreatePromotion.endDate))
-            cmd.Parameters.Add(New SqlParameter("promotionDesc", ManagerCreatePromotion.promotionDesc))
-
-            cmd.ExecuteNonQuery()
-            MessageBox.Show("Created Successfully")
-
-            For value As Integer = 0 To count
-                cmd2 = New SqlCommand("insert into promoteSchedule ([promoteScheduleID],[promotionID],[scheduleID], [discountRate]) values (@promoteScheduleID, @promotionID, @scheduleID, @discountRate)", con)
-                cmd2.Parameters.Add(New SqlParameter("promoteScheduleID", App.GetNextPromoteScheduleId))
-                cmd2.Parameters.Add(New SqlParameter("promotionID", promotionID))
-                cmd2.Parameters.Add(New SqlParameter("scheduleID", dgvSchedule.Rows(value).Cells(0).Value.ToString))
-                cmd2.Parameters.Add(New SqlParameter("discountRate", ManagerCreatePromotion.discountRate))
-
-                cmd2.ExecuteNonQuery()
-                Debug.Print(promotionID)
-                Debug.Print(dgvSchedule.Rows(value).Cells(0).Value.ToString)
-            Next
-
-        Catch ex As Exception
-            MessageBox.Show("Invalid" & ex.Message)
-        Finally
-            con.Close()
-        End Try
-        'Me.RecordsTableAdapter.Fill(Me.TrialDataSet1.records)
+        If (result = DialogResult.Yes) Then
 
 
+            Dim con As New SqlConnection
+            Dim cmd As New SqlCommand
+            Dim cmd2 As New SqlCommand
+
+            Try
+                con.ConnectionString = StaffBooking.connection
+                con.Open()
+                cmd.Connection = con
+                Dim promotionID As String = App.GetNextPromotionId
+
+                cmd = New SqlCommand("insert into promotion ([promotionID],[promotionName], [promotionStartDate], [promotionEndDate], [promotionDesc]) values (@promotionID, @promotionName, @promotionStartDate, @promotionEndDate, @promotionDesc)", con)
+                cmd.Parameters.Add(New SqlParameter("promotionID", promotionID))
+                cmd.Parameters.Add(New SqlParameter("promotionName", ManagerCreatePromotion.promotionName))
+                cmd.Parameters.Add(New SqlParameter("promotionStartDate", ManagerCreatePromotion.startDate))
+                cmd.Parameters.Add(New SqlParameter("promotionEndDate", ManagerCreatePromotion.endDate))
+                cmd.Parameters.Add(New SqlParameter("promotionDesc", ManagerCreatePromotion.promotionDesc))
+
+                cmd.ExecuteNonQuery()
+                MessageBox.Show("Created Successfully")
+
+                For value As Integer = 0 To count
+                    cmd2 = New SqlCommand("insert into promoteSchedule ([promoteScheduleID],[promotionID],[scheduleID], [discountRate]) values (@promoteScheduleID, @promotionID, @scheduleID, @discountRate)", con)
+                    cmd2.Parameters.Add(New SqlParameter("promoteScheduleID", App.GetNextPromoteScheduleId))
+                    cmd2.Parameters.Add(New SqlParameter("promotionID", promotionID))
+                    cmd2.Parameters.Add(New SqlParameter("scheduleID", dgvSchedule.Rows(value).Cells(0).Value.ToString))
+                    cmd2.Parameters.Add(New SqlParameter("discountRate", ManagerCreatePromotion.discountRate))
+
+                    cmd2.ExecuteNonQuery()
+                    Debug.Print(promotionID)
+                    Debug.Print(dgvSchedule.Rows(value).Cells(0).Value.ToString)
+                Next
+
+            Catch ex As Exception
+                MessageBox.Show("Invalid" & ex.Message)
+            Finally
+                con.Close()
+                Me.Close()
+            End Try
+
+        Else
+
+
+        End If
 
     End Sub
 End Class

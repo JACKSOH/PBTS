@@ -22,8 +22,8 @@ Partial Class PaymentMake
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.lblLicensePlate = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -44,6 +44,7 @@ Partial Class PaymentMake
         Me.Label2 = New System.Windows.Forms.Label()
         Me.lblPassengerName = New System.Windows.Forms.Label()
         Me.grpPayment = New System.Windows.Forms.GroupBox()
+        Me.btnCancel = New System.Windows.Forms.Button()
         Me.lblDiscount = New System.Windows.Forms.Label()
         Me.lblChange = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
@@ -53,7 +54,6 @@ Partial Class PaymentMake
         Me.lblCashPaidHint = New System.Windows.Forms.Label()
         Me.txtCashPaid = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.btnCancel = New System.Windows.Forms.Button()
         Me.GroupBox2.SuspendLayout()
         CType(Me.dgvSeatPrice, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.grpPayment.SuspendLayout()
@@ -109,22 +109,22 @@ Partial Class PaymentMake
         'dgvSeatPrice
         '
         Me.dgvSeatPrice.AllowUserToDeleteRows = False
-        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control
-        Me.dgvSeatPrice.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        Me.dgvSeatPrice.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvSeatPrice.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgvSeatPrice.BackgroundColor = System.Drawing.SystemColors.Control
         Me.dgvSeatPrice.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dgvSeatPrice.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvSeatPrice.ColumnHeadersVisible = False
         Me.dgvSeatPrice.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Seat, Me.Price})
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        DataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvSeatPrice.DefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvSeatPrice.DefaultCellStyle = DataGridViewCellStyle2
         Me.dgvSeatPrice.GridColor = System.Drawing.SystemColors.ControlDarkDark
         Me.dgvSeatPrice.Location = New System.Drawing.Point(39, 423)
         Me.dgvSeatPrice.Name = "dgvSeatPrice"
@@ -295,6 +295,15 @@ Partial Class PaymentMake
         Me.grpPayment.TabStop = False
         Me.grpPayment.Text = "Make Payment"
         '
+        'btnCancel
+        '
+        Me.btnCancel.Location = New System.Drawing.Point(36, 369)
+        Me.btnCancel.Name = "btnCancel"
+        Me.btnCancel.Size = New System.Drawing.Size(163, 26)
+        Me.btnCancel.TabIndex = 33
+        Me.btnCancel.Text = "Cancel"
+        Me.btnCancel.UseVisualStyleBackColor = True
+        '
         'lblDiscount
         '
         Me.lblDiscount.AutoSize = True
@@ -340,7 +349,6 @@ Partial Class PaymentMake
         Me.lblTotalPrice.Name = "lblTotalPrice"
         Me.lblTotalPrice.Size = New System.Drawing.Size(182, 23)
         Me.lblTotalPrice.TabIndex = 28
-        Me.lblTotalPrice.Text = "62.00"
         '
         'btnGenerateTicket
         '
@@ -378,15 +386,6 @@ Partial Class PaymentMake
         Me.Label5.Size = New System.Drawing.Size(104, 24)
         Me.Label5.TabIndex = 18
         Me.Label5.Text = "Cash Paid"
-        '
-        'btnCancel
-        '
-        Me.btnCancel.Location = New System.Drawing.Point(36, 369)
-        Me.btnCancel.Name = "btnCancel"
-        Me.btnCancel.Size = New System.Drawing.Size(163, 26)
-        Me.btnCancel.TabIndex = 33
-        Me.btnCancel.Text = "Cancel"
-        Me.btnCancel.UseVisualStyleBackColor = True
         '
         'PaymentMake
         '

@@ -93,7 +93,7 @@ Partial Class PaymentCancel
         Me.btnCancelAndRefund.Name = "btnCancelAndRefund"
         Me.btnCancelAndRefund.Size = New System.Drawing.Size(201, 37)
         Me.btnCancelAndRefund.TabIndex = 26
-        Me.btnCancelAndRefund.Text = "Cancel and Refunds"
+        Me.btnCancelAndRefund.Text = "Cancel and Refund"
         Me.btnCancelAndRefund.UseVisualStyleBackColor = True
         '
         'lblTicketIDHint

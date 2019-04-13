@@ -43,8 +43,6 @@
                 ticketPrice = q.ticket.ticketPrice.Value
                 ticketStatus = q.ticket.ticketStatus
 
-
-
                 Try
                     If lblOrigin.Text = "" Then
                         lblOrigin.Text = db.Locations.Where(Function(o) o.locationID = q.locationlist.locationID And q.locationlist.locationStatus.ToLower = "origin").SingleOrDefault.locationName.ToString
@@ -61,6 +59,7 @@
 
             If lblDepartureDate.Text = "" Then
                 lblTicketIDHint.Text = "Invalid Ticket ID"
+                ticketStatus = "invalid"
             End If
 
         Catch ex As Exception
@@ -69,8 +68,6 @@
 
         dayDiff = (departureDateTime - DateTime.Now).Days
 
-        MessageBox.Show(ticketStatus)
-
         If ticketStatus = "paid" Then
             If dayDiff >= 2 Then
                 lblRefund.Text = (ticketPrice / 2).ToString("RM0.00")
@@ -78,6 +75,10 @@
                 lblRefund.Text = "No Refund."
             End If
             btnCancelAndRefund.Enabled = True
+        ElseIf ticketStatus = "invalid" Then
+            lblTicketIDHint.Text = "Invalid ticket ID."
+            lblRefund.Text = ""
+            btnCancelAndRefund.Enabled = False
         Else
             lblTicketIDHint.Text = "Already refunded/cancelled."
             lblRefund.Text = ""
@@ -96,16 +97,31 @@
                               Where ticketq.ticketID = txtTicketID.Text
                               Select ticketq
 
+            Dim seatquery = From seatq In db.Seats
+                            Where seatq.seatID = ticketquery.First.seatID
+                            Select seatq
+
             If dayDiff >= 2 Then
                 ticketStatusString = "refunded"
             Else
                 ticketStatusString = "cancelled"
             End If
 
+            For Each s As Seat In seatquery
+                s.seatStatus = "available"
+                Try
+                    db.SubmitChanges()
+                Catch ex As Exception
+                    MessageBox.Show(ex.Message)
+                End Try
+            Next
+
             For Each t As Ticket In ticketquery
                 t.ticketStatus = ticketStatusString
                 Try
                     db.SubmitChanges()
+                    MessageBox.Show("Updated successfully.")
+                    txtTicketID.Text = ""
                 Catch ex As Exception
                     MessageBox.Show(ex.Message)
                 End Try

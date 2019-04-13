@@ -22,7 +22,7 @@ Partial Class ManagerViewPromotion
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.btnCreatePromotionPage = New System.Windows.Forms.Button()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.txtPromotionID = New System.Windows.Forms.TextBox()
@@ -164,9 +164,9 @@ Partial Class ManagerViewPromotion
         Me.dgvPromotionList.GridColor = System.Drawing.SystemColors.ControlLightLight
         Me.dgvPromotionList.Location = New System.Drawing.Point(29, 138)
         Me.dgvPromotionList.Name = "dgvPromotionList"
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Tw Cen MT", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Black
-        Me.dgvPromotionList.RowsDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Tw Cen MT", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Black
+        Me.dgvPromotionList.RowsDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvPromotionList.ScrollBars = System.Windows.Forms.ScrollBars.None
         Me.dgvPromotionList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvPromotionList.Size = New System.Drawing.Size(486, 215)

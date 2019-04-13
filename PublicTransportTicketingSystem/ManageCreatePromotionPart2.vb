@@ -44,6 +44,7 @@ Public Class ManageCreatePromotionPart2
 
             Debug.Print(ManagerCreatePromotion.startDate.Date.ToString)
 
+            'add in assignPromotionStatus in dbo.schedule
             Dim query = From transport In db.Transports
                         Join schedule In db.Schedules On transport.transportID Equals (schedule.transportID)
                         Where schedule.departureDateTime.Value.Date >= ManagerCreatePromotion.startDate And schedule.departureDateTime.Value.Date <= ManagerCreatePromotion.endDate And transport.transportType = selectedTransport
@@ -81,12 +82,13 @@ Public Class ManageCreatePromotionPart2
                 cmd.Connection = con
                 Dim promotionID As String = App.GetNextPromotionId
 
-                cmd = New SqlCommand("insert into promotion ([promotionID],[promotionName], [promotionStartDate], [promotionEndDate], [promotionDesc]) values (@promotionID, @promotionName, @promotionStartDate, @promotionEndDate, @promotionDesc)", con)
+                cmd = New SqlCommand("insert into promotion ([promotionID],[promotionName], [promotionStartDate], [promotionEndDate], [promotionDesc], [promotionStatus]) values (@promotionID, @promotionName, @promotionStartDate, @promotionEndDate, @promotionDesc, @promotionStatus)", con)
                 cmd.Parameters.Add(New SqlParameter("promotionID", promotionID))
                 cmd.Parameters.Add(New SqlParameter("promotionName", ManagerCreatePromotion.promotionName))
                 cmd.Parameters.Add(New SqlParameter("promotionStartDate", ManagerCreatePromotion.startDate))
                 cmd.Parameters.Add(New SqlParameter("promotionEndDate", ManagerCreatePromotion.endDate))
                 cmd.Parameters.Add(New SqlParameter("promotionDesc", ManagerCreatePromotion.promotionDesc))
+                cmd.Parameters.Add(New SqlParameter("promotionStatus", "Active"))
 
                 cmd.ExecuteNonQuery()
                 MessageBox.Show("Created Successfully")

@@ -36,6 +36,7 @@
       <Column Name="promotionStartDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="promotionEndDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="promotionDesc" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="promotionStatus" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
       <Association Name="Promotion_promoteSchedule" Member="promoteSchedules" ThisKey="promotionID" OtherKey="promotionID" Type="promoteSchedule" />
     </Type>
   </Table>
@@ -45,6 +46,7 @@
       <Column Name="departureDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="arrivalDateTIme" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="transportID" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="assignPromotionStatus" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
       <Association Name="Schedule_LocationList" Member="LocationLists" ThisKey="scheduleID" OtherKey="scheduleID" Type="LocationList" />
       <Association Name="Schedule_promoteSchedule" Member="promoteSchedules" ThisKey="scheduleID" OtherKey="scheduleID" Type="promoteSchedule" />
       <Association Name="Schedule_Table" Member="Tables" ThisKey="scheduleID" OtherKey="scheduleID" Type="Table" />

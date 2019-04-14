@@ -28,11 +28,11 @@ Partial Class ManagerViewPromotion
         Me.ManagerMenuLayoutControl1 = New PublicTransportTicketingSystem.managerMenuLayoutControl()
         Me.btnCreatePromotionPage = New System.Windows.Forms.Button()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.Discount = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.PromotionSchedule = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.eventName = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.promoteDateRange = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.promotionID = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.promoteDateRange = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.eventName = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PromotionSchedule = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Discount = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.txtPromotionID = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -100,33 +100,6 @@ Partial Class ManagerViewPromotion
         Me.DataGridView1.Size = New System.Drawing.Size(494, 133)
         Me.DataGridView1.TabIndex = 0
         '
-        'Discount
-        '
-        Me.Discount.HeaderText = "Discount"
-        Me.Discount.Name = "Discount"
-        Me.Discount.ReadOnly = True
-        Me.Discount.Width = 80
-        '
-        'PromotionSchedule
-        '
-        Me.PromotionSchedule.HeaderText = "Schedule"
-        Me.PromotionSchedule.Name = "PromotionSchedule"
-        Me.PromotionSchedule.ReadOnly = True
-        '
-        'eventName
-        '
-        Me.eventName.HeaderText = "Event Name"
-        Me.eventName.Name = "eventName"
-        Me.eventName.ReadOnly = True
-        Me.eventName.Width = 120
-        '
-        'promoteDateRange
-        '
-        Me.promoteDateRange.HeaderText = "Date"
-        Me.promoteDateRange.Name = "promoteDateRange"
-        Me.promoteDateRange.ReadOnly = True
-        Me.promoteDateRange.Width = 80
-        '
         'promotionID
         '
         Me.promotionID.Frozen = True
@@ -135,6 +108,33 @@ Partial Class ManagerViewPromotion
         Me.promotionID.Name = "promotionID"
         Me.promotionID.ReadOnly = True
         Me.promotionID.Width = 70
+        '
+        'promoteDateRange
+        '
+        Me.promoteDateRange.HeaderText = "Date"
+        Me.promoteDateRange.Name = "promoteDateRange"
+        Me.promoteDateRange.ReadOnly = True
+        Me.promoteDateRange.Width = 80
+        '
+        'eventName
+        '
+        Me.eventName.HeaderText = "Event Name"
+        Me.eventName.Name = "eventName"
+        Me.eventName.ReadOnly = True
+        Me.eventName.Width = 120
+        '
+        'PromotionSchedule
+        '
+        Me.PromotionSchedule.HeaderText = "Schedule"
+        Me.PromotionSchedule.Name = "PromotionSchedule"
+        Me.PromotionSchedule.ReadOnly = True
+        '
+        'Discount
+        '
+        Me.Discount.HeaderText = "Discount"
+        Me.Discount.Name = "Discount"
+        Me.Discount.ReadOnly = True
+        Me.Discount.Width = 80
         '
         'Label5
         '

@@ -198,6 +198,12 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="App.vb" />
+    <Compile Include="My Project\ManagerManageSeat.Designer.vb">
+      <DependentUpon>ManagerManageSeat.vb</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\ManagerManageSeat.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="PaymentCancel.Designer.vb">
       <DependentUpon>PaymentCancel.vb</DependentUpon>
     </Compile>
@@ -342,6 +348,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ManagerViewSchdule.resx">
       <DependentUpon>ManagerViewSchdule.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\ManagerManageSeat.resx">
+      <DependentUpon>ManagerManageSeat.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PaymentCancel.resx">
       <DependentUpon>PaymentCancel.vb</DependentUpon>

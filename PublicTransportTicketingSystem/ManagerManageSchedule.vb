@@ -1,5 +1,6 @@
 ﻿Public Class ManagerManageSchedule
     Public selectedType As String
+    'bind data to grid view
     Private Sub bindData()
         dgvSchedule.Rows.Clear()
 
@@ -10,7 +11,94 @@
                  Where tr.transportType = selectedType
 
         Dim count As Integer = 0
-        test.Text = sc.Count.ToString
+
+
+        For Each sch In sc
+
+            'get   origin name
+            Dim origin As String = (From lo In db.Locations
+                                    Join ori In db.LocationLists On ori.locationID Equals lo.locationID
+                                    Where ori.scheduleID = sch.sch.scheduleID And ori.locationStatus.ToLower = "origin" Select lo.locationName).FirstOrDefault.ToString
+
+
+
+            'get destination name
+            Dim destination As String = (From lo In db.Locations
+                                         Join dest In db.LocationLists On dest.locationID Equals lo.locationID
+                                         Where dest.scheduleID = sch.sch.scheduleID And dest.locationStatus.ToLower = "destination"
+                                         Select lo.locationName).FirstOrDefault.ToString
+
+            Dim destName As String = destination.ToString
+            dgvSchedule.Rows.Add(1)
+            dgvSchedule.Rows(count).Cells(0).Value = sch.sch.scheduleID
+            dgvSchedule.Rows(count).Cells(1).Value = origin
+            dgvSchedule.Rows(count).Cells(2).Value = destName
+            dgvSchedule.Rows(count).Cells(3).Value = sch.sch.departureDateTime.Value.ToShortDateString + "  " + sch.sch.departureDateTime.Value.ToShortTimeString
+            dgvSchedule.Rows(count).Cells(4).Value = selectedType
+            count += 1
+        Next
+    End Sub
+
+    'search by origin location
+    Private Sub BindDataByOrigin()
+        dgvSchedule.Rows.Clear()
+
+        Dim db As New PBTSDataContext()
+
+        Dim sc = From sch In db.Schedules
+                 Join tr In db.Transports On sch.transportID Equals tr.transportID
+                 Join ori In db.LocationLists On sch.scheduleID Equals ori.scheduleID
+                 Join lo In db.Locations On ori.locationID Equals lo.locationID
+                 Where tr.transportType = selectedType And ori.locationStatus.ToLower = "origin" And lo.locationName.Contains(txtSearch.Text)
+
+        Dim count As Integer = 0
+
+
+        For Each sch In sc
+
+            'get   origin name
+            Dim origin As String = (From lo In db.Locations
+                                    Join ori In db.LocationLists On ori.locationID Equals lo.locationID
+                                    Where ori.scheduleID = sch.sch.scheduleID And ori.locationStatus.ToLower = "origin" Select lo.locationName).FirstOrDefault.ToString
+
+
+
+            'get destination name
+            Dim destination As String = (From lo In db.Locations
+                                         Join dest In db.LocationLists On dest.locationID Equals lo.locationID
+                                         Where dest.scheduleID = sch.sch.scheduleID And dest.locationStatus.ToLower = "destination"
+                                         Select lo.locationName).FirstOrDefault.ToString
+
+            Dim destName As String = destination.ToString
+            dgvSchedule.Rows.Add(1)
+            dgvSchedule.Rows(count).Cells(0).Value = sch.sch.scheduleID
+            dgvSchedule.Rows(count).Cells(1).Value = origin
+            dgvSchedule.Rows(count).Cells(2).Value = destName
+            dgvSchedule.Rows(count).Cells(3).Value = sch.sch.departureDateTime.Value.ToShortDateString + "  " + sch.sch.departureDateTime.Value.ToShortTimeString
+            dgvSchedule.Rows(count).Cells(4).Value = selectedType
+            count += 1
+        Next
+    End Sub
+
+    'search by date
+    Private Sub BindDataByDate()
+        dgvSchedule.Rows.Clear()
+
+        Dim db As New PBTSDataContext()
+        Dim searchDate As DateTime
+        Try
+            searchDate = dtpDate.Value
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
+
+        Dim sc = From sch In db.Schedules
+                 Join tr In db.Transports On sch.transportID Equals tr.transportID
+                 Where tr.transportType = selectedType And sch.departureDateTime = searchDate
+
+        Dim count As Integer = 0
+
+
         For Each sch In sc
 
             'get   origin name
@@ -88,15 +176,18 @@
         ManagerSchduleInsert.ShowDialog()
     End Sub
 
-    Private Sub ManagerMenuLayoutControl1_Load(sender As Object, e As EventArgs) Handles ManagerMenuLayoutControl1.Load
+
+    Private Sub txtSearch_TextChanged(sender As Object, e As EventArgs) Handles txtSearch.TextChanged
+        BindDataByOrigin()
+    End Sub
+
+    Private Sub DateTimePicker1_ValueChanged(sender As Object, e As EventArgs) Handles dtpDate.ValueChanged
+        BindDataByDate()
 
     End Sub
 
-    Private Sub GroupBox1_Enter(sender As Object, e As EventArgs) Handles GroupBox1.Enter
-
-    End Sub
-
-    Private Sub ChaneTransport(sender As Object, e As EventArgs) Handles ts.TransportChange
+    Private Sub dgvSchedule_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvSchedule.CellDoubleClick
+        ManagerManageSeat.ShowDialog()
 
     End Sub
 End Class

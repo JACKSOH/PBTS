@@ -23,9 +23,13 @@ Partial Class ManagerManageSchedule
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ManagerManageSchedule))
         Me.dgvSchedule = New System.Windows.Forms.DataGridView()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.test = New System.Windows.Forms.TextBox()
+        Me.dtpDate = New System.Windows.Forms.DateTimePicker()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.txtSearch = New System.Windows.Forms.TextBox()
         Me.btnDeleteCancel = New System.Windows.Forms.Button()
         Me.btnUpdate = New System.Windows.Forms.Button()
         Me.btnAdd = New System.Windows.Forms.Button()
@@ -34,10 +38,14 @@ Partial Class ManagerManageSchedule
         Me.ScheduleTableAdapter = New PublicTransportTicketingSystem.PTTSDataSetTableAdapters.ScheduleTableAdapter()
         Me.ts = New PublicTransportTicketingSystem.TranportSelection()
         Me.ManagerMenuLayoutControl1 = New PublicTransportTicketingSystem.managerMenuLayoutControl()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         CType(Me.dgvSchedule, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         CType(Me.ScheduleBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PTTSDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'dgvSchedule
@@ -50,7 +58,12 @@ Partial Class ManagerManageSchedule
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.test)
+        Me.GroupBox1.Controls.Add(Me.PictureBox2)
+        Me.GroupBox1.Controls.Add(Me.dtpDate)
+        Me.GroupBox1.Controls.Add(Me.Label2)
+        Me.GroupBox1.Controls.Add(Me.PictureBox1)
+        Me.GroupBox1.Controls.Add(Me.Label1)
+        Me.GroupBox1.Controls.Add(Me.txtSearch)
         Me.GroupBox1.Controls.Add(Me.btnDeleteCancel)
         Me.GroupBox1.Controls.Add(Me.dgvSchedule)
         Me.GroupBox1.Controls.Add(Me.btnUpdate)
@@ -62,12 +75,40 @@ Partial Class ManagerManageSchedule
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Schedule "
         '
-        'test
+        'dtpDate
         '
-        Me.test.Location = New System.Drawing.Point(431, 89)
-        Me.test.Name = "test"
-        Me.test.Size = New System.Drawing.Size(100, 20)
-        Me.test.TabIndex = 8
+        Me.dtpDate.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dtpDate.Location = New System.Drawing.Point(452, 106)
+        Me.dtpDate.Name = "dtpDate"
+        Me.dtpDate.Size = New System.Drawing.Size(79, 20)
+        Me.dtpDate.TabIndex = 18
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(417, 85)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(74, 18)
+        Me.Label2.TabIndex = 17
+        Me.Label2.Text = "Search Date"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(417, 30)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(101, 18)
+        Me.Label1.TabIndex = 16
+        Me.Label1.Text = "Search by &origin"
+        '
+        'txtSearch
+        '
+        Me.txtSearch.Location = New System.Drawing.Point(451, 51)
+        Me.txtSearch.Name = "txtSearch"
+        Me.txtSearch.Size = New System.Drawing.Size(73, 20)
+        Me.txtSearch.TabIndex = 14
         '
         'btnDeleteCancel
         '
@@ -131,6 +172,26 @@ Partial Class ManagerManageSchedule
         Me.ManagerMenuLayoutControl1.Size = New System.Drawing.Size(784, 536)
         Me.ManagerMenuLayoutControl1.TabIndex = 0
         '
+        'PictureBox2
+        '
+        Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
+        Me.PictureBox2.Location = New System.Drawing.Point(420, 106)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(27, 21)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox2.TabIndex = 19
+        Me.PictureBox2.TabStop = False
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(418, 51)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(27, 21)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 15
+        Me.PictureBox1.TabStop = False
+        '
         'ManagerManageSchedule
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -147,6 +208,8 @@ Partial Class ManagerManageSchedule
         Me.GroupBox1.PerformLayout()
         CType(Me.ScheduleBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PTTSDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -161,5 +224,10 @@ Partial Class ManagerManageSchedule
     Friend WithEvents PTTSDataSet As PTTSDataSet
     Friend WithEvents ScheduleBindingSource As BindingSource
     Friend WithEvents ScheduleTableAdapter As PTTSDataSetTableAdapters.ScheduleTableAdapter
-    Friend WithEvents test As TextBox
+    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents Label1 As Label
+    Friend WithEvents txtSearch As TextBox
+    Friend WithEvents Label2 As Label
+    Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents dtpDate As DateTimePicker
 End Class

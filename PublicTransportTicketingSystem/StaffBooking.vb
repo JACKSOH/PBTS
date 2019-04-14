@@ -16,7 +16,6 @@ Public Class StaffBooking
         dtpDeparture.MaxDate = DateTime.Today.AddMonths(1)
     End Sub
     Private Sub RetrieveOrigin()
-        Me.LocationTableAdapter.Fill(Me.PTTSDataSet.Location)
         Try
             SqlConnection.ConnectionString = connection
             SqlConnection.Open()

@@ -26,6 +26,7 @@ Partial Class staffBookingSchedule
         Me.dgvSchedule = New System.Windows.Forms.DataGridView()
         Me.StaffMenuLayoutControl1 = New PublicTransportTicketingSystem.staffMenuLayoutControl()
         Me.ScheduleBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.btnCancel = New System.Windows.Forms.Button()
         CType(Me.dgvSchedule, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ScheduleBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -63,11 +64,25 @@ Partial Class staffBookingSchedule
         '
         Me.ScheduleBindingSource.DataMember = "Schedule"
         '
+        'btnCancel
+        '
+        Me.btnCancel.BackColor = System.Drawing.Color.Gray
+        Me.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnCancel.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.btnCancel.Location = New System.Drawing.Point(579, 536)
+        Me.btnCancel.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnCancel.Name = "btnCancel"
+        Me.btnCancel.Size = New System.Drawing.Size(133, 44)
+        Me.btnCancel.TabIndex = 39
+        Me.btnCancel.Text = "CANCEL"
+        Me.btnCancel.UseVisualStyleBackColor = False
+        '
         'staffBookingSchedule
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1069, 729)
+        Me.Controls.Add(Me.btnCancel)
         Me.Controls.Add(Me.dgvSchedule)
         Me.Controls.Add(Me.StaffMenuLayoutControl1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
@@ -86,4 +101,5 @@ Partial Class staffBookingSchedule
     Friend WithEvents ScheduleBindingSource As BindingSource
     Friend WithEvents OriginIDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents DestinationIDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents btnCancel As Button
 End Class

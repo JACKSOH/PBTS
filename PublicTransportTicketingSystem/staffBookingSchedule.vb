@@ -45,10 +45,10 @@ Public Class staffBookingSchedule
                         Join des In db.LocationLists On schedule.scheduleID Equals (des.scheduleID)
                         Join originLocation In db.Locations On originLocation.locationID Equals (origin.locationID)
                         Join desLocation In db.Locations On desLocation.locationID Equals (des.locationID)
-                        Where origin.locationID = originID And origin.locationStatus = "Origin" And des.locationID = desID And schedule.departureDateTime.Value.Date = StaffBooking.selectedDate
+                        Where origin.locationID = originID And origin.locationStatus.ToLower = "origin" And des.locationID = desID And schedule.departureDateTime.Value.Date = StaffBooking.selectedDate
                         Select originLocation.locationName, schedule.departureDateTime, schedule.scheduleID
 
-
+            MessageBox.Show(query.First.locationName)
 
             Dim col As New DataGridViewTextBoxColumn
             col.DataPropertyName = "Destination"
@@ -65,7 +65,6 @@ Public Class staffBookingSchedule
                 dgvSchedule.Rows(i).Cells(4).Value = StaffBooking.selectedDestination
             Next
 
-            dgvSchedule.Columns("arrivalDateTIme").HeaderText = "Arrival Date Time"
 
         Catch ex As Exception
             MessageBox.Show(ex.Message)
@@ -79,5 +78,10 @@ Public Class staffBookingSchedule
         staffSeatSelection.ShowDialog()
         'Me.Hide()
 
+    End Sub
+
+    Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
+        Me.Hide()
+        StaffBooking.Show()
     End Sub
 End Class

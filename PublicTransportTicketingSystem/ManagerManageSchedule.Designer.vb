@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class ManagerManageSchedule
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class ManagerManageSchedule
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
@@ -29,7 +29,6 @@ Partial Class ManagerManageSchedule
         Me.btnAdd = New System.Windows.Forms.Button()
         Me.TranportSelection1 = New PublicTransportTicketingSystem.TranportSelection()
         Me.ManagerMenuLayoutControl1 = New PublicTransportTicketingSystem.managerMenuLayoutControl()
-        Me.test = New System.Windows.Forms.TextBox()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
@@ -44,7 +43,6 @@ Partial Class ManagerManageSchedule
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.test)
         Me.GroupBox1.Controls.Add(Me.btnDeleteCancel)
         Me.GroupBox1.Controls.Add(Me.DataGridView1)
         Me.GroupBox1.Controls.Add(Me.btnUpdate)
@@ -104,13 +102,6 @@ Partial Class ManagerManageSchedule
         Me.ManagerMenuLayoutControl1.Size = New System.Drawing.Size(784, 536)
         Me.ManagerMenuLayoutControl1.TabIndex = 0
         '
-        'test
-        '
-        Me.test.Location = New System.Drawing.Point(417, 50)
-        Me.test.Name = "test"
-        Me.test.Size = New System.Drawing.Size(100, 20)
-        Me.test.TabIndex = 8
-        '
         'ManagerManageSchedule
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -124,7 +115,6 @@ Partial Class ManagerManageSchedule
         Me.Text = "ManagerManageSchedule"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
-        Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -136,5 +126,4 @@ Partial Class ManagerManageSchedule
     Friend WithEvents btnUpdate As Button
     Friend WithEvents btnAdd As Button
     Friend WithEvents btnDeleteCancel As Button
-    Friend WithEvents test As TextBox
 End Class

@@ -17,8 +17,6 @@
         Catch ex As Exception
 
         End Try
-
-
         App.table = "Schedule"
         ManagerSchduleInsert.newId = App.GenerateNextId(id)
         ManagerSchduleInsert.ShowDialog()

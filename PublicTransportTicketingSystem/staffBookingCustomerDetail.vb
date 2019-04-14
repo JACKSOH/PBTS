@@ -103,7 +103,7 @@ Public Class staffBookingCustomerDetail
             book.bookingID = newId
             book.customerIC = mskIC.Text
             book.customerContactNo = mskContact.Text
-            book.customerEmail = txtName.Text
+
             book.employeeID = "em0001"
             db.Bookings.InsertOnSubmit(book)
             Try

@@ -89,6 +89,7 @@ Public Class StaffBooking
             staffBookingSchedule.Show()
             Me.Hide()
         End If
+    End Sub
 
     Private Sub StaffMenuLayoutControl1_Load_1(sender As Object, e As EventArgs) Handles StaffMenuLayoutControl1.Load
 

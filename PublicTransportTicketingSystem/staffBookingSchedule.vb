@@ -45,8 +45,8 @@ Public Class staffBookingSchedule
                         Join des In db.LocationLists On schedule.scheduleID Equals (des.scheduleID)
                         Join originLocation In db.Locations On originLocation.locationID Equals (origin.locationID)
                         Join desLocation In db.Locations On desLocation.locationID Equals (des.locationID)
-                        Where origin.locationID = originID And origin.locationType = "Origin" And des.locationID = desID And schedule.departureDateTime.Value.Date = StaffBooking.selectedDate
-                        Select originLocation.locationName, schedule.departureDateTime, schedule.arrivalDateTIme, schedule.scheduleID
+                        Where origin.locationID = originID And origin.locationStatus = "Origin" And des.locationID = desID And schedule.departureDateTime.Value.Date = StaffBooking.selectedDate
+                        Select originLocation.locationName, schedule.departureDateTime, schedule.scheduleID
 
 
 

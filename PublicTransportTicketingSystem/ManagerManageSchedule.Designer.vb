@@ -25,6 +25,7 @@ Partial Class ManagerManageSchedule
         Me.components = New System.ComponentModel.Container()
         Me.dgvSchedule = New System.Windows.Forms.DataGridView()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.test = New System.Windows.Forms.TextBox()
         Me.btnDeleteCancel = New System.Windows.Forms.Button()
         Me.btnUpdate = New System.Windows.Forms.Button()
         Me.btnAdd = New System.Windows.Forms.Button()
@@ -33,7 +34,6 @@ Partial Class ManagerManageSchedule
         Me.ScheduleTableAdapter = New PublicTransportTicketingSystem.PTTSDataSetTableAdapters.ScheduleTableAdapter()
         Me.ts = New PublicTransportTicketingSystem.TranportSelection()
         Me.ManagerMenuLayoutControl1 = New PublicTransportTicketingSystem.managerMenuLayoutControl()
-        Me.test = New System.Windows.Forms.TextBox()
         CType(Me.dgvSchedule, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         CType(Me.ScheduleBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -61,6 +61,13 @@ Partial Class ManagerManageSchedule
         Me.GroupBox1.TabIndex = 3
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Schedule "
+        '
+        'test
+        '
+        Me.test.Location = New System.Drawing.Point(431, 89)
+        Me.test.Name = "test"
+        Me.test.Size = New System.Drawing.Size(100, 20)
+        Me.test.TabIndex = 8
         '
         'btnDeleteCancel
         '
@@ -123,13 +130,6 @@ Partial Class ManagerManageSchedule
         Me.ManagerMenuLayoutControl1.Name = "ManagerMenuLayoutControl1"
         Me.ManagerMenuLayoutControl1.Size = New System.Drawing.Size(784, 536)
         Me.ManagerMenuLayoutControl1.TabIndex = 0
-        '
-        'test
-        '
-        Me.test.Location = New System.Drawing.Point(418, 59)
-        Me.test.Name = "test"
-        Me.test.Size = New System.Drawing.Size(100, 20)
-        Me.test.TabIndex = 8
         '
         'ManagerManageSchedule
         '

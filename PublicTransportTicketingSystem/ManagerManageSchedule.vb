@@ -95,4 +95,8 @@
     Private Sub GroupBox1_Enter(sender As Object, e As EventArgs) Handles GroupBox1.Enter
 
     End Sub
+
+    Private Sub ChaneTransport(sender As Object, e As EventArgs) Handles ts.TransportChange
+
+    End Sub
 End Class

@@ -501,6 +501,8 @@
     <Content Include="PTTS_log.ldf">
       <DependentUpon>PTTS.mdf</DependentUpon>
     </Content>
+    <Content Include="Resources\icons8-right-arrow-52.png" />
+    <Content Include="Resources\icons8-search-filled-24.png" />
     <None Include="Resources\icons8_Subway_100px.png" />
   </ItemGroup>
   <ItemGroup>

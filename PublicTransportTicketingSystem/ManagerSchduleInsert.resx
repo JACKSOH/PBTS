@@ -117,31 +117,39 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <metadata name="TransportBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>873, 17</value>
+  </metadata>
+  <metadata name="PTTSDataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>84, 17</value>
+  </metadata>
   <metadata name="LocationBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>337, 17</value>
-  </metadata>
-  <metadata name="PTTSDataSetBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>138, 17</value>
-  </metadata>
-  <metadata name="PTTSDataSetBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>138, 17</value>
-  </metadata>
-  <metadata name="PTTSDataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <metadata name="PTTSDataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
+    <value>205, 17</value>
   </metadata>
   <metadata name="LocationBindingSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>891, 17</value>
+    <value>689, 17</value>
   </metadata>
-  <metadata name="PTTSDataSetBindingSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>685, 17</value>
-  </metadata>
-  <metadata name="PTTSDataSetBindingSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>685, 17</value>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="PictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADQAAAA0CAYAAADFeBvrAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAZNJREFUaEPt2L0rRWEcwPEjeSsvOwb+ARlYDMqgKCnKZDBTJAtFISGDicVkEROl
+        lCRlphhsBsVgsFhQ5O37o1M3/dzz3JvL8+T3rU/dO9znnt99Oee5N7Isy7Isy7J+swpUft4Mv1rc4A2b
+        KEfQDUOGiZ2jHsE2htSBxB26EGTaQOIF8u4F13cDxWYQVEkDiTkEk8tAYgHeVowq1GEF2gCaReS8MtSg
+        EW3oxSCmsIR17OEEl5AzmHawriaRVc3owwhmIa+kXPgOcYZrPEJ70lzrR0Z14BXaYj54RiecO4C2kE/u
+        4byjeIC2iG8ukI+0lUJ7sK8akNgTtAf7Rnbp8tMjsSNoC/hETgytcGoA2iI+yejULV80ufb4ct35ah4/
+        lrYzGMI0lrGBfZziCnJ61Q4qW2vIw59WgmrI3q0FPZCPzATkE6AduGYXhfA61932DorgfS4DbcP7dyYu
+        aaAtBDOMlG6gVQQ1jKQNJDv9cQTZKFKHuUU3gq0J8d7xGPJPavDJRbodBR/3LMuyLMuyrH9aFL0Dlw4X
+        fw3w4bkAAAAASUVORK5CYII=
+</value>
+  </data>
+  <metadata name="err.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
   </metadata>
   <metadata name="LocationTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>514, 17</value>
+    <value>382, 17</value>
+  </metadata>
+  <metadata name="TransportTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>1056, 17</value>
   </metadata>
 </root>

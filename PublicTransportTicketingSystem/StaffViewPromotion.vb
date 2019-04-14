@@ -1,8 +1,15 @@
 ﻿Public Class StaffViewPromotion
-    Private transportType As String = "Bus"
+    Friend transportType As String = "Bus"
     Private activeStatus As String = "Active"
     Private contain As String
     Private today As Date = Date.Today
+    Friend id As String
+    Friend pname As String
+    Friend psdate As String
+    Friend pedate As String
+    Friend pdesc As String
+    Friend status As String
+    Friend discount As Integer
 
     Private Sub StaffMenuLayoutControl1_Load(sender As Object, e As EventArgs) Handles StaffMenuLayoutControl1.Load
         DataBind()
@@ -82,6 +89,22 @@
         txtPromotion.Clear()
         today = Date.Today
         dpPromotionDate.Value = Date.Today
+        DataBind()
+    End Sub
+
+    Private Sub dgvPromotionList_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvPromotionList.CellDoubleClick
+        Dim i As Integer = dgvPromotionList.CurrentRow.Index
+        id = dgvPromotionList.Item(0, i).Value.ToString
+        pname = dgvPromotionList.Item(1, i).Value.ToString
+        psdate = dgvPromotionList.Item(2, i).Value.ToString
+        pedate = dgvPromotionList.Item(3, i).Value.ToString
+        pdesc = dgvPromotionList.Item(5, i).Value.ToString
+        discount = Integer.Parse(dgvPromotionList.Item(6, i).Value.ToString)
+        StaffViewPromotionPart2.Show()
+    End Sub
+
+    Private Sub TranportSelection1_Load(sender As Object, e As EventArgs) Handles TranportSelection1.TransportChange
+        transportType = TranportSelection1.selectedType
         DataBind()
     End Sub
 End Class

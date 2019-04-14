@@ -23,6 +23,7 @@ Partial Class ManagerModifyPromotion
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.gbModifyPromotion = New System.Windows.Forms.GroupBox()
+        Me.lblCount = New System.Windows.Forms.Label()
         Me.gpDiscount = New System.Windows.Forms.GroupBox()
         Me.radFullDiscount = New System.Windows.Forms.RadioButton()
         Me.radCustomDiscount = New System.Windows.Forms.RadioButton()
@@ -42,7 +43,6 @@ Partial Class ManagerModifyPromotion
         Me.btnCancel = New System.Windows.Forms.Button()
         Me.btnUpdate = New System.Windows.Forms.Button()
         Me.ManagerMenuLayoutControl1 = New PublicTransportTicketingSystem.managerMenuLayoutControl()
-        Me.lblCount = New System.Windows.Forms.Label()
         Me.gbModifyPromotion.SuspendLayout()
         Me.gpDiscount.SuspendLayout()
         CType(Me.nupCustomDiscount, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -75,6 +75,15 @@ Partial Class ManagerModifyPromotion
         Me.gbModifyPromotion.TabIndex = 23
         Me.gbModifyPromotion.TabStop = False
         Me.gbModifyPromotion.Text = "Modify Promotion"
+        '
+        'lblCount
+        '
+        Me.lblCount.AutoSize = True
+        Me.lblCount.Location = New System.Drawing.Point(26, 382)
+        Me.lblCount.Name = "lblCount"
+        Me.lblCount.Size = New System.Drawing.Size(69, 18)
+        Me.lblCount.TabIndex = 54
+        Me.lblCount.Text = "X record(s)"
         '
         'gpDiscount
         '
@@ -264,15 +273,6 @@ Partial Class ManagerModifyPromotion
         Me.ManagerMenuLayoutControl1.Name = "ManagerMenuLayoutControl1"
         Me.ManagerMenuLayoutControl1.Size = New System.Drawing.Size(800, 575)
         Me.ManagerMenuLayoutControl1.TabIndex = 0
-        '
-        'lblCount
-        '
-        Me.lblCount.AutoSize = True
-        Me.lblCount.Location = New System.Drawing.Point(26, 382)
-        Me.lblCount.Name = "lblCount"
-        Me.lblCount.Size = New System.Drawing.Size(69, 18)
-        Me.lblCount.TabIndex = 54
-        Me.lblCount.Text = "X record(s)"
         '
         'ManagerModifyPromotion
         '

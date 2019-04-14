@@ -49,9 +49,9 @@ Partial Class StaffViewPromotion
         Me.gbBus.Controls.Add(Me.Label5)
         Me.gbBus.Font = New System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.gbBus.ForeColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(53, Byte), Integer), CType(CType(65, Byte), Integer))
-        Me.gbBus.Location = New System.Drawing.Point(243, 201)
+        Me.gbBus.Location = New System.Drawing.Point(244, 207)
         Me.gbBus.Name = "gbBus"
-        Me.gbBus.Size = New System.Drawing.Size(536, 352)
+        Me.gbBus.Size = New System.Drawing.Size(536, 325)
         Me.gbBus.TabIndex = 40
         Me.gbBus.TabStop = False
         Me.gbBus.Text = "Promotion"
@@ -138,7 +138,7 @@ Partial Class StaffViewPromotion
         '
         'TranportSelection1
         '
-        Me.TranportSelection1.Location = New System.Drawing.Point(242, 81)
+        Me.TranportSelection1.Location = New System.Drawing.Point(243, 87)
         Me.TranportSelection1.Name = "TranportSelection1"
         Me.TranportSelection1.Size = New System.Drawing.Size(537, 104)
         Me.TranportSelection1.TabIndex = 43

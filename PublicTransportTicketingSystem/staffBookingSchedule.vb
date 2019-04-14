@@ -8,11 +8,12 @@ Public Class staffBookingSchedule
     Dim originID As String
     Dim desID As String
     Private Sub staffBookingSchedule_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Try
-            SqlConnection.ConnectionString = StaffBooking.connection
+        'Try
+        SqlConnection.ConnectionString = StaffBooking.connection
             SqlConnection.Open()
-            Dim originCommand As New SqlCommand("select * from Location where locationName =@selectedOrigin", SqlConnection)
+            Dim originCommand As New SqlCommand("select * from Location where locationName =@selectedOrigin and locationType = @type", SqlConnection)
             originCommand.Parameters.Add("@selectedOrigin", SqlDbType.VarChar).Value = StaffBooking.selectedOrigin
+            originCommand.Parameters.Add("@type", SqlDbType.VarChar).Value = StaffBooking.type
             Dim originAdapter As New SqlDataAdapter(originCommand)
             Dim originReader As SqlDataReader
             originReader = originCommand.ExecuteReader
@@ -25,8 +26,9 @@ Public Class staffBookingSchedule
             SqlConnection.Close()
 
             SqlConnection.Open()
-            Dim desCommand As New SqlCommand("select * from Location where locationName =@selectedDestination", SqlConnection)
+            Dim desCommand As New SqlCommand("select * from Location where locationName =@selectedDestination and locationType = @type", SqlConnection)
             desCommand.Parameters.Add("@selectedDestination", SqlDbType.VarChar).Value = StaffBooking.selectedDestination
+            desCommand.Parameters.Add("@type", SqlDbType.VarChar).Value = StaffBooking.type
             Dim desAdapter As New SqlDataAdapter(desCommand)
             Dim desReader As SqlDataReader
             desReader = desCommand.ExecuteReader
@@ -37,6 +39,8 @@ Public Class staffBookingSchedule
             End While
 
             SqlConnection.Close()
+
+            MessageBox.Show(desID, originID)
 
             Dim db As New PBTSDataContext()
 
@@ -60,15 +64,19 @@ Public Class staffBookingSchedule
             dgvSchedule.DataSource = query
             dgvSchedule.Columns("locationName").HeaderText = "Origin"
             dgvSchedule.Columns("departureDateTime").HeaderText = "Departure Date Time"
+            dgvSchedule.Columns("scheduleID").HeaderText = "Schedule ID"
             dgvSchedule.Columns.Add(col)
-            For i = 0 To (query.Count - 1)
-                dgvSchedule.Rows(i).Cells(4).Value = StaffBooking.selectedDestination
-            Next
+            i = query.Count
+
+        For i = 0 To (query.Count - 1)
+            dgvSchedule.Rows(i).Cells(3).Value = StaffBooking.selectedDestination
+        Next
 
 
-        Catch ex As Exception
-            MessageBox.Show(ex.Message)
-        End Try
+
+        'Catch ex As Exception
+        'MessageBox.Show(ex.Message)
+        'End Try
 
 
     End Sub

@@ -71,9 +71,9 @@ Partial Class ManagerViewPromotion
         '
         Me.txtPromotionID.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtPromotionID.ForeColor = System.Drawing.Color.Black
-        Me.txtPromotionID.Location = New System.Drawing.Point(97, 31)
+        Me.txtPromotionID.Location = New System.Drawing.Point(121, 31)
         Me.txtPromotionID.Name = "txtPromotionID"
-        Me.txtPromotionID.Size = New System.Drawing.Size(283, 20)
+        Me.txtPromotionID.Size = New System.Drawing.Size(249, 20)
         Me.txtPromotionID.TabIndex = 9
         '
         'Label2
@@ -81,7 +81,7 @@ Partial Class ManagerViewPromotion
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Tw Cen MT", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.Black
-        Me.Label2.Location = New System.Drawing.Point(163, 61)
+        Me.Label2.Location = New System.Drawing.Point(26, 66)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(37, 17)
         Me.Label2.TabIndex = 10
@@ -89,10 +89,10 @@ Partial Class ManagerViewPromotion
         '
         'dpPromotionDate
         '
-        Me.dpPromotionDate.Location = New System.Drawing.Point(166, 81)
+        Me.dpPromotionDate.Location = New System.Drawing.Point(121, 61)
         Me.dpPromotionDate.MinDate = New Date(2019, 3, 24, 0, 0, 0, 0)
         Me.dpPromotionDate.Name = "dpPromotionDate"
-        Me.dpPromotionDate.Size = New System.Drawing.Size(214, 24)
+        Me.dpPromotionDate.Size = New System.Drawing.Size(249, 24)
         Me.dpPromotionDate.TabIndex = 12
         '
         'btnUpdate
@@ -189,9 +189,9 @@ Partial Class ManagerViewPromotion
         '
         Me.cboTransport.FormattingEnabled = True
         Me.cboTransport.Items.AddRange(New Object() {"Bus ", "Train", "Ferry"})
-        Me.cboTransport.Location = New System.Drawing.Point(29, 81)
+        Me.cboTransport.Location = New System.Drawing.Point(121, 98)
         Me.cboTransport.Name = "cboTransport"
-        Me.cboTransport.Size = New System.Drawing.Size(121, 26)
+        Me.cboTransport.Size = New System.Drawing.Size(249, 26)
         Me.cboTransport.TabIndex = 38
         '
         'Label1
@@ -199,7 +199,7 @@ Partial Class ManagerViewPromotion
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Tw Cen MT", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.Black
-        Me.Label1.Location = New System.Drawing.Point(26, 61)
+        Me.Label1.Location = New System.Drawing.Point(26, 101)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(67, 17)
         Me.Label1.TabIndex = 37

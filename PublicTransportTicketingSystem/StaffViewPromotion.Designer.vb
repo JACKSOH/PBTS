@@ -24,13 +24,15 @@ Partial Class StaffViewPromotion
     Private Sub InitializeComponent()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.gbBus = New System.Windows.Forms.GroupBox()
-        Me.btnClear = New System.Windows.Forms.Button()
-        Me.StaffMenuLayoutControl1 = New PublicTransportTicketingSystem.staffMenuLayoutControl()
-        Me.TranportSelection1 = New PublicTransportTicketingSystem.TranportSelection()
-        Me.txtPromotion = New System.Windows.Forms.TextBox()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.lblCount = New System.Windows.Forms.Label()
+        Me.dpPromotionDate = New System.Windows.Forms.DateTimePicker()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.dgvPromotionList = New System.Windows.Forms.DataGridView()
+        Me.lblCount = New System.Windows.Forms.Label()
+        Me.txtPromotion = New System.Windows.Forms.TextBox()
+        Me.btnClear = New System.Windows.Forms.Button()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.TranportSelection1 = New PublicTransportTicketingSystem.TranportSelection()
+        Me.StaffMenuLayoutControl1 = New PublicTransportTicketingSystem.staffMenuLayoutControl()
         Me.gbBus.SuspendLayout()
         CType(Me.dgvPromotionList, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -38,6 +40,8 @@ Partial Class StaffViewPromotion
         'gbBus
         '
         Me.gbBus.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.gbBus.Controls.Add(Me.dpPromotionDate)
+        Me.gbBus.Controls.Add(Me.Label1)
         Me.gbBus.Controls.Add(Me.dgvPromotionList)
         Me.gbBus.Controls.Add(Me.lblCount)
         Me.gbBus.Controls.Add(Me.txtPromotion)
@@ -50,7 +54,64 @@ Partial Class StaffViewPromotion
         Me.gbBus.Size = New System.Drawing.Size(536, 352)
         Me.gbBus.TabIndex = 40
         Me.gbBus.TabStop = False
-        Me.gbBus.Text = "Bus Promotion"
+        Me.gbBus.Text = "Promotion"
+        '
+        'dpPromotionDate
+        '
+        Me.dpPromotionDate.Location = New System.Drawing.Point(89, 56)
+        Me.dpPromotionDate.MinDate = New Date(2019, 3, 24, 0, 0, 0, 0)
+        Me.dpPromotionDate.Name = "dpPromotionDate"
+        Me.dpPromotionDate.Size = New System.Drawing.Size(283, 24)
+        Me.dpPromotionDate.TabIndex = 49
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Tw Cen MT", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.Black
+        Me.Label1.Location = New System.Drawing.Point(18, 60)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(37, 17)
+        Me.Label1.TabIndex = 48
+        Me.Label1.Text = "Date"
+        '
+        'dgvPromotionList
+        '
+        Me.dgvPromotionList.AllowUserToAddRows = False
+        Me.dgvPromotionList.AllowUserToDeleteRows = False
+        Me.dgvPromotionList.BackgroundColor = System.Drawing.SystemColors.ControlLightLight
+        Me.dgvPromotionList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvPromotionList.GridColor = System.Drawing.SystemColors.ControlLightLight
+        Me.dgvPromotionList.Location = New System.Drawing.Point(21, 92)
+        Me.dgvPromotionList.Name = "dgvPromotionList"
+        Me.dgvPromotionList.ReadOnly = True
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Tw Cen MT", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Black
+        Me.dgvPromotionList.RowsDefaultCellStyle = DataGridViewCellStyle1
+        Me.dgvPromotionList.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.dgvPromotionList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dgvPromotionList.Size = New System.Drawing.Size(490, 219)
+        Me.dgvPromotionList.TabIndex = 47
+        '
+        'lblCount
+        '
+        Me.lblCount.AutoSize = True
+        Me.lblCount.Font = New System.Drawing.Font("Tw Cen MT", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblCount.ForeColor = System.Drawing.Color.Black
+        Me.lblCount.Location = New System.Drawing.Point(22, 314)
+        Me.lblCount.Name = "lblCount"
+        Me.lblCount.Size = New System.Drawing.Size(81, 17)
+        Me.lblCount.TabIndex = 46
+        Me.lblCount.Text = "X record(s)."
+        '
+        'txtPromotion
+        '
+        Me.txtPromotion.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtPromotion.ForeColor = System.Drawing.Color.Black
+        Me.txtPromotion.Location = New System.Drawing.Point(89, 30)
+        Me.txtPromotion.Name = "txtPromotion"
+        Me.txtPromotion.Size = New System.Drawing.Size(283, 20)
+        Me.txtPromotion.TabIndex = 45
         '
         'btnClear
         '
@@ -64,31 +125,6 @@ Partial Class StaffViewPromotion
         Me.btnClear.Text = "&CLEAR"
         Me.btnClear.UseVisualStyleBackColor = False
         '
-        'StaffMenuLayoutControl1
-        '
-        Me.StaffMenuLayoutControl1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.StaffMenuLayoutControl1.Location = New System.Drawing.Point(0, 0)
-        Me.StaffMenuLayoutControl1.Margin = New System.Windows.Forms.Padding(0)
-        Me.StaffMenuLayoutControl1.Name = "StaffMenuLayoutControl1"
-        Me.StaffMenuLayoutControl1.Size = New System.Drawing.Size(800, 575)
-        Me.StaffMenuLayoutControl1.TabIndex = 42
-        '
-        'TranportSelection1
-        '
-        Me.TranportSelection1.Location = New System.Drawing.Point(242, 81)
-        Me.TranportSelection1.Name = "TranportSelection1"
-        Me.TranportSelection1.Size = New System.Drawing.Size(537, 104)
-        Me.TranportSelection1.TabIndex = 43
-        '
-        'txtPromotion
-        '
-        Me.txtPromotion.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtPromotion.ForeColor = System.Drawing.Color.Black
-        Me.txtPromotion.Location = New System.Drawing.Point(89, 30)
-        Me.txtPromotion.Name = "txtPromotion"
-        Me.txtPromotion.Size = New System.Drawing.Size(283, 20)
-        Me.txtPromotion.TabIndex = 45
-        '
         'Label5
         '
         Me.Label5.AutoSize = True
@@ -100,34 +136,21 @@ Partial Class StaffViewPromotion
         Me.Label5.TabIndex = 44
         Me.Label5.Text = "Search"
         '
-        'lblCount
+        'TranportSelection1
         '
-        Me.lblCount.AutoSize = True
-        Me.lblCount.Font = New System.Drawing.Font("Tw Cen MT", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblCount.ForeColor = System.Drawing.Color.Black
-        Me.lblCount.Location = New System.Drawing.Point(18, 314)
-        Me.lblCount.Name = "lblCount"
-        Me.lblCount.Size = New System.Drawing.Size(81, 17)
-        Me.lblCount.TabIndex = 46
-        Me.lblCount.Text = "X record(s)."
+        Me.TranportSelection1.Location = New System.Drawing.Point(242, 81)
+        Me.TranportSelection1.Name = "TranportSelection1"
+        Me.TranportSelection1.Size = New System.Drawing.Size(537, 104)
+        Me.TranportSelection1.TabIndex = 43
         '
-        'dgvPromotionList
+        'StaffMenuLayoutControl1
         '
-        Me.dgvPromotionList.AllowUserToAddRows = False
-        Me.dgvPromotionList.AllowUserToDeleteRows = False
-        Me.dgvPromotionList.BackgroundColor = System.Drawing.SystemColors.ControlLightLight
-        Me.dgvPromotionList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvPromotionList.GridColor = System.Drawing.SystemColors.ControlLightLight
-        Me.dgvPromotionList.Location = New System.Drawing.Point(25, 69)
-        Me.dgvPromotionList.Name = "dgvPromotionList"
-        Me.dgvPromotionList.ReadOnly = True
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Tw Cen MT", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Black
-        Me.dgvPromotionList.RowsDefaultCellStyle = DataGridViewCellStyle1
-        Me.dgvPromotionList.ScrollBars = System.Windows.Forms.ScrollBars.None
-        Me.dgvPromotionList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvPromotionList.Size = New System.Drawing.Size(490, 242)
-        Me.dgvPromotionList.TabIndex = 47
+        Me.StaffMenuLayoutControl1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.StaffMenuLayoutControl1.Location = New System.Drawing.Point(0, 0)
+        Me.StaffMenuLayoutControl1.Margin = New System.Windows.Forms.Padding(0)
+        Me.StaffMenuLayoutControl1.Name = "StaffMenuLayoutControl1"
+        Me.StaffMenuLayoutControl1.Size = New System.Drawing.Size(800, 575)
+        Me.StaffMenuLayoutControl1.TabIndex = 42
         '
         'StaffViewPromotion
         '
@@ -154,4 +177,6 @@ Partial Class StaffViewPromotion
     Friend WithEvents Label5 As Label
     Friend WithEvents lblCount As Label
     Friend WithEvents dgvPromotionList As DataGridView
+    Friend WithEvents Label1 As Label
+    Friend WithEvents dpPromotionDate As DateTimePicker
 End Class

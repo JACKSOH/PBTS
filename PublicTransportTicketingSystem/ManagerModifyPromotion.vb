@@ -6,6 +6,7 @@ Public Class ManagerModifyPromotion
     Private startDate As Date
     Private endDate As Date
     Private discount As Integer
+    Private count As Integer
 
     Private Sub ManagerMenuLayoutControl1_Load(sender As Object, e As EventArgs) Handles ManagerMenuLayoutControl1.Load
         lblPromotionID.Text = ManagerViewPromotion.id
@@ -52,9 +53,10 @@ Public Class ManagerModifyPromotion
 
             While (reader1.Read)
                 lstSchedule.Items.Add(reader1.GetString(2))
+                count += 1
             End While
             con.Close()
-
+            lblCount.Text = count.ToString("0 record(s)")
 
         Catch ex As Exception
             MessageBox.Show("Invalid" & ex.Message)

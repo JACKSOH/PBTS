@@ -7,6 +7,7 @@ Public Class StaffBooking
     Public selectedDate As Date
     Public selectedOrigin As String
     Public selectedDestination As String
+    Public type As String
 
     Private Sub StaffMenuLayoutControl1_Load(sender As Object, e As EventArgs) Handles MyBase.Load, TranportSelection1.TransportChange
         'TODO: This line of code loads data into the 'PTTSDataSet.Location' table. You can move, or remove it, as needed.
@@ -32,6 +33,8 @@ Public Class StaffBooking
             End While
 
             SqlConnection.Close()
+
+            type = TranportSelection1.txtTransType.Text.ToString
         Catch ex As Exception
             MessageBox.Show(ex.Message)
         End Try

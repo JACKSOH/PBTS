@@ -10,12 +10,26 @@
         txtName.Clear()
 
     End Sub
+    'get he new position
     Private Sub retrieveNewPosition()
         Dim db As New PBTSDataContext
         newPosition = CInt(db.Locations.Where(Function(o) o.locationType = ManagerManageLocation.ts.selectedType.ToString).OrderByDescending(Function(o) o.position).FirstOrDefault.position.ToString) + 1
 
 
     End Sub
+
+    'chceck the location duplicate
+    Private Function IsDuplicatedLocation(name As String) As Boolean
+
+        Dim db As New PBTSDataContext
+        Dim a = db.Locations.Where(Function(o) o.locationType = cboType.Text And o.locationName.ToLower = name.ToLower).SingleOrDefault
+        If a Is Nothing Then
+            Return False
+        Else
+            Return True
+        End If
+
+    End Function
     Private Sub ManagerLocationInsert_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         retrieveNewPosition()
         lblLocationId.Text = newId
@@ -24,12 +38,18 @@
     End Sub
 
     Private Sub txtName_Validating(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles txtName.Validating
+        'validate name
         Try
             Dim name As String = txtName.Text.Replace(" ", "")
 
             If name.Length <= 0 Then
                 err.SetError(txtName, "Name could not leave blank!")
+                e.Cancel = True
+            ElseIf IsDuplicatedLocation(name) Then
+                err.SetError(txtName, "Location " + name + " is exsited in database!")
+                e.Cancel = True
             Else
+
                 err.SetError(txtName, Nothing)
             End If
 
@@ -39,9 +59,9 @@
 
 
     End Sub
+
+    'move position of the location
     Private Sub AdjustPosition(position As Integer)
-
-
         Do
             If position < newPosition Then
 
@@ -59,6 +79,7 @@
 
     End Sub
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
+
         Dim l As New Location
 
         l.position = Integer.Parse(txtPosition.Text)
@@ -87,7 +108,6 @@
 
     Private Sub txtPosition_Validating(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles txtPosition.Validating
         Dim db As New PBTSDataContext
-
         Try
             Dim position As Integer = CInt(txtPosition.Text)
             If position > newPosition Then
@@ -96,7 +116,6 @@
             Else
                 err.SetError(txtPosition, Nothing)
             End If
-
         Catch ex As Exception
             err.SetError(txtPosition, "Position is required and should contain only number!")
             e.Cancel = True

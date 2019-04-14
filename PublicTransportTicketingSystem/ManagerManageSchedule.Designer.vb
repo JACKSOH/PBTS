@@ -22,31 +22,17 @@ Partial Class ManagerManageSchedule
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.ManagerMenuLayoutControl1 = New PublicTransportTicketingSystem.managerMenuLayoutControl()
-        Me.TranportSelection1 = New PublicTransportTicketingSystem.TranportSelection()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.btnDeleteCancel = New System.Windows.Forms.Button()
         Me.btnUpdate = New System.Windows.Forms.Button()
         Me.btnAdd = New System.Windows.Forms.Button()
-        Me.btnDeleteCancel = New System.Windows.Forms.Button()
+        Me.TranportSelection1 = New PublicTransportTicketingSystem.TranportSelection()
+        Me.ManagerMenuLayoutControl1 = New PublicTransportTicketingSystem.managerMenuLayoutControl()
+        Me.test = New System.Windows.Forms.TextBox()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'ManagerMenuLayoutControl1
-        '
-        Me.ManagerMenuLayoutControl1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.ManagerMenuLayoutControl1.Location = New System.Drawing.Point(0, 0)
-        Me.ManagerMenuLayoutControl1.Name = "ManagerMenuLayoutControl1"
-        Me.ManagerMenuLayoutControl1.Size = New System.Drawing.Size(784, 536)
-        Me.ManagerMenuLayoutControl1.TabIndex = 0
-        '
-        'TranportSelection1
-        '
-        Me.TranportSelection1.Location = New System.Drawing.Point(235, 73)
-        Me.TranportSelection1.Name = "TranportSelection1"
-        Me.TranportSelection1.Size = New System.Drawing.Size(537, 104)
-        Me.TranportSelection1.TabIndex = 1
         '
         'DataGridView1
         '
@@ -58,6 +44,7 @@ Partial Class ManagerManageSchedule
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.test)
         Me.GroupBox1.Controls.Add(Me.btnDeleteCancel)
         Me.GroupBox1.Controls.Add(Me.DataGridView1)
         Me.GroupBox1.Controls.Add(Me.btnUpdate)
@@ -68,6 +55,18 @@ Partial Class ManagerManageSchedule
         Me.GroupBox1.TabIndex = 3
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Schedule "
+        '
+        'btnDeleteCancel
+        '
+        Me.btnDeleteCancel.BackColor = System.Drawing.Color.Red
+        Me.btnDeleteCancel.Font = New System.Drawing.Font("Tw Cen MT Condensed", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnDeleteCancel.ForeColor = System.Drawing.SystemColors.ButtonFace
+        Me.btnDeleteCancel.Location = New System.Drawing.Point(408, 277)
+        Me.btnDeleteCancel.Name = "btnDeleteCancel"
+        Me.btnDeleteCancel.Size = New System.Drawing.Size(59, 33)
+        Me.btnDeleteCancel.TabIndex = 7
+        Me.btnDeleteCancel.Text = "&Delete"
+        Me.btnDeleteCancel.UseVisualStyleBackColor = False
         '
         'btnUpdate
         '
@@ -90,17 +89,27 @@ Partial Class ManagerManageSchedule
         Me.btnAdd.Text = "&Add"
         Me.btnAdd.UseVisualStyleBackColor = False
         '
-        'btnDeleteCancel
+        'TranportSelection1
         '
-        Me.btnDeleteCancel.BackColor = System.Drawing.Color.Red
-        Me.btnDeleteCancel.Font = New System.Drawing.Font("Tw Cen MT Condensed", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnDeleteCancel.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.btnDeleteCancel.Location = New System.Drawing.Point(408, 277)
-        Me.btnDeleteCancel.Name = "btnDeleteCancel"
-        Me.btnDeleteCancel.Size = New System.Drawing.Size(59, 33)
-        Me.btnDeleteCancel.TabIndex = 7
-        Me.btnDeleteCancel.Text = "&Delete"
-        Me.btnDeleteCancel.UseVisualStyleBackColor = False
+        Me.TranportSelection1.Location = New System.Drawing.Point(235, 73)
+        Me.TranportSelection1.Name = "TranportSelection1"
+        Me.TranportSelection1.Size = New System.Drawing.Size(537, 104)
+        Me.TranportSelection1.TabIndex = 1
+        '
+        'ManagerMenuLayoutControl1
+        '
+        Me.ManagerMenuLayoutControl1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.ManagerMenuLayoutControl1.Location = New System.Drawing.Point(0, 0)
+        Me.ManagerMenuLayoutControl1.Name = "ManagerMenuLayoutControl1"
+        Me.ManagerMenuLayoutControl1.Size = New System.Drawing.Size(784, 536)
+        Me.ManagerMenuLayoutControl1.TabIndex = 0
+        '
+        'test
+        '
+        Me.test.Location = New System.Drawing.Point(417, 50)
+        Me.test.Name = "test"
+        Me.test.Size = New System.Drawing.Size(100, 20)
+        Me.test.TabIndex = 8
         '
         'ManagerManageSchedule
         '
@@ -115,6 +124,7 @@ Partial Class ManagerManageSchedule
         Me.Text = "ManagerManageSchedule"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -126,4 +136,5 @@ Partial Class ManagerManageSchedule
     Friend WithEvents btnUpdate As Button
     Friend WithEvents btnAdd As Button
     Friend WithEvents btnDeleteCancel As Button
+    Friend WithEvents test As TextBox
 End Class

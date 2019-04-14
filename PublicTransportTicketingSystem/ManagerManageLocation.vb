@@ -1,7 +1,9 @@
 ﻿Public Class ManagerManageLocation
-    Dim db As New PBTSDataContext
-    Private Sub BindData()
 
+    Dim locationType1 As String
+    Dim originalName As String
+    Private Sub BindData()
+        Dim db As New PBTSDataContext
         dgv.DataSource = db.Locations
     End Sub
     Private Sub ManagerManageLocation_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -9,30 +11,57 @@
         Me.LocationTableAdapter1.Fill(Me.PTTSDataSet.Location)
 
         dgv.ReadOnly = True
-
         txtTest.Text = ts.selectedType.ToString
-
+        'filter by type
+        LocationTableAdapter1.FillBy2(PTTSDataSet.Location, ts.selectedType.ToLower)
 
 
     End Sub
+    Private Function IsDuplicatedLocation(location As String) As Boolean
+        Dim db As New PBTSDataContext
+        Dim r = db.Locations.Where(Function(o) o.locationType = ts.selectedType.ToLower And o.locationName = location).SingleOrDefault
+        If r Is Nothing Then
+            Return False
+        Else
+            Return True
+        End If
 
+    End Function
 
     Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
+
         If btnUpdate.Text = "&Update" Then
             btnUpdate.Text = "&Save"
             btnDeleteCancel.Text = "&Cancel"
             btnAdd.Enabled = False
             dgv.ReadOnly = False
-
+            dgv.Columns(0).ReadOnly = True ' dont allow id to modify
+            dgv.Columns(2).ReadOnly = True
         Else
-            btnUpdate.Text = "&Update"
-            btnDeleteCancel.Text = "&Delete"
-            'update database
-            LocationBindingSource.EndEdit()
-            LocationTableAdapter1.Update(PTTSDataSet.Location)
+            ' check whether duplicated location insertd
+            Dim locationName = dgv.Rows(dgv.CurrentCell.RowIndex).Cells(1).Value.ToString
+            'make sure the locatio name validate when the value is change
+            If originalName <> locationName Then
+                If IsDuplicatedLocation(locationName) = False Then
 
-            btnAdd.Enabled = True
-            dgv.ReadOnly = True
+                    'Validate the type 
+
+                    btnUpdate.Text = "&Update"
+                    btnDeleteCancel.Text = "&Delete"
+                    ' Update database
+                    LocationBindingSource.EndEdit()
+                    LocationTableAdapter1.Update(PTTSDataSet.Location)
+
+                    btnAdd.Enabled = True
+                    dgv.ReadOnly = True
+
+
+                Else
+                    MessageBox.Show("Duplicated Name found!" & vbNewLine & "Please make sure the name not same with others.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                End If
+            End If
+
+
         End If
     End Sub
 
@@ -64,9 +93,32 @@
 
     End Sub
 
-    Private Sub ChangeTranport() Handles ts.TransportChange
-        txtTest.Text = ts.selectedType.ToString
+    Private Sub ChangeTransportType() Handles ts.TransportChange
+        LocationTableAdapter1.FillBy2(PTTSDataSet.Location, ts.selectedType.ToLower)
+    End Sub
+    Private Function ValidateType(Type As String) As Boolean
+
+
+    End Function
+
+    Friend Sub dgv_CellValidating(sender As Object, e As DataGridViewCellValidatingEventArgs) Handles dgv.CellValidating
+        If dgv.CurrentCell.ColumnIndex = 2 And dgv.ReadOnly = False Then
+
+            Dim locationType As String = dgv.Rows(dgv.CurrentCell.RowIndex).Cells(2).Value.ToString
+            txtTest.Text = locationType
+            If locationType1.ToLower = "bus" Or locationType1.ToLower = "ferry" Or locationType1.ToLower = "train" Then
+                err.SetError(dgv, Nothing)
+            Else
+                err.SetError(dgv, "Location type should only be ferry, bus and train.")
+
+            End If
+        End If
+
     End Sub
 
-
+    Private Sub dgv_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv.CellDoubleClick
+        If dgv.CurrentCell.ColumnIndex = 1 And dgv.ReadOnly = False Then
+            originalName = dgv.CurrentCell.Value.ToString
+        End If
+    End Sub
 End Class

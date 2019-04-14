@@ -43,7 +43,7 @@ Partial Class ManagerSchduleInsert
         Me.lblNewId = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.dtpDate = New System.Windows.Forms.DateTimePicker()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.cboCreating = New System.Windows.Forms.ComboBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.btnCancel = New System.Windows.Forms.Button()
         Me.btnAdd = New System.Windows.Forms.Button()
@@ -51,6 +51,9 @@ Partial Class ManagerSchduleInsert
         Me.LocationTableAdapter = New PublicTransportTicketingSystem.PTTSDataSetTableAdapters.LocationTableAdapter()
         Me.test = New System.Windows.Forms.TextBox()
         Me.TransportTableAdapter = New PublicTransportTicketingSystem.PTTSDataSetTableAdapters.TransportTableAdapter()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
         CType(Me.TransportBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PTTSDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LocationBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -147,7 +150,6 @@ Partial Class ManagerSchduleInsert
         '
         'cboCarrier
         '
-        Me.cboCarrier.DataBindings.Add(New System.Windows.Forms.Binding("SelectedValue", Me.TransportBindingSource, "transportID", True))
         Me.cboCarrier.DataSource = Me.TransportBindingSource
         Me.cboCarrier.DisplayMember = "transportName"
         Me.cboCarrier.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
@@ -156,6 +158,7 @@ Partial Class ManagerSchduleInsert
         Me.cboCarrier.Name = "cboCarrier"
         Me.cboCarrier.Size = New System.Drawing.Size(351, 27)
         Me.cboCarrier.TabIndex = 10
+        Me.cboCarrier.ValueMember = "transportID"
         '
         'TransportBindingSource
         '
@@ -240,15 +243,15 @@ Partial Class ManagerSchduleInsert
         Me.dtpDate.Size = New System.Drawing.Size(161, 25)
         Me.dtpDate.TabIndex = 18
         '
-        'ComboBox1
+        'cboCreating
         '
-        Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Items.AddRange(New Object() {"Does not repeat", "Weekly on X (within this month)", "Everyday on this week"})
-        Me.ComboBox1.Location = New System.Drawing.Point(109, 340)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(239, 27)
-        Me.ComboBox1.TabIndex = 19
+        Me.cboCreating.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cboCreating.FormattingEnabled = True
+        Me.cboCreating.Items.AddRange(New Object() {"Does not repeat", "Weekly on X (within this month)", "Everyday on this week"})
+        Me.cboCreating.Location = New System.Drawing.Point(109, 340)
+        Me.cboCreating.Name = "cboCreating"
+        Me.cboCreating.Size = New System.Drawing.Size(239, 27)
+        Me.cboCreating.TabIndex = 19
         '
         'Label7
         '
@@ -307,16 +310,52 @@ Partial Class ManagerSchduleInsert
         '
         Me.TransportTableAdapter.ClearBeforeFill = True
         '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Tw Cen MT", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.Location = New System.Drawing.Point(13, 9)
+        Me.Label8.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(114, 19)
+        Me.Label8.TabIndex = 37
+        Me.Label8.Text = "New Schedule :"
+        '
+        'Button1
+        '
+        Me.Button1.CausesValidation = False
+        Me.Button1.DialogResult = System.Windows.Forms.DialogResult.Cancel
+        Me.Button1.Font = New System.Drawing.Font("Tw Cen MT Condensed", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.Location = New System.Drawing.Point(466, 393)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(72, 23)
+        Me.Button1.TabIndex = 38
+        Me.Button1.Text = "tst"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(519, 353)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(75, 23)
+        Me.Button2.TabIndex = 39
+        Me.Button2.Text = "Button2"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
         'ManagerSchduleInsert
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 19.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(654, 468)
+        Me.Controls.Add(Me.Button2)
+        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.test)
         Me.Controls.Add(Me.btnCancel)
         Me.Controls.Add(Me.btnAdd)
         Me.Controls.Add(Me.Label7)
-        Me.Controls.Add(Me.ComboBox1)
+        Me.Controls.Add(Me.cboCreating)
         Me.Controls.Add(Me.dtpDate)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.lblNewId)
@@ -362,7 +401,7 @@ Partial Class ManagerSchduleInsert
     Friend WithEvents lblNewId As Label
     Friend WithEvents Label6 As Label
     Friend WithEvents dtpDate As DateTimePicker
-    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents cboCreating As ComboBox
     Friend WithEvents Label7 As Label
     Friend WithEvents btnCancel As Button
     Friend WithEvents btnAdd As Button
@@ -374,4 +413,7 @@ Partial Class ManagerSchduleInsert
     Friend WithEvents test As TextBox
     Friend WithEvents TransportBindingSource As BindingSource
     Friend WithEvents TransportTableAdapter As PTTSDataSetTableAdapters.TransportTableAdapter
+    Friend WithEvents Label8 As Label
+    Friend WithEvents Button1 As Button
+    Friend WithEvents Button2 As Button
 End Class

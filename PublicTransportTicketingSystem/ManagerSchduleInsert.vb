@@ -21,7 +21,7 @@
         dtpTime.MinDate = DateTime.Today
         dtpDate.MaxDate = DateTime.Today.AddMonths(1)
         dtpDate.MinDate = DateTime.Today
-        lblNewId.Text = App.GenerateNextId("")
+
         'refresh the table index
     End Sub
 
@@ -55,4 +55,66 @@
         BindcboTranport()
 
     End Sub
+
+    Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
+        Dim db As New PBTSDataContext
+        'get tranport id 1st
+        Dim t As Transport = db.Transports.Where(Function(o) o.transportID = cboOrigin.SelectedValue.ToString).SingleOrDefault
+        'save schedule data 1st
+        Dim sc As New Schedule
+        sc.scheduleID = newId
+        sc.departureDateTime = dtpDate.Value.Date + dtpTime.Value.TimeOfDay
+        sc.estimateHours = Math.Abs(CInt(db.Locations.Where(Function(o) o.locationID = cboOrigin.SelectedValue.ToString).SingleOrDefault().position - db.Locations.Where(Function(o) o.locationID = cboDestination.SelectedValue.ToString).SingleOrDefault().position)) * 2
+        sc.transportID = cboOrigin.SelectedValue.ToString
+
+        sc.Transport = t
+        sc.scheduleStatus = "Available"
+        db.Schedules.InsertOnSubmit(sc)
+        'db.SubmitChanges()
+        'insert for new origin location
+        Dim llOri As New LocationList
+        llOri.scheduleID = newId
+        Dim OriId As String = ""
+        Try
+            OriId = db.LocationLists.OrderByDescending(Function(o) o.locationListID).FirstOrDefault.locationListID.ToString
+        Catch ex As Exception
+
+        End Try
+        App.table = "Location List"
+        llOri.locationListID = App.GenerateNextId(OriId)
+
+        llOri.locationID = cboDestination.SelectedValue.ToString
+        llOri.locationStatus = "Origin"
+        db.LocationLists.InsertOnSubmit(llOri)
+        db.SubmitChanges()
+        ' insert for new destination location
+        Dim llDest As New LocationList
+        llDest.scheduleID = newId
+        Dim DestId As String = ""
+        Try
+            DestId = db.LocationLists.OrderByDescending(Function(o) o.locationListID).FirstOrDefault.locationListID.ToString
+        Catch ex As Exception
+
+        End Try
+        App.table = "Location List"
+        llDest.locationListID = App.GenerateNextId(DestId)
+        llDest.locationID = cboOrigin.SelectedValue.ToString
+        llDest.locationStatus = "Destination"
+        db.LocationLists.InsertOnSubmit(llDest)
+        db.SubmitChanges()
+        MessageBox.Show("Successfully create")
+        Select Case cboCreating.SelectedIndex
+            Case 0
+            Case 1
+            Case 2
+            Case Else
+
+        End Select
+    End Sub
+
+    Private Sub dtpDate_ValueChanged(sender As Object, e As EventArgs) Handles dtpDate.ValueChanged
+        cboCreating.Items(1) = "Weekly on " + dtpDate.Value.DayOfWeek.ToString + " (Within this month)"
+    End Sub
+
+
 End Class

@@ -64,4 +64,8 @@
 
         TransportTableAdapter.FillBy2(PTTSDataSet.Transport, "%" + txtSearch.Text + "%", ts.selectedType)
     End Sub
+
+    Private Sub ManagerMenuLayoutControl1_Load_1(sender As Object, e As EventArgs) Handles ManagerMenuLayoutControl1.Load
+
+    End Sub
 End Class

@@ -35,14 +35,16 @@ Partial Class ManagerManageLocation
         Me.btnAdd = New System.Windows.Forms.Button()
         Me.btnDeleteCancel = New System.Windows.Forms.Button()
         Me.txtTest = New System.Windows.Forms.TextBox()
+        Me.gbTranport = New System.Windows.Forms.GroupBox()
+        Me.err = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.ts = New PublicTransportTicketingSystem.TranportSelection()
         Me.ManagerMenuLayoutControl1 = New PublicTransportTicketingSystem.managerMenuLayoutControl()
-        Me.gbTranport = New System.Windows.Forms.GroupBox()
         CType(Me.dgv, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LocationBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PTTSDataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PTTSDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbTranport.SuspendLayout()
+        CType(Me.err, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'dgv
@@ -138,6 +140,23 @@ Partial Class ManagerManageLocation
         Me.txtTest.Size = New System.Drawing.Size(100, 20)
         Me.txtTest.TabIndex = 6
         '
+        'gbTranport
+        '
+        Me.gbTranport.Controls.Add(Me.btnDeleteCancel)
+        Me.gbTranport.Controls.Add(Me.btnUpdate)
+        Me.gbTranport.Controls.Add(Me.btnAdd)
+        Me.gbTranport.Location = New System.Drawing.Point(241, 207)
+        Me.gbTranport.Name = "gbTranport"
+        Me.gbTranport.Size = New System.Drawing.Size(547, 356)
+        Me.gbTranport.TabIndex = 7
+        Me.gbTranport.TabStop = False
+        Me.gbTranport.Text = "Location Details"
+        '
+        'err
+        '
+        Me.err.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink
+        Me.err.ContainerControl = Me
+        '
         'ts
         '
         Me.ts.Location = New System.Drawing.Point(239, 80)
@@ -152,18 +171,6 @@ Partial Class ManagerManageLocation
         Me.ManagerMenuLayoutControl1.Name = "ManagerMenuLayoutControl1"
         Me.ManagerMenuLayoutControl1.Size = New System.Drawing.Size(800, 575)
         Me.ManagerMenuLayoutControl1.TabIndex = 0
-        '
-        'gbTranport
-        '
-        Me.gbTranport.Controls.Add(Me.btnDeleteCancel)
-        Me.gbTranport.Controls.Add(Me.btnUpdate)
-        Me.gbTranport.Controls.Add(Me.btnAdd)
-        Me.gbTranport.Location = New System.Drawing.Point(241, 207)
-        Me.gbTranport.Name = "gbTranport"
-        Me.gbTranport.Size = New System.Drawing.Size(547, 356)
-        Me.gbTranport.TabIndex = 7
-        Me.gbTranport.TabStop = False
-        Me.gbTranport.Text = "Location Details"
         '
         'ManagerManageLocation
         '
@@ -184,6 +191,7 @@ Partial Class ManagerManageLocation
         CType(Me.PTTSDataSetBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PTTSDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.gbTranport.ResumeLayout(False)
+        CType(Me.err, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -204,4 +212,5 @@ Partial Class ManagerManageLocation
     Friend WithEvents LocationIDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents LocationNameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents LocationTypeDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents err As ErrorProvider
 End Class

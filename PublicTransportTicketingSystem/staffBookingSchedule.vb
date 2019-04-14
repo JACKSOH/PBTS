@@ -4,12 +4,13 @@ Imports System.Data.SqlClient
 Public Class staffBookingSchedule
     Dim SqlConnection As New SqlConnection
     Public scheduleID As String
+    Public departureDate As String 'for payment
 
     Dim originID As String
     Dim desID As String
     Private Sub staffBookingSchedule_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'Try
-        SqlConnection.ConnectionString = StaffBooking.connection
+        Try
+            SqlConnection.ConnectionString = StaffBooking.connection
             SqlConnection.Open()
             Dim originCommand As New SqlCommand("select * from Location where locationName =@selectedOrigin and locationType = @type", SqlConnection)
             originCommand.Parameters.Add("@selectedOrigin", SqlDbType.VarChar).Value = StaffBooking.selectedOrigin
@@ -68,21 +69,22 @@ Public Class staffBookingSchedule
             dgvSchedule.Columns.Add(col)
             i = query.Count
 
-        For i = 0 To (query.Count - 1)
-            dgvSchedule.Rows(i).Cells(3).Value = StaffBooking.selectedDestination
-        Next
+            For i = 0 To (query.Count - 1)
+                dgvSchedule.Rows(i).Cells(3).Value = StaffBooking.selectedDestination
+            Next
 
 
 
-        'Catch ex As Exception
-        'MessageBox.Show(ex.Message)
-        'End Try
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
 
 
     End Sub
 
     Private Sub dgvSchedule_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvSchedule.CellDoubleClick
-        scheduleID = dgvSchedule.SelectedRows(0).Cells(3).Value.ToString
+        scheduleID = dgvSchedule.SelectedRows(0).Cells(2).Value.ToString
+        departureDate = dgvSchedule.SelectedRows(0).Cells(1).Value.ToString
         staffSeatSelection.ShowDialog()
         'Me.Hide()
 

@@ -117,31 +117,42 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="LocationBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>337, 17</value>
-  </metadata>
-  <metadata name="PTTSDataSetBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>138, 17</value>
-  </metadata>
-  <metadata name="PTTSDataSetBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>138, 17</value>
-  </metadata>
-  <metadata name="PTTSDataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="PrintDocument1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <metadata name="PTTSDataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <metadata name="LocationBindingSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>891, 17</value>
-  </metadata>
-  <metadata name="PTTSDataSetBindingSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>685, 17</value>
-  </metadata>
-  <metadata name="PTTSDataSetBindingSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>685, 17</value>
-  </metadata>
-  <metadata name="LocationTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>514, 17</value>
-  </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="$this.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        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
+        AElFTkSuQmCC
+</value>
+  </data>
 </root>

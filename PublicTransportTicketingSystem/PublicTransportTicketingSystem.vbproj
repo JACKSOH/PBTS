@@ -137,10 +137,22 @@
     <Compile Include="managerIndex.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ManagerLocationInsert.Designer.vb">
+      <DependentUpon>ManagerLocationInsert.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerLocationInsert.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ManagerManageLocation.Designer.vb">
       <DependentUpon>ManagerManageLocation.vb</DependentUpon>
     </Compile>
     <Compile Include="ManagerManageLocation.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerManageSchedule.Designer.vb">
+      <DependentUpon>ManagerManageSchedule.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerManageSchedule.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="managerMenuLayoutControl.Designer.vb">
@@ -155,10 +167,12 @@
     <Compile Include="ManagerPT.vb">
       <SubType>Form</SubType>
     </Compile>
+
     <Compile Include="managerReport.Designer.vb">
       <DependentUpon>managerReport.vb</DependentUpon>
     </Compile>
     <Compile Include="managerReport.vb">
+
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ManagerViewPromotion.Designer.vb">
@@ -173,6 +187,28 @@
     <Compile Include="ManagerViewSchdule.vb">
       <SubType>Form</SubType>
     </Compile>
+
+    <Compile Include="App.vb" />
+
+    <Compile Include="PaymentCancel.Designer.vb">
+      <DependentUpon>PaymentCancel.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PaymentCancel.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PaymentMake.Designer.vb">
+      <DependentUpon>PaymentMake.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PaymentMake.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PaymentPrintTicket.Designer.vb">
+      <DependentUpon>PaymentPrintTicket.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PaymentPrintTicket.vb">
+      <SubType>Form</SubType>
+    </Compile>
+
     <Compile Include="PBTS.designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -181,6 +217,9 @@
     <Compile Include="PTTSDataSet.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
+      <DependentUpon>PTTSDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PTTSDataSet.vb">
       <DependentUpon>PTTSDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="StaffBooking.Designer.vb">
@@ -267,8 +306,14 @@
     <EmbeddedResource Include="managerIndex.resx">
       <DependentUpon>managerIndex.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ManagerLocationInsert.resx">
+      <DependentUpon>ManagerLocationInsert.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ManagerManageLocation.resx">
       <DependentUpon>ManagerManageLocation.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerManageSchedule.resx">
+      <DependentUpon>ManagerManageSchedule.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="managerMenuLayoutControl.resx">
       <DependentUpon>managerMenuLayoutControl.vb</DependentUpon>
@@ -276,14 +321,25 @@
     <EmbeddedResource Include="ManagerPT.resx">
       <DependentUpon>ManagerPT.vb</DependentUpon>
     </EmbeddedResource>
+
     <EmbeddedResource Include="managerReport.resx">
       <DependentUpon>managerReport.vb</DependentUpon>
+
     </EmbeddedResource>
     <EmbeddedResource Include="ManagerViewPromotion.resx">
       <DependentUpon>ManagerViewPromotion.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ManagerViewSchdule.resx">
       <DependentUpon>ManagerViewSchdule.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PaymentCancel.resx">
+      <DependentUpon>PaymentCancel.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PaymentMake.resx">
+      <DependentUpon>PaymentMake.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PaymentPrintTicket.resx">
+      <DependentUpon>PaymentPrintTicket.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StaffBooking.resx">
       <DependentUpon>StaffBooking.vb</DependentUpon>
@@ -434,7 +490,9 @@
     <Content Include="PTTS_log.ldf">
       <DependentUpon>PTTS.mdf</DependentUpon>
     </Content>
+
     <None Include="Resources\icons8_Subway_100px.png" />
+
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">

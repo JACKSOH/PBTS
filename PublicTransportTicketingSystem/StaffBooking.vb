@@ -59,7 +59,7 @@ Public Class StaffBooking
             End While
 
             SqlConnection.Close()
-            LocationTableAdapter.FillBySelectedOrigin(PTTSDataSet.Location, cboOrigin.SelectedItem.ToString)
+
 
         Catch ex As Exception
             MessageBox.Show(ex.Message)
@@ -90,6 +90,8 @@ Public Class StaffBooking
             Me.Hide()
         End If
 
+    Private Sub StaffMenuLayoutControl1_Load_1(sender As Object, e As EventArgs) Handles StaffMenuLayoutControl1.Load
+
 
 
     End Sub
@@ -97,5 +99,6 @@ Public Class StaffBooking
     Private Sub TranportSelection1_Load(sender As Object, e As EventArgs) Handles TranportSelection1.TransportChange
         RetrieveOrigin()
         cboOrigin.Text = "Origin"
+
     End Sub
 End Class

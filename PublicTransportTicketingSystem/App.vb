@@ -21,13 +21,15 @@
                     check = False
                 End If
             Loop While check = False
+            table = ""
             Return prefix1 + "0001"
         Else
             Dim preFix As String = id.Substring(0, 2)
             Dim postFix As Integer = CInt(id.Substring(2, 4))
+            table = ""
             Return preFix + (postFix + 1).ToString("D4")
         End If
-        table = ""
+
     End Function
 
     'check whether the string contain only alphabet

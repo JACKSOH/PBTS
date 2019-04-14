@@ -173,6 +173,18 @@
     <Compile Include="managerReport.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ManagerSchduleInsert.Designer.vb">
+      <DependentUpon>ManagerSchduleInsert.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerSchduleInsert.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerTranportInsert.Designer.vb">
+      <DependentUpon>ManagerTranportInsert.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerTranportInsert.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ManagerViewPromotion.Designer.vb">
       <DependentUpon>ManagerViewPromotion.vb</DependentUpon>
     </Compile>
@@ -318,6 +330,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="managerReport.resx">
       <DependentUpon>managerReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerSchduleInsert.resx">
+      <DependentUpon>ManagerSchduleInsert.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerTranportInsert.resx">
+      <DependentUpon>ManagerTranportInsert.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ManagerViewPromotion.resx">
       <DependentUpon>ManagerViewPromotion.vb</DependentUpon>

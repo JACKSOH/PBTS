@@ -247,7 +247,7 @@ Partial Class ManagerSchduleInsert
         '
         Me.cboCreating.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboCreating.FormattingEnabled = True
-        Me.cboCreating.Items.AddRange(New Object() {"Does not repeat", "Weekly on X (within this month)", "Everyday on this week"})
+        Me.cboCreating.Items.AddRange(New Object() {"Does not repeat", "Weekly on X (within this month)", "Everyday within a week"})
         Me.cboCreating.Location = New System.Drawing.Point(109, 340)
         Me.cboCreating.Name = "cboCreating"
         Me.cboCreating.Size = New System.Drawing.Size(239, 27)

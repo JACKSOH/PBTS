@@ -22,11 +22,11 @@ Partial Class PaymentMake
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(PaymentMake))
         Me.Label14 = New System.Windows.Forms.Label()
-        Me.lblLicensePlate = New System.Windows.Forms.Label()
+        Me.lblCompany = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.lblDestination = New System.Windows.Forms.Label()
         Me.lblOrigin = New System.Windows.Forms.Label()
@@ -42,9 +42,12 @@ Partial Class PaymentMake
         Me.lblDepartureDate = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.lblLicensePlate = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.lblCustomerName = New System.Windows.Forms.Label()
+        Me.lblPassengerName = New System.Windows.Forms.Label()
         Me.grpPayment = New System.Windows.Forms.GroupBox()
+        Me.lblDiscount = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.lblPrice = New System.Windows.Forms.Label()
         Me.btnGenerateTicket = New System.Windows.Forms.Button()
@@ -69,7 +72,7 @@ Partial Class PaymentMake
         Me.pbReserve = New System.Windows.Forms.PictureBox()
         Me.pbPurchase = New System.Windows.Forms.PictureBox()
         Me.pbStaffPromotion = New System.Windows.Forms.PictureBox()
-        Me.lblDiscount = New System.Windows.Forms.Label()
+        Me.ManagerMenuLayoutControl1 = New PublicTransportTicketingSystem.managerMenuLayoutControl()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
         Me.grpPayment.SuspendLayout()
@@ -88,31 +91,31 @@ Partial Class PaymentMake
         '
         Me.Label14.AutoSize = True
         Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold)
-        Me.Label14.Location = New System.Drawing.Point(69, 348)
+        Me.Label14.Location = New System.Drawing.Point(70, 400)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(153, 24)
         Me.Label14.TabIndex = 25
         Me.Label14.Text = "Seat         Price"
         '
-        'lblLicensePlate
+        'lblCompany
         '
-        Me.lblLicensePlate.BackColor = System.Drawing.SystemColors.Control
-        Me.lblLicensePlate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lblLicensePlate.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblLicensePlate.Location = New System.Drawing.Point(38, 319)
-        Me.lblLicensePlate.Name = "lblLicensePlate"
-        Me.lblLicensePlate.Size = New System.Drawing.Size(212, 23)
-        Me.lblLicensePlate.TabIndex = 24
+        Me.lblCompany.BackColor = System.Drawing.SystemColors.Control
+        Me.lblCompany.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.lblCompany.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.lblCompany.Location = New System.Drawing.Point(38, 319)
+        Me.lblCompany.Name = "lblCompany"
+        Me.lblCompany.Size = New System.Drawing.Size(212, 23)
+        Me.lblCompany.TabIndex = 24
         '
         'Label13
         '
         Me.Label13.AutoSize = True
         Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold)
-        Me.Label13.Location = New System.Drawing.Point(82, 296)
+        Me.Label13.Location = New System.Drawing.Point(94, 296)
         Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(135, 24)
+        Me.Label13.Size = New System.Drawing.Size(98, 24)
         Me.Label13.TabIndex = 23
-        Me.Label13.Text = "License Plate"
+        Me.Label13.Text = "Company"
         '
         'lblDestination
         '
@@ -134,7 +137,7 @@ Partial Class PaymentMake
         '
         Me.Label12.AutoSize = True
         Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold)
-        Me.Label12.Location = New System.Drawing.Point(94, 243)
+        Me.Label12.Location = New System.Drawing.Point(91, 243)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(113, 24)
         Me.Label12.TabIndex = 20
@@ -144,7 +147,7 @@ Partial Class PaymentMake
         '
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold)
-        Me.Label11.Location = New System.Drawing.Point(118, 190)
+        Me.Label11.Location = New System.Drawing.Point(115, 190)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(67, 24)
         Me.Label11.TabIndex = 19
@@ -189,30 +192,30 @@ Partial Class PaymentMake
         'DataGridView1
         '
         Me.DataGridView1.AllowUserToDeleteRows = False
-        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
-        Me.DataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        Me.DataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DataGridView1.BackgroundColor = System.Drawing.SystemColors.Control
         Me.DataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.ColumnHeadersVisible = False
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Seat, Me.Price})
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DataGridView1.DefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGridView1.DefaultCellStyle = DataGridViewCellStyle2
         Me.DataGridView1.GridColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.DataGridView1.Location = New System.Drawing.Point(38, 371)
+        Me.DataGridView1.Location = New System.Drawing.Point(39, 423)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.RowHeadersVisible = False
         Me.DataGridView1.RowTemplate.Height = 24
         Me.DataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.None
-        Me.DataGridView1.Size = New System.Drawing.Size(212, 128)
+        Me.DataGridView1.Size = New System.Drawing.Size(212, 138)
         Me.DataGridView1.TabIndex = 26
         '
         'Seat
@@ -249,9 +252,11 @@ Partial Class PaymentMake
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.lblLicensePlate)
+        Me.GroupBox2.Controls.Add(Me.Label4)
         Me.GroupBox2.Controls.Add(Me.DataGridView1)
         Me.GroupBox2.Controls.Add(Me.Label14)
-        Me.GroupBox2.Controls.Add(Me.lblLicensePlate)
+        Me.GroupBox2.Controls.Add(Me.lblCompany)
         Me.GroupBox2.Controls.Add(Me.Label13)
         Me.GroupBox2.Controls.Add(Me.lblDestination)
         Me.GroupBox2.Controls.Add(Me.lblOrigin)
@@ -262,32 +267,52 @@ Partial Class PaymentMake
         Me.GroupBox2.Controls.Add(Me.lblDepartureDate)
         Me.GroupBox2.Controls.Add(Me.Label6)
         Me.GroupBox2.Controls.Add(Me.Label2)
-        Me.GroupBox2.Controls.Add(Me.lblCustomerName)
+        Me.GroupBox2.Controls.Add(Me.lblPassengerName)
         Me.GroupBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
         Me.GroupBox2.Location = New System.Drawing.Point(763, 79)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(292, 513)
+        Me.GroupBox2.Size = New System.Drawing.Size(292, 589)
         Me.GroupBox2.TabIndex = 21
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Ticket Details"
+        '
+        'lblLicensePlate
+        '
+        Me.lblLicensePlate.BackColor = System.Drawing.SystemColors.Control
+        Me.lblLicensePlate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.lblLicensePlate.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.lblLicensePlate.Location = New System.Drawing.Point(38, 371)
+        Me.lblLicensePlate.Name = "lblLicensePlate"
+        Me.lblLicensePlate.Size = New System.Drawing.Size(212, 23)
+        Me.lblLicensePlate.TabIndex = 28
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold)
+        Me.Label4.Location = New System.Drawing.Point(79, 348)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(135, 24)
+        Me.Label4.TabIndex = 27
+        Me.Label4.Text = "License Plate"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(65, 35)
+        Me.Label2.Location = New System.Drawing.Point(61, 35)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(160, 24)
+        Me.Label2.Size = New System.Drawing.Size(170, 24)
         Me.Label2.TabIndex = 11
-        Me.Label2.Text = "Customer Name"
+        Me.Label2.Text = "Passenger Name"
         '
-        'lblCustomerName
+        'lblPassengerName
         '
-        Me.lblCustomerName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lblCustomerName.Location = New System.Drawing.Point(38, 59)
-        Me.lblCustomerName.Name = "lblCustomerName"
-        Me.lblCustomerName.Size = New System.Drawing.Size(212, 23)
-        Me.lblCustomerName.TabIndex = 12
+        Me.lblPassengerName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.lblPassengerName.Location = New System.Drawing.Point(38, 59)
+        Me.lblPassengerName.Name = "lblPassengerName"
+        Me.lblPassengerName.Size = New System.Drawing.Size(212, 23)
+        Me.lblPassengerName.TabIndex = 12
         '
         'grpPayment
         '
@@ -303,10 +328,22 @@ Partial Class PaymentMake
         Me.grpPayment.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
         Me.grpPayment.Location = New System.Drawing.Point(295, 78)
         Me.grpPayment.Name = "grpPayment"
-        Me.grpPayment.Size = New System.Drawing.Size(462, 514)
+        Me.grpPayment.Size = New System.Drawing.Size(462, 590)
         Me.grpPayment.TabIndex = 20
         Me.grpPayment.TabStop = False
         Me.grpPayment.Text = "Make Payment"
+        '
+        'lblDiscount
+        '
+        Me.lblDiscount.AutoSize = True
+        Me.lblDiscount.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblDiscount.ForeColor = System.Drawing.Color.Black
+        Me.lblDiscount.Location = New System.Drawing.Point(173, 185)
+        Me.lblDiscount.Name = "lblDiscount"
+        Me.lblDiscount.Size = New System.Drawing.Size(172, 17)
+        Me.lblDiscount.TabIndex = 32
+        Me.lblDiscount.Text = "Discounted from RM40.00"
+        Me.lblDiscount.Visible = False
         '
         'Label9
         '
@@ -464,7 +501,7 @@ Partial Class PaymentMake
         Me.btnTransaction.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnTransaction.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnTransaction.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnTransaction.Location = New System.Drawing.Point(73, 253)
+        Me.btnTransaction.Location = New System.Drawing.Point(73, 969)
         Me.btnTransaction.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnTransaction.Name = "btnTransaction"
         Me.btnTransaction.Size = New System.Drawing.Size(192, 48)
@@ -481,7 +518,7 @@ Partial Class PaymentMake
         Me.btnStaffPromotion.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnStaffPromotion.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnStaffPromotion.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnStaffPromotion.Location = New System.Drawing.Point(73, 329)
+        Me.btnStaffPromotion.Location = New System.Drawing.Point(73, 1045)
         Me.btnStaffPromotion.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnStaffPromotion.Name = "btnStaffPromotion"
         Me.btnStaffPromotion.Size = New System.Drawing.Size(192, 48)
@@ -498,7 +535,7 @@ Partial Class PaymentMake
         Me.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnHome.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnHome.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnHome.Location = New System.Drawing.Point(73, 101)
+        Me.btnHome.Location = New System.Drawing.Point(73, 817)
         Me.btnHome.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnHome.Name = "btnHome"
         Me.btnHome.Size = New System.Drawing.Size(192, 48)
@@ -515,7 +552,7 @@ Partial Class PaymentMake
         Me.btnReservation.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnReservation.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnReservation.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnReservation.Location = New System.Drawing.Point(73, 177)
+        Me.btnReservation.Location = New System.Drawing.Point(73, 893)
         Me.btnReservation.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnReservation.Name = "btnReservation"
         Me.btnReservation.Size = New System.Drawing.Size(192, 48)
@@ -542,7 +579,7 @@ Partial Class PaymentMake
         Me.FlowLayoutPanel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(229, Byte), Integer), CType(CType(116, Byte), Integer), CType(CType(49, Byte), Integer))
         Me.FlowLayoutPanel3.Controls.Add(Me.Label1)
         Me.FlowLayoutPanel3.Controls.Add(Me.PictureBox1)
-        Me.FlowLayoutPanel3.Location = New System.Drawing.Point(0, 0)
+        Me.FlowLayoutPanel3.Location = New System.Drawing.Point(0, 716)
         Me.FlowLayoutPanel3.Margin = New System.Windows.Forms.Padding(0, 0, 0, 25)
         Me.FlowLayoutPanel3.Name = "FlowLayoutPanel3"
         Me.FlowLayoutPanel3.Size = New System.Drawing.Size(292, 74)
@@ -563,6 +600,7 @@ Partial Class PaymentMake
         '
         Me.FlowLayoutPanel1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.FlowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(53, Byte), Integer), CType(CType(65, Byte), Integer))
+        Me.FlowLayoutPanel1.Controls.Add(Me.ManagerMenuLayoutControl1)
         Me.FlowLayoutPanel1.Controls.Add(Me.FlowLayoutPanel3)
         Me.FlowLayoutPanel1.Controls.Add(Me.pbHome)
         Me.FlowLayoutPanel1.Controls.Add(Me.btnHome)
@@ -581,7 +619,7 @@ Partial Class PaymentMake
         'pbHome
         '
         Me.pbHome.Image = Global.PublicTransportTicketingSystem.My.Resources.Resources.home
-        Me.pbHome.Location = New System.Drawing.Point(13, 103)
+        Me.pbHome.Location = New System.Drawing.Point(13, 819)
         Me.pbHome.Margin = New System.Windows.Forms.Padding(13, 4, 4, 25)
         Me.pbHome.Name = "pbHome"
         Me.pbHome.Size = New System.Drawing.Size(53, 47)
@@ -592,7 +630,7 @@ Partial Class PaymentMake
         'pbReserve
         '
         Me.pbReserve.Image = Global.PublicTransportTicketingSystem.My.Resources.Resources.reserve
-        Me.pbReserve.Location = New System.Drawing.Point(13, 179)
+        Me.pbReserve.Location = New System.Drawing.Point(13, 895)
         Me.pbReserve.Margin = New System.Windows.Forms.Padding(13, 4, 4, 25)
         Me.pbReserve.Name = "pbReserve"
         Me.pbReserve.Size = New System.Drawing.Size(53, 47)
@@ -603,7 +641,7 @@ Partial Class PaymentMake
         'pbPurchase
         '
         Me.pbPurchase.Image = Global.PublicTransportTicketingSystem.My.Resources.Resources.purchase2
-        Me.pbPurchase.Location = New System.Drawing.Point(13, 255)
+        Me.pbPurchase.Location = New System.Drawing.Point(13, 971)
         Me.pbPurchase.Margin = New System.Windows.Forms.Padding(13, 4, 4, 25)
         Me.pbPurchase.Name = "pbPurchase"
         Me.pbPurchase.Size = New System.Drawing.Size(53, 47)
@@ -614,7 +652,7 @@ Partial Class PaymentMake
         'pbStaffPromotion
         '
         Me.pbStaffPromotion.Image = Global.PublicTransportTicketingSystem.My.Resources.Resources._2
-        Me.pbStaffPromotion.Location = New System.Drawing.Point(13, 331)
+        Me.pbStaffPromotion.Location = New System.Drawing.Point(13, 1047)
         Me.pbStaffPromotion.Margin = New System.Windows.Forms.Padding(13, 4, 4, 25)
         Me.pbStaffPromotion.Name = "pbStaffPromotion"
         Me.pbStaffPromotion.Size = New System.Drawing.Size(53, 47)
@@ -622,17 +660,13 @@ Partial Class PaymentMake
         Me.pbStaffPromotion.TabIndex = 12
         Me.pbStaffPromotion.TabStop = False
         '
-        'lblDiscount
+        'ManagerMenuLayoutControl1
         '
-        Me.lblDiscount.AutoSize = True
-        Me.lblDiscount.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblDiscount.ForeColor = System.Drawing.Color.Black
-        Me.lblDiscount.Location = New System.Drawing.Point(173, 185)
-        Me.lblDiscount.Name = "lblDiscount"
-        Me.lblDiscount.Size = New System.Drawing.Size(172, 17)
-        Me.lblDiscount.TabIndex = 32
-        Me.lblDiscount.Text = "Discounted from RM40.00"
-        Me.lblDiscount.Visible = False
+        Me.ManagerMenuLayoutControl1.Location = New System.Drawing.Point(4, 4)
+        Me.ManagerMenuLayoutControl1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.ManagerMenuLayoutControl1.Name = "ManagerMenuLayoutControl1"
+        Me.ManagerMenuLayoutControl1.Size = New System.Drawing.Size(1067, 708)
+        Me.ManagerMenuLayoutControl1.TabIndex = 14
         '
         'PaymentMake
         '
@@ -666,7 +700,7 @@ Partial Class PaymentMake
     End Sub
 
     Friend WithEvents Label14 As Label
-    Friend WithEvents lblLicensePlate As Label
+    Friend WithEvents lblCompany As Label
     Friend WithEvents Label13 As Label
     Friend WithEvents lblDestination As Label
     Friend WithEvents lblOrigin As Label
@@ -683,7 +717,7 @@ Partial Class PaymentMake
     Friend WithEvents Label6 As Label
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents Label2 As Label
-    Friend WithEvents lblCustomerName As Label
+    Friend WithEvents lblPassengerName As Label
     Friend WithEvents grpPayment As GroupBox
     Friend WithEvents Label9 As Label
     Friend WithEvents lblPrice As Label
@@ -710,4 +744,7 @@ Partial Class PaymentMake
     Friend WithEvents pbPurchase As PictureBox
     Friend WithEvents pbStaffPromotion As PictureBox
     Friend WithEvents lblDiscount As Label
+    Friend WithEvents lblLicensePlate As Label
+    Friend WithEvents Label4 As Label
+    Friend WithEvents ManagerMenuLayoutControl1 As managerMenuLayoutControl
 End Class

@@ -37,7 +37,7 @@ Partial Class PaymentCancel
         Me.btnStaffPromotion = New System.Windows.Forms.Button()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.lblSeat = New System.Windows.Forms.Label()
-        Me.lblLicenseType = New System.Windows.Forms.Label()
+        Me.lblCompany = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.lblDestination = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
@@ -60,12 +60,14 @@ Partial Class PaymentCancel
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.btnCheckTicketID = New System.Windows.Forms.Button()
-        Me.lblCustomerName = New System.Windows.Forms.Label()
+        Me.lblPassengerName = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.txtTicketID = New System.Windows.Forms.TextBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.lblLicensePlate = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
         Me.FlowLayoutPanel1.SuspendLayout()
         Me.FlowLayoutPanel3.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -249,7 +251,7 @@ Partial Class PaymentCancel
         '
         Me.Label14.AutoSize = True
         Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold)
-        Me.Label14.Location = New System.Drawing.Point(124, 348)
+        Me.Label14.Location = New System.Drawing.Point(124, 400)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(51, 24)
         Me.Label14.TabIndex = 25
@@ -258,28 +260,28 @@ Partial Class PaymentCancel
         'lblSeat
         '
         Me.lblSeat.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lblSeat.Location = New System.Drawing.Point(38, 372)
+        Me.lblSeat.Location = New System.Drawing.Point(38, 424)
         Me.lblSeat.Name = "lblSeat"
         Me.lblSeat.Size = New System.Drawing.Size(212, 23)
         Me.lblSeat.TabIndex = 26
         '
-        'lblLicenseType
+        'lblCompany
         '
-        Me.lblLicenseType.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lblLicenseType.Location = New System.Drawing.Point(38, 319)
-        Me.lblLicenseType.Name = "lblLicenseType"
-        Me.lblLicenseType.Size = New System.Drawing.Size(212, 23)
-        Me.lblLicenseType.TabIndex = 24
+        Me.lblCompany.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.lblCompany.Location = New System.Drawing.Point(38, 319)
+        Me.lblCompany.Name = "lblCompany"
+        Me.lblCompany.Size = New System.Drawing.Size(212, 23)
+        Me.lblCompany.TabIndex = 24
         '
         'Label13
         '
         Me.Label13.AutoSize = True
         Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold)
-        Me.Label13.Location = New System.Drawing.Point(77, 296)
+        Me.Label13.Location = New System.Drawing.Point(95, 296)
         Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(135, 24)
+        Me.Label13.Size = New System.Drawing.Size(98, 24)
         Me.Label13.TabIndex = 23
-        Me.Label13.Text = "License Plate"
+        Me.Label13.Text = "Company"
         '
         'lblDestination
         '
@@ -293,7 +295,7 @@ Partial Class PaymentCancel
         '
         Me.Label12.AutoSize = True
         Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold)
-        Me.Label12.Location = New System.Drawing.Point(94, 243)
+        Me.Label12.Location = New System.Drawing.Point(92, 243)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(113, 24)
         Me.Label12.TabIndex = 20
@@ -385,7 +387,7 @@ Partial Class PaymentCancel
         'lblPrice
         '
         Me.lblPrice.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lblPrice.Location = New System.Drawing.Point(38, 423)
+        Me.lblPrice.Location = New System.Drawing.Point(38, 475)
         Me.lblPrice.Name = "lblPrice"
         Me.lblPrice.Size = New System.Drawing.Size(212, 23)
         Me.lblPrice.TabIndex = 14
@@ -394,7 +396,7 @@ Partial Class PaymentCancel
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold)
-        Me.Label3.Location = New System.Drawing.Point(121, 399)
+        Me.Label3.Location = New System.Drawing.Point(121, 451)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(58, 24)
         Me.Label3.TabIndex = 13
@@ -404,7 +406,7 @@ Partial Class PaymentCancel
         '
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold)
-        Me.Label11.Location = New System.Drawing.Point(118, 190)
+        Me.Label11.Location = New System.Drawing.Point(115, 190)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(67, 24)
         Me.Label11.TabIndex = 19
@@ -505,13 +507,13 @@ Partial Class PaymentCancel
         Me.btnCheckTicketID.Text = "Check"
         Me.btnCheckTicketID.UseVisualStyleBackColor = True
         '
-        'lblCustomerName
+        'lblPassengerName
         '
-        Me.lblCustomerName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lblCustomerName.Location = New System.Drawing.Point(38, 59)
-        Me.lblCustomerName.Name = "lblCustomerName"
-        Me.lblCustomerName.Size = New System.Drawing.Size(212, 23)
-        Me.lblCustomerName.TabIndex = 12
+        Me.lblPassengerName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.lblPassengerName.Location = New System.Drawing.Point(38, 59)
+        Me.lblPassengerName.Name = "lblPassengerName"
+        Me.lblPassengerName.Size = New System.Drawing.Size(212, 23)
+        Me.lblPassengerName.TabIndex = 12
         '
         'GroupBox1
         '
@@ -525,7 +527,7 @@ Partial Class PaymentCancel
         Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
         Me.GroupBox1.Location = New System.Drawing.Point(293, 79)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(464, 505)
+        Me.GroupBox1.Size = New System.Drawing.Size(464, 543)
         Me.GroupBox1.TabIndex = 35
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Cancel Payment"
@@ -539,9 +541,11 @@ Partial Class PaymentCancel
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.lblLicensePlate)
+        Me.GroupBox2.Controls.Add(Me.Label5)
         Me.GroupBox2.Controls.Add(Me.lblSeat)
         Me.GroupBox2.Controls.Add(Me.Label14)
-        Me.GroupBox2.Controls.Add(Me.lblLicenseType)
+        Me.GroupBox2.Controls.Add(Me.lblCompany)
         Me.GroupBox2.Controls.Add(Me.Label13)
         Me.GroupBox2.Controls.Add(Me.lblDestination)
         Me.GroupBox2.Controls.Add(Me.lblOrigin)
@@ -554,11 +558,11 @@ Partial Class PaymentCancel
         Me.GroupBox2.Controls.Add(Me.lblDepartureDate)
         Me.GroupBox2.Controls.Add(Me.Label6)
         Me.GroupBox2.Controls.Add(Me.Label2)
-        Me.GroupBox2.Controls.Add(Me.lblCustomerName)
+        Me.GroupBox2.Controls.Add(Me.lblPassengerName)
         Me.GroupBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
         Me.GroupBox2.Location = New System.Drawing.Point(763, 79)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(292, 505)
+        Me.GroupBox2.Size = New System.Drawing.Size(292, 543)
         Me.GroupBox2.TabIndex = 36
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Ticket Details"
@@ -567,11 +571,11 @@ Partial Class PaymentCancel
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(65, 35)
+        Me.Label2.Location = New System.Drawing.Point(61, 35)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(160, 24)
+        Me.Label2.Size = New System.Drawing.Size(170, 24)
         Me.Label2.TabIndex = 11
-        Me.Label2.Text = "Customer Name"
+        Me.Label2.Text = "Passenger Name"
         '
         'Panel1
         '
@@ -589,6 +593,24 @@ Partial Class PaymentCancel
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(773, 71)
         Me.Panel1.TabIndex = 34
+        '
+        'lblLicensePlate
+        '
+        Me.lblLicensePlate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.lblLicensePlate.Location = New System.Drawing.Point(38, 372)
+        Me.lblLicensePlate.Name = "lblLicensePlate"
+        Me.lblLicensePlate.Size = New System.Drawing.Size(212, 23)
+        Me.lblLicensePlate.TabIndex = 28
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold)
+        Me.Label5.Location = New System.Drawing.Point(78, 349)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(135, 24)
+        Me.Label5.TabIndex = 27
+        Me.Label5.Text = "License Plate"
         '
         'PaymentCancel
         '
@@ -634,7 +656,7 @@ Partial Class PaymentCancel
     Friend WithEvents btnStaffPromotion As Button
     Friend WithEvents Label14 As Label
     Friend WithEvents lblSeat As Label
-    Friend WithEvents lblLicenseType As Label
+    Friend WithEvents lblCompany As Label
     Friend WithEvents Label13 As Label
     Friend WithEvents lblDestination As Label
     Friend WithEvents Label12 As Label
@@ -657,10 +679,12 @@ Partial Class PaymentCancel
     Friend WithEvents Label8 As Label
     Friend WithEvents Label6 As Label
     Friend WithEvents btnCheckTicketID As Button
-    Friend WithEvents lblCustomerName As Label
+    Friend WithEvents lblPassengerName As Label
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents txtTicketID As TextBox
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents Label2 As Label
     Friend WithEvents Panel1 As Panel
+    Friend WithEvents lblLicensePlate As Label
+    Friend WithEvents Label5 As Label
 End Class

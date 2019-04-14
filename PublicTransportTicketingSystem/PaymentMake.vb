@@ -7,10 +7,17 @@
         Dim printTicket As PaymentPrintTicket
         printTicket = New PaymentPrintTicket()
         printTicket.Show()
-
     End Sub
 
     Private Sub Label13_Click(sender As Object, e As EventArgs) Handles Label13.Click
+
+    End Sub
+
+    Private Sub Label4_Click(sender As Object, e As EventArgs) Handles Label4.Click
+
+    End Sub
+
+    Private Sub Label3_Click(sender As Object, e As EventArgs) Handles lblLicensePlate.Click
 
     End Sub
 End Class

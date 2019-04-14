@@ -41,7 +41,7 @@ Partial Class PaymentPrintTicket
         Me.lblEstimatedDuration = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
+        Me.lblTicketID2 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'lblSeat
@@ -191,6 +191,9 @@ Partial Class PaymentPrintTicket
         Me.lblTicketID.Text = "B000123"
         Me.lblTicketID.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
+        'PrintDocument1
+        '
+        '
         'Label5
         '
         Me.Label5.AutoSize = True
@@ -238,18 +241,17 @@ Partial Class PaymentPrintTicket
         Me.Label3.Text = "This ticket was generated at 12:56pm on 11/04/2019."
         Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'Label4
+        'lblTicketID2
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.BackColor = System.Drawing.Color.Transparent
-        Me.Label4.Font = New System.Drawing.Font("Courier New", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(825, 48)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Padding = New System.Windows.Forms.Padding(10, 0, 10, 0)
-        Me.Label4.Size = New System.Drawing.Size(114, 23)
-        Me.Label4.TabIndex = 51
-        Me.Label4.Text = "B000123"
-        Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.lblTicketID2.AutoSize = True
+        Me.lblTicketID2.BackColor = System.Drawing.Color.Transparent
+        Me.lblTicketID2.Font = New System.Drawing.Font("Courier New", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTicketID2.Location = New System.Drawing.Point(825, 39)
+        Me.lblTicketID2.Name = "lblTicketID2"
+        Me.lblTicketID2.Size = New System.Drawing.Size(94, 23)
+        Me.lblTicketID2.TabIndex = 51
+        Me.lblTicketID2.Text = "B000123"
+        Me.lblTicketID2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'PaymentPrintTicket
         '
@@ -257,7 +259,7 @@ Partial Class PaymentPrintTicket
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.ClientSize = New System.Drawing.Size(950, 220)
-        Me.Controls.Add(Me.Label4)
+        Me.Controls.Add(Me.lblTicketID2)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.lblEstimatedDuration)
@@ -301,5 +303,5 @@ Partial Class PaymentPrintTicket
     Friend WithEvents lblEstimatedDuration As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents Label3 As Label
-    Friend WithEvents Label4 As Label
+    Friend WithEvents lblTicketID2 As Label
 End Class

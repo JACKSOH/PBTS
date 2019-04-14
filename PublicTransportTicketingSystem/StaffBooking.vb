@@ -2,13 +2,13 @@
 
 Public Class StaffBooking
     Dim SqlConnection As New SqlConnection
-    Public Const connection As String = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\boonk\Source\Repos\JACKSOH\PBTS\PublicTransportTicketingSystem\PTTS.mdf;Integrated Security=True"
+    Public Const connection As String = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\chunl\OneDrive\Desktop\PBTS\PublicTransportTicketingSystem\PTTS.mdf;Integrated Security=True"
     Public retrieveLocation As String
     Public selectedDate As Date
     Public selectedOrigin As String
     Public selectedDestination As String
 
-    Private Sub StaffMenuLayoutControl1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub StaffMenuLayoutControl1_Load(sender As Object, e As EventArgs) Handles MyBase.Load, TranportSelection1.TransportChange
         'TODO: This line of code loads data into the 'PTTSDataSet.Location' table. You can move, or remove it, as needed.
         RetrieveOrigin()
 
@@ -20,10 +20,12 @@ Public Class StaffBooking
         Try
             SqlConnection.ConnectionString = connection
             SqlConnection.Open()
-            Dim command As New SqlCommand("select * from Location", SqlConnection)
+            Dim command As New SqlCommand("select * from Location WHERE locationType = @type", SqlConnection)
+            command.Parameters.Add("@type", SqlDbType.VarChar).Value = TranportSelection1.txtTransType.Text.ToString
             Dim adapter As New SqlDataAdapter(command)
             Dim reader As SqlDataReader
             reader = command.ExecuteReader
+            cboOrigin.Items.Clear()
 
             While reader.Read
                 retrieveLocation = reader.GetString(1)
@@ -42,8 +44,9 @@ Public Class StaffBooking
         Try
             SqlConnection.ConnectionString = connection
             SqlConnection.Open()
-            Dim command As New SqlCommand("select * from Location where locationName !=@selectedOrigin", SqlConnection)
+            Dim command As New SqlCommand("select * from Location where locationName !=@selectedOrigin and locationType = @type", SqlConnection)
             command.Parameters.Add("@selectedOrigin", SqlDbType.VarChar).Value = cboOrigin.SelectedItem
+            command.Parameters.Add("@type", SqlDbType.VarChar).Value = TranportSelection1.txtTransType.Text.ToString
             Dim adapter As New SqlDataAdapter(command)
             Dim reader As SqlDataReader
             reader = command.ExecuteReader
@@ -67,7 +70,7 @@ Public Class StaffBooking
 
     Private Sub btnSearch_Click(sender As Object, e As EventArgs) Handles btnSearch.Click
         Dim selectedDateTime As DateTime = dtpDeparture.Value
-        selectedDate = selectedDateTime.Date
+        selectedDate = selectedDateTime
 
         If cboOrigin.SelectedIndex = -1 Then
             cboOrigin.Select()
@@ -79,14 +82,23 @@ Public Class StaffBooking
             MessageBox.Show("Please select the Destination..", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End If
 
-        selectedOrigin = cboOrigin.SelectedItem.ToString
-        selectedDestination = cboDestination.SelectedItem.ToString
+        If cboOrigin.SelectedIndex > -1 And cboDestination.SelectedIndex > -1 Then
+            selectedOrigin = cboOrigin.SelectedItem.ToString
+            selectedDestination = cboDestination.SelectedItem.ToString
 
-        staffBookingSchedule.Show()
-        Me.Hide()
-    End Sub
+            staffBookingSchedule.Show()
+            Me.Hide()
+        End If
 
     Private Sub StaffMenuLayoutControl1_Load_1(sender As Object, e As EventArgs) Handles StaffMenuLayoutControl1.Load
+
+
+
+    End Sub
+
+    Private Sub TranportSelection1_Load(sender As Object, e As EventArgs) Handles TranportSelection1.TransportChange
+        RetrieveOrigin()
+        cboOrigin.Text = "Origin"
 
     End Sub
 End Class

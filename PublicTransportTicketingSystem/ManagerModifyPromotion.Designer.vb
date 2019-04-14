@@ -23,10 +23,13 @@ Partial Class ManagerModifyPromotion
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.gbModifyPromotion = New System.Windows.Forms.GroupBox()
+        Me.radCustomDiscount = New System.Windows.Forms.RadioButton()
+        Me.radFullDiscount = New System.Windows.Forms.RadioButton()
+        Me.lblErrorName = New System.Windows.Forms.Label()
+        Me.txtPromotionName = New System.Windows.Forms.TextBox()
         Me.lstSchedule = New System.Windows.Forms.ListBox()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.Label10 = New System.Windows.Forms.Label()
+        Me.lblTransport = New System.Windows.Forms.Label()
         Me.nupCustomDiscount = New System.Windows.Forms.NumericUpDown()
         Me.lblPromotionDate = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -38,26 +41,21 @@ Partial Class ManagerModifyPromotion
         Me.btnCancel = New System.Windows.Forms.Button()
         Me.btnUpdate = New System.Windows.Forms.Button()
         Me.ManagerMenuLayoutControl1 = New PublicTransportTicketingSystem.managerMenuLayoutControl()
-        Me.txtPromotionName = New System.Windows.Forms.TextBox()
-        Me.lblErrorName = New System.Windows.Forms.Label()
-        Me.radFullDiscount = New System.Windows.Forms.RadioButton()
-        Me.radCustomDiscount = New System.Windows.Forms.RadioButton()
+        Me.gpDiscount = New System.Windows.Forms.GroupBox()
         Me.gbModifyPromotion.SuspendLayout()
         CType(Me.nupCustomDiscount, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.gpDiscount.SuspendLayout()
         Me.SuspendLayout()
         '
         'gbModifyPromotion
         '
         Me.gbModifyPromotion.BackColor = System.Drawing.SystemColors.Control
-        Me.gbModifyPromotion.Controls.Add(Me.radCustomDiscount)
-        Me.gbModifyPromotion.Controls.Add(Me.radFullDiscount)
+        Me.gbModifyPromotion.Controls.Add(Me.gpDiscount)
         Me.gbModifyPromotion.Controls.Add(Me.lblErrorName)
         Me.gbModifyPromotion.Controls.Add(Me.txtPromotionName)
         Me.gbModifyPromotion.Controls.Add(Me.lstSchedule)
         Me.gbModifyPromotion.Controls.Add(Me.Label6)
-        Me.gbModifyPromotion.Controls.Add(Me.Label11)
-        Me.gbModifyPromotion.Controls.Add(Me.Label10)
-        Me.gbModifyPromotion.Controls.Add(Me.nupCustomDiscount)
+        Me.gbModifyPromotion.Controls.Add(Me.lblTransport)
         Me.gbModifyPromotion.Controls.Add(Me.lblPromotionDate)
         Me.gbModifyPromotion.Controls.Add(Me.Label5)
         Me.gbModifyPromotion.Controls.Add(Me.lblPromotionID)
@@ -76,13 +74,54 @@ Partial Class ManagerModifyPromotion
         Me.gbModifyPromotion.TabStop = False
         Me.gbModifyPromotion.Text = "Modify Promotion"
         '
+        'radCustomDiscount
+        '
+        Me.radCustomDiscount.AutoSize = True
+        Me.radCustomDiscount.Location = New System.Drawing.Point(10, 51)
+        Me.radCustomDiscount.Name = "radCustomDiscount"
+        Me.radCustomDiscount.Size = New System.Drawing.Size(140, 22)
+        Me.radCustomDiscount.TabIndex = 52
+        Me.radCustomDiscount.TabStop = True
+        Me.radCustomDiscount.Text = "Custom Set Discount"
+        Me.radCustomDiscount.UseVisualStyleBackColor = True
+        '
+        'radFullDiscount
+        '
+        Me.radFullDiscount.AutoSize = True
+        Me.radFullDiscount.Location = New System.Drawing.Point(10, 23)
+        Me.radFullDiscount.Name = "radFullDiscount"
+        Me.radFullDiscount.Size = New System.Drawing.Size(127, 22)
+        Me.radFullDiscount.TabIndex = 51
+        Me.radFullDiscount.TabStop = True
+        Me.radFullDiscount.Text = "Free Ride / Board"
+        Me.radFullDiscount.UseVisualStyleBackColor = True
+        '
+        'lblErrorName
+        '
+        Me.lblErrorName.AutoSize = True
+        Me.lblErrorName.ForeColor = System.Drawing.Color.Red
+        Me.lblErrorName.Location = New System.Drawing.Point(302, 68)
+        Me.lblErrorName.Name = "lblErrorName"
+        Me.lblErrorName.Size = New System.Drawing.Size(140, 18)
+        Me.lblErrorName.TabIndex = 50
+        Me.lblErrorName.Text = "*Please fill in the name"
+        Me.lblErrorName.Visible = False
+        '
+        'txtPromotionName
+        '
+        Me.txtPromotionName.Location = New System.Drawing.Point(302, 41)
+        Me.txtPromotionName.Name = "txtPromotionName"
+        Me.txtPromotionName.Size = New System.Drawing.Size(156, 24)
+        Me.txtPromotionName.TabIndex = 49
+        '
         'lstSchedule
         '
+        Me.lstSchedule.Font = New System.Drawing.Font("Tw Cen MT", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lstSchedule.FormattingEnabled = True
-        Me.lstSchedule.ItemHeight = 18
-        Me.lstSchedule.Location = New System.Drawing.Point(28, 165)
+        Me.lstSchedule.ItemHeight = 17
+        Me.lstSchedule.Location = New System.Drawing.Point(29, 180)
         Me.lstSchedule.Name = "lstSchedule"
-        Me.lstSchedule.Size = New System.Drawing.Size(229, 130)
+        Me.lstSchedule.Size = New System.Drawing.Size(229, 191)
         Me.lstSchedule.TabIndex = 46
         '
         'Label6
@@ -94,28 +133,19 @@ Partial Class ManagerModifyPromotion
         Me.Label6.TabIndex = 45
         Me.Label6.Text = "Promotion Name"
         '
-        'Label11
+        'lblTransport
         '
-        Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(26, 147)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(62, 18)
-        Me.Label11.TabIndex = 44
-        Me.Label11.Text = "Transport"
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(299, 277)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(56, 18)
-        Me.Label10.TabIndex = 43
-        Me.Label10.Text = "Discount"
+        Me.lblTransport.AutoSize = True
+        Me.lblTransport.Location = New System.Drawing.Point(26, 154)
+        Me.lblTransport.Name = "lblTransport"
+        Me.lblTransport.Size = New System.Drawing.Size(62, 18)
+        Me.lblTransport.TabIndex = 44
+        Me.lblTransport.Text = "Transport"
         '
         'nupCustomDiscount
         '
         Me.nupCustomDiscount.Enabled = False
-        Me.nupCustomDiscount.Location = New System.Drawing.Point(320, 355)
+        Me.nupCustomDiscount.Location = New System.Drawing.Point(31, 79)
         Me.nupCustomDiscount.Maximum = New Decimal(New Integer() {99, 0, 0, 0})
         Me.nupCustomDiscount.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.nupCustomDiscount.Name = "nupCustomDiscount"
@@ -126,6 +156,7 @@ Partial Class ManagerModifyPromotion
         '
         'lblPromotionDate
         '
+        Me.lblPromotionDate.Font = New System.Drawing.Font("Tw Cen MT", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblPromotionDate.Location = New System.Drawing.Point(26, 105)
         Me.lblPromotionDate.Name = "lblPromotionDate"
         Me.lblPromotionDate.Size = New System.Drawing.Size(168, 18)
@@ -142,6 +173,8 @@ Partial Class ManagerModifyPromotion
         '
         'lblPromotionID
         '
+        Me.lblPromotionID.Font = New System.Drawing.Font("Tw Cen MT", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPromotionID.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblPromotionID.Location = New System.Drawing.Point(26, 51)
         Me.lblPromotionID.Name = "lblPromotionID"
         Me.lblPromotionID.Size = New System.Drawing.Size(152, 19)
@@ -151,6 +184,8 @@ Partial Class ManagerModifyPromotion
         'Label3
         '
         Me.Label3.AutoSize = True
+        Me.Label3.BackColor = System.Drawing.SystemColors.Control
+        Me.Label3.ForeColor = System.Drawing.Color.Black
         Me.Label3.Location = New System.Drawing.Point(25, 33)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(84, 18)
@@ -159,7 +194,7 @@ Partial Class ManagerModifyPromotion
         '
         'txtPromotionDesc
         '
-        Me.txtPromotionDesc.Location = New System.Drawing.Point(302, 133)
+        Me.txtPromotionDesc.Location = New System.Drawing.Point(302, 257)
         Me.txtPromotionDesc.Multiline = True
         Me.txtPromotionDesc.Name = "txtPromotionDesc"
         Me.txtPromotionDesc.Size = New System.Drawing.Size(206, 125)
@@ -168,7 +203,7 @@ Partial Class ManagerModifyPromotion
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(299, 105)
+        Me.Label2.Location = New System.Drawing.Point(299, 236)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(131, 18)
         Me.Label2.TabIndex = 31
@@ -216,45 +251,17 @@ Partial Class ManagerModifyPromotion
         Me.ManagerMenuLayoutControl1.Size = New System.Drawing.Size(800, 575)
         Me.ManagerMenuLayoutControl1.TabIndex = 0
         '
-        'txtPromotionName
+        'gpDiscount
         '
-        Me.txtPromotionName.Location = New System.Drawing.Point(302, 41)
-        Me.txtPromotionName.Name = "txtPromotionName"
-        Me.txtPromotionName.Size = New System.Drawing.Size(156, 24)
-        Me.txtPromotionName.TabIndex = 49
-        '
-        'lblErrorName
-        '
-        Me.lblErrorName.AutoSize = True
-        Me.lblErrorName.ForeColor = System.Drawing.Color.Red
-        Me.lblErrorName.Location = New System.Drawing.Point(302, 68)
-        Me.lblErrorName.Name = "lblErrorName"
-        Me.lblErrorName.Size = New System.Drawing.Size(140, 18)
-        Me.lblErrorName.TabIndex = 50
-        Me.lblErrorName.Text = "*Please fill in the name"
-        Me.lblErrorName.Visible = False
-        '
-        'radFullDiscount
-        '
-        Me.radFullDiscount.AutoSize = True
-        Me.radFullDiscount.Location = New System.Drawing.Point(302, 299)
-        Me.radFullDiscount.Name = "radFullDiscount"
-        Me.radFullDiscount.Size = New System.Drawing.Size(127, 22)
-        Me.radFullDiscount.TabIndex = 51
-        Me.radFullDiscount.TabStop = True
-        Me.radFullDiscount.Text = "Free Ride / Board"
-        Me.radFullDiscount.UseVisualStyleBackColor = True
-        '
-        'radCustomDiscount
-        '
-        Me.radCustomDiscount.AutoSize = True
-        Me.radCustomDiscount.Location = New System.Drawing.Point(302, 327)
-        Me.radCustomDiscount.Name = "radCustomDiscount"
-        Me.radCustomDiscount.Size = New System.Drawing.Size(140, 22)
-        Me.radCustomDiscount.TabIndex = 52
-        Me.radCustomDiscount.TabStop = True
-        Me.radCustomDiscount.Text = "Custom Set Discount"
-        Me.radCustomDiscount.UseVisualStyleBackColor = True
+        Me.gpDiscount.Controls.Add(Me.radFullDiscount)
+        Me.gpDiscount.Controls.Add(Me.radCustomDiscount)
+        Me.gpDiscount.Controls.Add(Me.nupCustomDiscount)
+        Me.gpDiscount.Location = New System.Drawing.Point(303, 99)
+        Me.gpDiscount.Name = "gpDiscount"
+        Me.gpDiscount.Size = New System.Drawing.Size(200, 117)
+        Me.gpDiscount.TabIndex = 53
+        Me.gpDiscount.TabStop = False
+        Me.gpDiscount.Text = "Discount"
         '
         'ManagerModifyPromotion
         '
@@ -269,6 +276,8 @@ Partial Class ManagerModifyPromotion
         Me.gbModifyPromotion.ResumeLayout(False)
         Me.gbModifyPromotion.PerformLayout()
         CType(Me.nupCustomDiscount, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.gpDiscount.ResumeLayout(False)
+        Me.gpDiscount.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -283,8 +292,7 @@ Partial Class ManagerModifyPromotion
     Friend WithEvents Label1 As Label
     Friend WithEvents btnCancel As Button
     Friend WithEvents btnUpdate As Button
-    Friend WithEvents Label11 As Label
-    Friend WithEvents Label10 As Label
+    Friend WithEvents lblTransport As Label
     Friend WithEvents lblPromotionDate As Label
     Friend WithEvents lstSchedule As ListBox
     Friend WithEvents Label6 As Label
@@ -293,4 +301,5 @@ Partial Class ManagerModifyPromotion
     Friend WithEvents radFullDiscount As RadioButton
     Friend WithEvents lblErrorName As Label
     Friend WithEvents txtPromotionName As TextBox
+    Friend WithEvents gpDiscount As GroupBox
 End Class

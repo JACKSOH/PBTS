@@ -41,7 +41,6 @@ Public Class ManageCreatePromotionPart2
     Private Sub DataBind(t As String)
         Try
             Dim db As New PBTSDataContext()
-
             Dim query = From transport In db.Transports
                         Join schedule In db.Schedules On transport.transportID Equals (schedule.transportID)
                         Where schedule.departureDateTime.Value.Date >= ManagerCreatePromotion.startDate And schedule.departureDateTime.Value.Date <= ManagerCreatePromotion.endDate And transport.transportType = selectedTransport
@@ -52,8 +51,6 @@ Public Class ManageCreatePromotionPart2
             dgvSchedule.Columns("transportID").HeaderText = "Transport"
             dgvSchedule.Columns("transportType").HeaderText = "Type"
             lblCount.Text = query.Count.ToString("0 record(s)")
-
-            count = query.Count - 1
 
         Catch ex As Exception
 
@@ -67,7 +64,6 @@ Public Class ManageCreatePromotionPart2
                                                       MessageBoxIcon.Question)
 
         If (result = DialogResult.Yes) Then
-
 
             Dim con As New SqlConnection
             Dim cmd As New SqlCommand
@@ -106,7 +102,7 @@ Public Class ManageCreatePromotionPart2
                 MessageBox.Show("Invalid" & ex.Message)
             Finally
                 con.Close()
-                Me.Close()
+                ManagerViewPromotion.Show()
             End Try
 
         Else

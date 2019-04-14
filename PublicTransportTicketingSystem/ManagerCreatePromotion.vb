@@ -1,11 +1,11 @@
 ﻿Public Class ManagerCreatePromotion
-    Friend discountRate As Double
+    Friend discountRate As Integer
     Friend endDate As Date
     Friend promotionName As String
     Friend promotionDesc As String
     Friend startDate As Date
     Dim days As Integer
-    Dim customDiscount As Double = 1
+    Dim customDiscount As Integer = 1
 
     Private Sub radFullDiscount_CheckedChanged(sender As Object, e As EventArgs) Handles radFullDiscount.CheckedChanged
         nupCustomDiscount.Enabled = False
@@ -33,6 +33,7 @@
 
     Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
         Me.Close()
+        ManagerViewPromotion.Show()
     End Sub
 
     Private Sub dpPromotionStartDate_ValueChanged(sender As Object, e As EventArgs) Handles dpPromotionStartDate.ValueChanged
@@ -45,7 +46,7 @@
     End Sub
 
     Private Sub nupCustomDiscount_ValueChanged(sender As Object, e As EventArgs) Handles nupCustomDiscount.ValueChanged
-        customDiscount = Double.Parse(nupCustomDiscount.Value.ToString)
+        customDiscount = Integer.Parse(nupCustomDiscount.Value.ToString)
         discountRate = customDiscount
     End Sub
 End Class

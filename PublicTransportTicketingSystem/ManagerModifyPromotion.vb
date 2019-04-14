@@ -5,6 +5,7 @@ Public Class ManagerModifyPromotion
     Private con As New SqlConnection
     Private startDate As Date
     Private endDate As Date
+    Private discount As Integer
 
     Private Sub ManagerMenuLayoutControl1_Load(sender As Object, e As EventArgs) Handles ManagerMenuLayoutControl1.Load
         lblPromotionID.Text = ManagerViewPromotion.id
@@ -12,10 +13,20 @@ Public Class ManagerModifyPromotion
         lblPromotionDate.Text = ManagerViewPromotion.psdate.Substring(0, 9)
         lblPromotionDate.Text += "  -  " & ManagerViewPromotion.pedate.Substring(0, 9)
         txtPromotionDesc.Text = ManagerViewPromotion.pdesc
+        lblTransport.Text = ManagerViewPromotion.selectedTransport + "Schedule"
+        lstSchedule.Enabled = False
+
+        If (ManagerViewPromotion.discount < 100) Then
+            radCustomDiscount.Checked = True
+            nupCustomDiscount.Value = ManagerViewPromotion.discount
+            nupCustomDiscount.Visible = True
+            nupCustomDiscount.Enabled = True
+        Else
+            nupCustomDiscount.Enabled = False
+            radFullDiscount.Checked = True
+        End If
 
         SearchPromotion()
-
-
     End Sub
 
     Public Sub SearchPromotion()
@@ -53,28 +64,39 @@ Public Class ManagerModifyPromotion
 
     Public Sub UpdatePromotion()
 
-
         If (txtPromotionName.Text <> "") Then
 
-            Try
-                con.ConnectionString = StaffBooking.connection
-                con.Open()
-                Dim command As New SqlCommand("UPDATE Promotion Set promotionName = @promotionName, promotionStartDate = @promotionStartDate, promotionEndDate = @promotionEndDate , promotionDesc = @promotionDesc, promotionStatus = @promotionStatus WHERE promotionID = @promotionID", con)
-                command.Parameters.Add(New SqlParameter("promotionID", ManagerViewPromotion.id))
-                command.Parameters.Add(New SqlParameter("promotionName", txtPromotionName.Text))
-                command.Parameters.Add(New SqlParameter("promotionStartDate", startDate))
-                command.Parameters.Add(New SqlParameter("promotionEndDate", endDate))
-                command.Parameters.Add(New SqlParameter("promotionDesc", txtPromotionDesc.Text))
-                command.Parameters.Add(New SqlParameter("promotionStatus", "Active"))
-                command.ExecuteNonQuery()
-                con.Close()
+            Dim result As DialogResult = MessageBox.Show("Are you sure want to modify a new promotion?", "Confirmation",
+                                                      MessageBoxButtons.YesNoCancel,
+                                                      MessageBoxIcon.Question)
+            If (result = DialogResult.Yes) Then
+                Try
+                    con.ConnectionString = StaffBooking.connection
+                    con.Open()
+                    Dim command As New SqlCommand("UPDATE Promotion Set promotionName = @promotionName, promotionStartDate = @promotionStartDate, promotionEndDate = @promotionEndDate , promotionDesc = @promotionDesc, promotionStatus = @promotionStatus WHERE promotionID = @promotionID", con)
+                    command.Parameters.Add(New SqlParameter("promotionID", ManagerViewPromotion.id))
+                    command.Parameters.Add(New SqlParameter("promotionName", txtPromotionName.Text))
+                    command.Parameters.Add(New SqlParameter("promotionStartDate", startDate))
+                    command.Parameters.Add(New SqlParameter("promotionEndDate", endDate))
+                    command.Parameters.Add(New SqlParameter("promotionDesc", txtPromotionDesc.Text))
+                    command.Parameters.Add(New SqlParameter("promotionStatus", "Active"))
+                    command.ExecuteNonQuery()
+                    con.Close()
 
-            Catch ex As Exception
-                MessageBox.Show("Invalid" & ex.Message)
-            Finally
-                End
-            End Try
+                    con.Open()
+                    Dim command1 As New SqlCommand("UPDATE promoteSchedule Set discountRate = @discountRate Where promotionID = @promotionID", con)
+                    command1.Parameters.Add(New SqlParameter("discountRate", discount))
+                    command1.Parameters.Add(New SqlParameter("promotionID", ManagerViewPromotion.id))
+                    command1.ExecuteNonQuery()
+                    con.Close()
 
+
+                Catch ex As Exception
+                    MessageBox.Show("Invalid" & ex.Message)
+                Finally
+                    End
+                End Try
+            End If
         Else
             lblErrorName.Visible = True
         End If
@@ -83,5 +105,24 @@ Public Class ManagerModifyPromotion
 
     Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
         UpdatePromotion()
+    End Sub
+
+    Private Sub radFullDiscount_CheckedChanged(sender As Object, e As EventArgs) Handles radFullDiscount.CheckedChanged
+        discount = 100
+    End Sub
+
+    Private Sub radCustomDiscount_CheckedChanged(sender As Object, e As EventArgs) Handles radCustomDiscount.CheckedChanged
+        discount = Integer.Parse(nupCustomDiscount.Value.ToString)
+        nupCustomDiscount.Visible = True
+        nupCustomDiscount.Enabled = True
+    End Sub
+
+    Private Sub nupCustomDiscount_ValueChanged(sender As Object, e As EventArgs) Handles nupCustomDiscount.ValueChanged
+        discount = Integer.Parse(nupCustomDiscount.Value.ToString)
+    End Sub
+
+    Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
+        Me.Close()
+        ManagerViewPromotion.Show()
     End Sub
 End Class

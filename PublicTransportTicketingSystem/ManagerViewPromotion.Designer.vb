@@ -136,7 +136,6 @@ Partial Class ManagerViewPromotion
         Me.gbBus.Controls.Add(Me.txtPromotionID)
         Me.gbBus.Controls.Add(Me.Label5)
         Me.gbBus.Font = New System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.gbBus.ForeColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(53, Byte), Integer), CType(CType(65, Byte), Integer))
         Me.gbBus.Location = New System.Drawing.Point(252, 83)
         Me.gbBus.Name = "gbBus"
         Me.gbBus.Size = New System.Drawing.Size(536, 417)
@@ -147,7 +146,7 @@ Partial Class ManagerViewPromotion
         'btnClear
         '
         Me.btnClear.AccessibleRole = System.Windows.Forms.AccessibleRole.Pane
-        Me.btnClear.BackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(53, Byte), Integer), CType(CType(65, Byte), Integer))
+        Me.btnClear.BackColor = System.Drawing.Color.Gray
         Me.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnClear.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.btnClear.Location = New System.Drawing.Point(415, 26)
@@ -159,11 +158,14 @@ Partial Class ManagerViewPromotion
         '
         'dgvPromotionList
         '
+        Me.dgvPromotionList.AllowUserToAddRows = False
+        Me.dgvPromotionList.AllowUserToDeleteRows = False
         Me.dgvPromotionList.BackgroundColor = System.Drawing.SystemColors.ControlLightLight
         Me.dgvPromotionList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvPromotionList.GridColor = System.Drawing.SystemColors.ControlLightLight
         Me.dgvPromotionList.Location = New System.Drawing.Point(29, 138)
         Me.dgvPromotionList.Name = "dgvPromotionList"
+        Me.dgvPromotionList.ReadOnly = True
         DataGridViewCellStyle1.Font = New System.Drawing.Font("Tw Cen MT", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Black
         Me.dgvPromotionList.RowsDefaultCellStyle = DataGridViewCellStyle1

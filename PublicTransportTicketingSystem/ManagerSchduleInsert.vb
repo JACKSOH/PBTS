@@ -1,6 +1,6 @@
 ﻿Public Class ManagerSchduleInsert
     Public newId As String
-    Public selectedType As String = ManagerManageSchedule.TranportSelection1.selectedType
+    Public selectedType As String = ManagerManageSchedule.ts.selectedType
 
 
     Public Sub BindcboTranport()

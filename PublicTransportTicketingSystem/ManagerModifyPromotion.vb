@@ -1,40 +1,87 @@
 ﻿Imports System.Data.SqlClient
 
 Public Class ManagerModifyPromotion
+
+    Private con As New SqlConnection
+    Private startDate As Date
+    Private endDate As Date
+
     Private Sub ManagerMenuLayoutControl1_Load(sender As Object, e As EventArgs) Handles ManagerMenuLayoutControl1.Load
         lblPromotionID.Text = ManagerViewPromotion.id
-        lblPromotionName.Text = ManagerViewPromotion.pname
+        txtPromotionName.Text = ManagerViewPromotion.pname
         lblPromotionDate.Text = ManagerViewPromotion.psdate.Substring(0, 9)
         lblPromotionDate.Text += "  -  " & ManagerViewPromotion.pedate.Substring(0, 9)
         txtPromotionDesc.Text = ManagerViewPromotion.pdesc
+
+        SearchPromotion()
+
+
     End Sub
 
-    Public Sub DataBind()
-        Dim con As New SqlConnection
-        Dim cmd As New SqlCommand
-
+    Public Sub SearchPromotion()
         Try
-            Dim db As New PBTSDataContext()
+            con.ConnectionString = StaffBooking.connection
+            con.Open()
+            Dim command As New SqlCommand("select * from Promotion where promotionID = '" & ManagerViewPromotion.id & "'", con)
+            Dim adapter As New SqlDataAdapter(command)
+            Dim reader As SqlDataReader
+            reader = command.ExecuteReader
 
-            'Dim query = From transport In db.Transports
-            '            Join schedule In db.Schedules On transport.transportID Equals (schedule.transportID)
-            '            Where schedule.departureDateTime.Value.Date >= ManagerCreatePromotion.startDate And schedule.departureDateTime.Value.Date <= ManagerCreatePromotion.endDate And transport.transportType = selectedTransport
-            '            Select schedule.scheduleID, schedule.departureDateTime, transport.transportID, transport.transportType
-            'dgvSchedule.DataSource = query
-            'dgvSchedule.Columns("scheduleID").HeaderText = "Schedule"
-            'dgvSchedule.Columns("departureDateTime").HeaderText = "Date"
-            'dgvSchedule.Columns("transportID").HeaderText = "Transport"
-            'dgvSchedule.Columns("transportType").HeaderText = "Type"
-            'lblCount.Text = query.Count.ToString("0 record(s)")
+            If (reader.Read) Then
+                startDate = reader.GetDateTime(2)
+                endDate = reader.GetDateTime(3)
+            End If
+            con.Close()
 
-            'count = query.Count - 1
+            con.Open()
+            Dim command1 As New SqlCommand("select * from PromoteSchedule where promotionID = '" & ManagerViewPromotion.id & "'", con)
+            Dim adapter1 As New SqlDataAdapter(command1)
+            Dim reader1 As SqlDataReader
+            reader1 = command1.ExecuteReader
+
+            While (reader1.Read)
+                lstSchedule.Items.Add(reader1.GetString(2))
+            End While
+            con.Close()
+
 
         Catch ex As Exception
             MessageBox.Show("Invalid" & ex.Message)
-        Finally
-            con.Close()
-            Me.Close()
         End Try
 
+    End Sub
+
+    Public Sub UpdatePromotion()
+
+
+        If (txtPromotionName.Text <> "") Then
+
+            Try
+                con.ConnectionString = StaffBooking.connection
+                con.Open()
+                Dim command As New SqlCommand("UPDATE Promotion Set promotionName = @promotionName, promotionStartDate = @promotionStartDate, promotionEndDate = @promotionEndDate , promotionDesc = @promotionDesc, promotionStatus = @promotionStatus WHERE promotionID = @promotionID", con)
+                command.Parameters.Add(New SqlParameter("promotionID", ManagerViewPromotion.id))
+                command.Parameters.Add(New SqlParameter("promotionName", txtPromotionName.Text))
+                command.Parameters.Add(New SqlParameter("promotionStartDate", startDate))
+                command.Parameters.Add(New SqlParameter("promotionEndDate", endDate))
+                command.Parameters.Add(New SqlParameter("promotionDesc", txtPromotionDesc.Text))
+                command.Parameters.Add(New SqlParameter("promotionStatus", "Active"))
+                command.ExecuteNonQuery()
+                con.Close()
+
+            Catch ex As Exception
+                MessageBox.Show("Invalid" & ex.Message)
+            Finally
+                End
+            End Try
+
+        Else
+            lblErrorName.Visible = True
+        End If
+
+    End Sub
+
+    Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
+        UpdatePromotion()
     End Sub
 End Class

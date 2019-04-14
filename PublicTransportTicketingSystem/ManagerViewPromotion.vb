@@ -14,11 +14,10 @@
     Private Sub DataBindSearch()
         Try
             Dim db As New PBTSDataContext()
-
-            Dim query = From transport In db.Transports
-                        Join Schedule In db.Schedules On transport.transportID Equals (Schedule.transportID)
-                        Join promoteSchedule In db.promoteSchedules On Schedule.scheduleID Equals (promoteSchedule.scheduleID)
-                        Join promotion In db.Promotions On promoteSchedule.promotionID Equals (promotion.promotionID)
+            Dim query = From promotion In db.Promotions
+                        Join promoteSchedule In db.promoteSchedules On promoteSchedule.promotionID Equals (promotion.promotionID)
+                        Join schedule In db.Schedules On schedule.scheduleID Equals (promoteSchedule.scheduleID)
+                        Join transport In db.Transports On transport.transportID Equals (schedule.transportID)
                         Where transport.transportType.Contains(contain) Or promotion.promotionID.Contains(contain) Or promotion.promotionDesc.Contains(contain) Or promotion.promotionStartDate.Value.Date.ToString.Contains(contain) Or promotion.promotionEndDate.Value.Date.ToString.Contains(contain)
                         Select promotion.promotionID, promotion.promotionName, promotion.promotionStartDate, promotion.promotionEndDate, promotion.promotionDesc, transport.transportType
             dgvPromotionList.DataSource = query
@@ -39,10 +38,10 @@
         Try
             Dim db As New PBTSDataContext()
 
-            Dim query = From transport In db.Transports
-                        Join Schedule In db.Schedules On transport.transportID Equals (Schedule.transportID)
-                        Join promoteSchedule In db.promoteSchedules On Schedule.scheduleID Equals (promoteSchedule.scheduleID)
-                        Join promotion In db.Promotions On promoteSchedule.promotionID Equals (promotion.promotionID)
+            Dim query = From promotion In db.Promotions
+                        Join promoteSchedule In db.promoteSchedules On promoteSchedule.promotionID Equals (promotion.promotionID)
+                        Join schedule In db.Schedules On schedule.scheduleID Equals (promoteSchedule.scheduleID)
+                        Join transport In db.Transports On transport.transportID Equals (schedule.transportID)
                         Where transport.transportType = selectedTransport And promotionDate >= promotion.promotionStartDate.Value.Date And promotionDate <= promotion.promotionEndDate.Value.Date
                         Select promotion.promotionID, promotion.promotionName, promotion.promotionStartDate, promotion.promotionEndDate, transport.transportType, promotion.promotionDesc
             dgvPromotionList.DataSource = query
@@ -111,8 +110,6 @@
         psdate = dgvPromotionList.Item(2, i).Value.ToString
         pedate = dgvPromotionList.Item(3, i).Value.ToString
         pdesc = dgvPromotionList.Item(5, i).Value.ToString
-        Debug.Print(pedate)
-        Debug.Print(psdate.ToString)
         ManagerModifyPromotion.Show()
     End Sub
 End Class

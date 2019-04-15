@@ -96,7 +96,7 @@ Public Class ManagerModifyPromotion
                 Catch ex As Exception
                     MessageBox.Show("Invalid" & ex.Message)
                 Finally
-                    End
+
                 End Try
             End If
         Else
@@ -107,6 +107,8 @@ Public Class ManagerModifyPromotion
 
     Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
         UpdatePromotion()
+        Me.Close()
+        ManagerViewPromotion.Show()
     End Sub
 
     Private Sub radFullDiscount_CheckedChanged(sender As Object, e As EventArgs) Handles radFullDiscount.CheckedChanged

@@ -1,0 +1,441 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{88ABCB1D-BCAA-4041-94D2-F910681F8F98}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>PublicTransportTicketingSystem.My.MyApplication</StartupObject>
+    <RootNamespace>PublicTransportTicketingSystem</RootNamespace>
+    <AssemblyName>PublicTransportTicketingSystem</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>PublicTransportTicketingSystem.xml</DocumentationFile>
+    <NoWarn>
+    </NoWarn>
+    <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
+    <RegisterForComInterop>true</RegisterForComInterop>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>PublicTransportTicketingSystem.xml</DocumentationFile>
+    <NoWarn>
+    </NoWarn>
+    <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
+    <RegisterForComInterop>true</RegisterForComInterop>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>On</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Report.Viewer.11.0.0.0\lib\net\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Report.Viewer.11.0.0.0\lib\net\Microsoft.ReportViewer.ProcessingObjectModel.DLL</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Report.Viewer.11.0.0.0\lib\net\Microsoft.ReportViewer.WebForms.DLL</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="datasetlatest.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>datasetlatest.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ManageCreatePromotionPart2.Designer.vb">
+      <DependentUpon>ManageCreatePromotionPart2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ManageCreatePromotionPart2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerCreatePromotion.Designer.vb">
+      <DependentUpon>ManagerCreatePromotion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerCreatePromotion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="managerIndex.Designer.vb">
+      <DependentUpon>managerIndex.vb</DependentUpon>
+    </Compile>
+    <Compile Include="managerIndex.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerManageLocation.Designer.vb">
+      <DependentUpon>ManagerManageLocation.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerManageLocation.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="managerMenuLayoutControl.Designer.vb">
+      <DependentUpon>managerMenuLayoutControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="managerMenuLayoutControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ManagerModifyPromotion.Designer.vb">
+      <DependentUpon>ManagerModifyPromotion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerModifyPromotion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerPT.Designer.vb">
+      <DependentUpon>ManagerPT.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerPT.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerViewPromotion.Designer.vb">
+      <DependentUpon>ManagerViewPromotion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerViewPromotion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerViewSchdule.Designer.vb">
+      <DependentUpon>ManagerViewSchdule.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerViewSchdule.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App.vb" />
+    <Compile Include="PBTS.designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PBTS.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="PTTSDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PTTSDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PTTSDataSet11.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PTTSDataSet11.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="StaffBooking.Designer.vb">
+      <DependentUpon>StaffBooking.vb</DependentUpon>
+    </Compile>
+    <Compile Include="StaffBooking.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="staffBookingSchedule.Designer.vb">
+      <DependentUpon>staffBookingSchedule.vb</DependentUpon>
+    </Compile>
+    <Compile Include="staffBookingSchedule.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="staffMenuLayoutControl.Designer.vb">
+      <DependentUpon>staffMenuLayoutControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="staffMenuLayoutControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Splash.Designer.vb">
+      <DependentUpon>Splash.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Splash.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StaffIndex.Designer.vb">
+      <DependentUpon>StaffIndex.vb</DependentUpon>
+    </Compile>
+    <Compile Include="StaffIndex.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="StaffViewPromotion.Designer.vb">
+      <DependentUpon>StaffViewPromotion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="StaffViewPromotion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StaffViewPromotionPart2.Designer.vb">
+      <DependentUpon>StaffViewPromotionPart2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="StaffViewPromotionPart2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TranportSelection.Designer.vb">
+      <DependentUpon>TranportSelection.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TranportSelection.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ManageCreatePromotionPart2.resx">
+      <DependentUpon>ManageCreatePromotionPart2.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerCreatePromotion.resx">
+      <DependentUpon>ManagerCreatePromotion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="managerIndex.resx">
+      <DependentUpon>managerIndex.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerManageLocation.resx">
+      <DependentUpon>ManagerManageLocation.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="managerMenuLayoutControl.resx">
+      <DependentUpon>managerMenuLayoutControl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerModifyPromotion.resx">
+      <DependentUpon>ManagerModifyPromotion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerPT.resx">
+      <DependentUpon>ManagerPT.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerViewPromotion.resx">
+      <DependentUpon>ManagerViewPromotion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerViewSchdule.resx">
+      <DependentUpon>ManagerViewSchdule.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StaffBooking.resx">
+      <DependentUpon>StaffBooking.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="staffBookingSchedule.resx">
+      <DependentUpon>staffBookingSchedule.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="staffMenuLayoutControl.resx">
+      <DependentUpon>staffMenuLayoutControl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Splash.resx">
+      <DependentUpon>Splash.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StaffIndex.resx">
+      <DependentUpon>StaffIndex.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StaffViewPromotion.resx">
+      <DependentUpon>StaffViewPromotion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StaffViewPromotionPart2.resx">
+      <DependentUpon>StaffViewPromotionPart2.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TranportSelection.resx">
+      <DependentUpon>TranportSelection.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="datasetlatest.xsc">
+      <DependentUpon>datasetlatest.xsd</DependentUpon>
+    </None>
+    <None Include="datasetlatest.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>datasetlatest.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="datasetlatest.xss">
+      <DependentUpon>datasetlatest.xsd</DependentUpon>
+    </None>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="PBTS.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>PBTS.designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PBTS.dbml.layout">
+      <DependentUpon>PBTS.dbml</DependentUpon>
+    </None>
+    <None Include="PTTSDataSet.xsc">
+      <DependentUpon>PTTSDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="PTTSDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PTTSDataSet.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="PTTSDataSet.xss">
+      <DependentUpon>PTTSDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="PTTSDataSet11.xsc">
+      <DependentUpon>PTTSDataSet11.xsd</DependentUpon>
+    </None>
+    <None Include="PTTSDataSet11.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PTTSDataSet11.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PTTSDataSet11.xss">
+      <DependentUpon>PTTSDataSet11.xsd</DependentUpon>
+    </None>
+    <None Include="Resources\2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\setting.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\21.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reserve.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\purchase2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\schedule.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\report.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ManageStaff %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\manageAcount.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\about us.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\busAnimated.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pubic_trans.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-train-80.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-water-transportation-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-trolleybus-50 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-down-arrow-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PTTS.mdf" />
+    <Content Include="PTTS_log.ldf">
+      <DependentUpon>PTTS.mdf</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+</Project>

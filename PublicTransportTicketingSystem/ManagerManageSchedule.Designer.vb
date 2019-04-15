@@ -36,10 +36,10 @@ Partial Class ManagerManageSchedule
         Me.ScheduleBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.PTTSDataSet = New PublicTransportTicketingSystem.PTTSDataSet()
         Me.ScheduleTableAdapter = New PublicTransportTicketingSystem.PTTSDataSetTableAdapters.ScheduleTableAdapter()
-        Me.ts = New PublicTransportTicketingSystem.TranportSelection()
-        Me.ManagerMenuLayoutControl1 = New PublicTransportTicketingSystem.managerMenuLayoutControl()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.ts = New PublicTransportTicketingSystem.TranportSelection()
+        Me.ManagerMenuLayoutControl1 = New PublicTransportTicketingSystem.managerMenuLayoutControl()
         CType(Me.dgvSchedule, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         CType(Me.ScheduleBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -157,21 +157,6 @@ Partial Class ManagerManageSchedule
         '
         Me.ScheduleTableAdapter.ClearBeforeFill = True
         '
-        'ts
-        '
-        Me.ts.Location = New System.Drawing.Point(235, 73)
-        Me.ts.Name = "ts"
-        Me.ts.Size = New System.Drawing.Size(537, 104)
-        Me.ts.TabIndex = 1
-        '
-        'ManagerMenuLayoutControl1
-        '
-        Me.ManagerMenuLayoutControl1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.ManagerMenuLayoutControl1.Location = New System.Drawing.Point(0, 0)
-        Me.ManagerMenuLayoutControl1.Name = "ManagerMenuLayoutControl1"
-        Me.ManagerMenuLayoutControl1.Size = New System.Drawing.Size(784, 536)
-        Me.ManagerMenuLayoutControl1.TabIndex = 0
-        '
         'PictureBox2
         '
         Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
@@ -191,6 +176,21 @@ Partial Class ManagerManageSchedule
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 15
         Me.PictureBox1.TabStop = False
+        '
+        'ts
+        '
+        Me.ts.Location = New System.Drawing.Point(235, 73)
+        Me.ts.Name = "ts"
+        Me.ts.Size = New System.Drawing.Size(537, 104)
+        Me.ts.TabIndex = 1
+        '
+        'ManagerMenuLayoutControl1
+        '
+        Me.ManagerMenuLayoutControl1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.ManagerMenuLayoutControl1.Location = New System.Drawing.Point(0, 0)
+        Me.ManagerMenuLayoutControl1.Name = "ManagerMenuLayoutControl1"
+        Me.ManagerMenuLayoutControl1.Size = New System.Drawing.Size(784, 536)
+        Me.ManagerMenuLayoutControl1.TabIndex = 0
         '
         'ManagerManageSchedule
         '

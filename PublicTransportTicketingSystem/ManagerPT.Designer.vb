@@ -27,7 +27,6 @@ Partial Class ManagerPT
         Me.gbTranport = New System.Windows.Forms.GroupBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.lbltest = New System.Windows.Forms.Label()
         Me.dgv = New System.Windows.Forms.DataGridView()
         Me.TransportNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Status = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -57,7 +56,6 @@ Partial Class ManagerPT
         '
         Me.gbTranport.Controls.Add(Me.PictureBox1)
         Me.gbTranport.Controls.Add(Me.Label1)
-        Me.gbTranport.Controls.Add(Me.lbltest)
         Me.gbTranport.Controls.Add(Me.dgv)
         Me.gbTranport.Controls.Add(Me.txtSearch)
         Me.gbTranport.Controls.Add(Me.btnUpdate)
@@ -90,15 +88,6 @@ Partial Class ManagerPT
         Me.Label1.Size = New System.Drawing.Size(86, 18)
         Me.Label1.TabIndex = 13
         Me.Label1.Text = "Search carrier"
-        '
-        'lbltest
-        '
-        Me.lbltest.AutoSize = True
-        Me.lbltest.Location = New System.Drawing.Point(442, 16)
-        Me.lbltest.Name = "lbltest"
-        Me.lbltest.Size = New System.Drawing.Size(45, 15)
-        Me.lbltest.TabIndex = 7
-        Me.lbltest.Text = "Label1"
         '
         'dgv
         '
@@ -274,7 +263,6 @@ Partial Class ManagerPT
     Friend WithEvents TransportBindingSource As BindingSource
     Friend WithEvents TransportTableAdapter As PTTSDataSetTableAdapters.TransportTableAdapter
     Friend WithEvents btnDeleteCancel As Button
-    Friend WithEvents lbltest As Label
     Friend WithEvents TransportNameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents Status As DataGridViewTextBoxColumn
     Friend WithEvents LicensePlateDataGridViewTextBoxColumn As DataGridViewTextBoxColumn

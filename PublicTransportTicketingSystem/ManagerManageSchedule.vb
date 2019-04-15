@@ -35,6 +35,8 @@
             dgvSchedule.Rows(count).Cells(2).Value = destName
             dgvSchedule.Rows(count).Cells(3).Value = sch.sch.departureDateTime.Value.ToShortDateString + "  " + sch.sch.departureDateTime.Value.ToShortTimeString
             dgvSchedule.Rows(count).Cells(4).Value = selectedType
+            dgvSchedule.Rows(count).Cells(5).Value = sch.tr.transportName
+            dgvSchedule.Rows(count).Cells(6).Value = sch.tr.transportID
             count += 1
         Next
     End Sub
@@ -56,7 +58,7 @@
 
         For Each sch In sc
 
-            'get   origin name
+            'get origin name
             Dim origin As String = (From lo In db.Locations
                                     Join ori In db.LocationLists On ori.locationID Equals lo.locationID
                                     Where ori.scheduleID = sch.sch.scheduleID And ori.locationStatus.ToLower = "origin" Select lo.locationName).FirstOrDefault.ToString
@@ -76,6 +78,8 @@
             dgvSchedule.Rows(count).Cells(2).Value = destName
             dgvSchedule.Rows(count).Cells(3).Value = sch.sch.departureDateTime.Value.ToShortDateString + "  " + sch.sch.departureDateTime.Value.ToShortTimeString
             dgvSchedule.Rows(count).Cells(4).Value = selectedType
+            dgvSchedule.Rows(count).Cells(5).Value = sch.tr.transportName
+            dgvSchedule.Rows(count).Cells(6).Value = sch.tr.transportID
             count += 1
         Next
     End Sub
@@ -101,7 +105,7 @@
 
         For Each sch In sc
 
-            'get   origin name
+            'get origin name
             Dim origin As String = (From lo In db.Locations
                                     Join ori In db.LocationLists On ori.locationID Equals lo.locationID
                                     Where ori.scheduleID = sch.sch.scheduleID And ori.locationStatus.ToLower = "origin" Select lo.locationName).FirstOrDefault.ToString
@@ -121,6 +125,8 @@
             dgvSchedule.Rows(count).Cells(2).Value = destName
             dgvSchedule.Rows(count).Cells(3).Value = sch.sch.departureDateTime.Value.ToShortDateString + "  " + sch.sch.departureDateTime.Value.ToShortTimeString
             dgvSchedule.Rows(count).Cells(4).Value = selectedType
+            dgvSchedule.Rows(count).Cells(5).Value = sch.tr.transportName
+            dgvSchedule.Rows(count).Cells(6).Value = sch.tr.transportID
             count += 1
         Next
     End Sub
@@ -149,11 +155,22 @@
         col5.DataPropertyName = "Departure Date and Time "
         col5.HeaderText = "Departure Date and Time"
         col5.Name = "colDepart"
+        Dim col6 As New DataGridViewTextBoxColumn
+        col6.DataPropertyName = "Transport Name"
+        col6.HeaderText = "Transport Name"
+        col6.Name = "colName"
+        Dim col7 As New DataGridViewTextBoxColumn
+        col7.DataPropertyName = "Transport ID"
+        col7.HeaderText = "Transport ID"
+        col7.Name = "colTransID"
         dgvSchedule.Columns.Add(col1)
         dgvSchedule.Columns.Add(col2)
         dgvSchedule.Columns.Add(col3)
         dgvSchedule.Columns.Add(col5)
         dgvSchedule.Columns.Add(col4)
+        dgvSchedule.Columns.Add(col6)
+        dgvSchedule.Columns.Add(col7)
+        dgvSchedule.Columns(6).Visible = False
         bindData()
 
 
@@ -188,7 +205,16 @@
 
     Private Sub dgvSchedule_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvSchedule.CellDoubleClick
         ManagerManageSeat.selectedScheduleID = dgvSchedule.CurrentRow.Cells(0).Value.ToString
+        ManagerManageSeat.selectedTranportID = dgvSchedule.CurrentRow.Cells(6).Value.ToString
         ManagerManageSeat.ShowDialog()
+
+    End Sub
+
+    Private Sub ChaneTransport(sender As Object, e As EventArgs) Handles ts.TransportChange
+
+    End Sub
+
+    Private Sub dgvSchedule_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvSchedule.CellContentClick
 
     End Sub
 End Class

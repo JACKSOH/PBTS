@@ -223,6 +223,7 @@ Partial Class ManageCreatePromotionPart2
         DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.Control
         DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.dgvSchedule.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
+        Me.dgvSchedule.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.dgvSchedule.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvSchedule.Size = New System.Drawing.Size(445, 150)
         Me.dgvSchedule.TabIndex = 34

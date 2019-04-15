@@ -215,6 +215,12 @@
     <Compile Include="ManagerModifyPromotion.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ManagerModifyStaff.Designer.vb">
+      <DependentUpon>ManagerModifyStaff.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerModifyStaff.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ManagerPT.Designer.vb">
       <DependentUpon>ManagerPT.vb</DependentUpon>
     </Compile>
@@ -343,6 +349,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ManagerModifyPromotion.resx">
       <DependentUpon>ManagerModifyPromotion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerModifyStaff.resx">
+      <DependentUpon>ManagerModifyStaff.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ManagerPT.resx">
       <DependentUpon>ManagerPT.vb</DependentUpon>

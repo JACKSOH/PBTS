@@ -71,8 +71,9 @@ Partial Class ManagerViewStaff
         Me.dgvStaffList.Name = "dgvStaffList"
         DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Black
         Me.dgvStaffList.RowsDefaultCellStyle = DataGridViewCellStyle1
+        Me.dgvStaffList.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.dgvStaffList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvStaffList.Size = New System.Drawing.Size(447, 274)
+        Me.dgvStaffList.Size = New System.Drawing.Size(442, 274)
         Me.dgvStaffList.TabIndex = 5
         '
         'radStaff

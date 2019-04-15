@@ -153,10 +153,6 @@ Public Class ManagerViewPromotion
             MessageBox.Show("No Row Selected", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
 
-
-
-
-
     End Sub
 
     Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click

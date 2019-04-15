@@ -3,9 +3,6 @@
 Public Class StaffIndex
     Dim SqlConnection As New SqlConnection
     Dim ConnectionString As String = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\boonk\source\repos\JACKSOH\PBTS\PublicTransportTicketingSystem\PTTS.mdf;Integrated Security=True"
-    Private Sub Panel2_Paint(sender As Object, e As PaintEventArgs) Handles BackPanel.Paint
-
-    End Sub
 
     Private Sub MangerLoginToolStripMenuItem_Click(sender As Object, e As EventArgs)
         managerIndex.Show()

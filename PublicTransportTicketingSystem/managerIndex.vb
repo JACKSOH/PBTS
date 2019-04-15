@@ -31,7 +31,7 @@
         End If
     End Function
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnManagerLogin.Click
         If ICPasswordValidation() Then
             If StaffIndex.CheckEmployeePasswordandIC(txtIC.Text, txtPassword.Text, "manager") Then
                 MessageBox.Show("Successful login!!" & vbNewLine & "Redirecting to manager page...")

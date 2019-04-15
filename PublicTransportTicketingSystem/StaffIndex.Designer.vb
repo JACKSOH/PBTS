@@ -28,6 +28,8 @@ Partial Class StaffIndex
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.BackPanel = New System.Windows.Forms.Panel()
+        Me.lblErrorIC = New System.Windows.Forms.Label()
+        Me.lblErrorPassword = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.txtPassword = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -47,17 +49,17 @@ Partial Class StaffIndex
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(234, 56)
+        Me.Panel1.Size = New System.Drawing.Size(357, 68)
         Me.Panel1.TabIndex = 0
         '
         'PictureBox1
         '
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
         Me.PictureBox1.ImageLocation = ""
-        Me.PictureBox1.Location = New System.Drawing.Point(19, 2)
+        Me.PictureBox1.Location = New System.Drawing.Point(94, 11)
         Me.PictureBox1.Margin = New System.Windows.Forms.Padding(2)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(50, 48)
+        Me.PictureBox1.Size = New System.Drawing.Size(56, 47)
         Me.PictureBox1.TabIndex = 4
         Me.PictureBox1.TabStop = False
         '
@@ -66,10 +68,10 @@ Partial Class StaffIndex
         Me.Label1.Font = New System.Drawing.Font("Century Gothic", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.Label1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Label1.Location = New System.Drawing.Point(73, 2)
+        Me.Label1.Location = New System.Drawing.Point(158, 9)
         Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(130, 48)
+        Me.Label1.Size = New System.Drawing.Size(150, 57)
         Me.Label1.TabIndex = 3
         Me.Label1.Text = "Public Transport Ticketing System"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -77,6 +79,8 @@ Partial Class StaffIndex
         'BackPanel
         '
         Me.BackPanel.BackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(65, Byte), Integer))
+        Me.BackPanel.Controls.Add(Me.lblErrorIC)
+        Me.BackPanel.Controls.Add(Me.lblErrorPassword)
         Me.BackPanel.Controls.Add(Me.Button1)
         Me.BackPanel.Controls.Add(Me.txtPassword)
         Me.BackPanel.Controls.Add(Me.Label4)
@@ -87,13 +91,36 @@ Partial Class StaffIndex
         Me.BackPanel.Dock = System.Windows.Forms.DockStyle.Fill
         Me.BackPanel.Location = New System.Drawing.Point(0, 0)
         Me.BackPanel.Name = "BackPanel"
-        Me.BackPanel.Size = New System.Drawing.Size(234, 285)
+        Me.BackPanel.Size = New System.Drawing.Size(353, 364)
         Me.BackPanel.TabIndex = 5
+        '
+        'lblErrorIC
+        '
+        Me.lblErrorIC.AutoSize = True
+        Me.lblErrorIC.Font = New System.Drawing.Font("Tw Cen MT", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblErrorIC.ForeColor = System.Drawing.Color.LightCoral
+        Me.lblErrorIC.Location = New System.Drawing.Point(93, 167)
+        Me.lblErrorIC.Name = "lblErrorIC"
+        Me.lblErrorIC.Size = New System.Drawing.Size(84, 17)
+        Me.lblErrorIC.TabIndex = 8
+        Me.lblErrorIC.Text = "*Incorrect IC"
+        Me.lblErrorIC.Visible = False
+        '
+        'lblErrorPassword
+        '
+        Me.lblErrorPassword.AutoSize = True
+        Me.lblErrorPassword.Font = New System.Drawing.Font("Tw Cen MT", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblErrorPassword.ForeColor = System.Drawing.Color.LightCoral
+        Me.lblErrorPassword.Location = New System.Drawing.Point(93, 231)
+        Me.lblErrorPassword.Name = "lblErrorPassword"
+        Me.lblErrorPassword.Size = New System.Drawing.Size(127, 17)
+        Me.lblErrorPassword.TabIndex = 7
+        Me.lblErrorPassword.Text = "*Incorrect Password"
         '
         'Button1
         '
         Me.Button1.Font = New System.Drawing.Font("Tw Cen MT", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(76, 229)
+        Me.Button1.Location = New System.Drawing.Point(141, 307)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(77, 29)
         Me.Button1.TabIndex = 6
@@ -102,9 +129,9 @@ Partial Class StaffIndex
         '
         'txtPassword
         '
-        Me.txtPassword.Location = New System.Drawing.Point(63, 191)
+        Me.txtPassword.Location = New System.Drawing.Point(95, 208)
         Me.txtPassword.Name = "txtPassword"
-        Me.txtPassword.Size = New System.Drawing.Size(100, 20)
+        Me.txtPassword.Size = New System.Drawing.Size(159, 20)
         Me.txtPassword.TabIndex = 5
         '
         'Label4
@@ -112,7 +139,7 @@ Partial Class StaffIndex
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Tw Cen MT", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label4.Location = New System.Drawing.Point(61, 171)
+        Me.Label4.Location = New System.Drawing.Point(93, 188)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(68, 17)
         Me.Label4.TabIndex = 4
@@ -123,7 +150,7 @@ Partial Class StaffIndex
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Tw Cen MT", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label3.Location = New System.Drawing.Point(59, 87)
+        Me.Label3.Location = New System.Drawing.Point(124, 96)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(103, 24)
         Me.Label3.TabIndex = 3
@@ -131,9 +158,9 @@ Partial Class StaffIndex
         '
         'txtIC
         '
-        Me.txtIC.Location = New System.Drawing.Point(62, 143)
+        Me.txtIC.Location = New System.Drawing.Point(94, 144)
         Me.txtIC.Name = "txtIC"
-        Me.txtIC.Size = New System.Drawing.Size(100, 20)
+        Me.txtIC.Size = New System.Drawing.Size(160, 20)
         Me.txtIC.TabIndex = 2
         '
         'Label2
@@ -141,7 +168,7 @@ Partial Class StaffIndex
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Tw Cen MT", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label2.Location = New System.Drawing.Point(60, 123)
+        Me.Label2.Location = New System.Drawing.Point(93, 124)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(21, 17)
         Me.Label2.TabIndex = 1
@@ -155,7 +182,7 @@ Partial Class StaffIndex
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(234, 285)
+        Me.ClientSize = New System.Drawing.Size(353, 364)
         Me.Controls.Add(Me.BackPanel)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "StaffIndex"
@@ -180,4 +207,6 @@ Partial Class StaffIndex
     Friend WithEvents Label2 As Label
     Friend WithEvents Button1 As Button
     Friend WithEvents Timer1 As Timer
+    Friend WithEvents lblErrorPassword As Label
+    Friend WithEvents lblErrorIC As Label
 End Class

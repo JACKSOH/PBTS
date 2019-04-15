@@ -97,5 +97,6 @@
         email = dgvStaffList.Item(6, i).Value.ToString
 
         ManagerModifyStaff.Show()
+        Me.Hide()
     End Sub
 End Class

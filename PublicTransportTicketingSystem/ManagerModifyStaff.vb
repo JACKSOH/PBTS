@@ -12,18 +12,19 @@ Public Class ManagerModifyStaff
     Private con As New SqlConnection
 
     Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnNext.Click
-        ValidateCheck()
-        sname = txtName.Text
-        IC = txtIC.Text
-        email = txtEmail.Text
-        contact = txtContactNo.Text
-        ManagerViewStaff.Show()
-        Me.Hide()
+        If (ValidateCheck()) Then
+            updateStaff()
+            ManagerViewStaff.Show()
+            Me.Close()
+        End If
     End Sub
 
-    Private Sub ValidateCheck()
+    Private Function ValidateCheck() As Boolean
+        Dim result As Boolean = True
+
         If (txtName.Text = "") Then
             lblErrorName.Visible = True
+            result = False
         Else
             lblErrorName.Visible = False
         End If
@@ -31,8 +32,11 @@ Public Class ManagerModifyStaff
         If (txtContactNo.Text = "   -") Then
             lblErrorContact.Visible = True
             lblErrorContact.Text = "*Please fill in contact no"
+            result = False
         ElseIf Not (txtContactNo.Text.Length = 11) Then
+            lblErrorContact.Visible = True
             lblErrorContact.Text = "*Incorrect Format"
+            result = False
         Else
             lblErrorContact.Visible = False
         End If
@@ -40,27 +44,20 @@ Public Class ManagerModifyStaff
         If (txtIC.Text = "") Then
             lblErrorIC.Visible = True
             lblErrorIC.Text = "*Please fill in IC No"
+            result = False
         ElseIf (txtIC.Text.Length <> 12) Then
             lblErrorIC.Visible = True
             lblErrorIC.Text = "*IC input length must be 14"
+            result = False
         ElseIf (txtIC.Text.Length = 12) Then
             lblErrorIC.Visible = False
-        End If
-
-        If (radManager.Checked) Then
-            If (txtAccessKey.Text = "") Then
-                lblErrorAccess.Visible = True
-                lblErrorAccess.Text = "*Please fill in access key"
-            ElseIf (txtAccessKey.Text <> "admin123") Then
-                lblErrorAccess.Visible = True
-                lblErrorAccess.Text = "Incorrect Access Key"
-            End If
         End If
 
         If Not (txtEmail.Text = "") Then
             If Not (EmailAddressCheck(txtEmail.Text)) Then
                 lblErrorEmail.Visible = True
                 lblErrorEmail.Text = "*Wrong Email Format"
+                result = False
             Else
                 lblErrorEmail.Visible = False
                 lblErrorEmail.Text = "*Please fill in email"
@@ -68,27 +65,18 @@ Public Class ManagerModifyStaff
         Else
             lblErrorEmail.Visible = True
             lblErrorEmail.Text = "*Please fill in email"
+            result = False
         End If
 
-        If (txtAccessKey.Text = "") Then
-            lblErrorAccess.Enabled = True
-            lblErrorAccess.Text = "Please fill in access key"
-        Else
-            lblErrorAccess.Enabled = True
-        End If
-    End Sub
+        Return result
+    End Function
 
     Private Sub radManager_CheckedChanged(sender As Object, e As EventArgs) Handles radManager.CheckedChanged
-        type = "Manager"
-        txtAccessKey.Enabled = True
-        Label9.Enabled = True
+        type = "manager"
     End Sub
 
     Private Sub radStaff_CheckedChanged(sender As Object, e As EventArgs) Handles radStaff.CheckedChanged
-        type = "Staff"
-        txtAccessKey.Enabled = False
-        lblErrorAccess.Visible = False
-        Label9.Enabled = False
+        type = "staff"
     End Sub
 
     Private Sub radFemale_CheckedChanged(sender As Object, e As EventArgs) Handles radFemale.CheckedChanged
@@ -113,52 +101,74 @@ Public Class ManagerModifyStaff
 
     Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
         ManagerViewStaff.Show()
-        Me.Hide()
-    End Sub
-
-    Private Sub txtAccessKey_TextChanged(sender As Object, e As EventArgs) Handles txtAccessKey.TextChanged
-        If (radManager.Checked) Then
-            If (txtAccessKey.Text <> "admin123") Then
-                lblErrorAccess.Enabled = True
-                lblErrorAccess.Visible = True
-                lblErrorAccess.Text = "Incorrect Access Key"
-            Else
-                lblErrorAccess.Visible = False
-            End If
-        End If
+        Me.Close()
     End Sub
 
     Private Sub updateStaff()
-        If (sname <> "") Then
+        sname = txtName.Text
+        IC = txtIC.Text
+        email = txtEmail.Text
+        contact = txtContactNo.Text
 
+        Dim result As DialogResult = MessageBox.Show("Are you sure want to modify a new staff?", "Confirmation",
+                                                  MessageBoxButtons.YesNoCancel,
+                                                  MessageBoxIcon.Question)
+        If (result = DialogResult.Yes) Then
+            Try
+                con.ConnectionString = StaffBooking.connection
+                con.Open()
+                Dim command As New SqlCommand("UPDATE Employee Set employeeName = @employeeName, employeeIC = @employeeIC , gender = @gender, employeeContactNo = @employeeContactNo, employeeEmail = @employeeEmail, type = @type WHERE employeeID = @employeeID", con)
+                command.Parameters.Add(New SqlParameter("employeeID", ManagerViewStaff.staffid))
+                command.Parameters.Add(New SqlParameter("employeeName", sname))
+                command.Parameters.Add(New SqlParameter("employeeIC", IC))
+                command.Parameters.Add(New SqlParameter("gender", gender))
+                command.Parameters.Add(New SqlParameter("employeeContactNo", contact))
+                command.Parameters.Add(New SqlParameter("employeeEmail", email))
+                command.Parameters.Add(New SqlParameter("type", type))
+                command.ExecuteNonQuery()
+                con.Close()
+            Catch ex As Exception
 
-            Dim result As DialogResult = MessageBox.Show("Are you sure want to modify a new promotion?", "Confirmation",
-                                                      MessageBoxButtons.YesNoCancel,
-                                                      MessageBoxIcon.Question)
-            If (result = DialogResult.Yes) Then
+            End Try
+        End If
+    End Sub
 
-                Try
+    Private Sub ManagerMenuLayoutControl1_Load(sender As Object, e As EventArgs) Handles ManagerMenuLayoutControl1.Load
 
+        txtName.Text = ManagerViewStaff.sname
+        txtIC.Text = ManagerViewStaff.sIC
+        txtEmail.Text = ManagerViewStaff.email
+        txtContactNo.Text = ManagerViewStaff.contactNo
 
-                    con.ConnectionString = StaffBooking.connection
-                    con.Open()
-                    'Dim command As New SqlCommand("UPDATE Promotion Set promotionName = @promotionName, promotionStartDate = @promotionStartDate, promotionEndDate = @promotionEndDate , promotionDesc = @promotionDesc, promotionStatus = @promotionStatus WHERE promotionID = @promotionID", con)
-                    'command.Parameters.Add(New SqlParameter("promotionID", ManagerViewPromotion.id))
-                    'command.Parameters.Add(New SqlParameter("promotionName", txtPromotionName.Text))
-                    'command.Parameters.Add(New SqlParameter("promotionStartDate", startDate))
-                    'command.Parameters.Add(New SqlParameter("promotionEndDate", endDate))
-                    'command.Parameters.Add(New SqlParameter("promotionDesc", txtPromotionDesc.Text))
-                    'command.Parameters.Add(New SqlParameter("promotionStatus", "Active"))
-                    'command.ExecuteNonQuery()
-                    con.Close()
-                Catch ex As Exception
-
-                End Try
-
-            End If
-
+        If (ManagerViewStaff.gender.Contains("M") Or ManagerViewStaff.gender.Contains("m")) Then
+            radMale.Checked = True
+            radFemale.Checked = False
+        Else
+            radFemale.Checked = True
+            radMale.Checked = False
         End If
 
+        If (ManagerViewStaff.type.Contains("manager") Or ManagerViewStaff.type.Contains("Manager")) Then
+            radManager.Checked = True
+        Else
+            radStaff.Checked = True
+        End If
 
+    End Sub
+
+    Private Sub txtName_TextChanged(sender As Object, e As EventArgs) Handles txtName.TextChanged
+        sname = txtName.Text
+    End Sub
+
+    Private Sub txtIC_MaskInputRejected(sender As Object, e As MaskInputRejectedEventArgs) Handles txtIC.MaskInputRejected
+        IC = txtIC.Text
+    End Sub
+
+    Private Sub txtContactNo_MaskInputRejected(sender As Object, e As MaskInputRejectedEventArgs) Handles txtContactNo.MaskInputRejected
+        contact = txtContactNo.Text
+    End Sub
+
+    Private Sub txtEmail_TextChanged(sender As Object, e As EventArgs) Handles txtEmail.TextChanged
+        email = txtEmail.Text
     End Sub
 End Class

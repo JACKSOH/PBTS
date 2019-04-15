@@ -36,17 +36,17 @@
 
     Public Function GetNextPromotionId() As String
         getPromotionCount()
-        Return (promotionCount + 1).ToString("PR0000")
+        Return (promotionCount + 1).ToString("pr0000")
     End Function
 
     Public Function GetNextPromoteScheduleId() As String
         getPromoteScheduleCount()
-        Return (promotionScheduleCount + 1).ToString("PS0000")
+        Return (promotionScheduleCount + 1).ToString("ps0000")
     End Function
 
 
     Public Function GetNextStaffId() As String
         getStaffCount()
-        Return (staffCount + 1).ToString("EM0000")
+        Return (staffCount + 1).ToString("em0000")
     End Function
 End Module

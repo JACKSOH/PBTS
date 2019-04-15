@@ -22,7 +22,6 @@ Partial Class ManagerModifyStaff
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.ManagerMenuLayoutControl1 = New PublicTransportTicketingSystem.managerMenuLayoutControl()
         Me.gbCreateStaff = New System.Windows.Forms.GroupBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.radFemale = New System.Windows.Forms.RadioButton()
@@ -45,19 +44,10 @@ Partial Class ManagerModifyStaff
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btnCancel = New System.Windows.Forms.Button()
         Me.btnNext = New System.Windows.Forms.Button()
-        Me.txtAccessKey = New System.Windows.Forms.TextBox()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.lblErrorAccess = New System.Windows.Forms.Label()
+        Me.ManagerMenuLayoutControl1 = New PublicTransportTicketingSystem.managerMenuLayoutControl()
         Me.gbCreateStaff.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'ManagerMenuLayoutControl1
-        '
-        Me.ManagerMenuLayoutControl1.Location = New System.Drawing.Point(0, 0)
-        Me.ManagerMenuLayoutControl1.Name = "ManagerMenuLayoutControl1"
-        Me.ManagerMenuLayoutControl1.Size = New System.Drawing.Size(800, 575)
-        Me.ManagerMenuLayoutControl1.TabIndex = 0
         '
         'gbCreateStaff
         '
@@ -67,9 +57,6 @@ Partial Class ManagerModifyStaff
         Me.gbCreateStaff.Controls.Add(Me.txtIC)
         Me.gbCreateStaff.Controls.Add(Me.txtContactNo)
         Me.gbCreateStaff.Controls.Add(Me.Label10)
-        Me.gbCreateStaff.Controls.Add(Me.lblErrorAccess)
-        Me.gbCreateStaff.Controls.Add(Me.Label9)
-        Me.gbCreateStaff.Controls.Add(Me.txtAccessKey)
         Me.gbCreateStaff.Controls.Add(Me.radStaff)
         Me.gbCreateStaff.Controls.Add(Me.radManager)
         Me.gbCreateStaff.Controls.Add(Me.Label8)
@@ -97,7 +84,7 @@ Partial Class ManagerModifyStaff
         '
         Me.GroupBox1.Controls.Add(Me.radFemale)
         Me.GroupBox1.Controls.Add(Me.radMale)
-        Me.GroupBox1.Location = New System.Drawing.Point(160, 341)
+        Me.GroupBox1.Location = New System.Drawing.Point(160, 285)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(313, 42)
         Me.GroupBox1.TabIndex = 56
@@ -127,14 +114,14 @@ Partial Class ManagerModifyStaff
         '
         'txtEmail
         '
-        Me.txtEmail.Location = New System.Drawing.Point(161, 296)
+        Me.txtEmail.Location = New System.Drawing.Point(161, 240)
         Me.txtEmail.Name = "txtEmail"
         Me.txtEmail.Size = New System.Drawing.Size(314, 24)
         Me.txtEmail.TabIndex = 55
         '
         'txtIC
         '
-        Me.txtIC.Location = New System.Drawing.Point(160, 177)
+        Me.txtIC.Location = New System.Drawing.Point(160, 121)
         Me.txtIC.Mask = "000000000000"
         Me.txtIC.Name = "txtIC"
         Me.txtIC.Size = New System.Drawing.Size(313, 24)
@@ -142,7 +129,7 @@ Partial Class ManagerModifyStaff
         '
         'txtContactNo
         '
-        Me.txtContactNo.Location = New System.Drawing.Point(161, 237)
+        Me.txtContactNo.Location = New System.Drawing.Point(161, 181)
         Me.txtContactNo.Mask = "000-0000000"
         Me.txtContactNo.Name = "txtContactNo"
         Me.txtContactNo.Size = New System.Drawing.Size(313, 24)
@@ -151,7 +138,7 @@ Partial Class ManagerModifyStaff
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(28, 356)
+        Me.Label10.Location = New System.Drawing.Point(28, 300)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(52, 18)
         Me.Label10.TabIndex = 51
@@ -192,7 +179,7 @@ Partial Class ManagerModifyStaff
         '
         Me.lblErrorEmail.AutoSize = True
         Me.lblErrorEmail.ForeColor = System.Drawing.Color.Red
-        Me.lblErrorEmail.Location = New System.Drawing.Point(157, 320)
+        Me.lblErrorEmail.Location = New System.Drawing.Point(157, 264)
         Me.lblErrorEmail.Name = "lblErrorEmail"
         Me.lblErrorEmail.Size = New System.Drawing.Size(120, 18)
         Me.lblErrorEmail.TabIndex = 45
@@ -202,7 +189,7 @@ Partial Class ManagerModifyStaff
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(28, 299)
+        Me.Label7.Location = New System.Drawing.Point(28, 243)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(44, 18)
         Me.Label7.TabIndex = 43
@@ -212,7 +199,7 @@ Partial Class ManagerModifyStaff
         '
         Me.lblErrorContact.AutoSize = True
         Me.lblErrorContact.ForeColor = System.Drawing.Color.Red
-        Me.lblErrorContact.Location = New System.Drawing.Point(158, 261)
+        Me.lblErrorContact.Location = New System.Drawing.Point(158, 205)
         Me.lblErrorContact.Name = "lblErrorContact"
         Me.lblErrorContact.Size = New System.Drawing.Size(174, 18)
         Me.lblErrorContact.TabIndex = 42
@@ -222,7 +209,7 @@ Partial Class ManagerModifyStaff
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(27, 240)
+        Me.Label5.Location = New System.Drawing.Point(27, 184)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(78, 18)
         Me.Label5.TabIndex = 40
@@ -232,7 +219,7 @@ Partial Class ManagerModifyStaff
         '
         Me.lblErrorIC.AutoSize = True
         Me.lblErrorIC.ForeColor = System.Drawing.Color.Red
-        Me.lblErrorIC.Location = New System.Drawing.Point(158, 204)
+        Me.lblErrorIC.Location = New System.Drawing.Point(158, 148)
         Me.lblErrorIC.Name = "lblErrorIC"
         Me.lblErrorIC.Size = New System.Drawing.Size(101, 18)
         Me.lblErrorIC.TabIndex = 39
@@ -242,7 +229,7 @@ Partial Class ManagerModifyStaff
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(27, 183)
+        Me.Label2.Location = New System.Drawing.Point(27, 127)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(25, 18)
         Me.Label2.TabIndex = 37
@@ -252,7 +239,7 @@ Partial Class ManagerModifyStaff
         '
         Me.lblErrorName.AutoSize = True
         Me.lblErrorName.ForeColor = System.Drawing.Color.Red
-        Me.lblErrorName.Location = New System.Drawing.Point(158, 151)
+        Me.lblErrorName.Location = New System.Drawing.Point(158, 95)
         Me.lblErrorName.Name = "lblErrorName"
         Me.lblErrorName.Size = New System.Drawing.Size(119, 18)
         Me.lblErrorName.TabIndex = 36
@@ -261,7 +248,7 @@ Partial Class ManagerModifyStaff
         '
         'txtName
         '
-        Me.txtName.Location = New System.Drawing.Point(161, 124)
+        Me.txtName.Location = New System.Drawing.Point(161, 68)
         Me.txtName.Name = "txtName"
         Me.txtName.Size = New System.Drawing.Size(314, 24)
         Me.txtName.TabIndex = 34
@@ -269,7 +256,7 @@ Partial Class ManagerModifyStaff
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(27, 130)
+        Me.Label1.Location = New System.Drawing.Point(27, 74)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(45, 18)
         Me.Label1.TabIndex = 30
@@ -301,34 +288,12 @@ Partial Class ManagerModifyStaff
         Me.btnNext.Text = "&UPDATE"
         Me.btnNext.UseVisualStyleBackColor = False
         '
-        'txtAccessKey
+        'ManagerMenuLayoutControl1
         '
-        Me.txtAccessKey.Location = New System.Drawing.Point(160, 70)
-        Me.txtAccessKey.Name = "txtAccessKey"
-        Me.txtAccessKey.Size = New System.Drawing.Size(314, 24)
-        Me.txtAccessKey.TabIndex = 48
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Enabled = False
-        Me.Label9.Location = New System.Drawing.Point(28, 76)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(74, 18)
-        Me.Label9.TabIndex = 49
-        Me.Label9.Text = "Access Key*"
-        '
-        'lblErrorAccess
-        '
-        Me.lblErrorAccess.AutoSize = True
-        Me.lblErrorAccess.Enabled = False
-        Me.lblErrorAccess.ForeColor = System.Drawing.Color.Red
-        Me.lblErrorAccess.Location = New System.Drawing.Point(157, 97)
-        Me.lblErrorAccess.Name = "lblErrorAccess"
-        Me.lblErrorAccess.Size = New System.Drawing.Size(148, 18)
-        Me.lblErrorAccess.TabIndex = 50
-        Me.lblErrorAccess.Text = "*Please fill in access key"
-        Me.lblErrorAccess.Visible = False
+        Me.ManagerMenuLayoutControl1.Location = New System.Drawing.Point(0, 0)
+        Me.ManagerMenuLayoutControl1.Name = "ManagerMenuLayoutControl1"
+        Me.ManagerMenuLayoutControl1.Size = New System.Drawing.Size(800, 575)
+        Me.ManagerMenuLayoutControl1.TabIndex = 0
         '
         'ManagerModifyStaff
         '
@@ -357,9 +322,6 @@ Partial Class ManagerModifyStaff
     Friend WithEvents txtIC As MaskedTextBox
     Friend WithEvents txtContactNo As MaskedTextBox
     Friend WithEvents Label10 As Label
-    Friend WithEvents lblErrorAccess As Label
-    Friend WithEvents Label9 As Label
-    Friend WithEvents txtAccessKey As TextBox
     Friend WithEvents radStaff As RadioButton
     Friend WithEvents radManager As RadioButton
     Friend WithEvents Label8 As Label

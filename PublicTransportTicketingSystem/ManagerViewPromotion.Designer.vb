@@ -160,6 +160,7 @@ Partial Class ManagerViewPromotion
         '
         Me.dgvPromotionList.AllowUserToAddRows = False
         Me.dgvPromotionList.AllowUserToDeleteRows = False
+        Me.dgvPromotionList.AllowUserToOrderColumns = True
         Me.dgvPromotionList.BackgroundColor = System.Drawing.SystemColors.ControlLightLight
         Me.dgvPromotionList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvPromotionList.GridColor = System.Drawing.SystemColors.ControlLightLight

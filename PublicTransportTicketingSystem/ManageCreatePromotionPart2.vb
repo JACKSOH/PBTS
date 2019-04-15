@@ -43,7 +43,9 @@ Public Class ManageCreatePromotionPart2
             Dim db As New PBTSDataContext()
             Dim query = From transport In db.Transports
                         Join schedule In db.Schedules On transport.transportID Equals (schedule.transportID)
-                        Where schedule.departureDateTime.Value.Date >= ManagerCreatePromotion.startDate And schedule.departureDateTime.Value.Date <= ManagerCreatePromotion.endDate And transport.transportType = selectedTransport
+                        Where schedule.departureDateTime.Value.Date >= ManagerCreatePromotion.startDate And
+                        schedule.departureDateTime.Value.Date <= ManagerCreatePromotion.endDate And
+                        transport.transportType = selectedTransport
                         Select schedule.scheduleID, schedule.departureDateTime, transport.transportID, transport.transportType
             dgvSchedule.DataSource = query
             dgvSchedule.Columns("scheduleID").HeaderText = "Schedule"

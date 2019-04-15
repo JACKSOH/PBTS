@@ -2,11 +2,11 @@
 
 Public Class StaffBooking
     Dim SqlConnection As New SqlConnection
-    Public Const connection As String = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\chunl\OneDrive\Desktop\PBTS\PublicTransportTicketingSystem\PTTS.mdf;Integrated Security=True"
+    Public Const connection As String = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\hawma\Desktop\PBTS\PublicTransportTicketingSystem\PTTS.mdf;Integrated Security=True"
     Public retrieveLocation As String
     Public selectedDate As Date
-    Public selectedOrigin As String
-    Public selectedDestination As String
+    Public selectedOrigin As String 'for payment
+    Public selectedDestination As String 'for payment
     Public type As String
 
     Private Sub StaffMenuLayoutControl1_Load(sender As Object, e As EventArgs) Handles MyBase.Load, TranportSelection1.TransportChange

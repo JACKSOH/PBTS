@@ -2,7 +2,7 @@
 
     Dim count As Integer = 0
     Dim db As New PBTSDataContext()
-    Public selectedSeat As New List(Of Integer)
+    Public selectedSeat As New List(Of Integer) 'for payment
 
     Private Sub form_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
@@ -12,6 +12,7 @@
                                 Select seat.seatNumber
 
         Dim i As Integer
+        MessageBox.Show(retrieveSeatQuery.Count.ToString)
 
         For i = 1 To retrieveSeatQuery.Count
             Dim btn As New Button

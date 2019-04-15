@@ -8,8 +8,11 @@ Public Class staffBookingCustomerDetail
     'seat
     Public totalPrice As Decimal 'total price of seat
 
-    'booking
-    Public newId As String      'bookingid
+    'booking 
+    Public newId As String      'bookingid 
+    Public ic As String
+    Public contactNo As String
+    Public custname As String
 
     'ticket
     Public newtId As String     'ticketid
@@ -58,9 +61,9 @@ Public Class staffBookingCustomerDetail
             Dim ctr As Control = Nothing
 
             'read input
-            Dim ic As String = If(mskIC.MaskCompleted, mskIC.Text, "")
-            Dim contactNo As String = If(mskContact.MaskCompleted, mskContact.Text, "")
-            Dim email As String = txtName.Text.Trim
+            ic = If(mskIC.MaskCompleted, mskIC.Text, "")
+            contactNo = If(mskContact.MaskCompleted, mskContact.Text, "")
+            custname = txtName.Text.Trim
 
             'validate ic
             If ic = "" Then
@@ -75,8 +78,8 @@ Public Class staffBookingCustomerDetail
             End If
 
             'validate email
-            If email = "" Then
-                err.AppendLine("- Invalid email")
+            If custname = "" Then
+                err.AppendLine("- Customer Name field cannot be empty")
                 ctr = If(ctr, txtName)
             End If
 
@@ -92,24 +95,22 @@ Public Class staffBookingCustomerDetail
             Dim getIdQuery = From booking In db.Bookings
                              Select booking.bookingID
 
-            Dim oldBookingID As String = getIdQuery.ToList.Last
-            Dim code As Char = oldBookingID.Chars(0)
-            Dim digit As Integer = Integer.Parse(oldBookingID.Substring(1, 4)) + 1
-            newId = code + digit.ToString("0000")
+            Dim oldBookingID As String = getIdQuery.ToList.LastOrDefault
 
-            MessageBox.Show(newId)
+            MessageBox.Show(App.GenerateNextId(oldBookingID))
 
             Dim book As New Booking
-            book.bookingID = newId
+            App.table = "Booking"
+            book.bookingID = App.GenerateNextId(oldBookingID)
             book.customerIC = mskIC.Text
             book.customerContactNo = mskContact.Text
-
+            book.customerName = custname
             book.employeeID = "em0001"
             db.Bookings.InsertOnSubmit(book)
             Try
                 db.SubmitChanges()
 
-
+                'payment
                 For Each element In staffSeatSelection.selectedSeat
                     Dim getseatIDQuery = From seat In db.Seats
                                          Where seat.scheduleID = staffBookingSchedule.scheduleID And seat.seatNumber = element
@@ -122,15 +123,14 @@ Public Class staffBookingCustomerDetail
 
                     Dim sprice As Decimal = Decimal.Parse(getseatIDQuery.First.seatPrice.ToString)
 
-                    Dim oldTicketID As String = getticketIdQuery.ToList.Last
-                    Dim tcode As Char = oldTicketID.Chars(0)
-                    Dim tdigit As Integer = Integer.Parse(oldTicketID.Substring(1, 4)) + 1
-                    newtId = tcode + tdigit.ToString("0000")
+                    Dim oldTicketID As String = getticketIdQuery.ToList.LastOrDefault
+
 
                     seatid = getseatIDQuery.First.seatID
 
                     Dim ticket As New Ticket
-                    ticket.ticketID = newtId
+                    App.table = "Ticket"
+                    ticket.ticketID = App.GenerateNextId(oldTicketID)
                     ticket.seatID = seatid
                     ticket.purchaseDateTime = DateTime.Now
                     ticket.ticketPrice = sprice
@@ -172,6 +172,8 @@ Public Class staffBookingCustomerDetail
         MessageBox.Show("Successfully Book", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
         'go to payment page
+
+        PaymentMake.ShowDialog()
 
     End Sub
 End Class

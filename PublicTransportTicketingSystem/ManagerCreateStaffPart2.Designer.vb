@@ -24,21 +24,21 @@ Partial Class ManagerCreateStaffPart2
     Private Sub InitializeComponent()
         Me.ManagerMenuLayoutControl1 = New PublicTransportTicketingSystem.managerMenuLayoutControl()
         Me.gbCreateStaff = New System.Windows.Forms.GroupBox()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.lblErrorAccess = New System.Windows.Forms.Label()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btnCancel = New System.Windows.Forms.Button()
         Me.btnCreateStaff = New System.Windows.Forms.Button()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.lblErrorAccess = New System.Windows.Forms.Label()
-        Me.Label9 = New System.Windows.Forms.Label()
         Me.gbCreateStaff.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
@@ -70,6 +70,111 @@ Partial Class ManagerCreateStaffPart2
         Me.gbCreateStaff.TabIndex = 24
         Me.gbCreateStaff.TabStop = False
         Me.gbCreateStaff.Text = "Add New Staff"
+        '
+        'Label8
+        '
+        Me.Label8.Location = New System.Drawing.Point(187, 106)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(285, 18)
+        Me.Label8.TabIndex = 61
+        Me.Label8.Text = "type"
+        '
+        'Label7
+        '
+        Me.Label7.Location = New System.Drawing.Point(187, 72)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(285, 18)
+        Me.Label7.TabIndex = 60
+        Me.Label7.Text = "Name"
+        '
+        'Label6
+        '
+        Me.Label6.Location = New System.Drawing.Point(187, 37)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(285, 18)
+        Me.Label6.TabIndex = 59
+        Me.Label6.Text = "Username"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(28, 106)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(64, 18)
+        Me.Label5.TabIndex = 58
+        Me.Label5.Text = "Staff Type"
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.BackColor = System.Drawing.SystemColors.Control
+        Me.GroupBox1.Controls.Add(Me.Label9)
+        Me.GroupBox1.Controls.Add(Me.lblErrorAccess)
+        Me.GroupBox1.Controls.Add(Me.TextBox2)
+        Me.GroupBox1.Controls.Add(Me.TextBox1)
+        Me.GroupBox1.Controls.Add(Me.Label4)
+        Me.GroupBox1.Controls.Add(Me.Label3)
+        Me.GroupBox1.Location = New System.Drawing.Point(31, 161)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(423, 179)
+        Me.GroupBox1.TabIndex = 57
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Set Account Password"
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Enabled = False
+        Me.Label9.ForeColor = System.Drawing.Color.Red
+        Me.Label9.Location = New System.Drawing.Point(160, 125)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(148, 18)
+        Me.Label9.TabIndex = 63
+        Me.Label9.Text = "*Please fill in access key"
+        Me.Label9.Visible = False
+        '
+        'lblErrorAccess
+        '
+        Me.lblErrorAccess.AutoSize = True
+        Me.lblErrorAccess.Enabled = False
+        Me.lblErrorAccess.ForeColor = System.Drawing.Color.Red
+        Me.lblErrorAccess.Location = New System.Drawing.Point(156, 68)
+        Me.lblErrorAccess.Name = "lblErrorAccess"
+        Me.lblErrorAccess.Size = New System.Drawing.Size(148, 18)
+        Me.lblErrorAccess.TabIndex = 62
+        Me.lblErrorAccess.Text = "*Please fill in access key"
+        Me.lblErrorAccess.Visible = False
+        '
+        'TextBox2
+        '
+        Me.TextBox2.Location = New System.Drawing.Point(159, 98)
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.Size = New System.Drawing.Size(149, 24)
+        Me.TextBox2.TabIndex = 61
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(159, 41)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(149, 24)
+        Me.TextBox1.TabIndex = 60
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(28, 104)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(111, 18)
+        Me.Label4.TabIndex = 59
+        Me.Label4.Text = "Confirm Password"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(28, 41)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(63, 18)
+        Me.Label3.TabIndex = 58
+        Me.Label3.Text = "Password"
         '
         'Label2
         '
@@ -114,111 +219,6 @@ Partial Class ManagerCreateStaffPart2
         Me.btnCreateStaff.TabIndex = 26
         Me.btnCreateStaff.Text = "&CREATE"
         Me.btnCreateStaff.UseVisualStyleBackColor = False
-        '
-        'GroupBox1
-        '
-        Me.GroupBox1.BackColor = System.Drawing.SystemColors.Control
-        Me.GroupBox1.Controls.Add(Me.Label9)
-        Me.GroupBox1.Controls.Add(Me.lblErrorAccess)
-        Me.GroupBox1.Controls.Add(Me.TextBox2)
-        Me.GroupBox1.Controls.Add(Me.TextBox1)
-        Me.GroupBox1.Controls.Add(Me.Label4)
-        Me.GroupBox1.Controls.Add(Me.Label3)
-        Me.GroupBox1.Location = New System.Drawing.Point(31, 161)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(423, 179)
-        Me.GroupBox1.TabIndex = 57
-        Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Set Account Password"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(28, 41)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(63, 18)
-        Me.Label3.TabIndex = 58
-        Me.Label3.Text = "Password"
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(28, 104)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(111, 18)
-        Me.Label4.TabIndex = 59
-        Me.Label4.Text = "Confirm Password"
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(28, 106)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(64, 18)
-        Me.Label5.TabIndex = 58
-        Me.Label5.Text = "Staff Type"
-        '
-        'Label6
-        '
-        Me.Label6.Location = New System.Drawing.Point(187, 37)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(285, 18)
-        Me.Label6.TabIndex = 59
-        Me.Label6.Text = "Username"
-        '
-        'Label7
-        '
-        Me.Label7.Location = New System.Drawing.Point(187, 72)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(285, 18)
-        Me.Label7.TabIndex = 60
-        Me.Label7.Text = "Name"
-        '
-        'Label8
-        '
-        Me.Label8.Location = New System.Drawing.Point(187, 106)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(285, 18)
-        Me.Label8.TabIndex = 61
-        Me.Label8.Text = "type"
-        '
-        'TextBox1
-        '
-        Me.TextBox1.Location = New System.Drawing.Point(159, 41)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(149, 24)
-        Me.TextBox1.TabIndex = 60
-        '
-        'TextBox2
-        '
-        Me.TextBox2.Location = New System.Drawing.Point(159, 98)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(149, 24)
-        Me.TextBox2.TabIndex = 61
-        '
-        'lblErrorAccess
-        '
-        Me.lblErrorAccess.AutoSize = True
-        Me.lblErrorAccess.Enabled = False
-        Me.lblErrorAccess.ForeColor = System.Drawing.Color.Red
-        Me.lblErrorAccess.Location = New System.Drawing.Point(156, 68)
-        Me.lblErrorAccess.Name = "lblErrorAccess"
-        Me.lblErrorAccess.Size = New System.Drawing.Size(148, 18)
-        Me.lblErrorAccess.TabIndex = 62
-        Me.lblErrorAccess.Text = "*Please fill in access key"
-        Me.lblErrorAccess.Visible = False
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Enabled = False
-        Me.Label9.ForeColor = System.Drawing.Color.Red
-        Me.Label9.Location = New System.Drawing.Point(160, 125)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(148, 18)
-        Me.Label9.TabIndex = 63
-        Me.Label9.Text = "*Please fill in access key"
-        Me.Label9.Visible = False
         '
         'ManagerCreateStaffPart2
         '

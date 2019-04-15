@@ -28,7 +28,7 @@
                                  Where seat.scheduleID = staffBookingSchedule.scheduleID And seat.seatNumber = i
                                  Select seat.seatStatus
 
-            If checkSeatQuery.First.ToString = "Unavailable" Then
+            If checkSeatQuery.First.ToString.ToLower = "unavailable" Then
                 btn.BackColor = Color.Red
                 btn.Enabled = False
 

@@ -187,6 +187,7 @@
     End Sub
 
     Private Sub dgvSchedule_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvSchedule.CellDoubleClick
+        ManagerManageSeat.selectedScheduleID = dgvSchedule.CurrentRow.Cells(0).Value.ToString
         ManagerManageSeat.ShowDialog()
 
     End Sub

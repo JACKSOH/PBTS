@@ -234,6 +234,12 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="App.vb" />
+    <Compile Include="ManagerViewStaff.Designer.vb">
+      <DependentUpon>ManagerViewStaff.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerViewStaff.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="PBTS.designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -346,6 +352,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ManagerViewSchdule.resx">
       <DependentUpon>ManagerViewSchdule.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerViewStaff.resx">
+      <DependentUpon>ManagerViewStaff.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StaffBooking.resx">
       <DependentUpon>StaffBooking.vb</DependentUpon>

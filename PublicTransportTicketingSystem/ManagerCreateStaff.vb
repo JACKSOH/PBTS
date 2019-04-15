@@ -18,7 +18,8 @@ Public Class ManagerCreateStaff
         IC = txtIC.Text
         email = txtEmail.Text
         contact = txtContactNo.Text
-
+        ManagerCreateStaffPart2.Show()
+        Me.Hide()
     End Sub
 
     Private Sub ValidateCheck()
@@ -37,12 +38,12 @@ Public Class ManagerCreateStaff
             lblErrorContact.Visible = False
         End If
 
-        If (txtIC.Text = "      -  -") Then
+        If (txtIC.Text = "") Then
             lblErrorIC.Visible = True
             lblErrorIC.Text = "*Please fill in IC No"
         ElseIf (txtIC.Text.Length <> 12) Then
             lblErrorIC.Visible = True
-            lblErrorIC.Text = "*Incorrect format"
+            lblErrorIC.Text = "*IC input length must be 14"
         ElseIf (txtIC.Text.Length = 12) Then
             lblErrorIC.Visible = False
         End If
@@ -80,21 +81,23 @@ Public Class ManagerCreateStaff
 
     Private Sub radManager_CheckedChanged(sender As Object, e As EventArgs) Handles radManager.CheckedChanged
         type = "Manager"
+        txtAccessKey.Enabled = True
         Label9.Enabled = True
     End Sub
 
     Private Sub radStaff_CheckedChanged(sender As Object, e As EventArgs) Handles radStaff.CheckedChanged
         type = "Staff"
         txtAccessKey.Enabled = False
+        lblErrorAccess.Visible = False
         Label9.Enabled = False
     End Sub
 
     Private Sub radFemale_CheckedChanged(sender As Object, e As EventArgs) Handles radFemale.CheckedChanged
-        gender = "Female"
+        gender = "F"
     End Sub
 
     Private Sub radMale_CheckedChanged(sender As Object, e As EventArgs) Handles radMale.CheckedChanged
-        gender = "Male"
+        gender = "M"
     End Sub
 
     Private Function EmailAddressCheck(ByVal emailAddress As String) As Boolean
@@ -112,4 +115,17 @@ Public Class ManagerCreateStaff
     Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
         End
     End Sub
+
+    Private Sub txtAccessKey_TextChanged(sender As Object, e As EventArgs) Handles txtAccessKey.TextChanged
+        If (radManager.Checked) Then
+            If (txtAccessKey.Text <> "admin123") Then
+                lblErrorAccess.Enabled = True
+                lblErrorAccess.Visible = True
+                lblErrorAccess.Text = "Incorrect Access Key"
+            Else
+                lblErrorAccess.Visible = False
+            End If
+        End If
+    End Sub
+
 End Class

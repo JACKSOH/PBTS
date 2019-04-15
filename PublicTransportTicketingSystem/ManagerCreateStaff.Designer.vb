@@ -23,13 +23,14 @@ Partial Class ManagerCreateStaff
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.gbCreateStaff = New System.Windows.Forms.GroupBox()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.radFemale = New System.Windows.Forms.RadioButton()
+        Me.radMale = New System.Windows.Forms.RadioButton()
         Me.txtEmail = New System.Windows.Forms.TextBox()
         Me.txtIC = New System.Windows.Forms.MaskedTextBox()
         Me.txtContactNo = New System.Windows.Forms.MaskedTextBox()
         Me.Label10 = New System.Windows.Forms.Label()
-        Me.radMale = New System.Windows.Forms.RadioButton()
         Me.lblErrorAccess = New System.Windows.Forms.Label()
-        Me.radFemale = New System.Windows.Forms.RadioButton()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.txtAccessKey = New System.Windows.Forms.TextBox()
         Me.radStaff = New System.Windows.Forms.RadioButton()
@@ -47,7 +48,6 @@ Partial Class ManagerCreateStaff
         Me.btnCancel = New System.Windows.Forms.Button()
         Me.btnNext = New System.Windows.Forms.Button()
         Me.ManagerMenuLayoutControl1 = New PublicTransportTicketingSystem.managerMenuLayoutControl()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.gbCreateStaff.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
@@ -86,6 +86,38 @@ Partial Class ManagerCreateStaff
         Me.gbCreateStaff.TabStop = False
         Me.gbCreateStaff.Text = "Add New Staff"
         '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.radFemale)
+        Me.GroupBox1.Controls.Add(Me.radMale)
+        Me.GroupBox1.Location = New System.Drawing.Point(160, 341)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(313, 42)
+        Me.GroupBox1.TabIndex = 56
+        Me.GroupBox1.TabStop = False
+        '
+        'radFemale
+        '
+        Me.radFemale.AutoSize = True
+        Me.radFemale.Checked = True
+        Me.radFemale.Location = New System.Drawing.Point(22, 14)
+        Me.radFemale.Name = "radFemale"
+        Me.radFemale.Size = New System.Drawing.Size(65, 22)
+        Me.radFemale.TabIndex = 0
+        Me.radFemale.TabStop = True
+        Me.radFemale.Text = "Female"
+        Me.radFemale.UseVisualStyleBackColor = True
+        '
+        'radMale
+        '
+        Me.radMale.AutoSize = True
+        Me.radMale.Location = New System.Drawing.Point(166, 14)
+        Me.radMale.Name = "radMale"
+        Me.radMale.Size = New System.Drawing.Size(54, 22)
+        Me.radMale.TabIndex = 1
+        Me.radMale.Text = "Male"
+        Me.radMale.UseVisualStyleBackColor = True
+        '
         'txtEmail
         '
         Me.txtEmail.Location = New System.Drawing.Point(161, 296)
@@ -118,16 +150,6 @@ Partial Class ManagerCreateStaff
         Me.Label10.TabIndex = 51
         Me.Label10.Text = "Gender*"
         '
-        'radMale
-        '
-        Me.radMale.AutoSize = True
-        Me.radMale.Location = New System.Drawing.Point(166, 14)
-        Me.radMale.Name = "radMale"
-        Me.radMale.Size = New System.Drawing.Size(54, 22)
-        Me.radMale.TabIndex = 1
-        Me.radMale.Text = "Male"
-        Me.radMale.UseVisualStyleBackColor = True
-        '
         'lblErrorAccess
         '
         Me.lblErrorAccess.AutoSize = True
@@ -139,18 +161,6 @@ Partial Class ManagerCreateStaff
         Me.lblErrorAccess.TabIndex = 50
         Me.lblErrorAccess.Text = "*Please fill in access key"
         Me.lblErrorAccess.Visible = False
-        '
-        'radFemale
-        '
-        Me.radFemale.AutoSize = True
-        Me.radFemale.Checked = True
-        Me.radFemale.Location = New System.Drawing.Point(22, 14)
-        Me.radFemale.Name = "radFemale"
-        Me.radFemale.Size = New System.Drawing.Size(65, 22)
-        Me.radFemale.TabIndex = 0
-        Me.radFemale.TabStop = True
-        Me.radFemale.Text = "Female"
-        Me.radFemale.UseVisualStyleBackColor = True
         '
         'Label9
         '
@@ -319,16 +329,6 @@ Partial Class ManagerCreateStaff
         Me.ManagerMenuLayoutControl1.Name = "ManagerMenuLayoutControl1"
         Me.ManagerMenuLayoutControl1.Size = New System.Drawing.Size(800, 575)
         Me.ManagerMenuLayoutControl1.TabIndex = 0
-        '
-        'GroupBox1
-        '
-        Me.GroupBox1.Controls.Add(Me.radFemale)
-        Me.GroupBox1.Controls.Add(Me.radMale)
-        Me.GroupBox1.Location = New System.Drawing.Point(160, 341)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(313, 42)
-        Me.GroupBox1.TabIndex = 56
-        Me.GroupBox1.TabStop = False
         '
         'ManagerCreateStaff
         '

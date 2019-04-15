@@ -21,8 +21,6 @@ Public Class ManageCreatePromotionPart2
         End If
 
         DataBind(selectedTransport)
-
-
     End Sub
 
     Private Sub btnBack_Click(sender As Object, e As EventArgs)
@@ -76,58 +74,56 @@ Public Class ManageCreatePromotionPart2
                                                       MessageBoxButtons.YesNoCancel,
                                                       MessageBoxIcon.Question)
 
-            If (result = DialogResult.Yes) Then
+        If (result = DialogResult.Yes) Then
 
-                Dim con As New SqlConnection
-                Dim cmd As New SqlCommand
-                Dim cmd2 As New SqlCommand
-                Dim cmd3 As New SqlCommand
+            Dim con As New SqlConnection
+            Dim cmd As New SqlCommand
+            Dim cmd2 As New SqlCommand
+            Dim cmd3 As New SqlCommand
 
-                Try
-                    con.ConnectionString = StaffBooking.connection
-                    con.Open()
-                    cmd.Connection = con
-                    Dim promotionID As String = App.GetNextPromotionId
+            Try
+                con.ConnectionString = StaffBooking.connection
+                con.Open()
+                cmd.Connection = con
+                Dim promotionID As String = App.GetNextPromotionId
 
-                    cmd = New SqlCommand("insert into promotion ([promotionID],[promotionName], [promotionStartDate], [promotionEndDate], [promotionDesc], [promotionStatus]) values (@promotionID, @promotionName, @promotionStartDate, @promotionEndDate, @promotionDesc, @promotionStatus)", con)
-                    cmd.Parameters.Add(New SqlParameter("promotionID", promotionID))
-                    cmd.Parameters.Add(New SqlParameter("promotionName", ManagerCreatePromotion.promotionName))
-                    cmd.Parameters.Add(New SqlParameter("promotionStartDate", ManagerCreatePromotion.startDate))
-                    cmd.Parameters.Add(New SqlParameter("promotionEndDate", ManagerCreatePromotion.endDate))
-                    cmd.Parameters.Add(New SqlParameter("promotionDesc", ManagerCreatePromotion.promotionDesc))
-                    cmd.Parameters.Add(New SqlParameter("promotionStatus", "Active"))
+                cmd = New SqlCommand("insert into promotion ([promotionID],[promotionName], [promotionStartDate], [promotionEndDate], [promotionDesc], [promotionStatus]) values (@promotionID, @promotionName, @promotionStartDate, @promotionEndDate, @promotionDesc, @promotionStatus)", con)
+                cmd.Parameters.Add(New SqlParameter("promotionID", promotionID))
+                cmd.Parameters.Add(New SqlParameter("promotionName", ManagerCreatePromotion.promotionName))
+                cmd.Parameters.Add(New SqlParameter("promotionStartDate", ManagerCreatePromotion.startDate))
+                cmd.Parameters.Add(New SqlParameter("promotionEndDate", ManagerCreatePromotion.endDate))
+                cmd.Parameters.Add(New SqlParameter("promotionDesc", ManagerCreatePromotion.promotionDesc))
+                cmd.Parameters.Add(New SqlParameter("promotionStatus", "Active"))
 
-                    cmd.ExecuteNonQuery()
+                cmd.ExecuteNonQuery()
 
-                    For value As Integer = 0 To count
-                        cmd2 = New SqlCommand("insert into promoteSchedule ([promoteScheduleID],[promotionID],[scheduleID], [discountRate]) values (@promoteScheduleID, @promotionID, @scheduleID, @discountRate)", con)
-                        cmd2.Parameters.Add(New SqlParameter("promoteScheduleID", App.GetNextPromoteScheduleId))
-                        cmd2.Parameters.Add(New SqlParameter("promotionID", promotionID))
-                        cmd2.Parameters.Add(New SqlParameter("scheduleID", dgvSchedule.Rows(value).Cells(0).Value.ToString))
-                        cmd2.Parameters.Add(New SqlParameter("discountRate", ManagerCreatePromotion.discountRate))
+                For value As Integer = 0 To count
+                    cmd2 = New SqlCommand("insert into promoteSchedule ([promoteScheduleID],[promotionID],[scheduleID], [discountRate]) values (@promoteScheduleID, @promotionID, @scheduleID, @discountRate)", con)
+                    cmd2.Parameters.Add(New SqlParameter("promoteScheduleID", App.GetNextPromoteScheduleId))
+                    cmd2.Parameters.Add(New SqlParameter("promotionID", promotionID))
+                    cmd2.Parameters.Add(New SqlParameter("scheduleID", dgvSchedule.Rows(value).Cells(0).Value.ToString))
+                    cmd2.Parameters.Add(New SqlParameter("discountRate", ManagerCreatePromotion.discountRate))
 
-                        cmd2.ExecuteNonQuery()
-                    Next
+                    cmd2.ExecuteNonQuery()
+                Next
 
-                    For value As Integer = 0 To count
-                        status = "Assigned"
-                        cmd3 = New SqlCommand("UPDATE Schedule Set assignPromotionStatus = @assignPromotionStatus Where scheduleID = @scheduleID", con)
-                        cmd3.Parameters.Add(New SqlParameter("assignPromotionStatus", status))
-                        cmd3.Parameters.Add(New SqlParameter("scheduleID", dgvSchedule.Rows(value).Cells(0).Value.ToString))
+                For value As Integer = 0 To count
+                    status = "Assigned"
+                    cmd3 = New SqlCommand("UPDATE Schedule Set assignPromotionStatus = @assignPromotionStatus Where scheduleID = @scheduleID", con)
+                    cmd3.Parameters.Add(New SqlParameter("assignPromotionStatus", status))
+                    cmd3.Parameters.Add(New SqlParameter("scheduleID", dgvSchedule.Rows(value).Cells(0).Value.ToString))
 
-                        cmd3.ExecuteNonQuery()
-                    Next
+                    cmd3.ExecuteNonQuery()
+                Next
 
-                    MessageBox.Show("Created Successfully")
+                MessageBox.Show("Created Successfully")
 
-                Catch ex As Exception
-                    MessageBox.Show("Invalid" & ex.Message)
-                Finally
-                    con.Close()
-                    ManagerViewPromotion.Show()
-                End Try
-            End If
-
-
+            Catch ex As Exception
+                MessageBox.Show("Invalid" & ex.Message)
+            Finally
+                con.Close()
+                ManagerViewPromotion.Show()
+            End Try
+        End If
     End Sub
 End Class

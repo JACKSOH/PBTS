@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class ManagerCreateStaffPart2
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,42 +20,35 @@ Partial Class ManagerCreateStaffPart2
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.ManagerMenuLayoutControl1 = New PublicTransportTicketingSystem.managerMenuLayoutControl()
         Me.gbCreateStaff = New System.Windows.Forms.GroupBox()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
+        Me.lblType = New System.Windows.Forms.Label()
+        Me.lblName = New System.Windows.Forms.Label()
+        Me.lblUserName = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.lblErrorAccess = New System.Windows.Forms.Label()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.lblErrorConfirmPassword = New System.Windows.Forms.Label()
+        Me.lblErrorPassword = New System.Windows.Forms.Label()
+        Me.txtConfirmPassword = New System.Windows.Forms.TextBox()
+        Me.txtPassword = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btnCancel = New System.Windows.Forms.Button()
         Me.btnCreateStaff = New System.Windows.Forms.Button()
+        Me.ManagerMenuLayoutControl1 = New PublicTransportTicketingSystem.managerMenuLayoutControl()
         Me.gbCreateStaff.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
-        'ManagerMenuLayoutControl1
-        '
-        Me.ManagerMenuLayoutControl1.Location = New System.Drawing.Point(-1, 0)
-        Me.ManagerMenuLayoutControl1.Name = "ManagerMenuLayoutControl1"
-        Me.ManagerMenuLayoutControl1.Size = New System.Drawing.Size(800, 575)
-        Me.ManagerMenuLayoutControl1.TabIndex = 0
-        '
         'gbCreateStaff
         '
         Me.gbCreateStaff.BackColor = System.Drawing.SystemColors.Control
-        Me.gbCreateStaff.Controls.Add(Me.Label8)
-        Me.gbCreateStaff.Controls.Add(Me.Label7)
-        Me.gbCreateStaff.Controls.Add(Me.Label6)
+        Me.gbCreateStaff.Controls.Add(Me.lblType)
+        Me.gbCreateStaff.Controls.Add(Me.lblName)
+        Me.gbCreateStaff.Controls.Add(Me.lblUserName)
         Me.gbCreateStaff.Controls.Add(Me.Label5)
         Me.gbCreateStaff.Controls.Add(Me.GroupBox1)
         Me.gbCreateStaff.Controls.Add(Me.Label2)
@@ -71,29 +64,29 @@ Partial Class ManagerCreateStaffPart2
         Me.gbCreateStaff.TabStop = False
         Me.gbCreateStaff.Text = "Add New Staff"
         '
-        'Label8
+        'lblType
         '
-        Me.Label8.Location = New System.Drawing.Point(187, 106)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(285, 18)
-        Me.Label8.TabIndex = 61
-        Me.Label8.Text = "type"
+        Me.lblType.Location = New System.Drawing.Point(187, 106)
+        Me.lblType.Name = "lblType"
+        Me.lblType.Size = New System.Drawing.Size(285, 18)
+        Me.lblType.TabIndex = 61
+        Me.lblType.Text = "type"
         '
-        'Label7
+        'lblName
         '
-        Me.Label7.Location = New System.Drawing.Point(187, 72)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(285, 18)
-        Me.Label7.TabIndex = 60
-        Me.Label7.Text = "Name"
+        Me.lblName.Location = New System.Drawing.Point(187, 72)
+        Me.lblName.Name = "lblName"
+        Me.lblName.Size = New System.Drawing.Size(285, 18)
+        Me.lblName.TabIndex = 60
+        Me.lblName.Text = "Name"
         '
-        'Label6
+        'lblUserName
         '
-        Me.Label6.Location = New System.Drawing.Point(187, 37)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(285, 18)
-        Me.Label6.TabIndex = 59
-        Me.Label6.Text = "Username"
+        Me.lblUserName.Location = New System.Drawing.Point(187, 37)
+        Me.lblUserName.Name = "lblUserName"
+        Me.lblUserName.Size = New System.Drawing.Size(285, 18)
+        Me.lblUserName.TabIndex = 59
+        Me.lblUserName.Text = "Username"
         '
         'Label5
         '
@@ -107,10 +100,10 @@ Partial Class ManagerCreateStaffPart2
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.SystemColors.Control
-        Me.GroupBox1.Controls.Add(Me.Label9)
-        Me.GroupBox1.Controls.Add(Me.lblErrorAccess)
-        Me.GroupBox1.Controls.Add(Me.TextBox2)
-        Me.GroupBox1.Controls.Add(Me.TextBox1)
+        Me.GroupBox1.Controls.Add(Me.lblErrorConfirmPassword)
+        Me.GroupBox1.Controls.Add(Me.lblErrorPassword)
+        Me.GroupBox1.Controls.Add(Me.txtConfirmPassword)
+        Me.GroupBox1.Controls.Add(Me.txtPassword)
         Me.GroupBox1.Controls.Add(Me.Label4)
         Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Location = New System.Drawing.Point(31, 161)
@@ -120,43 +113,43 @@ Partial Class ManagerCreateStaffPart2
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Set Account Password"
         '
-        'Label9
+        'lblErrorConfirmPassword
         '
-        Me.Label9.AutoSize = True
-        Me.Label9.Enabled = False
-        Me.Label9.ForeColor = System.Drawing.Color.Red
-        Me.Label9.Location = New System.Drawing.Point(160, 125)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(148, 18)
-        Me.Label9.TabIndex = 63
-        Me.Label9.Text = "*Please fill in access key"
-        Me.Label9.Visible = False
+        Me.lblErrorConfirmPassword.AutoSize = True
+        Me.lblErrorConfirmPassword.ForeColor = System.Drawing.Color.Red
+        Me.lblErrorConfirmPassword.Location = New System.Drawing.Point(160, 125)
+        Me.lblErrorConfirmPassword.Name = "lblErrorConfirmPassword"
+        Me.lblErrorConfirmPassword.Size = New System.Drawing.Size(148, 18)
+        Me.lblErrorConfirmPassword.TabIndex = 63
+        Me.lblErrorConfirmPassword.Text = "*Please fill in access key"
+        Me.lblErrorConfirmPassword.Visible = False
         '
-        'lblErrorAccess
+        'lblErrorPassword
         '
-        Me.lblErrorAccess.AutoSize = True
-        Me.lblErrorAccess.Enabled = False
-        Me.lblErrorAccess.ForeColor = System.Drawing.Color.Red
-        Me.lblErrorAccess.Location = New System.Drawing.Point(156, 68)
-        Me.lblErrorAccess.Name = "lblErrorAccess"
-        Me.lblErrorAccess.Size = New System.Drawing.Size(148, 18)
-        Me.lblErrorAccess.TabIndex = 62
-        Me.lblErrorAccess.Text = "*Please fill in access key"
-        Me.lblErrorAccess.Visible = False
+        Me.lblErrorPassword.AutoSize = True
+        Me.lblErrorPassword.ForeColor = System.Drawing.Color.Red
+        Me.lblErrorPassword.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.lblErrorPassword.Location = New System.Drawing.Point(156, 68)
+        Me.lblErrorPassword.Name = "lblErrorPassword"
+        Me.lblErrorPassword.Size = New System.Drawing.Size(148, 18)
+        Me.lblErrorPassword.TabIndex = 62
+        Me.lblErrorPassword.Text = "*Please fill in access key"
+        Me.lblErrorPassword.Visible = False
         '
-        'TextBox2
+        'txtConfirmPassword
         '
-        Me.TextBox2.Location = New System.Drawing.Point(159, 98)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(149, 24)
-        Me.TextBox2.TabIndex = 61
+        Me.txtConfirmPassword.Enabled = False
+        Me.txtConfirmPassword.Location = New System.Drawing.Point(159, 98)
+        Me.txtConfirmPassword.Name = "txtConfirmPassword"
+        Me.txtConfirmPassword.Size = New System.Drawing.Size(149, 24)
+        Me.txtConfirmPassword.TabIndex = 61
         '
-        'TextBox1
+        'txtPassword
         '
-        Me.TextBox1.Location = New System.Drawing.Point(159, 41)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(149, 24)
-        Me.TextBox1.TabIndex = 60
+        Me.txtPassword.Location = New System.Drawing.Point(159, 41)
+        Me.txtPassword.Name = "txtPassword"
+        Me.txtPassword.Size = New System.Drawing.Size(149, 24)
+        Me.txtPassword.TabIndex = 60
         '
         'Label4
         '
@@ -220,6 +213,13 @@ Partial Class ManagerCreateStaffPart2
         Me.btnCreateStaff.Text = "&CREATE"
         Me.btnCreateStaff.UseVisualStyleBackColor = False
         '
+        'ManagerMenuLayoutControl1
+        '
+        Me.ManagerMenuLayoutControl1.Location = New System.Drawing.Point(-1, 0)
+        Me.ManagerMenuLayoutControl1.Name = "ManagerMenuLayoutControl1"
+        Me.ManagerMenuLayoutControl1.Size = New System.Drawing.Size(800, 575)
+        Me.ManagerMenuLayoutControl1.TabIndex = 0
+        '
         'ManagerCreateStaffPart2
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -247,12 +247,12 @@ Partial Class ManagerCreateStaffPart2
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents Label4 As Label
     Friend WithEvents Label3 As Label
-    Friend WithEvents Label8 As Label
-    Friend WithEvents Label7 As Label
-    Friend WithEvents Label6 As Label
+    Friend WithEvents lblType As Label
+    Friend WithEvents lblName As Label
+    Friend WithEvents lblUserName As Label
     Friend WithEvents Label5 As Label
-    Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents Label9 As Label
-    Friend WithEvents lblErrorAccess As Label
+    Friend WithEvents txtConfirmPassword As TextBox
+    Friend WithEvents txtPassword As TextBox
+    Friend WithEvents lblErrorConfirmPassword As Label
+    Friend WithEvents lblErrorPassword As Label
 End Class

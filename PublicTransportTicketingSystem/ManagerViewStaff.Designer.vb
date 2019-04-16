@@ -139,6 +139,7 @@ Partial Class ManagerViewStaff
         Me.Controls.Add(Me.ManagerMenuLayoutControl1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "ManagerViewStaff"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "ManagerViewStaff"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()

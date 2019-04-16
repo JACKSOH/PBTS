@@ -140,7 +140,7 @@ Public Class ManagerModifyStaff
         txtEmail.Text = ManagerViewStaff.email
         txtContactNo.Text = ManagerViewStaff.contactNo
 
-        If (ManagerViewStaff.gender.Contains("M") Or ManagerViewStaff.gender.Contains("m")) Then
+        If ManagerViewStaff.gender.ToLower.Contains("m") Then
             radMale.Checked = True
             radFemale.Checked = False
         Else

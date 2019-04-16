@@ -1,5 +1,6 @@
 ﻿Module App
     Public table As String
+
     Public Function GenerateNextId(id As String) As String
 
         If id = "" Then

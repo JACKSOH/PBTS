@@ -231,6 +231,7 @@ Partial Class ManagerViewPromotion
         Me.Controls.Add(Me.ManagerMenuLayoutControl1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "ManagerViewPromotion"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "ManagerViewPromotion"
         Me.gbBus.ResumeLayout(False)
         Me.gbBus.PerformLayout()

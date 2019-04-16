@@ -304,6 +304,7 @@ Partial Class ManagerModifyStaff
         Me.Controls.Add(Me.ManagerMenuLayoutControl1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "ManagerModifyStaff"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "ManagerModifyStaff"
         Me.gbCreateStaff.ResumeLayout(False)
         Me.gbCreateStaff.PerformLayout()

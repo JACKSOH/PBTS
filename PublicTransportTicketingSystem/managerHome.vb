@@ -39,4 +39,8 @@
     Private Sub exitClick(sender As Object, e As EventArgs) Handles ManagerMenuLayoutControl1.managerExitClick
         End
     End Sub
+
+    Private Sub ManagerMenuLayoutControl1_Load(sender As Object, e As EventArgs) Handles ManagerMenuLayoutControl1.Load
+
+    End Sub
 End Class

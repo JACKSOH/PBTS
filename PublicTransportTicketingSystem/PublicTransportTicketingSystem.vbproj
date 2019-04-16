@@ -406,6 +406,9 @@
     <EmbeddedResource Include="ManagerLocationInsert.resx">
       <DependentUpon>ManagerLocationInsert.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ManagerManageAccount.resx">
+      <DependentUpon>ManagerManageAccount.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ManagerManageLocation.resx">
       <DependentUpon>ManagerManageLocation.vb</DependentUpon>
     </EmbeddedResource>

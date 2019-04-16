@@ -26,6 +26,7 @@ Partial Class ManagerManageSchedule
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ManagerManageSchedule))
         Me.dgvSchedule = New System.Windows.Forms.DataGridView()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.lblRecord = New System.Windows.Forms.Label()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.dtpDate = New System.Windows.Forms.DateTimePicker()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -39,7 +40,6 @@ Partial Class ManagerManageSchedule
         Me.PTTSDataSet = New PublicTransportTicketingSystem.PTTSDataSet()
         Me.ScheduleTableAdapter = New PublicTransportTicketingSystem.PTTSDataSetTableAdapters.ScheduleTableAdapter()
         Me.ts = New PublicTransportTicketingSystem.TranportSelection()
-        Me.lblRecord = New System.Windows.Forms.Label()
         Me.ManagerMenuLayoutControl1 = New PublicTransportTicketingSystem.managerMenuLayoutControl()
         CType(Me.dgvSchedule, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -71,12 +71,23 @@ Partial Class ManagerManageSchedule
         Me.GroupBox1.Controls.Add(Me.btnUpdate)
         Me.GroupBox1.Controls.Add(Me.btnAdd)
         Me.GroupBox1.Controls.Add(Me.btnDeleteCancel)
+        Me.GroupBox1.Font = New System.Drawing.Font("Tw Cen MT Condensed", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.Location = New System.Drawing.Point(235, 184)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(571, 350)
         Me.GroupBox1.TabIndex = 3
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Schedule "
+        '
+        'lblRecord
+        '
+        Me.lblRecord.AutoSize = True
+        Me.lblRecord.Font = New System.Drawing.Font("Tw Cen MT Condensed", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblRecord.Location = New System.Drawing.Point(6, 313)
+        Me.lblRecord.Name = "lblRecord"
+        Me.lblRecord.Size = New System.Drawing.Size(93, 17)
+        Me.lblRecord.TabIndex = 20
+        Me.lblRecord.Text = "X records found."
         '
         'PictureBox2
         '
@@ -93,7 +104,7 @@ Partial Class ManagerManageSchedule
         Me.dtpDate.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dtpDate.Location = New System.Drawing.Point(452, 106)
         Me.dtpDate.Name = "dtpDate"
-        Me.dtpDate.Size = New System.Drawing.Size(79, 20)
+        Me.dtpDate.Size = New System.Drawing.Size(79, 24)
         Me.dtpDate.TabIndex = 18
         '
         'Label2
@@ -130,7 +141,7 @@ Partial Class ManagerManageSchedule
         '
         Me.txtSearch.Location = New System.Drawing.Point(451, 51)
         Me.txtSearch.Name = "txtSearch"
-        Me.txtSearch.Size = New System.Drawing.Size(73, 20)
+        Me.txtSearch.Size = New System.Drawing.Size(73, 24)
         Me.txtSearch.TabIndex = 14
         '
         'btnUpdate
@@ -187,16 +198,6 @@ Partial Class ManagerManageSchedule
         Me.ts.Name = "ts"
         Me.ts.Size = New System.Drawing.Size(570, 104)
         Me.ts.TabIndex = 1
-        '
-        'lblRecord
-        '
-        Me.lblRecord.AutoSize = True
-        Me.lblRecord.Font = New System.Drawing.Font("Tw Cen MT Condensed", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblRecord.Location = New System.Drawing.Point(6, 313)
-        Me.lblRecord.Name = "lblRecord"
-        Me.lblRecord.Size = New System.Drawing.Size(93, 17)
-        Me.lblRecord.TabIndex = 20
-        Me.lblRecord.Text = "X records found."
         '
         'ManagerMenuLayoutControl1
         '

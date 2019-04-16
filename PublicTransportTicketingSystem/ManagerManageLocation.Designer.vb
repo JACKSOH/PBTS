@@ -51,6 +51,7 @@ Partial Class ManagerManageLocation
         'dgv
         '
         Me.dgv.AutoGenerateColumns = False
+        Me.dgv.BackgroundColor = System.Drawing.SystemColors.Control
         Me.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgv.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.LocationIDDataGridViewTextBoxColumn, Me.LocationNameDataGridViewTextBoxColumn, Me.LocationTypeDataGridViewTextBoxColumn})
         Me.dgv.DataSource = Me.LocationBindingSource
@@ -140,6 +141,7 @@ Partial Class ManagerManageLocation
         Me.gbTranport.Controls.Add(Me.btnDeleteCancel)
         Me.gbTranport.Controls.Add(Me.btnUpdate)
         Me.gbTranport.Controls.Add(Me.btnAdd)
+        Me.gbTranport.Font = New System.Drawing.Font("Tw Cen MT Condensed", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.gbTranport.Location = New System.Drawing.Point(241, 207)
         Me.gbTranport.Name = "gbTranport"
         Me.gbTranport.Size = New System.Drawing.Size(547, 356)
@@ -151,7 +153,7 @@ Partial Class ManagerManageLocation
         '
         Me.lblRecord.AutoSize = True
         Me.lblRecord.Font = New System.Drawing.Font("Tw Cen MT Condensed", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblRecord.Location = New System.Drawing.Point(11, 321)
+        Me.lblRecord.Location = New System.Drawing.Point(20, 321)
         Me.lblRecord.Name = "lblRecord"
         Me.lblRecord.Size = New System.Drawing.Size(93, 17)
         Me.lblRecord.TabIndex = 8

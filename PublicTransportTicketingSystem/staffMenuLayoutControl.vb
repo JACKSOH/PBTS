@@ -9,7 +9,10 @@
 
     Public Event staffBookingClick(ByVal sender As Object, ByVal e As System.EventArgs)
 
+
+
     Private Sub btnBookingClick(sender As Object, e As EventArgs) Handles btnReservation.Click
+
         RaiseEvent staffBookingClick(sender, e)
 
     End Sub
@@ -45,6 +48,10 @@
     Public Event staffExitClick(ByVal sender As Object, ByVal e As System.EventArgs)
     Private Sub btnExitClick(sender As Object, e As EventArgs) Handles pbExit.Click
         RaiseEvent staffExitClick(sender, e)
+
+    End Sub
+
+    Private Sub FlowLayoutPanel1_Paint(sender As Object, e As PaintEventArgs) Handles FlowLayoutPanel1.Paint
 
     End Sub
 End Class

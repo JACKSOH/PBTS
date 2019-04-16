@@ -40,7 +40,7 @@ Partial Class managerHome
         Me.ClientSize = New System.Drawing.Size(799, 588)
         Me.Controls.Add(Me.ManagerMenuLayoutControl1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "managerHome"
         Me.Text = "managerHome"
         Me.ResumeLayout(False)

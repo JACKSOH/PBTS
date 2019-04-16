@@ -2,7 +2,7 @@
 Imports System.Text
 Imports System.Text.RegularExpressions
 
-Public Class ManagerManagerAccount
+Public Class StaffManageAccount
     Dim IC As String
     Dim sname As String
     Dim contact As String
@@ -41,7 +41,7 @@ Public Class ManagerManagerAccount
         End If
     End Sub
 
-    Private Sub ManagerMenuLayoutControl1_Load(sender As Object, e As EventArgs) Handles ManagerMenuLayoutControl1.Load
+    Private Sub StaffMenuLayoutControl1_Load(sender As Object, e As EventArgs) Handles StaffMenuLayoutControl1.Load
 
     End Sub
 
@@ -258,13 +258,13 @@ Public Class ManagerManagerAccount
         Debug.Print(contact)
         If (radYes.Checked) Then
             If (ValidateCheck()) Then
-
+                MessageBox.Show(password)
                 If (encryptPassword(txtExistPassword.Text) = password) Then
-
+                    MessageBox.Show("b")
                     If (txtPassword.Text <> "") Then
-
+                        MessageBox.Show("c")
                         If (MatchPassword(txtPassword.Text, txtConfirmPassword.Text)) Then
-
+                            MessageBox.Show("d")
                             Dim result As DialogResult = MessageBox.Show("Are you sure want to update account details?", "Confirmation",
                                                           MessageBoxButtons.YesNoCancel,
                                                           MessageBoxIcon.Question)
@@ -342,8 +342,8 @@ Public Class ManagerManagerAccount
 
     End Sub
 
-    Private Sub ManagerManagerAccount_Load(sender As Object, e As EventArgs) Handles Me.Load
-        IC = managerIndex.IC
+    Private Sub ManagerStaffAccount_Load(sender As Object, e As EventArgs) Handles Me.Load
+        IC = StaffIndex.IC
         contact = txtContactNo.Text
         email = txtEmail.Text
         txtPassword.Enabled = False
@@ -362,8 +362,9 @@ Public Class ManagerManagerAccount
 
         End If
 
-        IC = managerIndex.IC
+        IC = StaffIndex.IC
         gpChangePassword.Enabled = False
         DataBind()
     End Sub
+
 End Class

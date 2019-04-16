@@ -279,6 +279,12 @@
     <Compile Include="staffBookingSchedule.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="StaffManageAccount.Designer.vb">
+      <DependentUpon>StaffManageAccount.vb</DependentUpon>
+    </Compile>
+    <Compile Include="StaffManageAccount.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="staffMenuLayoutControl.Designer.vb">
       <DependentUpon>staffMenuLayoutControl.vb</DependentUpon>
     </Compile>
@@ -379,6 +385,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="staffBookingSchedule.resx">
       <DependentUpon>staffBookingSchedule.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StaffManageAccount.resx">
+      <DependentUpon>StaffManageAccount.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="staffMenuLayoutControl.resx">
       <DependentUpon>staffMenuLayoutControl.vb</DependentUpon>

@@ -93,7 +93,8 @@ Public Class StaffIndex
         If ICPasswordValidation() Then
             If CheckEmployeePasswordandIC(txtIC.Text, txtPassword.Text, "staff") Then
                 Me.Hide()
-                StaffBooking.Show()
+                'StaffBooking.Show()
+                StaffManageAccount.ShowDialog()
             Else
                 lblError.Visible = True
                 Return

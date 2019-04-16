@@ -126,6 +126,7 @@ Partial Class managerIndex
         Me.txtPassword.Enabled = False
         Me.txtPassword.Location = New System.Drawing.Point(106, 218)
         Me.txtPassword.Name = "txtPassword"
+        Me.txtPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtPassword.Size = New System.Drawing.Size(159, 20)
         Me.txtPassword.TabIndex = 15
         '
@@ -209,6 +210,7 @@ Partial Class managerIndex
         '
         'managerIndex
         '
+        Me.AcceptButton = Me.btnLogin
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(387, 370)

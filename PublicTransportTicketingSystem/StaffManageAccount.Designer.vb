@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class ManagerManagerAccount
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+Partial Class StaffManageAccount
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()>
+    <System.Diagnostics.DebuggerNonUserCode()> _
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,9 +20,11 @@ Partial Class ManagerManagerAccount
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()>
+    <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.StaffMenuLayoutControl1 = New PublicTransportTicketingSystem.staffMenuLayoutControl()
         Me.gbManagerAccount = New System.Windows.Forms.GroupBox()
+        Me.txtContactNo = New System.Windows.Forms.TextBox()
         Me.lblIC = New System.Windows.Forms.Label()
         Me.lblName = New System.Windows.Forms.Label()
         Me.radNo = New System.Windows.Forms.RadioButton()
@@ -47,11 +49,18 @@ Partial Class ManagerManagerAccount
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btnCancel = New System.Windows.Forms.Button()
         Me.btnNext = New System.Windows.Forms.Button()
-        Me.ManagerMenuLayoutControl1 = New PublicTransportTicketingSystem.managerMenuLayoutControl()
-        Me.txtContactNo = New System.Windows.Forms.TextBox()
         Me.gbManagerAccount.SuspendLayout()
         Me.gpChangePassword.SuspendLayout()
         Me.SuspendLayout()
+        '
+        'StaffMenuLayoutControl1
+        '
+        Me.StaffMenuLayoutControl1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.StaffMenuLayoutControl1.Location = New System.Drawing.Point(0, 0)
+        Me.StaffMenuLayoutControl1.Margin = New System.Windows.Forms.Padding(0)
+        Me.StaffMenuLayoutControl1.Name = "StaffMenuLayoutControl1"
+        Me.StaffMenuLayoutControl1.Size = New System.Drawing.Size(804, 582)
+        Me.StaffMenuLayoutControl1.TabIndex = 0
         '
         'gbManagerAccount
         '
@@ -74,12 +83,20 @@ Partial Class ManagerManagerAccount
         Me.gbManagerAccount.Controls.Add(Me.btnNext)
         Me.gbManagerAccount.Font = New System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.gbManagerAccount.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.gbManagerAccount.Location = New System.Drawing.Point(260, 89)
+        Me.gbManagerAccount.Location = New System.Drawing.Point(265, 84)
         Me.gbManagerAccount.Name = "gbManagerAccount"
         Me.gbManagerAccount.Size = New System.Drawing.Size(499, 486)
-        Me.gbManagerAccount.TabIndex = 24
+        Me.gbManagerAccount.TabIndex = 25
         Me.gbManagerAccount.TabStop = False
         Me.gbManagerAccount.Text = "Manager Account"
+        '
+        'txtContactNo
+        '
+        Me.txtContactNo.Location = New System.Drawing.Point(180, 95)
+        Me.txtContactNo.MaxLength = 11
+        Me.txtContactNo.Name = "txtContactNo"
+        Me.txtContactNo.Size = New System.Drawing.Size(274, 24)
+        Me.txtContactNo.TabIndex = 64
         '
         'lblIC
         '
@@ -329,32 +346,16 @@ Partial Class ManagerManagerAccount
         Me.btnNext.Text = "&MODIFY"
         Me.btnNext.UseVisualStyleBackColor = False
         '
-        'ManagerMenuLayoutControl1
-        '
-        Me.ManagerMenuLayoutControl1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.ManagerMenuLayoutControl1.Location = New System.Drawing.Point(0, 0)
-        Me.ManagerMenuLayoutControl1.Name = "ManagerMenuLayoutControl1"
-        Me.ManagerMenuLayoutControl1.Size = New System.Drawing.Size(801, 587)
-        Me.ManagerMenuLayoutControl1.TabIndex = 0
-        '
-        'txtContactNo
-        '
-        Me.txtContactNo.Location = New System.Drawing.Point(180, 92)
-        Me.txtContactNo.MaxLength = 11
-        Me.txtContactNo.Name = "txtContactNo"
-        Me.txtContactNo.Size = New System.Drawing.Size(274, 24)
-        Me.txtContactNo.TabIndex = 64
-        '
-        'ManagerManagerAccount
+        'StaffManageAccount
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(801, 587)
+        Me.ClientSize = New System.Drawing.Size(804, 582)
         Me.Controls.Add(Me.gbManagerAccount)
-        Me.Controls.Add(Me.ManagerMenuLayoutControl1)
+        Me.Controls.Add(Me.StaffMenuLayoutControl1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Name = "ManagerManagerAccount"
-        Me.Text = "ManagerManagerAccount"
+        Me.Name = "StaffManageAccount"
+        Me.Text = "StaffManageAccount"
         Me.gbManagerAccount.ResumeLayout(False)
         Me.gbManagerAccount.PerformLayout()
         Me.gpChangePassword.ResumeLayout(False)
@@ -363,17 +364,8 @@ Partial Class ManagerManagerAccount
 
     End Sub
 
-    Friend WithEvents ManagerMenuLayoutControl1 As managerMenuLayoutControl
+    Friend WithEvents StaffMenuLayoutControl1 As staffMenuLayoutControl
     Friend WithEvents gbManagerAccount As GroupBox
-    Friend WithEvents txtEmail As TextBox
-    Friend WithEvents lblErrorEmail As Label
-    Friend WithEvents Label7 As Label
-    Friend WithEvents lblErrorContact As Label
-    Friend WithEvents Label5 As Label
-    Friend WithEvents Label2 As Label
-    Friend WithEvents Label1 As Label
-    Friend WithEvents btnCancel As Button
-    Friend WithEvents btnNext As Button
     Friend WithEvents lblIC As Label
     Friend WithEvents lblName As Label
     Friend WithEvents radNo As RadioButton
@@ -389,5 +381,14 @@ Partial Class ManagerManagerAccount
     Friend WithEvents txtPassword As TextBox
     Friend WithEvents Label4 As Label
     Friend WithEvents Label3 As Label
+    Friend WithEvents lblErrorEmail As Label
+    Friend WithEvents Label7 As Label
+    Friend WithEvents lblErrorContact As Label
+    Friend WithEvents Label5 As Label
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Label1 As Label
+    Friend WithEvents btnCancel As Button
+    Friend WithEvents btnNext As Button
     Friend WithEvents txtContactNo As TextBox
+    Friend WithEvents txtEmail As TextBox
 End Class

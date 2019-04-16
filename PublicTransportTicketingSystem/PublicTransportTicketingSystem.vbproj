@@ -203,6 +203,12 @@
     <Compile Include="ManagerManageLocation.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ManagerManagerAccount.Designer.vb">
+      <DependentUpon>ManagerManagerAccount.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerManagerAccount.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="managerMenuLayoutControl.Designer.vb">
       <DependentUpon>managerMenuLayoutControl.vb</DependentUpon>
     </Compile>
@@ -343,6 +349,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ManagerManageLocation.resx">
       <DependentUpon>ManagerManageLocation.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerManagerAccount.resx">
+      <DependentUpon>ManagerManagerAccount.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="managerMenuLayoutControl.resx">
       <DependentUpon>managerMenuLayoutControl.vb</DependentUpon>

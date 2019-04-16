@@ -68,4 +68,8 @@
     Private Sub ManagerMenuLayoutControl1_Load_1(sender As Object, e As EventArgs) Handles ManagerMenuLayoutControl1.Load
 
     End Sub
+
+    Private Sub gbTranport_Enter(sender As Object, e As EventArgs) Handles gbTranport.Enter
+
+    End Sub
 End Class

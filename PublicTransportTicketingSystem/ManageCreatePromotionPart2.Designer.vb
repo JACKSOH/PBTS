@@ -230,16 +230,17 @@ Partial Class ManageCreatePromotionPart2
         '
         'ManagerMenuLayoutControl1
         '
-        Me.ManagerMenuLayoutControl1.Location = New System.Drawing.Point(0, 1)
+        Me.ManagerMenuLayoutControl1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.ManagerMenuLayoutControl1.Location = New System.Drawing.Point(0, 0)
         Me.ManagerMenuLayoutControl1.Name = "ManagerMenuLayoutControl1"
-        Me.ManagerMenuLayoutControl1.Size = New System.Drawing.Size(793, 546)
+        Me.ManagerMenuLayoutControl1.Size = New System.Drawing.Size(799, 565)
         Me.ManagerMenuLayoutControl1.TabIndex = 0
         '
         'ManageCreatePromotionPart2
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(794, 576)
+        Me.ClientSize = New System.Drawing.Size(799, 565)
         Me.Controls.Add(Me.dgvSchedule)
         Me.Controls.Add(Me.lblCount)
         Me.Controls.Add(Me.btnCancel)

@@ -37,16 +37,6 @@
       <Association Name="Location_LocationList" Member="LocationLists" ThisKey="locationID" OtherKey="locationID" Type="LocationList" />
     </Type>
   </Table>
-  <Table Name="dbo.promoteSchedule" Member="promoteSchedules">
-    <Type Name="promoteSchedule">
-      <Column Name="promoteScheduleID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="promotionID" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
-      <Column Name="scheduleID" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
-      <Column Name="discountRate" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="Promotion_promoteSchedule" Member="Promotion" ThisKey="promotionID" OtherKey="promotionID" Type="Promotion" IsForeignKey="true" />
-      <Association Name="Schedule_promoteSchedule" Member="Schedule" ThisKey="scheduleID" OtherKey="scheduleID" Type="Schedule" IsForeignKey="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.Promotion" Member="Promotions">
     <Type Name="Promotion">
       <Column Name="promotionID" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -112,10 +102,20 @@
       <Column Name="transportID" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
       <Column Name="scheduleStatus" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="assignPromotionStatus" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
-      <Association Name="Schedule_promoteSchedule" Member="promoteSchedules" ThisKey="scheduleID" OtherKey="scheduleID" Type="promoteSchedule" />
       <Association Name="Schedule_Seat" Member="Seats" ThisKey="scheduleID" OtherKey="scheduleID" Type="Seat" />
       <Association Name="Schedule_LocationList" Member="LocationLists" ThisKey="scheduleID" OtherKey="scheduleID" Type="LocationList" />
+      <Association Name="Schedule_promoteSchedule" Member="promoteSchedules" ThisKey="scheduleID" OtherKey="scheduleID" Type="promoteSchedule" />
       <Association Name="Transport_Schedule" Member="Transport" ThisKey="transportID" OtherKey="transportID" Type="Transport" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.promoteSchedule" Member="promoteSchedules">
+    <Type Name="promoteSchedule">
+      <Column Name="promoteScheduleID" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="promotionID" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="scheduleID" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="discountRate" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Promotion_promoteSchedule" Member="Promotion" ThisKey="promotionID" OtherKey="promotionID" Type="Promotion" IsForeignKey="true" />
+      <Association Name="Schedule_promoteSchedule" Member="Schedule" ThisKey="scheduleID" OtherKey="scheduleID" Type="Schedule" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

@@ -28,21 +28,20 @@ Partial Class ManagerScheduleReport
         '
         'CrystalReportViewer1
         '
-        Me.CrystalReportViewer1.ActiveViewIndex = 0
+        Me.CrystalReportViewer1.ActiveViewIndex = -1
         Me.CrystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.CrystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default
         Me.CrystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.CrystalReportViewer1.Location = New System.Drawing.Point(0, 0)
         Me.CrystalReportViewer1.Name = "CrystalReportViewer1"
-        Me.CrystalReportViewer1.ReportSource = Me.DailyScheduleReport1
-        Me.CrystalReportViewer1.Size = New System.Drawing.Size(800, 450)
+        Me.CrystalReportViewer1.Size = New System.Drawing.Size(1023, 546)
         Me.CrystalReportViewer1.TabIndex = 0
         '
         'ManagerScheduleReport
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(1023, 546)
         Me.Controls.Add(Me.CrystalReportViewer1)
         Me.Name = "ManagerScheduleReport"
         Me.Text = "ManagerScheduleReport"

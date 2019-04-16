@@ -41,7 +41,7 @@ Public Class managerReport
     End Sub
     Public Sub ChangeTransport() Handles TranportSelection1.TransportChange
         lblTransport.Text = TranportSelection1.selectedType
-
+        gbReport.Enabled = True
     End Sub
 
     'Create the event to triggered user control 
@@ -96,6 +96,13 @@ Public Class managerReport
 
     Private Sub btnExitClick(sender As Object, e As EventArgs) Handles ManagerMenuLayoutControl1.managerHomeClick
 
+    End Sub
+
+    Private Sub btnGenerate_Click(sender As Object, e As EventArgs) Handles btnGenerate.Click
+        If rbDailyBook.Checked Then
+            managerBookingReport.Show()
+
+        End If
     End Sub
     'End Here
 End Class

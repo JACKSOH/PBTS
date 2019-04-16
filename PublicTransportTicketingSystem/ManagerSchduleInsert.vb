@@ -78,6 +78,7 @@
             sc.estimateHours = Math.Abs(CInt(db.Locations.Where(Function(o) o.locationID = cboOrigin.SelectedValue.ToString).SingleOrDefault().position - db.Locations.Where(Function(o) o.locationID = cboDestination.SelectedValue.ToString).SingleOrDefault().position)) * 2
             sc.transportID = cboCarrier.SelectedValue.ToString
             sc.scheduleStatus = "Available"
+            sc.assignPromotionStatus = "pending"
             db.Schedules.InsertOnSubmit(sc)
 
             'insert for new origin location
@@ -172,6 +173,7 @@
         sc.estimateHours = Math.Abs(CInt(db.Locations.Where(Function(o) o.locationID = cboOrigin.SelectedValue.ToString).SingleOrDefault().position - db.Locations.Where(Function(o) o.locationID = cboDestination.SelectedValue.ToString).SingleOrDefault().position)) * 2
         sc.transportID = cboCarrier.SelectedValue.ToString
         sc.scheduleStatus = "Available"
+        sc.assignPromotionStatus = "pending"
         db.Schedules.InsertOnSubmit(sc)
 
         'insert for new origin location
@@ -263,6 +265,7 @@
             sc.estimateHours = Math.Abs(CInt(db.Locations.Where(Function(o) o.locationID = cboOrigin.SelectedValue.ToString).SingleOrDefault().position - db.Locations.Where(Function(o) o.locationID = cboDestination.SelectedValue.ToString).SingleOrDefault().position)) * 2
             sc.transportID = cboCarrier.SelectedValue.ToString
             sc.scheduleStatus = "Available"
+            sc.assignPromotionStatus = "pending"
             db.Schedules.InsertOnSubmit(sc)
 
             'insert for new origin location

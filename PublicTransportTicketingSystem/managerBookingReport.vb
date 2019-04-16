@@ -7,6 +7,7 @@
 
             Dim bookingReport As New bookingReport
             bookingReport.SetDataSource(getAllBookingQuery)
+
             CrystalReportViewer1.ReportSource = bookingReport
             CrystalReportViewer1.Refresh()
 

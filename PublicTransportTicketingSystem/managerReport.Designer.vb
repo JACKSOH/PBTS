@@ -30,7 +30,7 @@ Partial Class managerReport
         Me.rbMonthlyTransaction = New System.Windows.Forms.RadioButton()
         Me.btnGenerate = New System.Windows.Forms.Button()
         Me.rbMonthlyPromotion = New System.Windows.Forms.RadioButton()
-        Me.tbDailySchedule = New System.Windows.Forms.RadioButton()
+        Me.rbMonthlySchedule = New System.Windows.Forms.RadioButton()
         Me.TranportSelection1 = New PublicTransportTicketingSystem.TranportSelection()
         Me.lblDescription = New System.Windows.Forms.Label()
         Label1 = New System.Windows.Forms.Label()
@@ -74,13 +74,13 @@ Partial Class managerReport
         Me.gbReport.Controls.Add(Me.rbMonthlyTransaction)
         Me.gbReport.Controls.Add(Me.btnGenerate)
         Me.gbReport.Controls.Add(Me.rbMonthlyPromotion)
-        Me.gbReport.Controls.Add(Me.tbDailySchedule)
+        Me.gbReport.Controls.Add(Me.rbMonthlySchedule)
         Me.gbReport.Controls.Add(Me.rbDailyBook)
         Me.gbReport.Enabled = False
         Me.gbReport.Font = New System.Drawing.Font("Tw Cen MT Condensed", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.gbReport.Location = New System.Drawing.Point(415, 220)
+        Me.gbReport.Location = New System.Drawing.Point(373, 220)
         Me.gbReport.Name = "gbReport"
-        Me.gbReport.Size = New System.Drawing.Size(236, 270)
+        Me.gbReport.Size = New System.Drawing.Size(301, 270)
         Me.gbReport.TabIndex = 4
         Me.gbReport.TabStop = False
         Me.gbReport.Text = "Choose ONE report Type"
@@ -128,17 +128,17 @@ Partial Class managerReport
         Me.rbMonthlyPromotion.Text = "Monthly &Promotion Report"
         Me.rbMonthlyPromotion.UseVisualStyleBackColor = True
         '
-        'tbDailySchedule
+        'rbMonthlySchedule
         '
-        Me.tbDailySchedule.AutoSize = True
-        Me.tbDailySchedule.Font = New System.Drawing.Font("Tw Cen MT Condensed", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tbDailySchedule.Location = New System.Drawing.Point(30, 115)
-        Me.tbDailySchedule.Name = "tbDailySchedule"
-        Me.tbDailySchedule.Size = New System.Drawing.Size(164, 23)
-        Me.tbDailySchedule.TabIndex = 4
-        Me.tbDailySchedule.TabStop = True
-        Me.tbDailySchedule.Text = "Daily &Scheduling Report"
-        Me.tbDailySchedule.UseVisualStyleBackColor = True
+        Me.rbMonthlySchedule.AutoSize = True
+        Me.rbMonthlySchedule.Font = New System.Drawing.Font("Tw Cen MT Condensed", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rbMonthlySchedule.Location = New System.Drawing.Point(30, 115)
+        Me.rbMonthlySchedule.Name = "rbMonthlySchedule"
+        Me.rbMonthlySchedule.Size = New System.Drawing.Size(238, 23)
+        Me.rbMonthlySchedule.TabIndex = 4
+        Me.rbMonthlySchedule.TabStop = True
+        Me.rbMonthlySchedule.Text = "Monthly T&ransport Travelling Report"
+        Me.rbMonthlySchedule.UseVisualStyleBackColor = True
         '
         'TranportSelection1
         '
@@ -182,7 +182,7 @@ Partial Class managerReport
     Friend WithEvents gbReport As GroupBox
     Friend WithEvents rbMonthlyTransaction As RadioButton
     Friend WithEvents rbMonthlyPromotion As RadioButton
-    Friend WithEvents tbDailySchedule As RadioButton
+    Friend WithEvents rbMonthlySchedule As RadioButton
     Friend WithEvents btnGenerate As Button
     Friend WithEvents TranportSelection1 As TranportSelection
     Friend WithEvents lblDescription As Label

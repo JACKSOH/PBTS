@@ -43,6 +43,7 @@ Partial Class ManagerModifyPromotion
         Me.btnCancel = New System.Windows.Forms.Button()
         Me.btnUpdate = New System.Windows.Forms.Button()
         Me.ManagerMenuLayoutControl1 = New PublicTransportTicketingSystem.managerMenuLayoutControl()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.gbModifyPromotion.SuspendLayout()
         Me.gpDiscount.SuspendLayout()
         CType(Me.nupCustomDiscount, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -269,16 +270,28 @@ Partial Class ManagerModifyPromotion
         '
         'ManagerMenuLayoutControl1
         '
-        Me.ManagerMenuLayoutControl1.Location = New System.Drawing.Point(0, 1)
+        Me.ManagerMenuLayoutControl1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.ManagerMenuLayoutControl1.Location = New System.Drawing.Point(0, 0)
         Me.ManagerMenuLayoutControl1.Name = "ManagerMenuLayoutControl1"
-        Me.ManagerMenuLayoutControl1.Size = New System.Drawing.Size(800, 575)
+        Me.ManagerMenuLayoutControl1.Size = New System.Drawing.Size(800, 579)
         Me.ManagerMenuLayoutControl1.TabIndex = 0
+        '
+        'Label4
+        '
+        Me.Label4.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label4.Font = New System.Drawing.Font("Tw Cen MT Condensed", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(246, 21)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(248, 36)
+        Me.Label4.TabIndex = 37
+        Me.Label4.Text = "Update Promotion Details"
         '
         'ManagerModifyPromotion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 579)
+        Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.gbModifyPromotion)
         Me.Controls.Add(Me.ManagerMenuLayoutControl1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
@@ -315,4 +328,5 @@ Partial Class ManagerModifyPromotion
     Friend WithEvents txtPromotionName As TextBox
     Friend WithEvents gpDiscount As GroupBox
     Friend WithEvents lblCount As Label
+    Friend WithEvents Label4 As Label
 End Class

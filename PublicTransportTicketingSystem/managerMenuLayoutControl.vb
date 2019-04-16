@@ -86,7 +86,8 @@
 
     Public Event managerExitClick(ByVal sender As Object, ByVal e As System.EventArgs)
     Private Sub btnExitClick(sender As Object, e As EventArgs) Handles pbExit.Click
-        End
+        ParentForm.Hide()
+        StaffIndex.Show()
         RaiseEvent managerExitClick(sender, e)
 
     End Sub

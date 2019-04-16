@@ -1,6 +1,7 @@
 ﻿Public Class managerScheduleReport
     Dim db As New PBTSDataContext
-    Dim selectedType As String
+    Public selectedType As String
+    Public selectedMonth As Integer
     Private pttsDS As PTTSDataSet
     Private sTA As PTTSDataSetTableAdapters.ScheduleTableAdapter
     Private tTA As PTTSDataSetTableAdapters.TransportTableAdapter
@@ -10,7 +11,8 @@
     Private llTA As PTTSDataSetTableAdapters.LocationListTableAdapter
 
     Private Sub CrystalReportViewer1_Load(sender As Object, e As EventArgs) Handles CrystalReportViewer1.Load
-        selectedType = "train"
+
+
         Dim schReport As New MonthlyTransportTraverllingReport
 
         pttsDS = New PTTSDataSet
@@ -19,7 +21,7 @@
         seTA = New PTTSDataSetTableAdapters.SeatTableAdapter
 
         'Fill the dataset
-        sTA.Fill(pttsDS.Schedule)
+        sTA.FillByMonth(pttsDS.Schedule, CDec(selectedMonth), CDec(2019))
         tTA.FillByType(pttsDS.Transport, selectedType)
         seTA.Fill(pttsDS.Seat)
 

@@ -53,19 +53,19 @@ Partial Public Class PTTSDataSet
     
     Private relationFK_LocationList_ToTable_1 As Global.System.Data.DataRelation
     
-    Private relationFK_promotionID As Global.System.Data.DataRelation
-    
     Private relationFK_ticketSeatID As Global.System.Data.DataRelation
+    
+    Private relationFK_LocationList_ToTable_11 As Global.System.Data.DataRelation
+    
+    Private relationFK_transportID As Global.System.Data.DataRelation
+    
+    Private relationFK_seatScheduleID As Global.System.Data.DataRelation
     
     Private relationFK_LocationList_ToTable As Global.System.Data.DataRelation
     
     Private relationFK_scheduleID As Global.System.Data.DataRelation
     
-    Private relationFK_seatScheduleID As Global.System.Data.DataRelation
-    
-    Private relationFK_transportID As Global.System.Data.DataRelation
-    
-    Private relationFK_LocationList_ToTable_11 As Global.System.Data.DataRelation
+    Private relationFK_promotionID As Global.System.Data.DataRelation
     
     Private _schemaSerializationMode As Global.System.Data.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
     
@@ -457,13 +457,13 @@ Partial Public Class PTTSDataSet
         Me.relationFK_Booking_ToTable_1 = Me.Relations("FK_Booking_ToTable_1")
         Me.relationFK_bookingTicketID = Me.Relations("FK_bookingTicketID")
         Me.relationFK_LocationList_ToTable_1 = Me.Relations("FK_LocationList_ToTable_1")
-        Me.relationFK_promotionID = Me.Relations("FK_promotionID")
         Me.relationFK_ticketSeatID = Me.Relations("FK_ticketSeatID")
+        Me.relationFK_LocationList_ToTable_11 = Me.Relations("FK_LocationList_ToTable_11")
+        Me.relationFK_transportID = Me.Relations("FK_transportID")
+        Me.relationFK_seatScheduleID = Me.Relations("FK_seatScheduleID")
         Me.relationFK_LocationList_ToTable = Me.Relations("FK_LocationList_ToTable")
         Me.relationFK_scheduleID = Me.Relations("FK_scheduleID")
-        Me.relationFK_seatScheduleID = Me.Relations("FK_seatScheduleID")
-        Me.relationFK_transportID = Me.Relations("FK_transportID")
-        Me.relationFK_LocationList_ToTable_11 = Me.Relations("FK_LocationList_ToTable_11")
+        Me.relationFK_promotionID = Me.Relations("FK_promotionID")
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -502,20 +502,20 @@ Partial Public Class PTTSDataSet
         Me.Relations.Add(Me.relationFK_bookingTicketID)
         Me.relationFK_LocationList_ToTable_1 = New Global.System.Data.DataRelation("FK_LocationList_ToTable_1", New Global.System.Data.DataColumn() {Me.tableLocation.locationIDColumn}, New Global.System.Data.DataColumn() {Me.tableLocationList.locationIDColumn}, false)
         Me.Relations.Add(Me.relationFK_LocationList_ToTable_1)
-        Me.relationFK_promotionID = New Global.System.Data.DataRelation("FK_promotionID", New Global.System.Data.DataColumn() {Me.tablePromotion.promotionIDColumn}, New Global.System.Data.DataColumn() {Me.tablepromoteSchedule.promotionIDColumn}, false)
-        Me.Relations.Add(Me.relationFK_promotionID)
         Me.relationFK_ticketSeatID = New Global.System.Data.DataRelation("FK_ticketSeatID", New Global.System.Data.DataColumn() {Me.tableSeat.seatIDColumn}, New Global.System.Data.DataColumn() {Me.tableTicket.seatIDColumn}, false)
         Me.Relations.Add(Me.relationFK_ticketSeatID)
+        Me.relationFK_LocationList_ToTable_11 = New Global.System.Data.DataRelation("FK_LocationList_ToTable_11", New Global.System.Data.DataColumn() {Me.tableLocation1.locationIDColumn}, New Global.System.Data.DataColumn() {Me.tableLocationList.locationIDColumn}, false)
+        Me.Relations.Add(Me.relationFK_LocationList_ToTable_11)
+        Me.relationFK_transportID = New Global.System.Data.DataRelation("FK_transportID", New Global.System.Data.DataColumn() {Me.tableTransport.transportIDColumn}, New Global.System.Data.DataColumn() {Me.tableSchedule.transportIDColumn}, false)
+        Me.Relations.Add(Me.relationFK_transportID)
+        Me.relationFK_seatScheduleID = New Global.System.Data.DataRelation("FK_seatScheduleID", New Global.System.Data.DataColumn() {Me.tableSchedule.scheduleIDColumn}, New Global.System.Data.DataColumn() {Me.tableSeat.scheduleIDColumn}, false)
+        Me.Relations.Add(Me.relationFK_seatScheduleID)
         Me.relationFK_LocationList_ToTable = New Global.System.Data.DataRelation("FK_LocationList_ToTable", New Global.System.Data.DataColumn() {Me.tableSchedule.scheduleIDColumn}, New Global.System.Data.DataColumn() {Me.tableLocationList.scheduleIDColumn}, false)
         Me.Relations.Add(Me.relationFK_LocationList_ToTable)
         Me.relationFK_scheduleID = New Global.System.Data.DataRelation("FK_scheduleID", New Global.System.Data.DataColumn() {Me.tableSchedule.scheduleIDColumn}, New Global.System.Data.DataColumn() {Me.tablepromoteSchedule.scheduleIDColumn}, false)
         Me.Relations.Add(Me.relationFK_scheduleID)
-        Me.relationFK_seatScheduleID = New Global.System.Data.DataRelation("FK_seatScheduleID", New Global.System.Data.DataColumn() {Me.tableSchedule.scheduleIDColumn}, New Global.System.Data.DataColumn() {Me.tableSeat.scheduleIDColumn}, false)
-        Me.Relations.Add(Me.relationFK_seatScheduleID)
-        Me.relationFK_transportID = New Global.System.Data.DataRelation("FK_transportID", New Global.System.Data.DataColumn() {Me.tableTransport.transportIDColumn}, New Global.System.Data.DataColumn() {Me.tableSchedule.transportIDColumn}, false)
-        Me.Relations.Add(Me.relationFK_transportID)
-        Me.relationFK_LocationList_ToTable_11 = New Global.System.Data.DataRelation("FK_LocationList_ToTable_11", New Global.System.Data.DataColumn() {Me.tableLocation1.locationIDColumn}, New Global.System.Data.DataColumn() {Me.tableLocationList.locationIDColumn}, false)
-        Me.Relations.Add(Me.relationFK_LocationList_ToTable_11)
+        Me.relationFK_promotionID = New Global.System.Data.DataRelation("FK_promotionID", New Global.System.Data.DataColumn() {Me.tablePromotion.promotionIDColumn}, New Global.System.Data.DataColumn() {Me.tablepromoteSchedule.promotionIDColumn}, false)
+        Me.Relations.Add(Me.relationFK_promotionID)
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -4957,23 +4957,23 @@ Partial Public Class PTTSDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property ScheduleRow() As ScheduleRow
-            Get
-                Return CType(Me.GetParentRow(Me.Table.ParentRelations("FK_LocationList_ToTable")),ScheduleRow)
-            End Get
-            Set
-                Me.SetParentRow(value, Me.Table.ParentRelations("FK_LocationList_ToTable"))
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Property Location1Row() As Location1Row
             Get
                 Return CType(Me.GetParentRow(Me.Table.ParentRelations("FK_LocationList_ToTable_11")),Location1Row)
             End Get
             Set
                 Me.SetParentRow(value, Me.Table.ParentRelations("FK_LocationList_ToTable_11"))
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property ScheduleRow() As ScheduleRow
+            Get
+                Return CType(Me.GetParentRow(Me.Table.ParentRelations("FK_LocationList_ToTable")),ScheduleRow)
+            End Get
+            Set
+                Me.SetParentRow(value, Me.Table.ParentRelations("FK_LocationList_ToTable"))
             End Set
         End Property
         
@@ -5063,23 +5063,23 @@ Partial Public Class PTTSDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property PromotionRow() As PromotionRow
-            Get
-                Return CType(Me.GetParentRow(Me.Table.ParentRelations("FK_promotionID")),PromotionRow)
-            End Get
-            Set
-                Me.SetParentRow(value, Me.Table.ParentRelations("FK_promotionID"))
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Property ScheduleRow() As ScheduleRow
             Get
                 Return CType(Me.GetParentRow(Me.Table.ParentRelations("FK_scheduleID")),ScheduleRow)
             End Get
             Set
                 Me.SetParentRow(value, Me.Table.ParentRelations("FK_scheduleID"))
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property PromotionRow() As PromotionRow
+            Get
+                Return CType(Me.GetParentRow(Me.Table.ParentRelations("FK_promotionID")),PromotionRow)
+            End Get
+            Set
+                Me.SetParentRow(value, Me.Table.ParentRelations("FK_promotionID"))
             End Set
         End Property
         
@@ -6004,6 +6004,16 @@ Partial Public Class PTTSDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function GetSeatRows() As SeatRow()
+            If (Me.Table.ChildRelations("FK_seatScheduleID") Is Nothing) Then
+                Return New SeatRow(-1) {}
+            Else
+                Return CType(MyBase.GetChildRows(Me.Table.ChildRelations("FK_seatScheduleID")),SeatRow())
+            End If
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Function GetLocationListRows() As LocationListRow()
             If (Me.Table.ChildRelations("FK_LocationList_ToTable") Is Nothing) Then
                 Return New LocationListRow(-1) {}
@@ -6019,16 +6029,6 @@ Partial Public Class PTTSDataSet
                 Return New promoteScheduleRow(-1) {}
             Else
                 Return CType(MyBase.GetChildRows(Me.Table.ChildRelations("FK_scheduleID")),promoteScheduleRow())
-            End If
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Function GetSeatRows() As SeatRow()
-            If (Me.Table.ChildRelations("FK_seatScheduleID") Is Nothing) Then
-                Return New SeatRow(-1) {}
-            Else
-                Return CType(MyBase.GetChildRows(Me.Table.ChildRelations("FK_seatScheduleID")),SeatRow())
             End If
         End Function
     End Class
@@ -11455,12 +11455,20 @@ Namespace PTTSDataSetTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(1) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT scheduleID, departureDateTime, estimateHours, transportID, scheduleStatus,"& _ 
                 " assignPromotionStatus FROM dbo.Schedule"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(1).Connection = Me.Connection
+            Me._commandCollection(1).CommandText = "SELECT        scheduleID, departureDateTime, estimateHours, transportID, schedule"& _ 
+                "Status, assignPromotionStatus"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            Schedule"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (MONTH(dep"& _ 
+                "artureDateTime) = @month) AND (YEAR(departureDateTime) = @year)"
+            Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@month", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@year", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -11482,6 +11490,34 @@ Namespace PTTSDataSetTableAdapters
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
         Public Overloads Overridable Function GetData() As PTTSDataSet.ScheduleDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            Dim dataTable As PTTSDataSet.ScheduleDataTable = New PTTSDataSet.ScheduleDataTable()
+            Me.Adapter.Fill(dataTable)
+            Return dataTable
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
+        Public Overloads Overridable Function FillByMonth(ByVal dataTable As PTTSDataSet.ScheduleDataTable, ByVal month As Decimal, ByVal year As Decimal) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(1)
+            Me.Adapter.SelectCommand.Parameters(0).Value = CType(month,Decimal)
+            Me.Adapter.SelectCommand.Parameters(1).Value = CType(year,Decimal)
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
+        Public Overloads Overridable Function GetDataBy(ByVal month As Decimal, ByVal year As Decimal) As PTTSDataSet.ScheduleDataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(1)
+            Me.Adapter.SelectCommand.Parameters(0).Value = CType(month,Decimal)
+            Me.Adapter.SelectCommand.Parameters(1).Value = CType(year,Decimal)
             Dim dataTable As PTTSDataSet.ScheduleDataTable = New PTTSDataSet.ScheduleDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
@@ -12570,15 +12606,6 @@ Namespace PTTSDataSetTableAdapters
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
-            If (Not (Me._promotionTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.Promotion.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
-                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
-                If ((Not (updatedRows) Is Nothing)  _
-                            AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._promotionTableAdapter.Update(updatedRows))
-                    allChangedRows.AddRange(updatedRows)
-                End If
-            End If
             If (Not (Me._ticketTableAdapter) Is Nothing) Then
                 Dim updatedRows() As Global.System.Data.DataRow = dataSet.Ticket.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
                 updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
@@ -12594,6 +12621,15 @@ Namespace PTTSDataSetTableAdapters
                 If ((Not (updatedRows) Is Nothing)  _
                             AndAlso (0 < updatedRows.Length)) Then
                     result = (result + Me._location1TableAdapter.Update(updatedRows))
+                    allChangedRows.AddRange(updatedRows)
+                End If
+            End If
+            If (Not (Me._promotionTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.Promotion.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
+                If ((Not (updatedRows) Is Nothing)  _
+                            AndAlso (0 < updatedRows.Length)) Then
+                    result = (result + Me._promotionTableAdapter.Update(updatedRows))
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
@@ -12674,14 +12710,6 @@ Namespace PTTSDataSetTableAdapters
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
-            If (Not (Me._promotionTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.Promotion.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
-                If ((Not (addedRows) Is Nothing)  _
-                            AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._promotionTableAdapter.Update(addedRows))
-                    allAddedRows.AddRange(addedRows)
-                End If
-            End If
             If (Not (Me._ticketTableAdapter) Is Nothing) Then
                 Dim addedRows() As Global.System.Data.DataRow = dataSet.Ticket.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
                 If ((Not (addedRows) Is Nothing)  _
@@ -12695,6 +12723,14 @@ Namespace PTTSDataSetTableAdapters
                 If ((Not (addedRows) Is Nothing)  _
                             AndAlso (0 < addedRows.Length)) Then
                     result = (result + Me._location1TableAdapter.Update(addedRows))
+                    allAddedRows.AddRange(addedRows)
+                End If
+            End If
+            If (Not (Me._promotionTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.Promotion.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+                If ((Not (addedRows) Is Nothing)  _
+                            AndAlso (0 < addedRows.Length)) Then
+                    result = (result + Me._promotionTableAdapter.Update(addedRows))
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
@@ -12756,6 +12792,14 @@ Namespace PTTSDataSetTableAdapters
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
+            If (Not (Me._promotionTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.Promotion.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+                If ((Not (deletedRows) Is Nothing)  _
+                            AndAlso (0 < deletedRows.Length)) Then
+                    result = (result + Me._promotionTableAdapter.Update(deletedRows))
+                    allChangedRows.AddRange(deletedRows)
+                End If
+            End If
             If (Not (Me._location1TableAdapter) Is Nothing) Then
                 Dim deletedRows() As Global.System.Data.DataRow = dataSet.Location1.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
                 If ((Not (deletedRows) Is Nothing)  _
@@ -12769,14 +12813,6 @@ Namespace PTTSDataSetTableAdapters
                 If ((Not (deletedRows) Is Nothing)  _
                             AndAlso (0 < deletedRows.Length)) Then
                     result = (result + Me._ticketTableAdapter.Update(deletedRows))
-                    allChangedRows.AddRange(deletedRows)
-                End If
-            End If
-            If (Not (Me._promotionTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.Promotion.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
-                If ((Not (deletedRows) Is Nothing)  _
-                            AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._promotionTableAdapter.Update(deletedRows))
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If

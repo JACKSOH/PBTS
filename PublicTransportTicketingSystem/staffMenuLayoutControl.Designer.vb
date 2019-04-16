@@ -27,26 +27,29 @@ Partial Class staffMenuLayoutControl
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.btnManageAccount = New System.Windows.Forms.Button()
         Me.btnAbout = New System.Windows.Forms.Button()
+        Me.pbExit = New System.Windows.Forms.PictureBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
-        Me.btnReservation = New System.Windows.Forms.Button()
-        Me.btnTransaction = New System.Windows.Forms.Button()
-        Me.btnStaffPromotion = New System.Windows.Forms.Button()
-        Me.pbExit = New System.Windows.Forms.PictureBox()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.pbReserve = New System.Windows.Forms.PictureBox()
+        Me.btnReservation = New System.Windows.Forms.Button()
         Me.pbPurchase = New System.Windows.Forms.PictureBox()
+        Me.btnTransaction = New System.Windows.Forms.Button()
         Me.pbStaffPromotion = New System.Windows.Forms.PictureBox()
+        Me.btnStaffPromotion = New System.Windows.Forms.Button()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.Panel1.SuspendLayout()
-        Me.Panel2.SuspendLayout()
-        Me.FlowLayoutPanel1.SuspendLayout()
         CType(Me.pbExit, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel2.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.FlowLayoutPanel1.SuspendLayout()
         CType(Me.pbReserve, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbPurchase, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbStaffPromotion, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TableLayoutPanel1
@@ -116,6 +119,17 @@ Partial Class staffMenuLayoutControl
         Me.btnAbout.Text = "About Us"
         Me.btnAbout.UseVisualStyleBackColor = False
         '
+        'pbExit
+        '
+        Me.pbExit.Image = Global.PublicTransportTicketingSystem.My.Resources.Resources.logout__1_
+        Me.pbExit.Location = New System.Drawing.Point(540, 12)
+        Me.pbExit.Margin = New System.Windows.Forms.Padding(10, 3, 3, 20)
+        Me.pbExit.Name = "pbExit"
+        Me.pbExit.Size = New System.Drawing.Size(28, 31)
+        Me.pbExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.pbExit.TabIndex = 4
+        Me.pbExit.TabStop = False
+        '
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(229, Byte), Integer), CType(CType(116, Byte), Integer), CType(CType(49, Byte), Integer))
@@ -127,6 +141,17 @@ Partial Class staffMenuLayoutControl
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(223, 74)
         Me.Panel2.TabIndex = 5
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.ImageLocation = ""
+        Me.PictureBox1.Location = New System.Drawing.Point(145, 19)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(5, 10, 5, 5)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(50, 48)
+        Me.PictureBox1.TabIndex = 2
+        Me.PictureBox1.TabStop = False
         '
         'Label1
         '
@@ -150,12 +175,26 @@ Partial Class staffMenuLayoutControl
         Me.FlowLayoutPanel1.Controls.Add(Me.btnTransaction)
         Me.FlowLayoutPanel1.Controls.Add(Me.pbStaffPromotion)
         Me.FlowLayoutPanel1.Controls.Add(Me.btnStaffPromotion)
+        Me.FlowLayoutPanel1.Controls.Add(Me.PictureBox2)
+        Me.FlowLayoutPanel1.Controls.Add(Me.Button1)
         Me.FlowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.FlowLayoutPanel1.Location = New System.Drawing.Point(0, 74)
         Me.FlowLayoutPanel1.Margin = New System.Windows.Forms.Padding(0)
         Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
         Me.FlowLayoutPanel1.Size = New System.Drawing.Size(223, 501)
         Me.FlowLayoutPanel1.TabIndex = 8
+        '
+        'pbReserve
+        '
+        Me.pbReserve.BackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(53, Byte), Integer), CType(CType(65, Byte), Integer))
+        Me.pbReserve.Image = Global.PublicTransportTicketingSystem.My.Resources.Resources.reserve
+        Me.pbReserve.Location = New System.Drawing.Point(10, 3)
+        Me.pbReserve.Margin = New System.Windows.Forms.Padding(10, 3, 3, 20)
+        Me.pbReserve.Name = "pbReserve"
+        Me.pbReserve.Size = New System.Drawing.Size(40, 38)
+        Me.pbReserve.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.pbReserve.TabIndex = 5
+        Me.pbReserve.TabStop = False
         '
         'btnReservation
         '
@@ -178,6 +217,17 @@ Partial Class staffMenuLayoutControl
         Me.btnReservation.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnReservation.UseVisualStyleBackColor = False
         '
+        'pbPurchase
+        '
+        Me.pbPurchase.Image = Global.PublicTransportTicketingSystem.My.Resources.Resources.purchase2
+        Me.pbPurchase.Location = New System.Drawing.Point(10, 64)
+        Me.pbPurchase.Margin = New System.Windows.Forms.Padding(10, 3, 3, 20)
+        Me.pbPurchase.Name = "pbPurchase"
+        Me.pbPurchase.Size = New System.Drawing.Size(40, 38)
+        Me.pbPurchase.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.pbPurchase.TabIndex = 8
+        Me.pbPurchase.TabStop = False
+        '
         'btnTransaction
         '
         Me.btnTransaction.AllowDrop = True
@@ -195,6 +245,17 @@ Partial Class staffMenuLayoutControl
         Me.btnTransaction.Text = "Transaction History"
         Me.btnTransaction.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnTransaction.UseVisualStyleBackColor = True
+        '
+        'pbStaffPromotion
+        '
+        Me.pbStaffPromotion.Image = Global.PublicTransportTicketingSystem.My.Resources.Resources._2
+        Me.pbStaffPromotion.Location = New System.Drawing.Point(10, 125)
+        Me.pbStaffPromotion.Margin = New System.Windows.Forms.Padding(10, 3, 3, 20)
+        Me.pbStaffPromotion.Name = "pbStaffPromotion"
+        Me.pbStaffPromotion.Size = New System.Drawing.Size(40, 38)
+        Me.pbStaffPromotion.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.pbStaffPromotion.TabIndex = 12
+        Me.pbStaffPromotion.TabStop = False
         '
         'btnStaffPromotion
         '
@@ -214,61 +275,34 @@ Partial Class staffMenuLayoutControl
         Me.btnStaffPromotion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnStaffPromotion.UseVisualStyleBackColor = True
         '
-        'pbExit
+        'PictureBox2
         '
-        Me.pbExit.Image = Global.PublicTransportTicketingSystem.My.Resources.Resources.logout__1_
-        Me.pbExit.Location = New System.Drawing.Point(540, 12)
-        Me.pbExit.Margin = New System.Windows.Forms.Padding(10, 3, 3, 20)
-        Me.pbExit.Name = "pbExit"
-        Me.pbExit.Size = New System.Drawing.Size(28, 31)
-        Me.pbExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.pbExit.TabIndex = 4
-        Me.pbExit.TabStop = False
+        Me.PictureBox2.Image = Global.PublicTransportTicketingSystem.My.Resources.Resources._2
+        Me.PictureBox2.Location = New System.Drawing.Point(10, 186)
+        Me.PictureBox2.Margin = New System.Windows.Forms.Padding(10, 3, 3, 20)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(40, 38)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox2.TabIndex = 14
+        Me.PictureBox2.TabStop = False
         '
-        'PictureBox1
+        'Button1
         '
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.ImageLocation = ""
-        Me.PictureBox1.Location = New System.Drawing.Point(145, 19)
-        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(5, 10, 5, 5)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(50, 48)
-        Me.PictureBox1.TabIndex = 2
-        Me.PictureBox1.TabStop = False
-        '
-        'pbReserve
-        '
-        Me.pbReserve.BackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(53, Byte), Integer), CType(CType(65, Byte), Integer))
-        Me.pbReserve.Image = Global.PublicTransportTicketingSystem.My.Resources.Resources.reserve
-        Me.pbReserve.Location = New System.Drawing.Point(10, 3)
-        Me.pbReserve.Margin = New System.Windows.Forms.Padding(10, 3, 3, 20)
-        Me.pbReserve.Name = "pbReserve"
-        Me.pbReserve.Size = New System.Drawing.Size(40, 38)
-        Me.pbReserve.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.pbReserve.TabIndex = 5
-        Me.pbReserve.TabStop = False
-        '
-        'pbPurchase
-        '
-        Me.pbPurchase.Image = Global.PublicTransportTicketingSystem.My.Resources.Resources.purchase2
-        Me.pbPurchase.Location = New System.Drawing.Point(10, 64)
-        Me.pbPurchase.Margin = New System.Windows.Forms.Padding(10, 3, 3, 20)
-        Me.pbPurchase.Name = "pbPurchase"
-        Me.pbPurchase.Size = New System.Drawing.Size(40, 38)
-        Me.pbPurchase.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.pbPurchase.TabIndex = 8
-        Me.pbPurchase.TabStop = False
-        '
-        'pbStaffPromotion
-        '
-        Me.pbStaffPromotion.Image = Global.PublicTransportTicketingSystem.My.Resources.Resources._2
-        Me.pbStaffPromotion.Location = New System.Drawing.Point(10, 125)
-        Me.pbStaffPromotion.Margin = New System.Windows.Forms.Padding(10, 3, 3, 20)
-        Me.pbStaffPromotion.Name = "pbStaffPromotion"
-        Me.pbStaffPromotion.Size = New System.Drawing.Size(40, 38)
-        Me.pbStaffPromotion.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.pbStaffPromotion.TabIndex = 12
-        Me.pbStaffPromotion.TabStop = False
+        Me.Button1.AllowDrop = True
+        Me.Button1.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button1.FlatAppearance.BorderSize = 0
+        Me.Button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Button1.Location = New System.Drawing.Point(55, 185)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(2)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(144, 39)
+        Me.Button1.TabIndex = 15
+        Me.Button1.Text = "Cancel Ticket"
+        Me.Button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'staffMenuLayoutControl
         '
@@ -280,13 +314,14 @@ Partial Class staffMenuLayoutControl
         Me.Size = New System.Drawing.Size(800, 575)
         Me.TableLayoutPanel1.ResumeLayout(False)
         Me.Panel1.ResumeLayout(False)
-        Me.Panel2.ResumeLayout(False)
-        Me.FlowLayoutPanel1.ResumeLayout(False)
         CType(Me.pbExit, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel2.ResumeLayout(False)
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.FlowLayoutPanel1.ResumeLayout(False)
         CType(Me.pbReserve, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pbPurchase, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pbStaffPromotion, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -307,4 +342,6 @@ Partial Class staffMenuLayoutControl
     Friend WithEvents btnTransaction As Button
     Friend WithEvents pbStaffPromotion As PictureBox
     Friend WithEvents btnStaffPromotion As Button
+    Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents Button1 As Button
 End Class

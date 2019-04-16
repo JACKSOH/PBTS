@@ -131,7 +131,6 @@
         Next
     End Sub
     Private Sub ManagerManageSchedule_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        BigBackground.Show()
         selectedType = ts.selectedType
 
         Dim col1 As New DataGridViewTextBoxColumn

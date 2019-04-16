@@ -39,6 +39,7 @@ Partial Class ManagerCreateStaffPart2
         Me.btnCancel = New System.Windows.Forms.Button()
         Me.btnCreateStaff = New System.Windows.Forms.Button()
         Me.ManagerMenuLayoutControl1 = New PublicTransportTicketingSystem.managerMenuLayoutControl()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.gbCreateStaff.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
@@ -220,11 +221,22 @@ Partial Class ManagerCreateStaffPart2
         Me.ManagerMenuLayoutControl1.Size = New System.Drawing.Size(800, 575)
         Me.ManagerMenuLayoutControl1.TabIndex = 0
         '
+        'Label6
+        '
+        Me.Label6.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label6.Font = New System.Drawing.Font("Tw Cen MT Condensed", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(279, 22)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(136, 36)
+        Me.Label6.TabIndex = 37
+        Me.Label6.Text = "Manage Staff"
+        '
         'ManagerCreateStaffPart2
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 573)
+        Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.gbCreateStaff)
         Me.Controls.Add(Me.ManagerMenuLayoutControl1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
@@ -256,4 +268,5 @@ Partial Class ManagerCreateStaffPart2
     Friend WithEvents txtPassword As TextBox
     Friend WithEvents lblErrorConfirmPassword As Label
     Friend WithEvents lblErrorPassword As Label
+    Friend WithEvents Label6 As Label
 End Class

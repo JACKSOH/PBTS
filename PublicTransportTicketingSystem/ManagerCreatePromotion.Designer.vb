@@ -40,6 +40,7 @@ Partial Class ManagerCreatePromotion
         Me.btnCancel = New System.Windows.Forms.Button()
         Me.btnNext = New System.Windows.Forms.Button()
         Me.ManagerMenuLayoutControl1 = New PublicTransportTicketingSystem.managerMenuLayoutControl()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.gbCreatePromotion.SuspendLayout()
         Me.gbPromotionDate.SuspendLayout()
         CType(Me.nupPromotionDuration, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -241,6 +242,16 @@ Partial Class ManagerCreatePromotion
         Me.ManagerMenuLayoutControl1.Size = New System.Drawing.Size(800, 575)
         Me.ManagerMenuLayoutControl1.TabIndex = 0
         '
+        'Label6
+        '
+        Me.Label6.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label6.Font = New System.Drawing.Font("Tw Cen MT Condensed", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(285, 20)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(118, 36)
+        Me.Label6.TabIndex = 36
+        Me.Label6.Text = "Manage Promotion"
+        '
         'ManagerCreatePromotion
         '
         Me.AcceptButton = Me.btnNext
@@ -248,6 +259,7 @@ Partial Class ManagerCreatePromotion
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.btnCancel
         Me.ClientSize = New System.Drawing.Size(800, 575)
+        Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.gbCreatePromotion)
         Me.Controls.Add(Me.ManagerMenuLayoutControl1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
@@ -284,4 +296,5 @@ Partial Class ManagerCreatePromotion
     Friend WithEvents nupCustomDiscount As NumericUpDown
     Friend WithEvents radCustomDiscount As RadioButton
     Friend WithEvents radFullDiscount As RadioButton
+    Friend WithEvents Label6 As Label
 End Class

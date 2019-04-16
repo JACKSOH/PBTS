@@ -36,6 +36,7 @@ Partial Class staffBookingCustomerDetail
         Me.lblTotalPrice = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.dgvSeat = New System.Windows.Forms.DataGridView()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.gbCreatePromotion.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dgvSeat, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -207,11 +208,22 @@ Partial Class staffBookingCustomerDetail
         Me.dgvSeat.Size = New System.Drawing.Size(374, 103)
         Me.dgvSeat.TabIndex = 0
         '
+        'Label2
+        '
+        Me.Label2.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label2.Font = New System.Drawing.Font("Tw Cen MT Condensed", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(251, 23)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(158, 36)
+        Me.Label2.TabIndex = 37
+        Me.Label2.Text = "Ticket Booking"
+        '
         'staffBookingCustomerDetail
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 575)
+        Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.btnProceed)
         Me.Controls.Add(Me.btnCancel)
@@ -245,4 +257,5 @@ Partial Class staffBookingCustomerDetail
     Friend WithEvents Label1 As Label
     Friend WithEvents lblTotalPrice As Label
     Friend WithEvents mskContact As MaskedTextBox
+    Friend WithEvents Label2 As Label
 End Class

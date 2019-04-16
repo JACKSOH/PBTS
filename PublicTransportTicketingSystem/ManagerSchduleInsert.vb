@@ -111,7 +111,7 @@
             End Try
             App.table = "Location List"
             llDest.locationListID = App.GenerateNextId(DestId)
-            MessageBox.Show(llDest.locationListID)
+
             llDest.locationID = cboOrigin.SelectedValue.ToString
             llDest.locationStatus = "Destination"
             db1.LocationLists.InsertOnSubmit(llDest)
@@ -187,7 +187,7 @@
         End Try
         App.table = "Location List"
         llOri.locationListID = App.GenerateNextId(OriId)
-        MessageBox.Show(llOri.locationListID)
+
         llOri.locationID = cboDestination.SelectedValue.ToString
         llOri.locationStatus = "Origin"
         db.LocationLists.InsertOnSubmit(llOri)
@@ -279,7 +279,7 @@
             End Try
             App.table = "Location List"
             llOri.locationListID = App.GenerateNextId(OriId)
-            MessageBox.Show(llOri.locationListID)
+
             llOri.locationID = cboDestination.SelectedValue.ToString
             llOri.locationStatus = "Origin"
             db.LocationLists.InsertOnSubmit(llOri)
@@ -298,7 +298,7 @@
             End Try
             App.table = "Location List"
             llDest.locationListID = App.GenerateNextId(DestId)
-            MessageBox.Show(llDest.locationListID)
+
             llDest.locationID = cboOrigin.SelectedValue.ToString
             llDest.locationStatus = "Destination"
             db1.LocationLists.InsertOnSubmit(llDest)
@@ -366,6 +366,6 @@
     End Sub
 
     Private Sub cboCreating_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboCreating.SelectedIndexChanged
-        test.Text = cboOrigin.SelectedValue.ToString()
+
     End Sub
 End Class

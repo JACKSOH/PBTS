@@ -26,11 +26,14 @@ Partial Class managerBookingReport
         Me.CrystalReportViewer1 = New CrystalDecisions.Windows.Forms.CrystalReportViewer()
         Me.bookingReport2 = New PublicTransportTicketingSystem.bookingReport()
         Me.bookingReport1 = New PublicTransportTicketingSystem.bookingReport()
+        Me.dpDate = New System.Windows.Forms.DateTimePicker()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.bookingReport3 = New PublicTransportTicketingSystem.bookingReport()
         Me.SuspendLayout()
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(17, 50)
+        Me.Button1.Location = New System.Drawing.Point(32, 185)
         Me.Button1.Margin = New System.Windows.Forms.Padding(2)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(99, 36)
@@ -40,22 +43,43 @@ Partial Class managerBookingReport
         '
         'CrystalReportViewer1
         '
-        Me.CrystalReportViewer1.ActiveViewIndex = -1
+        Me.CrystalReportViewer1.ActiveViewIndex = 0
         Me.CrystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.CrystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default
         Me.CrystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.CrystalReportViewer1.Location = New System.Drawing.Point(0, 0)
         Me.CrystalReportViewer1.Margin = New System.Windows.Forms.Padding(2)
         Me.CrystalReportViewer1.Name = "CrystalReportViewer1"
+        Me.CrystalReportViewer1.ReportSource = Me.bookingReport3
         Me.CrystalReportViewer1.Size = New System.Drawing.Size(800, 575)
         Me.CrystalReportViewer1.TabIndex = 0
         Me.CrystalReportViewer1.ToolPanelWidth = 150
+        '
+        'dpDate
+        '
+        Me.dpDate.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dpDate.Location = New System.Drawing.Point(32, 147)
+        Me.dpDate.Name = "dpDate"
+        Me.dpDate.Size = New System.Drawing.Size(102, 20)
+        Me.dpDate.TabIndex = 2
+        '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(32, 499)
+        Me.Button2.Margin = New System.Windows.Forms.Padding(2)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(99, 36)
+        Me.Button2.TabIndex = 3
+        Me.Button2.Text = "&Exit"
+        Me.Button2.UseVisualStyleBackColor = True
         '
         'managerBookingReport
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 575)
+        Me.Controls.Add(Me.Button2)
+        Me.Controls.Add(Me.dpDate)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.CrystalReportViewer1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
@@ -71,4 +95,7 @@ Partial Class managerBookingReport
     Friend WithEvents Button1 As Button
     Friend WithEvents bookingReport1 As bookingReport
     Friend WithEvents bookingReport2 As bookingReport
+    Friend WithEvents dpDate As DateTimePicker
+    Friend WithEvents Button2 As Button
+    Friend WithEvents bookingReport3 As bookingReport
 End Class

@@ -25,6 +25,7 @@ Partial Class ManagerPT
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ManagerPT))
         Me.gbTranport = New System.Windows.Forms.GroupBox()
+        Me.lblRecordFound = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.dgv = New System.Windows.Forms.DataGridView()
@@ -44,6 +45,7 @@ Partial Class ManagerPT
         Me.ts = New PublicTransportTicketingSystem.TranportSelection()
         Me.ManagerMenuLayoutControl1 = New PublicTransportTicketingSystem.managerMenuLayoutControl()
         Me.TransportTableAdapter = New PublicTransportTicketingSystem.PTTSDataSetTableAdapters.TransportTableAdapter()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.gbTranport.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgv, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -54,6 +56,7 @@ Partial Class ManagerPT
         '
         'gbTranport
         '
+        Me.gbTranport.Controls.Add(Me.lblRecordFound)
         Me.gbTranport.Controls.Add(Me.PictureBox1)
         Me.gbTranport.Controls.Add(Me.Label1)
         Me.gbTranport.Controls.Add(Me.dgv)
@@ -68,6 +71,17 @@ Partial Class ManagerPT
         Me.gbTranport.TabIndex = 8
         Me.gbTranport.TabStop = False
         Me.gbTranport.Text = "Tranport Details"
+        '
+        'lblRecordFound
+        '
+        Me.lblRecordFound.AutoSize = True
+        Me.lblRecordFound.Font = New System.Drawing.Font("Tw Cen MT", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblRecordFound.ForeColor = System.Drawing.Color.Black
+        Me.lblRecordFound.Location = New System.Drawing.Point(27, 356)
+        Me.lblRecordFound.Name = "lblRecordFound"
+        Me.lblRecordFound.Size = New System.Drawing.Size(116, 19)
+        Me.lblRecordFound.TabIndex = 59
+        Me.lblRecordFound.Text = "0 record(s) found"
         '
         'PictureBox1
         '
@@ -99,7 +113,7 @@ Partial Class ManagerPT
         Me.dgv.DataSource = Me.TransportBindingSource
         Me.dgv.Location = New System.Drawing.Point(19, 19)
         Me.dgv.Name = "dgv"
-        Me.dgv.Size = New System.Drawing.Size(383, 331)
+        Me.dgv.Size = New System.Drawing.Size(383, 327)
         Me.dgv.TabIndex = 5
         '
         'TransportNameDataGridViewTextBoxColumn
@@ -180,9 +194,9 @@ Partial Class ManagerPT
         'btnUpdate
         '
         Me.btnUpdate.Font = New System.Drawing.Font("Tw Cen MT Condensed", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnUpdate.Location = New System.Drawing.Point(400, 239)
+        Me.btnUpdate.Location = New System.Drawing.Point(424, 239)
         Me.btnUpdate.Name = "btnUpdate"
-        Me.btnUpdate.Size = New System.Drawing.Size(81, 38)
+        Me.btnUpdate.Size = New System.Drawing.Size(117, 38)
         Me.btnUpdate.TabIndex = 2
         Me.btnUpdate.Text = "&Update"
         Me.btnUpdate.UseVisualStyleBackColor = True
@@ -192,9 +206,9 @@ Partial Class ManagerPT
         Me.btnAdd.BackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(53, Byte), Integer), CType(CType(65, Byte), Integer))
         Me.btnAdd.Font = New System.Drawing.Font("Tw Cen MT Condensed", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAdd.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.btnAdd.Location = New System.Drawing.Point(400, 196)
+        Me.btnAdd.Location = New System.Drawing.Point(424, 191)
         Me.btnAdd.Name = "btnAdd"
-        Me.btnAdd.Size = New System.Drawing.Size(81, 37)
+        Me.btnAdd.Size = New System.Drawing.Size(117, 42)
         Me.btnAdd.TabIndex = 3
         Me.btnAdd.Text = "&Add"
         Me.btnAdd.UseVisualStyleBackColor = False
@@ -204,9 +218,9 @@ Partial Class ManagerPT
         Me.btnDeleteCancel.BackColor = System.Drawing.Color.Red
         Me.btnDeleteCancel.Font = New System.Drawing.Font("Tw Cen MT Condensed", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnDeleteCancel.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.btnDeleteCancel.Location = New System.Drawing.Point(400, 323)
+        Me.btnDeleteCancel.Location = New System.Drawing.Point(424, 283)
         Me.btnDeleteCancel.Name = "btnDeleteCancel"
-        Me.btnDeleteCancel.Size = New System.Drawing.Size(59, 33)
+        Me.btnDeleteCancel.Size = New System.Drawing.Size(117, 39)
         Me.btnDeleteCancel.TabIndex = 6
         Me.btnDeleteCancel.Text = "&Delete"
         Me.btnDeleteCancel.UseVisualStyleBackColor = False
@@ -232,11 +246,22 @@ Partial Class ManagerPT
         '
         Me.TransportTableAdapter.ClearBeforeFill = True
         '
+        'Label6
+        '
+        Me.Label6.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label6.Font = New System.Drawing.Font("Tw Cen MT Condensed", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(245, 18)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(237, 36)
+        Me.Label6.TabIndex = 37
+        Me.Label6.Text = "Manage Public Transport"
+        '
         'ManagerPT
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 575)
+        Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.gbTranport)
         Me.Controls.Add(Me.ts)
         Me.Controls.Add(Me.ManagerMenuLayoutControl1)
@@ -276,4 +301,6 @@ Partial Class ManagerPT
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Label1 As Label
     Friend WithEvents txtSearch As TextBox
+    Friend WithEvents lblRecordFound As Label
+    Friend WithEvents Label6 As Label
 End Class

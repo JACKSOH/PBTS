@@ -50,7 +50,8 @@
 
     Public Event staffExitClick(ByVal sender As Object, ByVal e As System.EventArgs)
     Private Sub btnExitClick(sender As Object, e As EventArgs) Handles pbExit.Click
-        End
+        ParentForm.Hide()
+        StaffIndex.Show()
 
         RaiseEvent staffExitClick(sender, e)
 

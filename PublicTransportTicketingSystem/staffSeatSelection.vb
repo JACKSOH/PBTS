@@ -3,6 +3,7 @@
     Dim count As Integer = 0
     Dim db As New PBTSDataContext()
     Public selectedSeat As New List(Of Integer)
+    Dim availableSeat As Integer
 
     Private Sub form_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
@@ -20,6 +21,8 @@
             Dim transportColumn As Integer
 
             transportColumn = Integer.Parse(retrieveSeatQuery.FirstOrDefault.tranportColumn.ToString)
+
+            availableSeat = retrieveSeatQuery.Count
 
             For i = 1 To retrieveSeatQuery.Count
                 Dim btn As New Button
@@ -39,13 +42,14 @@
                 If checkSeatQuery.First.ToString.ToLower = "unavailable" Then
                     btn.BackColor = Color.Red
                     btn.Enabled = False
-
+                    availableSeat = availableSeat - 1
                 End If
                 If s = transportColumn Then
                     flpSeat.SetFlowBreak(btn, True)
                     s = 0
                 End If
             Next
+            lblSeatAvailable.Text = availableSeat.ToString("0 seat(s) available")
         Catch ex As Exception
             MessageBox.Show(ex.Message)
         End Try

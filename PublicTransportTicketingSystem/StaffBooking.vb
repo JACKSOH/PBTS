@@ -4,9 +4,10 @@ Public Class StaffBooking
     Dim SqlConnection As New SqlConnection
     Public Const connection As String = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\PTTS.mdf;Integrated Security=True"
     Public retrieveLocation As String
-    Public selectedDate As Date
+    Public selectedDate As DateTime
     Public selectedOrigin As String
     Public selectedDestination As String
+    Public selectedType As String
 
     Private Sub StaffMenuLayoutControl1_Load(sender As Object, e As EventArgs) Handles MyBase.Load, TranportSelection1.TransportChange
         'TODO: This line of code loads data into the 'PTTSDataSet.Location' table. You can move, or remove it, as needed.
@@ -69,7 +70,7 @@ Public Class StaffBooking
 
     Private Sub btnSearch_Click(sender As Object, e As EventArgs) Handles btnSearch.Click
         Dim selectedDateTime As DateTime = dtpDeparture.Value
-        selectedDate = selectedDateTime
+        selectedDate = selectedDateTime.Date
 
         If cboOrigin.SelectedIndex = -1 Then
             cboOrigin.Select()
@@ -85,8 +86,8 @@ Public Class StaffBooking
             selectedOrigin = cboOrigin.SelectedItem.ToString
             selectedDestination = cboDestination.SelectedItem.ToString
 
-            staffBookingSchedule.Show()
-            Me.Hide()
+            selectedType = TranportSelection1.txtTransType.Text.ToString
+            staffBookingSchedule.ShowDialog()
         End If
     End Sub
 
@@ -98,35 +99,7 @@ Public Class StaffBooking
 
     End Sub
 
-    Private Sub homeClick(sender As Object, e As EventArgs) Handles StaffMenuLayoutControl1.staffHomeClick
-        staffHome.ShowDialog()
-        Me.Close()
-
-    End Sub
-    Private Sub bookingClick(sender As Object, e As EventArgs) Handles StaffMenuLayoutControl1.staffBookingClick
-        ' Me.Close()
-    End Sub
-    Private Sub transactionClick(sender As Object, e As EventArgs) Handles StaffMenuLayoutControl1.staffTransactionClick
-        Me.Close()
-        staffTransaction.ShowDialog()
-    End Sub
-    Private Sub promotionClick(sender As Object, e As EventArgs) Handles StaffMenuLayoutControl1.staffPromotionClick
-        Me.Close()
-        StaffViewPromotion.ShowDialog()
-    End Sub
-    Private Sub aboutClick(sender As Object, e As EventArgs) Handles StaffMenuLayoutControl1.staffAboutClick
-        MessageBox.Show("Develop by Jack Soh Boon Keat , Goh Chun Lin , Tan Yi Si , Tan Haw Man", "Contact Us", MessageBoxButtons.OK, MessageBoxIcon.Information)
-    End Sub
-
-    Private Sub manageAccountClick(sender As Object, e As EventArgs) Handles StaffMenuLayoutControl1.staffManageAccountClick
-        Me.Close()
-        StaffManageAccount.ShowDialog()
-    End Sub
-    Private Sub exitClick(sender As Object, e As EventArgs) Handles StaffMenuLayoutControl1.staffExitClick
-        End
-    End Sub
-
     Private Sub StaffMenuLayoutControl1_Load_1(sender As Object, e As EventArgs) Handles StaffMenuLayoutControl1.Load
-
+        BigBackground.Show()
     End Sub
 End Class

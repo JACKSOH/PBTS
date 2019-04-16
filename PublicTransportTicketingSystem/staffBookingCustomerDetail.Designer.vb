@@ -70,7 +70,7 @@ Partial Class staffBookingCustomerDetail
         'mskContact
         '
         Me.mskContact.Location = New System.Drawing.Point(175, 103)
-        Me.mskContact.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.mskContact.Margin = New System.Windows.Forms.Padding(2)
         Me.mskContact.Mask = "000-000 0000"
         Me.mskContact.Name = "mskContact"
         Me.mskContact.Size = New System.Drawing.Size(214, 24)
@@ -80,7 +80,7 @@ Partial Class staffBookingCustomerDetail
         'mskIC
         '
         Me.mskIC.Location = New System.Drawing.Point(175, 67)
-        Me.mskIC.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.mskIC.Margin = New System.Windows.Forms.Padding(2)
         Me.mskIC.Mask = "000000-00-0000"
         Me.mskIC.Name = "mskIC"
         Me.mskIC.Size = New System.Drawing.Size(214, 24)
@@ -193,14 +193,17 @@ Partial Class staffBookingCustomerDetail
         '
         'dgvSeat
         '
+        Me.dgvSeat.AllowUserToAddRows = False
+        Me.dgvSeat.AllowUserToDeleteRows = False
         Me.dgvSeat.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgvSeat.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.dgvSeat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvSeat.Enabled = False
         Me.dgvSeat.Location = New System.Drawing.Point(32, 20)
-        Me.dgvSeat.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.dgvSeat.Margin = New System.Windows.Forms.Padding(2)
         Me.dgvSeat.Name = "dgvSeat"
+        Me.dgvSeat.ReadOnly = True
         Me.dgvSeat.RowTemplate.Height = 24
+        Me.dgvSeat.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.dgvSeat.Size = New System.Drawing.Size(374, 103)
         Me.dgvSeat.TabIndex = 0
         '
@@ -215,7 +218,7 @@ Partial Class staffBookingCustomerDetail
         Me.Controls.Add(Me.gbCreatePromotion)
         Me.Controls.Add(Me.StaffMenuLayoutControl1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "staffBookingCustomerDetail"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "staffBookingCustomerDetail"

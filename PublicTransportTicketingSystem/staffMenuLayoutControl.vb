@@ -1,18 +1,16 @@
 ﻿Public Class staffMenuLayoutControl
     ' create even to to raise the transport change 
-    Public Event staffHomeClick(ByVal sender As Object, ByVal e As System.EventArgs)
 
-    Private Sub btnHomeClick(sender As Object, e As EventArgs) Handles btnHome.Click
-        RaiseEvent staffHomeClick(sender, e)
 
-    End Sub
+
 
     Public Event staffBookingClick(ByVal sender As Object, ByVal e As System.EventArgs)
 
 
 
     Private Sub btnBookingClick(sender As Object, e As EventArgs) Handles btnReservation.Click
-
+        ParentForm.Hide()
+        StaffBooking.Show()
         RaiseEvent staffBookingClick(sender, e)
 
     End Sub
@@ -20,6 +18,8 @@
     Public Event staffTransactionClick(ByVal sender As Object, ByVal e As System.EventArgs)
 
     Private Sub btnTransactionClick(sender As Object, e As EventArgs) Handles btnTransaction.Click
+        ParentForm.Hide()
+        staffTransaction.Show()
         RaiseEvent staffTransactionClick(sender, e)
 
     End Sub
@@ -27,6 +27,8 @@
     Public Event staffPromotionClick(ByVal sender As Object, ByVal e As System.EventArgs)
 
     Private Sub btnPromotionClick(sender As Object, e As EventArgs) Handles btnStaffPromotion.Click
+        ParentForm.Hide()
+        StaffViewPromotion.Show()
         RaiseEvent staffPromotionClick(sender, e)
 
     End Sub
@@ -34,6 +36,7 @@
     Public Event staffAboutClick(ByVal sender As Object, ByVal e As System.EventArgs)
 
     Private Sub btnAboutClick(sender As Object, e As EventArgs) Handles btnAbout.Click
+
         RaiseEvent staffAboutClick(sender, e)
 
     End Sub
@@ -47,6 +50,8 @@
 
     Public Event staffExitClick(ByVal sender As Object, ByVal e As System.EventArgs)
     Private Sub btnExitClick(sender As Object, e As EventArgs) Handles pbExit.Click
+        End
+
         RaiseEvent staffExitClick(sender, e)
 
     End Sub

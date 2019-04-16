@@ -117,4 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Label1.Text" xml:space="preserve">
+    <value>Public transport (also known as public transportation, public transit, or mass transit) is transport of passengers by group travel systems available for use by the general public, typically managed on a schedule, operated on established routes, and that charge a posted fee for each trip.[1][2][3] Examples of public transport include city buses, trolleybuses, trams (or light rail) and passenger trains, rapid transit (metro/subway/underground, etc.) and ferries. Public transport between cities is dominated by airlines, coaches, and intercity rail. High-speed rail networks are being developed in many parts of the world.</value>
+  </data>
 </root>

@@ -131,7 +131,7 @@
         Next
     End Sub
     Private Sub ManagerManageSchedule_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'TODO: This line of code loads data into the 'PTTSDataSet.Schedule' table. You can move, or remove it, as needed.
+        BigBackground.Show()
         selectedType = ts.selectedType
 
         Dim col1 As New DataGridViewTextBoxColumn
@@ -210,11 +210,5 @@
 
     End Sub
 
-    Private Sub ChaneTransport(sender As Object, e As EventArgs) Handles ts.TransportChange
 
-    End Sub
-
-    Private Sub dgvSchedule_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvSchedule.CellContentClick
-
-    End Sub
 End Class

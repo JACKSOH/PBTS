@@ -25,8 +25,6 @@ Partial Class managerMenuLayoutControl
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(managerMenuLayoutControl))
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
-        Me.pbHome = New System.Windows.Forms.PictureBox()
-        Me.btnHome = New System.Windows.Forms.Button()
         Me.pbReport = New System.Windows.Forms.PictureBox()
         Me.btnReport = New System.Windows.Forms.Button()
         Me.pbManageStaff = New System.Windows.Forms.PictureBox()
@@ -48,7 +46,6 @@ Partial Class managerMenuLayoutControl
         Me.pbExit = New System.Windows.Forms.PictureBox()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.FlowLayoutPanel1.SuspendLayout()
-        CType(Me.pbHome, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbReport, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbManageStaff, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbManageSchedule, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -82,8 +79,6 @@ Partial Class managerMenuLayoutControl
         'FlowLayoutPanel1
         '
         Me.FlowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(53, Byte), Integer), CType(CType(65, Byte), Integer))
-        Me.FlowLayoutPanel1.Controls.Add(Me.pbHome)
-        Me.FlowLayoutPanel1.Controls.Add(Me.btnHome)
         Me.FlowLayoutPanel1.Controls.Add(Me.pbReport)
         Me.FlowLayoutPanel1.Controls.Add(Me.btnReport)
         Me.FlowLayoutPanel1.Controls.Add(Me.pbManageStaff)
@@ -103,39 +98,10 @@ Partial Class managerMenuLayoutControl
         Me.FlowLayoutPanel1.Size = New System.Drawing.Size(229, 503)
         Me.FlowLayoutPanel1.TabIndex = 11
         '
-        'pbHome
-        '
-        Me.pbHome.Image = Global.PublicTransportTicketingSystem.My.Resources.Resources.home
-        Me.pbHome.Location = New System.Drawing.Point(10, 3)
-        Me.pbHome.Margin = New System.Windows.Forms.Padding(10, 3, 3, 20)
-        Me.pbHome.Name = "pbHome"
-        Me.pbHome.Size = New System.Drawing.Size(40, 38)
-        Me.pbHome.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.pbHome.TabIndex = 3
-        Me.pbHome.TabStop = False
-        '
-        'btnHome
-        '
-        Me.btnHome.AllowDrop = True
-        Me.btnHome.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnHome.FlatAppearance.BorderSize = 0
-        Me.btnHome.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnHome.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnHome.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnHome.Location = New System.Drawing.Point(55, 2)
-        Me.btnHome.Margin = New System.Windows.Forms.Padding(2)
-        Me.btnHome.Name = "btnHome"
-        Me.btnHome.Size = New System.Drawing.Size(144, 39)
-        Me.btnHome.TabIndex = 0
-        Me.btnHome.Text = "Home"
-        Me.btnHome.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnHome.UseVisualStyleBackColor = True
-        '
         'pbReport
         '
         Me.pbReport.Image = Global.PublicTransportTicketingSystem.My.Resources.Resources.report
-        Me.pbReport.Location = New System.Drawing.Point(10, 64)
+        Me.pbReport.Location = New System.Drawing.Point(10, 3)
         Me.pbReport.Margin = New System.Windows.Forms.Padding(10, 3, 3, 20)
         Me.pbReport.Name = "pbReport"
         Me.pbReport.Size = New System.Drawing.Size(40, 38)
@@ -152,7 +118,7 @@ Partial Class managerMenuLayoutControl
         Me.btnReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnReport.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnReport.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnReport.Location = New System.Drawing.Point(55, 63)
+        Me.btnReport.Location = New System.Drawing.Point(55, 2)
         Me.btnReport.Margin = New System.Windows.Forms.Padding(2)
         Me.btnReport.Name = "btnReport"
         Me.btnReport.Size = New System.Drawing.Size(144, 39)
@@ -164,7 +130,7 @@ Partial Class managerMenuLayoutControl
         'pbManageStaff
         '
         Me.pbManageStaff.Image = Global.PublicTransportTicketingSystem.My.Resources.Resources.reserve
-        Me.pbManageStaff.Location = New System.Drawing.Point(10, 125)
+        Me.pbManageStaff.Location = New System.Drawing.Point(10, 64)
         Me.pbManageStaff.Margin = New System.Windows.Forms.Padding(10, 3, 3, 20)
         Me.pbManageStaff.Name = "pbManageStaff"
         Me.pbManageStaff.Size = New System.Drawing.Size(40, 38)
@@ -181,7 +147,7 @@ Partial Class managerMenuLayoutControl
         Me.btnManageStaff.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnManageStaff.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnManageStaff.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnManageStaff.Location = New System.Drawing.Point(55, 124)
+        Me.btnManageStaff.Location = New System.Drawing.Point(55, 63)
         Me.btnManageStaff.Margin = New System.Windows.Forms.Padding(2)
         Me.btnManageStaff.Name = "btnManageStaff"
         Me.btnManageStaff.Size = New System.Drawing.Size(144, 39)
@@ -193,7 +159,7 @@ Partial Class managerMenuLayoutControl
         'pbManageSchedule
         '
         Me.pbManageSchedule.Image = Global.PublicTransportTicketingSystem.My.Resources.Resources.schedule
-        Me.pbManageSchedule.Location = New System.Drawing.Point(10, 186)
+        Me.pbManageSchedule.Location = New System.Drawing.Point(10, 125)
         Me.pbManageSchedule.Margin = New System.Windows.Forms.Padding(10, 3, 3, 20)
         Me.pbManageSchedule.Name = "pbManageSchedule"
         Me.pbManageSchedule.Size = New System.Drawing.Size(40, 38)
@@ -210,7 +176,7 @@ Partial Class managerMenuLayoutControl
         Me.btnManageSchedule.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnManageSchedule.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnManageSchedule.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnManageSchedule.Location = New System.Drawing.Point(55, 185)
+        Me.btnManageSchedule.Location = New System.Drawing.Point(55, 124)
         Me.btnManageSchedule.Margin = New System.Windows.Forms.Padding(2)
         Me.btnManageSchedule.Name = "btnManageSchedule"
         Me.btnManageSchedule.Size = New System.Drawing.Size(144, 39)
@@ -222,7 +188,7 @@ Partial Class managerMenuLayoutControl
         'pbManagePromotion
         '
         Me.pbManagePromotion.Image = Global.PublicTransportTicketingSystem.My.Resources.Resources._2
-        Me.pbManagePromotion.Location = New System.Drawing.Point(10, 247)
+        Me.pbManagePromotion.Location = New System.Drawing.Point(10, 186)
         Me.pbManagePromotion.Margin = New System.Windows.Forms.Padding(10, 3, 3, 20)
         Me.pbManagePromotion.Name = "pbManagePromotion"
         Me.pbManagePromotion.Size = New System.Drawing.Size(40, 38)
@@ -239,7 +205,7 @@ Partial Class managerMenuLayoutControl
         Me.btnManagePromotion.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnManagePromotion.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnManagePromotion.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnManagePromotion.Location = New System.Drawing.Point(55, 246)
+        Me.btnManagePromotion.Location = New System.Drawing.Point(55, 185)
         Me.btnManagePromotion.Margin = New System.Windows.Forms.Padding(2)
         Me.btnManagePromotion.Name = "btnManagePromotion"
         Me.btnManagePromotion.Size = New System.Drawing.Size(144, 39)
@@ -251,7 +217,7 @@ Partial Class managerMenuLayoutControl
         'PictureBox4
         '
         Me.PictureBox4.Image = Global.PublicTransportTicketingSystem.My.Resources.Resources.pubic_trans
-        Me.PictureBox4.Location = New System.Drawing.Point(10, 308)
+        Me.PictureBox4.Location = New System.Drawing.Point(10, 247)
         Me.PictureBox4.Margin = New System.Windows.Forms.Padding(10, 3, 3, 20)
         Me.PictureBox4.Name = "PictureBox4"
         Me.PictureBox4.Size = New System.Drawing.Size(40, 38)
@@ -268,7 +234,7 @@ Partial Class managerMenuLayoutControl
         Me.btnPublicTransport.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnPublicTransport.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnPublicTransport.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnPublicTransport.Location = New System.Drawing.Point(55, 307)
+        Me.btnPublicTransport.Location = New System.Drawing.Point(55, 246)
         Me.btnPublicTransport.Margin = New System.Windows.Forms.Padding(2)
         Me.btnPublicTransport.Name = "btnPublicTransport"
         Me.btnPublicTransport.Size = New System.Drawing.Size(164, 39)
@@ -280,7 +246,7 @@ Partial Class managerMenuLayoutControl
         'PictureBox2
         '
         Me.PictureBox2.Image = Global.PublicTransportTicketingSystem.My.Resources.Resources.icons8_Map_Pinpoint_24px
-        Me.PictureBox2.Location = New System.Drawing.Point(10, 369)
+        Me.PictureBox2.Location = New System.Drawing.Point(10, 308)
         Me.PictureBox2.Margin = New System.Windows.Forms.Padding(10, 3, 3, 20)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(40, 38)
@@ -297,7 +263,7 @@ Partial Class managerMenuLayoutControl
         Me.btnManageLocation.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnManageLocation.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnManageLocation.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnManageLocation.Location = New System.Drawing.Point(55, 368)
+        Me.btnManageLocation.Location = New System.Drawing.Point(55, 307)
         Me.btnManageLocation.Margin = New System.Windows.Forms.Padding(2)
         Me.btnManageLocation.Name = "btnManageLocation"
         Me.btnManageLocation.Size = New System.Drawing.Size(164, 39)
@@ -411,7 +377,6 @@ Partial Class managerMenuLayoutControl
         Me.Size = New System.Drawing.Size(800, 575)
         Me.TableLayoutPanel1.ResumeLayout(False)
         Me.FlowLayoutPanel1.ResumeLayout(False)
-        CType(Me.pbHome, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pbReport, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pbManageStaff, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pbManageSchedule, System.ComponentModel.ISupportInitialize).EndInit()
@@ -435,8 +400,6 @@ Partial Class managerMenuLayoutControl
     Friend WithEvents btnAbout As Button
     Friend WithEvents pbExit As PictureBox
     Friend WithEvents FlowLayoutPanel1 As FlowLayoutPanel
-    Friend WithEvents pbHome As PictureBox
-    Friend WithEvents btnHome As Button
     Friend WithEvents pbReport As PictureBox
     Friend WithEvents btnReport As Button
     Friend WithEvents pbManageStaff As PictureBox

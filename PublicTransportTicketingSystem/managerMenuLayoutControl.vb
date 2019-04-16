@@ -4,10 +4,10 @@
         MessageBox.Show("This is the same page!")
     End Sub
 
-    Private Sub btnHomeClick(sender As Object, e As EventArgs) Handles btnHome.Click
+    Private Sub btnHomeClick(sender As Object, e As EventArgs)
 
         ParentForm.Hide()
-        managerHome.Show()
+
 
     End Sub
     Public Event managerReportClick(ByVal sender As Object, ByVal e As System.EventArgs)
@@ -92,6 +92,10 @@
     End Sub
 
     Private Sub TableLayoutPanel1_Paint(sender As Object, e As PaintEventArgs) Handles TableLayoutPanel1.Paint
+
+    End Sub
+
+    Private Sub FlowLayoutPanel1_Paint(sender As Object, e As PaintEventArgs) Handles FlowLayoutPanel1.Paint
 
     End Sub
 End Class

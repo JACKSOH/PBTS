@@ -3,13 +3,11 @@
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Try
             Dim getAllBookingQuery = From booking In db.Bookings
-                                     Join ticket In db.Tickets On booking.bookingID Equals ticket.bookingID
-                                     Where ticket.purchaseDateTime.Value.Date = dpDate.Value.Date
                                      Select booking
 
             Dim bookingReport As New bookingReport
             bookingReport.SetDataSource(getAllBookingQuery)
-
+            'MessageBox.Show(getAllBookingQuery.Count.ToString)
             CrystalReportViewer1.ReportSource = bookingReport
             CrystalReportViewer1.Refresh()
 

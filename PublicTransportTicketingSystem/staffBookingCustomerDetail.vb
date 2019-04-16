@@ -108,19 +108,23 @@ Public Class staffBookingCustomerDetail
         Dim getIdQuery = From booking In db.Bookings
                          Select booking.bookingID
 
-        Dim oldBookingID As String = getIdQuery.ToList.LastOrDefault
+            Dim oldBookingID As String = getIdQuery.ToList.LastOrDefault
+
+            Dim getEmployeeID = From employee In db.Employees
+                                Where employee.employeeIC = StaffIndex.IC
+                                Select employee.employeeID
 
 
-        Dim book As New Booking
+            Dim book As New Booking
         App.table = "Booking"
         bookingID = App.GenerateNextId(oldBookingID)
         book.bookingID = bookingID
-        book.customerIC = mskIC.Text.Replace("-", "")
-
-        book.customerContactNo = mskContact.Text
-        book.customerName = custname
-        book.employeeID = "em0001"
-        db.Bookings.InsertOnSubmit(book)
+            book.customerIC = mskIC.Text.Replace("-", "")
+            book.customerContactNo = mskContact.Text
+            book.customerName = custname
+            book.employeeID = getEmployeeID.First.ToString
+            book.bookingStatus = "Paid"
+            db.Bookings.InsertOnSubmit(book)
             Try
                 db.SubmitChanges()
 
@@ -185,5 +189,8 @@ Public Class staffBookingCustomerDetail
         End Try
     End Sub
 
-
+    Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
+        Me.Hide()
+        StaffBooking.Show()
+    End Sub
 End Class

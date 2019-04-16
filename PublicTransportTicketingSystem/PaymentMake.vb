@@ -93,7 +93,8 @@
                 ticketNo += 1
             Next
         End If
-
+        Me.Hide()
+        StaffBooking.Show()
     End Sub
 
 

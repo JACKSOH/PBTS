@@ -33,9 +33,7 @@ Partial Class ManagerManageSchedule
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtSearch = New System.Windows.Forms.TextBox()
-        Me.btnUpdate = New System.Windows.Forms.Button()
         Me.btnAdd = New System.Windows.Forms.Button()
-        Me.btnDeleteCancel = New System.Windows.Forms.Button()
         Me.ScheduleBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.PTTSDataSet = New PublicTransportTicketingSystem.PTTSDataSet()
         Me.ScheduleTableAdapter = New PublicTransportTicketingSystem.PTTSDataSetTableAdapters.ScheduleTableAdapter()
@@ -68,9 +66,7 @@ Partial Class ManagerManageSchedule
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Controls.Add(Me.txtSearch)
         Me.GroupBox1.Controls.Add(Me.dgvSchedule)
-        Me.GroupBox1.Controls.Add(Me.btnUpdate)
         Me.GroupBox1.Controls.Add(Me.btnAdd)
-        Me.GroupBox1.Controls.Add(Me.btnDeleteCancel)
         Me.GroupBox1.Font = New System.Drawing.Font("Tw Cen MT Condensed", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.Location = New System.Drawing.Point(235, 184)
         Me.GroupBox1.Name = "GroupBox1"
@@ -144,38 +140,17 @@ Partial Class ManagerManageSchedule
         Me.txtSearch.Size = New System.Drawing.Size(73, 24)
         Me.txtSearch.TabIndex = 14
         '
-        'btnUpdate
-        '
-        Me.btnUpdate.Font = New System.Drawing.Font("Tw Cen MT Condensed", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnUpdate.Location = New System.Drawing.Point(408, 193)
-        Me.btnUpdate.Name = "btnUpdate"
-        Me.btnUpdate.Size = New System.Drawing.Size(81, 38)
-        Me.btnUpdate.TabIndex = 4
-        Me.btnUpdate.Text = "&Update"
-        Me.btnUpdate.UseVisualStyleBackColor = True
-        '
         'btnAdd
         '
-        Me.btnAdd.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.btnAdd.BackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(53, Byte), Integer), CType(CType(65, Byte), Integer))
         Me.btnAdd.Font = New System.Drawing.Font("Tw Cen MT Condensed", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAdd.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.btnAdd.Location = New System.Drawing.Point(408, 150)
         Me.btnAdd.Name = "btnAdd"
         Me.btnAdd.Size = New System.Drawing.Size(81, 37)
         Me.btnAdd.TabIndex = 5
         Me.btnAdd.Text = "&Add"
         Me.btnAdd.UseVisualStyleBackColor = False
-        '
-        'btnDeleteCancel
-        '
-        Me.btnDeleteCancel.BackColor = System.Drawing.Color.Red
-        Me.btnDeleteCancel.Font = New System.Drawing.Font("Tw Cen MT Condensed", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnDeleteCancel.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.btnDeleteCancel.Location = New System.Drawing.Point(408, 277)
-        Me.btnDeleteCancel.Name = "btnDeleteCancel"
-        Me.btnDeleteCancel.Size = New System.Drawing.Size(59, 33)
-        Me.btnDeleteCancel.TabIndex = 7
-        Me.btnDeleteCancel.Text = "&Delete"
-        Me.btnDeleteCancel.UseVisualStyleBackColor = False
         '
         'ScheduleBindingSource
         '
@@ -233,9 +208,7 @@ Partial Class ManagerManageSchedule
     Friend WithEvents ts As TranportSelection
     Friend WithEvents dgvSchedule As DataGridView
     Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents btnUpdate As Button
     Friend WithEvents btnAdd As Button
-    Friend WithEvents btnDeleteCancel As Button
     Friend WithEvents PTTSDataSet As PTTSDataSet
     Friend WithEvents ScheduleBindingSource As BindingSource
     Friend WithEvents ScheduleTableAdapter As PTTSDataSetTableAdapters.ScheduleTableAdapter

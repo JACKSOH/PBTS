@@ -124,7 +124,7 @@ Partial Class managerMenuLayoutControl
         Me.btnHome.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnHome.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.btnHome.Location = New System.Drawing.Point(55, 2)
-        Me.btnHome.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnHome.Margin = New System.Windows.Forms.Padding(2)
         Me.btnHome.Name = "btnHome"
         Me.btnHome.Size = New System.Drawing.Size(144, 39)
         Me.btnHome.TabIndex = 0
@@ -153,7 +153,7 @@ Partial Class managerMenuLayoutControl
         Me.btnReport.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnReport.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.btnReport.Location = New System.Drawing.Point(55, 63)
-        Me.btnReport.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnReport.Margin = New System.Windows.Forms.Padding(2)
         Me.btnReport.Name = "btnReport"
         Me.btnReport.Size = New System.Drawing.Size(144, 39)
         Me.btnReport.TabIndex = 6
@@ -182,7 +182,7 @@ Partial Class managerMenuLayoutControl
         Me.btnManageStaff.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnManageStaff.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.btnManageStaff.Location = New System.Drawing.Point(55, 124)
-        Me.btnManageStaff.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnManageStaff.Margin = New System.Windows.Forms.Padding(2)
         Me.btnManageStaff.Name = "btnManageStaff"
         Me.btnManageStaff.Size = New System.Drawing.Size(144, 39)
         Me.btnManageStaff.TabIndex = 7
@@ -211,7 +211,7 @@ Partial Class managerMenuLayoutControl
         Me.btnManageSchedule.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnManageSchedule.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.btnManageSchedule.Location = New System.Drawing.Point(55, 185)
-        Me.btnManageSchedule.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnManageSchedule.Margin = New System.Windows.Forms.Padding(2)
         Me.btnManageSchedule.Name = "btnManageSchedule"
         Me.btnManageSchedule.Size = New System.Drawing.Size(144, 39)
         Me.btnManageSchedule.TabIndex = 9
@@ -240,7 +240,7 @@ Partial Class managerMenuLayoutControl
         Me.btnManagePromotion.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnManagePromotion.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.btnManagePromotion.Location = New System.Drawing.Point(55, 246)
-        Me.btnManagePromotion.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnManagePromotion.Margin = New System.Windows.Forms.Padding(2)
         Me.btnManagePromotion.Name = "btnManagePromotion"
         Me.btnManagePromotion.Size = New System.Drawing.Size(144, 39)
         Me.btnManagePromotion.TabIndex = 11
@@ -269,7 +269,7 @@ Partial Class managerMenuLayoutControl
         Me.btnPublicTransport.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnPublicTransport.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.btnPublicTransport.Location = New System.Drawing.Point(55, 307)
-        Me.btnPublicTransport.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnPublicTransport.Margin = New System.Windows.Forms.Padding(2)
         Me.btnPublicTransport.Name = "btnPublicTransport"
         Me.btnPublicTransport.Size = New System.Drawing.Size(164, 39)
         Me.btnPublicTransport.TabIndex = 12
@@ -298,7 +298,7 @@ Partial Class managerMenuLayoutControl
         Me.btnManageLocation.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnManageLocation.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.btnManageLocation.Location = New System.Drawing.Point(55, 368)
-        Me.btnManageLocation.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnManageLocation.Margin = New System.Windows.Forms.Padding(2)
         Me.btnManageLocation.Name = "btnManageLocation"
         Me.btnManageLocation.Size = New System.Drawing.Size(164, 39)
         Me.btnManageLocation.TabIndex = 15
@@ -366,7 +366,7 @@ Partial Class managerMenuLayoutControl
         Me.btnManageAccount.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnManageAccount.ForeColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(53, Byte), Integer), CType(CType(65, Byte), Integer))
         Me.btnManageAccount.Location = New System.Drawing.Point(352, 12)
-        Me.btnManageAccount.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnManageAccount.Margin = New System.Windows.Forms.Padding(2)
         Me.btnManageAccount.Name = "btnManageAccount"
         Me.btnManageAccount.Size = New System.Drawing.Size(133, 45)
         Me.btnManageAccount.TabIndex = 9
@@ -384,7 +384,7 @@ Partial Class managerMenuLayoutControl
         Me.btnAbout.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAbout.ForeColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(53, Byte), Integer), CType(CType(65, Byte), Integer))
         Me.btnAbout.Location = New System.Drawing.Point(259, 15)
-        Me.btnAbout.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnAbout.Margin = New System.Windows.Forms.Padding(2)
         Me.btnAbout.Name = "btnAbout"
         Me.btnAbout.Size = New System.Drawing.Size(77, 37)
         Me.btnAbout.TabIndex = 7

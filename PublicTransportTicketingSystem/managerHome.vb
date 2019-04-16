@@ -40,7 +40,8 @@
         End
     End Sub
 
-    Private Sub ManagerMenuLayoutControl1_Load(sender As Object, e As EventArgs) Handles ManagerMenuLayoutControl1.Load
-
+    Private Sub managerHome_Load(sender As Object, e As EventArgs) Handles Me.Load
+        BigBackground.Show()
     End Sub
+
 End Class

@@ -114,8 +114,9 @@ Partial Class ManagerManageLocation
         '
         'btnAdd
         '
-        Me.btnAdd.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.btnAdd.BackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(53, Byte), Integer), CType(CType(65, Byte), Integer))
         Me.btnAdd.Font = New System.Drawing.Font("Tw Cen MT Condensed", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAdd.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.btnAdd.Location = New System.Drawing.Point(421, 196)
         Me.btnAdd.Name = "btnAdd"
         Me.btnAdd.Size = New System.Drawing.Size(81, 37)

@@ -189,8 +189,9 @@ Partial Class ManagerPT
         '
         'btnAdd
         '
-        Me.btnAdd.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.btnAdd.BackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(53, Byte), Integer), CType(CType(65, Byte), Integer))
         Me.btnAdd.Font = New System.Drawing.Font("Tw Cen MT Condensed", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAdd.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.btnAdd.Location = New System.Drawing.Point(400, 196)
         Me.btnAdd.Name = "btnAdd"
         Me.btnAdd.Size = New System.Drawing.Size(81, 37)
@@ -213,7 +214,7 @@ Partial Class ManagerPT
         'ts
         '
         Me.ts.Location = New System.Drawing.Point(241, 74)
-        Me.ts.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.ts.Margin = New System.Windows.Forms.Padding(4)
         Me.ts.Name = "ts"
         Me.ts.Size = New System.Drawing.Size(547, 104)
         Me.ts.TabIndex = 6
@@ -222,7 +223,7 @@ Partial Class ManagerPT
         '
         Me.ManagerMenuLayoutControl1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.ManagerMenuLayoutControl1.Location = New System.Drawing.Point(0, 0)
-        Me.ManagerMenuLayoutControl1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.ManagerMenuLayoutControl1.Margin = New System.Windows.Forms.Padding(4)
         Me.ManagerMenuLayoutControl1.Name = "ManagerMenuLayoutControl1"
         Me.ManagerMenuLayoutControl1.Size = New System.Drawing.Size(800, 575)
         Me.ManagerMenuLayoutControl1.TabIndex = 0
@@ -240,7 +241,7 @@ Partial Class ManagerPT
         Me.Controls.Add(Me.ts)
         Me.Controls.Add(Me.ManagerMenuLayoutControl1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "ManagerPT"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "ManagerPT"

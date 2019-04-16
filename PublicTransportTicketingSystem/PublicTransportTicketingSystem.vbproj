@@ -246,6 +246,12 @@
     <Compile Include="ManagerViewStaff.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="My Project\BigBackground.Designer.vb">
+      <DependentUpon>BigBackground.vb</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\BigBackground.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="My Project\ManagerManageSeat.Designer.vb">
       <DependentUpon>ManagerManageSeat.vb</DependentUpon>
     </Compile>
@@ -444,6 +450,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ManagerViewStaff.resx">
       <DependentUpon>ManagerViewStaff.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\BigBackground.resx">
+      <DependentUpon>BigBackground.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\ManagerManageSeat.resx">
       <DependentUpon>ManagerManageSeat.vb</DependentUpon>

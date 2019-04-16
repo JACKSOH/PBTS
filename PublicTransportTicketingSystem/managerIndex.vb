@@ -37,7 +37,8 @@
                 MessageBox.Show("Successful login!!" & vbNewLine & "Redirecting to manager page...")
                 System.Threading.Thread.Sleep(2000)
                 Me.Hide()
-                ManagerViewSchdule.Show()
+                BigBackground.Show()
+
             Else
                 MessageBox.Show("IC or password is wrong!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End If

@@ -126,6 +126,8 @@
         Try
             If CInt(txtPosition.Text) <> newPosition Then
                 lblsuggest.Visible = False
+            Else
+                lblsuggest.Visible = True
             End If
 
         Catch ex As Exception

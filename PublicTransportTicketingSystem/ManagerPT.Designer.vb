@@ -23,10 +23,10 @@ Partial Class ManagerPT
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ManagerPT))
         Me.gbTranport = New System.Windows.Forms.GroupBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.lbltest = New System.Windows.Forms.Label()
         Me.dgv = New System.Windows.Forms.DataGridView()
         Me.TransportNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Status = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -56,25 +56,25 @@ Partial Class ManagerPT
         '
         Me.gbTranport.Controls.Add(Me.PictureBox1)
         Me.gbTranport.Controls.Add(Me.Label1)
-        Me.gbTranport.Controls.Add(Me.lbltest)
         Me.gbTranport.Controls.Add(Me.dgv)
         Me.gbTranport.Controls.Add(Me.txtSearch)
         Me.gbTranport.Controls.Add(Me.btnUpdate)
         Me.gbTranport.Controls.Add(Me.btnAdd)
         Me.gbTranport.Controls.Add(Me.btnDeleteCancel)
         Me.gbTranport.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.gbTranport.Location = New System.Drawing.Point(241, 207)
+        Me.gbTranport.Location = New System.Drawing.Point(241, 185)
         Me.gbTranport.Name = "gbTranport"
-        Me.gbTranport.Size = New System.Drawing.Size(547, 356)
+        Me.gbTranport.Size = New System.Drawing.Size(547, 378)
         Me.gbTranport.TabIndex = 8
         Me.gbTranport.TabStop = False
         Me.gbTranport.Text = "Tranport Details"
         '
         'PictureBox1
         '
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
         Me.PictureBox1.Location = New System.Drawing.Point(408, 61)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(27, 22)
+        Me.PictureBox1.Size = New System.Drawing.Size(27, 21)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 12
         Me.PictureBox1.TabStop = False
@@ -88,15 +88,6 @@ Partial Class ManagerPT
         Me.Label1.Size = New System.Drawing.Size(86, 18)
         Me.Label1.TabIndex = 13
         Me.Label1.Text = "Search carrier"
-        '
-        'lbltest
-        '
-        Me.lbltest.AutoSize = True
-        Me.lbltest.Location = New System.Drawing.Point(442, 16)
-        Me.lbltest.Name = "lbltest"
-        Me.lbltest.Size = New System.Drawing.Size(45, 15)
-        Me.lbltest.TabIndex = 7
-        Me.lbltest.Text = "Label1"
         '
         'dgv
         '
@@ -198,8 +189,9 @@ Partial Class ManagerPT
         '
         'btnAdd
         '
-        Me.btnAdd.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.btnAdd.BackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(53, Byte), Integer), CType(CType(65, Byte), Integer))
         Me.btnAdd.Font = New System.Drawing.Font("Tw Cen MT Condensed", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAdd.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.btnAdd.Location = New System.Drawing.Point(400, 196)
         Me.btnAdd.Name = "btnAdd"
         Me.btnAdd.Size = New System.Drawing.Size(81, 37)
@@ -222,6 +214,7 @@ Partial Class ManagerPT
         'ts
         '
         Me.ts.Location = New System.Drawing.Point(241, 74)
+        Me.ts.Margin = New System.Windows.Forms.Padding(4)
         Me.ts.Name = "ts"
         Me.ts.Size = New System.Drawing.Size(547, 104)
         Me.ts.TabIndex = 6
@@ -230,6 +223,7 @@ Partial Class ManagerPT
         '
         Me.ManagerMenuLayoutControl1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.ManagerMenuLayoutControl1.Location = New System.Drawing.Point(0, 0)
+        Me.ManagerMenuLayoutControl1.Margin = New System.Windows.Forms.Padding(4)
         Me.ManagerMenuLayoutControl1.Name = "ManagerMenuLayoutControl1"
         Me.ManagerMenuLayoutControl1.Size = New System.Drawing.Size(800, 575)
         Me.ManagerMenuLayoutControl1.TabIndex = 0
@@ -249,6 +243,7 @@ Partial Class ManagerPT
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "ManagerPT"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "ManagerPT"
         Me.gbTranport.ResumeLayout(False)
         Me.gbTranport.PerformLayout()
@@ -272,7 +267,6 @@ Partial Class ManagerPT
     Friend WithEvents TransportBindingSource As BindingSource
     Friend WithEvents TransportTableAdapter As PTTSDataSetTableAdapters.TransportTableAdapter
     Friend WithEvents btnDeleteCancel As Button
-    Friend WithEvents lbltest As Label
     Friend WithEvents TransportNameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents Status As DataGridViewTextBoxColumn
     Friend WithEvents LicensePlateDataGridViewTextBoxColumn As DataGridViewTextBoxColumn

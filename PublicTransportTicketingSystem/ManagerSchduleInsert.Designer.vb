@@ -69,7 +69,7 @@ Partial Class ManagerSchduleInsert
         Me.label.Location = New System.Drawing.Point(105, 41)
         Me.label.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.label.Name = "label"
-        Me.label.Size = New System.Drawing.Size(132, 19)
+        Me.label.Size = New System.Drawing.Size(164, 23)
         Me.label.TabIndex = 0
         Me.label.Text = "New Schedule ID :"
         '
@@ -80,7 +80,7 @@ Partial Class ManagerSchduleInsert
         Me.dtpTime.Margin = New System.Windows.Forms.Padding(4)
         Me.dtpTime.MaxDate = New Date(2020, 12, 31, 0, 0, 0, 0)
         Me.dtpTime.Name = "dtpTime"
-        Me.dtpTime.Size = New System.Drawing.Size(128, 25)
+        Me.dtpTime.Size = New System.Drawing.Size(128, 29)
         Me.dtpTime.TabIndex = 2
         '
         'Label2
@@ -90,7 +90,7 @@ Partial Class ManagerSchduleInsert
         Me.Label2.Location = New System.Drawing.Point(105, 105)
         Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(143, 19)
+        Me.Label2.Size = New System.Drawing.Size(178, 23)
         Me.Label2.TabIndex = 4
         Me.Label2.Text = "Pick a tranport Type"
         '
@@ -101,7 +101,7 @@ Partial Class ManagerSchduleInsert
         Me.Label3.Location = New System.Drawing.Point(105, 166)
         Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(51, 19)
+        Me.Label3.Size = New System.Drawing.Size(63, 23)
         Me.Label3.TabIndex = 5
         Me.Label3.Text = "Origin"
         '
@@ -112,7 +112,7 @@ Partial Class ManagerSchduleInsert
         Me.Label4.Location = New System.Drawing.Point(105, 245)
         Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(152, 19)
+        Me.Label4.Size = New System.Drawing.Size(192, 23)
         Me.Label4.TabIndex = 6
         Me.Label4.Text = "Pick a Departure Date"
         '
@@ -123,7 +123,7 @@ Partial Class ManagerSchduleInsert
         Me.Label5.Location = New System.Drawing.Point(405, 166)
         Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(85, 19)
+        Me.Label5.Size = New System.Drawing.Size(106, 23)
         Me.Label5.TabIndex = 7
         Me.Label5.Text = "Destination"
         '
@@ -134,7 +134,7 @@ Partial Class ManagerSchduleInsert
         Me.cboType.Items.AddRange(New Object() {"bus", "ferry", "train"})
         Me.cboType.Location = New System.Drawing.Point(109, 136)
         Me.cboType.Name = "cboType"
-        Me.cboType.Size = New System.Drawing.Size(121, 27)
+        Me.cboType.Size = New System.Drawing.Size(121, 31)
         Me.cboType.TabIndex = 8
         '
         'Label1
@@ -144,7 +144,7 @@ Partial Class ManagerSchduleInsert
         Me.Label1.Location = New System.Drawing.Point(287, 105)
         Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(96, 19)
+        Me.Label1.Size = New System.Drawing.Size(121, 23)
         Me.Label1.TabIndex = 9
         Me.Label1.Text = "Pick a Carrier"
         '
@@ -156,7 +156,7 @@ Partial Class ManagerSchduleInsert
         Me.cboCarrier.FormattingEnabled = True
         Me.cboCarrier.Location = New System.Drawing.Point(291, 136)
         Me.cboCarrier.Name = "cboCarrier"
-        Me.cboCarrier.Size = New System.Drawing.Size(351, 27)
+        Me.cboCarrier.Size = New System.Drawing.Size(351, 31)
         Me.cboCarrier.TabIndex = 10
         Me.cboCarrier.ValueMember = "transportID"
         '
@@ -178,7 +178,7 @@ Partial Class ManagerSchduleInsert
         Me.cboOrigin.FormattingEnabled = True
         Me.cboOrigin.Location = New System.Drawing.Point(109, 188)
         Me.cboOrigin.Name = "cboOrigin"
-        Me.cboOrigin.Size = New System.Drawing.Size(202, 27)
+        Me.cboOrigin.Size = New System.Drawing.Size(202, 31)
         Me.cboOrigin.TabIndex = 11
         Me.cboOrigin.ValueMember = "locationID"
         '
@@ -195,7 +195,7 @@ Partial Class ManagerSchduleInsert
         Me.cboDestination.FormattingEnabled = True
         Me.cboDestination.Location = New System.Drawing.Point(409, 188)
         Me.cboDestination.Name = "cboDestination"
-        Me.cboDestination.Size = New System.Drawing.Size(220, 27)
+        Me.cboDestination.Size = New System.Drawing.Size(220, 31)
         Me.cboDestination.TabIndex = 12
         Me.cboDestination.ValueMember = "locationID"
         '
@@ -231,7 +231,7 @@ Partial Class ManagerSchduleInsert
         Me.Label6.Location = New System.Drawing.Point(306, 245)
         Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(42, 19)
+        Me.Label6.Size = New System.Drawing.Size(51, 23)
         Me.Label6.TabIndex = 17
         Me.Label6.Text = "Time"
         '
@@ -240,17 +240,17 @@ Partial Class ManagerSchduleInsert
         Me.dtpDate.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dtpDate.Location = New System.Drawing.Point(109, 275)
         Me.dtpDate.Name = "dtpDate"
-        Me.dtpDate.Size = New System.Drawing.Size(161, 25)
+        Me.dtpDate.Size = New System.Drawing.Size(161, 29)
         Me.dtpDate.TabIndex = 18
         '
         'cboCreating
         '
         Me.cboCreating.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboCreating.FormattingEnabled = True
-        Me.cboCreating.Items.AddRange(New Object() {"Does not repeat", "Weekly on X (within this month)", "Everyday on this week"})
+        Me.cboCreating.Items.AddRange(New Object() {"Does not repeat", "Weekly on X (within this month)", "Everyday within a week"})
         Me.cboCreating.Location = New System.Drawing.Point(109, 340)
         Me.cboCreating.Name = "cboCreating"
-        Me.cboCreating.Size = New System.Drawing.Size(239, 27)
+        Me.cboCreating.Size = New System.Drawing.Size(239, 31)
         Me.cboCreating.TabIndex = 19
         '
         'Label7
@@ -260,7 +260,7 @@ Partial Class ManagerSchduleInsert
         Me.Label7.Location = New System.Drawing.Point(105, 318)
         Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(91, 19)
+        Me.Label7.Size = New System.Drawing.Size(113, 23)
         Me.Label7.TabIndex = 20
         Me.Label7.Text = "Created for :"
         '
@@ -303,7 +303,7 @@ Partial Class ManagerSchduleInsert
         '
         Me.test.Location = New System.Drawing.Point(504, 306)
         Me.test.Name = "test"
-        Me.test.Size = New System.Drawing.Size(100, 25)
+        Me.test.Size = New System.Drawing.Size(100, 29)
         Me.test.TabIndex = 36
         '
         'TransportTableAdapter
@@ -317,7 +317,7 @@ Partial Class ManagerSchduleInsert
         Me.Label8.Location = New System.Drawing.Point(13, 9)
         Me.Label8.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(114, 19)
+        Me.Label8.Size = New System.Drawing.Size(141, 23)
         Me.Label8.TabIndex = 37
         Me.Label8.Text = "New Schedule :"
         '
@@ -345,7 +345,7 @@ Partial Class ManagerSchduleInsert
         '
         'ManagerSchduleInsert
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 19.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(11.0!, 23.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(654, 468)
         Me.Controls.Add(Me.Button2)
@@ -375,6 +375,7 @@ Partial Class ManagerSchduleInsert
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "ManagerSchduleInsert"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "ManagerSchduleInsert"
         CType(Me.TransportBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PTTSDataSet, System.ComponentModel.ISupportInitialize).EndInit()

@@ -22,9 +22,11 @@ Partial Class PaymentMake
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+
         Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+
         Me.lblLicensePlate = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.dgvSeatPrice = New System.Windows.Forms.DataGridView()
@@ -45,14 +47,17 @@ Partial Class PaymentMake
         Me.lblPassengerName = New System.Windows.Forms.Label()
         Me.grpPayment = New System.Windows.Forms.GroupBox()
         Me.lblDiscount = New System.Windows.Forms.Label()
+
         Me.lblChange = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
+
         Me.Label9 = New System.Windows.Forms.Label()
         Me.lblTotalPrice = New System.Windows.Forms.Label()
         Me.btnGenerateTicket = New System.Windows.Forms.Button()
         Me.lblCashPaidHint = New System.Windows.Forms.Label()
         Me.txtCashPaid = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
+
         Me.GroupBox2.SuspendLayout()
         CType(Me.dgvSeatPrice, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.grpPayment.SuspendLayout()
@@ -236,6 +241,7 @@ Partial Class PaymentMake
         Me.Label10.TabIndex = 17
         Me.Label10.Text = "Departure Time"
         '
+
         'lblDepartureDate
         '
         Me.lblDepartureDate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
@@ -298,6 +304,7 @@ Partial Class PaymentMake
         Me.lblDiscount.AutoSize = True
         Me.lblDiscount.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblDiscount.ForeColor = System.Drawing.Color.Black
+
         Me.lblDiscount.Location = New System.Drawing.Point(173, 189)
         Me.lblDiscount.Name = "lblDiscount"
         Me.lblDiscount.Size = New System.Drawing.Size(0, 17)
@@ -320,6 +327,7 @@ Partial Class PaymentMake
         Me.Label8.Size = New System.Drawing.Size(83, 24)
         Me.Label8.TabIndex = 30
         Me.Label8.Text = "Change"
+
         '
         'Label9
         '
@@ -377,6 +385,7 @@ Partial Class PaymentMake
         Me.Label5.TabIndex = 18
         Me.Label5.Text = "Cash Paid"
         '
+
         'PaymentMake
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -386,6 +395,7 @@ Partial Class PaymentMake
         Me.Controls.Add(Me.grpPayment)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "PaymentMake"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "PaymentMake"
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()

@@ -265,6 +265,7 @@ Partial Class PaymentPrintTicket
         Me.Controls.Add(Me.lblCustomerName)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "PaymentPrintTicket"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "PaymentPrintTicket"
         Me.ResumeLayout(False)
         Me.PerformLayout()

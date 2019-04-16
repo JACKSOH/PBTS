@@ -24,6 +24,7 @@ Partial Class staffBookingCustomerDetail
     Private Sub InitializeComponent()
         Me.StaffMenuLayoutControl1 = New PublicTransportTicketingSystem.staffMenuLayoutControl()
         Me.gbCreatePromotion = New System.Windows.Forms.GroupBox()
+        Me.mskContact = New System.Windows.Forms.MaskedTextBox()
         Me.mskIC = New System.Windows.Forms.MaskedTextBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
@@ -35,7 +36,6 @@ Partial Class staffBookingCustomerDetail
         Me.lblTotalPrice = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.dgvSeat = New System.Windows.Forms.DataGridView()
-        Me.mskContact = New System.Windows.Forms.MaskedTextBox()
         Me.gbCreatePromotion.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dgvSeat, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -46,7 +46,7 @@ Partial Class staffBookingCustomerDetail
         Me.StaffMenuLayoutControl1.Location = New System.Drawing.Point(0, 0)
         Me.StaffMenuLayoutControl1.Margin = New System.Windows.Forms.Padding(0)
         Me.StaffMenuLayoutControl1.Name = "StaffMenuLayoutControl1"
-        Me.StaffMenuLayoutControl1.Size = New System.Drawing.Size(1067, 708)
+        Me.StaffMenuLayoutControl1.Size = New System.Drawing.Size(800, 575)
         Me.StaffMenuLayoutControl1.TabIndex = 0
         '
         'gbCreatePromotion
@@ -60,21 +60,30 @@ Partial Class staffBookingCustomerDetail
         Me.gbCreatePromotion.Controls.Add(Me.Label5)
         Me.gbCreatePromotion.Font = New System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.gbCreatePromotion.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.gbCreatePromotion.Location = New System.Drawing.Point(380, 133)
-        Me.gbCreatePromotion.Margin = New System.Windows.Forms.Padding(4)
+        Me.gbCreatePromotion.Location = New System.Drawing.Point(285, 108)
         Me.gbCreatePromotion.Name = "gbCreatePromotion"
-        Me.gbCreatePromotion.Padding = New System.Windows.Forms.Padding(4)
-        Me.gbCreatePromotion.Size = New System.Drawing.Size(591, 175)
+        Me.gbCreatePromotion.Size = New System.Drawing.Size(443, 142)
         Me.gbCreatePromotion.TabIndex = 23
         Me.gbCreatePromotion.TabStop = False
         Me.gbCreatePromotion.Text = "Customer Details"
         '
+        'mskContact
+        '
+        Me.mskContact.Location = New System.Drawing.Point(175, 103)
+        Me.mskContact.Margin = New System.Windows.Forms.Padding(2)
+        Me.mskContact.Mask = "000-000 0000"
+        Me.mskContact.Name = "mskContact"
+        Me.mskContact.Size = New System.Drawing.Size(214, 24)
+        Me.mskContact.TabIndex = 23
+        Me.mskContact.ValidatingType = GetType(Integer)
+        '
         'mskIC
         '
-        Me.mskIC.Location = New System.Drawing.Point(233, 83)
+        Me.mskIC.Location = New System.Drawing.Point(175, 67)
+        Me.mskIC.Margin = New System.Windows.Forms.Padding(2)
         Me.mskIC.Mask = "000000-00-0000"
         Me.mskIC.Name = "mskIC"
-        Me.mskIC.Size = New System.Drawing.Size(284, 28)
+        Me.mskIC.Size = New System.Drawing.Size(214, 24)
         Me.mskIC.TabIndex = 22
         Me.mskIC.ValidatingType = GetType(Integer)
         '
@@ -83,10 +92,9 @@ Partial Class staffBookingCustomerDetail
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Tw Cen MT", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.Color.Black
-        Me.Label7.Location = New System.Drawing.Point(24, 127)
-        Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label7.Location = New System.Drawing.Point(18, 103)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(181, 22)
+        Me.Label7.Size = New System.Drawing.Size(144, 17)
         Me.Label7.TabIndex = 19
         Me.Label7.Text = "Customer Contact No."
         '
@@ -95,10 +103,9 @@ Partial Class staffBookingCustomerDetail
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Tw Cen MT", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.Color.Black
-        Me.Label6.Location = New System.Drawing.Point(24, 84)
-        Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label6.Location = New System.Drawing.Point(18, 68)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(105, 22)
+        Me.Label6.Size = New System.Drawing.Size(84, 17)
         Me.Label6.TabIndex = 17
         Me.Label6.Text = "Customer IC"
         '
@@ -106,10 +113,9 @@ Partial Class staffBookingCustomerDetail
         '
         Me.txtName.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtName.ForeColor = System.Drawing.Color.Black
-        Me.txtName.Location = New System.Drawing.Point(233, 42)
-        Me.txtName.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtName.Location = New System.Drawing.Point(175, 34)
         Me.txtName.Name = "txtName"
-        Me.txtName.Size = New System.Drawing.Size(284, 23)
+        Me.txtName.Size = New System.Drawing.Size(214, 20)
         Me.txtName.TabIndex = 14
         '
         'Label5
@@ -117,10 +123,9 @@ Partial Class staffBookingCustomerDetail
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Tw Cen MT", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.Black
-        Me.Label5.Location = New System.Drawing.Point(24, 42)
-        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label5.Location = New System.Drawing.Point(18, 34)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(133, 22)
+        Me.Label5.Size = New System.Drawing.Size(106, 17)
         Me.Label5.TabIndex = 13
         Me.Label5.Text = "Customer Email"
         '
@@ -129,10 +134,9 @@ Partial Class staffBookingCustomerDetail
         Me.btnCancel.BackColor = System.Drawing.Color.Gray
         Me.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnCancel.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.btnCancel.Location = New System.Drawing.Point(734, 597)
-        Me.btnCancel.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnCancel.Location = New System.Drawing.Point(550, 485)
         Me.btnCancel.Name = "btnCancel"
-        Me.btnCancel.Size = New System.Drawing.Size(133, 44)
+        Me.btnCancel.Size = New System.Drawing.Size(100, 36)
         Me.btnCancel.TabIndex = 29
         Me.btnCancel.Text = "CANCEL"
         Me.btnCancel.UseVisualStyleBackColor = False
@@ -143,10 +147,9 @@ Partial Class staffBookingCustomerDetail
         Me.btnProceed.BackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(53, Byte), Integer), CType(CType(65, Byte), Integer))
         Me.btnProceed.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnProceed.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.btnProceed.Location = New System.Drawing.Point(477, 597)
-        Me.btnProceed.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnProceed.Location = New System.Drawing.Point(358, 485)
         Me.btnProceed.Name = "btnProceed"
-        Me.btnProceed.Size = New System.Drawing.Size(133, 44)
+        Me.btnProceed.Size = New System.Drawing.Size(100, 36)
         Me.btnProceed.TabIndex = 26
         Me.btnProceed.Text = "&PROCEED"
         Me.btnProceed.UseVisualStyleBackColor = False
@@ -159,11 +162,9 @@ Partial Class staffBookingCustomerDetail
         Me.GroupBox1.Controls.Add(Me.dgvSeat)
         Me.GroupBox1.Font = New System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.GroupBox1.Location = New System.Drawing.Point(380, 329)
-        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4)
+        Me.GroupBox1.Location = New System.Drawing.Point(285, 267)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4)
-        Me.GroupBox1.Size = New System.Drawing.Size(591, 226)
+        Me.GroupBox1.Size = New System.Drawing.Size(443, 184)
         Me.GroupBox1.TabIndex = 30
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Booking Details"
@@ -172,9 +173,10 @@ Partial Class staffBookingCustomerDetail
         '
         Me.lblTotalPrice.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.lblTotalPrice.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.lblTotalPrice.Location = New System.Drawing.Point(233, 179)
+        Me.lblTotalPrice.Location = New System.Drawing.Point(175, 145)
+        Me.lblTotalPrice.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblTotalPrice.Name = "lblTotalPrice"
-        Me.lblTotalPrice.Size = New System.Drawing.Size(284, 23)
+        Me.lblTotalPrice.Size = New System.Drawing.Size(213, 19)
         Me.lblTotalPrice.TabIndex = 21
         Me.lblTotalPrice.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
@@ -183,46 +185,42 @@ Partial Class staffBookingCustomerDetail
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Tw Cen MT", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.Black
-        Me.Label1.Location = New System.Drawing.Point(49, 180)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label1.Location = New System.Drawing.Point(37, 146)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(92, 22)
+        Me.Label1.Size = New System.Drawing.Size(73, 17)
         Me.Label1.TabIndex = 20
         Me.Label1.Text = "Total Price"
         '
         'dgvSeat
         '
+        Me.dgvSeat.AllowUserToAddRows = False
+        Me.dgvSeat.AllowUserToDeleteRows = False
         Me.dgvSeat.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgvSeat.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.dgvSeat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvSeat.Enabled = False
-        Me.dgvSeat.Location = New System.Drawing.Point(42, 25)
+        Me.dgvSeat.Location = New System.Drawing.Point(32, 20)
+        Me.dgvSeat.Margin = New System.Windows.Forms.Padding(2)
         Me.dgvSeat.Name = "dgvSeat"
+        Me.dgvSeat.ReadOnly = True
         Me.dgvSeat.RowTemplate.Height = 24
-        Me.dgvSeat.Size = New System.Drawing.Size(498, 127)
+        Me.dgvSeat.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.dgvSeat.Size = New System.Drawing.Size(374, 103)
         Me.dgvSeat.TabIndex = 0
-        '
-        'mskContact
-        '
-        Me.mskContact.Location = New System.Drawing.Point(233, 127)
-        Me.mskContact.Mask = "000-000 0000"
-        Me.mskContact.Name = "mskContact"
-        Me.mskContact.Size = New System.Drawing.Size(284, 28)
-        Me.mskContact.TabIndex = 23
-        Me.mskContact.ValidatingType = GetType(Integer)
         '
         'staffBookingCustomerDetail
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1067, 708)
+        Me.ClientSize = New System.Drawing.Size(800, 575)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.btnProceed)
         Me.Controls.Add(Me.btnCancel)
         Me.Controls.Add(Me.gbCreatePromotion)
         Me.Controls.Add(Me.StaffMenuLayoutControl1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "staffBookingCustomerDetail"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "staffBookingCustomerDetail"
         Me.gbCreatePromotion.ResumeLayout(False)
         Me.gbCreatePromotion.PerformLayout()

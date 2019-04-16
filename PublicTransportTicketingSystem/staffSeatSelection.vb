@@ -2,39 +2,59 @@
 
     Dim count As Integer = 0
     Dim db As New PBTSDataContext()
-    Public selectedSeat As New List(Of Integer) 'for payment
+
+    Public selectedSeat As New List(Of Integer)
+    Dim availableSeat As Integer
 
     Private Sub form_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Try
 
 
-        Dim retrieveSeatQuery = From seat In db.Seats
-                                Where seat.scheduleID = staffBookingSchedule.scheduleID
-                                Select seat.seatNumber
 
-        Dim i As Integer
-        MessageBox.Show(retrieveSeatQuery.Count.ToString)
+            Dim retrieveSeatQuery = From seat In db.Seats
+                                    Where seat.scheduleID = staffBookingSchedule.scheduleID
+                                    Join schedule In db.Schedules On schedule.scheduleID Equals (seat.scheduleID)
+                                    Join transport In db.Transports On transport.transportID Equals (schedule.transportID)
+                                    Select seat.seatNumber, transport.tranportColumn
 
-        For i = 1 To retrieveSeatQuery.Count
-            Dim btn As New Button
-            AddHandler btn.Click, AddressOf btnClick
-            btn.Width = 50
-            btn.Height = 50
-            btn.BackColor = Color.White
-            btn.Text = i.ToString
-            btn.Visible = True
+            Dim i As Integer
+            Dim s As Integer = 0
+            Dim transportColumn As Integer
 
-            flpSeat.Controls.Add(btn)
+            transportColumn = Integer.Parse(retrieveSeatQuery.FirstOrDefault.tranportColumn.ToString)
 
-            Dim checkSeatQuery = From seat In db.Seats
-                                 Where seat.scheduleID = staffBookingSchedule.scheduleID And seat.seatNumber = i
-                                 Select seat.seatStatus
+            availableSeat = retrieveSeatQuery.Count
 
-            If checkSeatQuery.First.ToString = "Unavailable" Then
-                btn.BackColor = Color.Red
-                btn.Enabled = False
+            For i = 1 To retrieveSeatQuery.Count
+                Dim btn As New Button
+                AddHandler btn.Click, AddressOf btnClick
+                btn.Width = 50
+                btn.Height = 50
+                btn.BackColor = Color.White
+                btn.Text = i.ToString
+                btn.Visible = True
 
-            End If
-        Next
+                flpSeat.Controls.Add(btn)
+
+                Dim checkSeatQuery = From seat In db.Seats
+                                     Where seat.scheduleID = staffBookingSchedule.scheduleID And seat.seatNumber = i
+                                     Select seat.seatStatus
+
+                If checkSeatQuery.First.ToString.ToLower = "unavailable" Then
+                    btn.BackColor = Color.Red
+                    btn.Enabled = False
+                    availableSeat = availableSeat - 1
+                End If
+                If s = transportColumn Then
+                    flpSeat.SetFlowBreak(btn, True)
+                    s = 0
+                End If
+            Next
+            lblSeatAvailable.Text = availableSeat.ToString("0 seat(s) available")
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
+
     End Sub
 
     Private Sub btnClick(sender As Object, e As EventArgs)

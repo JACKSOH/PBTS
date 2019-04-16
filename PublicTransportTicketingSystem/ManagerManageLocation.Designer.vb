@@ -34,11 +34,12 @@ Partial Class ManagerManageLocation
         Me.LocationTableAdapter1 = New PublicTransportTicketingSystem.PTTSDataSetTableAdapters.LocationTableAdapter()
         Me.btnAdd = New System.Windows.Forms.Button()
         Me.btnDeleteCancel = New System.Windows.Forms.Button()
-        Me.txtTest = New System.Windows.Forms.TextBox()
         Me.gbTranport = New System.Windows.Forms.GroupBox()
+        Me.lblRecord = New System.Windows.Forms.Label()
         Me.err = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.ts = New PublicTransportTicketingSystem.TranportSelection()
         Me.ManagerMenuLayoutControl1 = New PublicTransportTicketingSystem.managerMenuLayoutControl()
+        Me.BookingTableAdapter1 = New PublicTransportTicketingSystem.DataSet1TableAdapters.BookingTableAdapter()
         CType(Me.dgv, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LocationBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PTTSDataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -50,6 +51,7 @@ Partial Class ManagerManageLocation
         'dgv
         '
         Me.dgv.AutoGenerateColumns = False
+        Me.dgv.BackgroundColor = System.Drawing.SystemColors.Control
         Me.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgv.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.LocationIDDataGridViewTextBoxColumn, Me.LocationNameDataGridViewTextBoxColumn, Me.LocationTypeDataGridViewTextBoxColumn})
         Me.dgv.DataSource = Me.LocationBindingSource
@@ -112,8 +114,9 @@ Partial Class ManagerManageLocation
         '
         'btnAdd
         '
-        Me.btnAdd.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.btnAdd.BackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(53, Byte), Integer), CType(CType(65, Byte), Integer))
         Me.btnAdd.Font = New System.Drawing.Font("Tw Cen MT Condensed", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAdd.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.btnAdd.Location = New System.Drawing.Point(421, 196)
         Me.btnAdd.Name = "btnAdd"
         Me.btnAdd.Size = New System.Drawing.Size(81, 37)
@@ -126,31 +129,36 @@ Partial Class ManagerManageLocation
         Me.btnDeleteCancel.BackColor = System.Drawing.Color.Red
         Me.btnDeleteCancel.Font = New System.Drawing.Font("Tw Cen MT Condensed", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnDeleteCancel.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.btnDeleteCancel.Location = New System.Drawing.Point(368, 317)
+        Me.btnDeleteCancel.Location = New System.Drawing.Point(421, 285)
         Me.btnDeleteCancel.Name = "btnDeleteCancel"
         Me.btnDeleteCancel.Size = New System.Drawing.Size(59, 33)
         Me.btnDeleteCancel.TabIndex = 4
         Me.btnDeleteCancel.Text = "&Delete"
         Me.btnDeleteCancel.UseVisualStyleBackColor = False
         '
-        'txtTest
-        '
-        Me.txtTest.Location = New System.Drawing.Point(674, 240)
-        Me.txtTest.Name = "txtTest"
-        Me.txtTest.Size = New System.Drawing.Size(100, 20)
-        Me.txtTest.TabIndex = 6
-        '
         'gbTranport
         '
+        Me.gbTranport.Controls.Add(Me.lblRecord)
         Me.gbTranport.Controls.Add(Me.btnDeleteCancel)
         Me.gbTranport.Controls.Add(Me.btnUpdate)
         Me.gbTranport.Controls.Add(Me.btnAdd)
+        Me.gbTranport.Font = New System.Drawing.Font("Tw Cen MT Condensed", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.gbTranport.Location = New System.Drawing.Point(241, 207)
         Me.gbTranport.Name = "gbTranport"
         Me.gbTranport.Size = New System.Drawing.Size(547, 356)
         Me.gbTranport.TabIndex = 7
         Me.gbTranport.TabStop = False
         Me.gbTranport.Text = "Location Details"
+        '
+        'lblRecord
+        '
+        Me.lblRecord.AutoSize = True
+        Me.lblRecord.Font = New System.Drawing.Font("Tw Cen MT Condensed", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblRecord.Location = New System.Drawing.Point(20, 321)
+        Me.lblRecord.Name = "lblRecord"
+        Me.lblRecord.Size = New System.Drawing.Size(93, 17)
+        Me.lblRecord.TabIndex = 8
+        Me.lblRecord.Text = "X records found."
         '
         'err
         '
@@ -160,6 +168,7 @@ Partial Class ManagerManageLocation
         'ts
         '
         Me.ts.Location = New System.Drawing.Point(239, 80)
+        Me.ts.Margin = New System.Windows.Forms.Padding(4)
         Me.ts.Name = "ts"
         Me.ts.Size = New System.Drawing.Size(547, 104)
         Me.ts.TabIndex = 5
@@ -168,16 +177,20 @@ Partial Class ManagerManageLocation
         '
         Me.ManagerMenuLayoutControl1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.ManagerMenuLayoutControl1.Location = New System.Drawing.Point(0, 0)
+        Me.ManagerMenuLayoutControl1.Margin = New System.Windows.Forms.Padding(4)
         Me.ManagerMenuLayoutControl1.Name = "ManagerMenuLayoutControl1"
         Me.ManagerMenuLayoutControl1.Size = New System.Drawing.Size(800, 575)
         Me.ManagerMenuLayoutControl1.TabIndex = 0
+        '
+        'BookingTableAdapter1
+        '
+        Me.BookingTableAdapter1.ClearBeforeFill = True
         '
         'ManagerManageLocation
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 575)
-        Me.Controls.Add(Me.txtTest)
         Me.Controls.Add(Me.ts)
         Me.Controls.Add(Me.dgv)
         Me.Controls.Add(Me.gbTranport)
@@ -185,15 +198,16 @@ Partial Class ManagerManageLocation
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "ManagerManageLocation"
         Me.RightToLeftLayout = True
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "ManagerManageLocation"
         CType(Me.dgv, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LocationBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PTTSDataSetBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PTTSDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.gbTranport.ResumeLayout(False)
+        Me.gbTranport.PerformLayout()
         CType(Me.err, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
 
@@ -207,10 +221,11 @@ Partial Class ManagerManageLocation
     Friend WithEvents btnAdd As Button
     Friend WithEvents btnDeleteCancel As Button
     Friend WithEvents ts As TranportSelection
-    Friend WithEvents txtTest As TextBox
     Friend WithEvents gbTranport As GroupBox
     Friend WithEvents LocationIDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents LocationNameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents LocationTypeDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents err As ErrorProvider
+    Friend WithEvents lblRecord As Label
+    Friend WithEvents BookingTableAdapter1 As DataSet1TableAdapters.BookingTableAdapter
 End Class

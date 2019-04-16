@@ -2,12 +2,13 @@
 
 Public Class StaffBooking
     Dim SqlConnection As New SqlConnection
-    Public Const connection As String = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\hawma\Desktop\PBTS\PublicTransportTicketingSystem\PTTS.mdf;Integrated Security=True"
+
+    Public Const connection As String = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\PTTS.mdf;Integrated Security=True"
     Public retrieveLocation As String
-    Public selectedDate As Date
-    Public selectedOrigin As String 'for payment
-    Public selectedDestination As String 'for payment
-    Public type As String
+    Public selectedDate As DateTime
+    Public selectedOrigin As String
+    Public selectedDestination As String
+    Public selectedType As String
 
     Private Sub StaffMenuLayoutControl1_Load(sender As Object, e As EventArgs) Handles MyBase.Load, TranportSelection1.TransportChange
         'TODO: This line of code loads data into the 'PTTSDataSet.Location' table. You can move, or remove it, as needed.
@@ -72,7 +73,7 @@ Public Class StaffBooking
 
     Private Sub btnSearch_Click(sender As Object, e As EventArgs) Handles btnSearch.Click
         Dim selectedDateTime As DateTime = dtpDeparture.Value
-        selectedDate = selectedDateTime
+        selectedDate = selectedDateTime.Date
 
         If cboOrigin.SelectedIndex = -1 Then
             cboOrigin.Select()
@@ -88,20 +89,20 @@ Public Class StaffBooking
             selectedOrigin = cboOrigin.SelectedItem.ToString
             selectedDestination = cboDestination.SelectedItem.ToString
 
-            staffBookingSchedule.Show()
-            Me.Hide()
+            selectedType = TranportSelection1.txtTransType.Text.ToString
+            staffBookingSchedule.ShowDialog()
         End If
     End Sub
 
-    Private Sub StaffMenuLayoutControl1_Load_1(sender As Object, e As EventArgs) Handles StaffMenuLayoutControl1.Load
 
-
-
-    End Sub
 
     Private Sub TranportSelection1_Load(sender As Object, e As EventArgs) Handles TranportSelection1.TransportChange
         RetrieveOrigin()
         cboOrigin.Text = "Origin"
 
+    End Sub
+
+    Private Sub StaffMenuLayoutControl1_Load_1(sender As Object, e As EventArgs) Handles StaffMenuLayoutControl1.Load
+        BigBackground.Show()
     End Sub
 End Class

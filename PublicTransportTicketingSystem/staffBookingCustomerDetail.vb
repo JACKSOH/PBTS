@@ -176,4 +176,5 @@ Public Class staffBookingCustomerDetail
         PaymentMake.ShowDialog()
 
     End Sub
+
 End Class

@@ -24,9 +24,9 @@ Partial Class Splash
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Splash))
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.lblMessage = New System.Windows.Forms.Label()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.lblMessage = New System.Windows.Forms.Label()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -43,6 +43,16 @@ Partial Class Splash
         Me.Label1.TabIndex = 5
         Me.Label1.Text = "Public Transport Ticketing System"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lblMessage
+        '
+        Me.lblMessage.Font = New System.Drawing.Font("Tw Cen MT", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblMessage.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.lblMessage.Location = New System.Drawing.Point(12, 171)
+        Me.lblMessage.Name = "lblMessage"
+        Me.lblMessage.Size = New System.Drawing.Size(394, 84)
+        Me.lblMessage.TabIndex = 8
+        Me.lblMessage.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
         'PictureBox2
         '
@@ -64,16 +74,6 @@ Partial Class Splash
         Me.PictureBox1.Size = New System.Drawing.Size(50, 48)
         Me.PictureBox1.TabIndex = 6
         Me.PictureBox1.TabStop = False
-        '
-        'lblMessage
-        '
-        Me.lblMessage.Font = New System.Drawing.Font("Tw Cen MT", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblMessage.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.lblMessage.Location = New System.Drawing.Point(12, 171)
-        Me.lblMessage.Name = "lblMessage"
-        Me.lblMessage.Size = New System.Drawing.Size(394, 84)
-        Me.lblMessage.TabIndex = 8
-        Me.lblMessage.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
         'Splash
         '

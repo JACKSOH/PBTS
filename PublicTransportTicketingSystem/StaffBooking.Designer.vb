@@ -40,9 +40,9 @@ Partial Class StaffBooking
         Me.PTTSDataSet = New PublicTransportTicketingSystem.PTTSDataSet()
         Me.LocationBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.PTTSDataSetBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
+        Me.LocationTableAdapter = New PublicTransportTicketingSystem.PTTSDataSetTableAdapters.LocationTableAdapter()
         Me.TranportSelection1 = New PublicTransportTicketingSystem.TranportSelection()
         Me.StaffMenuLayoutControl1 = New PublicTransportTicketingSystem.staffMenuLayoutControl()
-        Me.LocationTableAdapter = New PublicTransportTicketingSystem.PTTSDataSetTableAdapters.LocationTableAdapter()
         Me.GroupBox1.SuspendLayout()
         CType(Me.LocationBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PTTSDataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -108,11 +108,11 @@ Partial Class StaffBooking
         Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Controls.Add(Me.Label2)
-        Me.GroupBox1.Location = New System.Drawing.Point(316, 262)
-        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.GroupBox1.Location = New System.Drawing.Point(237, 213)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(2)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.GroupBox1.Size = New System.Drawing.Size(659, 175)
+        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(2)
+        Me.GroupBox1.Size = New System.Drawing.Size(494, 142)
         Me.GroupBox1.TabIndex = 44
         Me.GroupBox1.TabStop = False
         '
@@ -122,10 +122,9 @@ Partial Class StaffBooking
         Me.btnSearch.BackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(53, Byte), Integer), CType(CType(65, Byte), Integer))
         Me.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnSearch.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.btnSearch.Location = New System.Drawing.Point(35, 116)
-        Me.btnSearch.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnSearch.Location = New System.Drawing.Point(26, 94)
         Me.btnSearch.Name = "btnSearch"
-        Me.btnSearch.Size = New System.Drawing.Size(133, 41)
+        Me.btnSearch.Size = New System.Drawing.Size(100, 33)
         Me.btnSearch.TabIndex = 36
         Me.btnSearch.Text = "&SEARCH"
         Me.btnSearch.UseVisualStyleBackColor = False
@@ -133,10 +132,10 @@ Partial Class StaffBooking
         'dtpDeparture
         '
         Me.dtpDeparture.Font = New System.Drawing.Font("Tw Cen MT", 10.8!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dtpDeparture.Location = New System.Drawing.Point(357, 62)
-        Me.dtpDeparture.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.dtpDeparture.Location = New System.Drawing.Point(268, 50)
+        Me.dtpDeparture.Margin = New System.Windows.Forms.Padding(2)
         Me.dtpDeparture.Name = "dtpDeparture"
-        Me.dtpDeparture.Size = New System.Drawing.Size(200, 27)
+        Me.dtpDeparture.Size = New System.Drawing.Size(151, 23)
         Me.dtpDeparture.TabIndex = 16
         Me.dtpDeparture.Value = New Date(2019, 4, 12, 0, 0, 0, 0)
         '
@@ -144,10 +143,10 @@ Partial Class StaffBooking
         '
         Me.cboDestination.Font = New System.Drawing.Font("Tw Cen MT", 10.8!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboDestination.FormattingEnabled = True
-        Me.cboDestination.Location = New System.Drawing.Point(172, 62)
-        Me.cboDestination.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.cboDestination.Location = New System.Drawing.Point(129, 50)
+        Me.cboDestination.Margin = New System.Windows.Forms.Padding(2)
         Me.cboDestination.Name = "cboDestination"
-        Me.cboDestination.Size = New System.Drawing.Size(121, 28)
+        Me.cboDestination.Size = New System.Drawing.Size(92, 24)
         Me.cboDestination.TabIndex = 15
         Me.cboDestination.Text = "Destination"
         '
@@ -155,10 +154,10 @@ Partial Class StaffBooking
         '
         Me.cboOrigin.Font = New System.Drawing.Font("Tw Cen MT", 10.8!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboOrigin.FormattingEnabled = True
-        Me.cboOrigin.Location = New System.Drawing.Point(35, 62)
-        Me.cboOrigin.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.cboOrigin.Location = New System.Drawing.Point(26, 50)
+        Me.cboOrigin.Margin = New System.Windows.Forms.Padding(2)
         Me.cboOrigin.Name = "cboOrigin"
-        Me.cboOrigin.Size = New System.Drawing.Size(121, 28)
+        Me.cboOrigin.Size = New System.Drawing.Size(92, 24)
         Me.cboOrigin.TabIndex = 14
         Me.cboOrigin.Text = "Origin"
         '
@@ -167,10 +166,9 @@ Partial Class StaffBooking
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Tw Cen MT", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.Black
-        Me.Label3.Location = New System.Drawing.Point(355, 34)
-        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label3.Location = New System.Drawing.Point(266, 28)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(128, 22)
+        Me.Label3.Size = New System.Drawing.Size(103, 17)
         Me.Label3.TabIndex = 13
         Me.Label3.Text = "Departure Date"
         '
@@ -179,10 +177,9 @@ Partial Class StaffBooking
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Tw Cen MT", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.Black
-        Me.Label1.Location = New System.Drawing.Point(168, 34)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label1.Location = New System.Drawing.Point(126, 28)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(29, 22)
+        Me.Label1.Size = New System.Drawing.Size(23, 17)
         Me.Label1.TabIndex = 12
         Me.Label1.Text = "To"
         '
@@ -191,10 +188,9 @@ Partial Class StaffBooking
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Tw Cen MT", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.Black
-        Me.Label2.Location = New System.Drawing.Point(31, 34)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label2.Location = New System.Drawing.Point(23, 28)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(50, 22)
+        Me.Label2.Size = New System.Drawing.Size(40, 17)
         Me.Label2.TabIndex = 11
         Me.Label2.Text = "From"
         '
@@ -223,12 +219,16 @@ Partial Class StaffBooking
         Me.PTTSDataSetBindingSource1.DataSource = Me.PTTSDataSet
         Me.PTTSDataSetBindingSource1.Position = 0
         '
+        'LocationTableAdapter
+        '
+        Me.LocationTableAdapter.ClearBeforeFill = True
+        '
         'TranportSelection1
         '
-        Me.TranportSelection1.Location = New System.Drawing.Point(316, 112)
-        Me.TranportSelection1.Margin = New System.Windows.Forms.Padding(5)
+        Me.TranportSelection1.Location = New System.Drawing.Point(237, 91)
+        Me.TranportSelection1.Margin = New System.Windows.Forms.Padding(4)
         Me.TranportSelection1.Name = "TranportSelection1"
-        Me.TranportSelection1.Size = New System.Drawing.Size(716, 128)
+        Me.TranportSelection1.Size = New System.Drawing.Size(537, 104)
         Me.TranportSelection1.TabIndex = 42
         '
         'StaffMenuLayoutControl1
@@ -237,24 +237,20 @@ Partial Class StaffBooking
         Me.StaffMenuLayoutControl1.Location = New System.Drawing.Point(0, 0)
         Me.StaffMenuLayoutControl1.Margin = New System.Windows.Forms.Padding(0)
         Me.StaffMenuLayoutControl1.Name = "StaffMenuLayoutControl1"
-        Me.StaffMenuLayoutControl1.Size = New System.Drawing.Size(1067, 708)
+        Me.StaffMenuLayoutControl1.Size = New System.Drawing.Size(800, 575)
         Me.StaffMenuLayoutControl1.TabIndex = 0
-        '
-        'LocationTableAdapter
-        '
-        Me.LocationTableAdapter.ClearBeforeFill = True
         '
         'StaffBooking
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1067, 708)
+        Me.ClientSize = New System.Drawing.Size(800, 575)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.TranportSelection1)
         Me.Controls.Add(Me.StaffMenuLayoutControl1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "StaffBooking"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "StaffBooking"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()

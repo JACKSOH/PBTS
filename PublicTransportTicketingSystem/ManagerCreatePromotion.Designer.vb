@@ -22,24 +22,216 @@ Partial Class ManagerCreatePromotion
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.ManagerMenuLayoutControl1 = New PublicTransportTicketingSystem.managerMenuLayoutControl()
         Me.gbCreatePromotion = New System.Windows.Forms.GroupBox()
-        Me.ComboBox3 = New System.Windows.Forms.ComboBox()
-        Me.btnCancel = New System.Windows.Forms.Button()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.btnAddPromotion = New System.Windows.Forms.Button()
-        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.ErrorName = New System.Windows.Forms.Label()
+        Me.txtPromotionDesc = New System.Windows.Forms.TextBox()
+        Me.txtPromotionName = New System.Windows.Forms.TextBox()
+        Me.gbPromotionDate = New System.Windows.Forms.GroupBox()
+        Me.nupPromotionDuration = New System.Windows.Forms.NumericUpDown()
+        Me.dpPromotionStartDate = New System.Windows.Forms.DateTimePicker()
         Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.gpDiscountRate = New System.Windows.Forms.GroupBox()
+        Me.nupCustomDiscount = New System.Windows.Forms.NumericUpDown()
+        Me.radCustomDiscount = New System.Windows.Forms.RadioButton()
+        Me.radFullDiscount = New System.Windows.Forms.RadioButton()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.btnCancel = New System.Windows.Forms.Button()
+        Me.btnNext = New System.Windows.Forms.Button()
+        Me.ManagerMenuLayoutControl1 = New PublicTransportTicketingSystem.managerMenuLayoutControl()
         Me.gbCreatePromotion.SuspendLayout()
+        Me.gbPromotionDate.SuspendLayout()
+        CType(Me.nupPromotionDuration, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.gpDiscountRate.SuspendLayout()
+        CType(Me.nupCustomDiscount, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
+        '
+        'gbCreatePromotion
+        '
+        Me.gbCreatePromotion.BackColor = System.Drawing.SystemColors.Control
+        Me.gbCreatePromotion.Controls.Add(Me.ErrorName)
+        Me.gbCreatePromotion.Controls.Add(Me.txtPromotionDesc)
+        Me.gbCreatePromotion.Controls.Add(Me.txtPromotionName)
+        Me.gbCreatePromotion.Controls.Add(Me.gbPromotionDate)
+        Me.gbCreatePromotion.Controls.Add(Me.gpDiscountRate)
+        Me.gbCreatePromotion.Controls.Add(Me.Label2)
+        Me.gbCreatePromotion.Controls.Add(Me.Label1)
+        Me.gbCreatePromotion.Controls.Add(Me.btnCancel)
+        Me.gbCreatePromotion.Controls.Add(Me.btnNext)
+        Me.gbCreatePromotion.Font = New System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.gbCreatePromotion.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.gbCreatePromotion.Location = New System.Drawing.Point(266, 92)
+        Me.gbCreatePromotion.Name = "gbCreatePromotion"
+        Me.gbCreatePromotion.Size = New System.Drawing.Size(499, 440)
+        Me.gbCreatePromotion.TabIndex = 22
+        Me.gbCreatePromotion.TabStop = False
+        Me.gbCreatePromotion.Text = "Add New Promotion"
+        '
+        'ErrorName
+        '
+        Me.ErrorName.AutoSize = True
+        Me.ErrorName.ForeColor = System.Drawing.Color.Red
+        Me.ErrorName.Location = New System.Drawing.Point(157, 62)
+        Me.ErrorName.Name = "ErrorName"
+        Me.ErrorName.Size = New System.Drawing.Size(181, 18)
+        Me.ErrorName.TabIndex = 36
+        Me.ErrorName.Text = "*Please fill in promotion name"
+        Me.ErrorName.Visible = False
+        '
+        'txtPromotionDesc
+        '
+        Me.txtPromotionDesc.Location = New System.Drawing.Point(160, 91)
+        Me.txtPromotionDesc.Multiline = True
+        Me.txtPromotionDesc.Name = "txtPromotionDesc"
+        Me.txtPromotionDesc.Size = New System.Drawing.Size(314, 70)
+        Me.txtPromotionDesc.TabIndex = 35
+        '
+        'txtPromotionName
+        '
+        Me.txtPromotionName.Location = New System.Drawing.Point(160, 35)
+        Me.txtPromotionName.Name = "txtPromotionName"
+        Me.txtPromotionName.Size = New System.Drawing.Size(314, 24)
+        Me.txtPromotionName.TabIndex = 34
+        '
+        'gbPromotionDate
+        '
+        Me.gbPromotionDate.Controls.Add(Me.nupPromotionDuration)
+        Me.gbPromotionDate.Controls.Add(Me.dpPromotionStartDate)
+        Me.gbPromotionDate.Controls.Add(Me.Label5)
+        Me.gbPromotionDate.Controls.Add(Me.Label4)
+        Me.gbPromotionDate.Location = New System.Drawing.Point(16, 190)
+        Me.gbPromotionDate.Name = "gbPromotionDate"
+        Me.gbPromotionDate.Size = New System.Drawing.Size(232, 159)
+        Me.gbPromotionDate.TabIndex = 33
+        Me.gbPromotionDate.TabStop = False
+        Me.gbPromotionDate.Text = "Date"
+        '
+        'nupPromotionDuration
+        '
+        Me.nupPromotionDuration.Location = New System.Drawing.Point(9, 114)
+        Me.nupPromotionDuration.Maximum = New Decimal(New Integer() {7, 0, 0, 0})
+        Me.nupPromotionDuration.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.nupPromotionDuration.Name = "nupPromotionDuration"
+        Me.nupPromotionDuration.Size = New System.Drawing.Size(59, 24)
+        Me.nupPromotionDuration.TabIndex = 40
+        Me.nupPromotionDuration.Value = New Decimal(New Integer() {1, 0, 0, 0})
+        '
+        'dpPromotionStartDate
+        '
+        Me.dpPromotionStartDate.Location = New System.Drawing.Point(6, 54)
+        Me.dpPromotionStartDate.MinDate = New Date(2019, 4, 12, 0, 0, 0, 0)
+        Me.dpPromotionStartDate.Name = "dpPromotionStartDate"
+        Me.dpPromotionStartDate.Size = New System.Drawing.Size(217, 24)
+        Me.dpPromotionStartDate.TabIndex = 39
+        Me.dpPromotionStartDate.Value = New Date(2019, 4, 12, 0, 0, 0, 0)
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(6, 92)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(102, 18)
+        Me.Label5.TabIndex = 38
+        Me.Label5.Text = "Duration (Days)*"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(6, 33)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(87, 18)
+        Me.Label4.TabIndex = 37
+        Me.Label4.Text = "Starting Date*"
+        '
+        'gpDiscountRate
+        '
+        Me.gpDiscountRate.Controls.Add(Me.nupCustomDiscount)
+        Me.gpDiscountRate.Controls.Add(Me.radCustomDiscount)
+        Me.gpDiscountRate.Controls.Add(Me.radFullDiscount)
+        Me.gpDiscountRate.Location = New System.Drawing.Point(270, 190)
+        Me.gpDiscountRate.Name = "gpDiscountRate"
+        Me.gpDiscountRate.Size = New System.Drawing.Size(204, 159)
+        Me.gpDiscountRate.TabIndex = 32
+        Me.gpDiscountRate.TabStop = False
+        Me.gpDiscountRate.Text = "Discount"
+        '
+        'nupCustomDiscount
+        '
+        Me.nupCustomDiscount.Enabled = False
+        Me.nupCustomDiscount.Location = New System.Drawing.Point(38, 110)
+        Me.nupCustomDiscount.Maximum = New Decimal(New Integer() {99, 0, 0, 0})
+        Me.nupCustomDiscount.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.nupCustomDiscount.Name = "nupCustomDiscount"
+        Me.nupCustomDiscount.Size = New System.Drawing.Size(59, 24)
+        Me.nupCustomDiscount.TabIndex = 41
+        Me.nupCustomDiscount.Value = New Decimal(New Integer() {1, 0, 0, 0})
+        '
+        'radCustomDiscount
+        '
+        Me.radCustomDiscount.AutoSize = True
+        Me.radCustomDiscount.Location = New System.Drawing.Point(18, 82)
+        Me.radCustomDiscount.Name = "radCustomDiscount"
+        Me.radCustomDiscount.Size = New System.Drawing.Size(112, 22)
+        Me.radCustomDiscount.TabIndex = 1
+        Me.radCustomDiscount.Text = "Custom Set (%)"
+        Me.radCustomDiscount.UseVisualStyleBackColor = True
+        '
+        'radFullDiscount
+        '
+        Me.radFullDiscount.AutoSize = True
+        Me.radFullDiscount.Checked = True
+        Me.radFullDiscount.Location = New System.Drawing.Point(18, 44)
+        Me.radFullDiscount.Name = "radFullDiscount"
+        Me.radFullDiscount.Size = New System.Drawing.Size(127, 22)
+        Me.radFullDiscount.TabIndex = 0
+        Me.radFullDiscount.TabStop = True
+        Me.radFullDiscount.Text = "Free Ride / Board"
+        Me.radFullDiscount.UseVisualStyleBackColor = True
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(25, 91)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(131, 18)
+        Me.Label2.TabIndex = 31
+        Me.Label2.Text = "Description (Optional)"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(25, 41)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(45, 18)
+        Me.Label1.TabIndex = 30
+        Me.Label1.Text = "Name*"
+        '
+        'btnCancel
+        '
+        Me.btnCancel.BackColor = System.Drawing.Color.Gray
+        Me.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel
+        Me.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnCancel.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.btnCancel.Location = New System.Drawing.Point(374, 378)
+        Me.btnCancel.Name = "btnCancel"
+        Me.btnCancel.Size = New System.Drawing.Size(100, 36)
+        Me.btnCancel.TabIndex = 29
+        Me.btnCancel.Text = "CANCEL"
+        Me.btnCancel.UseVisualStyleBackColor = False
+        '
+        'btnNext
+        '
+        Me.btnNext.AccessibleRole = System.Windows.Forms.AccessibleRole.Pane
+        Me.btnNext.BackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(53, Byte), Integer), CType(CType(65, Byte), Integer))
+        Me.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnNext.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.btnNext.Location = New System.Drawing.Point(238, 378)
+        Me.btnNext.Name = "btnNext"
+        Me.btnNext.Size = New System.Drawing.Size(100, 36)
+        Me.btnNext.TabIndex = 26
+        Me.btnNext.Text = "&NEXT"
+        Me.btnNext.UseVisualStyleBackColor = False
         '
         'ManagerMenuLayoutControl1
         '
@@ -49,183 +241,12 @@ Partial Class ManagerCreatePromotion
         Me.ManagerMenuLayoutControl1.Size = New System.Drawing.Size(800, 575)
         Me.ManagerMenuLayoutControl1.TabIndex = 0
         '
-        'gbCreatePromotion
-        '
-        Me.gbCreatePromotion.BackColor = System.Drawing.SystemColors.Control
-        Me.gbCreatePromotion.Controls.Add(Me.ComboBox3)
-        Me.gbCreatePromotion.Controls.Add(Me.btnCancel)
-        Me.gbCreatePromotion.Controls.Add(Me.TextBox1)
-        Me.gbCreatePromotion.Controls.Add(Me.Label3)
-        Me.gbCreatePromotion.Controls.Add(Me.btnAddPromotion)
-        Me.gbCreatePromotion.Controls.Add(Me.ComboBox2)
-        Me.gbCreatePromotion.Controls.Add(Me.ComboBox1)
-        Me.gbCreatePromotion.Controls.Add(Me.Label8)
-        Me.gbCreatePromotion.Controls.Add(Me.Label7)
-        Me.gbCreatePromotion.Controls.Add(Me.Label6)
-        Me.gbCreatePromotion.Controls.Add(Me.DateTimePicker1)
-        Me.gbCreatePromotion.Controls.Add(Me.Label2)
-        Me.gbCreatePromotion.Controls.Add(Me.TextBox3)
-        Me.gbCreatePromotion.Controls.Add(Me.Label5)
-        Me.gbCreatePromotion.Font = New System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.gbCreatePromotion.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.gbCreatePromotion.Location = New System.Drawing.Point(249, 99)
-        Me.gbCreatePromotion.Name = "gbCreatePromotion"
-        Me.gbCreatePromotion.Size = New System.Drawing.Size(443, 345)
-        Me.gbCreatePromotion.TabIndex = 22
-        Me.gbCreatePromotion.TabStop = False
-        Me.gbCreatePromotion.Text = "Add New Promotion"
-        '
-        'ComboBox3
-        '
-        Me.ComboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox3.FormattingEnabled = True
-        Me.ComboBox3.Items.AddRange(New Object() {"Free Ride", "20% Discount", "30% Discount", "50% Discount"})
-        Me.ComboBox3.Location = New System.Drawing.Point(175, 65)
-        Me.ComboBox3.Name = "ComboBox3"
-        Me.ComboBox3.Size = New System.Drawing.Size(214, 26)
-        Me.ComboBox3.TabIndex = 30
-        '
-        'btnCancel
-        '
-        Me.btnCancel.BackColor = System.Drawing.Color.Gray
-        Me.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnCancel.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.btnCancel.Location = New System.Drawing.Point(289, 303)
-        Me.btnCancel.Name = "btnCancel"
-        Me.btnCancel.Size = New System.Drawing.Size(100, 36)
-        Me.btnCancel.TabIndex = 29
-        Me.btnCancel.Text = "CANCEL"
-        Me.btnCancel.UseVisualStyleBackColor = False
-        '
-        'TextBox1
-        '
-        Me.TextBox1.Location = New System.Drawing.Point(175, 217)
-        Me.TextBox1.Multiline = True
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(214, 55)
-        Me.TextBox1.TabIndex = 28
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Tw Cen MT", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.Color.Black
-        Me.Label3.Location = New System.Drawing.Point(18, 227)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(78, 17)
-        Me.Label3.TabIndex = 27
-        Me.Label3.Text = "Description"
-        '
-        'btnAddPromotion
-        '
-        Me.btnAddPromotion.AccessibleRole = System.Windows.Forms.AccessibleRole.Pane
-        Me.btnAddPromotion.BackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(53, Byte), Integer), CType(CType(65, Byte), Integer))
-        Me.btnAddPromotion.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnAddPromotion.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.btnAddPromotion.Location = New System.Drawing.Point(155, 303)
-        Me.btnAddPromotion.Name = "btnAddPromotion"
-        Me.btnAddPromotion.Size = New System.Drawing.Size(100, 36)
-        Me.btnAddPromotion.TabIndex = 26
-        Me.btnAddPromotion.Text = "&CREATE"
-        Me.btnAddPromotion.UseVisualStyleBackColor = False
-        '
-        'ComboBox2
-        '
-        Me.ComboBox2.BackColor = System.Drawing.Color.White
-        Me.ComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox2.Font = New System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Items.AddRange(New Object() {"Bus", "Ferry", "Train "})
-        Me.ComboBox2.Location = New System.Drawing.Point(175, 100)
-        Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(214, 28)
-        Me.ComboBox2.Sorted = True
-        Me.ComboBox2.TabIndex = 25
-        '
-        'ComboBox1
-        '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(175, 182)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(214, 26)
-        Me.ComboBox1.TabIndex = 24
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Font = New System.Drawing.Font("Tw Cen MT", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.ForeColor = System.Drawing.Color.Black
-        Me.Label8.Location = New System.Drawing.Point(18, 182)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(63, 17)
-        Me.Label8.TabIndex = 23
-        Me.Label8.Text = "Schedule"
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Tw Cen MT", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.ForeColor = System.Drawing.Color.Black
-        Me.Label7.Location = New System.Drawing.Point(18, 103)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(113, 17)
-        Me.Label7.TabIndex = 19
-        Me.Label7.Text = "Public Transport "
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Tw Cen MT", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.ForeColor = System.Drawing.Color.Black
-        Me.Label6.Location = New System.Drawing.Point(18, 68)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(77, 17)
-        Me.Label6.TabIndex = 17
-        Me.Label6.Text = "Promotion "
-        '
-        'DateTimePicker1
-        '
-        Me.DateTimePicker1.Location = New System.Drawing.Point(175, 141)
-        Me.DateTimePicker1.MinDate = New Date(2019, 3, 24, 0, 0, 0, 0)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(214, 24)
-        Me.DateTimePicker1.TabIndex = 16
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Tw Cen MT", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.Black
-        Me.Label2.Location = New System.Drawing.Point(18, 141)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(37, 17)
-        Me.Label2.TabIndex = 15
-        Me.Label2.Text = "Date"
-        '
-        'TextBox3
-        '
-        Me.TextBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox3.ForeColor = System.Drawing.Color.Black
-        Me.TextBox3.Location = New System.Drawing.Point(175, 34)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(214, 20)
-        Me.TextBox3.TabIndex = 14
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Tw Cen MT", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.ForeColor = System.Drawing.Color.Black
-        Me.Label5.Location = New System.Drawing.Point(18, 34)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(83, 17)
-        Me.Label5.TabIndex = 13
-        Me.Label5.Text = "Event Name"
-        '
         'ManagerCreatePromotion
         '
+        Me.AcceptButton = Me.btnNext
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.CancelButton = Me.btnCancel
         Me.ClientSize = New System.Drawing.Size(800, 575)
         Me.Controls.Add(Me.gbCreatePromotion)
         Me.Controls.Add(Me.ManagerMenuLayoutControl1)
@@ -234,24 +255,32 @@ Partial Class ManagerCreatePromotion
         Me.Text = "ManagerCreatePromotion"
         Me.gbCreatePromotion.ResumeLayout(False)
         Me.gbCreatePromotion.PerformLayout()
+        Me.gbPromotionDate.ResumeLayout(False)
+        Me.gbPromotionDate.PerformLayout()
+        CType(Me.nupPromotionDuration, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.gpDiscountRate.ResumeLayout(False)
+        Me.gpDiscountRate.PerformLayout()
+        CType(Me.nupCustomDiscount, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
 
     Friend WithEvents ManagerMenuLayoutControl1 As managerMenuLayoutControl
     Friend WithEvents gbCreatePromotion As GroupBox
-    Friend WithEvents ComboBox3 As ComboBox
     Friend WithEvents btnCancel As Button
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents Label3 As Label
-    Friend WithEvents btnAddPromotion As Button
-    Friend WithEvents ComboBox2 As ComboBox
-    Friend WithEvents ComboBox1 As ComboBox
-    Friend WithEvents Label8 As Label
-    Friend WithEvents Label7 As Label
-    Friend WithEvents Label6 As Label
-    Friend WithEvents DateTimePicker1 As DateTimePicker
+    Friend WithEvents btnNext As Button
+    Friend WithEvents ErrorName As Label
+    Friend WithEvents txtPromotionDesc As TextBox
+    Friend WithEvents txtPromotionName As TextBox
+    Friend WithEvents gbPromotionDate As GroupBox
+    Friend WithEvents gpDiscountRate As GroupBox
     Friend WithEvents Label2 As Label
-    Friend WithEvents TextBox3 As TextBox
+    Friend WithEvents Label1 As Label
+    Friend WithEvents nupPromotionDuration As NumericUpDown
+    Friend WithEvents dpPromotionStartDate As DateTimePicker
     Friend WithEvents Label5 As Label
+    Friend WithEvents Label4 As Label
+    Friend WithEvents nupCustomDiscount As NumericUpDown
+    Friend WithEvents radCustomDiscount As RadioButton
+    Friend WithEvents radFullDiscount As RadioButton
 End Class

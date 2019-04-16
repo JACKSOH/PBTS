@@ -35,12 +35,6 @@
 
     End Sub
 
-    Public Event staffContactClick(ByVal sender As Object, ByVal e As System.EventArgs)
-
-    Private Sub btnContactClick(sender As Object, e As EventArgs) Handles btnContact.Click
-        RaiseEvent staffContactClick(sender, e)
-
-    End Sub
     Public Event staffManageAccountClick(ByVal sender As Object, ByVal e As System.EventArgs)
 
     Private Sub btnManageAccountClick(sender As Object, e As EventArgs) Handles btnManageAccount.Click

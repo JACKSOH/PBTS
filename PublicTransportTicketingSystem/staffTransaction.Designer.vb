@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class managerReport
+Partial Class staffTransaction
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -22,30 +22,29 @@ Partial Class managerReport
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.ManagerMenuLayoutControl1 = New PublicTransportTicketingSystem.managerMenuLayoutControl()
+        Me.StaffMenuLayoutControl1 = New PublicTransportTicketingSystem.staffMenuLayoutControl()
         Me.SuspendLayout()
         '
-        'ManagerMenuLayoutControl1
+        'StaffMenuLayoutControl1
         '
-        Me.ManagerMenuLayoutControl1.Location = New System.Drawing.Point(-1, 0)
-        Me.ManagerMenuLayoutControl1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.ManagerMenuLayoutControl1.Name = "ManagerMenuLayoutControl1"
-        Me.ManagerMenuLayoutControl1.Size = New System.Drawing.Size(1067, 708)
-        Me.ManagerMenuLayoutControl1.TabIndex = 0
+        Me.StaffMenuLayoutControl1.Location = New System.Drawing.Point(0, 0)
+        Me.StaffMenuLayoutControl1.Margin = New System.Windows.Forms.Padding(0)
+        Me.StaffMenuLayoutControl1.Name = "StaffMenuLayoutControl1"
+        Me.StaffMenuLayoutControl1.Size = New System.Drawing.Size(1067, 708)
+        Me.StaffMenuLayoutControl1.TabIndex = 0
         '
-        'managerReport
+        'staffTransaction
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1067, 708)
-        Me.Controls.Add(Me.ManagerMenuLayoutControl1)
+        Me.Controls.Add(Me.StaffMenuLayoutControl1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Name = "managerReport"
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "managerReport"
+        Me.Name = "staffTransaction"
+        Me.Text = "staffTransaction"
         Me.ResumeLayout(False)
 
     End Sub
 
-    Friend WithEvents ManagerMenuLayoutControl1 As managerMenuLayoutControl
+    Friend WithEvents StaffMenuLayoutControl1 As staffMenuLayoutControl
 End Class

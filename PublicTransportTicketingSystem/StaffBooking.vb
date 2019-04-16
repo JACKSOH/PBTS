@@ -16,7 +16,6 @@ Public Class StaffBooking
         dtpDeparture.MaxDate = DateTime.Today.AddMonths(1)
     End Sub
     Private Sub RetrieveOrigin()
-        Me.LocationTableAdapter.Fill(Me.PTTSDataSet.Location)
         Try
             SqlConnection.ConnectionString = connection
             SqlConnection.Open()
@@ -119,9 +118,7 @@ Public Class StaffBooking
     Private Sub aboutClick(sender As Object, e As EventArgs) Handles StaffMenuLayoutControl1.staffAboutClick
         MessageBox.Show("Develop by Jack Soh Boon Keat , Goh Chun Lin , Tan Yi Si , Tan Haw Man", "Contact Us", MessageBoxButtons.OK, MessageBoxIcon.Information)
     End Sub
-    Private Sub contactClick(sender As Object, e As EventArgs) Handles StaffMenuLayoutControl1.staffContactClick
-        MessageBox.Show("0179641099", "Contact Us", MessageBoxButtons.OK, MessageBoxIcon.Information)
-    End Sub
+
     Private Sub manageAccountClick(sender As Object, e As EventArgs) Handles StaffMenuLayoutControl1.staffManageAccountClick
         Me.Hide()
         'StaffViewPromotion.Show()

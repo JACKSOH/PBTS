@@ -22,8 +22,8 @@ Partial Class PaymentMake
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(PaymentMake))
         Me.Label14 = New System.Windows.Forms.Label()
         Me.lblLicensePlate = New System.Windows.Forms.Label()
@@ -45,6 +45,7 @@ Partial Class PaymentMake
         Me.Label2 = New System.Windows.Forms.Label()
         Me.lblCustomerName = New System.Windows.Forms.Label()
         Me.grpPayment = New System.Windows.Forms.GroupBox()
+        Me.lblDiscount = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.lblPrice = New System.Windows.Forms.Label()
         Me.btnGenerateTicket = New System.Windows.Forms.Button()
@@ -69,7 +70,6 @@ Partial Class PaymentMake
         Me.pbReserve = New System.Windows.Forms.PictureBox()
         Me.pbPurchase = New System.Windows.Forms.PictureBox()
         Me.pbStaffPromotion = New System.Windows.Forms.PictureBox()
-        Me.lblDiscount = New System.Windows.Forms.Label()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
         Me.grpPayment.SuspendLayout()
@@ -189,22 +189,22 @@ Partial Class PaymentMake
         'DataGridView1
         '
         Me.DataGridView1.AllowUserToDeleteRows = False
-        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
-        Me.DataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        Me.DataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DataGridView1.BackgroundColor = System.Drawing.SystemColors.Control
         Me.DataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.ColumnHeadersVisible = False
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Seat, Me.Price})
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DataGridView1.DefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGridView1.DefaultCellStyle = DataGridViewCellStyle2
         Me.DataGridView1.GridColor = System.Drawing.SystemColors.ControlDarkDark
         Me.DataGridView1.Location = New System.Drawing.Point(38, 371)
         Me.DataGridView1.Name = "DataGridView1"
@@ -307,6 +307,18 @@ Partial Class PaymentMake
         Me.grpPayment.TabIndex = 20
         Me.grpPayment.TabStop = False
         Me.grpPayment.Text = "Make Payment"
+        '
+        'lblDiscount
+        '
+        Me.lblDiscount.AutoSize = True
+        Me.lblDiscount.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblDiscount.ForeColor = System.Drawing.Color.Black
+        Me.lblDiscount.Location = New System.Drawing.Point(173, 185)
+        Me.lblDiscount.Name = "lblDiscount"
+        Me.lblDiscount.Size = New System.Drawing.Size(172, 17)
+        Me.lblDiscount.TabIndex = 32
+        Me.lblDiscount.Text = "Discounted from RM40.00"
+        Me.lblDiscount.Visible = False
         '
         'Label9
         '
@@ -622,18 +634,6 @@ Partial Class PaymentMake
         Me.pbStaffPromotion.TabIndex = 12
         Me.pbStaffPromotion.TabStop = False
         '
-        'lblDiscount
-        '
-        Me.lblDiscount.AutoSize = True
-        Me.lblDiscount.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblDiscount.ForeColor = System.Drawing.Color.Black
-        Me.lblDiscount.Location = New System.Drawing.Point(173, 185)
-        Me.lblDiscount.Name = "lblDiscount"
-        Me.lblDiscount.Size = New System.Drawing.Size(172, 17)
-        Me.lblDiscount.TabIndex = 32
-        Me.lblDiscount.Text = "Discounted from RM40.00"
-        Me.lblDiscount.Visible = False
-        '
         'PaymentMake
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -645,6 +645,7 @@ Partial Class PaymentMake
         Me.Controls.Add(Me.FlowLayoutPanel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "PaymentMake"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "PaymentMake"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox2.ResumeLayout(False)

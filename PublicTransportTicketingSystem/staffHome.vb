@@ -10,7 +10,7 @@
     End Sub
     Private Sub transactionClick(sender As Object, e As EventArgs) Handles StaffMenuLayoutControl1.staffTransactionClick
         Me.Hide()
-
+        staffTransaction.Show()
     End Sub
     Private Sub promotionClick(sender As Object, e As EventArgs) Handles StaffMenuLayoutControl1.staffPromotionClick
         Me.Hide()
@@ -19,12 +19,10 @@
     Private Sub aboutClick(sender As Object, e As EventArgs) Handles StaffMenuLayoutControl1.staffAboutClick
         MessageBox.Show("Develop by Jack Soh Boon Keat , Goh Chun Lin , Tan Yi Si , Tan Haw Man", "Contact Us", MessageBoxButtons.OK, MessageBoxIcon.Information)
     End Sub
-    Private Sub contactClick(sender As Object, e As EventArgs) Handles StaffMenuLayoutControl1.staffContactClick
-        MessageBox.Show("0179641099", "Contact Us", MessageBoxButtons.OK, MessageBoxIcon.Information)
-    End Sub
+
     Private Sub manageAccountClick(sender As Object, e As EventArgs) Handles StaffMenuLayoutControl1.staffManageAccountClick
         Me.Hide()
-        'StaffViewPromotion.Show()
+        'manage account
     End Sub
     Private Sub exitClick(sender As Object, e As EventArgs) Handles StaffMenuLayoutControl1.staffExitClick
         End

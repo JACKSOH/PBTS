@@ -119,16 +119,40 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="ManageCreatePromotionPart2.designer.vb">
+      <DependentUpon>ManageCreatePromotionPart2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ManageCreatePromotionPart2.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="managerBookingReport.Designer.vb">
       <DependentUpon>managerBookingReport.vb</DependentUpon>
     </Compile>
     <Compile Include="managerBookingReport.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ManagerCreatePromotion.Designer.vb">
+    <Compile Include="ManagerCreatePromotion.designer.vb">
       <DependentUpon>ManagerCreatePromotion.vb</DependentUpon>
     </Compile>
     <Compile Include="ManagerCreatePromotion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerCreateStaff.designer.vb">
+      <DependentUpon>ManagerCreateStaff.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerCreateStaff.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerCreateStaffPart2.designer.vb">
+      <DependentUpon>ManagerCreateStaffPart2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerCreateStaffPart2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="managerHome.Designer.vb">
+      <DependentUpon>managerHome.vb</DependentUpon>
+    </Compile>
+    <Compile Include="managerHome.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="managerIndex.Designer.vb">
@@ -160,6 +184,18 @@
     </Compile>
     <Compile Include="managerMenuLayoutControl.vb">
       <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ManagerModifyPromotion.designer.vb">
+      <DependentUpon>ManagerModifyPromotion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerModifyPromotion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerModifyStaff.designer.vb">
+      <DependentUpon>ManagerModifyStaff.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerModifyStaff.vb">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="ManagerPT.Designer.vb">
       <DependentUpon>ManagerPT.vb</DependentUpon>
@@ -198,6 +234,12 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="App.vb" />
+    <Compile Include="ManagerViewStaff.designer.vb">
+      <DependentUpon>ManagerViewStaff.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerViewStaff.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="My Project\ManagerManageSeat.Designer.vb">
       <DependentUpon>ManagerManageSeat.vb</DependentUpon>
     </Compile>
@@ -298,10 +340,22 @@
     <Compile Include="staffSeatSelection.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="staffTransaction.Designer.vb">
+      <DependentUpon>staffTransaction.vb</DependentUpon>
+    </Compile>
+    <Compile Include="staffTransaction.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="StaffViewPromotion.Designer.vb">
       <DependentUpon>StaffViewPromotion.vb</DependentUpon>
     </Compile>
     <Compile Include="StaffViewPromotion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StaffViewPromotionPart2.designer.vb">
+      <DependentUpon>StaffViewPromotionPart2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="StaffViewPromotionPart2.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="TranportSelection.Designer.vb">
@@ -316,11 +370,23 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>bookingReport.vb</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="ManageCreatePromotionPart2.resx">
+      <DependentUpon>ManageCreatePromotionPart2.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="managerBookingReport.resx">
       <DependentUpon>managerBookingReport.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ManagerCreatePromotion.resx">
       <DependentUpon>ManagerCreatePromotion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerCreateStaff.resx">
+      <DependentUpon>ManagerCreateStaff.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerCreateStaffPart2.resx">
+      <DependentUpon>ManagerCreateStaffPart2.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="managerHome.resx">
+      <DependentUpon>managerHome.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="managerIndex.resx">
       <DependentUpon>managerIndex.vb</DependentUpon>
@@ -336,6 +402,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="managerMenuLayoutControl.resx">
       <DependentUpon>managerMenuLayoutControl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerModifyPromotion.resx">
+      <DependentUpon>ManagerModifyPromotion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerModifyStaff.resx">
+      <DependentUpon>ManagerModifyStaff.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ManagerPT.resx">
       <DependentUpon>ManagerPT.vb</DependentUpon>
@@ -354,6 +426,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ManagerViewSchdule.resx">
       <DependentUpon>ManagerViewSchdule.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerViewStaff.resx">
+      <DependentUpon>ManagerViewStaff.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\ManagerManageSeat.resx">
       <DependentUpon>ManagerManageSeat.vb</DependentUpon>
@@ -397,8 +472,14 @@
     <EmbeddedResource Include="staffSeatSelection.resx">
       <DependentUpon>staffSeatSelection.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="staffTransaction.resx">
+      <DependentUpon>staffTransaction.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="StaffViewPromotion.resx">
       <DependentUpon>StaffViewPromotion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StaffViewPromotionPart2.resx">
+      <DependentUpon>StaffViewPromotionPart2.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TranportSelection.resx">
       <DependentUpon>TranportSelection.vb</DependentUpon>
@@ -521,6 +602,7 @@
     </Content>
     <Content Include="Resources\icons8-right-arrow-52.png" />
     <Content Include="Resources\icons8-search-filled-24.png" />
+    <None Include="Resources\icons8_Map_Pinpoint_24px.png" />
     <None Include="Resources\icons8_Subway_100px.png" />
   </ItemGroup>
   <ItemGroup>

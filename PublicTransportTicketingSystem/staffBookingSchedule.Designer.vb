@@ -41,14 +41,14 @@ Partial Class staffBookingSchedule
         Me.dgvSchedule.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.dgvSchedule.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
         Me.dgvSchedule.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvSchedule.Location = New System.Drawing.Point(260, 110)
-        Me.dgvSchedule.Margin = New System.Windows.Forms.Padding(2)
+        Me.dgvSchedule.Location = New System.Drawing.Point(347, 135)
+        Me.dgvSchedule.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.dgvSchedule.MultiSelect = False
         Me.dgvSchedule.Name = "dgvSchedule"
         Me.dgvSchedule.ReadOnly = True
         Me.dgvSchedule.RowTemplate.Height = 24
         Me.dgvSchedule.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvSchedule.Size = New System.Drawing.Size(502, 290)
+        Me.dgvSchedule.Size = New System.Drawing.Size(669, 357)
         Me.dgvSchedule.TabIndex = 1
         '
         'StaffMenuLayoutControl1
@@ -56,7 +56,7 @@ Partial Class staffBookingSchedule
         Me.StaffMenuLayoutControl1.Location = New System.Drawing.Point(0, 0)
         Me.StaffMenuLayoutControl1.Margin = New System.Windows.Forms.Padding(0)
         Me.StaffMenuLayoutControl1.Name = "StaffMenuLayoutControl1"
-        Me.StaffMenuLayoutControl1.Size = New System.Drawing.Size(800, 593)
+        Me.StaffMenuLayoutControl1.Size = New System.Drawing.Size(1067, 730)
         Me.StaffMenuLayoutControl1.TabIndex = 0
         '
         'ScheduleBindingSource
@@ -65,14 +65,15 @@ Partial Class staffBookingSchedule
         '
         'staffBookingSchedule
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(802, 592)
+        Me.ClientSize = New System.Drawing.Size(1069, 729)
         Me.Controls.Add(Me.dgvSchedule)
         Me.Controls.Add(Me.StaffMenuLayoutControl1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Margin = New System.Windows.Forms.Padding(2)
+        Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "staffBookingSchedule"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "staffBookingSchedule"
         CType(Me.dgvSchedule, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ScheduleBindingSource, System.ComponentModel.ISupportInitialize).EndInit()

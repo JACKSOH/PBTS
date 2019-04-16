@@ -601,6 +601,7 @@ Partial Class PaymentCancel
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "PaymentCancel"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "PaymentCancel"
         Me.FlowLayoutPanel1.ResumeLayout(False)
         Me.FlowLayoutPanel3.ResumeLayout(False)

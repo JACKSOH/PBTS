@@ -27,20 +27,22 @@ Partial Class staffHome
         '
         'StaffMenuLayoutControl1
         '
-        Me.StaffMenuLayoutControl1.Location = New System.Drawing.Point(-2, -2)
+        Me.StaffMenuLayoutControl1.Location = New System.Drawing.Point(-3, -2)
         Me.StaffMenuLayoutControl1.Margin = New System.Windows.Forms.Padding(0)
         Me.StaffMenuLayoutControl1.Name = "StaffMenuLayoutControl1"
-        Me.StaffMenuLayoutControl1.Size = New System.Drawing.Size(800, 592)
+        Me.StaffMenuLayoutControl1.Size = New System.Drawing.Size(1067, 729)
         Me.StaffMenuLayoutControl1.TabIndex = 0
         '
         'staffHome
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(799, 588)
+        Me.ClientSize = New System.Drawing.Size(1065, 724)
         Me.Controls.Add(Me.StaffMenuLayoutControl1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "staffHome"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "staffHome"
         Me.ResumeLayout(False)
 

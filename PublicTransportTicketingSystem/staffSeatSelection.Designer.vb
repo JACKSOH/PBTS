@@ -100,6 +100,7 @@ Partial Class staffSeatSelection
         Me.Controls.Add(Me.flpSeat)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "staffSeatSelection"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "staffSeatSelection"
         Me.ResumeLayout(False)
         Me.PerformLayout()

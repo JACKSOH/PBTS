@@ -182,7 +182,7 @@
     End Sub
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
         Dim db As New PBTSDataContext
-        Dim id As String
+        Dim id As String = ""
         Try
             id = db.Schedules.OrderByDescending(Function(s) s.scheduleID).FirstOrDefault.scheduleID.ToString
         Catch ex As Exception

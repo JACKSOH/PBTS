@@ -32,12 +32,6 @@
         <elementListCompartment Id="f426dd7e-045c-4fb1-81c9-7dc8955d57f9" absoluteBounds="3.515, 6.835, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="5134cbd4-47e9-4916-a956-60d04257a0bc" absoluteBounds="3.5, 3.75, 2, 1.7708968098958327">
-      <DataClassMoniker Name="/PBTSDataContext/Schedule" />
-      <nestedChildShapes>
-        <elementListCompartment Id="ee072515-d40a-4041-af38-5bbdaa903470" absoluteBounds="3.515, 4.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
     <classShape Id="03b4a61d-e4b1-47e8-859d-273e541f8ce3" absoluteBounds="6.25, 8.5, 2, 1.5785953776041666">
       <DataClassMoniker Name="/PBTSDataContext/Seat" />
       <nestedChildShapes>
@@ -57,32 +51,11 @@
         <classShapeMoniker Id="eff30433-4794-4c3e-9173-368cd4b4fe3a" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 7.35659912109375); (5.97916666666667 : 7.35659912109375 : JumpStart); (6.14583333333333 : 7.35659912109375 : JumpEnd); (7.25 : 7.35659912109375); (7.25 : 2.45359537760417)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.5 : 7.6194482421875); (5.57291666666667 : 7.6194482421875 : JumpStart); (5.73958333333333 : 7.6194482421875 : JumpEnd); (7.59375 : 7.6194482421875); (7.59375 : 2.45359537760417)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/PBTSDataContext/Promotion/Promotion_promoteSchedule" />
       <nodes>
         <classShapeMoniker Id="68c4f520-6ccf-4809-b04b-980358da1cb8" />
         <classShapeMoniker Id="8a7116d6-73bb-4b4b-99a0-84e430f22441" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 4.57354526785357); (6.7187475 : 4.57354526785357); (6.7187475 : 2.45359537760417)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <AssociationMoniker Name="/PBTSDataContext/Schedule/Schedule_promoteSchedule" />
-      <nodes>
-        <classShapeMoniker Id="5134cbd4-47e9-4916-a956-60d04257a0bc" />
-        <classShapeMoniker Id="8a7116d6-73bb-4b4b-99a0-84e430f22441" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 5.45959553570713); (6.0625 : 6.02209553570713); (6.0625 : 9.28929768880208); (6.25 : 9.28929768880208)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/PBTSDataContext/Schedule/Schedule_Seat" />
-      <nodes>
-        <classShapeMoniker Id="5134cbd4-47e9-4916-a956-60d04257a0bc" />
-        <classShapeMoniker Id="03b4a61d-e4b1-47e8-859d-273e541f8ce3" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 4.63544840494792); (3.5 : 4.63544840494792)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/PBTSDataContext/Transport/Transport_Schedule" />
-      <nodes>
-        <classShapeMoniker Id="31e9bcd5-7d2f-4f93-b5b6-7b7a2bc58e00" />
-        <classShapeMoniker Id="5134cbd4-47e9-4916-a956-60d04257a0bc" />
       </nodes>
     </associationConnector>
     <classShape Id="d493f3c2-26eb-4156-a58b-4fb330775349" absoluteBounds="9, 8.25, 2, 1.9631982421874987">
@@ -111,18 +84,45 @@
         <classShapeMoniker Id="d493f3c2-26eb-4156-a58b-4fb330775349" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(4.3125 : 3.75); (4.3125 : 2.57859537760417)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <AssociationMoniker Name="/PBTSDataContext/Schedule/Schedule_LocationList" />
-      <nodes>
-        <classShapeMoniker Id="5134cbd4-47e9-4916-a956-60d04257a0bc" />
-        <classShapeMoniker Id="f1f3ee77-48bd-4f2d-9644-95c9f4e21c2e" />
-      </nodes>
-    </associationConnector>
     <associationConnector edgePoints="[(2.5 : 1.69794840494792); (3.125 : 1.69794840494792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/PBTSDataContext/Location/Location_LocationList" />
       <nodes>
         <classShapeMoniker Id="70dd7ba6-7c0f-4e60-8bd2-fee93c8ae110" />
         <classShapeMoniker Id="f1f3ee77-48bd-4f2d-9644-95c9f4e21c2e" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="14ff402e-b3b5-4aaf-b8c8-f2995d9c1cd6" absoluteBounds="3.75, 4.25, 2, 1.9631982421875">
+      <DataClassMoniker Name="/PBTSDataContext/Schedule" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9a745411-7668-4622-87d2-a18379615101" absoluteBounds="3.7649999999999997, 4.71, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.46875 : 4.25); (5.46875 : 0.90625); (6.25 : 0.90625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/PBTSDataContext/Schedule/Schedule_promoteSchedule" />
+      <nodes>
+        <classShapeMoniker Id="14ff402e-b3b5-4aaf-b8c8-f2995d9c1cd6" />
+        <classShapeMoniker Id="8a7116d6-73bb-4b4b-99a0-84e430f22441" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.65625 : 6.2131982421875); (5.65625 : 9.28929768880208); (6.25 : 9.28929768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/PBTSDataContext/Schedule/Schedule_Seat" />
+      <nodes>
+        <classShapeMoniker Id="14ff402e-b3b5-4aaf-b8c8-f2995d9c1cd6" />
+        <classShapeMoniker Id="03b4a61d-e4b1-47e8-859d-273e541f8ce3" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.4375 : 4.25); (4.4375 : 2.57859537760417)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/PBTSDataContext/Schedule/Schedule_LocationList" />
+      <nodes>
+        <classShapeMoniker Id="14ff402e-b3b5-4aaf-b8c8-f2995d9c1cd6" />
+        <classShapeMoniker Id="f1f3ee77-48bd-4f2d-9644-95c9f4e21c2e" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 5.08255126953125); (3.75 : 5.08255126953125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/PBTSDataContext/Transport/Transport_Schedule" />
+      <nodes>
+        <classShapeMoniker Id="31e9bcd5-7d2f-4f93-b5b6-7b7a2bc58e00" />
+        <classShapeMoniker Id="14ff402e-b3b5-4aaf-b8c8-f2995d9c1cd6" />
       </nodes>
     </associationConnector>
   </nestedChildShapes>

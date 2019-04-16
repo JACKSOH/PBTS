@@ -24,6 +24,7 @@ Partial Class staffBookingCustomerDetail
     Private Sub InitializeComponent()
         Me.StaffMenuLayoutControl1 = New PublicTransportTicketingSystem.staffMenuLayoutControl()
         Me.gbCreatePromotion = New System.Windows.Forms.GroupBox()
+        Me.mskContact = New System.Windows.Forms.MaskedTextBox()
         Me.mskIC = New System.Windows.Forms.MaskedTextBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
@@ -35,7 +36,6 @@ Partial Class staffBookingCustomerDetail
         Me.lblTotalPrice = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.dgvSeat = New System.Windows.Forms.DataGridView()
-        Me.mskContact = New System.Windows.Forms.MaskedTextBox()
         Me.gbCreatePromotion.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dgvSeat, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -68,6 +68,15 @@ Partial Class staffBookingCustomerDetail
         Me.gbCreatePromotion.TabIndex = 23
         Me.gbCreatePromotion.TabStop = False
         Me.gbCreatePromotion.Text = "Customer Details"
+        '
+        'mskContact
+        '
+        Me.mskContact.Location = New System.Drawing.Point(233, 127)
+        Me.mskContact.Mask = "000-000 0000"
+        Me.mskContact.Name = "mskContact"
+        Me.mskContact.Size = New System.Drawing.Size(284, 28)
+        Me.mskContact.TabIndex = 23
+        Me.mskContact.ValidatingType = GetType(Integer)
         '
         'mskIC
         '
@@ -202,15 +211,6 @@ Partial Class staffBookingCustomerDetail
         Me.dgvSeat.Size = New System.Drawing.Size(498, 127)
         Me.dgvSeat.TabIndex = 0
         '
-        'mskContact
-        '
-        Me.mskContact.Location = New System.Drawing.Point(233, 127)
-        Me.mskContact.Mask = "000-000 0000"
-        Me.mskContact.Name = "mskContact"
-        Me.mskContact.Size = New System.Drawing.Size(284, 28)
-        Me.mskContact.TabIndex = 23
-        Me.mskContact.ValidatingType = GetType(Integer)
-        '
         'staffBookingCustomerDetail
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -223,6 +223,7 @@ Partial Class staffBookingCustomerDetail
         Me.Controls.Add(Me.StaffMenuLayoutControl1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "staffBookingCustomerDetail"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "staffBookingCustomerDetail"
         Me.gbCreatePromotion.ResumeLayout(False)
         Me.gbCreatePromotion.PerformLayout()

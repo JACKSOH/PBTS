@@ -62,9 +62,11 @@ Partial Class ManagerPT
         Me.gbTranport.Controls.Add(Me.btnAdd)
         Me.gbTranport.Controls.Add(Me.btnDeleteCancel)
         Me.gbTranport.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.gbTranport.Location = New System.Drawing.Point(241, 207)
+        Me.gbTranport.Location = New System.Drawing.Point(321, 255)
+        Me.gbTranport.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.gbTranport.Name = "gbTranport"
-        Me.gbTranport.Size = New System.Drawing.Size(547, 356)
+        Me.gbTranport.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.gbTranport.Size = New System.Drawing.Size(729, 438)
         Me.gbTranport.TabIndex = 8
         Me.gbTranport.TabStop = False
         Me.gbTranport.Text = "Tranport Details"
@@ -72,9 +74,10 @@ Partial Class ManagerPT
         'PictureBox1
         '
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(408, 61)
+        Me.PictureBox1.Location = New System.Drawing.Point(544, 75)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(27, 21)
+        Me.PictureBox1.Size = New System.Drawing.Size(36, 26)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 12
         Me.PictureBox1.TabStop = False
@@ -83,9 +86,10 @@ Partial Class ManagerPT
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(407, 40)
+        Me.Label1.Location = New System.Drawing.Point(543, 49)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(86, 18)
+        Me.Label1.Size = New System.Drawing.Size(111, 22)
         Me.Label1.TabIndex = 13
         Me.Label1.Text = "Search carrier"
         '
@@ -97,9 +101,10 @@ Partial Class ManagerPT
         Me.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgv.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.TransportNameDataGridViewTextBoxColumn, Me.Status, Me.LicensePlateDataGridViewTextBoxColumn, Me.TranportColumnDataGridViewTextBoxColumn, Me.TranportRowDataGridViewTextBoxColumn, Me.TransportTypeDataGridViewTextBoxColumn})
         Me.dgv.DataSource = Me.TransportBindingSource
-        Me.dgv.Location = New System.Drawing.Point(19, 19)
+        Me.dgv.Location = New System.Drawing.Point(25, 23)
+        Me.dgv.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.dgv.Name = "dgv"
-        Me.dgv.Size = New System.Drawing.Size(383, 331)
+        Me.dgv.Size = New System.Drawing.Size(511, 407)
         Me.dgv.TabIndex = 5
         '
         'TransportNameDataGridViewTextBoxColumn
@@ -172,17 +177,19 @@ Partial Class ManagerPT
         '
         'txtSearch
         '
-        Me.txtSearch.Location = New System.Drawing.Point(441, 61)
+        Me.txtSearch.Location = New System.Drawing.Point(588, 75)
+        Me.txtSearch.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtSearch.Name = "txtSearch"
-        Me.txtSearch.Size = New System.Drawing.Size(100, 21)
+        Me.txtSearch.Size = New System.Drawing.Size(132, 24)
         Me.txtSearch.TabIndex = 11
         '
         'btnUpdate
         '
         Me.btnUpdate.Font = New System.Drawing.Font("Tw Cen MT Condensed", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnUpdate.Location = New System.Drawing.Point(400, 239)
+        Me.btnUpdate.Location = New System.Drawing.Point(533, 294)
+        Me.btnUpdate.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnUpdate.Name = "btnUpdate"
-        Me.btnUpdate.Size = New System.Drawing.Size(81, 38)
+        Me.btnUpdate.Size = New System.Drawing.Size(108, 47)
         Me.btnUpdate.TabIndex = 2
         Me.btnUpdate.Text = "&Update"
         Me.btnUpdate.UseVisualStyleBackColor = True
@@ -191,9 +198,10 @@ Partial Class ManagerPT
         '
         Me.btnAdd.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.btnAdd.Font = New System.Drawing.Font("Tw Cen MT Condensed", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAdd.Location = New System.Drawing.Point(400, 196)
+        Me.btnAdd.Location = New System.Drawing.Point(533, 241)
+        Me.btnAdd.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnAdd.Name = "btnAdd"
-        Me.btnAdd.Size = New System.Drawing.Size(81, 37)
+        Me.btnAdd.Size = New System.Drawing.Size(108, 46)
         Me.btnAdd.TabIndex = 3
         Me.btnAdd.Text = "&Add"
         Me.btnAdd.UseVisualStyleBackColor = False
@@ -203,26 +211,29 @@ Partial Class ManagerPT
         Me.btnDeleteCancel.BackColor = System.Drawing.Color.Red
         Me.btnDeleteCancel.Font = New System.Drawing.Font("Tw Cen MT Condensed", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnDeleteCancel.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.btnDeleteCancel.Location = New System.Drawing.Point(400, 323)
+        Me.btnDeleteCancel.Location = New System.Drawing.Point(533, 398)
+        Me.btnDeleteCancel.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnDeleteCancel.Name = "btnDeleteCancel"
-        Me.btnDeleteCancel.Size = New System.Drawing.Size(59, 33)
+        Me.btnDeleteCancel.Size = New System.Drawing.Size(79, 41)
         Me.btnDeleteCancel.TabIndex = 6
         Me.btnDeleteCancel.Text = "&Delete"
         Me.btnDeleteCancel.UseVisualStyleBackColor = False
         '
         'ts
         '
-        Me.ts.Location = New System.Drawing.Point(241, 74)
+        Me.ts.Location = New System.Drawing.Point(321, 91)
+        Me.ts.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
         Me.ts.Name = "ts"
-        Me.ts.Size = New System.Drawing.Size(547, 104)
+        Me.ts.Size = New System.Drawing.Size(729, 128)
         Me.ts.TabIndex = 6
         '
         'ManagerMenuLayoutControl1
         '
         Me.ManagerMenuLayoutControl1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.ManagerMenuLayoutControl1.Location = New System.Drawing.Point(0, 0)
+        Me.ManagerMenuLayoutControl1.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
         Me.ManagerMenuLayoutControl1.Name = "ManagerMenuLayoutControl1"
-        Me.ManagerMenuLayoutControl1.Size = New System.Drawing.Size(800, 575)
+        Me.ManagerMenuLayoutControl1.Size = New System.Drawing.Size(1067, 708)
         Me.ManagerMenuLayoutControl1.TabIndex = 0
         '
         'TransportTableAdapter
@@ -231,15 +242,16 @@ Partial Class ManagerPT
         '
         'ManagerPT
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 575)
+        Me.ClientSize = New System.Drawing.Size(1067, 708)
         Me.Controls.Add(Me.gbTranport)
         Me.Controls.Add(Me.ts)
         Me.Controls.Add(Me.ManagerMenuLayoutControl1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Margin = New System.Windows.Forms.Padding(2)
+        Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "ManagerPT"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "ManagerPT"
         Me.gbTranport.ResumeLayout(False)
         Me.gbTranport.PerformLayout()

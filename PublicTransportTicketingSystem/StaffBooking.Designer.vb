@@ -255,6 +255,7 @@ Partial Class StaffBooking
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "StaffBooking"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "StaffBooking"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()

@@ -17,7 +17,7 @@ Public Class managerReport
         End If
     End Sub
 
-    Private Sub tbDailySchedule_CheckedChanged(sender As Object, e As EventArgs) Handles tbDailySchedule.CheckedChanged
+    Private Sub tbDailySchedule_CheckedChanged(sender As Object, e As EventArgs) Handles rbMonthlySchedule.CheckedChanged
         If rbMonthlyTransaction.Checked Then
             lblDescription.Text = "Generate to know what schedule is assigned today."
         End If
@@ -41,7 +41,7 @@ Public Class managerReport
     End Sub
     Public Sub ChangeTransport() Handles TranportSelection1.TransportChange
         lblTransport.Text = TranportSelection1.selectedType
-
+        gbReport.Enabled = True
     End Sub
 
     'Create the event to triggered user control 
@@ -96,6 +96,24 @@ Public Class managerReport
 
     Private Sub btnExitClick(sender As Object, e As EventArgs) Handles ManagerMenuLayoutControl1.managerHomeClick
 
+    End Sub
+
+    Private Sub btnGenerate_Click(sender As Object, e As EventArgs) Handles btnGenerate.Click
+        If rbDailyBook.Checked Then
+            managerBookingReport.Show()
+        ElseIf rbMonthlySchedule.Checked Then
+            Dim month As String
+            Do
+                month = InputBox("Please enter the a month(1-12).")
+                If month = "" Or CInt(month) = 0 Or CInt(month) > 12 Then
+                    MessageBox.Show("Please enter a proper month. E.g (1-12).", "Error")
+                End If
+            Loop While month = "" Or CInt(month) = 0 Or CInt(month) > 12
+            managerScheduleReport.selectedMonth = CInt(month)
+            managerScheduleReport.selectedType = TranportSelection1.selectedType
+            managerScheduleReport.ShowDialog()
+
+        End If
     End Sub
     'End Here
 End Class

@@ -40,6 +40,7 @@ Partial Class ManagerManageLocation
         Me.ts = New PublicTransportTicketingSystem.TranportSelection()
         Me.ManagerMenuLayoutControl1 = New PublicTransportTicketingSystem.managerMenuLayoutControl()
         Me.BookingTableAdapter1 = New PublicTransportTicketingSystem.DataSet1TableAdapters.BookingTableAdapter()
+        Me.Label6 = New System.Windows.Forms.Label()
         CType(Me.dgv, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LocationBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PTTSDataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -186,11 +187,22 @@ Partial Class ManagerManageLocation
         '
         Me.BookingTableAdapter1.ClearBeforeFill = True
         '
+        'Label6
+        '
+        Me.Label6.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label6.Font = New System.Drawing.Font("Tw Cen MT Condensed", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(276, 18)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(166, 36)
+        Me.Label6.TabIndex = 37
+        Me.Label6.Text = "Manage Location"
+        '
         'ManagerManageLocation
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 575)
+        Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.ts)
         Me.Controls.Add(Me.dgv)
         Me.Controls.Add(Me.gbTranport)
@@ -228,4 +240,5 @@ Partial Class ManagerManageLocation
     Friend WithEvents err As ErrorProvider
     Friend WithEvents lblRecord As Label
     Friend WithEvents BookingTableAdapter1 As DataSet1TableAdapters.BookingTableAdapter
+    Friend WithEvents Label6 As Label
 End Class

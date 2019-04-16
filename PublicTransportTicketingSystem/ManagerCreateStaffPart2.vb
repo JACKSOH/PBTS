@@ -127,7 +127,7 @@ Public Class ManagerCreateStaffPart2
     End Sub
 
     Private Sub btnCreateStaff_Click(sender As Object, e As EventArgs) Handles btnCreateStaff.Click
-        Dim db As PBTSDataContext
+        Dim db As New PBTSDataContext
         If (ValidatePassword(txtPassword.Text)) Then
             If (MatchPassword(txtPassword.Text, txtConfirmPassword.Text)) Then
 

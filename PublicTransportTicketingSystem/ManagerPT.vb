@@ -5,6 +5,8 @@
         Me.TransportTableAdapter.Fill(Me.PTTSDataSet.Transport)
         dgv.ReadOnly = True
         TransportTableAdapter.FillBy1(PTTSDataSet.Transport, ts.selectedType.ToLower)
+
+        lblRecordFound.Text = dgv.Rows.Count.ToString("0 record(s) found")
     End Sub
 
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
@@ -30,9 +32,7 @@
         TransportTableAdapter.FillBy1(PTTSDataSet.Transport, ts.selectedType.ToLower)
 
     End Sub
-    Private Sub dgv_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv.CellContentClick
 
-    End Sub
 
     Private Sub btnDeleteCancel_Click(sender As Object, e As EventArgs) Handles btnDeleteCancel.Click
         If btnDeleteCancel.Text = "&Cancel" Then
@@ -68,4 +68,10 @@
     Private Sub ManagerMenuLayoutControl1_Load_1(sender As Object, e As EventArgs) Handles ManagerMenuLayoutControl1.Load
 
     End Sub
+
+    Private Sub gbTranport_Enter(sender As Object, e As EventArgs) Handles gbTranport.Enter
+
+    End Sub
+
+
 End Class

@@ -38,6 +38,7 @@ Partial Class ManagerViewPromotion
         Me.Label1 = New System.Windows.Forms.Label()
         Me.ManagerMenuLayoutControl1 = New PublicTransportTicketingSystem.managerMenuLayoutControl()
         Me.TranportSelection1 = New PublicTransportTicketingSystem.TranportSelection()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.gbBus.SuspendLayout()
         CType(Me.dgvPromotionList, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -221,11 +222,22 @@ Partial Class ManagerViewPromotion
         Me.TranportSelection1.Size = New System.Drawing.Size(537, 104)
         Me.TranportSelection1.TabIndex = 39
         '
+        'Label6
+        '
+        Me.Label6.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label6.Font = New System.Drawing.Font("Tw Cen MT Condensed", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(257, 20)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(189, 36)
+        Me.Label6.TabIndex = 39
+        Me.Label6.Text = "Manage Promotion"
+        '
         'ManagerViewPromotion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 575)
+        Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.btnCreatePromotionPage)
         Me.Controls.Add(Me.gbBus)
         Me.Controls.Add(Me.ManagerMenuLayoutControl1)
@@ -255,4 +267,5 @@ Partial Class ManagerViewPromotion
     Friend WithEvents lblCount As Label
     Friend WithEvents dgvPromotionList As DataGridView
     Friend WithEvents btnClear As Button
+    Friend WithEvents Label6 As Label
 End Class

@@ -25,6 +25,7 @@ Partial Class StaffIndex
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(StaffIndex))
         Me.BackPanel = New System.Windows.Forms.Panel()
+        Me.btnExit = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -47,6 +48,7 @@ Partial Class StaffIndex
         'BackPanel
         '
         Me.BackPanel.BackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(65, Byte), Integer))
+        Me.BackPanel.Controls.Add(Me.btnExit)
         Me.BackPanel.Controls.Add(Me.Panel1)
         Me.BackPanel.Controls.Add(Me.lblError)
         Me.BackPanel.Controls.Add(Me.linkToManager)
@@ -63,6 +65,16 @@ Partial Class StaffIndex
         Me.BackPanel.Name = "BackPanel"
         Me.BackPanel.Size = New System.Drawing.Size(353, 364)
         Me.BackPanel.TabIndex = 5
+        '
+        'btnExit
+        '
+        Me.btnExit.Font = New System.Drawing.Font("Tw Cen MT", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnExit.Location = New System.Drawing.Point(188, 299)
+        Me.btnExit.Name = "btnExit"
+        Me.btnExit.Size = New System.Drawing.Size(77, 29)
+        Me.btnExit.TabIndex = 12
+        Me.btnExit.Text = "&Exit"
+        Me.btnExit.UseVisualStyleBackColor = True
         '
         'Panel1
         '
@@ -148,7 +160,7 @@ Partial Class StaffIndex
         'btnLogin
         '
         Me.btnLogin.Font = New System.Drawing.Font("Tw Cen MT", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnLogin.Location = New System.Drawing.Point(141, 307)
+        Me.btnLogin.Location = New System.Drawing.Point(84, 299)
         Me.btnLogin.Name = "btnLogin"
         Me.btnLogin.Size = New System.Drawing.Size(77, 29)
         Me.btnLogin.TabIndex = 6
@@ -241,4 +253,5 @@ Partial Class StaffIndex
     Friend WithEvents Panel1 As Panel
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Label1 As Label
+    Friend WithEvents btnExit As Button
 End Class

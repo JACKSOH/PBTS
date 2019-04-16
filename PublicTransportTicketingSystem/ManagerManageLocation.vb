@@ -95,10 +95,7 @@
     Private Sub ChangeTransportType() Handles ts.TransportChange
         LocationTableAdapter1.FillBy2(PTTSDataSet.Location, ts.selectedType.ToLower)
     End Sub
-    Private Function ValidateType(Type As String) As Boolean
 
-
-    End Function
 
     Friend Sub dgv_CellValidating(sender As Object, e As DataGridViewCellValidatingEventArgs) Handles dgv.CellValidating
         If dgv.CurrentCell.ColumnIndex = 2 And dgv.ReadOnly = False Then

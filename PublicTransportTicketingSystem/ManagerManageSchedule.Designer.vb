@@ -39,6 +39,7 @@ Partial Class ManagerManageSchedule
         Me.ScheduleTableAdapter = New PublicTransportTicketingSystem.PTTSDataSetTableAdapters.ScheduleTableAdapter()
         Me.ts = New PublicTransportTicketingSystem.TranportSelection()
         Me.ManagerMenuLayoutControl1 = New PublicTransportTicketingSystem.managerMenuLayoutControl()
+        Me.Label6 = New System.Windows.Forms.Label()
         CType(Me.dgvSchedule, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -183,11 +184,22 @@ Partial Class ManagerManageSchedule
         Me.ManagerMenuLayoutControl1.Size = New System.Drawing.Size(818, 546)
         Me.ManagerMenuLayoutControl1.TabIndex = 0
         '
+        'Label6
+        '
+        Me.Label6.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label6.Font = New System.Drawing.Font("Tw Cen MT Condensed", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(275, 19)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(175, 36)
+        Me.Label6.TabIndex = 37
+        Me.Label6.Text = "Manage Schedule"
+        '
         'ManagerManageSchedule
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(818, 546)
+        Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.ts)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.ManagerMenuLayoutControl1)
@@ -220,4 +232,5 @@ Partial Class ManagerManageSchedule
     Friend WithEvents dtpDate As DateTimePicker
     Friend WithEvents lblRecord As Label
     Friend WithEvents ManagerMenuLayoutControl1 As managerMenuLayoutControl
+    Friend WithEvents Label6 As Label
 End Class

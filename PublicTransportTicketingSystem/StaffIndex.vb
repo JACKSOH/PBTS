@@ -105,6 +105,7 @@ Public Class StaffIndex
     Private Sub StaffIndex_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Timer1.Interval = 500
         Timer1.Start()
+        BigBackground.Show()
     End Sub
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
@@ -140,5 +141,9 @@ Public Class StaffIndex
         txtPassword.Clear()
         managerIndex.Show()
         Me.Hide()
+    End Sub
+
+    Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
+        End
     End Sub
 End Class

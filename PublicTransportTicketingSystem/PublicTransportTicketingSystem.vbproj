@@ -114,12 +114,6 @@
       <DependentUpon>bookingReport.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="DailyScheduleReport.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DailyScheduleReport.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="DataSet1.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -221,14 +215,12 @@
     <Compile Include="ManagerSchduleInsert.vb">
       <SubType>Form</SubType>
     </Compile>
-
     <Compile Include="ManagerScheduleReport.Designer.vb">
       <DependentUpon>ManagerScheduleReport.vb</DependentUpon>
     </Compile>
     <Compile Include="ManagerScheduleReport.vb">
       <SubType>Form</SubType>
     </Compile>
-
     <Compile Include="ManagerTranportInsert.Designer.vb">
       <DependentUpon>ManagerTranportInsert.vb</DependentUpon>
     </Compile>
@@ -253,6 +245,12 @@
     </Compile>
     <Compile Include="ManagerViewStaff.vb">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MonthlyTransportTraverllingReport.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MonthlyTransportTraverllingReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="My Project\BigBackground.Designer.vb">
       <DependentUpon>BigBackground.vb</DependentUpon>
@@ -390,10 +388,6 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>bookingReport.vb</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="DailyScheduleReport.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>DailyScheduleReport.vb</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="ManageCreatePromotionPart2.resx">
       <DependentUpon>ManageCreatePromotionPart2.vb</DependentUpon>
     </EmbeddedResource>
@@ -442,11 +436,9 @@
     <EmbeddedResource Include="ManagerSchduleInsert.resx">
       <DependentUpon>ManagerSchduleInsert.vb</DependentUpon>
     </EmbeddedResource>
-
     <EmbeddedResource Include="ManagerScheduleReport.resx">
       <DependentUpon>ManagerScheduleReport.vb</DependentUpon>
     </EmbeddedResource>
-
     <EmbeddedResource Include="ManagerTranportInsert.resx">
       <DependentUpon>ManagerTranportInsert.vb</DependentUpon>
     </EmbeddedResource>
@@ -458,6 +450,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ManagerViewStaff.resx">
       <DependentUpon>ManagerViewStaff.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MonthlyTransportTraverllingReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>MonthlyTransportTraverllingReport.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\BigBackground.resx">
       <DependentUpon>BigBackground.vb</DependentUpon>

@@ -268,7 +268,7 @@ Partial Class managerMenuLayoutControl
         Me.btnManageLocation.Name = "btnManageLocation"
         Me.btnManageLocation.Size = New System.Drawing.Size(164, 39)
         Me.btnManageLocation.TabIndex = 15
-        Me.btnManageLocation.Text = "Manage Public Transport"
+        Me.btnManageLocation.Text = "Manage Location"
         Me.btnManageLocation.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnManageLocation.UseVisualStyleBackColor = True
         '

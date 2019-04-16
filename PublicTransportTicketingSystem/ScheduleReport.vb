@@ -18,7 +18,7 @@ Imports System
 Imports System.ComponentModel
 
 
-Public Class DailyScheduleReport
+Public Class ScheduleReport
     Inherits ReportClass
     
     Public Sub New()
@@ -27,7 +27,7 @@ Public Class DailyScheduleReport
     
     Public Overrides Property ResourceName() As String
         Get
-            Return "DailyScheduleReport.rpt"
+            Return "ScheduleReport.rpt"
         End Get
         Set
             'Do nothing
@@ -45,7 +45,7 @@ Public Class DailyScheduleReport
     
     Public Overrides Property FullResourceName() As String
         Get
-            Return "PublicTransportTicketingSystem.DailyScheduleReport.rpt"
+            Return "PublicTransportTicketingSystem.ScheduleReport.rpt"
         End Get
         Set
             'Do nothing
@@ -94,7 +94,7 @@ Public Class DailyScheduleReport
 End Class
 
 <System.Drawing.ToolboxBitmapAttribute(GetType(CrystalDecisions.[Shared].ExportOptions), "report.bmp")>  _
-Public Class CachedDailyScheduleReport
+Public Class CachedScheduleReport
     Inherits Component
     Implements ICachedReport
     
@@ -136,7 +136,7 @@ Public Class CachedDailyScheduleReport
     End Property
     
     Public Overridable Function CreateReport() As CrystalDecisions.CrystalReports.Engine.ReportDocument Implements CrystalDecisions.ReportSource.ICachedReport.CreateReport
-        Dim rpt As DailyScheduleReport = New DailyScheduleReport()
+        Dim rpt As ScheduleReport = New ScheduleReport()
         rpt.Site = Me.Site
         Return rpt
     End Function

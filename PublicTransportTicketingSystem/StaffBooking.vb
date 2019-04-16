@@ -102,7 +102,5 @@ Public Class StaffBooking
 
     End Sub
 
-    Private Sub StaffMenuLayoutControl1_Load_1(sender As Object, e As EventArgs) Handles StaffMenuLayoutControl1.Load
-        BigBackground.Show()
-    End Sub
+
 End Class

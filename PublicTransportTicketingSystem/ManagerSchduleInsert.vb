@@ -78,6 +78,7 @@
             sc.estimateHours = Math.Abs(CInt(db.Locations.Where(Function(o) o.locationID = cboOrigin.SelectedValue.ToString).SingleOrDefault().position - db.Locations.Where(Function(o) o.locationID = cboDestination.SelectedValue.ToString).SingleOrDefault().position)) * 2
             sc.transportID = cboCarrier.SelectedValue.ToString
             sc.scheduleStatus = "Available"
+            sc.assignPromotionStatus = "pending"
             db.Schedules.InsertOnSubmit(sc)
 
             'insert for new origin location
@@ -110,7 +111,7 @@
             End Try
             App.table = "Location List"
             llDest.locationListID = App.GenerateNextId(DestId)
-            MessageBox.Show(llDest.locationListID)
+
             llDest.locationID = cboOrigin.SelectedValue.ToString
             llDest.locationStatus = "Destination"
             db1.LocationLists.InsertOnSubmit(llDest)
@@ -172,6 +173,7 @@
         sc.estimateHours = Math.Abs(CInt(db.Locations.Where(Function(o) o.locationID = cboOrigin.SelectedValue.ToString).SingleOrDefault().position - db.Locations.Where(Function(o) o.locationID = cboDestination.SelectedValue.ToString).SingleOrDefault().position)) * 2
         sc.transportID = cboCarrier.SelectedValue.ToString
         sc.scheduleStatus = "Available"
+        sc.assignPromotionStatus = "pending"
         db.Schedules.InsertOnSubmit(sc)
 
         'insert for new origin location
@@ -185,7 +187,7 @@
         End Try
         App.table = "Location List"
         llOri.locationListID = App.GenerateNextId(OriId)
-        MessageBox.Show(llOri.locationListID)
+
         llOri.locationID = cboDestination.SelectedValue.ToString
         llOri.locationStatus = "Origin"
         db.LocationLists.InsertOnSubmit(llOri)
@@ -263,6 +265,7 @@
             sc.estimateHours = Math.Abs(CInt(db.Locations.Where(Function(o) o.locationID = cboOrigin.SelectedValue.ToString).SingleOrDefault().position - db.Locations.Where(Function(o) o.locationID = cboDestination.SelectedValue.ToString).SingleOrDefault().position)) * 2
             sc.transportID = cboCarrier.SelectedValue.ToString
             sc.scheduleStatus = "Available"
+            sc.assignPromotionStatus = "pending"
             db.Schedules.InsertOnSubmit(sc)
 
             'insert for new origin location
@@ -276,7 +279,7 @@
             End Try
             App.table = "Location List"
             llOri.locationListID = App.GenerateNextId(OriId)
-            MessageBox.Show(llOri.locationListID)
+
             llOri.locationID = cboDestination.SelectedValue.ToString
             llOri.locationStatus = "Origin"
             db.LocationLists.InsertOnSubmit(llOri)
@@ -295,7 +298,7 @@
             End Try
             App.table = "Location List"
             llDest.locationListID = App.GenerateNextId(DestId)
-            MessageBox.Show(llDest.locationListID)
+
             llDest.locationID = cboOrigin.SelectedValue.ToString
             llDest.locationStatus = "Destination"
             db1.LocationLists.InsertOnSubmit(llDest)
@@ -363,6 +366,6 @@
     End Sub
 
     Private Sub cboCreating_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboCreating.SelectedIndexChanged
-        test.Text = cboOrigin.SelectedValue.ToString()
+
     End Sub
 End Class

@@ -2,6 +2,7 @@
 
 Public Class StaffBooking
     Dim SqlConnection As New SqlConnection
+
     Public Const connection As String = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\PTTS.mdf;Integrated Security=True"
     Public retrieveLocation As String
     Public selectedDate As DateTime
@@ -33,6 +34,8 @@ Public Class StaffBooking
             End While
 
             SqlConnection.Close()
+
+            type = TranportSelection1.txtTransType.Text.ToString
         Catch ex As Exception
             MessageBox.Show(ex.Message)
         End Try

@@ -2,6 +2,7 @@
 
     Dim count As Integer = 0
     Dim db As New PBTSDataContext()
+
     Public selectedSeat As New List(Of Integer)
     Dim availableSeat As Integer
 
@@ -53,6 +54,7 @@
         Catch ex As Exception
             MessageBox.Show(ex.Message)
         End Try
+
     End Sub
 
     Private Sub btnClick(sender As Object, e As EventArgs)

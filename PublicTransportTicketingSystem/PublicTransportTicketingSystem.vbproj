@@ -221,12 +221,14 @@
     <Compile Include="ManagerSchduleInsert.vb">
       <SubType>Form</SubType>
     </Compile>
+
     <Compile Include="ManagerScheduleReport.Designer.vb">
       <DependentUpon>ManagerScheduleReport.vb</DependentUpon>
     </Compile>
     <Compile Include="ManagerScheduleReport.vb">
       <SubType>Form</SubType>
     </Compile>
+
     <Compile Include="ManagerTranportInsert.Designer.vb">
       <DependentUpon>ManagerTranportInsert.vb</DependentUpon>
     </Compile>
@@ -440,9 +442,11 @@
     <EmbeddedResource Include="ManagerSchduleInsert.resx">
       <DependentUpon>ManagerSchduleInsert.vb</DependentUpon>
     </EmbeddedResource>
+
     <EmbeddedResource Include="ManagerScheduleReport.resx">
       <DependentUpon>ManagerScheduleReport.vb</DependentUpon>
     </EmbeddedResource>
+
     <EmbeddedResource Include="ManagerTranportInsert.resx">
       <DependentUpon>ManagerTranportInsert.vb</DependentUpon>
     </EmbeddedResource>

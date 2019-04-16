@@ -22,7 +22,7 @@ Partial Class StaffViewPromotionPart2
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.gbSchedulePromotion = New System.Windows.Forms.GroupBox()
         Me.lblTransport = New System.Windows.Forms.Label()
         Me.dgvPromotionList = New System.Windows.Forms.DataGridView()
@@ -39,7 +39,6 @@ Partial Class StaffViewPromotionPart2
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btnDone = New System.Windows.Forms.Button()
-        Me.StaffMenuLayoutControl1 = New PublicTransportTicketingSystem.staffMenuLayoutControl()
         Me.gbSchedulePromotion.SuspendLayout()
         CType(Me.dgvPromotionList, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -64,7 +63,7 @@ Partial Class StaffViewPromotionPart2
         Me.gbSchedulePromotion.Controls.Add(Me.btnDone)
         Me.gbSchedulePromotion.Font = New System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.gbSchedulePromotion.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.gbSchedulePromotion.Location = New System.Drawing.Point(255, 96)
+        Me.gbSchedulePromotion.Location = New System.Drawing.Point(12, 12)
         Me.gbSchedulePromotion.Name = "gbSchedulePromotion"
         Me.gbSchedulePromotion.Size = New System.Drawing.Size(520, 438)
         Me.gbSchedulePromotion.TabIndex = 24
@@ -91,9 +90,9 @@ Partial Class StaffViewPromotionPart2
         Me.dgvPromotionList.Location = New System.Drawing.Point(24, 214)
         Me.dgvPromotionList.Name = "dgvPromotionList"
         Me.dgvPromotionList.ReadOnly = True
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Tw Cen MT", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Black
-        Me.dgvPromotionList.RowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Tw Cen MT", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Black
+        Me.dgvPromotionList.RowsDefaultCellStyle = DataGridViewCellStyle2
         Me.dgvPromotionList.ScrollBars = System.Windows.Forms.ScrollBars.None
         Me.dgvPromotionList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvPromotionList.Size = New System.Drawing.Size(386, 133)
@@ -223,23 +222,15 @@ Partial Class StaffViewPromotionPart2
         Me.btnDone.Text = "&DONE"
         Me.btnDone.UseVisualStyleBackColor = False
         '
-        'StaffMenuLayoutControl1
-        '
-        Me.StaffMenuLayoutControl1.Location = New System.Drawing.Point(-1, -1)
-        Me.StaffMenuLayoutControl1.Margin = New System.Windows.Forms.Padding(0)
-        Me.StaffMenuLayoutControl1.Name = "StaffMenuLayoutControl1"
-        Me.StaffMenuLayoutControl1.Size = New System.Drawing.Size(800, 575)
-        Me.StaffMenuLayoutControl1.TabIndex = 0
-        '
         'StaffViewPromotionPart2
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(801, 575)
+        Me.ClientSize = New System.Drawing.Size(539, 445)
         Me.Controls.Add(Me.gbSchedulePromotion)
-        Me.Controls.Add(Me.StaffMenuLayoutControl1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "StaffViewPromotionPart2"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "StaffViewPromotionPart2"
         Me.gbSchedulePromotion.ResumeLayout(False)
         Me.gbSchedulePromotion.PerformLayout()
@@ -247,8 +238,6 @@ Partial Class StaffViewPromotionPart2
         Me.ResumeLayout(False)
 
     End Sub
-
-    Friend WithEvents StaffMenuLayoutControl1 As staffMenuLayoutControl
     Friend WithEvents gbSchedulePromotion As GroupBox
     Friend WithEvents lblDiscount As Label
     Friend WithEvents Label7 As Label

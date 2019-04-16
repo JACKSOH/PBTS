@@ -49,22 +49,19 @@ Partial Class StaffViewPromotion
         Me.gbBus.Controls.Add(Me.Label5)
         Me.gbBus.Font = New System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.gbBus.ForeColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(53, Byte), Integer), CType(CType(65, Byte), Integer))
-        Me.gbBus.Location = New System.Drawing.Point(325, 255)
-        Me.gbBus.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.gbBus.Location = New System.Drawing.Point(244, 207)
         Me.gbBus.Name = "gbBus"
-        Me.gbBus.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.gbBus.Size = New System.Drawing.Size(715, 425)
+        Me.gbBus.Size = New System.Drawing.Size(536, 345)
         Me.gbBus.TabIndex = 40
         Me.gbBus.TabStop = False
         Me.gbBus.Text = "Promotion"
         '
         'dpPromotionDate
         '
-        Me.dpPromotionDate.Location = New System.Drawing.Point(119, 69)
-        Me.dpPromotionDate.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.dpPromotionDate.Location = New System.Drawing.Point(89, 56)
         Me.dpPromotionDate.MinDate = New Date(2019, 3, 24, 0, 0, 0, 0)
         Me.dpPromotionDate.Name = "dpPromotionDate"
-        Me.dpPromotionDate.Size = New System.Drawing.Size(376, 28)
+        Me.dpPromotionDate.Size = New System.Drawing.Size(283, 24)
         Me.dpPromotionDate.TabIndex = 49
         '
         'Label1
@@ -72,10 +69,9 @@ Partial Class StaffViewPromotion
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Tw Cen MT", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.Black
-        Me.Label1.Location = New System.Drawing.Point(24, 74)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label1.Location = New System.Drawing.Point(18, 60)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(46, 22)
+        Me.Label1.Size = New System.Drawing.Size(37, 17)
         Me.Label1.TabIndex = 48
         Me.Label1.Text = "Date"
         '
@@ -86,8 +82,7 @@ Partial Class StaffViewPromotion
         Me.dgvPromotionList.BackgroundColor = System.Drawing.SystemColors.ControlLightLight
         Me.dgvPromotionList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvPromotionList.GridColor = System.Drawing.SystemColors.ControlLightLight
-        Me.dgvPromotionList.Location = New System.Drawing.Point(28, 113)
-        Me.dgvPromotionList.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.dgvPromotionList.Location = New System.Drawing.Point(21, 92)
         Me.dgvPromotionList.Name = "dgvPromotionList"
         Me.dgvPromotionList.ReadOnly = True
         DataGridViewCellStyle1.Font = New System.Drawing.Font("Tw Cen MT", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -95,7 +90,7 @@ Partial Class StaffViewPromotion
         Me.dgvPromotionList.RowsDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvPromotionList.ScrollBars = System.Windows.Forms.ScrollBars.None
         Me.dgvPromotionList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvPromotionList.Size = New System.Drawing.Size(653, 270)
+        Me.dgvPromotionList.Size = New System.Drawing.Size(490, 219)
         Me.dgvPromotionList.TabIndex = 47
         '
         'lblCount
@@ -103,10 +98,9 @@ Partial Class StaffViewPromotion
         Me.lblCount.AutoSize = True
         Me.lblCount.Font = New System.Drawing.Font("Tw Cen MT", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblCount.ForeColor = System.Drawing.Color.Black
-        Me.lblCount.Location = New System.Drawing.Point(29, 386)
-        Me.lblCount.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblCount.Location = New System.Drawing.Point(22, 314)
         Me.lblCount.Name = "lblCount"
-        Me.lblCount.Size = New System.Drawing.Size(101, 22)
+        Me.lblCount.Size = New System.Drawing.Size(81, 17)
         Me.lblCount.TabIndex = 46
         Me.lblCount.Text = "X record(s)."
         '
@@ -114,10 +108,9 @@ Partial Class StaffViewPromotion
         '
         Me.txtPromotion.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtPromotion.ForeColor = System.Drawing.Color.Black
-        Me.txtPromotion.Location = New System.Drawing.Point(119, 37)
-        Me.txtPromotion.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtPromotion.Location = New System.Drawing.Point(89, 30)
         Me.txtPromotion.Name = "txtPromotion"
-        Me.txtPromotion.Size = New System.Drawing.Size(376, 23)
+        Me.txtPromotion.Size = New System.Drawing.Size(283, 20)
         Me.txtPromotion.TabIndex = 45
         '
         'btnClear
@@ -125,10 +118,9 @@ Partial Class StaffViewPromotion
         Me.btnClear.BackColor = System.Drawing.Color.Gray
         Me.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnClear.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.btnClear.Location = New System.Drawing.Point(553, 31)
-        Me.btnClear.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnClear.Location = New System.Drawing.Point(415, 25)
         Me.btnClear.Name = "btnClear"
-        Me.btnClear.Size = New System.Drawing.Size(133, 34)
+        Me.btnClear.Size = New System.Drawing.Size(100, 28)
         Me.btnClear.TabIndex = 31
         Me.btnClear.Text = "&CLEAR"
         Me.btnClear.UseVisualStyleBackColor = False
@@ -138,19 +130,18 @@ Partial Class StaffViewPromotion
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Tw Cen MT", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.Black
-        Me.Label5.Location = New System.Drawing.Point(24, 37)
-        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label5.Location = New System.Drawing.Point(18, 30)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(62, 22)
+        Me.Label5.Size = New System.Drawing.Size(49, 17)
         Me.Label5.TabIndex = 44
         Me.Label5.Text = "Search"
         '
         'TranportSelection1
         '
-        Me.TranportSelection1.Location = New System.Drawing.Point(324, 107)
-        Me.TranportSelection1.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.TranportSelection1.Location = New System.Drawing.Point(243, 87)
+        Me.TranportSelection1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.TranportSelection1.Name = "TranportSelection1"
-        Me.TranportSelection1.Size = New System.Drawing.Size(716, 128)
+        Me.TranportSelection1.Size = New System.Drawing.Size(537, 104)
         Me.TranportSelection1.TabIndex = 43
         '
         'StaffMenuLayoutControl1
@@ -159,20 +150,20 @@ Partial Class StaffViewPromotion
         Me.StaffMenuLayoutControl1.Location = New System.Drawing.Point(0, 0)
         Me.StaffMenuLayoutControl1.Margin = New System.Windows.Forms.Padding(0)
         Me.StaffMenuLayoutControl1.Name = "StaffMenuLayoutControl1"
-        Me.StaffMenuLayoutControl1.Size = New System.Drawing.Size(1067, 708)
+        Me.StaffMenuLayoutControl1.Size = New System.Drawing.Size(800, 575)
         Me.StaffMenuLayoutControl1.TabIndex = 42
         '
         'StaffViewPromotion
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1067, 708)
+        Me.ClientSize = New System.Drawing.Size(800, 575)
         Me.Controls.Add(Me.TranportSelection1)
         Me.Controls.Add(Me.gbBus)
         Me.Controls.Add(Me.StaffMenuLayoutControl1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "StaffViewPromotion"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "StaffViewPromotion"
         Me.gbBus.ResumeLayout(False)
         Me.gbBus.PerformLayout()

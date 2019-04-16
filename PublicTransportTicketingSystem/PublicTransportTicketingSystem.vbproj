@@ -167,6 +167,12 @@
     <Compile Include="ManagerLocationInsert.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ManagerManageAccount.Designer.vb">
+      <DependentUpon>ManagerManageAccount.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerManageAccount.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ManagerManageLocation.Designer.vb">
       <DependentUpon>ManagerManageLocation.vb</DependentUpon>
     </Compile>
@@ -299,6 +305,12 @@
       <DependentUpon>staffHome.vb</DependentUpon>
     </Compile>
     <Compile Include="staffHome.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StaffManageAccount.Designer.vb">
+      <DependentUpon>StaffManageAccount.vb</DependentUpon>
+    </Compile>
+    <Compile Include="StaffManageAccount.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="staffMenuLayoutControl.Designer.vb">
@@ -453,6 +465,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="staffHome.resx">
       <DependentUpon>staffHome.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StaffManageAccount.resx">
+      <DependentUpon>StaffManageAccount.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="staffMenuLayoutControl.resx">
       <DependentUpon>staffMenuLayoutControl.vb</DependentUpon>

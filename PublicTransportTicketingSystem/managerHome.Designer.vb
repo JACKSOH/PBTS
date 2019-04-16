@@ -27,19 +27,20 @@ Partial Class managerHome
         '
         'ManagerMenuLayoutControl1
         '
-        Me.ManagerMenuLayoutControl1.Location = New System.Drawing.Point(-4, 3)
-        Me.ManagerMenuLayoutControl1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.ManagerMenuLayoutControl1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.ManagerMenuLayoutControl1.Location = New System.Drawing.Point(0, 0)
         Me.ManagerMenuLayoutControl1.Name = "ManagerMenuLayoutControl1"
-        Me.ManagerMenuLayoutControl1.Size = New System.Drawing.Size(1067, 708)
+        Me.ManagerMenuLayoutControl1.Size = New System.Drawing.Size(799, 588)
         Me.ManagerMenuLayoutControl1.TabIndex = 0
         '
         'managerHome
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1065, 724)
+        Me.ClientSize = New System.Drawing.Size(799, 588)
         Me.Controls.Add(Me.ManagerMenuLayoutControl1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Name = "managerHome"
         Me.Text = "managerHome"
         Me.ResumeLayout(False)

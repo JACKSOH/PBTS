@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class staffTransaction
+Partial Class StaffManageAccount
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -22,31 +22,17 @@ Partial Class staffTransaction
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.StaffMenuLayoutControl1 = New PublicTransportTicketingSystem.staffMenuLayoutControl()
         Me.SuspendLayout()
         '
-        'StaffMenuLayoutControl1
-        '
-        Me.StaffMenuLayoutControl1.Location = New System.Drawing.Point(0, 0)
-        Me.StaffMenuLayoutControl1.Margin = New System.Windows.Forms.Padding(0)
-        Me.StaffMenuLayoutControl1.Name = "StaffMenuLayoutControl1"
-        Me.StaffMenuLayoutControl1.Size = New System.Drawing.Size(800, 575)
-        Me.StaffMenuLayoutControl1.TabIndex = 0
-        '
-        'staffTransaction
+        'StaffManageAccount
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 575)
-        Me.Controls.Add(Me.StaffMenuLayoutControl1)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Margin = New System.Windows.Forms.Padding(2)
-        Me.Name = "staffTransaction"
+        Me.ClientSize = New System.Drawing.Size(761, 450)
+        Me.Name = "StaffManageAccount"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "staffTransaction"
+        Me.Text = "StaffManageAccount"
         Me.ResumeLayout(False)
 
     End Sub
-
-    Friend WithEvents StaffMenuLayoutControl1 As staffMenuLayoutControl
 End Class

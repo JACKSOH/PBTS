@@ -11,7 +11,6 @@
         Me.LocationTableAdapter1.Fill(Me.PTTSDataSet.Location)
 
         dgv.ReadOnly = True
-        txtTest.Text = ts.selectedType.ToString
         'filter by type
         LocationTableAdapter1.FillBy2(PTTSDataSet.Location, ts.selectedType.ToLower)
 
@@ -105,7 +104,7 @@
         If dgv.CurrentCell.ColumnIndex = 2 And dgv.ReadOnly = False Then
 
             Dim locationType As String = dgv.Rows(dgv.CurrentCell.RowIndex).Cells(2).Value.ToString
-            txtTest.Text = locationType
+
             If locationType1.ToLower = "bus" Or locationType1.ToLower = "ferry" Or locationType1.ToLower = "train" Then
                 err.SetError(dgv, Nothing)
             Else
@@ -121,4 +120,6 @@
             originalName = dgv.CurrentCell.Value.ToString
         End If
     End Sub
+
+
 End Class

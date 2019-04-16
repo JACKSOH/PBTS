@@ -34,7 +34,7 @@
 
     Private Sub manageAccountClick(sender As Object, e As EventArgs) Handles ManagerMenuLayoutControl1.managerManageAccountClick
         Me.Hide()
-        'manageaccount
+        ManagerManageAccount.Show()
     End Sub
     Private Sub exitClick(sender As Object, e As EventArgs) Handles ManagerMenuLayoutControl1.managerExitClick
         End

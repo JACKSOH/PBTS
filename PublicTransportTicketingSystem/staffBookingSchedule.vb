@@ -74,9 +74,7 @@ Public Class staffBookingSchedule
                         Join des In db.LocationLists On schedule.scheduleID Equals (des.scheduleID)
                         Join originLocation In db.Locations On originLocation.locationID Equals (origin.locationID)
                         Join desLocation In db.Locations On desLocation.locationID Equals (des.locationID)
-
                         Where origin.locationID = originID And origin.locationStatus.ToLower = "origin" And des.locationID = desID And schedule.departureDateTime.Value.Date = StaffBooking.selectedDate.Date
-
                         Select originLocation.locationName, schedule.departureDateTime, schedule.scheduleID
 
             MessageBox.Show(query.First.locationName)
@@ -110,9 +108,6 @@ Public Class staffBookingSchedule
     Private Sub staffBookingSchedule_Shown(sender As Object, e As EventArgs) Handles Me.Shown
         bindData()
 
-
-    Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
-        Me.Hide()
-        StaffBooking.Show()
     End Sub
+
 End Class

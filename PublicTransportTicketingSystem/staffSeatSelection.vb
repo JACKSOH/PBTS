@@ -83,7 +83,7 @@
     End Sub
 
     Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
-        Me.Hide()
+        Me.Close()
         'Dim list As New List(Of Control) = FlowLayoutPanel.Controls.ToList()
         'For Each control As Control In flpSeat.Controls
         'flpSeat.Controls.Remove(control)

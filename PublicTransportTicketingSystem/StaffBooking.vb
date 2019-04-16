@@ -35,7 +35,7 @@ Public Class StaffBooking
 
             SqlConnection.Close()
 
-            type = TranportSelection1.txtTransType.Text.ToString
+            selectedType = TranportSelection1.txtTransType.Text.ToString
         Catch ex As Exception
             MessageBox.Show(ex.Message)
         End Try

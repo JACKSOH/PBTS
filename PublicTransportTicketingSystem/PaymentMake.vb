@@ -2,11 +2,20 @@
     Dim db As New PBTSDataContext()
     Dim totalOriginalPrice As Decimal = 0
     Dim totalDiscountedPrice As Decimal = 0
-    Dim discountedPrice As Decimal = 0
+    Friend discountedPrice As Decimal = 0
     Dim hasDiscount As Boolean = True
     Dim query1 As IQueryable(Of Integer)
+    Friend duration As String
+    Friend ticketNo As Integer = 0
+    Friend ticketID As String
 
     Private Sub PaymentMake_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim query2 = From schedule In db.Schedules
+                     Where schedule.scheduleID = staffBookingSchedule.scheduleID
+                     Select schedule.estimateHours
+
+        duration = CInt(query2.First).ToString
+
         Dim query = From schedule In db.Schedules
                     Where schedule.scheduleID = staffBookingSchedule.scheduleID
                     Join transport In db.Transports On transport.transportID Equals (schedule.transportID)
@@ -14,8 +23,8 @@
 
         lblDiscount.Text = "Discounted from RM70.00"
         lblPassengerName.Text = staffBookingCustomerDetail.custname
-        lblDepartureDate.Text = staffBookingSchedule.departureDate.Substring(0, 10)
-        lblDepartureTime.Text = staffBookingSchedule.departureDate.Substring(11)
+        lblDepartureDate.Text = staffBookingSchedule.departureDate.ToShortDateString
+        lblDepartureTime.Text = staffBookingSchedule.departureDate.ToShortTimeString
         lblOrigin.Text = StaffBooking.selectedOrigin
         lblDestination.Text = StaffBooking.selectedDestination
         lblCompany.Text = query.First.transportName
@@ -26,6 +35,7 @@
                          Where promote.scheduleID = staffBookingSchedule.scheduleID
                          Select promote.discountRate
 
+            hasDiscount = True
         Catch ex As Exception
             hasDiscount = False
         End Try
@@ -45,7 +55,7 @@
             totalOriginalPrice = totalOriginalPrice + price
 
             If hasDiscount = True Then
-                discountedPrice = Decimal.Parse((price * query1.First).ToString)
+                discountedPrice = Decimal.Parse((price - price * (query1.First * 0.01)).ToString)
             Else
                 discountedPrice = price
             End If
@@ -67,9 +77,23 @@
 
     Private Sub btnGenerateTicket_Click(sender As Object, e As EventArgs) Handles btnGenerateTicket.Click
 
-        Dim printTicket As PaymentPrintTicket
-        printTicket = New PaymentPrintTicket()
-        printTicket.Show()
+        Dim response = MessageBox.Show("Confirmed?", "Generate Ticket", MessageBoxButtons.OKCancel)
+
+        If response = DialogResult.OK Then
+            staffBookingCustomerDetail.storeData()
+
+            For Each element In staffBookingCustomerDetail.seatidlist
+                Dim query3 = From ticket In db.Tickets
+                             Where ticket.bookingID = staffBookingCustomerDetail.bookingID And ticket.seatID = element
+                             Select ticket.ticketID
+                ticketID = query3.First
+                Dim printTicket As PaymentPrintTicket
+                printTicket = New PaymentPrintTicket()
+                printTicket.Show()
+                ticketNo += 1
+            Next
+        End If
+
     End Sub
 
 
@@ -100,5 +124,7 @@
 
     End Sub
 
-
+    Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
+        Me.Close()
+    End Sub
 End Class

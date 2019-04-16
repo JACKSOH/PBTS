@@ -107,12 +107,14 @@ Public Class ManageCreatePromotionPart2
                 cmd.Parameters.Add(New SqlParameter("promotionStatus", "Active"))
 
                 cmd.ExecuteNonQuery()
+
             con.Close()
             Dim psID As String = ""
 
             Try
                 psID = db.promoteSchedules.OrderByDescending(Function(o) o.promoteScheduleID).FirstOrDefault.promoteScheduleID.ToString
             Catch ex As Exception
+
 
             End Try
             con.Open()

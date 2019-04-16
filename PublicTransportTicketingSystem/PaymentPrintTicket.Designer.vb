@@ -33,14 +33,14 @@ Partial Class PaymentPrintTicket
         Me.lblDepartureDateTime = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.lblCustomerName = New System.Windows.Forms.Label()
+        Me.lblPassengerName = New System.Windows.Forms.Label()
         Me.lblTicketTitle = New System.Windows.Forms.Label()
         Me.lblTicketID = New System.Windows.Forms.Label()
         Me.PrintDocument1 = New System.Drawing.Printing.PrintDocument()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.lblEstimatedDuration = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
+        Me.lblGenerated = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'lblSeat
@@ -154,16 +154,16 @@ Partial Class PaymentPrintTicket
         Me.Label2.TabIndex = 27
         Me.Label2.Text = "Passenger:"
         '
-        'lblCustomerName
+        'lblPassengerName
         '
-        Me.lblCustomerName.BackColor = System.Drawing.Color.Transparent
-        Me.lblCustomerName.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblCustomerName.Location = New System.Drawing.Point(139, 70)
-        Me.lblCustomerName.Name = "lblCustomerName"
-        Me.lblCustomerName.Size = New System.Drawing.Size(195, 23)
-        Me.lblCustomerName.TabIndex = 28
-        Me.lblCustomerName.Text = "John Cena"
-        Me.lblCustomerName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.lblPassengerName.BackColor = System.Drawing.Color.Transparent
+        Me.lblPassengerName.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPassengerName.Location = New System.Drawing.Point(139, 70)
+        Me.lblPassengerName.Name = "lblPassengerName"
+        Me.lblPassengerName.Size = New System.Drawing.Size(195, 23)
+        Me.lblPassengerName.TabIndex = 28
+        Me.lblPassengerName.Text = "John Cena"
+        Me.lblPassengerName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'lblTicketTitle
         '
@@ -228,17 +228,17 @@ Partial Class PaymentPrintTicket
         Me.Label1.Text = "→"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'Label3
+        'lblGenerated
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.BackColor = System.Drawing.Color.Transparent
-        Me.Label3.Font = New System.Drawing.Font("Courier New", 7.8!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(12, 194)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(416, 17)
-        Me.Label3.TabIndex = 50
-        Me.Label3.Text = "This ticket was generated at 12:56pm on 11/04/2019."
-        Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.lblGenerated.AutoSize = True
+        Me.lblGenerated.BackColor = System.Drawing.Color.Transparent
+        Me.lblGenerated.Font = New System.Drawing.Font("Courier New", 7.8!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblGenerated.Location = New System.Drawing.Point(12, 194)
+        Me.lblGenerated.Name = "lblGenerated"
+        Me.lblGenerated.Size = New System.Drawing.Size(416, 17)
+        Me.lblGenerated.TabIndex = 50
+        Me.lblGenerated.Text = "This ticket was generated at 12:56pm on 11/04/2019."
+        Me.lblGenerated.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'PaymentPrintTicket
         '
@@ -246,7 +246,7 @@ Partial Class PaymentPrintTicket
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.ClientSize = New System.Drawing.Size(950, 220)
-        Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.lblGenerated)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.lblEstimatedDuration)
         Me.Controls.Add(Me.Label5)
@@ -262,7 +262,7 @@ Partial Class PaymentPrintTicket
         Me.Controls.Add(Me.lblDepartureDateTime)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.lblCustomerName)
+        Me.Controls.Add(Me.lblPassengerName)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "PaymentPrintTicket"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -282,12 +282,12 @@ Partial Class PaymentPrintTicket
     Friend WithEvents lblDepartureDateTime As Label
     Friend WithEvents Label6 As Label
     Friend WithEvents Label2 As Label
-    Friend WithEvents lblCustomerName As Label
+    Friend WithEvents lblPassengerName As Label
     Friend WithEvents lblTicketTitle As Label
     Friend WithEvents lblTicketID As Label
     Friend WithEvents PrintDocument1 As Printing.PrintDocument
     Friend WithEvents Label5 As Label
     Friend WithEvents lblEstimatedDuration As Label
     Friend WithEvents Label1 As Label
-    Friend WithEvents Label3 As Label
+    Friend WithEvents lblGenerated As Label
 End Class

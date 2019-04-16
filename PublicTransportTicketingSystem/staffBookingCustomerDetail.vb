@@ -2,6 +2,8 @@
 
 Public Class staffBookingCustomerDetail
     Dim db As New PBTSDataContext()
+    Public seatidlist As New List(Of String)
+    Public bookingID As String
 
     'for payment purpose
 
@@ -53,60 +55,72 @@ Public Class staffBookingCustomerDetail
 
     Private Sub btnProceed_Click(sender As Object, e As EventArgs) Handles btnProceed.Click
 
+        'storeData()
+        'MessageBox.Show("Successfully Book", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+        'go to payment page
+
+        custname = txtName.Text
+        PaymentMake.ShowDialog()
+
+
+    End Sub
+    Public Sub storeData()
         Try
 
 
             'for validating purpose
             Dim err As New StringBuilder()
-            Dim ctr As Control = Nothing
+        Dim ctr As Control = Nothing
 
-            'read input
-            ic = If(mskIC.MaskCompleted, mskIC.Text, "")
-            contactNo = If(mskContact.MaskCompleted, mskContact.Text, "")
-            custname = txtName.Text.Trim
+        'read input
+        ic = If(mskIC.MaskCompleted, mskIC.Text, "")
+        contactNo = If(mskContact.MaskCompleted, mskContact.Text, "")
+        custname = txtName.Text
 
-            'validate ic
-            If ic = "" Then
-                err.AppendLine("- Invalid Customer IC")
-                ctr = If(ctr, mskIC)
-            End If
+        'validate ic
+        If ic = "" Then
+            err.AppendLine("- Invalid Customer IC")
+            ctr = If(ctr, mskIC)
+        End If
 
-            'validate contact
-            If contactNo = "" Then
-                err.AppendLine("- Invalid Customer Contact No.")
-                ctr = If(ctr, mskContact)
-            End If
+        'validate contact
+        If contactNo = "" Then
+            err.AppendLine("- Invalid Customer Contact No.")
+            ctr = If(ctr, mskContact)
+        End If
 
-            'validate email
-            If custname = "" Then
-                err.AppendLine("- Customer Name field cannot be empty")
-                ctr = If(ctr, txtName)
-            End If
+        'validate email
+        If custname = "" Then
+            err.AppendLine("- Customer Name field cannot be empty")
+            ctr = If(ctr, txtName)
+        End If
 
-            'check if input error
-            If err.Length > 0 Then
-                MessageBox.Show(err.ToString, "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                ctr.Focus()
-                Return
-            End If
+        'check if input error
+        If err.Length > 0 Then
+            MessageBox.Show(err.ToString, "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            ctr.Focus()
+            Return
+        End If
 
 
 
-            Dim getIdQuery = From booking In db.Bookings
-                             Select booking.bookingID
+        Dim getIdQuery = From booking In db.Bookings
+                         Select booking.bookingID
 
-            Dim oldBookingID As String = getIdQuery.ToList.LastOrDefault
+        Dim oldBookingID As String = getIdQuery.ToList.LastOrDefault
 
-            MessageBox.Show(App.GenerateNextId(oldBookingID))
 
-            Dim book As New Booking
-            App.table = "Booking"
-            book.bookingID = App.GenerateNextId(oldBookingID)
-            book.customerIC = mskIC.Text
-            book.customerContactNo = mskContact.Text
-            book.customerName = custname
-            book.employeeID = "em0001"
-            db.Bookings.InsertOnSubmit(book)
+        Dim book As New Booking
+        App.table = "Booking"
+        bookingID = App.GenerateNextId(oldBookingID)
+        book.bookingID = bookingID
+        book.customerIC = mskIC.Text.Replace("-", "")
+
+        book.customerContactNo = mskContact.Text
+        book.customerName = custname
+        book.employeeID = "em0001"
+        db.Bookings.InsertOnSubmit(book)
             Try
                 db.SubmitChanges()
 
@@ -122,7 +136,7 @@ Public Class staffBookingCustomerDetail
                                            Select t.ticketID
 
                     Dim sprice As Decimal = Decimal.Parse(getseatIDQuery.First.seatPrice.ToString)
-
+                    seatidlist.Add(getseatIDQuery.First.seatID)
                     Dim oldTicketID As String = getticketIdQuery.ToList.LastOrDefault
 
 
@@ -134,7 +148,7 @@ Public Class staffBookingCustomerDetail
                     ticket.seatID = seatid
                     ticket.purchaseDateTime = DateTime.Now
                     ticket.ticketPrice = sprice
-                    ticket.bookingID = newId
+                    ticket.bookingID = bookingID
                     db.Tickets.InsertOnSubmit(ticket)
                     Try
                         db.SubmitChanges()
@@ -169,12 +183,7 @@ Public Class staffBookingCustomerDetail
         Catch ex As Exception
             MessageBox.Show(ex.Message)
         End Try
-        MessageBox.Show("Successfully Book", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information)
-
-        'go to payment page
-
-        PaymentMake.ShowDialog()
-
     End Sub
+
 
 End Class

@@ -345,7 +345,7 @@
     End Sub
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
         If cboOrigin.SelectedValue.ToString = cboDestination.SelectedValue.ToString Then
-            MessageBox.Show("Destionation and Origin", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            MessageBox.Show("Destination and Origin cannot be same!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
         Else
             err.SetError(cboDestination, Nothing)
             Select Case cboCreating.SelectedIndex
@@ -365,6 +365,11 @@
     End Sub
 
     Private Sub cboCreating_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboCreating.SelectedIndexChanged
+
+    End Sub
+
+    Private Sub ManagerSchduleInsert_Shown(sender As Object, e As EventArgs) Handles Me.Shown
+
 
     End Sub
 End Class

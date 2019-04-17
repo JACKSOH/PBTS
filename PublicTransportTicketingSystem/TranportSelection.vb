@@ -6,6 +6,8 @@
         pbTrain.BorderStyle = BorderStyle.Fixed3D
         pbFerry.BorderStyle = BorderStyle.FixedSingle
         pbBus.BorderStyle = BorderStyle.FixedSingle
+
+
         selectedType = "Train"
         txtTransType.Text = "Train"
 
@@ -35,5 +37,10 @@
 
     Private Sub txtTransType_TextChanged(sender As Object, e As EventArgs) Handles txtTransType.TextChanged
         RaiseEvent TransportChange(sender, e)
+    End Sub
+
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+        lblBusPromotion.ForeColor = Color.Red
+
     End Sub
 End Class

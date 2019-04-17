@@ -73,7 +73,7 @@ Partial Class ManagerSchduleInsert
         'dtpTime
         '
         Me.dtpTime.Format = System.Windows.Forms.DateTimePickerFormat.Time
-        Me.dtpTime.Location = New System.Drawing.Point(310, 275)
+        Me.dtpTime.Location = New System.Drawing.Point(334, 275)
         Me.dtpTime.Margin = New System.Windows.Forms.Padding(4)
         Me.dtpTime.MaxDate = New Date(2020, 12, 31, 0, 0, 0, 0)
         Me.dtpTime.Name = "dtpTime"
@@ -225,7 +225,7 @@ Partial Class ManagerSchduleInsert
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Tw Cen MT", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(306, 245)
+        Me.Label6.Location = New System.Drawing.Point(330, 245)
         Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(42, 19)
@@ -247,7 +247,7 @@ Partial Class ManagerSchduleInsert
         Me.cboCreating.Items.AddRange(New Object() {"Does not repeat", "Weekly on X (within this month)", "Everyday within a week"})
         Me.cboCreating.Location = New System.Drawing.Point(109, 340)
         Me.cboCreating.Name = "cboCreating"
-        Me.cboCreating.Size = New System.Drawing.Size(239, 27)
+        Me.cboCreating.Size = New System.Drawing.Size(353, 27)
         Me.cboCreating.TabIndex = 19
         '
         'Label7

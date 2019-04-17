@@ -30,15 +30,7 @@
         lblCompany.Text = query.First.transportName
         lblLicensePlate.Text = query.First.licensePlate
 
-        Try
-            Dim query1 = From promote In db.promoteSchedules
-                         Where promote.scheduleID = staffBookingSchedule.scheduleID
-                         Select promote.discountRate
 
-            hasDiscount = True
-        Catch ex As Exception
-            hasDiscount = False
-        End Try
 
         If query1 Is Nothing Then
             hasDiscount = False
@@ -53,12 +45,23 @@
 
             Dim price As Decimal = Decimal.Parse(displaySeatQuery.First.seatPrice.ToString)
             totalOriginalPrice = totalOriginalPrice + price
+            Try
+                Dim query1 = From promote In db.promoteSchedules
+                             Where promote.scheduleID = staffBookingSchedule.scheduleID
+                             Select promote.discountRate
 
-            If hasDiscount = True Then
                 discountedPrice = Decimal.Parse((price - price * (query1.First * 0.01)).ToString)
-            Else
+                lblDiscount.Text = "Discounted from RM" & totalOriginalPrice
+            Catch ex As Exception
+                lblDiscount.Text = "No discount"
                 discountedPrice = price
-            End If
+            End Try
+
+            'If hasDiscount = True Then
+            '    discountedPrice = Decimal.Parse((price - price * (query1.First * 0.01)).ToString)
+            'Else
+            '    discountedPrice = price
+            'End If
             totalDiscountedPrice = totalDiscountedPrice + discountedPrice
 
             dgvSeatPrice.Rows.Add(displaySeatQuery.First.seatNumber.ToString, discountedPrice.ToString("RM 0.00"))
@@ -67,11 +70,11 @@
 
         lblTotalPrice.Text = totalDiscountedPrice.ToString("0.00")
 
-        If hasDiscount = True Then
-            lblDiscount.Text = "Discounted from RM" & totalOriginalPrice
-        Else
-            lblDiscount.Text = "No discount"
-        End If
+        'If hasDiscount = True Then
+        '    lblDiscount.Text = "Discounted from RM" & totalOriginalPrice
+        'Else
+        '    lblDiscount.Text = "No discount"
+        'End If
 
     End Sub
 

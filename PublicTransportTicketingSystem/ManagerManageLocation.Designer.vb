@@ -39,7 +39,7 @@ Partial Class ManagerManageLocation
         Me.err = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.ts = New PublicTransportTicketingSystem.TranportSelection()
         Me.ManagerMenuLayoutControl1 = New PublicTransportTicketingSystem.managerMenuLayoutControl()
-        Me.BookingTableAdapter1 = New PublicTransportTicketingSystem.DataSet1TableAdapters.BookingTableAdapter()
+
         Me.Label6 = New System.Windows.Forms.Label()
         CType(Me.dgv, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LocationBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -185,7 +185,7 @@ Partial Class ManagerManageLocation
         '
         'BookingTableAdapter1
         '
-        Me.BookingTableAdapter1.ClearBeforeFill = True
+
         '
         'Label6
         '
@@ -239,6 +239,6 @@ Partial Class ManagerManageLocation
     Friend WithEvents LocationTypeDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents err As ErrorProvider
     Friend WithEvents lblRecord As Label
-    Friend WithEvents BookingTableAdapter1 As DataSet1TableAdapters.BookingTableAdapter
+
     Friend WithEvents Label6 As Label
 End Class

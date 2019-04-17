@@ -22,6 +22,7 @@ Partial Class TranportSelection
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.lblTrainPromotion = New System.Windows.Forms.Label()
         Me.lblFerryPromotion = New System.Windows.Forms.Label()
@@ -31,6 +32,7 @@ Partial Class TranportSelection
         Me.Label1 = New System.Windows.Forms.Label()
         Me.pbBus = New System.Windows.Forms.PictureBox()
         Me.pbTrain = New System.Windows.Forms.PictureBox()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.GroupBox1.SuspendLayout()
         CType(Me.pbFerry, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbBus, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -148,6 +150,9 @@ Partial Class TranportSelection
         Me.pbTrain.TabStop = False
         Me.pbTrain.Tag = "Train"
         '
+        'Timer1
+        '
+        '
         'TranportSelection
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -173,4 +178,5 @@ Partial Class TranportSelection
     Friend WithEvents Label1 As Label
     Friend WithEvents pbBus As PictureBox
     Friend WithEvents pbTrain As PictureBox
+    Friend WithEvents Timer1 As Timer
 End Class

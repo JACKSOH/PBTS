@@ -40,6 +40,7 @@ Partial Class ManagerManageSchedule
         Me.ts = New PublicTransportTicketingSystem.TranportSelection()
         Me.ManagerMenuLayoutControl1 = New PublicTransportTicketingSystem.managerMenuLayoutControl()
         Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
         CType(Me.dgvSchedule, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -52,13 +53,14 @@ Partial Class ManagerManageSchedule
         '
         Me.dgvSchedule.BackgroundColor = System.Drawing.SystemColors.Control
         Me.dgvSchedule.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvSchedule.Location = New System.Drawing.Point(6, 19)
+        Me.dgvSchedule.Location = New System.Drawing.Point(8, 19)
         Me.dgvSchedule.Name = "dgvSchedule"
-        Me.dgvSchedule.Size = New System.Drawing.Size(405, 291)
+        Me.dgvSchedule.Size = New System.Drawing.Size(553, 346)
         Me.dgvSchedule.TabIndex = 2
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Controls.Add(Me.lblRecord)
         Me.GroupBox1.Controls.Add(Me.PictureBox2)
         Me.GroupBox1.Controls.Add(Me.dtpDate)
@@ -69,9 +71,9 @@ Partial Class ManagerManageSchedule
         Me.GroupBox1.Controls.Add(Me.dgvSchedule)
         Me.GroupBox1.Controls.Add(Me.btnAdd)
         Me.GroupBox1.Font = New System.Drawing.Font("Tw Cen MT Condensed", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox1.Location = New System.Drawing.Point(235, 184)
+        Me.GroupBox1.Location = New System.Drawing.Point(266, 223)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(571, 350)
+        Me.GroupBox1.Size = New System.Drawing.Size(720, 414)
         Me.GroupBox1.TabIndex = 3
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Schedule "
@@ -80,7 +82,7 @@ Partial Class ManagerManageSchedule
         '
         Me.lblRecord.AutoSize = True
         Me.lblRecord.Font = New System.Drawing.Font("Tw Cen MT Condensed", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblRecord.Location = New System.Drawing.Point(6, 313)
+        Me.lblRecord.Location = New System.Drawing.Point(6, 368)
         Me.lblRecord.Name = "lblRecord"
         Me.lblRecord.Size = New System.Drawing.Size(93, 17)
         Me.lblRecord.TabIndex = 20
@@ -89,7 +91,7 @@ Partial Class ManagerManageSchedule
         'PictureBox2
         '
         Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
-        Me.PictureBox2.Location = New System.Drawing.Point(420, 106)
+        Me.PictureBox2.Location = New System.Drawing.Point(577, 219)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(27, 21)
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -99,16 +101,16 @@ Partial Class ManagerManageSchedule
         'dtpDate
         '
         Me.dtpDate.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpDate.Location = New System.Drawing.Point(452, 106)
+        Me.dtpDate.Location = New System.Drawing.Point(609, 219)
         Me.dtpDate.Name = "dtpDate"
-        Me.dtpDate.Size = New System.Drawing.Size(79, 24)
+        Me.dtpDate.Size = New System.Drawing.Size(95, 24)
         Me.dtpDate.TabIndex = 3
         '
         'Label2
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(417, 85)
+        Me.Label2.Location = New System.Drawing.Point(574, 198)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(74, 18)
         Me.Label2.TabIndex = 2
@@ -117,7 +119,7 @@ Partial Class ManagerManageSchedule
         'PictureBox1
         '
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(418, 51)
+        Me.PictureBox1.Location = New System.Drawing.Point(575, 164)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(27, 21)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -128,7 +130,7 @@ Partial Class ManagerManageSchedule
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(417, 30)
+        Me.Label1.Location = New System.Drawing.Point(574, 143)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(101, 18)
         Me.Label1.TabIndex = 0
@@ -136,9 +138,9 @@ Partial Class ManagerManageSchedule
         '
         'txtSearch
         '
-        Me.txtSearch.Location = New System.Drawing.Point(451, 51)
+        Me.txtSearch.Location = New System.Drawing.Point(608, 164)
         Me.txtSearch.Name = "txtSearch"
-        Me.txtSearch.Size = New System.Drawing.Size(73, 24)
+        Me.txtSearch.Size = New System.Drawing.Size(96, 24)
         Me.txtSearch.TabIndex = 1
         '
         'btnAdd
@@ -146,7 +148,7 @@ Partial Class ManagerManageSchedule
         Me.btnAdd.BackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(53, Byte), Integer), CType(CType(65, Byte), Integer))
         Me.btnAdd.Font = New System.Drawing.Font("Tw Cen MT Condensed", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAdd.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnAdd.Location = New System.Drawing.Point(408, 150)
+        Me.btnAdd.Location = New System.Drawing.Point(537, 303)
         Me.btnAdd.Name = "btnAdd"
         Me.btnAdd.Size = New System.Drawing.Size(81, 37)
         Me.btnAdd.TabIndex = 4
@@ -169,7 +171,7 @@ Partial Class ManagerManageSchedule
         '
         'ts
         '
-        Me.ts.Location = New System.Drawing.Point(235, 73)
+        Me.ts.Location = New System.Drawing.Point(303, 112)
         Me.ts.Margin = New System.Windows.Forms.Padding(4)
         Me.ts.Name = "ts"
         Me.ts.Size = New System.Drawing.Size(570, 104)
@@ -177,11 +179,11 @@ Partial Class ManagerManageSchedule
         '
         'ManagerMenuLayoutControl1
         '
-        Me.ManagerMenuLayoutControl1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.ManagerMenuLayoutControl1.Dock = System.Windows.Forms.DockStyle.Left
         Me.ManagerMenuLayoutControl1.Location = New System.Drawing.Point(0, 0)
         Me.ManagerMenuLayoutControl1.Margin = New System.Windows.Forms.Padding(4)
         Me.ManagerMenuLayoutControl1.Name = "ManagerMenuLayoutControl1"
-        Me.ManagerMenuLayoutControl1.Size = New System.Drawing.Size(818, 546)
+        Me.ManagerMenuLayoutControl1.Size = New System.Drawing.Size(838, 637)
         Me.ManagerMenuLayoutControl1.TabIndex = 0
         '
         'Label6
@@ -194,11 +196,22 @@ Partial Class ManagerManageSchedule
         Me.Label6.TabIndex = 37
         Me.Label6.Text = "Manage Schedule"
         '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Tw Cen MT Condensed", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.Red
+        Me.Label3.Location = New System.Drawing.Point(215, 365)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(346, 22)
+        Me.Label3.TabIndex = 21
+        Me.Label3.Text = "*You can manage screen by double click the record."
+        '
         'ManagerManageSchedule
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(818, 546)
+        Me.ClientSize = New System.Drawing.Size(1027, 637)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.ts)
         Me.Controls.Add(Me.GroupBox1)
@@ -233,4 +246,5 @@ Partial Class ManagerManageSchedule
     Friend WithEvents lblRecord As Label
     Friend WithEvents ManagerMenuLayoutControl1 As managerMenuLayoutControl
     Friend WithEvents Label6 As Label
+    Friend WithEvents Label3 As Label
 End Class

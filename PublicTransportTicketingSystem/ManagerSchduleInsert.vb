@@ -92,7 +92,7 @@
             End Try
             App.table = "Location List"
             llOri.locationListID = App.GenerateNextId(OriId)
-            MessageBox.Show(llOri.locationListID)
+
             llOri.locationID = cboDestination.SelectedValue.ToString
             llOri.locationStatus = "Origin"
             db.LocationLists.InsertOnSubmit(llOri)
@@ -206,7 +206,7 @@
         End Try
         App.table = "Location List"
         llDest.locationListID = App.GenerateNextId(DestId)
-        MessageBox.Show(llDest.locationListID)
+
         llDest.locationID = cboOrigin.SelectedValue.ToString
         llDest.locationStatus = "Destination"
         db1.LocationLists.InsertOnSubmit(llDest)

@@ -142,5 +142,7 @@ Public Class managerIndex
         Me.Hide()
     End Sub
 
+    Private Sub BackPanel_Paint(sender As Object, e As PaintEventArgs) Handles BackPanel.Paint
 
+    End Sub
 End Class

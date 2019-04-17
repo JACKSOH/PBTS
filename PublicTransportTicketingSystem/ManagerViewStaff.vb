@@ -34,6 +34,7 @@
     End Sub
 
     Private Sub DataBind()
+
         Try
             Dim db As New PBTSDataContext()
             Dim query = From em In db.Employees
@@ -54,7 +55,7 @@
         End Try
     End Sub
 
-    Private Sub ManagerMenuLayoutControl1_Load(sender As Object, e As EventArgs) Handles ManagerMenuLayoutControl1.Load
+    Private Sub ManagerMenuLayoutControl1_Load(sender As Object, e As EventArgs) Handles MyBase.Shown
         DataBind()
     End Sub
 
@@ -95,7 +96,7 @@
         sIC = dgvStaffList.Item(4, i).Value.ToString
         contactNo = dgvStaffList.Item(5, i).Value.ToString
         email = dgvStaffList.Item(6, i).Value.ToString
-
+        DataBind()
         ManagerModifyStaff.Show()
         Me.Hide()
     End Sub
@@ -103,5 +104,9 @@
     Private Sub btnCreatePromotionPage_Click(sender As Object, e As EventArgs) Handles btnCreatePromotionPage.Click
         Me.Hide()
         ManagerCreateStaff.Show()
+    End Sub
+
+    Private Sub dgvStaffList_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvStaffList.CellContentClick
+
     End Sub
 End Class

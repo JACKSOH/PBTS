@@ -33,6 +33,15 @@
 
     End Sub
 
+    Public Event staffCancelClick(ByVal sender As Object, ByVal e As System.EventArgs)
+
+    Private Sub btnCancelClick(sender As Object, e As EventArgs) Handles btnCancel.Click
+        ParentForm.Hide()
+        PaymentCancel.Show()
+        RaiseEvent staffPromotionClick(sender, e)
+
+    End Sub
+
     Public Event staffAboutClick(ByVal sender As Object, ByVal e As System.EventArgs)
 
     Private Sub btnAboutClick(sender As Object, e As EventArgs) Handles btnAbout.Click

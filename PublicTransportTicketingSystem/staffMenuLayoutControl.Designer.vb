@@ -39,7 +39,7 @@ Partial Class staffMenuLayoutControl
         Me.pbStaffPromotion = New System.Windows.Forms.PictureBox()
         Me.btnStaffPromotion = New System.Windows.Forms.Button()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btnCancel = New System.Windows.Forms.Button()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         CType(Me.pbExit, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -176,7 +176,7 @@ Partial Class staffMenuLayoutControl
         Me.FlowLayoutPanel1.Controls.Add(Me.pbStaffPromotion)
         Me.FlowLayoutPanel1.Controls.Add(Me.btnStaffPromotion)
         Me.FlowLayoutPanel1.Controls.Add(Me.PictureBox2)
-        Me.FlowLayoutPanel1.Controls.Add(Me.Button1)
+        Me.FlowLayoutPanel1.Controls.Add(Me.btnCancel)
         Me.FlowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.FlowLayoutPanel1.Location = New System.Drawing.Point(0, 74)
         Me.FlowLayoutPanel1.Margin = New System.Windows.Forms.Padding(0)
@@ -286,23 +286,23 @@ Partial Class staffMenuLayoutControl
         Me.PictureBox2.TabIndex = 14
         Me.PictureBox2.TabStop = False
         '
-        'Button1
+        'btnCancel
         '
-        Me.Button1.AllowDrop = True
-        Me.Button1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button1.FlatAppearance.BorderSize = 0
-        Me.Button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Button1.Location = New System.Drawing.Point(55, 185)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(2)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(144, 39)
-        Me.Button1.TabIndex = 15
-        Me.Button1.Text = "Cancel Ticket"
-        Me.Button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btnCancel.AllowDrop = True
+        Me.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnCancel.FlatAppearance.BorderSize = 0
+        Me.btnCancel.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCancel.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCancel.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnCancel.Location = New System.Drawing.Point(55, 185)
+        Me.btnCancel.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnCancel.Name = "btnCancel"
+        Me.btnCancel.Size = New System.Drawing.Size(144, 39)
+        Me.btnCancel.TabIndex = 15
+        Me.btnCancel.Text = "Cancel Ticket"
+        Me.btnCancel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnCancel.UseVisualStyleBackColor = True
         '
         'staffMenuLayoutControl
         '
@@ -343,5 +343,5 @@ Partial Class staffMenuLayoutControl
     Friend WithEvents pbStaffPromotion As PictureBox
     Friend WithEvents btnStaffPromotion As Button
     Friend WithEvents PictureBox2 As PictureBox
-    Friend WithEvents Button1 As Button
+    Friend WithEvents btnCancel As Button
 End Class

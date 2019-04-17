@@ -151,8 +151,9 @@ Public Class staffBookingCustomerDetail
                     ticket.ticketID = App.GenerateNextId(oldTicketID)
                     ticket.seatID = seatid
                     ticket.purchaseDateTime = DateTime.Now
-                    ticket.ticketPrice = sprice
-                    ticket.bookingID = bookingID
+                ticket.ticketPrice = sprice
+                ticket.ticketStatus = "paid"
+                ticket.bookingID = bookingID
                     db.Tickets.InsertOnSubmit(ticket)
                     Try
                         db.SubmitChanges()

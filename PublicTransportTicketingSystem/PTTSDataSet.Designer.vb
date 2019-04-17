@@ -33,12 +33,6 @@ Partial Public Class PTTSDataSet
     
     Private tableLocationList As LocationListDataTable
     
-    Private tablepromoteSchedule As promoteScheduleDataTable
-    
-    Private tablePromotion As PromotionDataTable
-    
-    Private tableSchedule As ScheduleDataTable
-    
     Private tableSeat As SeatDataTable
     
     Private tableTicket As TicketDataTable
@@ -47,25 +41,29 @@ Partial Public Class PTTSDataSet
     
     Private tableLocation1 As Location1DataTable
     
+    Private tablePromotion As PromotionDataTable
+    
+    Private tableSchedule As ScheduleDataTable
+    
+    Private tablepromoteSchedule As promoteScheduleDataTable
+    
     Private relationFK_Booking_ToTable_1 As Global.System.Data.DataRelation
     
     Private relationFK_bookingTicketID As Global.System.Data.DataRelation
     
+    Private relationFK_LocationList_ToTable_1 As Global.System.Data.DataRelation
+    
+    Private relationFK_ticketSeatID As Global.System.Data.DataRelation
+    
     Private relationFK_LocationList_ToTable As Global.System.Data.DataRelation
     
-    Private relationFK_LocationList_ToTable_1 As Global.System.Data.DataRelation
+    Private relationFK_seatScheduleID As Global.System.Data.DataRelation
+    
+    Private relationFK_transportID As Global.System.Data.DataRelation
     
     Private relationFK_promotionID As Global.System.Data.DataRelation
     
     Private relationFK_scheduleID As Global.System.Data.DataRelation
-    
-    Private relationFK_transportID As Global.System.Data.DataRelation
-    
-    Private relationFK_seatScheduleID As Global.System.Data.DataRelation
-    
-    Private relationFK_ticketSeatID As Global.System.Data.DataRelation
-    
-    Private relationFK_LocationList_ToTable_11 As Global.System.Data.DataRelation
     
     Private _schemaSerializationMode As Global.System.Data.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
     
@@ -108,15 +106,6 @@ Partial Public Class PTTSDataSet
             If (Not (ds.Tables("LocationList")) Is Nothing) Then
                 MyBase.Tables.Add(New LocationListDataTable(ds.Tables("LocationList")))
             End If
-            If (Not (ds.Tables("promoteSchedule")) Is Nothing) Then
-                MyBase.Tables.Add(New promoteScheduleDataTable(ds.Tables("promoteSchedule")))
-            End If
-            If (Not (ds.Tables("Promotion")) Is Nothing) Then
-                MyBase.Tables.Add(New PromotionDataTable(ds.Tables("Promotion")))
-            End If
-            If (Not (ds.Tables("Schedule")) Is Nothing) Then
-                MyBase.Tables.Add(New ScheduleDataTable(ds.Tables("Schedule")))
-            End If
             If (Not (ds.Tables("Seat")) Is Nothing) Then
                 MyBase.Tables.Add(New SeatDataTable(ds.Tables("Seat")))
             End If
@@ -128,6 +117,15 @@ Partial Public Class PTTSDataSet
             End If
             If (Not (ds.Tables("Location1")) Is Nothing) Then
                 MyBase.Tables.Add(New Location1DataTable(ds.Tables("Location1")))
+            End If
+            If (Not (ds.Tables("Promotion")) Is Nothing) Then
+                MyBase.Tables.Add(New PromotionDataTable(ds.Tables("Promotion")))
+            End If
+            If (Not (ds.Tables("Schedule")) Is Nothing) Then
+                MyBase.Tables.Add(New ScheduleDataTable(ds.Tables("Schedule")))
+            End If
+            If (Not (ds.Tables("promoteSchedule")) Is Nothing) Then
+                MyBase.Tables.Add(New promoteScheduleDataTable(ds.Tables("promoteSchedule")))
             End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
@@ -190,36 +188,6 @@ Partial Public Class PTTSDataSet
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
      Global.System.ComponentModel.Browsable(false),  _
      Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
-    Public ReadOnly Property promoteSchedule() As promoteScheduleDataTable
-        Get
-            Return Me.tablepromoteSchedule
-        End Get
-    End Property
-    
-    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
-     Global.System.ComponentModel.Browsable(false),  _
-     Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
-    Public ReadOnly Property Promotion() As PromotionDataTable
-        Get
-            Return Me.tablePromotion
-        End Get
-    End Property
-    
-    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
-     Global.System.ComponentModel.Browsable(false),  _
-     Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
-    Public ReadOnly Property Schedule() As ScheduleDataTable
-        Get
-            Return Me.tableSchedule
-        End Get
-    End Property
-    
-    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
-     Global.System.ComponentModel.Browsable(false),  _
-     Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
     Public ReadOnly Property Seat() As SeatDataTable
         Get
             Return Me.tableSeat
@@ -253,6 +221,36 @@ Partial Public Class PTTSDataSet
     Public ReadOnly Property Location1() As Location1DataTable
         Get
             Return Me.tableLocation1
+        End Get
+    End Property
+    
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+     Global.System.ComponentModel.Browsable(false),  _
+     Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
+    Public ReadOnly Property Promotion() As PromotionDataTable
+        Get
+            Return Me.tablePromotion
+        End Get
+    End Property
+    
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+     Global.System.ComponentModel.Browsable(false),  _
+     Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
+    Public ReadOnly Property Schedule() As ScheduleDataTable
+        Get
+            Return Me.tableSchedule
+        End Get
+    End Property
+    
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+     Global.System.ComponentModel.Browsable(false),  _
+     Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
+    Public ReadOnly Property promoteSchedule() As promoteScheduleDataTable
+        Get
+            Return Me.tablepromoteSchedule
         End Get
     End Property
     
@@ -335,15 +333,6 @@ Partial Public Class PTTSDataSet
             If (Not (ds.Tables("LocationList")) Is Nothing) Then
                 MyBase.Tables.Add(New LocationListDataTable(ds.Tables("LocationList")))
             End If
-            If (Not (ds.Tables("promoteSchedule")) Is Nothing) Then
-                MyBase.Tables.Add(New promoteScheduleDataTable(ds.Tables("promoteSchedule")))
-            End If
-            If (Not (ds.Tables("Promotion")) Is Nothing) Then
-                MyBase.Tables.Add(New PromotionDataTable(ds.Tables("Promotion")))
-            End If
-            If (Not (ds.Tables("Schedule")) Is Nothing) Then
-                MyBase.Tables.Add(New ScheduleDataTable(ds.Tables("Schedule")))
-            End If
             If (Not (ds.Tables("Seat")) Is Nothing) Then
                 MyBase.Tables.Add(New SeatDataTable(ds.Tables("Seat")))
             End If
@@ -355,6 +344,15 @@ Partial Public Class PTTSDataSet
             End If
             If (Not (ds.Tables("Location1")) Is Nothing) Then
                 MyBase.Tables.Add(New Location1DataTable(ds.Tables("Location1")))
+            End If
+            If (Not (ds.Tables("Promotion")) Is Nothing) Then
+                MyBase.Tables.Add(New PromotionDataTable(ds.Tables("Promotion")))
+            End If
+            If (Not (ds.Tables("Schedule")) Is Nothing) Then
+                MyBase.Tables.Add(New ScheduleDataTable(ds.Tables("Schedule")))
+            End If
+            If (Not (ds.Tables("promoteSchedule")) Is Nothing) Then
+                MyBase.Tables.Add(New promoteScheduleDataTable(ds.Tables("promoteSchedule")))
             End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
@@ -412,24 +410,6 @@ Partial Public Class PTTSDataSet
                 Me.tableLocationList.InitVars
             End If
         End If
-        Me.tablepromoteSchedule = CType(MyBase.Tables("promoteSchedule"),promoteScheduleDataTable)
-        If (initTable = true) Then
-            If (Not (Me.tablepromoteSchedule) Is Nothing) Then
-                Me.tablepromoteSchedule.InitVars
-            End If
-        End If
-        Me.tablePromotion = CType(MyBase.Tables("Promotion"),PromotionDataTable)
-        If (initTable = true) Then
-            If (Not (Me.tablePromotion) Is Nothing) Then
-                Me.tablePromotion.InitVars
-            End If
-        End If
-        Me.tableSchedule = CType(MyBase.Tables("Schedule"),ScheduleDataTable)
-        If (initTable = true) Then
-            If (Not (Me.tableSchedule) Is Nothing) Then
-                Me.tableSchedule.InitVars
-            End If
-        End If
         Me.tableSeat = CType(MyBase.Tables("Seat"),SeatDataTable)
         If (initTable = true) Then
             If (Not (Me.tableSeat) Is Nothing) Then
@@ -454,16 +434,33 @@ Partial Public Class PTTSDataSet
                 Me.tableLocation1.InitVars
             End If
         End If
+        Me.tablePromotion = CType(MyBase.Tables("Promotion"),PromotionDataTable)
+        If (initTable = true) Then
+            If (Not (Me.tablePromotion) Is Nothing) Then
+                Me.tablePromotion.InitVars
+            End If
+        End If
+        Me.tableSchedule = CType(MyBase.Tables("Schedule"),ScheduleDataTable)
+        If (initTable = true) Then
+            If (Not (Me.tableSchedule) Is Nothing) Then
+                Me.tableSchedule.InitVars
+            End If
+        End If
+        Me.tablepromoteSchedule = CType(MyBase.Tables("promoteSchedule"),promoteScheduleDataTable)
+        If (initTable = true) Then
+            If (Not (Me.tablepromoteSchedule) Is Nothing) Then
+                Me.tablepromoteSchedule.InitVars
+            End If
+        End If
         Me.relationFK_Booking_ToTable_1 = Me.Relations("FK_Booking_ToTable_1")
         Me.relationFK_bookingTicketID = Me.Relations("FK_bookingTicketID")
-        Me.relationFK_LocationList_ToTable = Me.Relations("FK_LocationList_ToTable")
         Me.relationFK_LocationList_ToTable_1 = Me.Relations("FK_LocationList_ToTable_1")
+        Me.relationFK_ticketSeatID = Me.Relations("FK_ticketSeatID")
+        Me.relationFK_LocationList_ToTable = Me.Relations("FK_LocationList_ToTable")
+        Me.relationFK_seatScheduleID = Me.Relations("FK_seatScheduleID")
+        Me.relationFK_transportID = Me.Relations("FK_transportID")
         Me.relationFK_promotionID = Me.Relations("FK_promotionID")
         Me.relationFK_scheduleID = Me.Relations("FK_scheduleID")
-        Me.relationFK_transportID = Me.Relations("FK_transportID")
-        Me.relationFK_seatScheduleID = Me.Relations("FK_seatScheduleID")
-        Me.relationFK_ticketSeatID = Me.Relations("FK_ticketSeatID")
-        Me.relationFK_LocationList_ToTable_11 = Me.Relations("FK_LocationList_ToTable_11")
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -482,12 +479,6 @@ Partial Public Class PTTSDataSet
         MyBase.Tables.Add(Me.tableLocation)
         Me.tableLocationList = New LocationListDataTable()
         MyBase.Tables.Add(Me.tableLocationList)
-        Me.tablepromoteSchedule = New promoteScheduleDataTable()
-        MyBase.Tables.Add(Me.tablepromoteSchedule)
-        Me.tablePromotion = New PromotionDataTable()
-        MyBase.Tables.Add(Me.tablePromotion)
-        Me.tableSchedule = New ScheduleDataTable()
-        MyBase.Tables.Add(Me.tableSchedule)
         Me.tableSeat = New SeatDataTable()
         MyBase.Tables.Add(Me.tableSeat)
         Me.tableTicket = New TicketDataTable()
@@ -496,26 +487,30 @@ Partial Public Class PTTSDataSet
         MyBase.Tables.Add(Me.tableTransport)
         Me.tableLocation1 = New Location1DataTable()
         MyBase.Tables.Add(Me.tableLocation1)
+        Me.tablePromotion = New PromotionDataTable()
+        MyBase.Tables.Add(Me.tablePromotion)
+        Me.tableSchedule = New ScheduleDataTable()
+        MyBase.Tables.Add(Me.tableSchedule)
+        Me.tablepromoteSchedule = New promoteScheduleDataTable()
+        MyBase.Tables.Add(Me.tablepromoteSchedule)
         Me.relationFK_Booking_ToTable_1 = New Global.System.Data.DataRelation("FK_Booking_ToTable_1", New Global.System.Data.DataColumn() {Me.tableEmployee.employeeIDColumn}, New Global.System.Data.DataColumn() {Me.tableBooking.employeeIDColumn}, false)
         Me.Relations.Add(Me.relationFK_Booking_ToTable_1)
         Me.relationFK_bookingTicketID = New Global.System.Data.DataRelation("FK_bookingTicketID", New Global.System.Data.DataColumn() {Me.tableTicket.ticketIDColumn}, New Global.System.Data.DataColumn() {Me.tableBooking.ticketIDColumn}, false)
         Me.Relations.Add(Me.relationFK_bookingTicketID)
-        Me.relationFK_LocationList_ToTable = New Global.System.Data.DataRelation("FK_LocationList_ToTable", New Global.System.Data.DataColumn() {Me.tableSchedule.scheduleIDColumn}, New Global.System.Data.DataColumn() {Me.tableLocationList.scheduleIDColumn}, false)
-        Me.Relations.Add(Me.relationFK_LocationList_ToTable)
         Me.relationFK_LocationList_ToTable_1 = New Global.System.Data.DataRelation("FK_LocationList_ToTable_1", New Global.System.Data.DataColumn() {Me.tableLocation.locationIDColumn}, New Global.System.Data.DataColumn() {Me.tableLocationList.locationIDColumn}, false)
         Me.Relations.Add(Me.relationFK_LocationList_ToTable_1)
+        Me.relationFK_ticketSeatID = New Global.System.Data.DataRelation("FK_ticketSeatID", New Global.System.Data.DataColumn() {Me.tableSeat.seatIDColumn}, New Global.System.Data.DataColumn() {Me.tableTicket.seatIDColumn}, false)
+        Me.Relations.Add(Me.relationFK_ticketSeatID)
+        Me.relationFK_LocationList_ToTable = New Global.System.Data.DataRelation("FK_LocationList_ToTable", New Global.System.Data.DataColumn() {Me.tableSchedule.scheduleIDColumn}, New Global.System.Data.DataColumn() {Me.tableLocationList.scheduleIDColumn}, false)
+        Me.Relations.Add(Me.relationFK_LocationList_ToTable)
+        Me.relationFK_seatScheduleID = New Global.System.Data.DataRelation("FK_seatScheduleID", New Global.System.Data.DataColumn() {Me.tableSchedule.scheduleIDColumn}, New Global.System.Data.DataColumn() {Me.tableSeat.scheduleIDColumn}, false)
+        Me.Relations.Add(Me.relationFK_seatScheduleID)
+        Me.relationFK_transportID = New Global.System.Data.DataRelation("FK_transportID", New Global.System.Data.DataColumn() {Me.tableTransport.transportIDColumn}, New Global.System.Data.DataColumn() {Me.tableSchedule.transportIDColumn}, false)
+        Me.Relations.Add(Me.relationFK_transportID)
         Me.relationFK_promotionID = New Global.System.Data.DataRelation("FK_promotionID", New Global.System.Data.DataColumn() {Me.tablePromotion.promotionIDColumn}, New Global.System.Data.DataColumn() {Me.tablepromoteSchedule.promotionIDColumn}, false)
         Me.Relations.Add(Me.relationFK_promotionID)
         Me.relationFK_scheduleID = New Global.System.Data.DataRelation("FK_scheduleID", New Global.System.Data.DataColumn() {Me.tableSchedule.scheduleIDColumn}, New Global.System.Data.DataColumn() {Me.tablepromoteSchedule.scheduleIDColumn}, false)
         Me.Relations.Add(Me.relationFK_scheduleID)
-        Me.relationFK_transportID = New Global.System.Data.DataRelation("FK_transportID", New Global.System.Data.DataColumn() {Me.tableTransport.transportIDColumn}, New Global.System.Data.DataColumn() {Me.tableSchedule.transportIDColumn}, false)
-        Me.Relations.Add(Me.relationFK_transportID)
-        Me.relationFK_seatScheduleID = New Global.System.Data.DataRelation("FK_seatScheduleID", New Global.System.Data.DataColumn() {Me.tableSchedule.scheduleIDColumn}, New Global.System.Data.DataColumn() {Me.tableSeat.scheduleIDColumn}, false)
-        Me.Relations.Add(Me.relationFK_seatScheduleID)
-        Me.relationFK_ticketSeatID = New Global.System.Data.DataRelation("FK_ticketSeatID", New Global.System.Data.DataColumn() {Me.tableSeat.seatIDColumn}, New Global.System.Data.DataColumn() {Me.tableTicket.seatIDColumn}, false)
-        Me.Relations.Add(Me.relationFK_ticketSeatID)
-        Me.relationFK_LocationList_ToTable_11 = New Global.System.Data.DataRelation("FK_LocationList_ToTable_11", New Global.System.Data.DataColumn() {Me.tableLocation1.locationIDColumn}, New Global.System.Data.DataColumn() {Me.tableLocationList.locationIDColumn}, false)
-        Me.Relations.Add(Me.relationFK_LocationList_ToTable_11)
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -544,24 +539,6 @@ Partial Public Class PTTSDataSet
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-    Private Function ShouldSerializepromoteSchedule() As Boolean
-        Return false
-    End Function
-    
-    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-    Private Function ShouldSerializePromotion() As Boolean
-        Return false
-    End Function
-    
-    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-    Private Function ShouldSerializeSchedule() As Boolean
-        Return false
-    End Function
-    
-    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
     Private Function ShouldSerializeSeat() As Boolean
         Return false
     End Function
@@ -581,6 +558,24 @@ Partial Public Class PTTSDataSet
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
     Private Function ShouldSerializeLocation1() As Boolean
+        Return false
+    End Function
+    
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+    Private Function ShouldSerializePromotion() As Boolean
+        Return false
+    End Function
+    
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+    Private Function ShouldSerializeSchedule() As Boolean
+        Return false
+    End Function
+    
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+    Private Function ShouldSerializepromoteSchedule() As Boolean
         Return false
     End Function
     
@@ -655,15 +650,6 @@ Partial Public Class PTTSDataSet
     Public Delegate Sub LocationListRowChangeEventHandler(ByVal sender As Object, ByVal e As LocationListRowChangeEvent)
     
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-    Public Delegate Sub promoteScheduleRowChangeEventHandler(ByVal sender As Object, ByVal e As promoteScheduleRowChangeEvent)
-    
-    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-    Public Delegate Sub PromotionRowChangeEventHandler(ByVal sender As Object, ByVal e As PromotionRowChangeEvent)
-    
-    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-    Public Delegate Sub ScheduleRowChangeEventHandler(ByVal sender As Object, ByVal e As ScheduleRowChangeEvent)
-    
-    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
     Public Delegate Sub SeatRowChangeEventHandler(ByVal sender As Object, ByVal e As SeatRowChangeEvent)
     
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
@@ -674,6 +660,15 @@ Partial Public Class PTTSDataSet
     
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
     Public Delegate Sub Location1RowChangeEventHandler(ByVal sender As Object, ByVal e As Location1RowChangeEvent)
+    
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+    Public Delegate Sub PromotionRowChangeEventHandler(ByVal sender As Object, ByVal e As PromotionRowChangeEvent)
+    
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+    Public Delegate Sub ScheduleRowChangeEventHandler(ByVal sender As Object, ByVal e As ScheduleRowChangeEvent)
+    
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+    Public Delegate Sub promoteScheduleRowChangeEventHandler(ByVal sender As Object, ByVal e As promoteScheduleRowChangeEvent)
     
     '''<summary>
     '''Represents the strongly named DataTable class.
@@ -2022,962 +2017,6 @@ Partial Public Class PTTSDataSet
     '''</summary>
     <Global.System.Serializable(),  _
      Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
-    Partial Public Class promoteScheduleDataTable
-        Inherits Global.System.Data.TypedTableBase(Of promoteScheduleRow)
-        
-        Private columnpromoteScheduleID As Global.System.Data.DataColumn
-        
-        Private columnpromotionID As Global.System.Data.DataColumn
-        
-        Private columnscheduleID As Global.System.Data.DataColumn
-        
-        Private columndiscountRate As Global.System.Data.DataColumn
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub New()
-            MyBase.New
-            Me.TableName = "promoteSchedule"
-            Me.BeginInit
-            Me.InitClass
-            Me.EndInit
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Friend Sub New(ByVal table As Global.System.Data.DataTable)
-            MyBase.New
-            Me.TableName = table.TableName
-            If (table.CaseSensitive <> table.DataSet.CaseSensitive) Then
-                Me.CaseSensitive = table.CaseSensitive
-            End If
-            If (table.Locale.ToString <> table.DataSet.Locale.ToString) Then
-                Me.Locale = table.Locale
-            End If
-            If (table.Namespace <> table.DataSet.Namespace) Then
-                Me.Namespace = table.Namespace
-            End If
-            Me.Prefix = table.Prefix
-            Me.MinimumCapacity = table.MinimumCapacity
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected Sub New(ByVal info As Global.System.Runtime.Serialization.SerializationInfo, ByVal context As Global.System.Runtime.Serialization.StreamingContext)
-            MyBase.New(info, context)
-            Me.InitVars
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property promoteScheduleIDColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnpromoteScheduleID
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property promotionIDColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnpromotionID
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property scheduleIDColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnscheduleID
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property discountRateColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columndiscountRate
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
-         Global.System.ComponentModel.Browsable(false)>  _
-        Public ReadOnly Property Count() As Integer
-            Get
-                Return Me.Rows.Count
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Default ReadOnly Property Item(ByVal index As Integer) As promoteScheduleRow
-            Get
-                Return CType(Me.Rows(index),promoteScheduleRow)
-            End Get
-        End Property
-        
-        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Event promoteScheduleRowChanging As promoteScheduleRowChangeEventHandler
-        
-        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Event promoteScheduleRowChanged As promoteScheduleRowChangeEventHandler
-        
-        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Event promoteScheduleRowDeleting As promoteScheduleRowChangeEventHandler
-        
-        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Event promoteScheduleRowDeleted As promoteScheduleRowChangeEventHandler
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Overloads Sub AddpromoteScheduleRow(ByVal row As promoteScheduleRow)
-            Me.Rows.Add(row)
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Overloads Function AddpromoteScheduleRow(ByVal promoteScheduleID As Integer, ByVal parentPromotionRowByFK_promotionID As PromotionRow, ByVal parentScheduleRowByFK_scheduleID As ScheduleRow, ByVal discountRate As Integer) As promoteScheduleRow
-            Dim rowpromoteScheduleRow As promoteScheduleRow = CType(Me.NewRow,promoteScheduleRow)
-            Dim columnValuesArray() As Object = New Object() {promoteScheduleID, Nothing, Nothing, discountRate}
-            If (Not (parentPromotionRowByFK_promotionID) Is Nothing) Then
-                columnValuesArray(1) = parentPromotionRowByFK_promotionID(0)
-            End If
-            If (Not (parentScheduleRowByFK_scheduleID) Is Nothing) Then
-                columnValuesArray(2) = parentScheduleRowByFK_scheduleID(0)
-            End If
-            rowpromoteScheduleRow.ItemArray = columnValuesArray
-            Me.Rows.Add(rowpromoteScheduleRow)
-            Return rowpromoteScheduleRow
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Function FindBypromoteScheduleID(ByVal promoteScheduleID As Integer) As promoteScheduleRow
-            Return CType(Me.Rows.Find(New Object() {promoteScheduleID}),promoteScheduleRow)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Overrides Function Clone() As Global.System.Data.DataTable
-            Dim cln As promoteScheduleDataTable = CType(MyBase.Clone,promoteScheduleDataTable)
-            cln.InitVars
-            Return cln
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
-            Return New promoteScheduleDataTable()
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Friend Sub InitVars()
-            Me.columnpromoteScheduleID = MyBase.Columns("promoteScheduleID")
-            Me.columnpromotionID = MyBase.Columns("promotionID")
-            Me.columnscheduleID = MyBase.Columns("scheduleID")
-            Me.columndiscountRate = MyBase.Columns("discountRate")
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Private Sub InitClass()
-            Me.columnpromoteScheduleID = New Global.System.Data.DataColumn("promoteScheduleID", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnpromoteScheduleID)
-            Me.columnpromotionID = New Global.System.Data.DataColumn("promotionID", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnpromotionID)
-            Me.columnscheduleID = New Global.System.Data.DataColumn("scheduleID", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnscheduleID)
-            Me.columndiscountRate = New Global.System.Data.DataColumn("discountRate", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columndiscountRate)
-            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnpromoteScheduleID}, true))
-            Me.columnpromoteScheduleID.AllowDBNull = false
-            Me.columnpromoteScheduleID.Unique = true
-            Me.columnpromotionID.MaxLength = 10
-            Me.columnscheduleID.MaxLength = 10
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Function NewpromoteScheduleRow() As promoteScheduleRow
-            Return CType(Me.NewRow,promoteScheduleRow)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
-            Return New promoteScheduleRow(builder)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected Overrides Function GetRowType() As Global.System.Type
-            Return GetType(promoteScheduleRow)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
-            MyBase.OnRowChanged(e)
-            If (Not (Me.promoteScheduleRowChangedEvent) Is Nothing) Then
-                RaiseEvent promoteScheduleRowChanged(Me, New promoteScheduleRowChangeEvent(CType(e.Row,promoteScheduleRow), e.Action))
-            End If
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
-            MyBase.OnRowChanging(e)
-            If (Not (Me.promoteScheduleRowChangingEvent) Is Nothing) Then
-                RaiseEvent promoteScheduleRowChanging(Me, New promoteScheduleRowChangeEvent(CType(e.Row,promoteScheduleRow), e.Action))
-            End If
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
-            MyBase.OnRowDeleted(e)
-            If (Not (Me.promoteScheduleRowDeletedEvent) Is Nothing) Then
-                RaiseEvent promoteScheduleRowDeleted(Me, New promoteScheduleRowChangeEvent(CType(e.Row,promoteScheduleRow), e.Action))
-            End If
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
-            MyBase.OnRowDeleting(e)
-            If (Not (Me.promoteScheduleRowDeletingEvent) Is Nothing) Then
-                RaiseEvent promoteScheduleRowDeleting(Me, New promoteScheduleRowChangeEvent(CType(e.Row,promoteScheduleRow), e.Action))
-            End If
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub RemovepromoteScheduleRow(ByVal row As promoteScheduleRow)
-            Me.Rows.Remove(row)
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
-            Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
-            Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
-            Dim ds As PTTSDataSet = New PTTSDataSet()
-            Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
-            any1.Namespace = "http://www.w3.org/2001/XMLSchema"
-            any1.MinOccurs = New Decimal(0)
-            any1.MaxOccurs = Decimal.MaxValue
-            any1.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
-            sequence.Items.Add(any1)
-            Dim any2 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
-            any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1"
-            any2.MinOccurs = New Decimal(1)
-            any2.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
-            sequence.Items.Add(any2)
-            Dim attribute1 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
-            attribute1.Name = "namespace"
-            attribute1.FixedValue = ds.Namespace
-            type.Attributes.Add(attribute1)
-            Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
-            attribute2.Name = "tableTypeName"
-            attribute2.FixedValue = "promoteScheduleDataTable"
-            type.Attributes.Add(attribute2)
-            type.Particle = sequence
-            Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
-            If xs.Contains(dsSchema.TargetNamespace) Then
-                Dim s1 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
-                Dim s2 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
-                Try 
-                    Dim schema As Global.System.Xml.Schema.XmlSchema = Nothing
-                    dsSchema.Write(s1)
-                    Dim schemas As Global.System.Collections.IEnumerator = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator
-                    Do While schemas.MoveNext
-                        schema = CType(schemas.Current,Global.System.Xml.Schema.XmlSchema)
-                        s2.SetLength(0)
-                        schema.Write(s2)
-                        If (s1.Length = s2.Length) Then
-                            s1.Position = 0
-                            s2.Position = 0
-                            
-                            Do While ((s1.Position <> s1.Length)  _
-                                        AndAlso (s1.ReadByte = s2.ReadByte))
-                                
-                                
-                            Loop
-                            If (s1.Position = s1.Length) Then
-                                Return type
-                            End If
-                        End If
-                        
-                    Loop
-                Finally
-                    If (Not (s1) Is Nothing) Then
-                        s1.Close
-                    End If
-                    If (Not (s2) Is Nothing) Then
-                        s2.Close
-                    End If
-                End Try
-            End If
-            xs.Add(dsSchema)
-            Return type
-        End Function
-    End Class
-    
-    '''<summary>
-    '''Represents the strongly named DataTable class.
-    '''</summary>
-    <Global.System.Serializable(),  _
-     Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
-    Partial Public Class PromotionDataTable
-        Inherits Global.System.Data.TypedTableBase(Of PromotionRow)
-        
-        Private columnpromotionID As Global.System.Data.DataColumn
-        
-        Private columnpromotionName As Global.System.Data.DataColumn
-        
-        Private columnpromotionStartDate As Global.System.Data.DataColumn
-        
-        Private columnpromotionEndDate As Global.System.Data.DataColumn
-        
-        Private columnpromotionDesc As Global.System.Data.DataColumn
-        
-        Private columnpromotionStatus As Global.System.Data.DataColumn
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub New()
-            MyBase.New
-            Me.TableName = "Promotion"
-            Me.BeginInit
-            Me.InitClass
-            Me.EndInit
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Friend Sub New(ByVal table As Global.System.Data.DataTable)
-            MyBase.New
-            Me.TableName = table.TableName
-            If (table.CaseSensitive <> table.DataSet.CaseSensitive) Then
-                Me.CaseSensitive = table.CaseSensitive
-            End If
-            If (table.Locale.ToString <> table.DataSet.Locale.ToString) Then
-                Me.Locale = table.Locale
-            End If
-            If (table.Namespace <> table.DataSet.Namespace) Then
-                Me.Namespace = table.Namespace
-            End If
-            Me.Prefix = table.Prefix
-            Me.MinimumCapacity = table.MinimumCapacity
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected Sub New(ByVal info As Global.System.Runtime.Serialization.SerializationInfo, ByVal context As Global.System.Runtime.Serialization.StreamingContext)
-            MyBase.New(info, context)
-            Me.InitVars
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property promotionIDColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnpromotionID
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property promotionNameColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnpromotionName
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property promotionStartDateColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnpromotionStartDate
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property promotionEndDateColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnpromotionEndDate
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property promotionDescColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnpromotionDesc
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property promotionStatusColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnpromotionStatus
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
-         Global.System.ComponentModel.Browsable(false)>  _
-        Public ReadOnly Property Count() As Integer
-            Get
-                Return Me.Rows.Count
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Default ReadOnly Property Item(ByVal index As Integer) As PromotionRow
-            Get
-                Return CType(Me.Rows(index),PromotionRow)
-            End Get
-        End Property
-        
-        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Event PromotionRowChanging As PromotionRowChangeEventHandler
-        
-        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Event PromotionRowChanged As PromotionRowChangeEventHandler
-        
-        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Event PromotionRowDeleting As PromotionRowChangeEventHandler
-        
-        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Event PromotionRowDeleted As PromotionRowChangeEventHandler
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Overloads Sub AddPromotionRow(ByVal row As PromotionRow)
-            Me.Rows.Add(row)
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Overloads Function AddPromotionRow(ByVal promotionID As String, ByVal promotionName() As Byte, ByVal promotionStartDate As Date, ByVal promotionEndDate As Date, ByVal promotionDesc As String, ByVal promotionStatus As String) As PromotionRow
-            Dim rowPromotionRow As PromotionRow = CType(Me.NewRow,PromotionRow)
-            Dim columnValuesArray() As Object = New Object() {promotionID, promotionName, promotionStartDate, promotionEndDate, promotionDesc, promotionStatus}
-            rowPromotionRow.ItemArray = columnValuesArray
-            Me.Rows.Add(rowPromotionRow)
-            Return rowPromotionRow
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Function FindBypromotionID(ByVal promotionID As String) As PromotionRow
-            Return CType(Me.Rows.Find(New Object() {promotionID}),PromotionRow)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Overrides Function Clone() As Global.System.Data.DataTable
-            Dim cln As PromotionDataTable = CType(MyBase.Clone,PromotionDataTable)
-            cln.InitVars
-            Return cln
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
-            Return New PromotionDataTable()
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Friend Sub InitVars()
-            Me.columnpromotionID = MyBase.Columns("promotionID")
-            Me.columnpromotionName = MyBase.Columns("promotionName")
-            Me.columnpromotionStartDate = MyBase.Columns("promotionStartDate")
-            Me.columnpromotionEndDate = MyBase.Columns("promotionEndDate")
-            Me.columnpromotionDesc = MyBase.Columns("promotionDesc")
-            Me.columnpromotionStatus = MyBase.Columns("promotionStatus")
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Private Sub InitClass()
-            Me.columnpromotionID = New Global.System.Data.DataColumn("promotionID", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnpromotionID)
-            Me.columnpromotionName = New Global.System.Data.DataColumn("promotionName", GetType(Byte()), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnpromotionName)
-            Me.columnpromotionStartDate = New Global.System.Data.DataColumn("promotionStartDate", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnpromotionStartDate)
-            Me.columnpromotionEndDate = New Global.System.Data.DataColumn("promotionEndDate", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnpromotionEndDate)
-            Me.columnpromotionDesc = New Global.System.Data.DataColumn("promotionDesc", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnpromotionDesc)
-            Me.columnpromotionStatus = New Global.System.Data.DataColumn("promotionStatus", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnpromotionStatus)
-            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnpromotionID}, true))
-            Me.columnpromotionID.AllowDBNull = false
-            Me.columnpromotionID.Unique = true
-            Me.columnpromotionID.MaxLength = 10
-            Me.columnpromotionDesc.MaxLength = 2147483647
-            Me.columnpromotionStatus.MaxLength = 50
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Function NewPromotionRow() As PromotionRow
-            Return CType(Me.NewRow,PromotionRow)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
-            Return New PromotionRow(builder)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected Overrides Function GetRowType() As Global.System.Type
-            Return GetType(PromotionRow)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
-            MyBase.OnRowChanged(e)
-            If (Not (Me.PromotionRowChangedEvent) Is Nothing) Then
-                RaiseEvent PromotionRowChanged(Me, New PromotionRowChangeEvent(CType(e.Row,PromotionRow), e.Action))
-            End If
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
-            MyBase.OnRowChanging(e)
-            If (Not (Me.PromotionRowChangingEvent) Is Nothing) Then
-                RaiseEvent PromotionRowChanging(Me, New PromotionRowChangeEvent(CType(e.Row,PromotionRow), e.Action))
-            End If
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
-            MyBase.OnRowDeleted(e)
-            If (Not (Me.PromotionRowDeletedEvent) Is Nothing) Then
-                RaiseEvent PromotionRowDeleted(Me, New PromotionRowChangeEvent(CType(e.Row,PromotionRow), e.Action))
-            End If
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
-            MyBase.OnRowDeleting(e)
-            If (Not (Me.PromotionRowDeletingEvent) Is Nothing) Then
-                RaiseEvent PromotionRowDeleting(Me, New PromotionRowChangeEvent(CType(e.Row,PromotionRow), e.Action))
-            End If
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub RemovePromotionRow(ByVal row As PromotionRow)
-            Me.Rows.Remove(row)
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
-            Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
-            Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
-            Dim ds As PTTSDataSet = New PTTSDataSet()
-            Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
-            any1.Namespace = "http://www.w3.org/2001/XMLSchema"
-            any1.MinOccurs = New Decimal(0)
-            any1.MaxOccurs = Decimal.MaxValue
-            any1.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
-            sequence.Items.Add(any1)
-            Dim any2 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
-            any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1"
-            any2.MinOccurs = New Decimal(1)
-            any2.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
-            sequence.Items.Add(any2)
-            Dim attribute1 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
-            attribute1.Name = "namespace"
-            attribute1.FixedValue = ds.Namespace
-            type.Attributes.Add(attribute1)
-            Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
-            attribute2.Name = "tableTypeName"
-            attribute2.FixedValue = "PromotionDataTable"
-            type.Attributes.Add(attribute2)
-            type.Particle = sequence
-            Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
-            If xs.Contains(dsSchema.TargetNamespace) Then
-                Dim s1 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
-                Dim s2 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
-                Try 
-                    Dim schema As Global.System.Xml.Schema.XmlSchema = Nothing
-                    dsSchema.Write(s1)
-                    Dim schemas As Global.System.Collections.IEnumerator = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator
-                    Do While schemas.MoveNext
-                        schema = CType(schemas.Current,Global.System.Xml.Schema.XmlSchema)
-                        s2.SetLength(0)
-                        schema.Write(s2)
-                        If (s1.Length = s2.Length) Then
-                            s1.Position = 0
-                            s2.Position = 0
-                            
-                            Do While ((s1.Position <> s1.Length)  _
-                                        AndAlso (s1.ReadByte = s2.ReadByte))
-                                
-                                
-                            Loop
-                            If (s1.Position = s1.Length) Then
-                                Return type
-                            End If
-                        End If
-                        
-                    Loop
-                Finally
-                    If (Not (s1) Is Nothing) Then
-                        s1.Close
-                    End If
-                    If (Not (s2) Is Nothing) Then
-                        s2.Close
-                    End If
-                End Try
-            End If
-            xs.Add(dsSchema)
-            Return type
-        End Function
-    End Class
-    
-    '''<summary>
-    '''Represents the strongly named DataTable class.
-    '''</summary>
-    <Global.System.Serializable(),  _
-     Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
-    Partial Public Class ScheduleDataTable
-        Inherits Global.System.Data.TypedTableBase(Of ScheduleRow)
-        
-        Private columnscheduleID As Global.System.Data.DataColumn
-        
-        Private columndepartureDateTime As Global.System.Data.DataColumn
-        
-        Private columnarrivalDateTIme As Global.System.Data.DataColumn
-        
-        Private columntransportID As Global.System.Data.DataColumn
-        
-        Private columnscheduleStatus As Global.System.Data.DataColumn
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub New()
-            MyBase.New
-            Me.TableName = "Schedule"
-            Me.BeginInit
-            Me.InitClass
-            Me.EndInit
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Friend Sub New(ByVal table As Global.System.Data.DataTable)
-            MyBase.New
-            Me.TableName = table.TableName
-            If (table.CaseSensitive <> table.DataSet.CaseSensitive) Then
-                Me.CaseSensitive = table.CaseSensitive
-            End If
-            If (table.Locale.ToString <> table.DataSet.Locale.ToString) Then
-                Me.Locale = table.Locale
-            End If
-            If (table.Namespace <> table.DataSet.Namespace) Then
-                Me.Namespace = table.Namespace
-            End If
-            Me.Prefix = table.Prefix
-            Me.MinimumCapacity = table.MinimumCapacity
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected Sub New(ByVal info As Global.System.Runtime.Serialization.SerializationInfo, ByVal context As Global.System.Runtime.Serialization.StreamingContext)
-            MyBase.New(info, context)
-            Me.InitVars
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property scheduleIDColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnscheduleID
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property departureDateTimeColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columndepartureDateTime
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property arrivalDateTImeColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnarrivalDateTIme
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property transportIDColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columntransportID
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property scheduleStatusColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnscheduleStatus
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
-         Global.System.ComponentModel.Browsable(false)>  _
-        Public ReadOnly Property Count() As Integer
-            Get
-                Return Me.Rows.Count
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Default ReadOnly Property Item(ByVal index As Integer) As ScheduleRow
-            Get
-                Return CType(Me.Rows(index),ScheduleRow)
-            End Get
-        End Property
-        
-        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Event ScheduleRowChanging As ScheduleRowChangeEventHandler
-        
-        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Event ScheduleRowChanged As ScheduleRowChangeEventHandler
-        
-        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Event ScheduleRowDeleting As ScheduleRowChangeEventHandler
-        
-        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Event ScheduleRowDeleted As ScheduleRowChangeEventHandler
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Overloads Sub AddScheduleRow(ByVal row As ScheduleRow)
-            Me.Rows.Add(row)
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Overloads Function AddScheduleRow(ByVal scheduleID As String, ByVal departureDateTime As Date, ByVal arrivalDateTIme As Date, ByVal parentTransportRowByFK_transportID As TransportRow, ByVal scheduleStatus As String) As ScheduleRow
-            Dim rowScheduleRow As ScheduleRow = CType(Me.NewRow,ScheduleRow)
-            Dim columnValuesArray() As Object = New Object() {scheduleID, departureDateTime, arrivalDateTIme, Nothing, scheduleStatus}
-            If (Not (parentTransportRowByFK_transportID) Is Nothing) Then
-                columnValuesArray(3) = parentTransportRowByFK_transportID(0)
-            End If
-            rowScheduleRow.ItemArray = columnValuesArray
-            Me.Rows.Add(rowScheduleRow)
-            Return rowScheduleRow
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Function FindByscheduleID(ByVal scheduleID As String) As ScheduleRow
-            Return CType(Me.Rows.Find(New Object() {scheduleID}),ScheduleRow)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Overrides Function Clone() As Global.System.Data.DataTable
-            Dim cln As ScheduleDataTable = CType(MyBase.Clone,ScheduleDataTable)
-            cln.InitVars
-            Return cln
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
-            Return New ScheduleDataTable()
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Friend Sub InitVars()
-            Me.columnscheduleID = MyBase.Columns("scheduleID")
-            Me.columndepartureDateTime = MyBase.Columns("departureDateTime")
-            Me.columnarrivalDateTIme = MyBase.Columns("arrivalDateTIme")
-            Me.columntransportID = MyBase.Columns("transportID")
-            Me.columnscheduleStatus = MyBase.Columns("scheduleStatus")
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Private Sub InitClass()
-            Me.columnscheduleID = New Global.System.Data.DataColumn("scheduleID", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnscheduleID)
-            Me.columndepartureDateTime = New Global.System.Data.DataColumn("departureDateTime", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columndepartureDateTime)
-            Me.columnarrivalDateTIme = New Global.System.Data.DataColumn("arrivalDateTIme", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnarrivalDateTIme)
-            Me.columntransportID = New Global.System.Data.DataColumn("transportID", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columntransportID)
-            Me.columnscheduleStatus = New Global.System.Data.DataColumn("scheduleStatus", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnscheduleStatus)
-            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnscheduleID}, true))
-            Me.columnscheduleID.AllowDBNull = false
-            Me.columnscheduleID.Unique = true
-            Me.columnscheduleID.MaxLength = 10
-            Me.columntransportID.MaxLength = 10
-            Me.columnscheduleStatus.MaxLength = 50
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Function NewScheduleRow() As ScheduleRow
-            Return CType(Me.NewRow,ScheduleRow)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
-            Return New ScheduleRow(builder)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected Overrides Function GetRowType() As Global.System.Type
-            Return GetType(ScheduleRow)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
-            MyBase.OnRowChanged(e)
-            If (Not (Me.ScheduleRowChangedEvent) Is Nothing) Then
-                RaiseEvent ScheduleRowChanged(Me, New ScheduleRowChangeEvent(CType(e.Row,ScheduleRow), e.Action))
-            End If
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
-            MyBase.OnRowChanging(e)
-            If (Not (Me.ScheduleRowChangingEvent) Is Nothing) Then
-                RaiseEvent ScheduleRowChanging(Me, New ScheduleRowChangeEvent(CType(e.Row,ScheduleRow), e.Action))
-            End If
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
-            MyBase.OnRowDeleted(e)
-            If (Not (Me.ScheduleRowDeletedEvent) Is Nothing) Then
-                RaiseEvent ScheduleRowDeleted(Me, New ScheduleRowChangeEvent(CType(e.Row,ScheduleRow), e.Action))
-            End If
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
-            MyBase.OnRowDeleting(e)
-            If (Not (Me.ScheduleRowDeletingEvent) Is Nothing) Then
-                RaiseEvent ScheduleRowDeleting(Me, New ScheduleRowChangeEvent(CType(e.Row,ScheduleRow), e.Action))
-            End If
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub RemoveScheduleRow(ByVal row As ScheduleRow)
-            Me.Rows.Remove(row)
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
-            Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
-            Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
-            Dim ds As PTTSDataSet = New PTTSDataSet()
-            Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
-            any1.Namespace = "http://www.w3.org/2001/XMLSchema"
-            any1.MinOccurs = New Decimal(0)
-            any1.MaxOccurs = Decimal.MaxValue
-            any1.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
-            sequence.Items.Add(any1)
-            Dim any2 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
-            any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1"
-            any2.MinOccurs = New Decimal(1)
-            any2.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
-            sequence.Items.Add(any2)
-            Dim attribute1 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
-            attribute1.Name = "namespace"
-            attribute1.FixedValue = ds.Namespace
-            type.Attributes.Add(attribute1)
-            Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
-            attribute2.Name = "tableTypeName"
-            attribute2.FixedValue = "ScheduleDataTable"
-            type.Attributes.Add(attribute2)
-            type.Particle = sequence
-            Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
-            If xs.Contains(dsSchema.TargetNamespace) Then
-                Dim s1 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
-                Dim s2 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
-                Try 
-                    Dim schema As Global.System.Xml.Schema.XmlSchema = Nothing
-                    dsSchema.Write(s1)
-                    Dim schemas As Global.System.Collections.IEnumerator = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator
-                    Do While schemas.MoveNext
-                        schema = CType(schemas.Current,Global.System.Xml.Schema.XmlSchema)
-                        s2.SetLength(0)
-                        schema.Write(s2)
-                        If (s1.Length = s2.Length) Then
-                            s1.Position = 0
-                            s2.Position = 0
-                            
-                            Do While ((s1.Position <> s1.Length)  _
-                                        AndAlso (s1.ReadByte = s2.ReadByte))
-                                
-                                
-                            Loop
-                            If (s1.Position = s1.Length) Then
-                                Return type
-                            End If
-                        End If
-                        
-                    Loop
-                Finally
-                    If (Not (s1) Is Nothing) Then
-                        s1.Close
-                    End If
-                    If (Not (s2) Is Nothing) Then
-                        s2.Close
-                    End If
-                End Try
-            End If
-            xs.Add(dsSchema)
-            Return type
-        End Function
-    End Class
-    
-    '''<summary>
-    '''Represents the strongly named DataTable class.
-    '''</summary>
-    <Global.System.Serializable(),  _
-     Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
     Partial Public Class SeatDataTable
         Inherits Global.System.Data.TypedTableBase(Of SeatRow)
         
@@ -4259,6 +3298,978 @@ Partial Public Class PTTSDataSet
     End Class
     
     '''<summary>
+    '''Represents the strongly named DataTable class.
+    '''</summary>
+    <Global.System.Serializable(),  _
+     Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
+    Partial Public Class PromotionDataTable
+        Inherits Global.System.Data.TypedTableBase(Of PromotionRow)
+        
+        Private columnpromotionID As Global.System.Data.DataColumn
+        
+        Private columnpromotionName As Global.System.Data.DataColumn
+        
+        Private columnpromotionStartDate As Global.System.Data.DataColumn
+        
+        Private columnpromotionEndDate As Global.System.Data.DataColumn
+        
+        Private columnpromotionDesc As Global.System.Data.DataColumn
+        
+        Private columnpromotionStatus As Global.System.Data.DataColumn
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub New()
+            MyBase.New
+            Me.TableName = "Promotion"
+            Me.BeginInit
+            Me.InitClass
+            Me.EndInit
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Friend Sub New(ByVal table As Global.System.Data.DataTable)
+            MyBase.New
+            Me.TableName = table.TableName
+            If (table.CaseSensitive <> table.DataSet.CaseSensitive) Then
+                Me.CaseSensitive = table.CaseSensitive
+            End If
+            If (table.Locale.ToString <> table.DataSet.Locale.ToString) Then
+                Me.Locale = table.Locale
+            End If
+            If (table.Namespace <> table.DataSet.Namespace) Then
+                Me.Namespace = table.Namespace
+            End If
+            Me.Prefix = table.Prefix
+            Me.MinimumCapacity = table.MinimumCapacity
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Sub New(ByVal info As Global.System.Runtime.Serialization.SerializationInfo, ByVal context As Global.System.Runtime.Serialization.StreamingContext)
+            MyBase.New(info, context)
+            Me.InitVars
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property promotionIDColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnpromotionID
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property promotionNameColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnpromotionName
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property promotionStartDateColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnpromotionStartDate
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property promotionEndDateColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnpromotionEndDate
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property promotionDescColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnpromotionDesc
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property promotionStatusColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnpromotionStatus
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Browsable(false)>  _
+        Public ReadOnly Property Count() As Integer
+            Get
+                Return Me.Rows.Count
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Default ReadOnly Property Item(ByVal index As Integer) As PromotionRow
+            Get
+                Return CType(Me.Rows(index),PromotionRow)
+            End Get
+        End Property
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Event PromotionRowChanging As PromotionRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Event PromotionRowChanged As PromotionRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Event PromotionRowDeleting As PromotionRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Event PromotionRowDeleted As PromotionRowChangeEventHandler
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Overloads Sub AddPromotionRow(ByVal row As PromotionRow)
+            Me.Rows.Add(row)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Overloads Function AddPromotionRow(ByVal promotionID As String, ByVal promotionName As String, ByVal promotionStartDate As Date, ByVal promotionEndDate As Date, ByVal promotionDesc As String, ByVal promotionStatus As String) As PromotionRow
+            Dim rowPromotionRow As PromotionRow = CType(Me.NewRow,PromotionRow)
+            Dim columnValuesArray() As Object = New Object() {promotionID, promotionName, promotionStartDate, promotionEndDate, promotionDesc, promotionStatus}
+            rowPromotionRow.ItemArray = columnValuesArray
+            Me.Rows.Add(rowPromotionRow)
+            Return rowPromotionRow
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function FindBypromotionID(ByVal promotionID As String) As PromotionRow
+            Return CType(Me.Rows.Find(New Object() {promotionID}),PromotionRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Overrides Function Clone() As Global.System.Data.DataTable
+            Dim cln As PromotionDataTable = CType(MyBase.Clone,PromotionDataTable)
+            cln.InitVars
+            Return cln
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
+            Return New PromotionDataTable()
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Friend Sub InitVars()
+            Me.columnpromotionID = MyBase.Columns("promotionID")
+            Me.columnpromotionName = MyBase.Columns("promotionName")
+            Me.columnpromotionStartDate = MyBase.Columns("promotionStartDate")
+            Me.columnpromotionEndDate = MyBase.Columns("promotionEndDate")
+            Me.columnpromotionDesc = MyBase.Columns("promotionDesc")
+            Me.columnpromotionStatus = MyBase.Columns("promotionStatus")
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Private Sub InitClass()
+            Me.columnpromotionID = New Global.System.Data.DataColumn("promotionID", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnpromotionID)
+            Me.columnpromotionName = New Global.System.Data.DataColumn("promotionName", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnpromotionName)
+            Me.columnpromotionStartDate = New Global.System.Data.DataColumn("promotionStartDate", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnpromotionStartDate)
+            Me.columnpromotionEndDate = New Global.System.Data.DataColumn("promotionEndDate", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnpromotionEndDate)
+            Me.columnpromotionDesc = New Global.System.Data.DataColumn("promotionDesc", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnpromotionDesc)
+            Me.columnpromotionStatus = New Global.System.Data.DataColumn("promotionStatus", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnpromotionStatus)
+            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnpromotionID}, true))
+            Me.columnpromotionID.AllowDBNull = false
+            Me.columnpromotionID.Unique = true
+            Me.columnpromotionID.MaxLength = 10
+            Me.columnpromotionName.MaxLength = 50
+            Me.columnpromotionDesc.MaxLength = 2147483647
+            Me.columnpromotionStatus.MaxLength = 50
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function NewPromotionRow() As PromotionRow
+            Return CType(Me.NewRow,PromotionRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
+            Return New PromotionRow(builder)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Function GetRowType() As Global.System.Type
+            Return GetType(PromotionRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowChanged(e)
+            If (Not (Me.PromotionRowChangedEvent) Is Nothing) Then
+                RaiseEvent PromotionRowChanged(Me, New PromotionRowChangeEvent(CType(e.Row,PromotionRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowChanging(e)
+            If (Not (Me.PromotionRowChangingEvent) Is Nothing) Then
+                RaiseEvent PromotionRowChanging(Me, New PromotionRowChangeEvent(CType(e.Row,PromotionRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowDeleted(e)
+            If (Not (Me.PromotionRowDeletedEvent) Is Nothing) Then
+                RaiseEvent PromotionRowDeleted(Me, New PromotionRowChangeEvent(CType(e.Row,PromotionRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowDeleting(e)
+            If (Not (Me.PromotionRowDeletingEvent) Is Nothing) Then
+                RaiseEvent PromotionRowDeleting(Me, New PromotionRowChangeEvent(CType(e.Row,PromotionRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub RemovePromotionRow(ByVal row As PromotionRow)
+            Me.Rows.Remove(row)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
+            Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
+            Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
+            Dim ds As PTTSDataSet = New PTTSDataSet()
+            Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
+            any1.Namespace = "http://www.w3.org/2001/XMLSchema"
+            any1.MinOccurs = New Decimal(0)
+            any1.MaxOccurs = Decimal.MaxValue
+            any1.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
+            sequence.Items.Add(any1)
+            Dim any2 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
+            any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1"
+            any2.MinOccurs = New Decimal(1)
+            any2.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
+            sequence.Items.Add(any2)
+            Dim attribute1 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
+            attribute1.Name = "namespace"
+            attribute1.FixedValue = ds.Namespace
+            type.Attributes.Add(attribute1)
+            Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
+            attribute2.Name = "tableTypeName"
+            attribute2.FixedValue = "PromotionDataTable"
+            type.Attributes.Add(attribute2)
+            type.Particle = sequence
+            Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
+            If xs.Contains(dsSchema.TargetNamespace) Then
+                Dim s1 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
+                Dim s2 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
+                Try 
+                    Dim schema As Global.System.Xml.Schema.XmlSchema = Nothing
+                    dsSchema.Write(s1)
+                    Dim schemas As Global.System.Collections.IEnumerator = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator
+                    Do While schemas.MoveNext
+                        schema = CType(schemas.Current,Global.System.Xml.Schema.XmlSchema)
+                        s2.SetLength(0)
+                        schema.Write(s2)
+                        If (s1.Length = s2.Length) Then
+                            s1.Position = 0
+                            s2.Position = 0
+                            
+                            Do While ((s1.Position <> s1.Length)  _
+                                        AndAlso (s1.ReadByte = s2.ReadByte))
+                                
+                                
+                            Loop
+                            If (s1.Position = s1.Length) Then
+                                Return type
+                            End If
+                        End If
+                        
+                    Loop
+                Finally
+                    If (Not (s1) Is Nothing) Then
+                        s1.Close
+                    End If
+                    If (Not (s2) Is Nothing) Then
+                        s2.Close
+                    End If
+                End Try
+            End If
+            xs.Add(dsSchema)
+            Return type
+        End Function
+    End Class
+    
+    '''<summary>
+    '''Represents the strongly named DataTable class.
+    '''</summary>
+    <Global.System.Serializable(),  _
+     Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
+    Partial Public Class ScheduleDataTable
+        Inherits Global.System.Data.TypedTableBase(Of ScheduleRow)
+        
+        Private columnscheduleID As Global.System.Data.DataColumn
+        
+        Private columndepartureDateTime As Global.System.Data.DataColumn
+        
+        Private columnestimateHours As Global.System.Data.DataColumn
+        
+        Private columntransportID As Global.System.Data.DataColumn
+        
+        Private columnscheduleStatus As Global.System.Data.DataColumn
+        
+        Private columnassignPromotionStatus As Global.System.Data.DataColumn
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub New()
+            MyBase.New
+            Me.TableName = "Schedule"
+            Me.BeginInit
+            Me.InitClass
+            Me.EndInit
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Friend Sub New(ByVal table As Global.System.Data.DataTable)
+            MyBase.New
+            Me.TableName = table.TableName
+            If (table.CaseSensitive <> table.DataSet.CaseSensitive) Then
+                Me.CaseSensitive = table.CaseSensitive
+            End If
+            If (table.Locale.ToString <> table.DataSet.Locale.ToString) Then
+                Me.Locale = table.Locale
+            End If
+            If (table.Namespace <> table.DataSet.Namespace) Then
+                Me.Namespace = table.Namespace
+            End If
+            Me.Prefix = table.Prefix
+            Me.MinimumCapacity = table.MinimumCapacity
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Sub New(ByVal info As Global.System.Runtime.Serialization.SerializationInfo, ByVal context As Global.System.Runtime.Serialization.StreamingContext)
+            MyBase.New(info, context)
+            Me.InitVars
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property scheduleIDColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnscheduleID
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property departureDateTimeColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columndepartureDateTime
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property estimateHoursColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnestimateHours
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property transportIDColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columntransportID
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property scheduleStatusColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnscheduleStatus
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property assignPromotionStatusColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnassignPromotionStatus
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Browsable(false)>  _
+        Public ReadOnly Property Count() As Integer
+            Get
+                Return Me.Rows.Count
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Default ReadOnly Property Item(ByVal index As Integer) As ScheduleRow
+            Get
+                Return CType(Me.Rows(index),ScheduleRow)
+            End Get
+        End Property
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Event ScheduleRowChanging As ScheduleRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Event ScheduleRowChanged As ScheduleRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Event ScheduleRowDeleting As ScheduleRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Event ScheduleRowDeleted As ScheduleRowChangeEventHandler
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Overloads Sub AddScheduleRow(ByVal row As ScheduleRow)
+            Me.Rows.Add(row)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Overloads Function AddScheduleRow(ByVal scheduleID As String, ByVal departureDateTime As Date, ByVal estimateHours As Integer, ByVal parentTransportRowByFK_transportID As TransportRow, ByVal scheduleStatus As String, ByVal assignPromotionStatus As String) As ScheduleRow
+            Dim rowScheduleRow As ScheduleRow = CType(Me.NewRow,ScheduleRow)
+            Dim columnValuesArray() As Object = New Object() {scheduleID, departureDateTime, estimateHours, Nothing, scheduleStatus, assignPromotionStatus}
+            If (Not (parentTransportRowByFK_transportID) Is Nothing) Then
+                columnValuesArray(3) = parentTransportRowByFK_transportID(0)
+            End If
+            rowScheduleRow.ItemArray = columnValuesArray
+            Me.Rows.Add(rowScheduleRow)
+            Return rowScheduleRow
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function FindByscheduleID(ByVal scheduleID As String) As ScheduleRow
+            Return CType(Me.Rows.Find(New Object() {scheduleID}),ScheduleRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Overrides Function Clone() As Global.System.Data.DataTable
+            Dim cln As ScheduleDataTable = CType(MyBase.Clone,ScheduleDataTable)
+            cln.InitVars
+            Return cln
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
+            Return New ScheduleDataTable()
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Friend Sub InitVars()
+            Me.columnscheduleID = MyBase.Columns("scheduleID")
+            Me.columndepartureDateTime = MyBase.Columns("departureDateTime")
+            Me.columnestimateHours = MyBase.Columns("estimateHours")
+            Me.columntransportID = MyBase.Columns("transportID")
+            Me.columnscheduleStatus = MyBase.Columns("scheduleStatus")
+            Me.columnassignPromotionStatus = MyBase.Columns("assignPromotionStatus")
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Private Sub InitClass()
+            Me.columnscheduleID = New Global.System.Data.DataColumn("scheduleID", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnscheduleID)
+            Me.columndepartureDateTime = New Global.System.Data.DataColumn("departureDateTime", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columndepartureDateTime)
+            Me.columnestimateHours = New Global.System.Data.DataColumn("estimateHours", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnestimateHours)
+            Me.columntransportID = New Global.System.Data.DataColumn("transportID", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columntransportID)
+            Me.columnscheduleStatus = New Global.System.Data.DataColumn("scheduleStatus", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnscheduleStatus)
+            Me.columnassignPromotionStatus = New Global.System.Data.DataColumn("assignPromotionStatus", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnassignPromotionStatus)
+            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnscheduleID}, true))
+            Me.columnscheduleID.AllowDBNull = false
+            Me.columnscheduleID.Unique = true
+            Me.columnscheduleID.MaxLength = 10
+            Me.columntransportID.MaxLength = 10
+            Me.columnscheduleStatus.MaxLength = 50
+            Me.columnassignPromotionStatus.MaxLength = 20
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function NewScheduleRow() As ScheduleRow
+            Return CType(Me.NewRow,ScheduleRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
+            Return New ScheduleRow(builder)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Function GetRowType() As Global.System.Type
+            Return GetType(ScheduleRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowChanged(e)
+            If (Not (Me.ScheduleRowChangedEvent) Is Nothing) Then
+                RaiseEvent ScheduleRowChanged(Me, New ScheduleRowChangeEvent(CType(e.Row,ScheduleRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowChanging(e)
+            If (Not (Me.ScheduleRowChangingEvent) Is Nothing) Then
+                RaiseEvent ScheduleRowChanging(Me, New ScheduleRowChangeEvent(CType(e.Row,ScheduleRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowDeleted(e)
+            If (Not (Me.ScheduleRowDeletedEvent) Is Nothing) Then
+                RaiseEvent ScheduleRowDeleted(Me, New ScheduleRowChangeEvent(CType(e.Row,ScheduleRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowDeleting(e)
+            If (Not (Me.ScheduleRowDeletingEvent) Is Nothing) Then
+                RaiseEvent ScheduleRowDeleting(Me, New ScheduleRowChangeEvent(CType(e.Row,ScheduleRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub RemoveScheduleRow(ByVal row As ScheduleRow)
+            Me.Rows.Remove(row)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
+            Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
+            Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
+            Dim ds As PTTSDataSet = New PTTSDataSet()
+            Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
+            any1.Namespace = "http://www.w3.org/2001/XMLSchema"
+            any1.MinOccurs = New Decimal(0)
+            any1.MaxOccurs = Decimal.MaxValue
+            any1.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
+            sequence.Items.Add(any1)
+            Dim any2 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
+            any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1"
+            any2.MinOccurs = New Decimal(1)
+            any2.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
+            sequence.Items.Add(any2)
+            Dim attribute1 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
+            attribute1.Name = "namespace"
+            attribute1.FixedValue = ds.Namespace
+            type.Attributes.Add(attribute1)
+            Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
+            attribute2.Name = "tableTypeName"
+            attribute2.FixedValue = "ScheduleDataTable"
+            type.Attributes.Add(attribute2)
+            type.Particle = sequence
+            Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
+            If xs.Contains(dsSchema.TargetNamespace) Then
+                Dim s1 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
+                Dim s2 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
+                Try 
+                    Dim schema As Global.System.Xml.Schema.XmlSchema = Nothing
+                    dsSchema.Write(s1)
+                    Dim schemas As Global.System.Collections.IEnumerator = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator
+                    Do While schemas.MoveNext
+                        schema = CType(schemas.Current,Global.System.Xml.Schema.XmlSchema)
+                        s2.SetLength(0)
+                        schema.Write(s2)
+                        If (s1.Length = s2.Length) Then
+                            s1.Position = 0
+                            s2.Position = 0
+                            
+                            Do While ((s1.Position <> s1.Length)  _
+                                        AndAlso (s1.ReadByte = s2.ReadByte))
+                                
+                                
+                            Loop
+                            If (s1.Position = s1.Length) Then
+                                Return type
+                            End If
+                        End If
+                        
+                    Loop
+                Finally
+                    If (Not (s1) Is Nothing) Then
+                        s1.Close
+                    End If
+                    If (Not (s2) Is Nothing) Then
+                        s2.Close
+                    End If
+                End Try
+            End If
+            xs.Add(dsSchema)
+            Return type
+        End Function
+    End Class
+    
+    '''<summary>
+    '''Represents the strongly named DataTable class.
+    '''</summary>
+    <Global.System.Serializable(),  _
+     Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
+    Partial Public Class promoteScheduleDataTable
+        Inherits Global.System.Data.TypedTableBase(Of promoteScheduleRow)
+        
+        Private columnpromoteScheduleID As Global.System.Data.DataColumn
+        
+        Private columnpromotionID As Global.System.Data.DataColumn
+        
+        Private columnscheduleID As Global.System.Data.DataColumn
+        
+        Private columndiscountRate As Global.System.Data.DataColumn
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub New()
+            MyBase.New
+            Me.TableName = "promoteSchedule"
+            Me.BeginInit
+            Me.InitClass
+            Me.EndInit
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Friend Sub New(ByVal table As Global.System.Data.DataTable)
+            MyBase.New
+            Me.TableName = table.TableName
+            If (table.CaseSensitive <> table.DataSet.CaseSensitive) Then
+                Me.CaseSensitive = table.CaseSensitive
+            End If
+            If (table.Locale.ToString <> table.DataSet.Locale.ToString) Then
+                Me.Locale = table.Locale
+            End If
+            If (table.Namespace <> table.DataSet.Namespace) Then
+                Me.Namespace = table.Namespace
+            End If
+            Me.Prefix = table.Prefix
+            Me.MinimumCapacity = table.MinimumCapacity
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Sub New(ByVal info As Global.System.Runtime.Serialization.SerializationInfo, ByVal context As Global.System.Runtime.Serialization.StreamingContext)
+            MyBase.New(info, context)
+            Me.InitVars
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property promoteScheduleIDColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnpromoteScheduleID
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property promotionIDColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnpromotionID
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property scheduleIDColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnscheduleID
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property discountRateColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columndiscountRate
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Browsable(false)>  _
+        Public ReadOnly Property Count() As Integer
+            Get
+                Return Me.Rows.Count
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Default ReadOnly Property Item(ByVal index As Integer) As promoteScheduleRow
+            Get
+                Return CType(Me.Rows(index),promoteScheduleRow)
+            End Get
+        End Property
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Event promoteScheduleRowChanging As promoteScheduleRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Event promoteScheduleRowChanged As promoteScheduleRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Event promoteScheduleRowDeleting As promoteScheduleRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Event promoteScheduleRowDeleted As promoteScheduleRowChangeEventHandler
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Overloads Sub AddpromoteScheduleRow(ByVal row As promoteScheduleRow)
+            Me.Rows.Add(row)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Overloads Function AddpromoteScheduleRow(ByVal promoteScheduleID As String, ByVal parentPromotionRowByFK_promotionID As PromotionRow, ByVal parentScheduleRowByFK_scheduleID As ScheduleRow, ByVal discountRate As Integer) As promoteScheduleRow
+            Dim rowpromoteScheduleRow As promoteScheduleRow = CType(Me.NewRow,promoteScheduleRow)
+            Dim columnValuesArray() As Object = New Object() {promoteScheduleID, Nothing, Nothing, discountRate}
+            If (Not (parentPromotionRowByFK_promotionID) Is Nothing) Then
+                columnValuesArray(1) = parentPromotionRowByFK_promotionID(0)
+            End If
+            If (Not (parentScheduleRowByFK_scheduleID) Is Nothing) Then
+                columnValuesArray(2) = parentScheduleRowByFK_scheduleID(0)
+            End If
+            rowpromoteScheduleRow.ItemArray = columnValuesArray
+            Me.Rows.Add(rowpromoteScheduleRow)
+            Return rowpromoteScheduleRow
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function FindBypromoteScheduleID(ByVal promoteScheduleID As String) As promoteScheduleRow
+            Return CType(Me.Rows.Find(New Object() {promoteScheduleID}),promoteScheduleRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Overrides Function Clone() As Global.System.Data.DataTable
+            Dim cln As promoteScheduleDataTable = CType(MyBase.Clone,promoteScheduleDataTable)
+            cln.InitVars
+            Return cln
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
+            Return New promoteScheduleDataTable()
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Friend Sub InitVars()
+            Me.columnpromoteScheduleID = MyBase.Columns("promoteScheduleID")
+            Me.columnpromotionID = MyBase.Columns("promotionID")
+            Me.columnscheduleID = MyBase.Columns("scheduleID")
+            Me.columndiscountRate = MyBase.Columns("discountRate")
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Private Sub InitClass()
+            Me.columnpromoteScheduleID = New Global.System.Data.DataColumn("promoteScheduleID", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnpromoteScheduleID)
+            Me.columnpromotionID = New Global.System.Data.DataColumn("promotionID", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnpromotionID)
+            Me.columnscheduleID = New Global.System.Data.DataColumn("scheduleID", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnscheduleID)
+            Me.columndiscountRate = New Global.System.Data.DataColumn("discountRate", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columndiscountRate)
+            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnpromoteScheduleID}, true))
+            Me.columnpromoteScheduleID.AllowDBNull = false
+            Me.columnpromoteScheduleID.Unique = true
+            Me.columnpromoteScheduleID.MaxLength = 10
+            Me.columnpromotionID.MaxLength = 10
+            Me.columnscheduleID.MaxLength = 10
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function NewpromoteScheduleRow() As promoteScheduleRow
+            Return CType(Me.NewRow,promoteScheduleRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
+            Return New promoteScheduleRow(builder)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Function GetRowType() As Global.System.Type
+            Return GetType(promoteScheduleRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowChanged(e)
+            If (Not (Me.promoteScheduleRowChangedEvent) Is Nothing) Then
+                RaiseEvent promoteScheduleRowChanged(Me, New promoteScheduleRowChangeEvent(CType(e.Row,promoteScheduleRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowChanging(e)
+            If (Not (Me.promoteScheduleRowChangingEvent) Is Nothing) Then
+                RaiseEvent promoteScheduleRowChanging(Me, New promoteScheduleRowChangeEvent(CType(e.Row,promoteScheduleRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowDeleted(e)
+            If (Not (Me.promoteScheduleRowDeletedEvent) Is Nothing) Then
+                RaiseEvent promoteScheduleRowDeleted(Me, New promoteScheduleRowChangeEvent(CType(e.Row,promoteScheduleRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowDeleting(e)
+            If (Not (Me.promoteScheduleRowDeletingEvent) Is Nothing) Then
+                RaiseEvent promoteScheduleRowDeleting(Me, New promoteScheduleRowChangeEvent(CType(e.Row,promoteScheduleRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub RemovepromoteScheduleRow(ByVal row As promoteScheduleRow)
+            Me.Rows.Remove(row)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
+            Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
+            Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
+            Dim ds As PTTSDataSet = New PTTSDataSet()
+            Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
+            any1.Namespace = "http://www.w3.org/2001/XMLSchema"
+            any1.MinOccurs = New Decimal(0)
+            any1.MaxOccurs = Decimal.MaxValue
+            any1.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
+            sequence.Items.Add(any1)
+            Dim any2 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
+            any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1"
+            any2.MinOccurs = New Decimal(1)
+            any2.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
+            sequence.Items.Add(any2)
+            Dim attribute1 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
+            attribute1.Name = "namespace"
+            attribute1.FixedValue = ds.Namespace
+            type.Attributes.Add(attribute1)
+            Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
+            attribute2.Name = "tableTypeName"
+            attribute2.FixedValue = "promoteScheduleDataTable"
+            type.Attributes.Add(attribute2)
+            type.Particle = sequence
+            Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
+            If xs.Contains(dsSchema.TargetNamespace) Then
+                Dim s1 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
+                Dim s2 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
+                Try 
+                    Dim schema As Global.System.Xml.Schema.XmlSchema = Nothing
+                    dsSchema.Write(s1)
+                    Dim schemas As Global.System.Collections.IEnumerator = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator
+                    Do While schemas.MoveNext
+                        schema = CType(schemas.Current,Global.System.Xml.Schema.XmlSchema)
+                        s2.SetLength(0)
+                        schema.Write(s2)
+                        If (s1.Length = s2.Length) Then
+                            s1.Position = 0
+                            s2.Position = 0
+                            
+                            Do While ((s1.Position <> s1.Length)  _
+                                        AndAlso (s1.ReadByte = s2.ReadByte))
+                                
+                                
+                            Loop
+                            If (s1.Position = s1.Length) Then
+                                Return type
+                            End If
+                        End If
+                        
+                    Loop
+                Finally
+                    If (Not (s1) Is Nothing) Then
+                        s1.Close
+                    End If
+                    If (Not (s2) Is Nothing) Then
+                        s2.Close
+                    End If
+                End Try
+            End If
+            xs.Add(dsSchema)
+            Return type
+        End Function
+    End Class
+    
+    '''<summary>
     '''Represents strongly named DataRow class.
     '''</summary>
     Partial Public Class BookingRow
@@ -4905,17 +4916,6 @@ Partial Public Class PTTSDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property ScheduleRow() As ScheduleRow
-            Get
-                Return CType(Me.GetParentRow(Me.Table.ParentRelations("FK_LocationList_ToTable")),ScheduleRow)
-            End Get
-            Set
-                Me.SetParentRow(value, Me.Table.ParentRelations("FK_LocationList_ToTable"))
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Property LocationRow() As LocationRow
             Get
                 Return CType(Me.GetParentRow(Me.Table.ParentRelations("FK_LocationList_ToTable_1")),LocationRow)
@@ -4927,12 +4927,12 @@ Partial Public Class PTTSDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property Location1Row() As Location1Row
+        Public Property ScheduleRow() As ScheduleRow
             Get
-                Return CType(Me.GetParentRow(Me.Table.ParentRelations("FK_LocationList_ToTable_11")),Location1Row)
+                Return CType(Me.GetParentRow(Me.Table.ParentRelations("FK_LocationList_ToTable")),ScheduleRow)
             End Get
             Set
-                Me.SetParentRow(value, Me.Table.ParentRelations("FK_LocationList_ToTable_11"))
+                Me.SetParentRow(value, Me.Table.ParentRelations("FK_LocationList_ToTable"))
             End Set
         End Property
         
@@ -4947,484 +4947,6 @@ Partial Public Class PTTSDataSet
         Public Sub SetlocationStatusNull()
             Me(Me.tableLocationList.locationStatusColumn) = Global.System.Convert.DBNull
         End Sub
-    End Class
-    
-    '''<summary>
-    '''Represents strongly named DataRow class.
-    '''</summary>
-    Partial Public Class promoteScheduleRow
-        Inherits Global.System.Data.DataRow
-        
-        Private tablepromoteSchedule As promoteScheduleDataTable
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
-            MyBase.New(rb)
-            Me.tablepromoteSchedule = CType(Me.Table,promoteScheduleDataTable)
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property promoteScheduleID() As Integer
-            Get
-                Return CType(Me(Me.tablepromoteSchedule.promoteScheduleIDColumn),Integer)
-            End Get
-            Set
-                Me(Me.tablepromoteSchedule.promoteScheduleIDColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property promotionID() As String
-            Get
-                Try 
-                    Return CType(Me(Me.tablepromoteSchedule.promotionIDColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'promotionID' in table 'promoteSchedule' is DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tablepromoteSchedule.promotionIDColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property scheduleID() As String
-            Get
-                Try 
-                    Return CType(Me(Me.tablepromoteSchedule.scheduleIDColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'scheduleID' in table 'promoteSchedule' is DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tablepromoteSchedule.scheduleIDColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property discountRate() As Integer
-            Get
-                Try 
-                    Return CType(Me(Me.tablepromoteSchedule.discountRateColumn),Integer)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'discountRate' in table 'promoteSchedule' is DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tablepromoteSchedule.discountRateColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property PromotionRow() As PromotionRow
-            Get
-                Return CType(Me.GetParentRow(Me.Table.ParentRelations("FK_promotionID")),PromotionRow)
-            End Get
-            Set
-                Me.SetParentRow(value, Me.Table.ParentRelations("FK_promotionID"))
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property ScheduleRow() As ScheduleRow
-            Get
-                Return CType(Me.GetParentRow(Me.Table.ParentRelations("FK_scheduleID")),ScheduleRow)
-            End Get
-            Set
-                Me.SetParentRow(value, Me.Table.ParentRelations("FK_scheduleID"))
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Function IspromotionIDNull() As Boolean
-            Return Me.IsNull(Me.tablepromoteSchedule.promotionIDColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub SetpromotionIDNull()
-            Me(Me.tablepromoteSchedule.promotionIDColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Function IsscheduleIDNull() As Boolean
-            Return Me.IsNull(Me.tablepromoteSchedule.scheduleIDColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub SetscheduleIDNull()
-            Me(Me.tablepromoteSchedule.scheduleIDColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Function IsdiscountRateNull() As Boolean
-            Return Me.IsNull(Me.tablepromoteSchedule.discountRateColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub SetdiscountRateNull()
-            Me(Me.tablepromoteSchedule.discountRateColumn) = Global.System.Convert.DBNull
-        End Sub
-    End Class
-    
-    '''<summary>
-    '''Represents strongly named DataRow class.
-    '''</summary>
-    Partial Public Class PromotionRow
-        Inherits Global.System.Data.DataRow
-        
-        Private tablePromotion As PromotionDataTable
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
-            MyBase.New(rb)
-            Me.tablePromotion = CType(Me.Table,PromotionDataTable)
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property promotionID() As String
-            Get
-                Return CType(Me(Me.tablePromotion.promotionIDColumn),String)
-            End Get
-            Set
-                Me(Me.tablePromotion.promotionIDColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property promotionName() As Byte()
-            Get
-                Try 
-                    Return CType(Me(Me.tablePromotion.promotionNameColumn),Byte())
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'promotionName' in table 'Promotion' is DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tablePromotion.promotionNameColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property promotionStartDate() As Date
-            Get
-                Try 
-                    Return CType(Me(Me.tablePromotion.promotionStartDateColumn),Date)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'promotionStartDate' in table 'Promotion' is DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tablePromotion.promotionStartDateColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property promotionEndDate() As Date
-            Get
-                Try 
-                    Return CType(Me(Me.tablePromotion.promotionEndDateColumn),Date)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'promotionEndDate' in table 'Promotion' is DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tablePromotion.promotionEndDateColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property promotionDesc() As String
-            Get
-                Try 
-                    Return CType(Me(Me.tablePromotion.promotionDescColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'promotionDesc' in table 'Promotion' is DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tablePromotion.promotionDescColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property promotionStatus() As String
-            Get
-                Try 
-                    Return CType(Me(Me.tablePromotion.promotionStatusColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'promotionStatus' in table 'Promotion' is DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tablePromotion.promotionStatusColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Function IspromotionNameNull() As Boolean
-            Return Me.IsNull(Me.tablePromotion.promotionNameColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub SetpromotionNameNull()
-            Me(Me.tablePromotion.promotionNameColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Function IspromotionStartDateNull() As Boolean
-            Return Me.IsNull(Me.tablePromotion.promotionStartDateColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub SetpromotionStartDateNull()
-            Me(Me.tablePromotion.promotionStartDateColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Function IspromotionEndDateNull() As Boolean
-            Return Me.IsNull(Me.tablePromotion.promotionEndDateColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub SetpromotionEndDateNull()
-            Me(Me.tablePromotion.promotionEndDateColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Function IspromotionDescNull() As Boolean
-            Return Me.IsNull(Me.tablePromotion.promotionDescColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub SetpromotionDescNull()
-            Me(Me.tablePromotion.promotionDescColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Function IspromotionStatusNull() As Boolean
-            Return Me.IsNull(Me.tablePromotion.promotionStatusColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub SetpromotionStatusNull()
-            Me(Me.tablePromotion.promotionStatusColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Function GetpromoteScheduleRows() As promoteScheduleRow()
-            If (Me.Table.ChildRelations("FK_promotionID") Is Nothing) Then
-                Return New promoteScheduleRow(-1) {}
-            Else
-                Return CType(MyBase.GetChildRows(Me.Table.ChildRelations("FK_promotionID")),promoteScheduleRow())
-            End If
-        End Function
-    End Class
-    
-    '''<summary>
-    '''Represents strongly named DataRow class.
-    '''</summary>
-    Partial Public Class ScheduleRow
-        Inherits Global.System.Data.DataRow
-        
-        Private tableSchedule As ScheduleDataTable
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
-            MyBase.New(rb)
-            Me.tableSchedule = CType(Me.Table,ScheduleDataTable)
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property scheduleID() As String
-            Get
-                Return CType(Me(Me.tableSchedule.scheduleIDColumn),String)
-            End Get
-            Set
-                Me(Me.tableSchedule.scheduleIDColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property departureDateTime() As Date
-            Get
-                Try 
-                    Return CType(Me(Me.tableSchedule.departureDateTimeColumn),Date)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'departureDateTime' in table 'Schedule' is DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tableSchedule.departureDateTimeColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property arrivalDateTIme() As Date
-            Get
-                Try 
-                    Return CType(Me(Me.tableSchedule.arrivalDateTImeColumn),Date)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'arrivalDateTIme' in table 'Schedule' is DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tableSchedule.arrivalDateTImeColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property transportID() As String
-            Get
-                Try 
-                    Return CType(Me(Me.tableSchedule.transportIDColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'transportID' in table 'Schedule' is DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tableSchedule.transportIDColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property scheduleStatus() As String
-            Get
-                Try 
-                    Return CType(Me(Me.tableSchedule.scheduleStatusColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'scheduleStatus' in table 'Schedule' is DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tableSchedule.scheduleStatusColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property TransportRow() As TransportRow
-            Get
-                Return CType(Me.GetParentRow(Me.Table.ParentRelations("FK_transportID")),TransportRow)
-            End Get
-            Set
-                Me.SetParentRow(value, Me.Table.ParentRelations("FK_transportID"))
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Function IsdepartureDateTimeNull() As Boolean
-            Return Me.IsNull(Me.tableSchedule.departureDateTimeColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub SetdepartureDateTimeNull()
-            Me(Me.tableSchedule.departureDateTimeColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Function IsarrivalDateTImeNull() As Boolean
-            Return Me.IsNull(Me.tableSchedule.arrivalDateTImeColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub SetarrivalDateTImeNull()
-            Me(Me.tableSchedule.arrivalDateTImeColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Function IstransportIDNull() As Boolean
-            Return Me.IsNull(Me.tableSchedule.transportIDColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub SettransportIDNull()
-            Me(Me.tableSchedule.transportIDColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Function IsscheduleStatusNull() As Boolean
-            Return Me.IsNull(Me.tableSchedule.scheduleStatusColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub SetscheduleStatusNull()
-            Me(Me.tableSchedule.scheduleStatusColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Function GetLocationListRows() As LocationListRow()
-            If (Me.Table.ChildRelations("FK_LocationList_ToTable") Is Nothing) Then
-                Return New LocationListRow(-1) {}
-            Else
-                Return CType(MyBase.GetChildRows(Me.Table.ChildRelations("FK_LocationList_ToTable")),LocationListRow())
-            End If
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Function GetpromoteScheduleRows() As promoteScheduleRow()
-            If (Me.Table.ChildRelations("FK_scheduleID") Is Nothing) Then
-                Return New promoteScheduleRow(-1) {}
-            Else
-                Return CType(MyBase.GetChildRows(Me.Table.ChildRelations("FK_scheduleID")),promoteScheduleRow())
-            End If
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Function GetSeatRows() As SeatRow()
-            If (Me.Table.ChildRelations("FK_seatScheduleID") Is Nothing) Then
-                Return New SeatRow(-1) {}
-            Else
-                Return CType(MyBase.GetChildRows(Me.Table.ChildRelations("FK_seatScheduleID")),SeatRow())
-            End If
-        End Function
     End Class
     
     '''<summary>
@@ -6044,16 +5566,511 @@ Partial Public Class PTTSDataSet
         Public Sub SetlocationStatusNull()
             Me(Me.tableLocation1.locationStatusColumn) = Global.System.Convert.DBNull
         End Sub
+    End Class
+    
+    '''<summary>
+    '''Represents strongly named DataRow class.
+    '''</summary>
+    Partial Public Class PromotionRow
+        Inherits Global.System.Data.DataRow
+        
+        Private tablePromotion As PromotionDataTable
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
+            MyBase.New(rb)
+            Me.tablePromotion = CType(Me.Table,PromotionDataTable)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property promotionID() As String
+            Get
+                Return CType(Me(Me.tablePromotion.promotionIDColumn),String)
+            End Get
+            Set
+                Me(Me.tablePromotion.promotionIDColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property promotionName() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tablePromotion.promotionNameColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'promotionName' in table 'Promotion' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablePromotion.promotionNameColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property promotionStartDate() As Date
+            Get
+                Try 
+                    Return CType(Me(Me.tablePromotion.promotionStartDateColumn),Date)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'promotionStartDate' in table 'Promotion' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablePromotion.promotionStartDateColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property promotionEndDate() As Date
+            Get
+                Try 
+                    Return CType(Me(Me.tablePromotion.promotionEndDateColumn),Date)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'promotionEndDate' in table 'Promotion' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablePromotion.promotionEndDateColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property promotionDesc() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tablePromotion.promotionDescColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'promotionDesc' in table 'Promotion' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablePromotion.promotionDescColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property promotionStatus() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tablePromotion.promotionStatusColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'promotionStatus' in table 'Promotion' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablePromotion.promotionStatusColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IspromotionNameNull() As Boolean
+            Return Me.IsNull(Me.tablePromotion.promotionNameColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetpromotionNameNull()
+            Me(Me.tablePromotion.promotionNameColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IspromotionStartDateNull() As Boolean
+            Return Me.IsNull(Me.tablePromotion.promotionStartDateColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetpromotionStartDateNull()
+            Me(Me.tablePromotion.promotionStartDateColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IspromotionEndDateNull() As Boolean
+            Return Me.IsNull(Me.tablePromotion.promotionEndDateColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetpromotionEndDateNull()
+            Me(Me.tablePromotion.promotionEndDateColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IspromotionDescNull() As Boolean
+            Return Me.IsNull(Me.tablePromotion.promotionDescColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetpromotionDescNull()
+            Me(Me.tablePromotion.promotionDescColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IspromotionStatusNull() As Boolean
+            Return Me.IsNull(Me.tablePromotion.promotionStatusColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetpromotionStatusNull()
+            Me(Me.tablePromotion.promotionStatusColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function GetpromoteScheduleRows() As promoteScheduleRow()
+            If (Me.Table.ChildRelations("FK_promotionID") Is Nothing) Then
+                Return New promoteScheduleRow(-1) {}
+            Else
+                Return CType(MyBase.GetChildRows(Me.Table.ChildRelations("FK_promotionID")),promoteScheduleRow())
+            End If
+        End Function
+    End Class
+    
+    '''<summary>
+    '''Represents strongly named DataRow class.
+    '''</summary>
+    Partial Public Class ScheduleRow
+        Inherits Global.System.Data.DataRow
+        
+        Private tableSchedule As ScheduleDataTable
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
+            MyBase.New(rb)
+            Me.tableSchedule = CType(Me.Table,ScheduleDataTable)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property scheduleID() As String
+            Get
+                Return CType(Me(Me.tableSchedule.scheduleIDColumn),String)
+            End Get
+            Set
+                Me(Me.tableSchedule.scheduleIDColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property departureDateTime() As Date
+            Get
+                Try 
+                    Return CType(Me(Me.tableSchedule.departureDateTimeColumn),Date)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'departureDateTime' in table 'Schedule' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableSchedule.departureDateTimeColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property estimateHours() As Integer
+            Get
+                Try 
+                    Return CType(Me(Me.tableSchedule.estimateHoursColumn),Integer)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'estimateHours' in table 'Schedule' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableSchedule.estimateHoursColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property transportID() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableSchedule.transportIDColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'transportID' in table 'Schedule' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableSchedule.transportIDColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property scheduleStatus() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableSchedule.scheduleStatusColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'scheduleStatus' in table 'Schedule' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableSchedule.scheduleStatusColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property assignPromotionStatus() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableSchedule.assignPromotionStatusColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'assignPromotionStatus' in table 'Schedule' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableSchedule.assignPromotionStatusColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property TransportRow() As TransportRow
+            Get
+                Return CType(Me.GetParentRow(Me.Table.ParentRelations("FK_transportID")),TransportRow)
+            End Get
+            Set
+                Me.SetParentRow(value, Me.Table.ParentRelations("FK_transportID"))
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsdepartureDateTimeNull() As Boolean
+            Return Me.IsNull(Me.tableSchedule.departureDateTimeColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetdepartureDateTimeNull()
+            Me(Me.tableSchedule.departureDateTimeColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsestimateHoursNull() As Boolean
+            Return Me.IsNull(Me.tableSchedule.estimateHoursColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetestimateHoursNull()
+            Me(Me.tableSchedule.estimateHoursColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IstransportIDNull() As Boolean
+            Return Me.IsNull(Me.tableSchedule.transportIDColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SettransportIDNull()
+            Me(Me.tableSchedule.transportIDColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsscheduleStatusNull() As Boolean
+            Return Me.IsNull(Me.tableSchedule.scheduleStatusColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetscheduleStatusNull()
+            Me(Me.tableSchedule.scheduleStatusColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsassignPromotionStatusNull() As Boolean
+            Return Me.IsNull(Me.tableSchedule.assignPromotionStatusColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetassignPromotionStatusNull()
+            Me(Me.tableSchedule.assignPromotionStatusColumn) = Global.System.Convert.DBNull
+        End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Function GetLocationListRows() As LocationListRow()
-            If (Me.Table.ChildRelations("FK_LocationList_ToTable_11") Is Nothing) Then
+            If (Me.Table.ChildRelations("FK_LocationList_ToTable") Is Nothing) Then
                 Return New LocationListRow(-1) {}
             Else
-                Return CType(MyBase.GetChildRows(Me.Table.ChildRelations("FK_LocationList_ToTable_11")),LocationListRow())
+                Return CType(MyBase.GetChildRows(Me.Table.ChildRelations("FK_LocationList_ToTable")),LocationListRow())
             End If
         End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function GetSeatRows() As SeatRow()
+            If (Me.Table.ChildRelations("FK_seatScheduleID") Is Nothing) Then
+                Return New SeatRow(-1) {}
+            Else
+                Return CType(MyBase.GetChildRows(Me.Table.ChildRelations("FK_seatScheduleID")),SeatRow())
+            End If
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function GetpromoteScheduleRows() As promoteScheduleRow()
+            If (Me.Table.ChildRelations("FK_scheduleID") Is Nothing) Then
+                Return New promoteScheduleRow(-1) {}
+            Else
+                Return CType(MyBase.GetChildRows(Me.Table.ChildRelations("FK_scheduleID")),promoteScheduleRow())
+            End If
+        End Function
+    End Class
+    
+    '''<summary>
+    '''Represents strongly named DataRow class.
+    '''</summary>
+    Partial Public Class promoteScheduleRow
+        Inherits Global.System.Data.DataRow
+        
+        Private tablepromoteSchedule As promoteScheduleDataTable
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
+            MyBase.New(rb)
+            Me.tablepromoteSchedule = CType(Me.Table,promoteScheduleDataTable)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property promoteScheduleID() As String
+            Get
+                Return CType(Me(Me.tablepromoteSchedule.promoteScheduleIDColumn),String)
+            End Get
+            Set
+                Me(Me.tablepromoteSchedule.promoteScheduleIDColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property promotionID() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tablepromoteSchedule.promotionIDColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'promotionID' in table 'promoteSchedule' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablepromoteSchedule.promotionIDColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property scheduleID() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tablepromoteSchedule.scheduleIDColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'scheduleID' in table 'promoteSchedule' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablepromoteSchedule.scheduleIDColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property discountRate() As Integer
+            Get
+                Try 
+                    Return CType(Me(Me.tablepromoteSchedule.discountRateColumn),Integer)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'discountRate' in table 'promoteSchedule' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablepromoteSchedule.discountRateColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property PromotionRow() As PromotionRow
+            Get
+                Return CType(Me.GetParentRow(Me.Table.ParentRelations("FK_promotionID")),PromotionRow)
+            End Get
+            Set
+                Me.SetParentRow(value, Me.Table.ParentRelations("FK_promotionID"))
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property ScheduleRow() As ScheduleRow
+            Get
+                Return CType(Me.GetParentRow(Me.Table.ParentRelations("FK_scheduleID")),ScheduleRow)
+            End Get
+            Set
+                Me.SetParentRow(value, Me.Table.ParentRelations("FK_scheduleID"))
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IspromotionIDNull() As Boolean
+            Return Me.IsNull(Me.tablepromoteSchedule.promotionIDColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetpromotionIDNull()
+            Me(Me.tablepromoteSchedule.promotionIDColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsscheduleIDNull() As Boolean
+            Return Me.IsNull(Me.tablepromoteSchedule.scheduleIDColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetscheduleIDNull()
+            Me(Me.tablepromoteSchedule.scheduleIDColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsdiscountRateNull() As Boolean
+            Return Me.IsNull(Me.tablepromoteSchedule.discountRateColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetdiscountRateNull()
+            Me(Me.tablepromoteSchedule.discountRateColumn) = Global.System.Convert.DBNull
+        End Sub
     End Class
     
     '''<summary>
@@ -6204,114 +6221,6 @@ Partial Public Class PTTSDataSet
     '''Row event argument class
     '''</summary>
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-    Public Class promoteScheduleRowChangeEvent
-        Inherits Global.System.EventArgs
-        
-        Private eventRow As promoteScheduleRow
-        
-        Private eventAction As Global.System.Data.DataRowAction
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub New(ByVal row As promoteScheduleRow, ByVal action As Global.System.Data.DataRowAction)
-            MyBase.New
-            Me.eventRow = row
-            Me.eventAction = action
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property Row() As promoteScheduleRow
-            Get
-                Return Me.eventRow
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property Action() As Global.System.Data.DataRowAction
-            Get
-                Return Me.eventAction
-            End Get
-        End Property
-    End Class
-    
-    '''<summary>
-    '''Row event argument class
-    '''</summary>
-    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-    Public Class PromotionRowChangeEvent
-        Inherits Global.System.EventArgs
-        
-        Private eventRow As PromotionRow
-        
-        Private eventAction As Global.System.Data.DataRowAction
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub New(ByVal row As PromotionRow, ByVal action As Global.System.Data.DataRowAction)
-            MyBase.New
-            Me.eventRow = row
-            Me.eventAction = action
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property Row() As PromotionRow
-            Get
-                Return Me.eventRow
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property Action() As Global.System.Data.DataRowAction
-            Get
-                Return Me.eventAction
-            End Get
-        End Property
-    End Class
-    
-    '''<summary>
-    '''Row event argument class
-    '''</summary>
-    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-    Public Class ScheduleRowChangeEvent
-        Inherits Global.System.EventArgs
-        
-        Private eventRow As ScheduleRow
-        
-        Private eventAction As Global.System.Data.DataRowAction
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub New(ByVal row As ScheduleRow, ByVal action As Global.System.Data.DataRowAction)
-            MyBase.New
-            Me.eventRow = row
-            Me.eventAction = action
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property Row() As ScheduleRow
-            Get
-                Return Me.eventRow
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property Action() As Global.System.Data.DataRowAction
-            Get
-                Return Me.eventAction
-            End Get
-        End Property
-    End Class
-    
-    '''<summary>
-    '''Row event argument class
-    '''</summary>
-    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
     Public Class SeatRowChangeEvent
         Inherits Global.System.EventArgs
         
@@ -6438,6 +6347,114 @@ Partial Public Class PTTSDataSet
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public ReadOnly Property Row() As Location1Row
+            Get
+                Return Me.eventRow
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property Action() As Global.System.Data.DataRowAction
+            Get
+                Return Me.eventAction
+            End Get
+        End Property
+    End Class
+    
+    '''<summary>
+    '''Row event argument class
+    '''</summary>
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+    Public Class PromotionRowChangeEvent
+        Inherits Global.System.EventArgs
+        
+        Private eventRow As PromotionRow
+        
+        Private eventAction As Global.System.Data.DataRowAction
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub New(ByVal row As PromotionRow, ByVal action As Global.System.Data.DataRowAction)
+            MyBase.New
+            Me.eventRow = row
+            Me.eventAction = action
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property Row() As PromotionRow
+            Get
+                Return Me.eventRow
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property Action() As Global.System.Data.DataRowAction
+            Get
+                Return Me.eventAction
+            End Get
+        End Property
+    End Class
+    
+    '''<summary>
+    '''Row event argument class
+    '''</summary>
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+    Public Class ScheduleRowChangeEvent
+        Inherits Global.System.EventArgs
+        
+        Private eventRow As ScheduleRow
+        
+        Private eventAction As Global.System.Data.DataRowAction
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub New(ByVal row As ScheduleRow, ByVal action As Global.System.Data.DataRowAction)
+            MyBase.New
+            Me.eventRow = row
+            Me.eventAction = action
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property Row() As ScheduleRow
+            Get
+                Return Me.eventRow
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property Action() As Global.System.Data.DataRowAction
+            Get
+                Return Me.eventAction
+            End Get
+        End Property
+    End Class
+    
+    '''<summary>
+    '''Row event argument class
+    '''</summary>
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+    Public Class promoteScheduleRowChangeEvent
+        Inherits Global.System.EventArgs
+        
+        Private eventRow As promoteScheduleRow
+        
+        Private eventAction As Global.System.Data.DataRowAction
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub New(ByVal row As promoteScheduleRow, ByVal action As Global.System.Data.DataRowAction)
+            MyBase.New
+            Me.eventRow = row
+            Me.eventAction = action
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property Row() As promoteScheduleRow
             Get
                 Return Me.eventRow
             End Get
@@ -8537,1319 +8554,6 @@ Namespace PTTSDataSetTableAdapters
      Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
      Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-    Partial Public Class promoteScheduleTableAdapter
-        Inherits Global.System.ComponentModel.Component
-        
-        Private WithEvents _adapter As Global.System.Data.SqlClient.SqlDataAdapter
-        
-        Private _connection As Global.System.Data.SqlClient.SqlConnection
-        
-        Private _transaction As Global.System.Data.SqlClient.SqlTransaction
-        
-        Private _commandCollection() As Global.System.Data.SqlClient.SqlCommand
-        
-        Private _clearBeforeFill As Boolean
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub New()
-            MyBase.New
-            Me.ClearBeforeFill = true
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected Friend ReadOnly Property Adapter() As Global.System.Data.SqlClient.SqlDataAdapter
-            Get
-                If (Me._adapter Is Nothing) Then
-                    Me.InitAdapter
-                End If
-                Return Me._adapter
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Friend Property Connection() As Global.System.Data.SqlClient.SqlConnection
-            Get
-                If (Me._connection Is Nothing) Then
-                    Me.InitConnection
-                End If
-                Return Me._connection
-            End Get
-            Set
-                Me._connection = value
-                If (Not (Me.Adapter.InsertCommand) Is Nothing) Then
-                    Me.Adapter.InsertCommand.Connection = value
-                End If
-                If (Not (Me.Adapter.DeleteCommand) Is Nothing) Then
-                    Me.Adapter.DeleteCommand.Connection = value
-                End If
-                If (Not (Me.Adapter.UpdateCommand) Is Nothing) Then
-                    Me.Adapter.UpdateCommand.Connection = value
-                End If
-                Dim i As Integer = 0
-                Do While (i < Me.CommandCollection.Length)
-                    If (Not (Me.CommandCollection(i)) Is Nothing) Then
-                        CType(Me.CommandCollection(i),Global.System.Data.SqlClient.SqlCommand).Connection = value
-                    End If
-                    i = (i + 1)
-                Loop
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Friend Property Transaction() As Global.System.Data.SqlClient.SqlTransaction
-            Get
-                Return Me._transaction
-            End Get
-            Set
-                Me._transaction = value
-                Dim i As Integer = 0
-                Do While (i < Me.CommandCollection.Length)
-                    Me.CommandCollection(i).Transaction = Me._transaction
-                    i = (i + 1)
-                Loop
-                If ((Not (Me.Adapter) Is Nothing)  _
-                            AndAlso (Not (Me.Adapter.DeleteCommand) Is Nothing)) Then
-                    Me.Adapter.DeleteCommand.Transaction = Me._transaction
-                End If
-                If ((Not (Me.Adapter) Is Nothing)  _
-                            AndAlso (Not (Me.Adapter.InsertCommand) Is Nothing)) Then
-                    Me.Adapter.InsertCommand.Transaction = Me._transaction
-                End If
-                If ((Not (Me.Adapter) Is Nothing)  _
-                            AndAlso (Not (Me.Adapter.UpdateCommand) Is Nothing)) Then
-                    Me.Adapter.UpdateCommand.Transaction = Me._transaction
-                End If
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected ReadOnly Property CommandCollection() As Global.System.Data.SqlClient.SqlCommand()
-            Get
-                If (Me._commandCollection Is Nothing) Then
-                    Me.InitCommandCollection
-                End If
-                Return Me._commandCollection
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property ClearBeforeFill() As Boolean
-            Get
-                Return Me._clearBeforeFill
-            End Get
-            Set
-                Me._clearBeforeFill = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Private Sub InitAdapter()
-            Me._adapter = New Global.System.Data.SqlClient.SqlDataAdapter()
-            Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
-            tableMapping.SourceTable = "Table"
-            tableMapping.DataSetTable = "promoteSchedule"
-            tableMapping.ColumnMappings.Add("promoteScheduleID", "promoteScheduleID")
-            tableMapping.ColumnMappings.Add("promotionID", "promotionID")
-            tableMapping.ColumnMappings.Add("scheduleID", "scheduleID")
-            tableMapping.ColumnMappings.Add("discountRate", "discountRate")
-            Me._adapter.TableMappings.Add(tableMapping)
-            Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
-            Me._adapter.DeleteCommand.Connection = Me.Connection
-            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[promoteSchedule] WHERE (([promoteScheduleID] = @Original_promo"& _ 
-                "teScheduleID) AND ((@IsNull_promotionID = 1 AND [promotionID] IS NULL) OR ([prom"& _ 
-                "otionID] = @Original_promotionID)) AND ((@IsNull_scheduleID = 1 AND [scheduleID]"& _ 
-                " IS NULL) OR ([scheduleID] = @Original_scheduleID)) AND ((@IsNull_discountRate ="& _ 
-                " 1 AND [discountRate] IS NULL) OR ([discountRate] = @Original_discountRate)))"
-            Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_promoteScheduleID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "promoteScheduleID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_promotionID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "promotionID", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_promotionID", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "promotionID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_scheduleID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "scheduleID", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_scheduleID", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "scheduleID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_discountRate", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "discountRate", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_discountRate", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "discountRate", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
-            Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[promoteSchedule] ([promoteScheduleID], [promotionID], [schedul"& _ 
-                "eID], [discountRate]) VALUES (@promoteScheduleID, @promotionID, @scheduleID, @di"& _ 
-                "scountRate);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT promoteScheduleID, promotionID, scheduleID, discountRate FR"& _ 
-                "OM promoteSchedule WHERE (promoteScheduleID = @promoteScheduleID)"
-            Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@promoteScheduleID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "promoteScheduleID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@promotionID", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "promotionID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@scheduleID", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "scheduleID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@discountRate", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "discountRate", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
-            Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[promoteSchedule] SET [promoteScheduleID] = @promoteScheduleID, [pro"& _ 
-                "motionID] = @promotionID, [scheduleID] = @scheduleID, [discountRate] = @discount"& _ 
-                "Rate WHERE (([promoteScheduleID] = @Original_promoteScheduleID) AND ((@IsNull_pr"& _ 
-                "omotionID = 1 AND [promotionID] IS NULL) OR ([promotionID] = @Original_promotion"& _ 
-                "ID)) AND ((@IsNull_scheduleID = 1 AND [scheduleID] IS NULL) OR ([scheduleID] = @"& _ 
-                "Original_scheduleID)) AND ((@IsNull_discountRate = 1 AND [discountRate] IS NULL)"& _ 
-                " OR ([discountRate] = @Original_discountRate)));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT promoteScheduleID, prom"& _ 
-                "otionID, scheduleID, discountRate FROM promoteSchedule WHERE (promoteScheduleID "& _ 
-                "= @promoteScheduleID)"
-            Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@promoteScheduleID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "promoteScheduleID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@promotionID", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "promotionID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@scheduleID", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "scheduleID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@discountRate", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "discountRate", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_promoteScheduleID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "promoteScheduleID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_promotionID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "promotionID", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_promotionID", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "promotionID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_scheduleID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "scheduleID", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_scheduleID", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "scheduleID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_discountRate", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "discountRate", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_discountRate", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "discountRate", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Private Sub InitConnection()
-            Me._connection = New Global.System.Data.SqlClient.SqlConnection()
-            Me._connection.ConnectionString = Global.PublicTransportTicketingSystem.My.MySettings.Default.PTTSConnectionString
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
-            Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
-            Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT promoteScheduleID, promotionID, scheduleID, discountRate FROM dbo.promoteS"& _ 
-                "chedule"
-            Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
-        Public Overloads Overridable Function Fill(ByVal dataTable As PTTSDataSet.promoteScheduleDataTable) As Integer
-            Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            If (Me.ClearBeforeFill = true) Then
-                dataTable.Clear
-            End If
-            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
-            Return returnValue
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function GetData() As PTTSDataSet.promoteScheduleDataTable
-            Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            Dim dataTable As PTTSDataSet.promoteScheduleDataTable = New PTTSDataSet.promoteScheduleDataTable()
-            Me.Adapter.Fill(dataTable)
-            Return dataTable
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataTable As PTTSDataSet.promoteScheduleDataTable) As Integer
-            Return Me.Adapter.Update(dataTable)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataSet As PTTSDataSet) As Integer
-            Return Me.Adapter.Update(dataSet, "promoteSchedule")
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataRow As Global.System.Data.DataRow) As Integer
-            Return Me.Adapter.Update(New Global.System.Data.DataRow() {dataRow})
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataRows() As Global.System.Data.DataRow) As Integer
-            Return Me.Adapter.Update(dataRows)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal Original_promoteScheduleID As Integer, ByVal Original_promotionID As String, ByVal Original_scheduleID As String, ByVal Original_discountRate As Global.System.Nullable(Of Integer)) As Integer
-            Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_promoteScheduleID,Integer)
-            If (Original_promotionID Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(1).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(2).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.DeleteCommand.Parameters(1).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(2).Value = CType(Original_promotionID,String)
-            End If
-            If (Original_scheduleID Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(3).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(4).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.DeleteCommand.Parameters(3).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(4).Value = CType(Original_scheduleID,String)
-            End If
-            If (Original_discountRate.HasValue = true) Then
-                Me.Adapter.DeleteCommand.Parameters(5).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(6).Value = CType(Original_discountRate.Value,Integer)
-            Else
-                Me.Adapter.DeleteCommand.Parameters(5).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(6).Value = Global.System.DBNull.Value
-            End If
-            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
-            If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
-                        <> Global.System.Data.ConnectionState.Open) Then
-                Me.Adapter.DeleteCommand.Connection.Open
-            End If
-            Try 
-                Dim returnValue As Integer = Me.Adapter.DeleteCommand.ExecuteNonQuery
-                Return returnValue
-            Finally
-                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
-                    Me.Adapter.DeleteCommand.Connection.Close
-                End If
-            End Try
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal promoteScheduleID As Integer, ByVal promotionID As String, ByVal scheduleID As String, ByVal discountRate As Global.System.Nullable(Of Integer)) As Integer
-            Me.Adapter.InsertCommand.Parameters(0).Value = CType(promoteScheduleID,Integer)
-            If (promotionID Is Nothing) Then
-                Me.Adapter.InsertCommand.Parameters(1).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.InsertCommand.Parameters(1).Value = CType(promotionID,String)
-            End If
-            If (scheduleID Is Nothing) Then
-                Me.Adapter.InsertCommand.Parameters(2).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.InsertCommand.Parameters(2).Value = CType(scheduleID,String)
-            End If
-            If (discountRate.HasValue = true) Then
-                Me.Adapter.InsertCommand.Parameters(3).Value = CType(discountRate.Value,Integer)
-            Else
-                Me.Adapter.InsertCommand.Parameters(3).Value = Global.System.DBNull.Value
-            End If
-            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
-            If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
-                        <> Global.System.Data.ConnectionState.Open) Then
-                Me.Adapter.InsertCommand.Connection.Open
-            End If
-            Try 
-                Dim returnValue As Integer = Me.Adapter.InsertCommand.ExecuteNonQuery
-                Return returnValue
-            Finally
-                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
-                    Me.Adapter.InsertCommand.Connection.Close
-                End If
-            End Try
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal promoteScheduleID As Integer, ByVal promotionID As String, ByVal scheduleID As String, ByVal discountRate As Global.System.Nullable(Of Integer), ByVal Original_promoteScheduleID As Integer, ByVal Original_promotionID As String, ByVal Original_scheduleID As String, ByVal Original_discountRate As Global.System.Nullable(Of Integer)) As Integer
-            Me.Adapter.UpdateCommand.Parameters(0).Value = CType(promoteScheduleID,Integer)
-            If (promotionID Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(1).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(1).Value = CType(promotionID,String)
-            End If
-            If (scheduleID Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(2).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(2).Value = CType(scheduleID,String)
-            End If
-            If (discountRate.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(discountRate.Value,Integer)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(3).Value = Global.System.DBNull.Value
-            End If
-            Me.Adapter.UpdateCommand.Parameters(4).Value = CType(Original_promoteScheduleID,Integer)
-            If (Original_promotionID Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(6).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(Original_promotionID,String)
-            End If
-            If (Original_scheduleID Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(8).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(Original_scheduleID,String)
-            End If
-            If (Original_discountRate.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(Original_discountRate.Value,Integer)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(10).Value = Global.System.DBNull.Value
-            End If
-            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
-            If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
-                        <> Global.System.Data.ConnectionState.Open) Then
-                Me.Adapter.UpdateCommand.Connection.Open
-            End If
-            Try 
-                Dim returnValue As Integer = Me.Adapter.UpdateCommand.ExecuteNonQuery
-                Return returnValue
-            Finally
-                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
-                    Me.Adapter.UpdateCommand.Connection.Close
-                End If
-            End Try
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal promotionID As String, ByVal scheduleID As String, ByVal discountRate As Global.System.Nullable(Of Integer), ByVal Original_promoteScheduleID As Integer, ByVal Original_promotionID As String, ByVal Original_scheduleID As String, ByVal Original_discountRate As Global.System.Nullable(Of Integer)) As Integer
-            Return Me.Update(Original_promoteScheduleID, promotionID, scheduleID, discountRate, Original_promoteScheduleID, Original_promotionID, Original_scheduleID, Original_discountRate)
-        End Function
-    End Class
-    
-    '''<summary>
-    '''Represents the connection and commands used to retrieve and save data.
-    '''</summary>
-    <Global.System.ComponentModel.DesignerCategoryAttribute("code"),  _
-     Global.System.ComponentModel.ToolboxItem(true),  _
-     Global.System.ComponentModel.DataObjectAttribute(true),  _
-     Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
-        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
-     Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-    Partial Public Class PromotionTableAdapter
-        Inherits Global.System.ComponentModel.Component
-        
-        Private WithEvents _adapter As Global.System.Data.SqlClient.SqlDataAdapter
-        
-        Private _connection As Global.System.Data.SqlClient.SqlConnection
-        
-        Private _transaction As Global.System.Data.SqlClient.SqlTransaction
-        
-        Private _commandCollection() As Global.System.Data.SqlClient.SqlCommand
-        
-        Private _clearBeforeFill As Boolean
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub New()
-            MyBase.New
-            Me.ClearBeforeFill = true
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected Friend ReadOnly Property Adapter() As Global.System.Data.SqlClient.SqlDataAdapter
-            Get
-                If (Me._adapter Is Nothing) Then
-                    Me.InitAdapter
-                End If
-                Return Me._adapter
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Friend Property Connection() As Global.System.Data.SqlClient.SqlConnection
-            Get
-                If (Me._connection Is Nothing) Then
-                    Me.InitConnection
-                End If
-                Return Me._connection
-            End Get
-            Set
-                Me._connection = value
-                If (Not (Me.Adapter.InsertCommand) Is Nothing) Then
-                    Me.Adapter.InsertCommand.Connection = value
-                End If
-                If (Not (Me.Adapter.DeleteCommand) Is Nothing) Then
-                    Me.Adapter.DeleteCommand.Connection = value
-                End If
-                If (Not (Me.Adapter.UpdateCommand) Is Nothing) Then
-                    Me.Adapter.UpdateCommand.Connection = value
-                End If
-                Dim i As Integer = 0
-                Do While (i < Me.CommandCollection.Length)
-                    If (Not (Me.CommandCollection(i)) Is Nothing) Then
-                        CType(Me.CommandCollection(i),Global.System.Data.SqlClient.SqlCommand).Connection = value
-                    End If
-                    i = (i + 1)
-                Loop
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Friend Property Transaction() As Global.System.Data.SqlClient.SqlTransaction
-            Get
-                Return Me._transaction
-            End Get
-            Set
-                Me._transaction = value
-                Dim i As Integer = 0
-                Do While (i < Me.CommandCollection.Length)
-                    Me.CommandCollection(i).Transaction = Me._transaction
-                    i = (i + 1)
-                Loop
-                If ((Not (Me.Adapter) Is Nothing)  _
-                            AndAlso (Not (Me.Adapter.DeleteCommand) Is Nothing)) Then
-                    Me.Adapter.DeleteCommand.Transaction = Me._transaction
-                End If
-                If ((Not (Me.Adapter) Is Nothing)  _
-                            AndAlso (Not (Me.Adapter.InsertCommand) Is Nothing)) Then
-                    Me.Adapter.InsertCommand.Transaction = Me._transaction
-                End If
-                If ((Not (Me.Adapter) Is Nothing)  _
-                            AndAlso (Not (Me.Adapter.UpdateCommand) Is Nothing)) Then
-                    Me.Adapter.UpdateCommand.Transaction = Me._transaction
-                End If
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected ReadOnly Property CommandCollection() As Global.System.Data.SqlClient.SqlCommand()
-            Get
-                If (Me._commandCollection Is Nothing) Then
-                    Me.InitCommandCollection
-                End If
-                Return Me._commandCollection
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property ClearBeforeFill() As Boolean
-            Get
-                Return Me._clearBeforeFill
-            End Get
-            Set
-                Me._clearBeforeFill = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Private Sub InitAdapter()
-            Me._adapter = New Global.System.Data.SqlClient.SqlDataAdapter()
-            Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
-            tableMapping.SourceTable = "Table"
-            tableMapping.DataSetTable = "Promotion"
-            tableMapping.ColumnMappings.Add("promotionID", "promotionID")
-            tableMapping.ColumnMappings.Add("promotionName", "promotionName")
-            tableMapping.ColumnMappings.Add("promotionStartDate", "promotionStartDate")
-            tableMapping.ColumnMappings.Add("promotionEndDate", "promotionEndDate")
-            tableMapping.ColumnMappings.Add("promotionDesc", "promotionDesc")
-            tableMapping.ColumnMappings.Add("promotionStatus", "promotionStatus")
-            Me._adapter.TableMappings.Add(tableMapping)
-            Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
-            Me._adapter.DeleteCommand.Connection = Me.Connection
-            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Promotion] WHERE (([promotionID] = @Original_promotionID) AND "& _ 
-                "((@IsNull_promotionName = 1 AND [promotionName] IS NULL) OR ([promotionName] = @"& _ 
-                "Original_promotionName)) AND ((@IsNull_promotionStartDate = 1 AND [promotionStar"& _ 
-                "tDate] IS NULL) OR ([promotionStartDate] = @Original_promotionStartDate)) AND (("& _ 
-                "@IsNull_promotionEndDate = 1 AND [promotionEndDate] IS NULL) OR ([promotionEndDa"& _ 
-                "te] = @Original_promotionEndDate)) AND ((@IsNull_promotionStatus = 1 AND [promot"& _ 
-                "ionStatus] IS NULL) OR ([promotionStatus] = @Original_promotionStatus)))"
-            Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_promotionID", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "promotionID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_promotionName", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "promotionName", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_promotionName", Global.System.Data.SqlDbType.VarBinary, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "promotionName", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_promotionStartDate", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "promotionStartDate", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_promotionStartDate", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "promotionStartDate", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_promotionEndDate", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "promotionEndDate", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_promotionEndDate", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "promotionEndDate", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_promotionStatus", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "promotionStatus", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_promotionStatus", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "promotionStatus", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
-            Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Promotion] ([promotionID], [promotionName], [promotionStartDat"& _ 
-                "e], [promotionEndDate], [promotionDesc], [promotionStatus]) VALUES (@promotionID"& _ 
-                ", @promotionName, @promotionStartDate, @promotionEndDate, @promotionDesc, @promo"& _ 
-                "tionStatus);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT promotionID, promotionName, promotionStartDate, promotionEn"& _ 
-                "dDate, promotionDesc, promotionStatus FROM Promotion WHERE (promotionID = @promo"& _ 
-                "tionID)"
-            Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@promotionID", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "promotionID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@promotionName", Global.System.Data.SqlDbType.VarBinary, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "promotionName", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@promotionStartDate", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "promotionStartDate", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@promotionEndDate", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "promotionEndDate", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@promotionDesc", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "promotionDesc", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@promotionStatus", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "promotionStatus", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
-            Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[Promotion] SET [promotionID] = @promotionID, [promotionName] = @pro"& _ 
-                "motionName, [promotionStartDate] = @promotionStartDate, [promotionEndDate] = @pr"& _ 
-                "omotionEndDate, [promotionDesc] = @promotionDesc, [promotionStatus] = @promotion"& _ 
-                "Status WHERE (([promotionID] = @Original_promotionID) AND ((@IsNull_promotionNam"& _ 
-                "e = 1 AND [promotionName] IS NULL) OR ([promotionName] = @Original_promotionName"& _ 
-                ")) AND ((@IsNull_promotionStartDate = 1 AND [promotionStartDate] IS NULL) OR ([p"& _ 
-                "romotionStartDate] = @Original_promotionStartDate)) AND ((@IsNull_promotionEndDa"& _ 
-                "te = 1 AND [promotionEndDate] IS NULL) OR ([promotionEndDate] = @Original_promot"& _ 
-                "ionEndDate)) AND ((@IsNull_promotionStatus = 1 AND [promotionStatus] IS NULL) OR"& _ 
-                " ([promotionStatus] = @Original_promotionStatus)));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT promotionID, promoti"& _ 
-                "onName, promotionStartDate, promotionEndDate, promotionDesc, promotionStatus FRO"& _ 
-                "M Promotion WHERE (promotionID = @promotionID)"
-            Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@promotionID", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "promotionID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@promotionName", Global.System.Data.SqlDbType.VarBinary, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "promotionName", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@promotionStartDate", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "promotionStartDate", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@promotionEndDate", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "promotionEndDate", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@promotionDesc", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "promotionDesc", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@promotionStatus", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "promotionStatus", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_promotionID", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "promotionID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_promotionName", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "promotionName", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_promotionName", Global.System.Data.SqlDbType.VarBinary, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "promotionName", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_promotionStartDate", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "promotionStartDate", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_promotionStartDate", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "promotionStartDate", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_promotionEndDate", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "promotionEndDate", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_promotionEndDate", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "promotionEndDate", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_promotionStatus", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "promotionStatus", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_promotionStatus", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "promotionStatus", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Private Sub InitConnection()
-            Me._connection = New Global.System.Data.SqlClient.SqlConnection()
-            Me._connection.ConnectionString = Global.PublicTransportTicketingSystem.My.MySettings.Default.PTTSConnectionString
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
-            Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
-            Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT promotionID, promotionName, promotionStartDate, promotionEndDate, promotio"& _ 
-                "nDesc, promotionStatus FROM dbo.Promotion"
-            Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
-        Public Overloads Overridable Function Fill(ByVal dataTable As PTTSDataSet.PromotionDataTable) As Integer
-            Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            If (Me.ClearBeforeFill = true) Then
-                dataTable.Clear
-            End If
-            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
-            Return returnValue
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function GetData() As PTTSDataSet.PromotionDataTable
-            Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            Dim dataTable As PTTSDataSet.PromotionDataTable = New PTTSDataSet.PromotionDataTable()
-            Me.Adapter.Fill(dataTable)
-            Return dataTable
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataTable As PTTSDataSet.PromotionDataTable) As Integer
-            Return Me.Adapter.Update(dataTable)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataSet As PTTSDataSet) As Integer
-            Return Me.Adapter.Update(dataSet, "Promotion")
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataRow As Global.System.Data.DataRow) As Integer
-            Return Me.Adapter.Update(New Global.System.Data.DataRow() {dataRow})
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataRows() As Global.System.Data.DataRow) As Integer
-            Return Me.Adapter.Update(dataRows)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal Original_promotionID As String, ByVal Original_promotionName() As Byte, ByVal Original_promotionStartDate As Global.System.Nullable(Of Date), ByVal Original_promotionEndDate As Global.System.Nullable(Of Date), ByVal Original_promotionStatus As String) As Integer
-            If (Original_promotionID Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("Original_promotionID")
-            Else
-                Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_promotionID,String)
-            End If
-            If (Original_promotionName Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(1).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(2).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.DeleteCommand.Parameters(1).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(2).Value = CType(Original_promotionName,Byte())
-            End If
-            If (Original_promotionStartDate.HasValue = true) Then
-                Me.Adapter.DeleteCommand.Parameters(3).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(4).Value = CType(Original_promotionStartDate.Value,Date)
-            Else
-                Me.Adapter.DeleteCommand.Parameters(3).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(4).Value = Global.System.DBNull.Value
-            End If
-            If (Original_promotionEndDate.HasValue = true) Then
-                Me.Adapter.DeleteCommand.Parameters(5).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(6).Value = CType(Original_promotionEndDate.Value,Date)
-            Else
-                Me.Adapter.DeleteCommand.Parameters(5).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(6).Value = Global.System.DBNull.Value
-            End If
-            If (Original_promotionStatus Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(7).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(8).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.DeleteCommand.Parameters(7).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(8).Value = CType(Original_promotionStatus,String)
-            End If
-            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
-            If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
-                        <> Global.System.Data.ConnectionState.Open) Then
-                Me.Adapter.DeleteCommand.Connection.Open
-            End If
-            Try 
-                Dim returnValue As Integer = Me.Adapter.DeleteCommand.ExecuteNonQuery
-                Return returnValue
-            Finally
-                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
-                    Me.Adapter.DeleteCommand.Connection.Close
-                End If
-            End Try
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal promotionID As String, ByVal promotionName() As Byte, ByVal promotionStartDate As Global.System.Nullable(Of Date), ByVal promotionEndDate As Global.System.Nullable(Of Date), ByVal promotionDesc As String, ByVal promotionStatus As String) As Integer
-            If (promotionID Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("promotionID")
-            Else
-                Me.Adapter.InsertCommand.Parameters(0).Value = CType(promotionID,String)
-            End If
-            If (promotionName Is Nothing) Then
-                Me.Adapter.InsertCommand.Parameters(1).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.InsertCommand.Parameters(1).Value = CType(promotionName,Byte())
-            End If
-            If (promotionStartDate.HasValue = true) Then
-                Me.Adapter.InsertCommand.Parameters(2).Value = CType(promotionStartDate.Value,Date)
-            Else
-                Me.Adapter.InsertCommand.Parameters(2).Value = Global.System.DBNull.Value
-            End If
-            If (promotionEndDate.HasValue = true) Then
-                Me.Adapter.InsertCommand.Parameters(3).Value = CType(promotionEndDate.Value,Date)
-            Else
-                Me.Adapter.InsertCommand.Parameters(3).Value = Global.System.DBNull.Value
-            End If
-            If (promotionDesc Is Nothing) Then
-                Me.Adapter.InsertCommand.Parameters(4).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.InsertCommand.Parameters(4).Value = CType(promotionDesc,String)
-            End If
-            If (promotionStatus Is Nothing) Then
-                Me.Adapter.InsertCommand.Parameters(5).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.InsertCommand.Parameters(5).Value = CType(promotionStatus,String)
-            End If
-            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
-            If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
-                        <> Global.System.Data.ConnectionState.Open) Then
-                Me.Adapter.InsertCommand.Connection.Open
-            End If
-            Try 
-                Dim returnValue As Integer = Me.Adapter.InsertCommand.ExecuteNonQuery
-                Return returnValue
-            Finally
-                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
-                    Me.Adapter.InsertCommand.Connection.Close
-                End If
-            End Try
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal promotionID As String, ByVal promotionName() As Byte, ByVal promotionStartDate As Global.System.Nullable(Of Date), ByVal promotionEndDate As Global.System.Nullable(Of Date), ByVal promotionDesc As String, ByVal promotionStatus As String, ByVal Original_promotionID As String, ByVal Original_promotionName() As Byte, ByVal Original_promotionStartDate As Global.System.Nullable(Of Date), ByVal Original_promotionEndDate As Global.System.Nullable(Of Date), ByVal Original_promotionStatus As String) As Integer
-            If (promotionID Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("promotionID")
-            Else
-                Me.Adapter.UpdateCommand.Parameters(0).Value = CType(promotionID,String)
-            End If
-            If (promotionName Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(1).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(1).Value = CType(promotionName,Byte())
-            End If
-            If (promotionStartDate.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(2).Value = CType(promotionStartDate.Value,Date)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(2).Value = Global.System.DBNull.Value
-            End If
-            If (promotionEndDate.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(promotionEndDate.Value,Date)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(3).Value = Global.System.DBNull.Value
-            End If
-            If (promotionDesc Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(4).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(promotionDesc,String)
-            End If
-            If (promotionStatus Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(5).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(promotionStatus,String)
-            End If
-            If (Original_promotionID Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("Original_promotionID")
-            Else
-                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(Original_promotionID,String)
-            End If
-            If (Original_promotionName Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(8).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(Original_promotionName,Byte())
-            End If
-            If (Original_promotionStartDate.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(Original_promotionStartDate.Value,Date)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(10).Value = Global.System.DBNull.Value
-            End If
-            If (Original_promotionEndDate.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(Original_promotionEndDate.Value,Date)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(12).Value = Global.System.DBNull.Value
-            End If
-            If (Original_promotionStatus Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(14).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(Original_promotionStatus,String)
-            End If
-            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
-            If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
-                        <> Global.System.Data.ConnectionState.Open) Then
-                Me.Adapter.UpdateCommand.Connection.Open
-            End If
-            Try 
-                Dim returnValue As Integer = Me.Adapter.UpdateCommand.ExecuteNonQuery
-                Return returnValue
-            Finally
-                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
-                    Me.Adapter.UpdateCommand.Connection.Close
-                End If
-            End Try
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal promotionName() As Byte, ByVal promotionStartDate As Global.System.Nullable(Of Date), ByVal promotionEndDate As Global.System.Nullable(Of Date), ByVal promotionDesc As String, ByVal promotionStatus As String, ByVal Original_promotionID As String, ByVal Original_promotionName() As Byte, ByVal Original_promotionStartDate As Global.System.Nullable(Of Date), ByVal Original_promotionEndDate As Global.System.Nullable(Of Date), ByVal Original_promotionStatus As String) As Integer
-            Return Me.Update(Original_promotionID, promotionName, promotionStartDate, promotionEndDate, promotionDesc, promotionStatus, Original_promotionID, Original_promotionName, Original_promotionStartDate, Original_promotionEndDate, Original_promotionStatus)
-        End Function
-    End Class
-    
-    '''<summary>
-    '''Represents the connection and commands used to retrieve and save data.
-    '''</summary>
-    <Global.System.ComponentModel.DesignerCategoryAttribute("code"),  _
-     Global.System.ComponentModel.ToolboxItem(true),  _
-     Global.System.ComponentModel.DataObjectAttribute(true),  _
-     Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
-        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
-     Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-    Partial Public Class ScheduleTableAdapter
-        Inherits Global.System.ComponentModel.Component
-        
-        Private WithEvents _adapter As Global.System.Data.SqlClient.SqlDataAdapter
-        
-        Private _connection As Global.System.Data.SqlClient.SqlConnection
-        
-        Private _transaction As Global.System.Data.SqlClient.SqlTransaction
-        
-        Private _commandCollection() As Global.System.Data.SqlClient.SqlCommand
-        
-        Private _clearBeforeFill As Boolean
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub New()
-            MyBase.New
-            Me.ClearBeforeFill = true
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected Friend ReadOnly Property Adapter() As Global.System.Data.SqlClient.SqlDataAdapter
-            Get
-                If (Me._adapter Is Nothing) Then
-                    Me.InitAdapter
-                End If
-                Return Me._adapter
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Friend Property Connection() As Global.System.Data.SqlClient.SqlConnection
-            Get
-                If (Me._connection Is Nothing) Then
-                    Me.InitConnection
-                End If
-                Return Me._connection
-            End Get
-            Set
-                Me._connection = value
-                If (Not (Me.Adapter.InsertCommand) Is Nothing) Then
-                    Me.Adapter.InsertCommand.Connection = value
-                End If
-                If (Not (Me.Adapter.DeleteCommand) Is Nothing) Then
-                    Me.Adapter.DeleteCommand.Connection = value
-                End If
-                If (Not (Me.Adapter.UpdateCommand) Is Nothing) Then
-                    Me.Adapter.UpdateCommand.Connection = value
-                End If
-                Dim i As Integer = 0
-                Do While (i < Me.CommandCollection.Length)
-                    If (Not (Me.CommandCollection(i)) Is Nothing) Then
-                        CType(Me.CommandCollection(i),Global.System.Data.SqlClient.SqlCommand).Connection = value
-                    End If
-                    i = (i + 1)
-                Loop
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Friend Property Transaction() As Global.System.Data.SqlClient.SqlTransaction
-            Get
-                Return Me._transaction
-            End Get
-            Set
-                Me._transaction = value
-                Dim i As Integer = 0
-                Do While (i < Me.CommandCollection.Length)
-                    Me.CommandCollection(i).Transaction = Me._transaction
-                    i = (i + 1)
-                Loop
-                If ((Not (Me.Adapter) Is Nothing)  _
-                            AndAlso (Not (Me.Adapter.DeleteCommand) Is Nothing)) Then
-                    Me.Adapter.DeleteCommand.Transaction = Me._transaction
-                End If
-                If ((Not (Me.Adapter) Is Nothing)  _
-                            AndAlso (Not (Me.Adapter.InsertCommand) Is Nothing)) Then
-                    Me.Adapter.InsertCommand.Transaction = Me._transaction
-                End If
-                If ((Not (Me.Adapter) Is Nothing)  _
-                            AndAlso (Not (Me.Adapter.UpdateCommand) Is Nothing)) Then
-                    Me.Adapter.UpdateCommand.Transaction = Me._transaction
-                End If
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Protected ReadOnly Property CommandCollection() As Global.System.Data.SqlClient.SqlCommand()
-            Get
-                If (Me._commandCollection Is Nothing) Then
-                    Me.InitCommandCollection
-                End If
-                Return Me._commandCollection
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property ClearBeforeFill() As Boolean
-            Get
-                Return Me._clearBeforeFill
-            End Get
-            Set
-                Me._clearBeforeFill = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Private Sub InitAdapter()
-            Me._adapter = New Global.System.Data.SqlClient.SqlDataAdapter()
-            Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
-            tableMapping.SourceTable = "Table"
-            tableMapping.DataSetTable = "Schedule"
-            tableMapping.ColumnMappings.Add("scheduleID", "scheduleID")
-            tableMapping.ColumnMappings.Add("departureDateTime", "departureDateTime")
-            tableMapping.ColumnMappings.Add("arrivalDateTIme", "arrivalDateTIme")
-            tableMapping.ColumnMappings.Add("transportID", "transportID")
-            tableMapping.ColumnMappings.Add("scheduleStatus", "scheduleStatus")
-            Me._adapter.TableMappings.Add(tableMapping)
-            Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
-            Me._adapter.DeleteCommand.Connection = Me.Connection
-            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Schedule] WHERE (([scheduleID] = @Original_scheduleID) AND ((@"& _ 
-                "IsNull_departureDateTime = 1 AND [departureDateTime] IS NULL) OR ([departureDate"& _ 
-                "Time] = @Original_departureDateTime)) AND ((@IsNull_arrivalDateTIme = 1 AND [arr"& _ 
-                "ivalDateTIme] IS NULL) OR ([arrivalDateTIme] = @Original_arrivalDateTIme)) AND ("& _ 
-                "(@IsNull_transportID = 1 AND [transportID] IS NULL) OR ([transportID] = @Origina"& _ 
-                "l_transportID)) AND ((@IsNull_scheduleStatus = 1 AND [scheduleStatus] IS NULL) O"& _ 
-                "R ([scheduleStatus] = @Original_scheduleStatus)))"
-            Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_scheduleID", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "scheduleID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_departureDateTime", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "departureDateTime", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_departureDateTime", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "departureDateTime", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_arrivalDateTIme", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "arrivalDateTIme", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_arrivalDateTIme", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "arrivalDateTIme", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_transportID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "transportID", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_transportID", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "transportID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_scheduleStatus", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "scheduleStatus", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_scheduleStatus", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "scheduleStatus", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
-            Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Schedule] ([scheduleID], [departureDateTime], [arrivalDateTIme"& _ 
-                "], [transportID], [scheduleStatus]) VALUES (@scheduleID, @departureDateTime, @ar"& _ 
-                "rivalDateTIme, @transportID, @scheduleStatus);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT scheduleID, departureDate"& _ 
-                "Time, arrivalDateTIme, transportID, scheduleStatus FROM Schedule WHERE (schedule"& _ 
-                "ID = @scheduleID)"
-            Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@scheduleID", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "scheduleID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@departureDateTime", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "departureDateTime", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@arrivalDateTIme", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "arrivalDateTIme", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@transportID", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "transportID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@scheduleStatus", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "scheduleStatus", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
-            Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[Schedule] SET [scheduleID] = @scheduleID, [departureDateTime] = @de"& _ 
-                "partureDateTime, [arrivalDateTIme] = @arrivalDateTIme, [transportID] = @transpor"& _ 
-                "tID, [scheduleStatus] = @scheduleStatus WHERE (([scheduleID] = @Original_schedul"& _ 
-                "eID) AND ((@IsNull_departureDateTime = 1 AND [departureDateTime] IS NULL) OR ([d"& _ 
-                "epartureDateTime] = @Original_departureDateTime)) AND ((@IsNull_arrivalDateTIme "& _ 
-                "= 1 AND [arrivalDateTIme] IS NULL) OR ([arrivalDateTIme] = @Original_arrivalDate"& _ 
-                "TIme)) AND ((@IsNull_transportID = 1 AND [transportID] IS NULL) OR ([transportID"& _ 
-                "] = @Original_transportID)) AND ((@IsNull_scheduleStatus = 1 AND [scheduleStatus"& _ 
-                "] IS NULL) OR ([scheduleStatus] = @Original_scheduleStatus)));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT scheduleI"& _ 
-                "D, departureDateTime, arrivalDateTIme, transportID, scheduleStatus FROM Schedule"& _ 
-                " WHERE (scheduleID = @scheduleID)"
-            Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@scheduleID", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "scheduleID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@departureDateTime", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "departureDateTime", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@arrivalDateTIme", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "arrivalDateTIme", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@transportID", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "transportID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@scheduleStatus", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "scheduleStatus", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_scheduleID", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "scheduleID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_departureDateTime", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "departureDateTime", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_departureDateTime", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "departureDateTime", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_arrivalDateTIme", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "arrivalDateTIme", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_arrivalDateTIme", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "arrivalDateTIme", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_transportID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "transportID", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_transportID", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "transportID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_scheduleStatus", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "scheduleStatus", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_scheduleStatus", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "scheduleStatus", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Private Sub InitConnection()
-            Me._connection = New Global.System.Data.SqlClient.SqlConnection()
-            Me._connection.ConnectionString = Global.PublicTransportTicketingSystem.My.MySettings.Default.PTTSConnectionString
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
-            Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
-            Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT scheduleID, departureDateTime, arrivalDateTIme, transportID, scheduleStatu"& _ 
-                "s FROM dbo.Schedule"
-            Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
-        Public Overloads Overridable Function Fill(ByVal dataTable As PTTSDataSet.ScheduleDataTable) As Integer
-            Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            If (Me.ClearBeforeFill = true) Then
-                dataTable.Clear
-            End If
-            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
-            Return returnValue
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function GetData() As PTTSDataSet.ScheduleDataTable
-            Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            Dim dataTable As PTTSDataSet.ScheduleDataTable = New PTTSDataSet.ScheduleDataTable()
-            Me.Adapter.Fill(dataTable)
-            Return dataTable
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataTable As PTTSDataSet.ScheduleDataTable) As Integer
-            Return Me.Adapter.Update(dataTable)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataSet As PTTSDataSet) As Integer
-            Return Me.Adapter.Update(dataSet, "Schedule")
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataRow As Global.System.Data.DataRow) As Integer
-            Return Me.Adapter.Update(New Global.System.Data.DataRow() {dataRow})
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataRows() As Global.System.Data.DataRow) As Integer
-            Return Me.Adapter.Update(dataRows)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal Original_scheduleID As String, ByVal Original_departureDateTime As Global.System.Nullable(Of Date), ByVal Original_arrivalDateTIme As Global.System.Nullable(Of Date), ByVal Original_transportID As String, ByVal Original_scheduleStatus As String) As Integer
-            If (Original_scheduleID Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("Original_scheduleID")
-            Else
-                Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_scheduleID,String)
-            End If
-            If (Original_departureDateTime.HasValue = true) Then
-                Me.Adapter.DeleteCommand.Parameters(1).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(2).Value = CType(Original_departureDateTime.Value,Date)
-            Else
-                Me.Adapter.DeleteCommand.Parameters(1).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(2).Value = Global.System.DBNull.Value
-            End If
-            If (Original_arrivalDateTIme.HasValue = true) Then
-                Me.Adapter.DeleteCommand.Parameters(3).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(4).Value = CType(Original_arrivalDateTIme.Value,Date)
-            Else
-                Me.Adapter.DeleteCommand.Parameters(3).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(4).Value = Global.System.DBNull.Value
-            End If
-            If (Original_transportID Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(5).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(6).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.DeleteCommand.Parameters(5).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(6).Value = CType(Original_transportID,String)
-            End If
-            If (Original_scheduleStatus Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(7).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(8).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.DeleteCommand.Parameters(7).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(8).Value = CType(Original_scheduleStatus,String)
-            End If
-            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
-            If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
-                        <> Global.System.Data.ConnectionState.Open) Then
-                Me.Adapter.DeleteCommand.Connection.Open
-            End If
-            Try 
-                Dim returnValue As Integer = Me.Adapter.DeleteCommand.ExecuteNonQuery
-                Return returnValue
-            Finally
-                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
-                    Me.Adapter.DeleteCommand.Connection.Close
-                End If
-            End Try
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal scheduleID As String, ByVal departureDateTime As Global.System.Nullable(Of Date), ByVal arrivalDateTIme As Global.System.Nullable(Of Date), ByVal transportID As String, ByVal scheduleStatus As String) As Integer
-            If (scheduleID Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("scheduleID")
-            Else
-                Me.Adapter.InsertCommand.Parameters(0).Value = CType(scheduleID,String)
-            End If
-            If (departureDateTime.HasValue = true) Then
-                Me.Adapter.InsertCommand.Parameters(1).Value = CType(departureDateTime.Value,Date)
-            Else
-                Me.Adapter.InsertCommand.Parameters(1).Value = Global.System.DBNull.Value
-            End If
-            If (arrivalDateTIme.HasValue = true) Then
-                Me.Adapter.InsertCommand.Parameters(2).Value = CType(arrivalDateTIme.Value,Date)
-            Else
-                Me.Adapter.InsertCommand.Parameters(2).Value = Global.System.DBNull.Value
-            End If
-            If (transportID Is Nothing) Then
-                Me.Adapter.InsertCommand.Parameters(3).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.InsertCommand.Parameters(3).Value = CType(transportID,String)
-            End If
-            If (scheduleStatus Is Nothing) Then
-                Me.Adapter.InsertCommand.Parameters(4).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.InsertCommand.Parameters(4).Value = CType(scheduleStatus,String)
-            End If
-            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
-            If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
-                        <> Global.System.Data.ConnectionState.Open) Then
-                Me.Adapter.InsertCommand.Connection.Open
-            End If
-            Try 
-                Dim returnValue As Integer = Me.Adapter.InsertCommand.ExecuteNonQuery
-                Return returnValue
-            Finally
-                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
-                    Me.Adapter.InsertCommand.Connection.Close
-                End If
-            End Try
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal scheduleID As String, ByVal departureDateTime As Global.System.Nullable(Of Date), ByVal arrivalDateTIme As Global.System.Nullable(Of Date), ByVal transportID As String, ByVal scheduleStatus As String, ByVal Original_scheduleID As String, ByVal Original_departureDateTime As Global.System.Nullable(Of Date), ByVal Original_arrivalDateTIme As Global.System.Nullable(Of Date), ByVal Original_transportID As String, ByVal Original_scheduleStatus As String) As Integer
-            If (scheduleID Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("scheduleID")
-            Else
-                Me.Adapter.UpdateCommand.Parameters(0).Value = CType(scheduleID,String)
-            End If
-            If (departureDateTime.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(1).Value = CType(departureDateTime.Value,Date)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(1).Value = Global.System.DBNull.Value
-            End If
-            If (arrivalDateTIme.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(2).Value = CType(arrivalDateTIme.Value,Date)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(2).Value = Global.System.DBNull.Value
-            End If
-            If (transportID Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(3).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(transportID,String)
-            End If
-            If (scheduleStatus Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(4).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(scheduleStatus,String)
-            End If
-            If (Original_scheduleID Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("Original_scheduleID")
-            Else
-                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(Original_scheduleID,String)
-            End If
-            If (Original_departureDateTime.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(Original_departureDateTime.Value,Date)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(7).Value = Global.System.DBNull.Value
-            End If
-            If (Original_arrivalDateTIme.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(Original_arrivalDateTIme.Value,Date)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(9).Value = Global.System.DBNull.Value
-            End If
-            If (Original_transportID Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(11).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(Original_transportID,String)
-            End If
-            If (Original_scheduleStatus Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(13).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(Original_scheduleStatus,String)
-            End If
-            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
-            If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
-                        <> Global.System.Data.ConnectionState.Open) Then
-                Me.Adapter.UpdateCommand.Connection.Open
-            End If
-            Try 
-                Dim returnValue As Integer = Me.Adapter.UpdateCommand.ExecuteNonQuery
-                Return returnValue
-            Finally
-                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
-                    Me.Adapter.UpdateCommand.Connection.Close
-                End If
-            End Try
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal departureDateTime As Global.System.Nullable(Of Date), ByVal arrivalDateTIme As Global.System.Nullable(Of Date), ByVal transportID As String, ByVal scheduleStatus As String, ByVal Original_scheduleID As String, ByVal Original_departureDateTime As Global.System.Nullable(Of Date), ByVal Original_arrivalDateTIme As Global.System.Nullable(Of Date), ByVal Original_transportID As String, ByVal Original_scheduleStatus As String) As Integer
-            Return Me.Update(Original_scheduleID, departureDateTime, arrivalDateTIme, transportID, scheduleStatus, Original_scheduleID, Original_departureDateTime, Original_arrivalDateTIme, Original_transportID, Original_scheduleStatus)
-        End Function
-    End Class
-    
-    '''<summary>
-    '''Represents the connection and commands used to retrieve and save data.
-    '''</summary>
-    <Global.System.ComponentModel.DesignerCategoryAttribute("code"),  _
-     Global.System.ComponentModel.ToolboxItem(true),  _
-     Global.System.ComponentModel.DataObjectAttribute(true),  _
-     Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
-        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
-     Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
     Partial Public Class SeatTableAdapter
         Inherits Global.System.ComponentModel.Component
         
@@ -10945,7 +9649,7 @@ Namespace PTTSDataSetTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(4) {}
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(5) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT transportID, seatPrice, transportName, transportType, licensePlate, totalS"& _ 
@@ -10980,6 +9684,12 @@ Namespace PTTSDataSetTableAdapters
                 "ort"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (transportType = @transType)"
             Me._commandCollection(4).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@transType", Global.System.Data.SqlDbType.VarChar, 20, Global.System.Data.ParameterDirection.Input, 0, 0, "transportType", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(5) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(5).Connection = Me.Connection
+            Me._commandCollection(5).CommandText = "dbo.SelectQuery"
+            Me._commandCollection(5).CommandType = Global.System.Data.CommandType.StoredProcedure
+            Me._commandCollection(5).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@RETURN_VALUE", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.ReturnValue, 10, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(5).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@selectedTransport", Global.System.Data.SqlDbType.VarChar, 20, Global.System.Data.ParameterDirection.Input, 0, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -11150,6 +9860,24 @@ Namespace PTTSDataSetTableAdapters
             Dim dataTable As PTTSDataSet.TransportDataTable = New PTTSDataSet.TransportDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
+        Public Overloads Overridable Function FillBy4(ByVal dataTable As PTTSDataSet.TransportDataTable, ByVal selectedTransport As String) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(5)
+            If (selectedTransport Is Nothing) Then
+                Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.SelectCommand.Parameters(1).Value = CType(selectedTransport,String)
+            End If
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -11875,6 +10603,1427 @@ Namespace PTTSDataSetTableAdapters
     End Class
     
     '''<summary>
+    '''Represents the connection and commands used to retrieve and save data.
+    '''</summary>
+    <Global.System.ComponentModel.DesignerCategoryAttribute("code"),  _
+     Global.System.ComponentModel.ToolboxItem(true),  _
+     Global.System.ComponentModel.DataObjectAttribute(true),  _
+     Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
+     Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+    Partial Public Class PromotionTableAdapter
+        Inherits Global.System.ComponentModel.Component
+        
+        Private WithEvents _adapter As Global.System.Data.SqlClient.SqlDataAdapter
+        
+        Private _connection As Global.System.Data.SqlClient.SqlConnection
+        
+        Private _transaction As Global.System.Data.SqlClient.SqlTransaction
+        
+        Private _commandCollection() As Global.System.Data.SqlClient.SqlCommand
+        
+        Private _clearBeforeFill As Boolean
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub New()
+            MyBase.New
+            Me.ClearBeforeFill = true
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Friend ReadOnly Property Adapter() As Global.System.Data.SqlClient.SqlDataAdapter
+            Get
+                If (Me._adapter Is Nothing) Then
+                    Me.InitAdapter
+                End If
+                Return Me._adapter
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Friend Property Connection() As Global.System.Data.SqlClient.SqlConnection
+            Get
+                If (Me._connection Is Nothing) Then
+                    Me.InitConnection
+                End If
+                Return Me._connection
+            End Get
+            Set
+                Me._connection = value
+                If (Not (Me.Adapter.InsertCommand) Is Nothing) Then
+                    Me.Adapter.InsertCommand.Connection = value
+                End If
+                If (Not (Me.Adapter.DeleteCommand) Is Nothing) Then
+                    Me.Adapter.DeleteCommand.Connection = value
+                End If
+                If (Not (Me.Adapter.UpdateCommand) Is Nothing) Then
+                    Me.Adapter.UpdateCommand.Connection = value
+                End If
+                Dim i As Integer = 0
+                Do While (i < Me.CommandCollection.Length)
+                    If (Not (Me.CommandCollection(i)) Is Nothing) Then
+                        CType(Me.CommandCollection(i),Global.System.Data.SqlClient.SqlCommand).Connection = value
+                    End If
+                    i = (i + 1)
+                Loop
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Friend Property Transaction() As Global.System.Data.SqlClient.SqlTransaction
+            Get
+                Return Me._transaction
+            End Get
+            Set
+                Me._transaction = value
+                Dim i As Integer = 0
+                Do While (i < Me.CommandCollection.Length)
+                    Me.CommandCollection(i).Transaction = Me._transaction
+                    i = (i + 1)
+                Loop
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.DeleteCommand) Is Nothing)) Then
+                    Me.Adapter.DeleteCommand.Transaction = Me._transaction
+                End If
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.InsertCommand) Is Nothing)) Then
+                    Me.Adapter.InsertCommand.Transaction = Me._transaction
+                End If
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.UpdateCommand) Is Nothing)) Then
+                    Me.Adapter.UpdateCommand.Transaction = Me._transaction
+                End If
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected ReadOnly Property CommandCollection() As Global.System.Data.SqlClient.SqlCommand()
+            Get
+                If (Me._commandCollection Is Nothing) Then
+                    Me.InitCommandCollection
+                End If
+                Return Me._commandCollection
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property ClearBeforeFill() As Boolean
+            Get
+                Return Me._clearBeforeFill
+            End Get
+            Set
+                Me._clearBeforeFill = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Private Sub InitAdapter()
+            Me._adapter = New Global.System.Data.SqlClient.SqlDataAdapter()
+            Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
+            tableMapping.SourceTable = "Table"
+            tableMapping.DataSetTable = "Promotion"
+            tableMapping.ColumnMappings.Add("promotionID", "promotionID")
+            tableMapping.ColumnMappings.Add("promotionName", "promotionName")
+            tableMapping.ColumnMappings.Add("promotionStartDate", "promotionStartDate")
+            tableMapping.ColumnMappings.Add("promotionEndDate", "promotionEndDate")
+            tableMapping.ColumnMappings.Add("promotionDesc", "promotionDesc")
+            tableMapping.ColumnMappings.Add("promotionStatus", "promotionStatus")
+            Me._adapter.TableMappings.Add(tableMapping)
+            Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
+            Me._adapter.DeleteCommand.Connection = Me.Connection
+            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Promotion] WHERE (([promotionID] = @Original_promotionID) AND "& _ 
+                "((@IsNull_promotionName = 1 AND [promotionName] IS NULL) OR ([promotionName] = @"& _ 
+                "Original_promotionName)) AND ((@IsNull_promotionStartDate = 1 AND [promotionStar"& _ 
+                "tDate] IS NULL) OR ([promotionStartDate] = @Original_promotionStartDate)) AND (("& _ 
+                "@IsNull_promotionEndDate = 1 AND [promotionEndDate] IS NULL) OR ([promotionEndDa"& _ 
+                "te] = @Original_promotionEndDate)) AND ((@IsNull_promotionStatus = 1 AND [promot"& _ 
+                "ionStatus] IS NULL) OR ([promotionStatus] = @Original_promotionStatus)))"
+            Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_promotionID", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "promotionID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_promotionName", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "promotionName", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_promotionName", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "promotionName", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_promotionStartDate", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "promotionStartDate", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_promotionStartDate", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "promotionStartDate", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_promotionEndDate", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "promotionEndDate", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_promotionEndDate", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "promotionEndDate", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_promotionStatus", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "promotionStatus", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_promotionStatus", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "promotionStatus", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
+            Me._adapter.InsertCommand.Connection = Me.Connection
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Promotion] ([promotionID], [promotionName], [promotionStartDat"& _ 
+                "e], [promotionEndDate], [promotionDesc], [promotionStatus]) VALUES (@promotionID"& _ 
+                ", @promotionName, @promotionStartDate, @promotionEndDate, @promotionDesc, @promo"& _ 
+                "tionStatus);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT promotionID, promotionName, promotionStartDate, promotionEn"& _ 
+                "dDate, promotionDesc, promotionStatus FROM Promotion WHERE (promotionID = @promo"& _ 
+                "tionID)"
+            Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@promotionID", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "promotionID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@promotionName", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "promotionName", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@promotionStartDate", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "promotionStartDate", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@promotionEndDate", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "promotionEndDate", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@promotionDesc", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "promotionDesc", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@promotionStatus", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "promotionStatus", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
+            Me._adapter.UpdateCommand.Connection = Me.Connection
+            Me._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[Promotion] SET [promotionID] = @promotionID, [promotionName] = @pro"& _ 
+                "motionName, [promotionStartDate] = @promotionStartDate, [promotionEndDate] = @pr"& _ 
+                "omotionEndDate, [promotionDesc] = @promotionDesc, [promotionStatus] = @promotion"& _ 
+                "Status WHERE (([promotionID] = @Original_promotionID) AND ((@IsNull_promotionNam"& _ 
+                "e = 1 AND [promotionName] IS NULL) OR ([promotionName] = @Original_promotionName"& _ 
+                ")) AND ((@IsNull_promotionStartDate = 1 AND [promotionStartDate] IS NULL) OR ([p"& _ 
+                "romotionStartDate] = @Original_promotionStartDate)) AND ((@IsNull_promotionEndDa"& _ 
+                "te = 1 AND [promotionEndDate] IS NULL) OR ([promotionEndDate] = @Original_promot"& _ 
+                "ionEndDate)) AND ((@IsNull_promotionStatus = 1 AND [promotionStatus] IS NULL) OR"& _ 
+                " ([promotionStatus] = @Original_promotionStatus)));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT promotionID, promoti"& _ 
+                "onName, promotionStartDate, promotionEndDate, promotionDesc, promotionStatus FRO"& _ 
+                "M Promotion WHERE (promotionID = @promotionID)"
+            Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@promotionID", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "promotionID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@promotionName", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "promotionName", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@promotionStartDate", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "promotionStartDate", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@promotionEndDate", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "promotionEndDate", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@promotionDesc", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "promotionDesc", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@promotionStatus", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "promotionStatus", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_promotionID", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "promotionID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_promotionName", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "promotionName", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_promotionName", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "promotionName", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_promotionStartDate", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "promotionStartDate", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_promotionStartDate", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "promotionStartDate", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_promotionEndDate", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "promotionEndDate", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_promotionEndDate", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "promotionEndDate", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_promotionStatus", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "promotionStatus", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_promotionStatus", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "promotionStatus", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Private Sub InitConnection()
+            Me._connection = New Global.System.Data.SqlClient.SqlConnection()
+            Me._connection.ConnectionString = Global.PublicTransportTicketingSystem.My.MySettings.Default.PTTSConnectionString
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Private Sub InitCommandCollection()
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
+            Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(0).Connection = Me.Connection
+            Me._commandCollection(0).CommandText = "SELECT promotionID, promotionName, promotionStartDate, promotionEndDate, promotio"& _ 
+                "nDesc, promotionStatus FROM dbo.Promotion"
+            Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
+        Public Overloads Overridable Function Fill(ByVal dataTable As PTTSDataSet.PromotionDataTable) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
+        Public Overloads Overridable Function GetData() As PTTSDataSet.PromotionDataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            Dim dataTable As PTTSDataSet.PromotionDataTable = New PTTSDataSet.PromotionDataTable()
+            Me.Adapter.Fill(dataTable)
+            Return dataTable
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataTable As PTTSDataSet.PromotionDataTable) As Integer
+            Return Me.Adapter.Update(dataTable)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataSet As PTTSDataSet) As Integer
+            Return Me.Adapter.Update(dataSet, "Promotion")
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataRow As Global.System.Data.DataRow) As Integer
+            Return Me.Adapter.Update(New Global.System.Data.DataRow() {dataRow})
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataRows() As Global.System.Data.DataRow) As Integer
+            Return Me.Adapter.Update(dataRows)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
+        Public Overloads Overridable Function Delete(ByVal Original_promotionID As String, ByVal Original_promotionName As String, ByVal Original_promotionStartDate As Global.System.Nullable(Of Date), ByVal Original_promotionEndDate As Global.System.Nullable(Of Date), ByVal Original_promotionStatus As String) As Integer
+            If (Original_promotionID Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Original_promotionID")
+            Else
+                Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_promotionID,String)
+            End If
+            If (Original_promotionName Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(1).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(2).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(1).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(2).Value = CType(Original_promotionName,String)
+            End If
+            If (Original_promotionStartDate.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(3).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(4).Value = CType(Original_promotionStartDate.Value,Date)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(3).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(4).Value = Global.System.DBNull.Value
+            End If
+            If (Original_promotionEndDate.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(5).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(6).Value = CType(Original_promotionEndDate.Value,Date)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(5).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(6).Value = Global.System.DBNull.Value
+            End If
+            If (Original_promotionStatus Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(7).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(8).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(7).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(8).Value = CType(Original_promotionStatus,String)
+            End If
+            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
+            If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                Me.Adapter.DeleteCommand.Connection.Open
+            End If
+            Try 
+                Dim returnValue As Integer = Me.Adapter.DeleteCommand.ExecuteNonQuery
+                Return returnValue
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    Me.Adapter.DeleteCommand.Connection.Close
+                End If
+            End Try
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
+        Public Overloads Overridable Function Insert(ByVal promotionID As String, ByVal promotionName As String, ByVal promotionStartDate As Global.System.Nullable(Of Date), ByVal promotionEndDate As Global.System.Nullable(Of Date), ByVal promotionDesc As String, ByVal promotionStatus As String) As Integer
+            If (promotionID Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("promotionID")
+            Else
+                Me.Adapter.InsertCommand.Parameters(0).Value = CType(promotionID,String)
+            End If
+            If (promotionName Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(1).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(1).Value = CType(promotionName,String)
+            End If
+            If (promotionStartDate.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(2).Value = CType(promotionStartDate.Value,Date)
+            Else
+                Me.Adapter.InsertCommand.Parameters(2).Value = Global.System.DBNull.Value
+            End If
+            If (promotionEndDate.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(3).Value = CType(promotionEndDate.Value,Date)
+            Else
+                Me.Adapter.InsertCommand.Parameters(3).Value = Global.System.DBNull.Value
+            End If
+            If (promotionDesc Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(4).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(4).Value = CType(promotionDesc,String)
+            End If
+            If (promotionStatus Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(5).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(5).Value = CType(promotionStatus,String)
+            End If
+            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
+            If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                Me.Adapter.InsertCommand.Connection.Open
+            End If
+            Try 
+                Dim returnValue As Integer = Me.Adapter.InsertCommand.ExecuteNonQuery
+                Return returnValue
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    Me.Adapter.InsertCommand.Connection.Close
+                End If
+            End Try
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
+        Public Overloads Overridable Function Update(ByVal promotionID As String, ByVal promotionName As String, ByVal promotionStartDate As Global.System.Nullable(Of Date), ByVal promotionEndDate As Global.System.Nullable(Of Date), ByVal promotionDesc As String, ByVal promotionStatus As String, ByVal Original_promotionID As String, ByVal Original_promotionName As String, ByVal Original_promotionStartDate As Global.System.Nullable(Of Date), ByVal Original_promotionEndDate As Global.System.Nullable(Of Date), ByVal Original_promotionStatus As String) As Integer
+            If (promotionID Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("promotionID")
+            Else
+                Me.Adapter.UpdateCommand.Parameters(0).Value = CType(promotionID,String)
+            End If
+            If (promotionName Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(1).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(1).Value = CType(promotionName,String)
+            End If
+            If (promotionStartDate.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(2).Value = CType(promotionStartDate.Value,Date)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(2).Value = Global.System.DBNull.Value
+            End If
+            If (promotionEndDate.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(promotionEndDate.Value,Date)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(3).Value = Global.System.DBNull.Value
+            End If
+            If (promotionDesc Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(4).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(promotionDesc,String)
+            End If
+            If (promotionStatus Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(5).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(promotionStatus,String)
+            End If
+            If (Original_promotionID Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Original_promotionID")
+            Else
+                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(Original_promotionID,String)
+            End If
+            If (Original_promotionName Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(8).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(Original_promotionName,String)
+            End If
+            If (Original_promotionStartDate.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(Original_promotionStartDate.Value,Date)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(10).Value = Global.System.DBNull.Value
+            End If
+            If (Original_promotionEndDate.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(Original_promotionEndDate.Value,Date)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(12).Value = Global.System.DBNull.Value
+            End If
+            If (Original_promotionStatus Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(14).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(Original_promotionStatus,String)
+            End If
+            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
+            If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                Me.Adapter.UpdateCommand.Connection.Open
+            End If
+            Try 
+                Dim returnValue As Integer = Me.Adapter.UpdateCommand.ExecuteNonQuery
+                Return returnValue
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    Me.Adapter.UpdateCommand.Connection.Close
+                End If
+            End Try
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
+        Public Overloads Overridable Function Update(ByVal promotionName As String, ByVal promotionStartDate As Global.System.Nullable(Of Date), ByVal promotionEndDate As Global.System.Nullable(Of Date), ByVal promotionDesc As String, ByVal promotionStatus As String, ByVal Original_promotionID As String, ByVal Original_promotionName As String, ByVal Original_promotionStartDate As Global.System.Nullable(Of Date), ByVal Original_promotionEndDate As Global.System.Nullable(Of Date), ByVal Original_promotionStatus As String) As Integer
+            Return Me.Update(Original_promotionID, promotionName, promotionStartDate, promotionEndDate, promotionDesc, promotionStatus, Original_promotionID, Original_promotionName, Original_promotionStartDate, Original_promotionEndDate, Original_promotionStatus)
+        End Function
+    End Class
+    
+    '''<summary>
+    '''Represents the connection and commands used to retrieve and save data.
+    '''</summary>
+    <Global.System.ComponentModel.DesignerCategoryAttribute("code"),  _
+     Global.System.ComponentModel.ToolboxItem(true),  _
+     Global.System.ComponentModel.DataObjectAttribute(true),  _
+     Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
+     Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+    Partial Public Class ScheduleTableAdapter
+        Inherits Global.System.ComponentModel.Component
+        
+        Private WithEvents _adapter As Global.System.Data.SqlClient.SqlDataAdapter
+        
+        Private _connection As Global.System.Data.SqlClient.SqlConnection
+        
+        Private _transaction As Global.System.Data.SqlClient.SqlTransaction
+        
+        Private _commandCollection() As Global.System.Data.SqlClient.SqlCommand
+        
+        Private _clearBeforeFill As Boolean
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub New()
+            MyBase.New
+            Me.ClearBeforeFill = true
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Friend ReadOnly Property Adapter() As Global.System.Data.SqlClient.SqlDataAdapter
+            Get
+                If (Me._adapter Is Nothing) Then
+                    Me.InitAdapter
+                End If
+                Return Me._adapter
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Friend Property Connection() As Global.System.Data.SqlClient.SqlConnection
+            Get
+                If (Me._connection Is Nothing) Then
+                    Me.InitConnection
+                End If
+                Return Me._connection
+            End Get
+            Set
+                Me._connection = value
+                If (Not (Me.Adapter.InsertCommand) Is Nothing) Then
+                    Me.Adapter.InsertCommand.Connection = value
+                End If
+                If (Not (Me.Adapter.DeleteCommand) Is Nothing) Then
+                    Me.Adapter.DeleteCommand.Connection = value
+                End If
+                If (Not (Me.Adapter.UpdateCommand) Is Nothing) Then
+                    Me.Adapter.UpdateCommand.Connection = value
+                End If
+                Dim i As Integer = 0
+                Do While (i < Me.CommandCollection.Length)
+                    If (Not (Me.CommandCollection(i)) Is Nothing) Then
+                        CType(Me.CommandCollection(i),Global.System.Data.SqlClient.SqlCommand).Connection = value
+                    End If
+                    i = (i + 1)
+                Loop
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Friend Property Transaction() As Global.System.Data.SqlClient.SqlTransaction
+            Get
+                Return Me._transaction
+            End Get
+            Set
+                Me._transaction = value
+                Dim i As Integer = 0
+                Do While (i < Me.CommandCollection.Length)
+                    Me.CommandCollection(i).Transaction = Me._transaction
+                    i = (i + 1)
+                Loop
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.DeleteCommand) Is Nothing)) Then
+                    Me.Adapter.DeleteCommand.Transaction = Me._transaction
+                End If
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.InsertCommand) Is Nothing)) Then
+                    Me.Adapter.InsertCommand.Transaction = Me._transaction
+                End If
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.UpdateCommand) Is Nothing)) Then
+                    Me.Adapter.UpdateCommand.Transaction = Me._transaction
+                End If
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected ReadOnly Property CommandCollection() As Global.System.Data.SqlClient.SqlCommand()
+            Get
+                If (Me._commandCollection Is Nothing) Then
+                    Me.InitCommandCollection
+                End If
+                Return Me._commandCollection
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property ClearBeforeFill() As Boolean
+            Get
+                Return Me._clearBeforeFill
+            End Get
+            Set
+                Me._clearBeforeFill = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Private Sub InitAdapter()
+            Me._adapter = New Global.System.Data.SqlClient.SqlDataAdapter()
+            Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
+            tableMapping.SourceTable = "Table"
+            tableMapping.DataSetTable = "Schedule"
+            tableMapping.ColumnMappings.Add("scheduleID", "scheduleID")
+            tableMapping.ColumnMappings.Add("departureDateTime", "departureDateTime")
+            tableMapping.ColumnMappings.Add("estimateHours", "estimateHours")
+            tableMapping.ColumnMappings.Add("transportID", "transportID")
+            tableMapping.ColumnMappings.Add("scheduleStatus", "scheduleStatus")
+            tableMapping.ColumnMappings.Add("assignPromotionStatus", "assignPromotionStatus")
+            Me._adapter.TableMappings.Add(tableMapping)
+            Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
+            Me._adapter.DeleteCommand.Connection = Me.Connection
+            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Schedule] WHERE (([scheduleID] = @Original_scheduleID) AND ((@"& _ 
+                "IsNull_departureDateTime = 1 AND [departureDateTime] IS NULL) OR ([departureDate"& _ 
+                "Time] = @Original_departureDateTime)) AND ((@IsNull_estimateHours = 1 AND [estim"& _ 
+                "ateHours] IS NULL) OR ([estimateHours] = @Original_estimateHours)) AND ((@IsNull"& _ 
+                "_transportID = 1 AND [transportID] IS NULL) OR ([transportID] = @Original_transp"& _ 
+                "ortID)) AND ((@IsNull_scheduleStatus = 1 AND [scheduleStatus] IS NULL) OR ([sche"& _ 
+                "duleStatus] = @Original_scheduleStatus)) AND ((@IsNull_assignPromotionStatus = 1"& _ 
+                " AND [assignPromotionStatus] IS NULL) OR ([assignPromotionStatus] = @Original_as"& _ 
+                "signPromotionStatus)))"
+            Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_scheduleID", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "scheduleID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_departureDateTime", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "departureDateTime", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_departureDateTime", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "departureDateTime", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_estimateHours", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "estimateHours", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_estimateHours", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "estimateHours", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_transportID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "transportID", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_transportID", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "transportID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_scheduleStatus", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "scheduleStatus", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_scheduleStatus", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "scheduleStatus", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_assignPromotionStatus", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "assignPromotionStatus", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_assignPromotionStatus", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "assignPromotionStatus", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
+            Me._adapter.InsertCommand.Connection = Me.Connection
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Schedule] ([scheduleID], [departureDateTime], [estimateHours],"& _ 
+                " [transportID], [scheduleStatus], [assignPromotionStatus]) VALUES (@scheduleID, "& _ 
+                "@departureDateTime, @estimateHours, @transportID, @scheduleStatus, @assignPromot"& _ 
+                "ionStatus);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT scheduleID, departureDateTime, estimateHours, transportID, s"& _ 
+                "cheduleStatus, assignPromotionStatus FROM Schedule WHERE (scheduleID = @schedule"& _ 
+                "ID)"
+            Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@scheduleID", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "scheduleID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@departureDateTime", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "departureDateTime", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@estimateHours", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "estimateHours", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@transportID", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "transportID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@scheduleStatus", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "scheduleStatus", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@assignPromotionStatus", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "assignPromotionStatus", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
+            Me._adapter.UpdateCommand.Connection = Me.Connection
+            Me._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[Schedule] SET [scheduleID] = @scheduleID, [departureDateTime] = @de"& _ 
+                "partureDateTime, [estimateHours] = @estimateHours, [transportID] = @transportID,"& _ 
+                " [scheduleStatus] = @scheduleStatus, [assignPromotionStatus] = @assignPromotionS"& _ 
+                "tatus WHERE (([scheduleID] = @Original_scheduleID) AND ((@IsNull_departureDateTi"& _ 
+                "me = 1 AND [departureDateTime] IS NULL) OR ([departureDateTime] = @Original_depa"& _ 
+                "rtureDateTime)) AND ((@IsNull_estimateHours = 1 AND [estimateHours] IS NULL) OR "& _ 
+                "([estimateHours] = @Original_estimateHours)) AND ((@IsNull_transportID = 1 AND ["& _ 
+                "transportID] IS NULL) OR ([transportID] = @Original_transportID)) AND ((@IsNull_"& _ 
+                "scheduleStatus = 1 AND [scheduleStatus] IS NULL) OR ([scheduleStatus] = @Origina"& _ 
+                "l_scheduleStatus)) AND ((@IsNull_assignPromotionStatus = 1 AND [assignPromotionS"& _ 
+                "tatus] IS NULL) OR ([assignPromotionStatus] = @Original_assignPromotionStatus)))"& _ 
+                ";"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT scheduleID, departureDateTime, estimateHours, transportID, scheduleSta"& _ 
+                "tus, assignPromotionStatus FROM Schedule WHERE (scheduleID = @scheduleID)"
+            Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@scheduleID", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "scheduleID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@departureDateTime", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "departureDateTime", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@estimateHours", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "estimateHours", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@transportID", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "transportID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@scheduleStatus", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "scheduleStatus", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@assignPromotionStatus", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "assignPromotionStatus", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_scheduleID", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "scheduleID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_departureDateTime", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "departureDateTime", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_departureDateTime", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "departureDateTime", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_estimateHours", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "estimateHours", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_estimateHours", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "estimateHours", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_transportID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "transportID", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_transportID", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "transportID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_scheduleStatus", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "scheduleStatus", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_scheduleStatus", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "scheduleStatus", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_assignPromotionStatus", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "assignPromotionStatus", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_assignPromotionStatus", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "assignPromotionStatus", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Private Sub InitConnection()
+            Me._connection = New Global.System.Data.SqlClient.SqlConnection()
+            Me._connection.ConnectionString = Global.PublicTransportTicketingSystem.My.MySettings.Default.PTTSConnectionString
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Private Sub InitCommandCollection()
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(2) {}
+            Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(0).Connection = Me.Connection
+            Me._commandCollection(0).CommandText = "SELECT scheduleID, departureDateTime, estimateHours, transportID, scheduleStatus,"& _ 
+                " assignPromotionStatus FROM dbo.Schedule"
+            Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(1).Connection = Me.Connection
+            Me._commandCollection(1).CommandText = "dbo.SelectMonth"
+            Me._commandCollection(1).CommandType = Global.System.Data.CommandType.StoredProcedure
+            Me._commandCollection(2) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(2).Connection = Me.Connection
+            Me._commandCollection(2).CommandText = "dbo.SelectYear"
+            Me._commandCollection(2).CommandType = Global.System.Data.CommandType.StoredProcedure
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
+        Public Overloads Overridable Function Fill(ByVal dataTable As PTTSDataSet.ScheduleDataTable) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
+        Public Overloads Overridable Function GetData() As PTTSDataSet.ScheduleDataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            Dim dataTable As PTTSDataSet.ScheduleDataTable = New PTTSDataSet.ScheduleDataTable()
+            Me.Adapter.Fill(dataTable)
+            Return dataTable
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
+        Public Overloads Overridable Function FillBy(ByVal dataTable As PTTSDataSet.ScheduleDataTable) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(1)
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
+        Public Overloads Overridable Function GetDataBy() As PTTSDataSet.ScheduleDataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(1)
+            Dim dataTable As PTTSDataSet.ScheduleDataTable = New PTTSDataSet.ScheduleDataTable()
+            Me.Adapter.Fill(dataTable)
+            Return dataTable
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
+        Public Overloads Overridable Function FillBy1(ByVal dataTable As PTTSDataSet.ScheduleDataTable) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(2)
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
+        Public Overloads Overridable Function GetDataBy1() As PTTSDataSet.ScheduleDataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(2)
+            Dim dataTable As PTTSDataSet.ScheduleDataTable = New PTTSDataSet.ScheduleDataTable()
+            Me.Adapter.Fill(dataTable)
+            Return dataTable
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataTable As PTTSDataSet.ScheduleDataTable) As Integer
+            Return Me.Adapter.Update(dataTable)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataSet As PTTSDataSet) As Integer
+            Return Me.Adapter.Update(dataSet, "Schedule")
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataRow As Global.System.Data.DataRow) As Integer
+            Return Me.Adapter.Update(New Global.System.Data.DataRow() {dataRow})
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataRows() As Global.System.Data.DataRow) As Integer
+            Return Me.Adapter.Update(dataRows)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
+        Public Overloads Overridable Function Delete(ByVal Original_scheduleID As String, ByVal Original_departureDateTime As Global.System.Nullable(Of Date), ByVal Original_estimateHours As Global.System.Nullable(Of Integer), ByVal Original_transportID As String, ByVal Original_scheduleStatus As String, ByVal Original_assignPromotionStatus As String) As Integer
+            If (Original_scheduleID Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Original_scheduleID")
+            Else
+                Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_scheduleID,String)
+            End If
+            If (Original_departureDateTime.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(1).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(2).Value = CType(Original_departureDateTime.Value,Date)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(1).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(2).Value = Global.System.DBNull.Value
+            End If
+            If (Original_estimateHours.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(3).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(4).Value = CType(Original_estimateHours.Value,Integer)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(3).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(4).Value = Global.System.DBNull.Value
+            End If
+            If (Original_transportID Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(5).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(6).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(5).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(6).Value = CType(Original_transportID,String)
+            End If
+            If (Original_scheduleStatus Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(7).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(8).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(7).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(8).Value = CType(Original_scheduleStatus,String)
+            End If
+            If (Original_assignPromotionStatus Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(9).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(10).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(9).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(10).Value = CType(Original_assignPromotionStatus,String)
+            End If
+            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
+            If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                Me.Adapter.DeleteCommand.Connection.Open
+            End If
+            Try 
+                Dim returnValue As Integer = Me.Adapter.DeleteCommand.ExecuteNonQuery
+                Return returnValue
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    Me.Adapter.DeleteCommand.Connection.Close
+                End If
+            End Try
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
+        Public Overloads Overridable Function Insert(ByVal scheduleID As String, ByVal departureDateTime As Global.System.Nullable(Of Date), ByVal estimateHours As Global.System.Nullable(Of Integer), ByVal transportID As String, ByVal scheduleStatus As String, ByVal assignPromotionStatus As String) As Integer
+            If (scheduleID Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("scheduleID")
+            Else
+                Me.Adapter.InsertCommand.Parameters(0).Value = CType(scheduleID,String)
+            End If
+            If (departureDateTime.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(1).Value = CType(departureDateTime.Value,Date)
+            Else
+                Me.Adapter.InsertCommand.Parameters(1).Value = Global.System.DBNull.Value
+            End If
+            If (estimateHours.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(2).Value = CType(estimateHours.Value,Integer)
+            Else
+                Me.Adapter.InsertCommand.Parameters(2).Value = Global.System.DBNull.Value
+            End If
+            If (transportID Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(3).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(3).Value = CType(transportID,String)
+            End If
+            If (scheduleStatus Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(4).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(4).Value = CType(scheduleStatus,String)
+            End If
+            If (assignPromotionStatus Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(5).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(5).Value = CType(assignPromotionStatus,String)
+            End If
+            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
+            If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                Me.Adapter.InsertCommand.Connection.Open
+            End If
+            Try 
+                Dim returnValue As Integer = Me.Adapter.InsertCommand.ExecuteNonQuery
+                Return returnValue
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    Me.Adapter.InsertCommand.Connection.Close
+                End If
+            End Try
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
+        Public Overloads Overridable Function Update(ByVal scheduleID As String, ByVal departureDateTime As Global.System.Nullable(Of Date), ByVal estimateHours As Global.System.Nullable(Of Integer), ByVal transportID As String, ByVal scheduleStatus As String, ByVal assignPromotionStatus As String, ByVal Original_scheduleID As String, ByVal Original_departureDateTime As Global.System.Nullable(Of Date), ByVal Original_estimateHours As Global.System.Nullable(Of Integer), ByVal Original_transportID As String, ByVal Original_scheduleStatus As String, ByVal Original_assignPromotionStatus As String) As Integer
+            If (scheduleID Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("scheduleID")
+            Else
+                Me.Adapter.UpdateCommand.Parameters(0).Value = CType(scheduleID,String)
+            End If
+            If (departureDateTime.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(1).Value = CType(departureDateTime.Value,Date)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(1).Value = Global.System.DBNull.Value
+            End If
+            If (estimateHours.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(2).Value = CType(estimateHours.Value,Integer)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(2).Value = Global.System.DBNull.Value
+            End If
+            If (transportID Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(3).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(transportID,String)
+            End If
+            If (scheduleStatus Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(4).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(scheduleStatus,String)
+            End If
+            If (assignPromotionStatus Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(5).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(assignPromotionStatus,String)
+            End If
+            If (Original_scheduleID Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Original_scheduleID")
+            Else
+                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(Original_scheduleID,String)
+            End If
+            If (Original_departureDateTime.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(Original_departureDateTime.Value,Date)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(8).Value = Global.System.DBNull.Value
+            End If
+            If (Original_estimateHours.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(Original_estimateHours.Value,Integer)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(10).Value = Global.System.DBNull.Value
+            End If
+            If (Original_transportID Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(12).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(Original_transportID,String)
+            End If
+            If (Original_scheduleStatus Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(14).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(Original_scheduleStatus,String)
+            End If
+            If (Original_assignPromotionStatus Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(16).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(Original_assignPromotionStatus,String)
+            End If
+            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
+            If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                Me.Adapter.UpdateCommand.Connection.Open
+            End If
+            Try 
+                Dim returnValue As Integer = Me.Adapter.UpdateCommand.ExecuteNonQuery
+                Return returnValue
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    Me.Adapter.UpdateCommand.Connection.Close
+                End If
+            End Try
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
+        Public Overloads Overridable Function Update(ByVal departureDateTime As Global.System.Nullable(Of Date), ByVal estimateHours As Global.System.Nullable(Of Integer), ByVal transportID As String, ByVal scheduleStatus As String, ByVal assignPromotionStatus As String, ByVal Original_scheduleID As String, ByVal Original_departureDateTime As Global.System.Nullable(Of Date), ByVal Original_estimateHours As Global.System.Nullable(Of Integer), ByVal Original_transportID As String, ByVal Original_scheduleStatus As String, ByVal Original_assignPromotionStatus As String) As Integer
+            Return Me.Update(Original_scheduleID, departureDateTime, estimateHours, transportID, scheduleStatus, assignPromotionStatus, Original_scheduleID, Original_departureDateTime, Original_estimateHours, Original_transportID, Original_scheduleStatus, Original_assignPromotionStatus)
+        End Function
+    End Class
+    
+    '''<summary>
+    '''Represents the connection and commands used to retrieve and save data.
+    '''</summary>
+    <Global.System.ComponentModel.DesignerCategoryAttribute("code"),  _
+     Global.System.ComponentModel.ToolboxItem(true),  _
+     Global.System.ComponentModel.DataObjectAttribute(true),  _
+     Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
+     Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+    Partial Public Class promoteScheduleTableAdapter
+        Inherits Global.System.ComponentModel.Component
+        
+        Private WithEvents _adapter As Global.System.Data.SqlClient.SqlDataAdapter
+        
+        Private _connection As Global.System.Data.SqlClient.SqlConnection
+        
+        Private _transaction As Global.System.Data.SqlClient.SqlTransaction
+        
+        Private _commandCollection() As Global.System.Data.SqlClient.SqlCommand
+        
+        Private _clearBeforeFill As Boolean
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub New()
+            MyBase.New
+            Me.ClearBeforeFill = true
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Friend ReadOnly Property Adapter() As Global.System.Data.SqlClient.SqlDataAdapter
+            Get
+                If (Me._adapter Is Nothing) Then
+                    Me.InitAdapter
+                End If
+                Return Me._adapter
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Friend Property Connection() As Global.System.Data.SqlClient.SqlConnection
+            Get
+                If (Me._connection Is Nothing) Then
+                    Me.InitConnection
+                End If
+                Return Me._connection
+            End Get
+            Set
+                Me._connection = value
+                If (Not (Me.Adapter.InsertCommand) Is Nothing) Then
+                    Me.Adapter.InsertCommand.Connection = value
+                End If
+                If (Not (Me.Adapter.DeleteCommand) Is Nothing) Then
+                    Me.Adapter.DeleteCommand.Connection = value
+                End If
+                If (Not (Me.Adapter.UpdateCommand) Is Nothing) Then
+                    Me.Adapter.UpdateCommand.Connection = value
+                End If
+                Dim i As Integer = 0
+                Do While (i < Me.CommandCollection.Length)
+                    If (Not (Me.CommandCollection(i)) Is Nothing) Then
+                        CType(Me.CommandCollection(i),Global.System.Data.SqlClient.SqlCommand).Connection = value
+                    End If
+                    i = (i + 1)
+                Loop
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Friend Property Transaction() As Global.System.Data.SqlClient.SqlTransaction
+            Get
+                Return Me._transaction
+            End Get
+            Set
+                Me._transaction = value
+                Dim i As Integer = 0
+                Do While (i < Me.CommandCollection.Length)
+                    Me.CommandCollection(i).Transaction = Me._transaction
+                    i = (i + 1)
+                Loop
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.DeleteCommand) Is Nothing)) Then
+                    Me.Adapter.DeleteCommand.Transaction = Me._transaction
+                End If
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.InsertCommand) Is Nothing)) Then
+                    Me.Adapter.InsertCommand.Transaction = Me._transaction
+                End If
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.UpdateCommand) Is Nothing)) Then
+                    Me.Adapter.UpdateCommand.Transaction = Me._transaction
+                End If
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected ReadOnly Property CommandCollection() As Global.System.Data.SqlClient.SqlCommand()
+            Get
+                If (Me._commandCollection Is Nothing) Then
+                    Me.InitCommandCollection
+                End If
+                Return Me._commandCollection
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property ClearBeforeFill() As Boolean
+            Get
+                Return Me._clearBeforeFill
+            End Get
+            Set
+                Me._clearBeforeFill = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Private Sub InitAdapter()
+            Me._adapter = New Global.System.Data.SqlClient.SqlDataAdapter()
+            Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
+            tableMapping.SourceTable = "Table"
+            tableMapping.DataSetTable = "promoteSchedule"
+            tableMapping.ColumnMappings.Add("promoteScheduleID", "promoteScheduleID")
+            tableMapping.ColumnMappings.Add("promotionID", "promotionID")
+            tableMapping.ColumnMappings.Add("scheduleID", "scheduleID")
+            tableMapping.ColumnMappings.Add("discountRate", "discountRate")
+            Me._adapter.TableMappings.Add(tableMapping)
+            Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
+            Me._adapter.DeleteCommand.Connection = Me.Connection
+            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[promoteSchedule] WHERE (([promoteScheduleID] = @Original_promo"& _ 
+                "teScheduleID) AND ((@IsNull_promotionID = 1 AND [promotionID] IS NULL) OR ([prom"& _ 
+                "otionID] = @Original_promotionID)) AND ((@IsNull_scheduleID = 1 AND [scheduleID]"& _ 
+                " IS NULL) OR ([scheduleID] = @Original_scheduleID)) AND ((@IsNull_discountRate ="& _ 
+                " 1 AND [discountRate] IS NULL) OR ([discountRate] = @Original_discountRate)))"
+            Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_promoteScheduleID", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "promoteScheduleID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_promotionID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "promotionID", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_promotionID", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "promotionID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_scheduleID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "scheduleID", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_scheduleID", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "scheduleID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_discountRate", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "discountRate", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_discountRate", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "discountRate", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
+            Me._adapter.InsertCommand.Connection = Me.Connection
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[promoteSchedule] ([promoteScheduleID], [promotionID], [schedul"& _ 
+                "eID], [discountRate]) VALUES (@promoteScheduleID, @promotionID, @scheduleID, @di"& _ 
+                "scountRate);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT promoteScheduleID, promotionID, scheduleID, discountRate FR"& _ 
+                "OM promoteSchedule WHERE (promoteScheduleID = @promoteScheduleID)"
+            Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@promoteScheduleID", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "promoteScheduleID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@promotionID", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "promotionID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@scheduleID", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "scheduleID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@discountRate", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "discountRate", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
+            Me._adapter.UpdateCommand.Connection = Me.Connection
+            Me._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[promoteSchedule] SET [promoteScheduleID] = @promoteScheduleID, [pro"& _ 
+                "motionID] = @promotionID, [scheduleID] = @scheduleID, [discountRate] = @discount"& _ 
+                "Rate WHERE (([promoteScheduleID] = @Original_promoteScheduleID) AND ((@IsNull_pr"& _ 
+                "omotionID = 1 AND [promotionID] IS NULL) OR ([promotionID] = @Original_promotion"& _ 
+                "ID)) AND ((@IsNull_scheduleID = 1 AND [scheduleID] IS NULL) OR ([scheduleID] = @"& _ 
+                "Original_scheduleID)) AND ((@IsNull_discountRate = 1 AND [discountRate] IS NULL)"& _ 
+                " OR ([discountRate] = @Original_discountRate)));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT promoteScheduleID, prom"& _ 
+                "otionID, scheduleID, discountRate FROM promoteSchedule WHERE (promoteScheduleID "& _ 
+                "= @promoteScheduleID)"
+            Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@promoteScheduleID", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "promoteScheduleID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@promotionID", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "promotionID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@scheduleID", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "scheduleID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@discountRate", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "discountRate", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_promoteScheduleID", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "promoteScheduleID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_promotionID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "promotionID", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_promotionID", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "promotionID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_scheduleID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "scheduleID", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_scheduleID", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "scheduleID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_discountRate", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "discountRate", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_discountRate", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "discountRate", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Private Sub InitConnection()
+            Me._connection = New Global.System.Data.SqlClient.SqlConnection()
+            Me._connection.ConnectionString = Global.PublicTransportTicketingSystem.My.MySettings.Default.PTTSConnectionString
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Private Sub InitCommandCollection()
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
+            Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(0).Connection = Me.Connection
+            Me._commandCollection(0).CommandText = "SELECT promoteScheduleID, promotionID, scheduleID, discountRate FROM dbo.promoteS"& _ 
+                "chedule"
+            Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
+        Public Overloads Overridable Function Fill(ByVal dataTable As PTTSDataSet.promoteScheduleDataTable) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
+        Public Overloads Overridable Function GetData() As PTTSDataSet.promoteScheduleDataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            Dim dataTable As PTTSDataSet.promoteScheduleDataTable = New PTTSDataSet.promoteScheduleDataTable()
+            Me.Adapter.Fill(dataTable)
+            Return dataTable
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataTable As PTTSDataSet.promoteScheduleDataTable) As Integer
+            Return Me.Adapter.Update(dataTable)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataSet As PTTSDataSet) As Integer
+            Return Me.Adapter.Update(dataSet, "promoteSchedule")
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataRow As Global.System.Data.DataRow) As Integer
+            Return Me.Adapter.Update(New Global.System.Data.DataRow() {dataRow})
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataRows() As Global.System.Data.DataRow) As Integer
+            Return Me.Adapter.Update(dataRows)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
+        Public Overloads Overridable Function Delete(ByVal Original_promoteScheduleID As String, ByVal Original_promotionID As String, ByVal Original_scheduleID As String, ByVal Original_discountRate As Global.System.Nullable(Of Integer)) As Integer
+            If (Original_promoteScheduleID Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Original_promoteScheduleID")
+            Else
+                Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_promoteScheduleID,String)
+            End If
+            If (Original_promotionID Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(1).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(2).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(1).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(2).Value = CType(Original_promotionID,String)
+            End If
+            If (Original_scheduleID Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(3).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(4).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(3).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(4).Value = CType(Original_scheduleID,String)
+            End If
+            If (Original_discountRate.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(5).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(6).Value = CType(Original_discountRate.Value,Integer)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(5).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(6).Value = Global.System.DBNull.Value
+            End If
+            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
+            If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                Me.Adapter.DeleteCommand.Connection.Open
+            End If
+            Try 
+                Dim returnValue As Integer = Me.Adapter.DeleteCommand.ExecuteNonQuery
+                Return returnValue
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    Me.Adapter.DeleteCommand.Connection.Close
+                End If
+            End Try
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
+        Public Overloads Overridable Function Insert(ByVal promoteScheduleID As String, ByVal promotionID As String, ByVal scheduleID As String, ByVal discountRate As Global.System.Nullable(Of Integer)) As Integer
+            If (promoteScheduleID Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("promoteScheduleID")
+            Else
+                Me.Adapter.InsertCommand.Parameters(0).Value = CType(promoteScheduleID,String)
+            End If
+            If (promotionID Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(1).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(1).Value = CType(promotionID,String)
+            End If
+            If (scheduleID Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(2).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(2).Value = CType(scheduleID,String)
+            End If
+            If (discountRate.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(3).Value = CType(discountRate.Value,Integer)
+            Else
+                Me.Adapter.InsertCommand.Parameters(3).Value = Global.System.DBNull.Value
+            End If
+            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
+            If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                Me.Adapter.InsertCommand.Connection.Open
+            End If
+            Try 
+                Dim returnValue As Integer = Me.Adapter.InsertCommand.ExecuteNonQuery
+                Return returnValue
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    Me.Adapter.InsertCommand.Connection.Close
+                End If
+            End Try
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
+        Public Overloads Overridable Function Update(ByVal promoteScheduleID As String, ByVal promotionID As String, ByVal scheduleID As String, ByVal discountRate As Global.System.Nullable(Of Integer), ByVal Original_promoteScheduleID As String, ByVal Original_promotionID As String, ByVal Original_scheduleID As String, ByVal Original_discountRate As Global.System.Nullable(Of Integer)) As Integer
+            If (promoteScheduleID Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("promoteScheduleID")
+            Else
+                Me.Adapter.UpdateCommand.Parameters(0).Value = CType(promoteScheduleID,String)
+            End If
+            If (promotionID Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(1).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(1).Value = CType(promotionID,String)
+            End If
+            If (scheduleID Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(2).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(2).Value = CType(scheduleID,String)
+            End If
+            If (discountRate.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(discountRate.Value,Integer)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(3).Value = Global.System.DBNull.Value
+            End If
+            If (Original_promoteScheduleID Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Original_promoteScheduleID")
+            Else
+                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(Original_promoteScheduleID,String)
+            End If
+            If (Original_promotionID Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(6).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(Original_promotionID,String)
+            End If
+            If (Original_scheduleID Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(8).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(Original_scheduleID,String)
+            End If
+            If (Original_discountRate.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(Original_discountRate.Value,Integer)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(10).Value = Global.System.DBNull.Value
+            End If
+            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
+            If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                Me.Adapter.UpdateCommand.Connection.Open
+            End If
+            Try 
+                Dim returnValue As Integer = Me.Adapter.UpdateCommand.ExecuteNonQuery
+                Return returnValue
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    Me.Adapter.UpdateCommand.Connection.Close
+                End If
+            End Try
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
+        Public Overloads Overridable Function Update(ByVal promotionID As String, ByVal scheduleID As String, ByVal discountRate As Global.System.Nullable(Of Integer), ByVal Original_promoteScheduleID As String, ByVal Original_promotionID As String, ByVal Original_scheduleID As String, ByVal Original_discountRate As Global.System.Nullable(Of Integer)) As Integer
+            Return Me.Update(Original_promoteScheduleID, promotionID, scheduleID, discountRate, Original_promoteScheduleID, Original_promotionID, Original_scheduleID, Original_discountRate)
+        End Function
+    End Class
+    
+    '''<summary>
     '''TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
     '''</summary>
     <Global.System.ComponentModel.DesignerCategoryAttribute("code"),  _
@@ -11895,12 +12044,6 @@ Namespace PTTSDataSetTableAdapters
         
         Private _locationListTableAdapter As LocationListTableAdapter
         
-        Private _promoteScheduleTableAdapter As promoteScheduleTableAdapter
-        
-        Private _promotionTableAdapter As PromotionTableAdapter
-        
-        Private _scheduleTableAdapter As ScheduleTableAdapter
-        
         Private _seatTableAdapter As SeatTableAdapter
         
         Private _ticketTableAdapter As TicketTableAdapter
@@ -11908,6 +12051,12 @@ Namespace PTTSDataSetTableAdapters
         Private _transportTableAdapter As TransportTableAdapter
         
         Private _location1TableAdapter As Location1TableAdapter
+        
+        Private _promotionTableAdapter As PromotionTableAdapter
+        
+        Private _scheduleTableAdapter As ScheduleTableAdapter
+        
+        Private _promoteScheduleTableAdapter As promoteScheduleTableAdapter
         
         Private _backupDataSetBeforeUpdate As Boolean
         
@@ -11985,48 +12134,6 @@ Namespace PTTSDataSetTableAdapters
          Global.System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso"& _ 
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3"& _ 
             "a", "System.Drawing.Design.UITypeEditor")>  _
-        Public Property promoteScheduleTableAdapter() As promoteScheduleTableAdapter
-            Get
-                Return Me._promoteScheduleTableAdapter
-            End Get
-            Set
-                Me._promoteScheduleTableAdapter = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
-         Global.System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso"& _ 
-            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3"& _ 
-            "a", "System.Drawing.Design.UITypeEditor")>  _
-        Public Property PromotionTableAdapter() As PromotionTableAdapter
-            Get
-                Return Me._promotionTableAdapter
-            End Get
-            Set
-                Me._promotionTableAdapter = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
-         Global.System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso"& _ 
-            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3"& _ 
-            "a", "System.Drawing.Design.UITypeEditor")>  _
-        Public Property ScheduleTableAdapter() As ScheduleTableAdapter
-            Get
-                Return Me._scheduleTableAdapter
-            End Get
-            Set
-                Me._scheduleTableAdapter = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
-         Global.System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso"& _ 
-            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3"& _ 
-            "a", "System.Drawing.Design.UITypeEditor")>  _
         Public Property SeatTableAdapter() As SeatTableAdapter
             Get
                 Return Me._seatTableAdapter
@@ -12079,6 +12186,48 @@ Namespace PTTSDataSetTableAdapters
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso"& _ 
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3"& _ 
+            "a", "System.Drawing.Design.UITypeEditor")>  _
+        Public Property PromotionTableAdapter() As PromotionTableAdapter
+            Get
+                Return Me._promotionTableAdapter
+            End Get
+            Set
+                Me._promotionTableAdapter = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso"& _ 
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3"& _ 
+            "a", "System.Drawing.Design.UITypeEditor")>  _
+        Public Property ScheduleTableAdapter() As ScheduleTableAdapter
+            Get
+                Return Me._scheduleTableAdapter
+            End Get
+            Set
+                Me._scheduleTableAdapter = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso"& _ 
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3"& _ 
+            "a", "System.Drawing.Design.UITypeEditor")>  _
+        Public Property promoteScheduleTableAdapter() As promoteScheduleTableAdapter
+            Get
+                Return Me._promoteScheduleTableAdapter
+            End Get
+            Set
+                Me._promoteScheduleTableAdapter = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Property BackupDataSetBeforeUpdate() As Boolean
             Get
@@ -12113,18 +12262,6 @@ Namespace PTTSDataSetTableAdapters
                             AndAlso (Not (Me._locationListTableAdapter.Connection) Is Nothing)) Then
                     Return Me._locationListTableAdapter.Connection
                 End If
-                If ((Not (Me._promoteScheduleTableAdapter) Is Nothing)  _
-                            AndAlso (Not (Me._promoteScheduleTableAdapter.Connection) Is Nothing)) Then
-                    Return Me._promoteScheduleTableAdapter.Connection
-                End If
-                If ((Not (Me._promotionTableAdapter) Is Nothing)  _
-                            AndAlso (Not (Me._promotionTableAdapter.Connection) Is Nothing)) Then
-                    Return Me._promotionTableAdapter.Connection
-                End If
-                If ((Not (Me._scheduleTableAdapter) Is Nothing)  _
-                            AndAlso (Not (Me._scheduleTableAdapter.Connection) Is Nothing)) Then
-                    Return Me._scheduleTableAdapter.Connection
-                End If
                 If ((Not (Me._seatTableAdapter) Is Nothing)  _
                             AndAlso (Not (Me._seatTableAdapter.Connection) Is Nothing)) Then
                     Return Me._seatTableAdapter.Connection
@@ -12140,6 +12277,18 @@ Namespace PTTSDataSetTableAdapters
                 If ((Not (Me._location1TableAdapter) Is Nothing)  _
                             AndAlso (Not (Me._location1TableAdapter.Connection) Is Nothing)) Then
                     Return Me._location1TableAdapter.Connection
+                End If
+                If ((Not (Me._promotionTableAdapter) Is Nothing)  _
+                            AndAlso (Not (Me._promotionTableAdapter.Connection) Is Nothing)) Then
+                    Return Me._promotionTableAdapter.Connection
+                End If
+                If ((Not (Me._scheduleTableAdapter) Is Nothing)  _
+                            AndAlso (Not (Me._scheduleTableAdapter.Connection) Is Nothing)) Then
+                    Return Me._scheduleTableAdapter.Connection
+                End If
+                If ((Not (Me._promoteScheduleTableAdapter) Is Nothing)  _
+                            AndAlso (Not (Me._promoteScheduleTableAdapter.Connection) Is Nothing)) Then
+                    Return Me._promoteScheduleTableAdapter.Connection
                 End If
                 Return Nothing
             End Get
@@ -12166,15 +12315,6 @@ Namespace PTTSDataSetTableAdapters
                 If (Not (Me._locationListTableAdapter) Is Nothing) Then
                     count = (count + 1)
                 End If
-                If (Not (Me._promoteScheduleTableAdapter) Is Nothing) Then
-                    count = (count + 1)
-                End If
-                If (Not (Me._promotionTableAdapter) Is Nothing) Then
-                    count = (count + 1)
-                End If
-                If (Not (Me._scheduleTableAdapter) Is Nothing) Then
-                    count = (count + 1)
-                End If
                 If (Not (Me._seatTableAdapter) Is Nothing) Then
                     count = (count + 1)
                 End If
@@ -12185,6 +12325,15 @@ Namespace PTTSDataSetTableAdapters
                     count = (count + 1)
                 End If
                 If (Not (Me._location1TableAdapter) Is Nothing) Then
+                    count = (count + 1)
+                End If
+                If (Not (Me._promotionTableAdapter) Is Nothing) Then
+                    count = (count + 1)
+                End If
+                If (Not (Me._scheduleTableAdapter) Is Nothing) Then
+                    count = (count + 1)
+                End If
+                If (Not (Me._promoteScheduleTableAdapter) Is Nothing) Then
                     count = (count + 1)
                 End If
                 Return count
@@ -12243,15 +12392,6 @@ Namespace PTTSDataSetTableAdapters
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
-            If (Not (Me._promotionTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.Promotion.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
-                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
-                If ((Not (updatedRows) Is Nothing)  _
-                            AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._promotionTableAdapter.Update(updatedRows))
-                    allChangedRows.AddRange(updatedRows)
-                End If
-            End If
             If (Not (Me._ticketTableAdapter) Is Nothing) Then
                 Dim updatedRows() As Global.System.Data.DataRow = dataSet.Ticket.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
                 updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
@@ -12261,12 +12401,12 @@ Namespace PTTSDataSetTableAdapters
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
-            If (Not (Me._location1TableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.Location1.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+            If (Not (Me._promotionTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.Promotion.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
                 updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
                 If ((Not (updatedRows) Is Nothing)  _
                             AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._location1TableAdapter.Update(updatedRows))
+                    result = (result + Me._promotionTableAdapter.Update(updatedRows))
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
@@ -12285,6 +12425,15 @@ Namespace PTTSDataSetTableAdapters
                 If ((Not (updatedRows) Is Nothing)  _
                             AndAlso (0 < updatedRows.Length)) Then
                     result = (result + Me._locationListTableAdapter.Update(updatedRows))
+                    allChangedRows.AddRange(updatedRows)
+                End If
+            End If
+            If (Not (Me._location1TableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.Location1.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
+                If ((Not (updatedRows) Is Nothing)  _
+                            AndAlso (0 < updatedRows.Length)) Then
+                    result = (result + Me._location1TableAdapter.Update(updatedRows))
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
@@ -12347,14 +12496,6 @@ Namespace PTTSDataSetTableAdapters
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
-            If (Not (Me._promotionTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.Promotion.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
-                If ((Not (addedRows) Is Nothing)  _
-                            AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._promotionTableAdapter.Update(addedRows))
-                    allAddedRows.AddRange(addedRows)
-                End If
-            End If
             If (Not (Me._ticketTableAdapter) Is Nothing) Then
                 Dim addedRows() As Global.System.Data.DataRow = dataSet.Ticket.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
                 If ((Not (addedRows) Is Nothing)  _
@@ -12363,11 +12504,11 @@ Namespace PTTSDataSetTableAdapters
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
-            If (Not (Me._location1TableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.Location1.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+            If (Not (Me._promotionTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.Promotion.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
                 If ((Not (addedRows) Is Nothing)  _
                             AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._location1TableAdapter.Update(addedRows))
+                    result = (result + Me._promotionTableAdapter.Update(addedRows))
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
@@ -12384,6 +12525,14 @@ Namespace PTTSDataSetTableAdapters
                 If ((Not (addedRows) Is Nothing)  _
                             AndAlso (0 < addedRows.Length)) Then
                     result = (result + Me._locationListTableAdapter.Update(addedRows))
+                    allAddedRows.AddRange(addedRows)
+                End If
+            End If
+            If (Not (Me._location1TableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.Location1.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+                If ((Not (addedRows) Is Nothing)  _
+                            AndAlso (0 < addedRows.Length)) Then
+                    result = (result + Me._location1TableAdapter.Update(addedRows))
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
@@ -12413,6 +12562,14 @@ Namespace PTTSDataSetTableAdapters
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
+            If (Not (Me._location1TableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.Location1.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+                If ((Not (deletedRows) Is Nothing)  _
+                            AndAlso (0 < deletedRows.Length)) Then
+                    result = (result + Me._location1TableAdapter.Update(deletedRows))
+                    allChangedRows.AddRange(deletedRows)
+                End If
+            End If
             If (Not (Me._locationListTableAdapter) Is Nothing) Then
                 Dim deletedRows() As Global.System.Data.DataRow = dataSet.LocationList.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
                 If ((Not (deletedRows) Is Nothing)  _
@@ -12429,11 +12586,11 @@ Namespace PTTSDataSetTableAdapters
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
-            If (Not (Me._location1TableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.Location1.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+            If (Not (Me._promotionTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.Promotion.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
                 If ((Not (deletedRows) Is Nothing)  _
                             AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._location1TableAdapter.Update(deletedRows))
+                    result = (result + Me._promotionTableAdapter.Update(deletedRows))
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
@@ -12442,14 +12599,6 @@ Namespace PTTSDataSetTableAdapters
                 If ((Not (deletedRows) Is Nothing)  _
                             AndAlso (0 < deletedRows.Length)) Then
                     result = (result + Me._ticketTableAdapter.Update(deletedRows))
-                    allChangedRows.AddRange(deletedRows)
-                End If
-            End If
-            If (Not (Me._promotionTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.Promotion.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
-                If ((Not (deletedRows) Is Nothing)  _
-                            AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._promotionTableAdapter.Update(deletedRows))
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
@@ -12554,21 +12703,6 @@ Namespace PTTSDataSetTableAdapters
                 Throw New Global.System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s"& _ 
                         "tring.")
             End If
-            If ((Not (Me._promoteScheduleTableAdapter) Is Nothing)  _
-                        AndAlso (Me.MatchTableAdapterConnection(Me._promoteScheduleTableAdapter.Connection) = false)) Then
-                Throw New Global.System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s"& _ 
-                        "tring.")
-            End If
-            If ((Not (Me._promotionTableAdapter) Is Nothing)  _
-                        AndAlso (Me.MatchTableAdapterConnection(Me._promotionTableAdapter.Connection) = false)) Then
-                Throw New Global.System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s"& _ 
-                        "tring.")
-            End If
-            If ((Not (Me._scheduleTableAdapter) Is Nothing)  _
-                        AndAlso (Me.MatchTableAdapterConnection(Me._scheduleTableAdapter.Connection) = false)) Then
-                Throw New Global.System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s"& _ 
-                        "tring.")
-            End If
             If ((Not (Me._seatTableAdapter) Is Nothing)  _
                         AndAlso (Me.MatchTableAdapterConnection(Me._seatTableAdapter.Connection) = false)) Then
                 Throw New Global.System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s"& _ 
@@ -12586,6 +12720,21 @@ Namespace PTTSDataSetTableAdapters
             End If
             If ((Not (Me._location1TableAdapter) Is Nothing)  _
                         AndAlso (Me.MatchTableAdapterConnection(Me._location1TableAdapter.Connection) = false)) Then
+                Throw New Global.System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s"& _ 
+                        "tring.")
+            End If
+            If ((Not (Me._promotionTableAdapter) Is Nothing)  _
+                        AndAlso (Me.MatchTableAdapterConnection(Me._promotionTableAdapter.Connection) = false)) Then
+                Throw New Global.System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s"& _ 
+                        "tring.")
+            End If
+            If ((Not (Me._scheduleTableAdapter) Is Nothing)  _
+                        AndAlso (Me.MatchTableAdapterConnection(Me._scheduleTableAdapter.Connection) = false)) Then
+                Throw New Global.System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s"& _ 
+                        "tring.")
+            End If
+            If ((Not (Me._promoteScheduleTableAdapter) Is Nothing)  _
+                        AndAlso (Me.MatchTableAdapterConnection(Me._promoteScheduleTableAdapter.Connection) = false)) Then
                 Throw New Global.System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s"& _ 
                         "tring.")
             End If
@@ -12657,33 +12806,6 @@ Namespace PTTSDataSetTableAdapters
                         adaptersWithAcceptChangesDuringUpdate.Add(Me._locationListTableAdapter.Adapter)
                     End If
                 End If
-                If (Not (Me._promoteScheduleTableAdapter) Is Nothing) Then
-                    revertConnections.Add(Me._promoteScheduleTableAdapter, Me._promoteScheduleTableAdapter.Connection)
-                    Me._promoteScheduleTableAdapter.Connection = CType(workConnection,Global.System.Data.SqlClient.SqlConnection)
-                    Me._promoteScheduleTableAdapter.Transaction = CType(workTransaction,Global.System.Data.SqlClient.SqlTransaction)
-                    If Me._promoteScheduleTableAdapter.Adapter.AcceptChangesDuringUpdate Then
-                        Me._promoteScheduleTableAdapter.Adapter.AcceptChangesDuringUpdate = false
-                        adaptersWithAcceptChangesDuringUpdate.Add(Me._promoteScheduleTableAdapter.Adapter)
-                    End If
-                End If
-                If (Not (Me._promotionTableAdapter) Is Nothing) Then
-                    revertConnections.Add(Me._promotionTableAdapter, Me._promotionTableAdapter.Connection)
-                    Me._promotionTableAdapter.Connection = CType(workConnection,Global.System.Data.SqlClient.SqlConnection)
-                    Me._promotionTableAdapter.Transaction = CType(workTransaction,Global.System.Data.SqlClient.SqlTransaction)
-                    If Me._promotionTableAdapter.Adapter.AcceptChangesDuringUpdate Then
-                        Me._promotionTableAdapter.Adapter.AcceptChangesDuringUpdate = false
-                        adaptersWithAcceptChangesDuringUpdate.Add(Me._promotionTableAdapter.Adapter)
-                    End If
-                End If
-                If (Not (Me._scheduleTableAdapter) Is Nothing) Then
-                    revertConnections.Add(Me._scheduleTableAdapter, Me._scheduleTableAdapter.Connection)
-                    Me._scheduleTableAdapter.Connection = CType(workConnection,Global.System.Data.SqlClient.SqlConnection)
-                    Me._scheduleTableAdapter.Transaction = CType(workTransaction,Global.System.Data.SqlClient.SqlTransaction)
-                    If Me._scheduleTableAdapter.Adapter.AcceptChangesDuringUpdate Then
-                        Me._scheduleTableAdapter.Adapter.AcceptChangesDuringUpdate = false
-                        adaptersWithAcceptChangesDuringUpdate.Add(Me._scheduleTableAdapter.Adapter)
-                    End If
-                End If
                 If (Not (Me._seatTableAdapter) Is Nothing) Then
                     revertConnections.Add(Me._seatTableAdapter, Me._seatTableAdapter.Connection)
                     Me._seatTableAdapter.Connection = CType(workConnection,Global.System.Data.SqlClient.SqlConnection)
@@ -12718,6 +12840,33 @@ Namespace PTTSDataSetTableAdapters
                     If Me._location1TableAdapter.Adapter.AcceptChangesDuringUpdate Then
                         Me._location1TableAdapter.Adapter.AcceptChangesDuringUpdate = false
                         adaptersWithAcceptChangesDuringUpdate.Add(Me._location1TableAdapter.Adapter)
+                    End If
+                End If
+                If (Not (Me._promotionTableAdapter) Is Nothing) Then
+                    revertConnections.Add(Me._promotionTableAdapter, Me._promotionTableAdapter.Connection)
+                    Me._promotionTableAdapter.Connection = CType(workConnection,Global.System.Data.SqlClient.SqlConnection)
+                    Me._promotionTableAdapter.Transaction = CType(workTransaction,Global.System.Data.SqlClient.SqlTransaction)
+                    If Me._promotionTableAdapter.Adapter.AcceptChangesDuringUpdate Then
+                        Me._promotionTableAdapter.Adapter.AcceptChangesDuringUpdate = false
+                        adaptersWithAcceptChangesDuringUpdate.Add(Me._promotionTableAdapter.Adapter)
+                    End If
+                End If
+                If (Not (Me._scheduleTableAdapter) Is Nothing) Then
+                    revertConnections.Add(Me._scheduleTableAdapter, Me._scheduleTableAdapter.Connection)
+                    Me._scheduleTableAdapter.Connection = CType(workConnection,Global.System.Data.SqlClient.SqlConnection)
+                    Me._scheduleTableAdapter.Transaction = CType(workTransaction,Global.System.Data.SqlClient.SqlTransaction)
+                    If Me._scheduleTableAdapter.Adapter.AcceptChangesDuringUpdate Then
+                        Me._scheduleTableAdapter.Adapter.AcceptChangesDuringUpdate = false
+                        adaptersWithAcceptChangesDuringUpdate.Add(Me._scheduleTableAdapter.Adapter)
+                    End If
+                End If
+                If (Not (Me._promoteScheduleTableAdapter) Is Nothing) Then
+                    revertConnections.Add(Me._promoteScheduleTableAdapter, Me._promoteScheduleTableAdapter.Connection)
+                    Me._promoteScheduleTableAdapter.Connection = CType(workConnection,Global.System.Data.SqlClient.SqlConnection)
+                    Me._promoteScheduleTableAdapter.Transaction = CType(workTransaction,Global.System.Data.SqlClient.SqlTransaction)
+                    If Me._promoteScheduleTableAdapter.Adapter.AcceptChangesDuringUpdate Then
+                        Me._promoteScheduleTableAdapter.Adapter.AcceptChangesDuringUpdate = false
+                        adaptersWithAcceptChangesDuringUpdate.Add(Me._promoteScheduleTableAdapter.Adapter)
                     End If
                 End If
                 '
@@ -12796,18 +12945,6 @@ Namespace PTTSDataSetTableAdapters
                     Me._locationListTableAdapter.Connection = CType(revertConnections(Me._locationListTableAdapter),Global.System.Data.SqlClient.SqlConnection)
                     Me._locationListTableAdapter.Transaction = Nothing
                 End If
-                If (Not (Me._promoteScheduleTableAdapter) Is Nothing) Then
-                    Me._promoteScheduleTableAdapter.Connection = CType(revertConnections(Me._promoteScheduleTableAdapter),Global.System.Data.SqlClient.SqlConnection)
-                    Me._promoteScheduleTableAdapter.Transaction = Nothing
-                End If
-                If (Not (Me._promotionTableAdapter) Is Nothing) Then
-                    Me._promotionTableAdapter.Connection = CType(revertConnections(Me._promotionTableAdapter),Global.System.Data.SqlClient.SqlConnection)
-                    Me._promotionTableAdapter.Transaction = Nothing
-                End If
-                If (Not (Me._scheduleTableAdapter) Is Nothing) Then
-                    Me._scheduleTableAdapter.Connection = CType(revertConnections(Me._scheduleTableAdapter),Global.System.Data.SqlClient.SqlConnection)
-                    Me._scheduleTableAdapter.Transaction = Nothing
-                End If
                 If (Not (Me._seatTableAdapter) Is Nothing) Then
                     Me._seatTableAdapter.Connection = CType(revertConnections(Me._seatTableAdapter),Global.System.Data.SqlClient.SqlConnection)
                     Me._seatTableAdapter.Transaction = Nothing
@@ -12823,6 +12960,18 @@ Namespace PTTSDataSetTableAdapters
                 If (Not (Me._location1TableAdapter) Is Nothing) Then
                     Me._location1TableAdapter.Connection = CType(revertConnections(Me._location1TableAdapter),Global.System.Data.SqlClient.SqlConnection)
                     Me._location1TableAdapter.Transaction = Nothing
+                End If
+                If (Not (Me._promotionTableAdapter) Is Nothing) Then
+                    Me._promotionTableAdapter.Connection = CType(revertConnections(Me._promotionTableAdapter),Global.System.Data.SqlClient.SqlConnection)
+                    Me._promotionTableAdapter.Transaction = Nothing
+                End If
+                If (Not (Me._scheduleTableAdapter) Is Nothing) Then
+                    Me._scheduleTableAdapter.Connection = CType(revertConnections(Me._scheduleTableAdapter),Global.System.Data.SqlClient.SqlConnection)
+                    Me._scheduleTableAdapter.Transaction = Nothing
+                End If
+                If (Not (Me._promoteScheduleTableAdapter) Is Nothing) Then
+                    Me._promoteScheduleTableAdapter.Connection = CType(revertConnections(Me._promoteScheduleTableAdapter),Global.System.Data.SqlClient.SqlConnection)
+                    Me._promoteScheduleTableAdapter.Transaction = Nothing
                 End If
                 If (0 < adaptersWithAcceptChangesDuringUpdate.Count) Then
                     Dim adapters((adaptersWithAcceptChangesDuringUpdate.Count) - 1) As Global.System.Data.Common.DataAdapter

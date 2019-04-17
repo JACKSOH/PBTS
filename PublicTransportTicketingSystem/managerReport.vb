@@ -1,6 +1,7 @@
 ﻿
 
 Public Class managerReport
+    Friend transportSelected As String
     Private Sub managerReport_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub
@@ -41,7 +42,7 @@ Public Class managerReport
     End Sub
     Public Sub ChangeTransport() Handles TranportSelection1.TransportChange
         lblTransport.Text = TranportSelection1.selectedType
-
+        transportSelected = lblTransport.Text
     End Sub
 
     'Create the event to triggered user control 

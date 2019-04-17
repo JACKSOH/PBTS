@@ -221,14 +221,12 @@
     <Compile Include="ManagerSchduleInsert.vb">
       <SubType>Form</SubType>
     </Compile>
-
     <Compile Include="ManagerScheduleReport.Designer.vb">
       <DependentUpon>ManagerScheduleReport.vb</DependentUpon>
     </Compile>
     <Compile Include="ManagerScheduleReport.vb">
       <SubType>Form</SubType>
     </Compile>
-
     <Compile Include="ManagerTranportInsert.Designer.vb">
       <DependentUpon>ManagerTranportInsert.vb</DependentUpon>
     </Compile>
@@ -253,6 +251,12 @@
     </Compile>
     <Compile Include="ManagerViewStaff.vb">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MonthlyPromotionReport.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MonthlyPromotionReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="My Project\BigBackground.Designer.vb">
       <DependentUpon>BigBackground.vb</DependentUpon>
@@ -288,6 +292,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>PBTS.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="PromotionReport.Designer.vb">
+      <DependentUpon>PromotionReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PromotionReport.vb">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="PTTSDataSet.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -442,11 +452,9 @@
     <EmbeddedResource Include="ManagerSchduleInsert.resx">
       <DependentUpon>ManagerSchduleInsert.vb</DependentUpon>
     </EmbeddedResource>
-
     <EmbeddedResource Include="ManagerScheduleReport.resx">
       <DependentUpon>ManagerScheduleReport.vb</DependentUpon>
     </EmbeddedResource>
-
     <EmbeddedResource Include="ManagerTranportInsert.resx">
       <DependentUpon>ManagerTranportInsert.vb</DependentUpon>
     </EmbeddedResource>
@@ -458,6 +466,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ManagerViewStaff.resx">
       <DependentUpon>ManagerViewStaff.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MonthlyPromotionReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>MonthlyPromotionReport.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\BigBackground.resx">
       <DependentUpon>BigBackground.vb</DependentUpon>
@@ -473,6 +485,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PaymentPrintTicket.resx">
       <DependentUpon>PaymentPrintTicket.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PromotionReport.resx">
+      <DependentUpon>PromotionReport.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StaffBooking.resx">
       <DependentUpon>StaffBooking.vb</DependentUpon>

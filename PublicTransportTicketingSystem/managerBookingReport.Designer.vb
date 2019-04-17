@@ -31,7 +31,7 @@ Partial Class managerBookingReport
         'Button1
         '
         Me.Button1.Location = New System.Drawing.Point(17, 50)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(2)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(99, 36)
         Me.Button1.TabIndex = 1
@@ -45,7 +45,7 @@ Partial Class managerBookingReport
         Me.CrystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default
         Me.CrystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.CrystalReportViewer1.Location = New System.Drawing.Point(0, 0)
-        Me.CrystalReportViewer1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.CrystalReportViewer1.Margin = New System.Windows.Forms.Padding(2)
         Me.CrystalReportViewer1.Name = "CrystalReportViewer1"
         Me.CrystalReportViewer1.Size = New System.Drawing.Size(800, 575)
         Me.CrystalReportViewer1.TabIndex = 0
@@ -59,7 +59,7 @@ Partial Class managerBookingReport
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.CrystalReportViewer1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "managerBookingReport"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "managerBookingReport"

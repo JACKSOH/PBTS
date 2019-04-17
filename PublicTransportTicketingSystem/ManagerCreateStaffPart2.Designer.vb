@@ -142,6 +142,7 @@ Partial Class ManagerCreateStaffPart2
         Me.txtConfirmPassword.Enabled = False
         Me.txtConfirmPassword.Location = New System.Drawing.Point(159, 98)
         Me.txtConfirmPassword.Name = "txtConfirmPassword"
+        Me.txtConfirmPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtConfirmPassword.Size = New System.Drawing.Size(149, 24)
         Me.txtConfirmPassword.TabIndex = 3
         '
@@ -149,6 +150,7 @@ Partial Class ManagerCreateStaffPart2
         '
         Me.txtPassword.Location = New System.Drawing.Point(159, 41)
         Me.txtPassword.Name = "txtPassword"
+        Me.txtPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtPassword.Size = New System.Drawing.Size(149, 24)
         Me.txtPassword.TabIndex = 1
         '
@@ -198,7 +200,7 @@ Partial Class ManagerCreateStaffPart2
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.Size = New System.Drawing.Size(100, 36)
         Me.btnCancel.TabIndex = 1
-        Me.btnCancel.Text = "CANCEL"
+        Me.btnCancel.Text = "&CANCEL"
         Me.btnCancel.UseVisualStyleBackColor = False
         '
         'btnCreateStaff
@@ -233,8 +235,10 @@ Partial Class ManagerCreateStaffPart2
         '
         'ManagerCreateStaffPart2
         '
+        Me.AcceptButton = Me.btnCreateStaff
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.CancelButton = Me.btnCancel
         Me.ClientSize = New System.Drawing.Size(800, 573)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.gbCreateStaff)

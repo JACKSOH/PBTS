@@ -94,7 +94,7 @@ Partial Class ManagerModifyPromotion
         Me.gpDiscount.Location = New System.Drawing.Point(303, 99)
         Me.gpDiscount.Name = "gpDiscount"
         Me.gpDiscount.Size = New System.Drawing.Size(200, 117)
-        Me.gpDiscount.TabIndex = 5
+        Me.gpDiscount.TabIndex = 1
         Me.gpDiscount.TabStop = False
         Me.gpDiscount.Text = "Discount"
         '
@@ -148,7 +148,7 @@ Partial Class ManagerModifyPromotion
         Me.txtPromotionName.Location = New System.Drawing.Point(302, 41)
         Me.txtPromotionName.Name = "txtPromotionName"
         Me.txtPromotionName.Size = New System.Drawing.Size(156, 24)
-        Me.txtPromotionName.TabIndex = 4
+        Me.txtPromotionName.TabIndex = 0
         '
         'lstSchedule
         '
@@ -222,7 +222,7 @@ Partial Class ManagerModifyPromotion
         Me.txtPromotionDesc.Multiline = True
         Me.txtPromotionDesc.Name = "txtPromotionDesc"
         Me.txtPromotionDesc.Size = New System.Drawing.Size(206, 125)
-        Me.txtPromotionDesc.TabIndex = 7
+        Me.txtPromotionDesc.TabIndex = 2
         '
         'Label2
         '
@@ -251,8 +251,8 @@ Partial Class ManagerModifyPromotion
         Me.btnCancel.Location = New System.Drawing.Point(374, 424)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.Size = New System.Drawing.Size(100, 36)
-        Me.btnCancel.TabIndex = 9
-        Me.btnCancel.Text = "CANCEL"
+        Me.btnCancel.TabIndex = 4
+        Me.btnCancel.Text = "&CANCEL"
         Me.btnCancel.UseVisualStyleBackColor = False
         '
         'btnUpdate
@@ -264,7 +264,7 @@ Partial Class ManagerModifyPromotion
         Me.btnUpdate.Location = New System.Drawing.Point(238, 424)
         Me.btnUpdate.Name = "btnUpdate"
         Me.btnUpdate.Size = New System.Drawing.Size(100, 36)
-        Me.btnUpdate.TabIndex = 8
+        Me.btnUpdate.TabIndex = 3
         Me.btnUpdate.Text = "&UPDATE"
         Me.btnUpdate.UseVisualStyleBackColor = False
         '
@@ -288,8 +288,10 @@ Partial Class ManagerModifyPromotion
         '
         'ManagerModifyPromotion
         '
+        Me.AcceptButton = Me.btnUpdate
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.CancelButton = Me.btnCancel
         Me.ClientSize = New System.Drawing.Size(800, 579)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.gbModifyPromotion)

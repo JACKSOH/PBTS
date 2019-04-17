@@ -86,14 +86,14 @@ Partial Class ManagerCreatePromotion
         Me.txtPromotionDesc.Multiline = True
         Me.txtPromotionDesc.Name = "txtPromotionDesc"
         Me.txtPromotionDesc.Size = New System.Drawing.Size(314, 70)
-        Me.txtPromotionDesc.TabIndex = 4
+        Me.txtPromotionDesc.TabIndex = 1
         '
         'txtPromotionName
         '
         Me.txtPromotionName.Location = New System.Drawing.Point(160, 35)
         Me.txtPromotionName.Name = "txtPromotionName"
         Me.txtPromotionName.Size = New System.Drawing.Size(314, 24)
-        Me.txtPromotionName.TabIndex = 2
+        Me.txtPromotionName.TabIndex = 0
         '
         'gbPromotionDate
         '
@@ -104,7 +104,7 @@ Partial Class ManagerCreatePromotion
         Me.gbPromotionDate.Location = New System.Drawing.Point(16, 190)
         Me.gbPromotionDate.Name = "gbPromotionDate"
         Me.gbPromotionDate.Size = New System.Drawing.Size(232, 159)
-        Me.gbPromotionDate.TabIndex = 5
+        Me.gbPromotionDate.TabIndex = 2
         Me.gbPromotionDate.TabStop = False
         Me.gbPromotionDate.Text = "Date"
         '
@@ -115,7 +115,7 @@ Partial Class ManagerCreatePromotion
         Me.nupPromotionDuration.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.nupPromotionDuration.Name = "nupPromotionDuration"
         Me.nupPromotionDuration.Size = New System.Drawing.Size(59, 24)
-        Me.nupPromotionDuration.TabIndex = 3
+        Me.nupPromotionDuration.TabIndex = 1
         Me.nupPromotionDuration.Value = New Decimal(New Integer() {1, 0, 0, 0})
         '
         'dpPromotionStartDate
@@ -124,7 +124,7 @@ Partial Class ManagerCreatePromotion
         Me.dpPromotionStartDate.MinDate = New Date(2019, 4, 12, 0, 0, 0, 0)
         Me.dpPromotionStartDate.Name = "dpPromotionStartDate"
         Me.dpPromotionStartDate.Size = New System.Drawing.Size(217, 24)
-        Me.dpPromotionStartDate.TabIndex = 1
+        Me.dpPromotionStartDate.TabIndex = 0
         Me.dpPromotionStartDate.Value = New Date(2019, 4, 12, 0, 0, 0, 0)
         '
         'Label5
@@ -217,8 +217,8 @@ Partial Class ManagerCreatePromotion
         Me.btnCancel.Location = New System.Drawing.Point(374, 378)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.Size = New System.Drawing.Size(100, 36)
-        Me.btnCancel.TabIndex = 8
-        Me.btnCancel.Text = "CANCEL"
+        Me.btnCancel.TabIndex = 4
+        Me.btnCancel.Text = "&CANCEL"
         Me.btnCancel.UseVisualStyleBackColor = False
         '
         'btnNext
@@ -230,7 +230,7 @@ Partial Class ManagerCreatePromotion
         Me.btnNext.Location = New System.Drawing.Point(238, 378)
         Me.btnNext.Name = "btnNext"
         Me.btnNext.Size = New System.Drawing.Size(100, 36)
-        Me.btnNext.TabIndex = 7
+        Me.btnNext.TabIndex = 3
         Me.btnNext.Text = "&NEXT"
         Me.btnNext.UseVisualStyleBackColor = False
         '

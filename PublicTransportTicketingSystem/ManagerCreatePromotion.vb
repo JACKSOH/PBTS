@@ -29,7 +29,7 @@
             End If
 
             dpPromotionStartDate_ValueChanged(Nothing, Nothing)
-                nupPromotionDuration_ValueChanged(Nothing, Nothing)
+            nupPromotionDuration_ValueChanged(Nothing, Nothing)
                 promotionName = txtPromotionName.Text
                 promotionDesc = txtPromotionDesc.Text
                 ErrorName.Visible = False
@@ -42,7 +42,15 @@
             End If
 
             ManageCreatePromotionPart2.Show()
-                Me.Hide()
+            txtPromotionName.Clear()
+            txtPromotionDesc.Clear()
+            dpPromotionStartDate.Value = Date.Today
+            dpPromotionStartDate.MinDate = Date.Today
+            startDate = dpPromotionStartDate.Value
+            nupCustomDiscount.Value = 1
+            radFullDiscount.Checked = True
+            nupPromotionDuration.Value = 1
+            Me.Hide()
             End If
     End Sub
 
@@ -64,9 +72,15 @@
         discountRate = customDiscount
     End Sub
 
-    Private Sub ManagerMenuLayoutControl1_Load(sender As Object, e As EventArgs) Handles ManagerMenuLayoutControl1.Load
+    Private Sub ManagerMenuLayoutControl1_Load(sender As Object, e As EventArgs) Handles MyBase.Load, MyBase.Shown
+        txtPromotionName.Clear()
+        txtPromotionDesc.Clear()
         dpPromotionStartDate.MinDate = Date.Today
         startDate = dpPromotionStartDate.Value
+        nupCustomDiscount.Value = 1
+        radFullDiscount.Checked = True
+        nupPromotionDuration.Value = 1
+
     End Sub
 
     Private Function DataBind(start As Date, endD As Date) As Boolean

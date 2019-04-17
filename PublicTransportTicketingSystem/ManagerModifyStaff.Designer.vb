@@ -309,8 +309,10 @@ Partial Class ManagerModifyStaff
         '
         'ManagerModifyStaff
         '
+        Me.AcceptButton = Me.btnNext
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.CancelButton = Me.btnCancel
         Me.ClientSize = New System.Drawing.Size(801, 576)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.gbCreateStaff)

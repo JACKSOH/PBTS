@@ -15,7 +15,7 @@ Public Class ManagerModifyStaff
         If (ValidateCheck()) Then
             updateStaff()
             ManagerViewStaff.Show()
-            Me.Close()
+            Me.Hide()
         End If
     End Sub
 
@@ -127,32 +127,51 @@ Public Class ManagerModifyStaff
                 command.Parameters.Add(New SqlParameter("type", type))
                 command.ExecuteNonQuery()
                 con.Close()
+
+                MessageBox.Show("Staff Details Updated Successfully", "Successful",
+                                                     MessageBoxButtons.OK,
+                                                     MessageBoxIcon.Information)
             Catch ex As Exception
 
             End Try
         End If
     End Sub
 
-    Private Sub ManagerMenuLayoutControl1_Load(sender As Object, e As EventArgs) Handles ManagerMenuLayoutControl1.Load
+    Private Sub ManagerMenuLayoutControl1_Load(sender As Object, e As EventArgs) Handles MyBase.Load, MyBase.Shown
 
-        txtName.Text = ManagerViewStaff.sname
-        txtIC.Text = ManagerViewStaff.sIC
-        txtEmail.Text = ManagerViewStaff.email
-        txtContactNo.Text = ManagerViewStaff.contactNo
+        Try
+            con.ConnectionString = StaffBooking.connection
+            con.Open()
+            Dim command As New SqlCommand("select * from Employee where employeeID = '" & ManagerViewStaff.staffid & "'", con)
+            Dim adapter As New SqlDataAdapter(command)
+            Dim reader As SqlDataReader
+            reader = command.ExecuteReader
 
-        If ManagerViewStaff.gender.ToLower.Contains("m") Then
-            radMale.Checked = True
-            radFemale.Checked = False
-        Else
-            radFemale.Checked = True
-            radMale.Checked = False
-        End If
+            If (reader.Read) Then
+                txtName.Text = reader.GetString(1)
+                txtIC.Text = reader.GetString(2)
+                txtEmail.Text = reader.GetString(5)
+                txtContactNo.Text = reader.GetString(4)
 
-        If (ManagerViewStaff.type.Contains("manager") Or ManagerViewStaff.type.Contains("Manager")) Then
-            radManager.Checked = True
-        Else
-            radStaff.Checked = True
-        End If
+
+                If reader.GetString(3).ToLower.Contains("m") Then
+                    radMale.Checked = True
+                    radFemale.Checked = False
+                Else
+                    radFemale.Checked = True
+                    radMale.Checked = False
+                End If
+
+                If (reader.GetString(6).ToString.Contains("manager")) Then
+                    radManager.Checked = True
+                Else
+                    radStaff.Checked = True
+                End If
+            End If
+            con.Close()
+        Catch ex As Exception
+
+        End Try
 
     End Sub
 

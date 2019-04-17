@@ -168,16 +168,24 @@ Public Class ManagerCreateStaffPart2
 
                         cmd.ExecuteNonQuery()
 
-                        MessageBox.Show("Created Successfully")
+                        MessageBox.Show("A New Staff Created Successfully", "Successful",
+                                                      MessageBoxButtons.YesNoCancel,
+                                                      MessageBoxIcon.Information)
 
                     Catch ex As Exception
                         MessageBox.Show("Invalid" & ex.Message)
                     Finally
                         con.Close()
-                        ManagerViewPromotion.Show()
+                        ManagerViewStaff.Show()
                     End Try
                 End If
             End If
         End If
+    End Sub
+
+    Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
+        Me.Close()
+        ManagerViewStaff.ShowDialog()
+
     End Sub
 End Class

@@ -3,7 +3,7 @@
 Public Class StaffViewPromotionPart2
     Private con As New SqlConnection
 
-    Private Sub StaffMenuLayoutControl1_Load(sender As Object, e As EventArgs)
+    Private Sub StaffMenuLayoutControl1_Load(sender As Object, e As EventArgs) Handles Me.Shown, Me.Load
         lblPromotionID.Text = StaffViewPromotion.id
         lblPromotionName.Text = StaffViewPromotion.pname
         lblPromotionDate.Text = StaffViewPromotion.psdate.Substring(0, 9)
@@ -36,8 +36,4 @@ Public Class StaffViewPromotionPart2
         End Try
     End Sub
 
-
-    Private Sub gbSchedulePromotion_Enter(sender As Object, e As EventArgs) Handles gbSchedulePromotion.Enter
-
-    End Sub
 End Class

@@ -94,7 +94,7 @@ Partial Class ManagerCreateStaff
         Me.GroupBox1.Location = New System.Drawing.Point(160, 341)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(313, 42)
-        Me.GroupBox1.TabIndex = 56
+        Me.GroupBox1.TabIndex = 7
         Me.GroupBox1.TabStop = False
         '
         'radFemale
@@ -124,7 +124,7 @@ Partial Class ManagerCreateStaff
         Me.txtEmail.Location = New System.Drawing.Point(161, 296)
         Me.txtEmail.Name = "txtEmail"
         Me.txtEmail.Size = New System.Drawing.Size(314, 24)
-        Me.txtEmail.TabIndex = 12
+        Me.txtEmail.TabIndex = 6
         '
         'txtIC
         '
@@ -132,7 +132,7 @@ Partial Class ManagerCreateStaff
         Me.txtIC.Mask = "000000000000"
         Me.txtIC.Name = "txtIC"
         Me.txtIC.Size = New System.Drawing.Size(313, 24)
-        Me.txtIC.TabIndex = 8
+        Me.txtIC.TabIndex = 4
         '
         'txtContactNo
         '
@@ -140,7 +140,7 @@ Partial Class ManagerCreateStaff
         Me.txtContactNo.Mask = "000-0000000"
         Me.txtContactNo.Name = "txtContactNo"
         Me.txtContactNo.Size = New System.Drawing.Size(313, 24)
-        Me.txtContactNo.TabIndex = 10
+        Me.txtContactNo.TabIndex = 5
         '
         'Label10
         '
@@ -175,10 +175,10 @@ Partial Class ManagerCreateStaff
         '
         'txtAccessKey
         '
-        Me.txtAccessKey.Location = New System.Drawing.Point(160, 70)
+        Me.txtAccessKey.Location = New System.Drawing.Point(159, 70)
         Me.txtAccessKey.Name = "txtAccessKey"
         Me.txtAccessKey.Size = New System.Drawing.Size(314, 24)
-        Me.txtAccessKey.TabIndex = 4
+        Me.txtAccessKey.TabIndex = 2
         '
         'radStaff
         '
@@ -186,7 +186,7 @@ Partial Class ManagerCreateStaff
         Me.radStaff.Location = New System.Drawing.Point(328, 33)
         Me.radStaff.Name = "radStaff"
         Me.radStaff.Size = New System.Drawing.Size(52, 22)
-        Me.radStaff.TabIndex = 2
+        Me.radStaff.TabIndex = 1
         Me.radStaff.Text = "Staff"
         Me.radStaff.UseVisualStyleBackColor = True
         '
@@ -197,7 +197,7 @@ Partial Class ManagerCreateStaff
         Me.radManager.Location = New System.Drawing.Point(160, 33)
         Me.radManager.Name = "radManager"
         Me.radManager.Size = New System.Drawing.Size(76, 22)
-        Me.radManager.TabIndex = 1
+        Me.radManager.TabIndex = 0
         Me.radManager.TabStop = True
         Me.radManager.Text = "Manager"
         Me.radManager.UseVisualStyleBackColor = True
@@ -287,7 +287,7 @@ Partial Class ManagerCreateStaff
         Me.txtName.Location = New System.Drawing.Point(161, 124)
         Me.txtName.Name = "txtName"
         Me.txtName.Size = New System.Drawing.Size(314, 24)
-        Me.txtName.TabIndex = 6
+        Me.txtName.TabIndex = 3
         '
         'Label1
         '
@@ -307,8 +307,8 @@ Partial Class ManagerCreateStaff
         Me.btnCancel.Location = New System.Drawing.Point(374, 414)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.Size = New System.Drawing.Size(100, 36)
-        Me.btnCancel.TabIndex = 15
-        Me.btnCancel.Text = "CANCEL"
+        Me.btnCancel.TabIndex = 9
+        Me.btnCancel.Text = "&CANCEL"
         Me.btnCancel.UseVisualStyleBackColor = False
         '
         'btnNext
@@ -320,7 +320,7 @@ Partial Class ManagerCreateStaff
         Me.btnNext.Location = New System.Drawing.Point(239, 414)
         Me.btnNext.Name = "btnNext"
         Me.btnNext.Size = New System.Drawing.Size(100, 36)
-        Me.btnNext.TabIndex = 14
+        Me.btnNext.TabIndex = 8
         Me.btnNext.Text = "&NEXT"
         Me.btnNext.UseVisualStyleBackColor = False
         '
@@ -343,8 +343,10 @@ Partial Class ManagerCreateStaff
         '
         'ManagerCreateStaff
         '
+        Me.AcceptButton = Me.btnNext
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.CancelButton = Me.btnCancel
         Me.ClientSize = New System.Drawing.Size(800, 575)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.gbCreateStaff)

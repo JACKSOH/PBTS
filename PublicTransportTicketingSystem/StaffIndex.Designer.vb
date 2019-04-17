@@ -73,7 +73,7 @@ Partial Class StaffIndex
         Me.btnExit.Location = New System.Drawing.Point(188, 299)
         Me.btnExit.Name = "btnExit"
         Me.btnExit.Size = New System.Drawing.Size(77, 29)
-        Me.btnExit.TabIndex = 12
+        Me.btnExit.TabIndex = 4
         Me.btnExit.Text = "&Exit"
         Me.btnExit.UseVisualStyleBackColor = True
         '
@@ -86,7 +86,7 @@ Partial Class StaffIndex
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(353, 63)
-        Me.Panel1.TabIndex = 11
+        Me.Panel1.TabIndex = 3
         '
         'PictureBox1
         '
@@ -131,7 +131,7 @@ Partial Class StaffIndex
         Me.linkToManager.Location = New System.Drawing.Point(170, 268)
         Me.linkToManager.Name = "linkToManager"
         Me.linkToManager.Size = New System.Drawing.Size(84, 17)
-        Me.linkToManager.TabIndex = 9
+        Me.linkToManager.TabIndex = 3
         Me.linkToManager.Text = "I'm Manager"
         '
         'lblErrorIC
@@ -165,7 +165,7 @@ Partial Class StaffIndex
         Me.btnLogin.Location = New System.Drawing.Point(84, 299)
         Me.btnLogin.Name = "btnLogin"
         Me.btnLogin.Size = New System.Drawing.Size(77, 29)
-        Me.btnLogin.TabIndex = 6
+        Me.btnLogin.TabIndex = 2
         Me.btnLogin.Text = "&Login"
         Me.btnLogin.UseVisualStyleBackColor = True
         '
@@ -176,7 +176,7 @@ Partial Class StaffIndex
         Me.txtPassword.Name = "txtPassword"
         Me.txtPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtPassword.Size = New System.Drawing.Size(159, 20)
-        Me.txtPassword.TabIndex = 5
+        Me.txtPassword.TabIndex = 1
         '
         'Label4
         '
@@ -206,7 +206,7 @@ Partial Class StaffIndex
         Me.txtIC.MaxLength = 12
         Me.txtIC.Name = "txtIC"
         Me.txtIC.Size = New System.Drawing.Size(160, 20)
-        Me.txtIC.TabIndex = 2
+        Me.txtIC.TabIndex = 0
         '
         'Label2
         '

@@ -22,7 +22,7 @@ Partial Class StaffViewPromotionPart2
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.gbSchedulePromotion = New System.Windows.Forms.GroupBox()
         Me.lblTransport = New System.Windows.Forms.Label()
         Me.dgvPromotionList = New System.Windows.Forms.DataGridView()
@@ -90,9 +90,9 @@ Partial Class StaffViewPromotionPart2
         Me.dgvPromotionList.Location = New System.Drawing.Point(24, 214)
         Me.dgvPromotionList.Name = "dgvPromotionList"
         Me.dgvPromotionList.ReadOnly = True
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Tw Cen MT", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Black
-        Me.dgvPromotionList.RowsDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Tw Cen MT", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Black
+        Me.dgvPromotionList.RowsDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvPromotionList.ScrollBars = System.Windows.Forms.ScrollBars.None
         Me.dgvPromotionList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvPromotionList.Size = New System.Drawing.Size(386, 133)
@@ -224,8 +224,10 @@ Partial Class StaffViewPromotionPart2
         '
         'StaffViewPromotionPart2
         '
+        Me.AcceptButton = Me.btnDone
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.CancelButton = Me.btnDone
         Me.ClientSize = New System.Drawing.Size(539, 445)
         Me.Controls.Add(Me.gbSchedulePromotion)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None

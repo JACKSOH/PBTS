@@ -51,7 +51,7 @@ Partial Class ManagerViewStaff
         Me.GroupBox1.Location = New System.Drawing.Point(254, 84)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(511, 441)
-        Me.GroupBox1.TabIndex = 1
+        Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "View All Staff"
         '
@@ -76,7 +76,7 @@ Partial Class ManagerViewStaff
         Me.dgvStaffList.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.dgvStaffList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvStaffList.Size = New System.Drawing.Size(442, 274)
-        Me.dgvStaffList.TabIndex = 5
+        Me.dgvStaffList.TabIndex = 3
         '
         'radStaff
         '
@@ -84,7 +84,7 @@ Partial Class ManagerViewStaff
         Me.radStaff.Location = New System.Drawing.Point(282, 71)
         Me.radStaff.Name = "radStaff"
         Me.radStaff.Size = New System.Drawing.Size(52, 22)
-        Me.radStaff.TabIndex = 4
+        Me.radStaff.TabIndex = 2
         Me.radStaff.Text = "Staff"
         Me.radStaff.UseVisualStyleBackColor = True
         '
@@ -94,7 +94,7 @@ Partial Class ManagerViewStaff
         Me.radManager.Location = New System.Drawing.Point(175, 71)
         Me.radManager.Name = "radManager"
         Me.radManager.Size = New System.Drawing.Size(76, 22)
-        Me.radManager.TabIndex = 3
+        Me.radManager.TabIndex = 1
         Me.radManager.Text = "Manager"
         Me.radManager.UseVisualStyleBackColor = True
         '
@@ -142,7 +142,7 @@ Partial Class ManagerViewStaff
         Me.btnCreatePromotionPage.Location = New System.Drawing.Point(515, 527)
         Me.btnCreatePromotionPage.Name = "btnCreatePromotionPage"
         Me.btnCreatePromotionPage.Size = New System.Drawing.Size(244, 28)
-        Me.btnCreatePromotionPage.TabIndex = 39
+        Me.btnCreatePromotionPage.TabIndex = 1
         Me.btnCreatePromotionPage.Text = "&CREATE STAFF"
         Me.btnCreatePromotionPage.UseVisualStyleBackColor = False
         '
@@ -156,6 +156,7 @@ Partial Class ManagerViewStaff
         '
         'ManagerViewStaff
         '
+        Me.AcceptButton = Me.btnCreatePromotionPage
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 567)

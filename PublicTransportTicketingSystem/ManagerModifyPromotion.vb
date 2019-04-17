@@ -121,6 +121,10 @@ Public Class ManagerModifyPromotion
                     command1.ExecuteNonQuery()
                     con.Close()
 
+                    MessageBox.Show("Promotion Details Updated Successfully", "Successful",
+                                                      MessageBoxButtons.OK,
+                                                      MessageBoxIcon.Information)
+
 
                 Catch ex As Exception
                     MessageBox.Show("Invalid" & ex.Message)

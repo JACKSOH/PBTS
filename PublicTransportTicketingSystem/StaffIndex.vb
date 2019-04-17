@@ -94,6 +94,9 @@ Public Class StaffIndex
         If ICPasswordValidation() Then
             If CheckEmployeePasswordandIC(txtIC.Text, txtPassword.Text, "staff") Then
                 Me.Hide()
+                MessageBox.Show("You are login in successfully", "Successful",
+                                                      MessageBoxButtons.OK,
+                                                      MessageBoxIcon.Information)
                 StaffBooking.Show()
                 'StaffManageAccount.ShowDialog()
             Else

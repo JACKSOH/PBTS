@@ -127,6 +127,10 @@ Public Class ManagerModifyStaff
                 command.Parameters.Add(New SqlParameter("type", type))
                 command.ExecuteNonQuery()
                 con.Close()
+
+                MessageBox.Show("Staff Details Updated Successfully", "Successful",
+                                                     MessageBoxButtons.OK,
+                                                     MessageBoxIcon.Information)
             Catch ex As Exception
 
             End Try

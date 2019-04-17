@@ -75,7 +75,7 @@ Partial Class ManagerViewPromotion
         Me.txtPromotionID.Location = New System.Drawing.Point(121, 31)
         Me.txtPromotionID.Name = "txtPromotionID"
         Me.txtPromotionID.Size = New System.Drawing.Size(249, 20)
-        Me.txtPromotionID.TabIndex = 9
+        Me.txtPromotionID.TabIndex = 0
         '
         'Label2
         '
@@ -94,7 +94,7 @@ Partial Class ManagerViewPromotion
         Me.dpPromotionDate.MinDate = New Date(2019, 3, 24, 0, 0, 0, 0)
         Me.dpPromotionDate.Name = "dpPromotionDate"
         Me.dpPromotionDate.Size = New System.Drawing.Size(249, 24)
-        Me.dpPromotionDate.TabIndex = 12
+        Me.dpPromotionDate.TabIndex = 1
         '
         'btnUpdate
         '
@@ -105,7 +105,7 @@ Partial Class ManagerViewPromotion
         Me.btnUpdate.Location = New System.Drawing.Point(415, 380)
         Me.btnUpdate.Name = "btnUpdate"
         Me.btnUpdate.Size = New System.Drawing.Size(100, 28)
-        Me.btnUpdate.TabIndex = 35
+        Me.btnUpdate.TabIndex = 6
         Me.btnUpdate.Text = "&MODIFY"
         Me.btnUpdate.UseVisualStyleBackColor = False
         '
@@ -118,7 +118,7 @@ Partial Class ManagerViewPromotion
         Me.btnRemove.Location = New System.Drawing.Point(280, 380)
         Me.btnRemove.Name = "btnRemove"
         Me.btnRemove.Size = New System.Drawing.Size(100, 28)
-        Me.btnRemove.TabIndex = 36
+        Me.btnRemove.TabIndex = 5
         Me.btnRemove.Text = "&DEACTIVE"
         Me.btnRemove.UseVisualStyleBackColor = False
         '
@@ -140,7 +140,7 @@ Partial Class ManagerViewPromotion
         Me.gbBus.Location = New System.Drawing.Point(252, 83)
         Me.gbBus.Name = "gbBus"
         Me.gbBus.Size = New System.Drawing.Size(536, 417)
-        Me.gbBus.TabIndex = 27
+        Me.gbBus.TabIndex = 0
         Me.gbBus.TabStop = False
         Me.gbBus.Text = "Promotion"
         '
@@ -153,7 +153,7 @@ Partial Class ManagerViewPromotion
         Me.btnClear.Location = New System.Drawing.Point(415, 26)
         Me.btnClear.Name = "btnClear"
         Me.btnClear.Size = New System.Drawing.Size(79, 28)
-        Me.btnClear.TabIndex = 41
+        Me.btnClear.TabIndex = 3
         Me.btnClear.Text = "&CLEAR"
         Me.btnClear.UseVisualStyleBackColor = False
         '
@@ -174,7 +174,7 @@ Partial Class ManagerViewPromotion
         Me.dgvPromotionList.ScrollBars = System.Windows.Forms.ScrollBars.None
         Me.dgvPromotionList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvPromotionList.Size = New System.Drawing.Size(486, 215)
-        Me.dgvPromotionList.TabIndex = 40
+        Me.dgvPromotionList.TabIndex = 4
         '
         'lblCount
         '
@@ -194,7 +194,7 @@ Partial Class ManagerViewPromotion
         Me.cboTransport.Location = New System.Drawing.Point(121, 98)
         Me.cboTransport.Name = "cboTransport"
         Me.cboTransport.Size = New System.Drawing.Size(249, 26)
-        Me.cboTransport.TabIndex = 38
+        Me.cboTransport.TabIndex = 2
         '
         'Label1
         '
@@ -234,6 +234,7 @@ Partial Class ManagerViewPromotion
         '
         'ManagerViewPromotion
         '
+        Me.AcceptButton = Me.btnCreatePromotionPage
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 575)

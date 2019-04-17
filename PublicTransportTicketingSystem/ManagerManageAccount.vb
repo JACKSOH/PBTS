@@ -271,7 +271,7 @@ Public Class ManagerManageAccount
 
                             If (result = DialogResult.Yes) Then
                                 updateDetailAndPassword()
-                                MessageBox.Show("Update Successfully", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                                MessageBox.Show("Account Details Updated Successfully", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information)
                                 Me.Hide()
                                 managerReport.Show()
                             Else

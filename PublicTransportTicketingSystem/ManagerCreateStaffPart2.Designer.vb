@@ -200,7 +200,7 @@ Partial Class ManagerCreateStaffPart2
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.Size = New System.Drawing.Size(100, 36)
         Me.btnCancel.TabIndex = 1
-        Me.btnCancel.Text = "CANCEL"
+        Me.btnCancel.Text = "&CANCEL"
         Me.btnCancel.UseVisualStyleBackColor = False
         '
         'btnCreateStaff
@@ -235,8 +235,10 @@ Partial Class ManagerCreateStaffPart2
         '
         'ManagerCreateStaffPart2
         '
+        Me.AcceptButton = Me.btnCreateStaff
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.CancelButton = Me.btnCancel
         Me.ClientSize = New System.Drawing.Size(800, 573)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.gbCreateStaff)

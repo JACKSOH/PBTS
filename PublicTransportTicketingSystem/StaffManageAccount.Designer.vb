@@ -87,7 +87,7 @@ Partial Class StaffManageAccount
         Me.gbManagerAccount.Location = New System.Drawing.Point(265, 84)
         Me.gbManagerAccount.Name = "gbManagerAccount"
         Me.gbManagerAccount.Size = New System.Drawing.Size(499, 486)
-        Me.gbManagerAccount.TabIndex = 25
+        Me.gbManagerAccount.TabIndex = 0
         Me.gbManagerAccount.TabStop = False
         Me.gbManagerAccount.Text = "Staff Account"
         '
@@ -97,7 +97,7 @@ Partial Class StaffManageAccount
         Me.txtContactNo.MaxLength = 11
         Me.txtContactNo.Name = "txtContactNo"
         Me.txtContactNo.Size = New System.Drawing.Size(274, 24)
-        Me.txtContactNo.TabIndex = 64
+        Me.txtContactNo.TabIndex = 0
         '
         'lblIC
         '
@@ -124,7 +124,7 @@ Partial Class StaffManageAccount
         Me.radNo.Location = New System.Drawing.Point(289, 223)
         Me.radNo.Name = "radNo"
         Me.radNo.Size = New System.Drawing.Size(42, 22)
-        Me.radNo.TabIndex = 61
+        Me.radNo.TabIndex = 3
         Me.radNo.TabStop = True
         Me.radNo.Text = "No"
         Me.radNo.UseVisualStyleBackColor = True
@@ -135,7 +135,7 @@ Partial Class StaffManageAccount
         Me.radYes.Location = New System.Drawing.Point(180, 221)
         Me.radYes.Name = "radYes"
         Me.radYes.Size = New System.Drawing.Size(46, 22)
-        Me.radYes.TabIndex = 60
+        Me.radYes.TabIndex = 2
         Me.radYes.Text = "Yes"
         Me.radYes.UseVisualStyleBackColor = True
         '
@@ -164,7 +164,7 @@ Partial Class StaffManageAccount
         Me.gpChangePassword.Location = New System.Drawing.Point(30, 249)
         Me.gpChangePassword.Name = "gpChangePassword"
         Me.gpChangePassword.Size = New System.Drawing.Size(434, 179)
-        Me.gpChangePassword.TabIndex = 58
+        Me.gpChangePassword.TabIndex = 4
         Me.gpChangePassword.TabStop = False
         Me.gpChangePassword.Text = "Set Account Password"
         '
@@ -195,7 +195,7 @@ Partial Class StaffManageAccount
         Me.txtExistPassword.Name = "txtExistPassword"
         Me.txtExistPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtExistPassword.Size = New System.Drawing.Size(165, 24)
-        Me.txtExistPassword.TabIndex = 64
+        Me.txtExistPassword.TabIndex = 0
         '
         'lblErrorConfirmPassword
         '
@@ -227,7 +227,7 @@ Partial Class StaffManageAccount
         Me.txtConfirmPassword.Name = "txtConfirmPassword"
         Me.txtConfirmPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtConfirmPassword.Size = New System.Drawing.Size(165, 24)
-        Me.txtConfirmPassword.TabIndex = 61
+        Me.txtConfirmPassword.TabIndex = 2
         '
         'txtPassword
         '
@@ -236,7 +236,7 @@ Partial Class StaffManageAccount
         Me.txtPassword.Name = "txtPassword"
         Me.txtPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtPassword.Size = New System.Drawing.Size(165, 24)
-        Me.txtPassword.TabIndex = 60
+        Me.txtPassword.TabIndex = 1
         '
         'Label4
         '
@@ -261,7 +261,7 @@ Partial Class StaffManageAccount
         Me.txtEmail.Location = New System.Drawing.Point(180, 140)
         Me.txtEmail.Name = "txtEmail"
         Me.txtEmail.Size = New System.Drawing.Size(274, 24)
-        Me.txtEmail.TabIndex = 55
+        Me.txtEmail.TabIndex = 1
         '
         'lblErrorEmail
         '
@@ -330,7 +330,7 @@ Partial Class StaffManageAccount
         Me.btnCancel.Location = New System.Drawing.Point(365, 444)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.Size = New System.Drawing.Size(100, 36)
-        Me.btnCancel.TabIndex = 29
+        Me.btnCancel.TabIndex = 6
         Me.btnCancel.Text = "CANCEL"
         Me.btnCancel.UseVisualStyleBackColor = False
         '
@@ -338,12 +338,13 @@ Partial Class StaffManageAccount
         '
         Me.btnNext.AccessibleRole = System.Windows.Forms.AccessibleRole.Pane
         Me.btnNext.BackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(53, Byte), Integer), CType(CType(65, Byte), Integer))
+        Me.btnNext.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnNext.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.btnNext.Location = New System.Drawing.Point(240, 444)
         Me.btnNext.Name = "btnNext"
         Me.btnNext.Size = New System.Drawing.Size(100, 36)
-        Me.btnNext.TabIndex = 26
+        Me.btnNext.TabIndex = 5
         Me.btnNext.Text = "&MODIFY"
         Me.btnNext.UseVisualStyleBackColor = False
         '
@@ -359,8 +360,10 @@ Partial Class StaffManageAccount
         '
         'StaffManageAccount
         '
+        Me.AcceptButton = Me.btnNext
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.CancelButton = Me.btnNext
         Me.ClientSize = New System.Drawing.Size(804, 582)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.gbManagerAccount)

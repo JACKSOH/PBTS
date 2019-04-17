@@ -168,7 +168,9 @@ Public Class ManagerCreateStaffPart2
 
                         cmd.ExecuteNonQuery()
 
-                        MessageBox.Show("Created Successfully")
+                        MessageBox.Show("A New Staff Created Successfully", "Successful",
+                                                      MessageBoxButtons.YesNoCancel,
+                                                      MessageBoxIcon.Information)
 
                     Catch ex As Exception
                         MessageBox.Show("Invalid" & ex.Message)

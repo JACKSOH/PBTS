@@ -22,9 +22,9 @@ Partial Class ManageCreatePromotionPart2
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.cboTransport = New System.Windows.Forms.ComboBox()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -53,7 +53,7 @@ Partial Class ManageCreatePromotionPart2
         Me.Label1.Location = New System.Drawing.Point(266, 239)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(101, 18)
-        Me.Label1.TabIndex = 1
+        Me.Label1.TabIndex = 5
         Me.Label1.Text = "Public Transport"
         '
         'cboTransport
@@ -65,7 +65,7 @@ Partial Class ManageCreatePromotionPart2
         Me.cboTransport.Location = New System.Drawing.Point(504, 239)
         Me.cboTransport.Name = "cboTransport"
         Me.cboTransport.Size = New System.Drawing.Size(121, 26)
-        Me.cboTransport.TabIndex = 2
+        Me.cboTransport.TabIndex = 0
         Me.cboTransport.Text = "Bus"
         '
         'Label2
@@ -158,7 +158,7 @@ Partial Class ManageCreatePromotionPart2
         Me.btnAddPromotion.Location = New System.Drawing.Point(471, 487)
         Me.btnAddPromotion.Name = "btnAddPromotion"
         Me.btnAddPromotion.Size = New System.Drawing.Size(100, 36)
-        Me.btnAddPromotion.TabIndex = 27
+        Me.btnAddPromotion.TabIndex = 2
         Me.btnAddPromotion.Text = "&CREATE"
         Me.btnAddPromotion.UseVisualStyleBackColor = False
         '
@@ -172,7 +172,7 @@ Partial Class ManageCreatePromotionPart2
         Me.btnCancel.Location = New System.Drawing.Point(614, 487)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.Size = New System.Drawing.Size(100, 36)
-        Me.btnCancel.TabIndex = 30
+        Me.btnCancel.TabIndex = 3
         Me.btnCancel.Text = "&CANCEL"
         Me.btnCancel.UseVisualStyleBackColor = False
         '
@@ -195,39 +195,39 @@ Partial Class ManageCreatePromotionPart2
         '
         Me.dgvSchedule.AllowUserToDeleteRows = False
         Me.dgvSchedule.BackgroundColor = System.Drawing.SystemColors.ButtonFace
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Desktop
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.ControlLightLight
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvSchedule.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Desktop
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlLightLight
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvSchedule.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvSchedule.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Tw Cen MT", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvSchedule.DefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Tw Cen MT", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvSchedule.DefaultCellStyle = DataGridViewCellStyle2
         Me.dgvSchedule.GridColor = System.Drawing.SystemColors.Control
         Me.dgvSchedule.Location = New System.Drawing.Point(269, 282)
         Me.dgvSchedule.Name = "dgvSchedule"
         Me.dgvSchedule.ReadOnly = True
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle6.BackColor = System.Drawing.Color.Snow
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.Maroon
-        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvSchedule.RowHeadersDefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.Snow
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Maroon
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvSchedule.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.dgvSchedule.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.dgvSchedule.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvSchedule.Size = New System.Drawing.Size(445, 150)
-        Me.dgvSchedule.TabIndex = 34
+        Me.dgvSchedule.TabIndex = 1
         '
         'ManagerMenuLayoutControl1
         '
@@ -249,8 +249,10 @@ Partial Class ManageCreatePromotionPart2
         '
         'ManageCreatePromotionPart2
         '
+        Me.AcceptButton = Me.btnAddPromotion
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.CancelButton = Me.btnCancel
         Me.ClientSize = New System.Drawing.Size(799, 565)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.dgvSchedule)

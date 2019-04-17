@@ -86,7 +86,7 @@
 
     Public Event managerExitClick(ByVal sender As Object, ByVal e As System.EventArgs)
     Private Sub btnExitClick(sender As Object, e As EventArgs) Handles pbExit.Click
-        MessageBox.Show("Log out")
+        MessageBox.Show("Logging out...", "Bye", MessageBoxButtons.OK, MessageBoxIcon.None)
         ParentForm.Hide()
         StaffIndex.Show()
         RaiseEvent managerExitClick(sender, e)

@@ -39,7 +39,7 @@
             dgvSchedule.Rows(count).Cells(6).Value = sch.tr.transportID
             count += 1
         Next
-        lblRecord.Text = (dgvSchedule.Rows.Count - 1).ToString("0 of records found")
+        lblRecord.Text = (dgvSchedule.Rows.Count).ToString("0 of records found")
     End Sub
 
     'search by origin location
@@ -83,7 +83,7 @@
             dgvSchedule.Rows(count).Cells(6).Value = sch.tr.transportID
             count += 1
         Next
-        lblRecord.Text = (dgvSchedule.Rows.Count - 1).ToString("0 of records found")
+        lblRecord.Text = (dgvSchedule.Rows.Count).ToString("0 of records found")
     End Sub
 
     'search by date
@@ -131,7 +131,7 @@
             dgvSchedule.Rows(count).Cells(6).Value = sch.tr.transportID
             count += 1
         Next
-        lblRecord.Text = (dgvSchedule.Rows.Count - 1).ToString("0 of records found")
+        lblRecord.Text = (dgvSchedule.Rows.Count).ToString("0 of records found")
     End Sub
     Private Sub ManagerManageSchedule_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         selectedType = ts.selectedType
@@ -219,5 +219,6 @@
 
         End Try
     End Sub
+
 
 End Class

@@ -50,44 +50,76 @@ Public Class managerReport
         If rbDailyBook.Checked Then
             managerBookingReport.Show()
         ElseIf rbMonthlySchedule.Checked Then
-            Dim month As String
-            Do
-                month = InputBox("Please enter the a month(1-12).")
-                If month = "" Or CInt(month) = 0 Or CInt(month) > 12 Then
-                    MessageBox.Show("Please enter a proper month. E.g (1-12).", "Error")
-                End If
-            Loop While month = "" Or CInt(month) = 0 Or CInt(month) > 12
-            managerScheduleReport.selectedMonth = CInt(month)
-            managerScheduleReport.selectedType = TranportSelection1.selectedType
-            managerScheduleReport.ShowDialog()
+            Try
+                Dim month As String
+                Do
+                    month = InputBox("Please enter the a month(1-12).")
+                    If month = "" Then
+                        MessageBox.Show("Month Required. E.g (1-12).", "Error")
+                    ElseIf App.IsAlpha(month) Then
+                        MessageBox.Show("Please enter a proper month. E.g (1-12).", "Error")
+                    ElseIf CInt(month) = 0 Or CInt(month) > 12 Then
+                        MessageBox.Show("Please enter a proper month. E.g (1-12).", "Error")
+                    End If
+                Loop While month = "" Or CInt(month) = 0 Or CInt(month) > 12
+                managerScheduleReport.selectedMonth = CInt(month)
+                managerScheduleReport.selectedType = TranportSelection1.selectedType
+                managerScheduleReport.ShowDialog()
+            Catch ex As Exception
+
+            End Try
+
         ElseIf rbMonthlyPromotion.Checked Then
             Dim month As String
-            Do
-                month = InputBox("Please enter the a month(1-12).")
-                If month = "" Or CInt(month) = 0 Or CInt(month) > 12 Then
-                    MessageBox.Show("Please enter a proper month. E.g (1-12).", "Error")
-                End If
-            Loop While month = "" Or CInt(month) = 0 Or CInt(month) > 12
-            MonthlyPromotionReport.selectedMonth = CInt(month)
-            MonthlyPromotionReport.ShowDialog()
+            Try
+                Do
+                    month = InputBox("Please enter the a month(1-12).")
+                    If month = "" Then
+                        MessageBox.Show("Month Required. E.g (1-12).", "Error")
+                    ElseIf App.IsAlpha(month) Then
+                        MessageBox.Show("Please enter a proper month. E.g (1-12).", "Error")
+                    ElseIf CInt(month) = 0 Or CInt(month) > 12 Then
+                        MessageBox.Show("Please enter a proper month. E.g (1-12).", "Error")
+                    End If
+                Loop While month = "" Or CInt(month) = 0 Or CInt(month) > 12
+                MonthlyPromotionReport.selectedMonth = CInt(month)
+                MonthlyPromotionReport.ShowDialog()
+            Catch ex As Exception
+
+            End Try
+
         ElseIf rbDailyTransaction.Checked Then
             Dim month As String
             Dim day As String
-            Do
-                month = InputBox("Please enter the month(1-12).")
-                If month = "" Or CInt(month) = 0 Or CInt(month) > 12 Then
-                    MessageBox.Show("Please enter a proper month. E.g (1-12).", "Error")
-                End If
-            Loop While month = "" Or CInt(month) = 0 Or CInt(month) > 12
-            Do
-                day = InputBox("Please enter the day(1-31).")
-                If day = "" Or CInt(day) = 0 Or CInt(day) > 31 Then
-                    MessageBox.Show("Please enter a proper day. E.g (1-31).", "Error")
-                End If
-            Loop While day = "" Or CInt(day) = 0 Or CInt(day) > 31
-            ManagerTransactionReport.selectedDay = CDec(day)
-            ManagerTransactionReport.selectedMonth = CDec(month)
-            ManagerTransactionReport.ShowDialog()
+            Try
+                Do
+                    month = InputBox("Please enter the a month(1-12).")
+                    If month = "" Then
+                        MessageBox.Show("Month Required. E.g (1-12).", "Error")
+                    ElseIf App.IsAlpha(month) Then
+                        MessageBox.Show("Please enter a proper month. E.g (1-12).", "Error")
+                    ElseIf CInt(month) = 0 Or CInt(month) > 12 Then
+                        MessageBox.Show("Please enter a proper month. E.g (1-12).", "Error")
+                    End If
+                Loop While month = "" Or CInt(month) = 0 Or CInt(month) > 12
+
+                Do
+                    day = InputBox("Please enter the a month(1-12).")
+                    If day = "" Then
+                        MessageBox.Show("day Required. E.g (1-12).", "Error")
+                    ElseIf App.IsAlpha(month) Then
+                        MessageBox.Show("Please enter a proper day. E.g (1-12).", "Error")
+                    ElseIf CInt(month) = 0 Or CInt(month) > 12 Then
+                        MessageBox.Show("Please enter a proper day. E.g (1-12).", "Error")
+                    End If
+                Loop While day = "" Or CInt(day) = 0 Or CInt(day) > 31
+                ManagerTransactionReport.selectedDay = CDec(day)
+                ManagerTransactionReport.selectedMonth = CDec(month)
+                ManagerTransactionReport.ShowDialog()
+            Catch ex As Exception
+
+            End Try
+
         End If
     End Sub
     'End Here

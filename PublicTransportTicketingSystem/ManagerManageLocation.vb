@@ -5,6 +5,7 @@
     Private Sub BindData()
         Dim db As New PBTSDataContext
         dgv.DataSource = db.Locations
+        lblRecord.Text = dgv.Rows.Count.ToString("0 of Records found")
     End Sub
     Private Function IsDuplicatedLocation(location As String) As Boolean
         Dim db As New PBTSDataContext
@@ -55,15 +56,24 @@
 
     Private Sub btnDeleteCancel_Click(sender As Object, e As EventArgs) Handles btnDeleteCancel.Click
         If btnDeleteCancel.Text = "&Delete" Then
+            Dim db As New PBTSDataContext
             Dim yesno = MessageBox.Show("Do you really want to delete this records?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
             If yesno = DialogResult.Yes Then
+
+                Dim query = db.LocationLists.Any(Function(o) o.locationID = dgv.CurrentRow.Cells(0).Value.ToString)
                 Try
+
+                    If query = True Then
+                        MessageBox.Show("Location is in used in other schedule , cannot be deleted!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                    Else
+                        LocationBindingSource.EndEdit()
+                        LocationBindingSource.RemoveCurrent()
+                        LocationTableAdapter1.Update(PTTSDataSet.Location)
+                    End If
                     'delete record and update database
-                    LocationBindingSource.EndEdit()
-                    LocationBindingSource.RemoveCurrent()
-                    LocationTableAdapter1.Update(PTTSDataSet.Location)
+
                 Catch ex As Exception
-                    MessageBox.Show("Location is in used in other schedule , cannot be deleted!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+
                 End Try
 
             End If
@@ -87,6 +97,7 @@
 
     Private Sub ChangeTransportType() Handles ts.TransportChange
         LocationTableAdapter1.FillBy2(PTTSDataSet.Location, ts.selectedType.ToLower)
+        lblRecord.Text = dgv.Rows.Count.ToString("0 of Records found")
     End Sub
 
 
@@ -122,4 +133,6 @@
         LocationTableAdapter1.FillBy2(PTTSDataSet.Location, ts.selectedType.ToLower)
 
     End Sub
+
+
 End Class

@@ -50,28 +50,13 @@
 
     End Sub
 
-    Private Sub ChangeTransportType(sender As Object, e As EventArgs) Handles ts.TransportChange
-
-    End Sub
-
-    Private Sub ManagerMenuLayoutControl1_Load(sender As Object, e As EventArgs)
-
-    End Sub
-
-
 
     Private Sub txtSearch_TextChanged_1(sender As Object, e As EventArgs) Handles txtSearch.TextChanged
 
         TransportTableAdapter.FillBy2(PTTSDataSet.Transport, "%" + txtSearch.Text + "%", ts.selectedType)
     End Sub
 
-    Private Sub ManagerMenuLayoutControl1_Load_1(sender As Object, e As EventArgs) Handles ManagerMenuLayoutControl1.Load
 
-    End Sub
-
-    Private Sub gbTranport_Enter(sender As Object, e As EventArgs) Handles gbTranport.Enter
-
-    End Sub
 
 
 End Class

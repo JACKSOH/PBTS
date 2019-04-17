@@ -104,9 +104,9 @@ Public Class ManageCreatePromotionPart2
                 cmd.Parameters.Add(New SqlParameter("promotionStartDate", ManagerCreatePromotion.startDate))
                 cmd.Parameters.Add(New SqlParameter("promotionEndDate", ManagerCreatePromotion.endDate))
                 cmd.Parameters.Add(New SqlParameter("promotionDesc", ManagerCreatePromotion.promotionDesc))
-                cmd.Parameters.Add(New SqlParameter("promotionStatus", "Active"))
+            cmd.Parameters.Add(New SqlParameter("promotionStatus", "active"))
 
-                cmd.ExecuteNonQuery()
+            cmd.ExecuteNonQuery()
 
             con.Close()
             Dim psID As String = ""
@@ -133,8 +133,8 @@ Public Class ManageCreatePromotionPart2
                 con.Open()
                 cmd3.Connection = con
                 For value As Integer = 0 To count
-                    status = "Assigned"
-                    cmd3 = New SqlCommand("UPDATE Schedule Set assignPromotionStatus = @assignPromotionStatus Where scheduleID = @scheduleID", con)
+                status = "assigned"
+                cmd3 = New SqlCommand("UPDATE Schedule Set assignPromotionStatus = @assignPromotionStatus Where scheduleID = @scheduleID", con)
                     cmd3.Parameters.Add(New SqlParameter("assignPromotionStatus", status))
                     cmd3.Parameters.Add(New SqlParameter("scheduleID", dgvSchedule.Rows(value).Cells(0).Value.ToString))
 
@@ -145,7 +145,8 @@ Public Class ManageCreatePromotionPart2
 
 
             con.Close()
-                ManagerViewPromotion.Show()
+            Me.Hide()
+            ManagerViewPromotion.Show()
 
         End If
     End Sub

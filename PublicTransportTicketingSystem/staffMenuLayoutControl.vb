@@ -53,6 +53,8 @@
     Public Event staffManageAccountClick(ByVal sender As Object, ByVal e As System.EventArgs)
 
     Private Sub btnManageAccountClick(sender As Object, e As EventArgs) Handles btnManageAccount.Click
+        ParentForm.Hide()
+        StaffManageAccount.Show()
         RaiseEvent staffManageAccountClick(sender, e)
 
     End Sub

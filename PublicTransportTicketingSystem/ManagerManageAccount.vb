@@ -10,7 +10,7 @@ Public Class ManagerManageAccount
     Dim password As String
     Dim latestPW As String
     Private con As New SqlConnection
-    Dim ConnectionString As String = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Tan\Desktop\PTTS\PBTS\PublicTransportTicketingSystem\PTTS.mdf;Integrated Security=True"
+    Dim ConnectionString As String = StaffBooking.connection
 
 
     Private Sub radNo_CheckedChanged(sender As Object, e As EventArgs) Handles radNo.CheckedChanged
@@ -39,10 +39,6 @@ Public Class ManagerManageAccount
                 txtConfirmPassword.Enabled = False
             End If
         End If
-    End Sub
-
-    Private Sub ManagerMenuLayoutControl1_Load(sender As Object, e As EventArgs) Handles ManagerMenuLayoutControl1.Load
-
     End Sub
 
     Function encryptPassword(password As String) As String
@@ -182,8 +178,9 @@ Public Class ManagerManageAccount
         Try
             con.ConnectionString = StaffBooking.connection
             con.Open()
-            Dim command As New SqlCommand("select employeeName, employeeContactNo, employeeEmail, password from Employee where employeeIC=@IC", con)
+            Dim command As New SqlCommand("select employeeName, employeeContactNo, employeeEmail, password from Employee where employeeIC=@IC and type = @type", con)
             command.Parameters.AddWithValue("@IC", IC)
+            command.Parameters.AddWithValue("@type", "manager")
             Dim adapter As New SqlDataAdapter(command)
             Dim reader As SqlDataReader
             reader = command.ExecuteReader
@@ -207,9 +204,10 @@ Public Class ManagerManageAccount
         Try
             con.ConnectionString = StaffBooking.connection
             con.Open()
-            Dim command As New SqlCommand("UPDATE Employee Set employeeContactNo = @employeeContactNo, employeeEmail = @employeeEmail WHERE employeeIC = @employeeIC", con)
+            Dim command As New SqlCommand("UPDATE Employee Set employeeContactNo = @employeeContactNo, employeeEmail = @employeeEmail WHERE employeeIC = @employeeIC and type = @type", con)
             command.Parameters.Add(New SqlParameter("employeeContactNo", contact))
             command.Parameters.Add(New SqlParameter("employeeEmail", email))
+            command.Parameters.Add(New SqlParameter("type", "manager"))
             command.Parameters.Add(New SqlParameter("employeeIC", IC))
             command.ExecuteNonQuery()
             con.Close()
@@ -222,8 +220,9 @@ Public Class ManagerManageAccount
         Try
             con.ConnectionString = StaffBooking.connection
             con.Open()
-            Dim command As New SqlCommand("UPDATE Employee Set employeeContactNo = @employeeContactNo, employeeEmail = @employeeEmail, password = @password WHERE employeeIC = @employeeIC", con)
+            Dim command As New SqlCommand("UPDATE Employee Set employeeContactNo = @employeeContactNo, employeeEmail = @employeeEmail, password = @password WHERE employeeIC = @employeeIC and type = @type", con)
             command.Parameters.Add(New SqlParameter("employeeContactNo", contact))
+            command.Parameters.Add(New SqlParameter("type", "manager"))
             command.Parameters.Add(New SqlParameter("employeeEmail", email))
             command.Parameters.Add(New SqlParameter("password", latestPW))
             command.Parameters.Add(New SqlParameter("employeeIC", IC))
@@ -257,14 +256,15 @@ Public Class ManagerManageAccount
     Private Sub btnNext_Click(sender As Object, e As EventArgs) Handles btnNext.Click
         Debug.Print(contact)
         If (radYes.Checked) Then
+            'MessageBox.Show(password)
             If (ValidateCheck()) Then
-
+                MessageBox.Show(password)
                 If (encryptPassword(txtExistPassword.Text) = password) Then
-
+                    'MessageBox.Show("b")
                     If (txtPassword.Text <> "") Then
-
+                        ' MessageBox.Show("c")
                         If (MatchPassword(txtPassword.Text, txtConfirmPassword.Text)) Then
-
+                            ' MessageBox.Show("d")
                             Dim result As DialogResult = MessageBox.Show("Are you sure want to update account details?", "Confirmation",
                                                           MessageBoxButtons.YesNoCancel,
                                                           MessageBoxIcon.Question)
@@ -272,10 +272,11 @@ Public Class ManagerManageAccount
                             If (result = DialogResult.Yes) Then
                                 updateDetailAndPassword()
                                 MessageBox.Show("Update Successfully", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information)
-
+                                Me.Hide()
+                                managerReport.Show()
                             Else
-                                Me.Close()
-                                'ManagerHome.ShowDialog()
+                                Me.Hide()
+                                managerReport.Show()
 
                             End If
                         End If
@@ -293,10 +294,11 @@ Public Class ManagerManageAccount
                 If (result = DialogResult.Yes) Then
                     updateDetail()
                     MessageBox.Show("Update Successfully", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information)
-
+                    Me.Hide()
+                    managerReport.Show()
                 Else
-                    Me.Close()
-                    'ManagerHome.ShowDialog()
+                    Me.Hide()
+                    managerReport.Show()
                 End If
             End If
         End If
@@ -339,10 +341,11 @@ Public Class ManagerManageAccount
     End Sub
 
     Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
-
+        Me.Hide()
+        managerReport.Show()
     End Sub
 
-    Private Sub ManagerManagerAccount_Load(sender As Object, e As EventArgs) Handles Me.Load
+    Private Sub ManagerStaffAccount_Load(sender As Object, e As EventArgs) Handles MyBase.Load, MyBase.Shown
         IC = managerIndex.IC
         contact = txtContactNo.Text
         email = txtEmail.Text
@@ -366,4 +369,5 @@ Public Class ManagerManageAccount
         gpChangePassword.Enabled = False
         DataBind()
     End Sub
+
 End Class

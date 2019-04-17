@@ -101,6 +101,4 @@ Public Class StaffBooking
         cboOrigin.Text = "Origin"
 
     End Sub
-
-
 End Class

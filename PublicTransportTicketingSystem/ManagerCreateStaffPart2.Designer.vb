@@ -142,6 +142,7 @@ Partial Class ManagerCreateStaffPart2
         Me.txtConfirmPassword.Enabled = False
         Me.txtConfirmPassword.Location = New System.Drawing.Point(159, 98)
         Me.txtConfirmPassword.Name = "txtConfirmPassword"
+        Me.txtConfirmPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtConfirmPassword.Size = New System.Drawing.Size(149, 24)
         Me.txtConfirmPassword.TabIndex = 3
         '
@@ -149,6 +150,7 @@ Partial Class ManagerCreateStaffPart2
         '
         Me.txtPassword.Location = New System.Drawing.Point(159, 41)
         Me.txtPassword.Name = "txtPassword"
+        Me.txtPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtPassword.Size = New System.Drawing.Size(149, 24)
         Me.txtPassword.TabIndex = 1
         '

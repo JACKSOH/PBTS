@@ -89,7 +89,7 @@ Partial Class StaffManageAccount
         Me.gbManagerAccount.Size = New System.Drawing.Size(499, 486)
         Me.gbManagerAccount.TabIndex = 25
         Me.gbManagerAccount.TabStop = False
-        Me.gbManagerAccount.Text = "Manager Account"
+        Me.gbManagerAccount.Text = "Staff Account"
         '
         'txtContactNo
         '

@@ -8,18 +8,46 @@ Public Class ManagerModifyPromotion
     Private discount As Integer
     Private count As Integer
 
-    Private Sub ManagerMenuLayoutControl1_Load(sender As Object, e As EventArgs) Handles ManagerMenuLayoutControl1.Load
-        lblPromotionID.Text = ManagerViewPromotion.id
-        txtPromotionName.Text = ManagerViewPromotion.pname
-        lblPromotionDate.Text = ManagerViewPromotion.psdate.Substring(0, 9)
-        lblPromotionDate.Text += "  -  " & ManagerViewPromotion.pedate.Substring(0, 9)
-        txtPromotionDesc.Text = ManagerViewPromotion.pdesc
-        lblTransport.Text = ManagerViewPromotion.selectedTransport + "Schedule"
+    Private Sub ManagerMenuLayoutControl1_Load(sender As Object, e As EventArgs) Handles MyBase.Shown, MyBase.Load
+        Try
+            con.ConnectionString = StaffBooking.connection
+            con.Open()
+            Dim command As New SqlCommand("select * from Promotion where PromotionID = '" & ManagerViewPromotion.id & "'", con)
+            Dim adapter As New SqlDataAdapter(command)
+            Dim reader As SqlDataReader
+            reader = command.ExecuteReader
+
+            If (reader.Read) Then
+                lblPromotionID.Text = reader.GetString(0)
+                txtPromotionName.Text = reader.GetString(1)
+                lblPromotionDate.Text = reader.GetDateTime(2).Date.ToString
+                lblPromotionDate.Text += "  -  " & reader.GetDateTime(3).Date.ToString
+                txtPromotionDesc.Text = reader.GetString(4)
+
+            End If
+            con.Close()
+        Catch ex As Exception
+
+        End Try
+
+        lblTransport.Text = ManagerViewPromotion.transportType + "Schedule"
         lstSchedule.Enabled = False
 
-        If (ManagerViewPromotion.discount < 100) Then
+        Try
+            Dim db As New PBTSDataContext()
+
+            Dim query = From promoteSchedule In db.promoteSchedules
+                        Where promoteSchedule.promotionID = ManagerViewPromotion.id
+                        Select promoteSchedule.discountRate
+            discount = query.FirstOrDefault.Value
+
+        Catch ex As Exception
+            MessageBox.Show("Please check database connection", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+
+        If (discount < 100) Then
             radCustomDiscount.Checked = True
-            nupCustomDiscount.Value = ManagerViewPromotion.discount
+            nupCustomDiscount.Value = discount
             nupCustomDiscount.Visible = True
             nupCustomDiscount.Enabled = True
         Else
@@ -85,6 +113,7 @@ Public Class ManagerModifyPromotion
                     command.ExecuteNonQuery()
                     con.Close()
 
+                    con.ConnectionString = StaffBooking.connection
                     con.Open()
                     Dim command1 As New SqlCommand("UPDATE promoteSchedule Set discountRate = @discountRate Where promotionID = @promotionID", con)
                     command1.Parameters.Add(New SqlParameter("discountRate", discount))

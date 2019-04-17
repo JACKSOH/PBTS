@@ -31,9 +31,9 @@ Partial Class ManagerViewStaff
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtSearch = New System.Windows.Forms.TextBox()
-        Me.ManagerMenuLayoutControl1 = New PublicTransportTicketingSystem.managerMenuLayoutControl()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.btnCreatePromotionPage = New System.Windows.Forms.Button()
+        Me.ManagerMenuLayoutControl1 = New PublicTransportTicketingSystem.managerMenuLayoutControl()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dgvStaffList, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -81,7 +81,7 @@ Partial Class ManagerViewStaff
         'radStaff
         '
         Me.radStaff.AutoSize = True
-        Me.radStaff.Location = New System.Drawing.Point(264, 75)
+        Me.radStaff.Location = New System.Drawing.Point(282, 71)
         Me.radStaff.Name = "radStaff"
         Me.radStaff.Size = New System.Drawing.Size(52, 22)
         Me.radStaff.TabIndex = 4
@@ -91,12 +91,10 @@ Partial Class ManagerViewStaff
         'radManager
         '
         Me.radManager.AutoSize = True
-        Me.radManager.Checked = True
-        Me.radManager.Location = New System.Drawing.Point(133, 75)
+        Me.radManager.Location = New System.Drawing.Point(175, 71)
         Me.radManager.Name = "radManager"
         Me.radManager.Size = New System.Drawing.Size(76, 22)
         Me.radManager.TabIndex = 3
-        Me.radManager.TabStop = True
         Me.radManager.Text = "Manager"
         Me.radManager.UseVisualStyleBackColor = True
         '
@@ -111,27 +109,18 @@ Partial Class ManagerViewStaff
         '
         'Label1
         '
-        Me.Label1.AutoSize = True
         Me.Label1.Location = New System.Drawing.Point(29, 37)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(45, 18)
+        Me.Label1.Size = New System.Drawing.Size(133, 38)
         Me.Label1.TabIndex = 1
-        Me.Label1.Text = "Search"
+        Me.Label1.Text = "Search by category"
         '
         'txtSearch
         '
-        Me.txtSearch.Location = New System.Drawing.Point(133, 34)
+        Me.txtSearch.Location = New System.Drawing.Point(177, 34)
         Me.txtSearch.Name = "txtSearch"
-        Me.txtSearch.Size = New System.Drawing.Size(341, 24)
+        Me.txtSearch.Size = New System.Drawing.Size(213, 24)
         Me.txtSearch.TabIndex = 0
-        '
-        'ManagerMenuLayoutControl1
-        '
-        Me.ManagerMenuLayoutControl1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.ManagerMenuLayoutControl1.Location = New System.Drawing.Point(0, 0)
-        Me.ManagerMenuLayoutControl1.Name = "ManagerMenuLayoutControl1"
-        Me.ManagerMenuLayoutControl1.Size = New System.Drawing.Size(800, 567)
-        Me.ManagerMenuLayoutControl1.TabIndex = 0
         '
         'Label6
         '
@@ -156,6 +145,14 @@ Partial Class ManagerViewStaff
         Me.btnCreatePromotionPage.TabIndex = 39
         Me.btnCreatePromotionPage.Text = "&CREATE STAFF"
         Me.btnCreatePromotionPage.UseVisualStyleBackColor = False
+        '
+        'ManagerMenuLayoutControl1
+        '
+        Me.ManagerMenuLayoutControl1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.ManagerMenuLayoutControl1.Location = New System.Drawing.Point(0, 0)
+        Me.ManagerMenuLayoutControl1.Name = "ManagerMenuLayoutControl1"
+        Me.ManagerMenuLayoutControl1.Size = New System.Drawing.Size(800, 567)
+        Me.ManagerMenuLayoutControl1.TabIndex = 0
         '
         'ManagerViewStaff
         '

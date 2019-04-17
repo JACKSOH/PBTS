@@ -174,10 +174,16 @@ Public Class ManagerCreateStaffPart2
                         MessageBox.Show("Invalid" & ex.Message)
                     Finally
                         con.Close()
-                        ManagerViewPromotion.Show()
+                        ManagerViewStaff.Show()
                     End Try
                 End If
             End If
         End If
+    End Sub
+
+    Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
+        Me.Close()
+        ManagerViewStaff.ShowDialog()
+
     End Sub
 End Class

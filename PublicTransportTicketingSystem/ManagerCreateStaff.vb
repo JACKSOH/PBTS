@@ -80,13 +80,13 @@ Public Class ManagerCreateStaff
     End Sub
 
     Private Sub radManager_CheckedChanged(sender As Object, e As EventArgs) Handles radManager.CheckedChanged
-        type = "Manager"
+        type = "manager"
         txtAccessKey.Enabled = True
         Label9.Enabled = True
     End Sub
 
     Private Sub radStaff_CheckedChanged(sender As Object, e As EventArgs) Handles radStaff.CheckedChanged
-        type = "Staff"
+        type = "staff"
         txtAccessKey.Enabled = False
         lblErrorAccess.Visible = False
         Label9.Enabled = False

@@ -179,6 +179,12 @@
     <Compile Include="ManagerManageSchedule.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ManagerManageSeat1.Designer.vb">
+      <DependentUpon>ManagerManageSeat1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerManageSeat1.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="managerMenuLayoutControl.Designer.vb">
       <DependentUpon>managerMenuLayoutControl.vb</DependentUpon>
     </Compile>
@@ -417,6 +423,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ManagerManageSchedule.resx">
       <DependentUpon>ManagerManageSchedule.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerManageSeat1.resx">
+      <DependentUpon>ManagerManageSeat1.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="managerMenuLayoutControl.resx">
       <DependentUpon>managerMenuLayoutControl.vb</DependentUpon>

@@ -66,11 +66,11 @@ Public Class staffBookingCustomerDetail
 
     End Sub
     Public Sub storeData()
-        Try
 
 
-            'for validating purpose
-            Dim err As New StringBuilder()
+
+        'for validating purpose
+        Dim err As New StringBuilder()
         Dim ctr As Control = Nothing
 
         'read input
@@ -164,7 +164,7 @@ Public Class staffBookingCustomerDetail
 
                         For Each s As Seat In seatquery
 
-                            s.seatStatus = "Unavailable"
+                            s.seatStatus = "unavailable"
                             Try
                                 db.SubmitChanges()
 
@@ -184,9 +184,7 @@ Public Class staffBookingCustomerDetail
                 MessageBox.Show(ex.Message)
             End Try
 
-        Catch ex As Exception
-            MessageBox.Show(ex.Message)
-        End Try
+
     End Sub
 
     Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click

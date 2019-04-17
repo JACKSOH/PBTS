@@ -209,5 +209,7 @@
 
     End Sub
 
+    Private Sub dgvSchedule_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvSchedule.CellContentClick
 
+    End Sub
 End Class

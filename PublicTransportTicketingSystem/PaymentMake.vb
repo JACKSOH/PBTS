@@ -83,15 +83,17 @@
             staffBookingCustomerDetail.storeData()
 
             For Each element In staffBookingCustomerDetail.seatidlist
-                Dim query3 = From ticket In db.Tickets
-                             Where ticket.bookingID = staffBookingCustomerDetail.bookingID And ticket.seatID = element
-                             Select ticket.ticketID
-                ticketID = query3.First
-                Dim printTicket As PaymentPrintTicket
-                printTicket = New PaymentPrintTicket()
-                printTicket.Show()
-                ticketNo += 1
-            Next
+                    Dim query3 = From ticket In db.Tickets
+                                 Where ticket.bookingID = staffBookingCustomerDetail.bookingID And ticket.seatID = element
+                                 Select ticket.ticketID
+                    ticketID = query3.First
+                    Dim printTicket As PaymentPrintTicket
+                    printTicket = New PaymentPrintTicket()
+                    printTicket.Show()
+                    ticketNo += 1
+                Next
+
+
         End If
         Me.Hide()
         StaffBooking.Show()

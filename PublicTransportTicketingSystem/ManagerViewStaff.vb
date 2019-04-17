@@ -99,4 +99,9 @@
         ManagerModifyStaff.Show()
         Me.Hide()
     End Sub
+
+    Private Sub btnCreatePromotionPage_Click(sender As Object, e As EventArgs) Handles btnCreatePromotionPage.Click
+        Me.Hide()
+        ManagerCreateStaff.Show()
+    End Sub
 End Class

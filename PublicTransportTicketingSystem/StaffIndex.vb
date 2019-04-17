@@ -6,7 +6,8 @@ Public Class StaffIndex
     Friend password As String
     Friend type As String = "staff"
     Dim SqlConnection As New SqlConnection
-    Dim ConnectionString As String = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Tan\Desktop\PTTS\PBTS\PublicTransportTicketingSystem\PTTS.mdf;Integrated Security=True"
+    Dim ConnectionString As String = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\PTTS.mdf;Integrated Security=True"
+    Public retrieveLocation As String
 
     Friend Function encryptPassword() As String
         Dim newString As StringBuilder = New StringBuilder()
@@ -89,12 +90,12 @@ Public Class StaffIndex
     Private Sub btnLogin_Click(sender As Object, e As EventArgs) Handles btnLogin.Click
         'retrieve password and ic and do checking
         lblError.Visible = False
-
+        MessageBox.Show(txtPassword.Text)
         If ICPasswordValidation() Then
             If CheckEmployeePasswordandIC(txtIC.Text, txtPassword.Text, "staff") Then
                 Me.Hide()
-                'StaffBooking.Show()
-                StaffManageAccount.ShowDialog()
+                StaffBooking.Show()
+                'StaffManageAccount.ShowDialog()
             Else
                 lblError.Visible = True
                 Return
@@ -103,9 +104,10 @@ Public Class StaffIndex
     End Sub
 
     Private Sub StaffIndex_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        BigBackground.Show()
         Timer1.Interval = 500
         Timer1.Start()
-        BigBackground.Show()
+
     End Sub
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick

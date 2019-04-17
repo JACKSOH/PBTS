@@ -6,7 +6,8 @@ Public Class managerIndex
     Friend password As String
     Friend type As String = "staff"
     Dim SqlConnection As New SqlConnection
-    Dim ConnectionString As String = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Tan\Desktop\PTTS\PBTS\PublicTransportTicketingSystem\PTTS.mdf;Integrated Security=True"
+    Dim ConnectionString As String = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\PTTS.mdf;Integrated Security=True"
+    Public retrieveLocation As String
 
     Friend Function encryptPassword() As String
         Dim newString As StringBuilder = New StringBuilder()
@@ -93,7 +94,7 @@ Public Class managerIndex
         If ICPasswordValidation() Then
             If CheckEmployeePasswordandIC(txtIC.Text, txtPassword.Text, "manager") Then
                 Me.Hide()
-                ManagerManageAccount.Show()
+                managerReport.Show()
             Else
                 lblError.Visible = True
                 Return

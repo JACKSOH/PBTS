@@ -33,6 +33,7 @@ Partial Class ManagerViewStaff
         Me.txtSearch = New System.Windows.Forms.TextBox()
         Me.ManagerMenuLayoutControl1 = New PublicTransportTicketingSystem.managerMenuLayoutControl()
         Me.Label6 = New System.Windows.Forms.Label()
+        Me.btnCreatePromotionPage = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dgvStaffList, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -142,11 +143,26 @@ Partial Class ManagerViewStaff
         Me.Label6.TabIndex = 37
         Me.Label6.Text = "Manage Staff"
         '
+        'btnCreatePromotionPage
+        '
+        Me.btnCreatePromotionPage.AccessibleRole = System.Windows.Forms.AccessibleRole.Pane
+        Me.btnCreatePromotionPage.AutoEllipsis = True
+        Me.btnCreatePromotionPage.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnCreatePromotionPage.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCreatePromotionPage.ForeColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(53, Byte), Integer), CType(CType(65, Byte), Integer))
+        Me.btnCreatePromotionPage.Location = New System.Drawing.Point(515, 527)
+        Me.btnCreatePromotionPage.Name = "btnCreatePromotionPage"
+        Me.btnCreatePromotionPage.Size = New System.Drawing.Size(244, 28)
+        Me.btnCreatePromotionPage.TabIndex = 39
+        Me.btnCreatePromotionPage.Text = "&CREATE STAFF"
+        Me.btnCreatePromotionPage.UseVisualStyleBackColor = False
+        '
         'ManagerViewStaff
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 567)
+        Me.Controls.Add(Me.btnCreatePromotionPage)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.ManagerMenuLayoutControl1)
@@ -171,4 +187,5 @@ Partial Class ManagerViewStaff
     Friend WithEvents radStaff As RadioButton
     Friend WithEvents radManager As RadioButton
     Friend WithEvents Label6 As Label
+    Friend WithEvents btnCreatePromotionPage As Button
 End Class

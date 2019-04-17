@@ -1,9 +1,6 @@
 ﻿
 
 Public Class managerReport
-    Private Sub managerReport_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-    End Sub
 
     Private Sub rbMonthlyTransaction_CheckedChanged(sender As Object, e As EventArgs) Handles rbDailyTransaction.CheckedChanged
         If rbDailyTransaction.Checked Then
@@ -33,11 +30,6 @@ Public Class managerReport
         If rbDailyTransaction.Checked Then
             lblDescription.Text = "To view how many transaction made within today."
         End If
-    End Sub
-
-    Private Sub ManagerMenuLayoutControl1_Load(sender As Object, e As EventArgs) Handles ManagerMenuLayoutControl1.Load
-
-
     End Sub
     Public Sub ChangeTransport() Handles TranportSelection1.TransportChange
         lblTransport.Text = TranportSelection1.selectedType

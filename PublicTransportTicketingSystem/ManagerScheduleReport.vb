@@ -1,14 +1,12 @@
 ﻿Public Class managerScheduleReport
-    Dim db As New PBTSDataContext
+
     Public selectedType As String
     Public selectedMonth As Integer
     Private pttsDS As PTTSDataSet
     Private sTA As PTTSDataSetTableAdapters.ScheduleTableAdapter
     Private tTA As PTTSDataSetTableAdapters.TransportTableAdapter
     Private seTA As PTTSDataSetTableAdapters.SeatTableAdapter
-    Private loTA As PTTSDataSetTableAdapters.LocationTableAdapter
-    Private lo1TA As PTTSDataSetTableAdapters.Location1TableAdapter
-    Private llTA As PTTSDataSetTableAdapters.LocationListTableAdapter
+
 
     Private Sub CrystalReportViewer1_Load(sender As Object, e As EventArgs) Handles CrystalReportViewer1.Load
 

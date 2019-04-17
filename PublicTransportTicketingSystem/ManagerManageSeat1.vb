@@ -22,7 +22,8 @@
                         Select seat.seatNumber
 
         Dim s As Integer = 0
-        For i As Integer = 1 To seatQuery.Count
+        Dim i As Integer
+        For i = 1 To seatQuery.Count
             Dim btn As New Button
             AddHandler btn.Click, AddressOf btnClick
 
@@ -33,10 +34,10 @@
             btn.Visible = True
             flpSeat.Controls.Add(btn)
             Dim checkSeatQuery = From seat In db.Seats
-                                 Where seat.scheduleID = staffBookingSchedule.scheduleID And seat.seatNumber = i
+                                 Where seat.scheduleID = selectedScheduleID And seat.seatNumber = i
                                  Select seat.seatStatus
             Try
-                If checkSeatQuery.FirstOrDefault.ToString.ToLower = "unavailable" Then
+                If checkSeatQuery.First.ToString.ToLower = "unavailable" Then
                     btn.BackColor = Color.Red
                     btn.Enabled = False
                 End If
@@ -55,14 +56,14 @@
         Dim Btn As Button
         Btn = CType(sender, Button)
         Dim checkSeat As Boolean
-        If Btn.BackColor = Color.Green Then
+        If Btn.BackColor = Color.SlateGray Then
             checkSeat = True
         ElseIf Btn.BackColor = Color.White Then
             checkSeat = False
         End If
 
         If checkSeat = False Then
-            Btn.BackColor = Color.Green
+            Btn.BackColor = Color.SlateGray
             checkSeat = True
             count = count + 1
             selectedSeat.Add(Integer.Parse(Btn.Text))
@@ -78,33 +79,39 @@
 
     Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
         Me.Close()
+        flpSeat.Controls.Clear()
+        count = 0
     End Sub
 
     Private Sub btnConfirm_Click(sender As Object, e As EventArgs) Handles btnConfirm.Click
+        Dim reponse = MessageBox.Show("Confirm to update seat status to UNAVAILABLE?", "Comfirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        If reponse = DialogResult.Yes Then
+            Try
+                For Each element In selectedSeat
+                    Dim seatquery = From seat In db.Seats
+                                    Where seat.scheduleID = selectedScheduleID And seat.seatNumber = element
+                                    Select seat
 
-        Try
-            For Each element In selectedSeat
-                Dim seatquery = From seat In db.Seats
-                                Where seat.scheduleID = selectedScheduleID And seat.seatNumber = element
-                                Select seat
 
+                    For Each s As Seat In seatquery
 
-                For Each s As Seat In seatquery
+                        s.seatStatus = "unavailable"
+                        Try
+                            db.SubmitChanges()
 
-                    s.seatStatus = "unavailable"
-                    Try
-                        db.SubmitChanges()
-
-                    Catch ex As Exception
-                        MessageBox.Show(ex.Message)
-                    End Try
+                        Catch ex As Exception
+                            MessageBox.Show(ex.Message)
+                        End Try
+                    Next
                 Next
-            Next
-            MessageBox.Show("successful")
-            Me.Close()
-        Catch ex As Exception
-            MessageBox.Show(ex.Message)
-        End Try
+                MessageBox.Show("Successfully update the seat status !!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                Me.Close()
+            Catch ex As Exception
+                MessageBox.Show(ex.Message)
+            End Try
+            flpSeat.Controls.Clear()
+            count = 0
+        End If
 
     End Sub
 

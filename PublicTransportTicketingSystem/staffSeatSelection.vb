@@ -45,6 +45,7 @@
                     btn.Enabled = False
                     availableSeat = availableSeat - 1
                 End If
+                s += 1
                 If s = transportColumn Then
                     flpSeat.SetFlowBreak(btn, True)
                     s = 0

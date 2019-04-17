@@ -22,7 +22,6 @@ Partial Class staffSeatSelection
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.flpSeat = New System.Windows.Forms.FlowLayoutPanel()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.btnConfirm = New System.Windows.Forms.Button()
         Me.btnCancel = New System.Windows.Forms.Button()
@@ -34,17 +33,10 @@ Partial Class staffSeatSelection
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.lblSeatAvailable = New System.Windows.Forms.Label()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.flpSeat = New System.Windows.Forms.FlowLayoutPanel()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'flpSeat
-        '
-        Me.flpSeat.AutoScroll = True
-        Me.flpSeat.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.flpSeat.Location = New System.Drawing.Point(83, 57)
-        Me.flpSeat.Margin = New System.Windows.Forms.Padding(2)
-        Me.flpSeat.Name = "flpSeat"
-        Me.flpSeat.Size = New System.Drawing.Size(249, 327)
-        Me.flpSeat.TabIndex = 1
         '
         'Label3
         '
@@ -161,11 +153,32 @@ Partial Class staffSeatSelection
         Me.lblSeatAvailable.TabIndex = 58
         Me.lblSeatAvailable.Text = "0 seat(s) available"
         '
+        'Panel1
+        '
+        Me.Panel1.AutoScroll = True
+        Me.Panel1.Controls.Add(Me.flpSeat)
+        Me.Panel1.Location = New System.Drawing.Point(69, 58)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(263, 327)
+        Me.Panel1.TabIndex = 59
+        '
+        'flpSeat
+        '
+        Me.flpSeat.AutoSize = True
+        Me.flpSeat.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.flpSeat.Location = New System.Drawing.Point(11, 2)
+        Me.flpSeat.Margin = New System.Windows.Forms.Padding(2)
+        Me.flpSeat.MaximumSize = New System.Drawing.Size(1000, 600)
+        Me.flpSeat.Name = "flpSeat"
+        Me.flpSeat.Size = New System.Drawing.Size(276, 347)
+        Me.flpSeat.TabIndex = 40
+        '
         'staffSeatSelection
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(519, 575)
+        Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.lblSeatAvailable)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.Label6)
@@ -177,17 +190,17 @@ Partial Class staffSeatSelection
         Me.Controls.Add(Me.btnCancel)
         Me.Controls.Add(Me.btnConfirm)
         Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.flpSeat)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "staffSeatSelection"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "staffSeatSelection"
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents flpSeat As FlowLayoutPanel
     Friend WithEvents Label3 As Label
     Friend WithEvents btnConfirm As Button
     Friend WithEvents btnCancel As Button
@@ -199,4 +212,6 @@ Partial Class staffSeatSelection
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents lblSeatAvailable As Label
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents flpSeat As FlowLayoutPanel
 End Class

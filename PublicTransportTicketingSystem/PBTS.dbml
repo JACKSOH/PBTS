@@ -1,19 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="PTTS" Class="PBTSDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
   <Connection Mode="AppSettings" ConnectionString="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\PTTS.mdf;Integrated Security=True" SettingsObjectName="PublicTransportTicketingSystem.My.MySettings" SettingsPropertyName="PTTSConnectionString" Provider="System.Data.SqlClient" />
-  <Table Name="dbo.Booking" Member="Bookings">
-    <Type Name="Booking">
-      <Column Name="bookingID" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="customerIC" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
-      <Column Name="customerName" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
-      <Column Name="customerContactNo" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
-      <Column Name="ticketID" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
-      <Column Name="employeeID" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
-      <Column Name="bookingStatus" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="totalPrice" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
-      <Association Name="Employee_Booking" Member="Employee" ThisKey="employeeID" OtherKey="employeeID" Type="Employee" IsForeignKey="true" />
-      <Association Name="Ticket_Booking" Member="Ticket" ThisKey="ticketID" OtherKey="ticketID" Type="Ticket" IsForeignKey="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.Employee" Member="Employees">
     <Type Name="Employee">
       <Column Name="employeeID" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -72,18 +58,6 @@
       <Association Name="Transport_Schedule" Member="Schedules" ThisKey="transportID" OtherKey="transportID" Type="Schedule" />
     </Type>
   </Table>
-  <Table Name="dbo.Ticket" Member="Tickets">
-    <Type Name="Ticket">
-      <Column Name="ticketID" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="seatID" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
-      <Column Name="purchaseDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="ticketPrice" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
-      <Column Name="ticketStatus" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="bookingID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Association Name="Ticket_Booking" Member="Bookings" ThisKey="ticketID" OtherKey="ticketID" Type="Booking" />
-      <Association Name="Seat_Ticket" Member="Seat" ThisKey="seatID" OtherKey="seatID" Type="Seat" IsForeignKey="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.LocationList" Member="LocationLists">
     <Type Name="LocationList">
       <Column Name="locationListID" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -116,6 +90,30 @@
       <Column Name="discountRate" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="Promotion_promoteSchedule" Member="Promotion" ThisKey="promotionID" OtherKey="promotionID" Type="Promotion" IsForeignKey="true" />
       <Association Name="Schedule_promoteSchedule" Member="Schedule" ThisKey="scheduleID" OtherKey="scheduleID" Type="Schedule" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Ticket" Member="Tickets">
+    <Type Name="Ticket">
+      <Column Name="ticketID" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="seatID" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="purchaseDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ticketPrice" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="ticketStatus" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="bookingID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="Seat_Ticket" Member="Seat" ThisKey="seatID" OtherKey="seatID" Type="Seat" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Booking" Member="Bookings">
+    <Type Name="Booking">
+      <Column Name="bookingID" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="customerIC" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+      <Column Name="customerName" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="customerContactNo" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="bookingDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="employeeID" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="bookingStatus" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="totalPrice" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Association Name="Employee_Booking" Member="Employee" ThisKey="employeeID" OtherKey="employeeID" Type="Employee" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

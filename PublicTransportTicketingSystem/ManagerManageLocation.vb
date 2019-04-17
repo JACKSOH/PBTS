@@ -6,16 +6,6 @@
         Dim db As New PBTSDataContext
         dgv.DataSource = db.Locations
     End Sub
-    Private Sub ManagerManageLocation_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'TODO: This line of code loads data into the 'PTTSDataSet1.Location' table. You can move, or remove it, as needed.
-        Me.LocationTableAdapter1.Fill(Me.PTTSDataSet.Location)
-
-        dgv.ReadOnly = True
-        'filter by type
-        LocationTableAdapter1.FillBy2(PTTSDataSet.Location, ts.selectedType.ToLower)
-
-
-    End Sub
     Private Function IsDuplicatedLocation(location As String) As Boolean
         Dim db As New PBTSDataContext
         Dim r = db.Locations.Where(Function(o) o.locationType = ts.selectedType.ToLower And o.locationName = location).SingleOrDefault
@@ -44,13 +34,12 @@
                 If IsDuplicatedLocation(locationName) = False Then
 
                     'Validate the type 
-
                     btnUpdate.Text = "&Update"
-                    btnDeleteCancel.Text = "&Delete"
+
+
                     ' Update database
                     LocationBindingSource.EndEdit()
                     LocationTableAdapter1.Update(PTTSDataSet.Location)
-
                     btnAdd.Enabled = True
                     dgv.ReadOnly = True
 
@@ -68,10 +57,15 @@
         If btnDeleteCancel.Text = "&Delete" Then
             Dim yesno = MessageBox.Show("Do you really want to delete this records?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
             If yesno = DialogResult.Yes Then
-                'delete record and update database
-                LocationBindingSource.EndEdit()
-                LocationBindingSource.RemoveCurrent()
-                LocationTableAdapter1.Update(PTTSDataSet.Location)
+                Try
+                    'delete record and update database
+                    LocationBindingSource.EndEdit()
+                    LocationBindingSource.RemoveCurrent()
+                    LocationTableAdapter1.Update(PTTSDataSet.Location)
+                Catch ex As Exception
+                    MessageBox.Show("Location is in used in other schedule , cannot be deleted!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                End Try
+
             End If
 
 
@@ -86,7 +80,6 @@
 
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
         Dim db As New PBTSDataContext
-        'lbltest.Text = db.Transports.OrderByDescending(Function(o) o.transportID).Select(Function(i) i.transportID).First().ToString.Substring(2, 6)
         ManagerLocationInsert.newId = App.GenerateNextId(db.Locations.OrderByDescending(Function(o) o.locationID).Select(Function(i) i.locationID).First().ToString)
         ManagerLocationInsert.ShowDialog()
 
@@ -122,7 +115,11 @@
         End If
     End Sub
 
-    Private Sub dgv_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv.CellContentClick
+    Private Sub ManagerManageLocation_Resize(sender As Object, e As EventArgs) Handles Me.Resize
+        Me.LocationTableAdapter1.Fill(Me.PTTSDataSet.Location)
+        dgv.ReadOnly = True
+        'filter by type
+        LocationTableAdapter1.FillBy2(PTTSDataSet.Location, ts.selectedType.ToLower)
 
     End Sub
 End Class

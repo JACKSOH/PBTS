@@ -39,7 +39,6 @@ Partial Class ManagerManageLocation
         Me.err = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.ts = New PublicTransportTicketingSystem.TranportSelection()
         Me.ManagerMenuLayoutControl1 = New PublicTransportTicketingSystem.managerMenuLayoutControl()
-        Me.BookingTableAdapter1 = New PublicTransportTicketingSystem.DataSet1TableAdapters.BookingTableAdapter()
         Me.Label6 = New System.Windows.Forms.Label()
         CType(Me.dgv, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LocationBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -51,6 +50,7 @@ Partial Class ManagerManageLocation
         '
         'dgv
         '
+        Me.dgv.AllowUserToAddRows = False
         Me.dgv.AutoGenerateColumns = False
         Me.dgv.BackgroundColor = System.Drawing.SystemColors.Control
         Me.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
@@ -183,10 +183,6 @@ Partial Class ManagerManageLocation
         Me.ManagerMenuLayoutControl1.Size = New System.Drawing.Size(800, 575)
         Me.ManagerMenuLayoutControl1.TabIndex = 0
         '
-        'BookingTableAdapter1
-        '
-        Me.BookingTableAdapter1.ClearBeforeFill = True
-        '
         'Label6
         '
         Me.Label6.BackColor = System.Drawing.SystemColors.ButtonHighlight
@@ -239,6 +235,6 @@ Partial Class ManagerManageLocation
     Friend WithEvents LocationTypeDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents err As ErrorProvider
     Friend WithEvents lblRecord As Label
-    Friend WithEvents BookingTableAdapter1 As DataSet1TableAdapters.BookingTableAdapter
+
     Friend WithEvents Label6 As Label
 End Class

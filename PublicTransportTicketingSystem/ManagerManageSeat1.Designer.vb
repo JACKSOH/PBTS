@@ -53,11 +53,11 @@ Partial Class ManagerManageSeat1
         Me.btnCancel.BackColor = System.Drawing.Color.Gray
         Me.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnCancel.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.btnCancel.Location = New System.Drawing.Point(256, 427)
+        Me.btnCancel.Location = New System.Drawing.Point(234, 418)
         Me.btnCancel.Name = "btnCancel"
-        Me.btnCancel.Size = New System.Drawing.Size(114, 43)
+        Me.btnCancel.Size = New System.Drawing.Size(68, 22)
         Me.btnCancel.TabIndex = 42
-        Me.btnCancel.Text = "CANCEL"
+        Me.btnCancel.Text = "&CANCEL"
         Me.btnCancel.UseVisualStyleBackColor = False
         '
         'btnConfirm
@@ -65,10 +65,11 @@ Partial Class ManagerManageSeat1
         Me.btnConfirm.AccessibleRole = System.Windows.Forms.AccessibleRole.Pane
         Me.btnConfirm.BackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(53, Byte), Integer), CType(CType(65, Byte), Integer))
         Me.btnConfirm.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnConfirm.Font = New System.Drawing.Font("Tw Cen MT Condensed", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnConfirm.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.btnConfirm.Location = New System.Drawing.Point(107, 427)
+        Me.btnConfirm.Location = New System.Drawing.Point(114, 388)
         Me.btnConfirm.Name = "btnConfirm"
-        Me.btnConfirm.Size = New System.Drawing.Size(114, 43)
+        Me.btnConfirm.Size = New System.Drawing.Size(114, 52)
         Me.btnConfirm.TabIndex = 41
         Me.btnConfirm.Text = "&Update Seat Status"
         Me.btnConfirm.UseVisualStyleBackColor = False
@@ -77,28 +78,30 @@ Partial Class ManagerManageSeat1
         '
         Me.flpSeat.AutoSize = True
         Me.flpSeat.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.flpSeat.Location = New System.Drawing.Point(11, 2)
+        Me.flpSeat.Location = New System.Drawing.Point(-7, -7)
         Me.flpSeat.Margin = New System.Windows.Forms.Padding(2)
         Me.flpSeat.MaximumSize = New System.Drawing.Size(1000, 600)
         Me.flpSeat.Name = "flpSeat"
-        Me.flpSeat.Size = New System.Drawing.Size(276, 347)
+        Me.flpSeat.Size = New System.Drawing.Size(298, 329)
         Me.flpSeat.TabIndex = 40
         '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(1, 11)
+        Me.Label1.ForeColor = System.Drawing.Color.Red
+        Me.Label1.Location = New System.Drawing.Point(93, 3)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(89, 18)
+        Me.Label1.Size = New System.Drawing.Size(294, 18)
         Me.Label1.TabIndex = 44
-        Me.Label1.Text = "Manage Seat :"
+        Me.Label1.Text = "*Selected seat will change to ""UNVAILABLE"" status"
+        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'Label2
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(412, 222)
+        Me.Label2.Location = New System.Drawing.Point(433, 234)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(53, 18)
         Me.Label2.TabIndex = 45
@@ -108,7 +111,7 @@ Partial Class ManagerManageSeat1
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(412, 270)
+        Me.Label3.Location = New System.Drawing.Point(433, 282)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(61, 18)
         Me.Label3.TabIndex = 46
@@ -118,7 +121,7 @@ Partial Class ManagerManageSeat1
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(412, 314)
+        Me.Label4.Location = New System.Drawing.Point(428, 326)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(85, 18)
         Me.Label4.TabIndex = 47
@@ -126,9 +129,9 @@ Partial Class ManagerManageSeat1
         '
         'Label5
         '
-        Me.Label5.BackColor = System.Drawing.Color.Green
+        Me.Label5.BackColor = System.Drawing.Color.SlateGray
         Me.Label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Label5.Location = New System.Drawing.Point(375, 222)
+        Me.Label5.Location = New System.Drawing.Point(396, 222)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(31, 30)
         Me.Label5.TabIndex = 48
@@ -137,7 +140,7 @@ Partial Class ManagerManageSeat1
         '
         Me.Label6.BackColor = System.Drawing.Color.Red
         Me.Label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Label6.Location = New System.Drawing.Point(375, 316)
+        Me.Label6.Location = New System.Drawing.Point(396, 314)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(31, 30)
         Me.Label6.TabIndex = 49
@@ -146,7 +149,7 @@ Partial Class ManagerManageSeat1
         '
         Me.Label7.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.Label7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Label7.Location = New System.Drawing.Point(375, 270)
+        Me.Label7.Location = New System.Drawing.Point(396, 270)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(31, 30)
         Me.Label7.TabIndex = 50
@@ -164,7 +167,7 @@ Partial Class ManagerManageSeat1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(523, 510)
+        Me.ClientSize = New System.Drawing.Size(525, 459)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.Label6)

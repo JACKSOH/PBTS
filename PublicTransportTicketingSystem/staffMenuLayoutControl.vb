@@ -45,7 +45,7 @@
     Public Event staffAboutClick(ByVal sender As Object, ByVal e As System.EventArgs)
 
     Private Sub btnAboutClick(sender As Object, e As EventArgs) Handles btnAbout.Click
-
+        MessageBox.Show("Developed by Jack Soh Boon Keat, Goh Chun Lin, Tan Yi Si and Tan Haw Man")
         RaiseEvent staffAboutClick(sender, e)
 
     End Sub
@@ -53,6 +53,8 @@
     Public Event staffManageAccountClick(ByVal sender As Object, ByVal e As System.EventArgs)
 
     Private Sub btnManageAccountClick(sender As Object, e As EventArgs) Handles btnManageAccount.Click
+        ParentForm.Hide()
+        StaffManageAccount.Show()
         RaiseEvent staffManageAccountClick(sender, e)
 
     End Sub

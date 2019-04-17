@@ -73,7 +73,7 @@ Partial Class ManagerSchduleInsert
         'dtpTime
         '
         Me.dtpTime.Format = System.Windows.Forms.DateTimePickerFormat.Time
-        Me.dtpTime.Location = New System.Drawing.Point(310, 275)
+        Me.dtpTime.Location = New System.Drawing.Point(334, 275)
         Me.dtpTime.Margin = New System.Windows.Forms.Padding(4)
         Me.dtpTime.MaxDate = New Date(2020, 12, 31, 0, 0, 0, 0)
         Me.dtpTime.Name = "dtpTime"
@@ -225,7 +225,7 @@ Partial Class ManagerSchduleInsert
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Tw Cen MT", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(306, 245)
+        Me.Label6.Location = New System.Drawing.Point(330, 245)
         Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(42, 19)
@@ -244,10 +244,10 @@ Partial Class ManagerSchduleInsert
         '
         Me.cboCreating.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboCreating.FormattingEnabled = True
-        Me.cboCreating.Items.AddRange(New Object() {"Does not repeat", "Weekly on X (within this month)", "Everyday within a week"})
+        Me.cboCreating.Items.AddRange(New Object() {"Does not repeat", "Weekly on X (within this month)", "Same time for a week(7days)"})
         Me.cboCreating.Location = New System.Drawing.Point(109, 340)
         Me.cboCreating.Name = "cboCreating"
-        Me.cboCreating.Size = New System.Drawing.Size(239, 27)
+        Me.cboCreating.Size = New System.Drawing.Size(353, 27)
         Me.cboCreating.TabIndex = 19
         '
         'Label7
@@ -265,11 +265,11 @@ Partial Class ManagerSchduleInsert
         '
         Me.btnCancel.CausesValidation = False
         Me.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.btnCancel.Font = New System.Drawing.Font("Tw Cen MT Condensed", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCancel.Location = New System.Drawing.Point(251, 389)
+        Me.btnCancel.Font = New System.Drawing.Font("Tw Cen MT Condensed", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCancel.Location = New System.Drawing.Point(236, 389)
         Me.btnCancel.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.btnCancel.Name = "btnCancel"
-        Me.btnCancel.Size = New System.Drawing.Size(108, 42)
+        Me.btnCancel.Size = New System.Drawing.Size(112, 42)
         Me.btnCancel.TabIndex = 35
         Me.btnCancel.Text = "&Cancel"
         Me.btnCancel.UseVisualStyleBackColor = True
@@ -316,7 +316,7 @@ Partial Class ManagerSchduleInsert
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 19.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(654, 468)
+        Me.ClientSize = New System.Drawing.Size(699, 486)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.btnCancel)
         Me.Controls.Add(Me.btnAdd)

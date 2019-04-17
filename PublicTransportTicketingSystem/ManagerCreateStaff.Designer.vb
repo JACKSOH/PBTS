@@ -175,7 +175,7 @@ Partial Class ManagerCreateStaff
         '
         'txtAccessKey
         '
-        Me.txtAccessKey.Location = New System.Drawing.Point(160, 70)
+        Me.txtAccessKey.Location = New System.Drawing.Point(159, 70)
         Me.txtAccessKey.Name = "txtAccessKey"
         Me.txtAccessKey.Size = New System.Drawing.Size(314, 24)
         Me.txtAccessKey.TabIndex = 4

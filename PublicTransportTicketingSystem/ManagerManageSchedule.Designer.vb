@@ -102,7 +102,7 @@ Partial Class ManagerManageSchedule
         Me.dtpDate.Location = New System.Drawing.Point(452, 106)
         Me.dtpDate.Name = "dtpDate"
         Me.dtpDate.Size = New System.Drawing.Size(79, 24)
-        Me.dtpDate.TabIndex = 18
+        Me.dtpDate.TabIndex = 3
         '
         'Label2
         '
@@ -111,7 +111,7 @@ Partial Class ManagerManageSchedule
         Me.Label2.Location = New System.Drawing.Point(417, 85)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(74, 18)
-        Me.Label2.TabIndex = 17
+        Me.Label2.TabIndex = 2
         Me.Label2.Text = "Search Date"
         '
         'PictureBox1
@@ -131,7 +131,7 @@ Partial Class ManagerManageSchedule
         Me.Label1.Location = New System.Drawing.Point(417, 30)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(101, 18)
-        Me.Label1.TabIndex = 16
+        Me.Label1.TabIndex = 0
         Me.Label1.Text = "Search by &origin"
         '
         'txtSearch
@@ -139,7 +139,7 @@ Partial Class ManagerManageSchedule
         Me.txtSearch.Location = New System.Drawing.Point(451, 51)
         Me.txtSearch.Name = "txtSearch"
         Me.txtSearch.Size = New System.Drawing.Size(73, 24)
-        Me.txtSearch.TabIndex = 14
+        Me.txtSearch.TabIndex = 1
         '
         'btnAdd
         '
@@ -149,7 +149,7 @@ Partial Class ManagerManageSchedule
         Me.btnAdd.Location = New System.Drawing.Point(408, 150)
         Me.btnAdd.Name = "btnAdd"
         Me.btnAdd.Size = New System.Drawing.Size(81, 37)
-        Me.btnAdd.TabIndex = 5
+        Me.btnAdd.TabIndex = 4
         Me.btnAdd.Text = "&Add"
         Me.btnAdd.UseVisualStyleBackColor = False
         '

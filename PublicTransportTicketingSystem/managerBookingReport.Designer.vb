@@ -24,11 +24,11 @@ Partial Class managerBookingReport
     Private Sub InitializeComponent()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.CrystalReportViewer1 = New CrystalDecisions.Windows.Forms.CrystalReportViewer()
+        Me.bookingReport3 = New PublicTransportTicketingSystem.bookingReport()
         Me.bookingReport2 = New PublicTransportTicketingSystem.bookingReport()
         Me.bookingReport1 = New PublicTransportTicketingSystem.bookingReport()
         Me.dpDate = New System.Windows.Forms.DateTimePicker()
         Me.Button2 = New System.Windows.Forms.Button()
-        Me.bookingReport3 = New PublicTransportTicketingSystem.bookingReport()
         Me.SuspendLayout()
         '
         'Button1
@@ -61,7 +61,7 @@ Partial Class managerBookingReport
         Me.dpDate.Location = New System.Drawing.Point(32, 147)
         Me.dpDate.Name = "dpDate"
         Me.dpDate.Size = New System.Drawing.Size(102, 20)
-        Me.dpDate.TabIndex = 2
+        Me.dpDate.TabIndex = 0
         '
         'Button2
         '
@@ -69,7 +69,7 @@ Partial Class managerBookingReport
         Me.Button2.Margin = New System.Windows.Forms.Padding(2)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(99, 36)
-        Me.Button2.TabIndex = 3
+        Me.Button2.TabIndex = 2
         Me.Button2.Text = "&Exit"
         Me.Button2.UseVisualStyleBackColor = True
         '

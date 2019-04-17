@@ -143,14 +143,14 @@ Partial Class ManagerCreateStaffPart2
         Me.txtConfirmPassword.Location = New System.Drawing.Point(159, 98)
         Me.txtConfirmPassword.Name = "txtConfirmPassword"
         Me.txtConfirmPassword.Size = New System.Drawing.Size(149, 24)
-        Me.txtConfirmPassword.TabIndex = 61
+        Me.txtConfirmPassword.TabIndex = 3
         '
         'txtPassword
         '
         Me.txtPassword.Location = New System.Drawing.Point(159, 41)
         Me.txtPassword.Name = "txtPassword"
         Me.txtPassword.Size = New System.Drawing.Size(149, 24)
-        Me.txtPassword.TabIndex = 60
+        Me.txtPassword.TabIndex = 1
         '
         'Label4
         '
@@ -158,7 +158,7 @@ Partial Class ManagerCreateStaffPart2
         Me.Label4.Location = New System.Drawing.Point(28, 104)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(111, 18)
-        Me.Label4.TabIndex = 59
+        Me.Label4.TabIndex = 2
         Me.Label4.Text = "Confirm Password"
         '
         'Label3
@@ -167,7 +167,7 @@ Partial Class ManagerCreateStaffPart2
         Me.Label3.Location = New System.Drawing.Point(28, 41)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(63, 18)
-        Me.Label3.TabIndex = 58
+        Me.Label3.TabIndex = 0
         Me.Label3.Text = "Password"
         '
         'Label2
@@ -197,7 +197,7 @@ Partial Class ManagerCreateStaffPart2
         Me.btnCancel.Location = New System.Drawing.Point(372, 396)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.Size = New System.Drawing.Size(100, 36)
-        Me.btnCancel.TabIndex = 29
+        Me.btnCancel.TabIndex = 1
         Me.btnCancel.Text = "CANCEL"
         Me.btnCancel.UseVisualStyleBackColor = False
         '
@@ -210,7 +210,7 @@ Partial Class ManagerCreateStaffPart2
         Me.btnCreateStaff.Location = New System.Drawing.Point(221, 396)
         Me.btnCreateStaff.Name = "btnCreateStaff"
         Me.btnCreateStaff.Size = New System.Drawing.Size(100, 36)
-        Me.btnCreateStaff.TabIndex = 26
+        Me.btnCreateStaff.TabIndex = 0
         Me.btnCreateStaff.Text = "&CREATE"
         Me.btnCreateStaff.UseVisualStyleBackColor = False
         '

@@ -100,7 +100,7 @@ Partial Class ManagerPT
         Me.Label1.Location = New System.Drawing.Point(407, 40)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(86, 18)
-        Me.Label1.TabIndex = 13
+        Me.Label1.TabIndex = 1
         Me.Label1.Text = "Search carrier"
         '
         'dgv
@@ -114,7 +114,7 @@ Partial Class ManagerPT
         Me.dgv.Location = New System.Drawing.Point(19, 19)
         Me.dgv.Name = "dgv"
         Me.dgv.Size = New System.Drawing.Size(383, 327)
-        Me.dgv.TabIndex = 5
+        Me.dgv.TabIndex = 0
         '
         'TransportNameDataGridViewTextBoxColumn
         '
@@ -189,7 +189,7 @@ Partial Class ManagerPT
         Me.txtSearch.Location = New System.Drawing.Point(441, 61)
         Me.txtSearch.Name = "txtSearch"
         Me.txtSearch.Size = New System.Drawing.Size(100, 21)
-        Me.txtSearch.TabIndex = 11
+        Me.txtSearch.TabIndex = 2
         '
         'btnUpdate
         '
@@ -197,7 +197,7 @@ Partial Class ManagerPT
         Me.btnUpdate.Location = New System.Drawing.Point(424, 239)
         Me.btnUpdate.Name = "btnUpdate"
         Me.btnUpdate.Size = New System.Drawing.Size(117, 38)
-        Me.btnUpdate.TabIndex = 2
+        Me.btnUpdate.TabIndex = 4
         Me.btnUpdate.Text = "&Update"
         Me.btnUpdate.UseVisualStyleBackColor = True
         '
@@ -221,7 +221,7 @@ Partial Class ManagerPT
         Me.btnDeleteCancel.Location = New System.Drawing.Point(424, 283)
         Me.btnDeleteCancel.Name = "btnDeleteCancel"
         Me.btnDeleteCancel.Size = New System.Drawing.Size(117, 39)
-        Me.btnDeleteCancel.TabIndex = 6
+        Me.btnDeleteCancel.TabIndex = 5
         Me.btnDeleteCancel.Text = "&Delete"
         Me.btnDeleteCancel.UseVisualStyleBackColor = False
         '

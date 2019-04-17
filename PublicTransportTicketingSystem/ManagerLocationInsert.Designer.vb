@@ -63,7 +63,7 @@ Partial Class ManagerLocationInsert
         Me.btnCancel.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.Size = New System.Drawing.Size(72, 23)
-        Me.btnCancel.TabIndex = 33
+        Me.btnCancel.TabIndex = 10
         Me.btnCancel.Text = "&Cancel"
         Me.btnCancel.UseVisualStyleBackColor = True
         '
@@ -74,7 +74,7 @@ Partial Class ManagerLocationInsert
         Me.lblLocationId.Location = New System.Drawing.Point(86, 75)
         Me.lblLocationId.Name = "lblLocationId"
         Me.lblLocationId.Size = New System.Drawing.Size(142, 25)
-        Me.lblLocationId.TabIndex = 19
+        Me.lblLocationId.TabIndex = 2
         '
         'txtName
         '
@@ -83,7 +83,7 @@ Partial Class ManagerLocationInsert
         Me.txtName.MaxLength = 100
         Me.txtName.Name = "txtName"
         Me.txtName.Size = New System.Drawing.Size(231, 20)
-        Me.txtName.TabIndex = 23
+        Me.txtName.TabIndex = 4
         '
         'btnAdd
         '
@@ -94,7 +94,7 @@ Partial Class ManagerLocationInsert
         Me.btnAdd.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.btnAdd.Name = "btnAdd"
         Me.btnAdd.Size = New System.Drawing.Size(87, 34)
-        Me.btnAdd.TabIndex = 32
+        Me.btnAdd.TabIndex = 9
         Me.btnAdd.Text = "&Add"
         Me.btnAdd.UseVisualStyleBackColor = False
         '
@@ -105,7 +105,7 @@ Partial Class ManagerLocationInsert
         Me.Label3.Location = New System.Drawing.Point(84, 152)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(159, 19)
-        Me.Label3.TabIndex = 22
+        Me.Label3.TabIndex = 5
         Me.Label3.Text = "For which public transport"
         '
         'Label2
@@ -115,7 +115,7 @@ Partial Class ManagerLocationInsert
         Me.Label2.Location = New System.Drawing.Point(84, 100)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(95, 19)
-        Me.Label2.TabIndex = 20
+        Me.Label2.TabIndex = 3
         Me.Label2.Text = "Location &Name"
         '
         'Label1
@@ -125,7 +125,7 @@ Partial Class ManagerLocationInsert
         Me.Label1.Location = New System.Drawing.Point(82, 56)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(80, 19)
-        Me.Label1.TabIndex = 18
+        Me.Label1.TabIndex = 1
         Me.Label1.Text = "Location Id :"
         '
         'cboType
@@ -136,7 +136,7 @@ Partial Class ManagerLocationInsert
         Me.cboType.Location = New System.Drawing.Point(86, 174)
         Me.cboType.Name = "cboType"
         Me.cboType.Size = New System.Drawing.Size(121, 21)
-        Me.cboType.TabIndex = 34
+        Me.cboType.TabIndex = 6
         '
         'txtPosition
         '
@@ -145,7 +145,7 @@ Partial Class ManagerLocationInsert
         Me.txtPosition.MaxLength = 10
         Me.txtPosition.Name = "txtPosition"
         Me.txtPosition.Size = New System.Drawing.Size(60, 20)
-        Me.txtPosition.TabIndex = 36
+        Me.txtPosition.TabIndex = 8
         '
         'Label9
         '
@@ -154,7 +154,7 @@ Partial Class ManagerLocationInsert
         Me.Label9.Location = New System.Drawing.Point(84, 198)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(64, 19)
-        Me.Label9.TabIndex = 35
+        Me.Label9.TabIndex = 7
         Me.Label9.Text = "&Position :"
         '
         'lblsuggest

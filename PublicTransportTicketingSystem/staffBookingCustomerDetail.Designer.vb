@@ -126,9 +126,9 @@ Partial Class staffBookingCustomerDetail
         Me.Label5.ForeColor = System.Drawing.Color.Black
         Me.Label5.Location = New System.Drawing.Point(18, 34)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(106, 17)
+        Me.Label5.Size = New System.Drawing.Size(108, 17)
         Me.Label5.TabIndex = 13
-        Me.Label5.Text = "Customer Email"
+        Me.Label5.Text = "Customer Name"
         '
         'btnCancel
         '

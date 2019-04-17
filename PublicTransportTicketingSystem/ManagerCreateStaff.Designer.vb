@@ -83,7 +83,7 @@ Partial Class ManagerCreateStaff
         Me.gbCreateStaff.Location = New System.Drawing.Point(265, 93)
         Me.gbCreateStaff.Name = "gbCreateStaff"
         Me.gbCreateStaff.Size = New System.Drawing.Size(499, 470)
-        Me.gbCreateStaff.TabIndex = 23
+        Me.gbCreateStaff.TabIndex = 0
         Me.gbCreateStaff.TabStop = False
         Me.gbCreateStaff.Text = "Add New Staff"
         '
@@ -124,7 +124,7 @@ Partial Class ManagerCreateStaff
         Me.txtEmail.Location = New System.Drawing.Point(161, 296)
         Me.txtEmail.Name = "txtEmail"
         Me.txtEmail.Size = New System.Drawing.Size(314, 24)
-        Me.txtEmail.TabIndex = 55
+        Me.txtEmail.TabIndex = 12
         '
         'txtIC
         '
@@ -132,7 +132,7 @@ Partial Class ManagerCreateStaff
         Me.txtIC.Mask = "000000000000"
         Me.txtIC.Name = "txtIC"
         Me.txtIC.Size = New System.Drawing.Size(313, 24)
-        Me.txtIC.TabIndex = 54
+        Me.txtIC.TabIndex = 8
         '
         'txtContactNo
         '
@@ -140,7 +140,7 @@ Partial Class ManagerCreateStaff
         Me.txtContactNo.Mask = "000-0000000"
         Me.txtContactNo.Name = "txtContactNo"
         Me.txtContactNo.Size = New System.Drawing.Size(313, 24)
-        Me.txtContactNo.TabIndex = 52
+        Me.txtContactNo.TabIndex = 10
         '
         'Label10
         '
@@ -148,7 +148,7 @@ Partial Class ManagerCreateStaff
         Me.Label10.Location = New System.Drawing.Point(28, 356)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(52, 18)
-        Me.Label10.TabIndex = 51
+        Me.Label10.TabIndex = 13
         Me.Label10.Text = "Gender*"
         '
         'lblErrorAccess
@@ -170,7 +170,7 @@ Partial Class ManagerCreateStaff
         Me.Label9.Location = New System.Drawing.Point(28, 76)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(74, 18)
-        Me.Label9.TabIndex = 49
+        Me.Label9.TabIndex = 3
         Me.Label9.Text = "Access Key*"
         '
         'txtAccessKey
@@ -178,7 +178,7 @@ Partial Class ManagerCreateStaff
         Me.txtAccessKey.Location = New System.Drawing.Point(160, 70)
         Me.txtAccessKey.Name = "txtAccessKey"
         Me.txtAccessKey.Size = New System.Drawing.Size(314, 24)
-        Me.txtAccessKey.TabIndex = 48
+        Me.txtAccessKey.TabIndex = 4
         '
         'radStaff
         '
@@ -197,7 +197,7 @@ Partial Class ManagerCreateStaff
         Me.radManager.Location = New System.Drawing.Point(160, 33)
         Me.radManager.Name = "radManager"
         Me.radManager.Size = New System.Drawing.Size(76, 22)
-        Me.radManager.TabIndex = 3
+        Me.radManager.TabIndex = 1
         Me.radManager.TabStop = True
         Me.radManager.Text = "Manager"
         Me.radManager.UseVisualStyleBackColor = True
@@ -208,7 +208,7 @@ Partial Class ManagerCreateStaff
         Me.Label8.Location = New System.Drawing.Point(27, 33)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(39, 18)
-        Me.Label8.TabIndex = 47
+        Me.Label8.TabIndex = 0
         Me.Label8.Text = "Type*"
         '
         'lblErrorEmail
@@ -228,7 +228,7 @@ Partial Class ManagerCreateStaff
         Me.Label7.Location = New System.Drawing.Point(28, 299)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(44, 18)
-        Me.Label7.TabIndex = 43
+        Me.Label7.TabIndex = 11
         Me.Label7.Text = "Email*"
         '
         'lblErrorContact
@@ -248,7 +248,7 @@ Partial Class ManagerCreateStaff
         Me.Label5.Location = New System.Drawing.Point(27, 240)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(78, 18)
-        Me.Label5.TabIndex = 40
+        Me.Label5.TabIndex = 9
         Me.Label5.Text = "Contact No.*"
         '
         'lblErrorIC
@@ -268,7 +268,7 @@ Partial Class ManagerCreateStaff
         Me.Label2.Location = New System.Drawing.Point(27, 183)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(25, 18)
-        Me.Label2.TabIndex = 37
+        Me.Label2.TabIndex = 7
         Me.Label2.Text = "IC*"
         '
         'lblErrorName
@@ -287,7 +287,7 @@ Partial Class ManagerCreateStaff
         Me.txtName.Location = New System.Drawing.Point(161, 124)
         Me.txtName.Name = "txtName"
         Me.txtName.Size = New System.Drawing.Size(314, 24)
-        Me.txtName.TabIndex = 34
+        Me.txtName.TabIndex = 6
         '
         'Label1
         '
@@ -295,7 +295,7 @@ Partial Class ManagerCreateStaff
         Me.Label1.Location = New System.Drawing.Point(27, 130)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(45, 18)
-        Me.Label1.TabIndex = 30
+        Me.Label1.TabIndex = 5
         Me.Label1.Text = "Name*"
         '
         'btnCancel
@@ -307,7 +307,7 @@ Partial Class ManagerCreateStaff
         Me.btnCancel.Location = New System.Drawing.Point(374, 414)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.Size = New System.Drawing.Size(100, 36)
-        Me.btnCancel.TabIndex = 29
+        Me.btnCancel.TabIndex = 15
         Me.btnCancel.Text = "CANCEL"
         Me.btnCancel.UseVisualStyleBackColor = False
         '
@@ -320,7 +320,7 @@ Partial Class ManagerCreateStaff
         Me.btnNext.Location = New System.Drawing.Point(239, 414)
         Me.btnNext.Name = "btnNext"
         Me.btnNext.Size = New System.Drawing.Size(100, 36)
-        Me.btnNext.TabIndex = 26
+        Me.btnNext.TabIndex = 14
         Me.btnNext.Text = "&NEXT"
         Me.btnNext.UseVisualStyleBackColor = False
         '

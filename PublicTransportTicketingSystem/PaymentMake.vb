@@ -130,4 +130,8 @@
     Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
         Me.Close()
     End Sub
+
+    Private Sub grpPayment_Enter(sender As Object, e As EventArgs) Handles grpPayment.Enter
+
+    End Sub
 End Class

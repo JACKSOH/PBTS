@@ -52,51 +52,7 @@ Public Class managerReport
     Private Sub showMessage()
         MessageBox.Show("This is the same page!")
     End Sub
-    Private Sub btnHomeClick(sender As Object, e As EventArgs) Handles ManagerMenuLayoutControl1.managerHomeClick
 
-
-
-    End Sub
-
-    Private Sub btnReportClick(sender As Object, e As EventArgs) Handles ManagerMenuLayoutControl1.managerReportClick
-
-
-    End Sub
-
-
-    Private Sub btnStaffClick(sender As Object, e As EventArgs) Handles ManagerMenuLayoutControl1.managerManageStaffClick
-
-
-
-    End Sub
-
-
-    Private Sub btnScheduleClick(sender As Object, e As EventArgs) Handles ManagerMenuLayoutControl1.managerScheduleClick
-
-    End Sub
-    Private Sub btnPromotionClick(sender As Object, e As EventArgs) Handles ManagerMenuLayoutControl1.managerPromotionClick
-
-    End Sub
-
-    Private Sub btnPTClick(sender As Object, e As EventArgs) Handles ManagerMenuLayoutControl1.managerPublicTransportClick
-
-    End Sub
-
-    Private Sub btnLocationClick(sender As Object, e As EventArgs) Handles ManagerMenuLayoutControl1.managerManageLocationClick
-
-    End Sub
-
-    Private Sub btnAboutClick(sender As Object, e As EventArgs) Handles ManagerMenuLayoutControl1.managerAboutClick
-
-    End Sub
-
-    Private Sub btnManageAccountClick(sender As Object, e As EventArgs) Handles ManagerMenuLayoutControl1.managerManageAccountClick
-
-    End Sub
-
-    Private Sub btnExitClick(sender As Object, e As EventArgs) Handles ManagerMenuLayoutControl1.managerHomeClick
-
-    End Sub
 
     Private Sub btnGenerate_Click(sender As Object, e As EventArgs) Handles btnGenerate.Click
         If rbDailyBook.Checked Then
@@ -112,7 +68,18 @@ Public Class managerReport
             managerScheduleReport.selectedMonth = CInt(month)
             managerScheduleReport.selectedType = TranportSelection1.selectedType
             managerScheduleReport.ShowDialog()
-
+        ElseIf rbMonthlyPromotion.Checked Then
+            Dim month As String
+            Do
+                month = InputBox("Please enter the a month(1-12).")
+                If month = "" Or CInt(month) = 0 Or CInt(month) > 12 Then
+                    MessageBox.Show("Please enter a proper month. E.g (1-12).", "Error")
+                End If
+            Loop While month = "" Or CInt(month) = 0 Or CInt(month) > 12
+            MonthlyPromotionReport.selectedMonth = CInt(month)
+            MonthlyPromotionReport.ShowDialog()
+        ElseIf rbMonthlyTransaction.Checked Then
+            DailyTransactionReport.ShowDialog()
         End If
     End Sub
     'End Here

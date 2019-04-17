@@ -79,9 +79,9 @@ Partial Class PaymentMake
         Me.GroupBox2.Controls.Add(Me.lblPassengerName)
         Me.GroupBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
         Me.GroupBox2.Location = New System.Drawing.Point(360, 11)
-        Me.GroupBox2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GroupBox2.Margin = New System.Windows.Forms.Padding(2)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GroupBox2.Padding = New System.Windows.Forms.Padding(2)
         Me.GroupBox2.Size = New System.Drawing.Size(219, 479)
         Me.GroupBox2.TabIndex = 23
         Me.GroupBox2.TabStop = False
@@ -131,7 +131,7 @@ Partial Class PaymentMake
         Me.dgvSeatPrice.DefaultCellStyle = DataGridViewCellStyle2
         Me.dgvSeatPrice.GridColor = System.Drawing.SystemColors.ControlDarkDark
         Me.dgvSeatPrice.Location = New System.Drawing.Point(29, 344)
-        Me.dgvSeatPrice.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.dgvSeatPrice.Margin = New System.Windows.Forms.Padding(2)
         Me.dgvSeatPrice.Name = "dgvSeatPrice"
         Me.dgvSeatPrice.ReadOnly = True
         Me.dgvSeatPrice.RowHeadersVisible = False
@@ -307,9 +307,9 @@ Partial Class PaymentMake
         Me.grpPayment.Controls.Add(Me.Label5)
         Me.grpPayment.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
         Me.grpPayment.Location = New System.Drawing.Point(9, 10)
-        Me.grpPayment.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.grpPayment.Margin = New System.Windows.Forms.Padding(2)
         Me.grpPayment.Name = "grpPayment"
-        Me.grpPayment.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.grpPayment.Padding = New System.Windows.Forms.Padding(2)
         Me.grpPayment.Size = New System.Drawing.Size(346, 479)
         Me.grpPayment.TabIndex = 22
         Me.grpPayment.TabStop = False
@@ -318,7 +318,7 @@ Partial Class PaymentMake
         'btnCancel
         '
         Me.btnCancel.Location = New System.Drawing.Point(27, 300)
-        Me.btnCancel.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnCancel.Margin = New System.Windows.Forms.Padding(2)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.Size = New System.Drawing.Size(122, 35)
         Me.btnCancel.TabIndex = 33
@@ -380,7 +380,7 @@ Partial Class PaymentMake
         '
         Me.btnGenerateTicket.Enabled = False
         Me.btnGenerateTicket.Location = New System.Drawing.Point(170, 300)
-        Me.btnGenerateTicket.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnGenerateTicket.Margin = New System.Windows.Forms.Padding(2)
         Me.btnGenerateTicket.Name = "btnGenerateTicket"
         Me.btnGenerateTicket.Size = New System.Drawing.Size(122, 35)
         Me.btnGenerateTicket.TabIndex = 25
@@ -401,7 +401,7 @@ Partial Class PaymentMake
         'txtCashPaid
         '
         Me.txtCashPaid.Location = New System.Drawing.Point(132, 185)
-        Me.txtCashPaid.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtCashPaid.Margin = New System.Windows.Forms.Padding(2)
         Me.txtCashPaid.Name = "txtCashPaid"
         Me.txtCashPaid.Size = New System.Drawing.Size(138, 23)
         Me.txtCashPaid.TabIndex = 19
@@ -425,7 +425,7 @@ Partial Class PaymentMake
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.grpPayment)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "PaymentMake"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "PaymentMake"

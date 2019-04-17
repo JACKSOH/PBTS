@@ -1,4 +1,4 @@
-﻿Public Class ManagerManageSeat1
+﻿Public Class ManagerManageSeat2
     Dim count As Integer = 0
     Dim db As New PBTSDataContext()
     Public selectedSeat As New List(Of Integer)

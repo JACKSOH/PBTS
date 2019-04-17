@@ -73,7 +73,7 @@ Partial Class ManagerModifyPromotion
         Me.gbModifyPromotion.Location = New System.Drawing.Point(252, 85)
         Me.gbModifyPromotion.Name = "gbModifyPromotion"
         Me.gbModifyPromotion.Size = New System.Drawing.Size(520, 482)
-        Me.gbModifyPromotion.TabIndex = 23
+        Me.gbModifyPromotion.TabIndex = 0
         Me.gbModifyPromotion.TabStop = False
         Me.gbModifyPromotion.Text = "Modify Promotion"
         '
@@ -94,7 +94,7 @@ Partial Class ManagerModifyPromotion
         Me.gpDiscount.Location = New System.Drawing.Point(303, 99)
         Me.gpDiscount.Name = "gpDiscount"
         Me.gpDiscount.Size = New System.Drawing.Size(200, 117)
-        Me.gpDiscount.TabIndex = 53
+        Me.gpDiscount.TabIndex = 5
         Me.gpDiscount.TabStop = False
         Me.gpDiscount.Text = "Discount"
         '
@@ -104,7 +104,7 @@ Partial Class ManagerModifyPromotion
         Me.radFullDiscount.Location = New System.Drawing.Point(10, 23)
         Me.radFullDiscount.Name = "radFullDiscount"
         Me.radFullDiscount.Size = New System.Drawing.Size(127, 22)
-        Me.radFullDiscount.TabIndex = 51
+        Me.radFullDiscount.TabIndex = 0
         Me.radFullDiscount.TabStop = True
         Me.radFullDiscount.Text = "Free Ride / Board"
         Me.radFullDiscount.UseVisualStyleBackColor = True
@@ -115,7 +115,7 @@ Partial Class ManagerModifyPromotion
         Me.radCustomDiscount.Location = New System.Drawing.Point(10, 51)
         Me.radCustomDiscount.Name = "radCustomDiscount"
         Me.radCustomDiscount.Size = New System.Drawing.Size(140, 22)
-        Me.radCustomDiscount.TabIndex = 52
+        Me.radCustomDiscount.TabIndex = 1
         Me.radCustomDiscount.TabStop = True
         Me.radCustomDiscount.Text = "Custom Set Discount"
         Me.radCustomDiscount.UseVisualStyleBackColor = True
@@ -128,7 +128,7 @@ Partial Class ManagerModifyPromotion
         Me.nupCustomDiscount.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.nupCustomDiscount.Name = "nupCustomDiscount"
         Me.nupCustomDiscount.Size = New System.Drawing.Size(59, 24)
-        Me.nupCustomDiscount.TabIndex = 41
+        Me.nupCustomDiscount.TabIndex = 2
         Me.nupCustomDiscount.Value = New Decimal(New Integer() {1, 0, 0, 0})
         Me.nupCustomDiscount.Visible = False
         '
@@ -148,7 +148,7 @@ Partial Class ManagerModifyPromotion
         Me.txtPromotionName.Location = New System.Drawing.Point(302, 41)
         Me.txtPromotionName.Name = "txtPromotionName"
         Me.txtPromotionName.Size = New System.Drawing.Size(156, 24)
-        Me.txtPromotionName.TabIndex = 49
+        Me.txtPromotionName.TabIndex = 4
         '
         'lstSchedule
         '
@@ -158,7 +158,7 @@ Partial Class ManagerModifyPromotion
         Me.lstSchedule.Location = New System.Drawing.Point(28, 171)
         Me.lstSchedule.Name = "lstSchedule"
         Me.lstSchedule.Size = New System.Drawing.Size(229, 208)
-        Me.lstSchedule.TabIndex = 46
+        Me.lstSchedule.TabIndex = 2
         '
         'Label6
         '
@@ -166,7 +166,7 @@ Partial Class ManagerModifyPromotion
         Me.Label6.Location = New System.Drawing.Point(300, 20)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(103, 18)
-        Me.Label6.TabIndex = 45
+        Me.Label6.TabIndex = 3
         Me.Label6.Text = "Promotion Name"
         '
         'lblTransport
@@ -175,7 +175,7 @@ Partial Class ManagerModifyPromotion
         Me.lblTransport.Location = New System.Drawing.Point(26, 150)
         Me.lblTransport.Name = "lblTransport"
         Me.lblTransport.Size = New System.Drawing.Size(62, 18)
-        Me.lblTransport.TabIndex = 44
+        Me.lblTransport.TabIndex = 1
         Me.lblTransport.Text = "Transport"
         '
         'lblPromotionDate
@@ -222,7 +222,7 @@ Partial Class ManagerModifyPromotion
         Me.txtPromotionDesc.Multiline = True
         Me.txtPromotionDesc.Name = "txtPromotionDesc"
         Me.txtPromotionDesc.Size = New System.Drawing.Size(206, 125)
-        Me.txtPromotionDesc.TabIndex = 35
+        Me.txtPromotionDesc.TabIndex = 7
         '
         'Label2
         '
@@ -230,7 +230,7 @@ Partial Class ManagerModifyPromotion
         Me.Label2.Location = New System.Drawing.Point(299, 236)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(131, 18)
-        Me.Label2.TabIndex = 31
+        Me.Label2.TabIndex = 6
         Me.Label2.Text = "Description (Optional)"
         '
         'Label1
@@ -251,7 +251,7 @@ Partial Class ManagerModifyPromotion
         Me.btnCancel.Location = New System.Drawing.Point(374, 424)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.Size = New System.Drawing.Size(100, 36)
-        Me.btnCancel.TabIndex = 29
+        Me.btnCancel.TabIndex = 9
         Me.btnCancel.Text = "CANCEL"
         Me.btnCancel.UseVisualStyleBackColor = False
         '
@@ -264,7 +264,7 @@ Partial Class ManagerModifyPromotion
         Me.btnUpdate.Location = New System.Drawing.Point(238, 424)
         Me.btnUpdate.Name = "btnUpdate"
         Me.btnUpdate.Size = New System.Drawing.Size(100, 36)
-        Me.btnUpdate.TabIndex = 26
+        Me.btnUpdate.TabIndex = 8
         Me.btnUpdate.Text = "&UPDATE"
         Me.btnUpdate.UseVisualStyleBackColor = False
         '

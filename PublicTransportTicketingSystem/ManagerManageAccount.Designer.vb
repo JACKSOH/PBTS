@@ -96,7 +96,7 @@ Partial Class ManagerManageAccount
         Me.txtContactNo.MaxLength = 11
         Me.txtContactNo.Name = "txtContactNo"
         Me.txtContactNo.Size = New System.Drawing.Size(274, 24)
-        Me.txtContactNo.TabIndex = 64
+        Me.txtContactNo.TabIndex = 1
         '
         'lblIC
         '
@@ -173,7 +173,7 @@ Partial Class ManagerManageAccount
         Me.Label9.Location = New System.Drawing.Point(19, 72)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(91, 18)
-        Me.Label9.TabIndex = 66
+        Me.Label9.TabIndex = 2
         Me.Label9.Text = "New Password"
         '
         'lblErrorExisting
@@ -194,7 +194,7 @@ Partial Class ManagerManageAccount
         Me.txtExistPassword.Name = "txtExistPassword"
         Me.txtExistPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtExistPassword.Size = New System.Drawing.Size(165, 24)
-        Me.txtExistPassword.TabIndex = 64
+        Me.txtExistPassword.TabIndex = 1
         '
         'lblErrorConfirmPassword
         '
@@ -226,7 +226,7 @@ Partial Class ManagerManageAccount
         Me.txtConfirmPassword.Name = "txtConfirmPassword"
         Me.txtConfirmPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtConfirmPassword.Size = New System.Drawing.Size(165, 24)
-        Me.txtConfirmPassword.TabIndex = 61
+        Me.txtConfirmPassword.TabIndex = 5
         '
         'txtPassword
         '
@@ -235,7 +235,7 @@ Partial Class ManagerManageAccount
         Me.txtPassword.Name = "txtPassword"
         Me.txtPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtPassword.Size = New System.Drawing.Size(165, 24)
-        Me.txtPassword.TabIndex = 60
+        Me.txtPassword.TabIndex = 3
         '
         'Label4
         '
@@ -243,7 +243,7 @@ Partial Class ManagerManageAccount
         Me.Label4.Location = New System.Drawing.Point(19, 120)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(111, 18)
-        Me.Label4.TabIndex = 59
+        Me.Label4.TabIndex = 4
         Me.Label4.Text = "Confirm Password"
         '
         'Label3
@@ -252,7 +252,7 @@ Partial Class ManagerManageAccount
         Me.Label3.Location = New System.Drawing.Point(19, 27)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(63, 18)
-        Me.Label3.TabIndex = 58
+        Me.Label3.TabIndex = 0
         Me.Label3.Text = "Password"
         '
         'txtEmail
@@ -260,7 +260,7 @@ Partial Class ManagerManageAccount
         Me.txtEmail.Location = New System.Drawing.Point(180, 140)
         Me.txtEmail.Name = "txtEmail"
         Me.txtEmail.Size = New System.Drawing.Size(274, 24)
-        Me.txtEmail.TabIndex = 55
+        Me.txtEmail.TabIndex = 3
         '
         'lblErrorEmail
         '
@@ -279,7 +279,7 @@ Partial Class ManagerManageAccount
         Me.Label7.Location = New System.Drawing.Point(28, 149)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(44, 18)
-        Me.Label7.TabIndex = 43
+        Me.Label7.TabIndex = 2
         Me.Label7.Text = "Email*"
         '
         'lblErrorContact
@@ -299,7 +299,7 @@ Partial Class ManagerManageAccount
         Me.Label5.Location = New System.Drawing.Point(28, 98)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(78, 18)
-        Me.Label5.TabIndex = 40
+        Me.Label5.TabIndex = 0
         Me.Label5.Text = "Contact No.*"
         '
         'Label2

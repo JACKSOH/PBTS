@@ -114,6 +114,15 @@
       <DependentUpon>bookingReport.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="CrystalReport3.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DailyTransactionReport.Designer.vb">
+      <DependentUpon>DailyTransactionReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DailyTransactionReport.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="DataSet1.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -185,6 +194,12 @@
     <Compile Include="ManagerManageSeat1.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ManagerManageSeat2.Designer.vb">
+      <DependentUpon>ManagerManageSeat2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerManageSeat2.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="managerMenuLayoutControl.Designer.vb">
       <DependentUpon>managerMenuLayoutControl.vb</DependentUpon>
     </Compile>
@@ -252,6 +267,18 @@
     <Compile Include="ManagerViewStaff.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="MonthlyPromoReport.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MonthlyPromoReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MonthlyPromotionReport.Designer.vb">
+      <DependentUpon>MonthlyPromotionReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MonthlyPromotionReport.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="MonthlyTransportTraverllingReport.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -293,6 +320,25 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>PBTS.dbml</DependentUpon>
     </Compile>
+    <Compile Include="PromotionReport.Designer.vb">
+      <DependentUpon>PromotionReport.vb</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="DailyTransactionReport.resx">
+      <DependentUpon>DailyTransactionReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerManageSeat2.resx">
+      <DependentUpon>ManagerManageSeat2.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MonthlyPromoReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>MonthlyPromoReport.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MonthlyPromotionReport.resx">
+      <DependentUpon>MonthlyPromotionReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PromotionReport.vb">
+      <SubType>Form</SubType>
+    </EmbeddedResource>
     <Compile Include="PTTSDataSet.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -478,6 +524,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PaymentPrintTicket.resx">
       <DependentUpon>PaymentPrintTicket.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PromotionReport.resx">
+      <DependentUpon>PromotionReport.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StaffBooking.resx">
       <DependentUpon>StaffBooking.vb</DependentUpon>

@@ -50,9 +50,9 @@ Partial Class ManagerLocationInsert
         Me.Label8.Font = New System.Drawing.Font("Tw Cen MT Condensed", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.Location = New System.Drawing.Point(24, 21)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(86, 19)
+        Me.Label8.Size = New System.Drawing.Size(94, 19)
         Me.Label8.TabIndex = 17
-        Me.Label8.Text = "New Location"
+        Me.Label8.Text = "New Location :"
         '
         'btnCancel
         '
@@ -106,7 +106,7 @@ Partial Class ManagerLocationInsert
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(159, 19)
         Me.Label3.TabIndex = 5
-        Me.Label3.Text = "For which public transport"
+        Me.Label3.Text = "For which public &transport"
         '
         'Label2
         '
@@ -169,8 +169,10 @@ Partial Class ManagerLocationInsert
         '
         'ManagerLocationInsert
         '
+        Me.AcceptButton = Me.btnAdd
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.CancelButton = Me.btnCancel
         Me.ClientSize = New System.Drawing.Size(364, 303)
         Me.Controls.Add(Me.lblsuggest)
         Me.Controls.Add(Me.txtPosition)

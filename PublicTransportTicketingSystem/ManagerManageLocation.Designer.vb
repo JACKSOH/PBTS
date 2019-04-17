@@ -39,7 +39,6 @@ Partial Class ManagerManageLocation
         Me.err = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.ts = New PublicTransportTicketingSystem.TranportSelection()
         Me.ManagerMenuLayoutControl1 = New PublicTransportTicketingSystem.managerMenuLayoutControl()
-
         Me.Label6 = New System.Windows.Forms.Label()
         CType(Me.dgv, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LocationBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -51,6 +50,7 @@ Partial Class ManagerManageLocation
         '
         'dgv
         '
+        Me.dgv.AllowUserToAddRows = False
         Me.dgv.AutoGenerateColumns = False
         Me.dgv.BackgroundColor = System.Drawing.SystemColors.Control
         Me.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
@@ -182,10 +182,6 @@ Partial Class ManagerManageLocation
         Me.ManagerMenuLayoutControl1.Name = "ManagerMenuLayoutControl1"
         Me.ManagerMenuLayoutControl1.Size = New System.Drawing.Size(800, 575)
         Me.ManagerMenuLayoutControl1.TabIndex = 0
-        '
-        'BookingTableAdapter1
-        '
-
         '
         'Label6
         '

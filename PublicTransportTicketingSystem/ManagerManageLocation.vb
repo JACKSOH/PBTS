@@ -57,10 +57,15 @@
         If btnDeleteCancel.Text = "&Delete" Then
             Dim yesno = MessageBox.Show("Do you really want to delete this records?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
             If yesno = DialogResult.Yes Then
-                'delete record and update database
-                LocationBindingSource.EndEdit()
-                LocationBindingSource.RemoveCurrent()
-                LocationTableAdapter1.Update(PTTSDataSet.Location)
+                Try
+                    'delete record and update database
+                    LocationBindingSource.EndEdit()
+                    LocationBindingSource.RemoveCurrent()
+                    LocationTableAdapter1.Update(PTTSDataSet.Location)
+                Catch ex As Exception
+                    MessageBox.Show("Location is in used in other schedule , cannot be deleted!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                End Try
+
             End If
 
 

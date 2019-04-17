@@ -36,8 +36,7 @@
         txtPosition.Text = newPosition.ToString
         cboType.SelectedIndex = 0
     End Sub
-
-    Private Sub txtName_Validating(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles txtName.Validating
+    Private Sub IsDuplicatedName(sender As Object, e As System.ComponentModel.CancelEventArgs)
         'validate name
         Try
             Dim name As String = txtName.Text.Replace(" ", "")
@@ -56,7 +55,10 @@
         Catch ex As Exception
             MessageBox.Show(ex.Message)
         End Try
+    End Sub
+    Private Sub txtName_Validating(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles txtName.Validating
 
+        IsDuplicatedName(sender, e)
 
     End Sub
 
@@ -151,5 +153,25 @@
         newPosition = CInt(db.Locations.Where(Function(o) o.locationType = cboType.Text).OrderByDescending(Function(o) o.position).FirstOrDefault.position.ToString) + 1
 
         txtPosition.Text = newPosition.ToString
+    End Sub
+
+    Private Sub cboType_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboType.SelectedIndexChanged
+        Try
+            Dim name As String = txtName.Text.Replace(" ", "")
+
+            If name.Length <= 0 Then
+                err.SetError(txtName, "Name could not leave blank!")
+                txtName.Select()
+            ElseIf IsDuplicatedLocation(name) Then
+                err.SetError(txtName, "Location " + name + " is exsited in database!")
+                txtName.Select()
+            Else
+                err.SetError(txtName, Nothing)
+            End If
+
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
+
     End Sub
 End Class

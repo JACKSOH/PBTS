@@ -96,12 +96,16 @@ Partial Class TranportSelection
         '
         'txtTransType
         '
+        Me.txtTransType.BackColor = System.Drawing.SystemColors.Control
         Me.txtTransType.Enabled = False
-        Me.txtTransType.Location = New System.Drawing.Point(431, 18)
+        Me.txtTransType.Font = New System.Drawing.Font("Tw Cen MT Condensed", 27.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtTransType.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.txtTransType.Location = New System.Drawing.Point(328, 41)
         Me.txtTransType.Name = "txtTransType"
-        Me.txtTransType.Size = New System.Drawing.Size(100, 24)
+        Me.txtTransType.Size = New System.Drawing.Size(203, 47)
         Me.txtTransType.TabIndex = 3
         Me.txtTransType.Text = "Train"
+        Me.txtTransType.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'pbFerry
         '
@@ -118,7 +122,7 @@ Partial Class TranportSelection
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(325, 21)
+        Me.Label1.Location = New System.Drawing.Point(325, 20)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(115, 18)
         Me.Label1.TabIndex = 2

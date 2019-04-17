@@ -39,7 +39,7 @@
             dgvSchedule.Rows(count).Cells(6).Value = sch.tr.transportID
             count += 1
         Next
-        lblRecord.Text = dgvSchedule.Rows.Count.ToString("0 of records found.")
+        lblRecord.Text = (dgvSchedule.Rows.Count - 1).ToString("0 of records found")
     End Sub
 
     'search by origin location
@@ -83,7 +83,7 @@
             dgvSchedule.Rows(count).Cells(6).Value = sch.tr.transportID
             count += 1
         Next
-        lblRecord.Text = dgvSchedule.Rows.Count.ToString("0 of records found.")
+        lblRecord.Text = (dgvSchedule.Rows.Count - 1).ToString("0 of records found")
     End Sub
 
     'search by date
@@ -131,7 +131,7 @@
             dgvSchedule.Rows(count).Cells(6).Value = sch.tr.transportID
             count += 1
         Next
-        lblRecord.Text = dgvSchedule.Rows.Count.ToString("0 of records found.")
+        lblRecord.Text = (dgvSchedule.Rows.Count - 1).ToString("0 of records found")
     End Sub
     Private Sub ManagerManageSchedule_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         selectedType = ts.selectedType
@@ -178,6 +178,9 @@
 
     End Sub
 
+    Private Sub ManagerManageSchedule_Shown(sender As Object, e As EventArgs) Handles Me.Shown
+        bindData()
+    End Sub
     Private Sub ChaneTransport() Handles ts.TransportChange
         selectedType = ts.selectedType
         bindData()
@@ -193,6 +196,7 @@
         End Try
         App.table = "Schedule"
         ManagerSchduleInsert.newId = App.GenerateNextId(id)
+
         ManagerSchduleInsert.ShowDialog()
     End Sub
 
@@ -214,15 +218,6 @@
         Catch ex As Exception
 
         End Try
-
-
     End Sub
 
-    Private Sub dgvSchedule_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvSchedule.CellContentClick
-
-    End Sub
-
-    Private Sub GroupBox1_Enter(sender As Object, e As EventArgs) Handles GroupBox1.Enter
-
-    End Sub
 End Class

@@ -98,11 +98,11 @@ Partial Class TranportSelection
         '
         Me.txtTransType.BackColor = System.Drawing.SystemColors.Control
         Me.txtTransType.Enabled = False
-        Me.txtTransType.Font = New System.Drawing.Font("Tw Cen MT Condensed", 27.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtTransType.Font = New System.Drawing.Font("Tw Cen MT", 36.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtTransType.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.txtTransType.Location = New System.Drawing.Point(328, 41)
+        Me.txtTransType.Location = New System.Drawing.Point(316, 37)
         Me.txtTransType.Name = "txtTransType"
-        Me.txtTransType.Size = New System.Drawing.Size(203, 47)
+        Me.txtTransType.Size = New System.Drawing.Size(203, 60)
         Me.txtTransType.TabIndex = 3
         Me.txtTransType.Text = "Train"
         Me.txtTransType.TextAlign = System.Windows.Forms.HorizontalAlignment.Center

@@ -114,9 +114,6 @@
       <DependentUpon>bookingReport.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="CrystalReport3.vb">
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="DailyTransactionReport.Designer.vb">
       <DependentUpon>DailyTransactionReport.vb</DependentUpon>
     </Compile>
@@ -255,12 +252,6 @@
     <Compile Include="ManagerViewPromotion.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ManagerViewSchdule.Designer.vb">
-      <DependentUpon>ManagerViewSchdule.vb</DependentUpon>
-    </Compile>
-    <Compile Include="ManagerViewSchdule.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="App.vb" />
     <Compile Include="ManagerViewStaff.designer.vb">
       <DependentUpon>ManagerViewStaff.vb</DependentUpon>
@@ -321,9 +312,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>PBTS.dbml</DependentUpon>
     </Compile>
-    <Compile Include="PromotionReport.Designer.vb">
-      <DependentUpon>PromotionReport.vb</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="DailyTransactionReport.resx">
       <DependentUpon>DailyTransactionReport.vb</DependentUpon>
     </EmbeddedResource>
@@ -340,9 +328,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MonthlyPromotionReport.resx">
       <DependentUpon>MonthlyPromotionReport.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PromotionReport.vb">
-      <SubType>Form</SubType>
     </EmbeddedResource>
     <Compile Include="PTTSDataSet.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -505,9 +490,6 @@
     <EmbeddedResource Include="ManagerViewPromotion.resx">
       <DependentUpon>ManagerViewPromotion.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ManagerViewSchdule.resx">
-      <DependentUpon>ManagerViewSchdule.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="ManagerViewStaff.resx">
       <DependentUpon>ManagerViewStaff.vb</DependentUpon>
     </EmbeddedResource>
@@ -529,9 +511,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PaymentPrintTicket.resx">
       <DependentUpon>PaymentPrintTicket.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PromotionReport.resx">
-      <DependentUpon>PromotionReport.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StaffBooking.resx">
       <DependentUpon>StaffBooking.vb</DependentUpon>

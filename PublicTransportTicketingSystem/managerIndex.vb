@@ -94,6 +94,7 @@ Public Class managerIndex
         If ICPasswordValidation() Then
             If CheckEmployeePasswordandIC(txtIC.Text, txtPassword.Text, "manager") Then
                 Me.Hide()
+                MessageBox.Show("Login Successfully as Manager" & vbNewLine & "Redirecting to Managaer Report page.")
                 managerReport.Show()
             Else
                 lblError.Visible = True

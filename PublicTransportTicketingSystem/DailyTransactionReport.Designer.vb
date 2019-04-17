@@ -23,7 +23,6 @@ Partial Class DailyTransactionReport
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.CrystalReportViewer1 = New CrystalDecisions.Windows.Forms.CrystalReportViewer()
-        Me.CrystalReport31 = New PublicTransportTicketingSystem.CrystalReport3()
         Me.SuspendLayout()
         '
         'CrystalReportViewer1
@@ -35,7 +34,7 @@ Partial Class DailyTransactionReport
         Me.CrystalReportViewer1.Location = New System.Drawing.Point(0, 0)
         Me.CrystalReportViewer1.Margin = New System.Windows.Forms.Padding(2)
         Me.CrystalReportViewer1.Name = "CrystalReportViewer1"
-        Me.CrystalReportViewer1.ReportSource = Me.CrystalReport31
+
         Me.CrystalReportViewer1.Size = New System.Drawing.Size(720, 547)
         Me.CrystalReportViewer1.TabIndex = 0
         Me.CrystalReportViewer1.ToolPanelWidth = 150
@@ -54,5 +53,5 @@ Partial Class DailyTransactionReport
     End Sub
 
     Friend WithEvents CrystalReportViewer1 As CrystalDecisions.Windows.Forms.CrystalReportViewer
-    Friend WithEvents CrystalReport31 As CrystalReport3
+
 End Class

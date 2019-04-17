@@ -94,7 +94,8 @@ Public Class StaffIndex
         If ICPasswordValidation() Then
             If CheckEmployeePasswordandIC(txtIC.Text, txtPassword.Text, "staff") Then
                 Me.Hide()
-                MessageBox.Show("You are login in successfully", "Successful",
+
+                MessageBox.Show("Login Successfully as Staff" & vbNewLine & "Redirecting to Staff Booking page.", "Successful",
                                                       MessageBoxButtons.OK,
                                                       MessageBoxIcon.Information)
                 StaffBooking.Show()

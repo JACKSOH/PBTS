@@ -73,7 +73,7 @@ Partial Class StaffIndex
         Me.btnExit.Location = New System.Drawing.Point(188, 299)
         Me.btnExit.Name = "btnExit"
         Me.btnExit.Size = New System.Drawing.Size(77, 29)
-        Me.btnExit.TabIndex = 4
+        Me.btnExit.TabIndex = 10
         Me.btnExit.Text = "&Exit"
         Me.btnExit.UseVisualStyleBackColor = True
         '
@@ -119,7 +119,7 @@ Partial Class StaffIndex
         Me.lblError.Location = New System.Drawing.Point(91, 108)
         Me.lblError.Name = "lblError"
         Me.lblError.Size = New System.Drawing.Size(188, 27)
-        Me.lblError.TabIndex = 10
+        Me.lblError.TabIndex = 1
         Me.lblError.Text = "*Incorrect IC or Password"
         Me.lblError.Visible = False
         '
@@ -131,7 +131,7 @@ Partial Class StaffIndex
         Me.linkToManager.Location = New System.Drawing.Point(170, 268)
         Me.linkToManager.Name = "linkToManager"
         Me.linkToManager.Size = New System.Drawing.Size(84, 17)
-        Me.linkToManager.TabIndex = 3
+        Me.linkToManager.TabIndex = 8
         Me.linkToManager.Text = "I'm Manager"
         '
         'lblErrorIC
@@ -142,7 +142,7 @@ Partial Class StaffIndex
         Me.lblErrorIC.Location = New System.Drawing.Point(93, 178)
         Me.lblErrorIC.Name = "lblErrorIC"
         Me.lblErrorIC.Size = New System.Drawing.Size(84, 17)
-        Me.lblErrorIC.TabIndex = 8
+        Me.lblErrorIC.TabIndex = 4
         Me.lblErrorIC.Text = "*Incorrect IC"
         Me.lblErrorIC.Visible = False
         '
@@ -165,7 +165,7 @@ Partial Class StaffIndex
         Me.btnLogin.Location = New System.Drawing.Point(84, 299)
         Me.btnLogin.Name = "btnLogin"
         Me.btnLogin.Size = New System.Drawing.Size(77, 29)
-        Me.btnLogin.TabIndex = 2
+        Me.btnLogin.TabIndex = 9
         Me.btnLogin.Text = "&Login"
         Me.btnLogin.UseVisualStyleBackColor = True
         '
@@ -176,7 +176,7 @@ Partial Class StaffIndex
         Me.txtPassword.Name = "txtPassword"
         Me.txtPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtPassword.Size = New System.Drawing.Size(159, 20)
-        Me.txtPassword.TabIndex = 1
+        Me.txtPassword.TabIndex = 6
         '
         'Label4
         '
@@ -186,7 +186,7 @@ Partial Class StaffIndex
         Me.Label4.Location = New System.Drawing.Point(93, 199)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(68, 17)
-        Me.Label4.TabIndex = 4
+        Me.Label4.TabIndex = 5
         Me.Label4.Text = "Password"
         '
         'Label3
@@ -197,7 +197,7 @@ Partial Class StaffIndex
         Me.Label3.Location = New System.Drawing.Point(117, 84)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(103, 24)
-        Me.Label3.TabIndex = 3
+        Me.Label3.TabIndex = 0
         Me.Label3.Text = "Staff Login"
         '
         'txtIC
@@ -206,7 +206,7 @@ Partial Class StaffIndex
         Me.txtIC.MaxLength = 12
         Me.txtIC.Name = "txtIC"
         Me.txtIC.Size = New System.Drawing.Size(160, 20)
-        Me.txtIC.TabIndex = 0
+        Me.txtIC.TabIndex = 3
         '
         'Label2
         '
@@ -216,7 +216,7 @@ Partial Class StaffIndex
         Me.Label2.Location = New System.Drawing.Point(93, 135)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(21, 17)
-        Me.Label2.TabIndex = 1
+        Me.Label2.TabIndex = 2
         Me.Label2.Text = "IC"
         '
         'Timer1

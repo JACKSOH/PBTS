@@ -277,7 +277,7 @@ Partial Class staffMenuLayoutControl
         '
         'PictureBox2
         '
-        Me.PictureBox2.Image = Global.PublicTransportTicketingSystem.My.Resources.Resources._2
+        Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
         Me.PictureBox2.Location = New System.Drawing.Point(10, 186)
         Me.PictureBox2.Margin = New System.Windows.Forms.Padding(10, 3, 3, 20)
         Me.PictureBox2.Name = "PictureBox2"
@@ -300,7 +300,7 @@ Partial Class staffMenuLayoutControl
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.Size = New System.Drawing.Size(144, 39)
         Me.btnCancel.TabIndex = 15
-        Me.btnCancel.Text = "Cancel Ticket"
+        Me.btnCancel.Text = "Ticket Cancellation"
         Me.btnCancel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnCancel.UseVisualStyleBackColor = True
         '

@@ -25,20 +25,21 @@ Partial Class staffTransaction
         Me.components = New System.ComponentModel.Container()
         Me.StaffMenuLayoutControl1 = New PublicTransportTicketingSystem.staffMenuLayoutControl()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.BookingIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.employeeID = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.totalPrice = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.BookingBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.PTTSDataSet = New PublicTransportTicketingSystem.PTTSDataSet()
         Me.BookingTableAdapter = New PublicTransportTicketingSystem.PTTSDataSetTableAdapters.BookingTableAdapter()
         Me.DataGridView2 = New System.Windows.Forms.DataGridView()
+        Me.TicketIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ticketPrice = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ticketStatus = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TicketBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.TicketTableAdapter = New PublicTransportTicketingSystem.PTTSDataSetTableAdapters.TicketTableAdapter()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.BookingIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.employeeID = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.totalPrice = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.TicketIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ticketPrice = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ticketStatus = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Label6 = New System.Windows.Forms.Label()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BookingBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PTTSDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -65,13 +66,34 @@ Partial Class staffTransaction
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.BookingIDDataGridViewTextBoxColumn, Me.employeeID, Me.totalPrice})
         Me.DataGridView1.DataSource = Me.BookingBindingSource
         Me.DataGridView1.Location = New System.Drawing.Point(235, 191)
-        Me.DataGridView1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.DataGridView1.Margin = New System.Windows.Forms.Padding(2)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.RowHeadersVisible = False
         Me.DataGridView1.RowTemplate.Height = 24
         Me.DataGridView1.Size = New System.Drawing.Size(276, 284)
         Me.DataGridView1.TabIndex = 1
+        '
+        'BookingIDDataGridViewTextBoxColumn
+        '
+        Me.BookingIDDataGridViewTextBoxColumn.DataPropertyName = "bookingID"
+        Me.BookingIDDataGridViewTextBoxColumn.HeaderText = "Booking ID"
+        Me.BookingIDDataGridViewTextBoxColumn.Name = "BookingIDDataGridViewTextBoxColumn"
+        Me.BookingIDDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'employeeID
+        '
+        Me.employeeID.DataPropertyName = "employeeID"
+        Me.employeeID.HeaderText = "Employee ID"
+        Me.employeeID.Name = "employeeID"
+        Me.employeeID.ReadOnly = True
+        '
+        'totalPrice
+        '
+        Me.totalPrice.DataPropertyName = "totalPrice"
+        Me.totalPrice.HeaderText = "Price"
+        Me.totalPrice.Name = "totalPrice"
+        Me.totalPrice.ReadOnly = True
         '
         'BookingBindingSource
         '
@@ -98,63 +120,13 @@ Partial Class staffTransaction
         Me.DataGridView2.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.TicketIDDataGridViewTextBoxColumn, Me.ticketPrice, Me.ticketStatus})
         Me.DataGridView2.DataSource = Me.TicketBindingSource
         Me.DataGridView2.Location = New System.Drawing.Point(538, 191)
-        Me.DataGridView2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.DataGridView2.Margin = New System.Windows.Forms.Padding(2)
         Me.DataGridView2.Name = "DataGridView2"
         Me.DataGridView2.ReadOnly = True
         Me.DataGridView2.RowHeadersVisible = False
         Me.DataGridView2.RowTemplate.Height = 24
         Me.DataGridView2.Size = New System.Drawing.Size(238, 284)
         Me.DataGridView2.TabIndex = 2
-        '
-        'TicketBindingSource
-        '
-        Me.TicketBindingSource.DataMember = "Ticket"
-        Me.TicketBindingSource.DataSource = Me.PTTSDataSet
-        '
-        'TicketTableAdapter
-        '
-        Me.TicketTableAdapter.ClearBeforeFill = True
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(326, 133)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(75, 20)
-        Me.Label1.TabIndex = 3
-        Me.Label1.Text = "Bookings"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(628, 133)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(59, 20)
-        Me.Label2.TabIndex = 4
-        Me.Label2.Text = "Tickets"
-        '
-        'BookingIDDataGridViewTextBoxColumn
-        '
-        Me.BookingIDDataGridViewTextBoxColumn.DataPropertyName = "bookingID"
-        Me.BookingIDDataGridViewTextBoxColumn.HeaderText = "Booking ID"
-        Me.BookingIDDataGridViewTextBoxColumn.Name = "BookingIDDataGridViewTextBoxColumn"
-        Me.BookingIDDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'employeeID
-        '
-        Me.employeeID.DataPropertyName = "employeeID"
-        Me.employeeID.HeaderText = "Employee ID"
-        Me.employeeID.Name = "employeeID"
-        Me.employeeID.ReadOnly = True
-        '
-        'totalPrice
-        '
-        Me.totalPrice.DataPropertyName = "totalPrice"
-        Me.totalPrice.HeaderText = "Price"
-        Me.totalPrice.Name = "totalPrice"
-        Me.totalPrice.ReadOnly = True
         '
         'TicketIDDataGridViewTextBoxColumn
         '
@@ -177,18 +149,58 @@ Partial Class staffTransaction
         Me.ticketStatus.Name = "ticketStatus"
         Me.ticketStatus.ReadOnly = True
         '
+        'TicketBindingSource
+        '
+        Me.TicketBindingSource.DataMember = "Ticket"
+        Me.TicketBindingSource.DataSource = Me.PTTSDataSet
+        '
+        'TicketTableAdapter
+        '
+        Me.TicketTableAdapter.ClearBeforeFill = True
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Tw Cen MT Condensed", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(231, 161)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(90, 28)
+        Me.Label1.TabIndex = 3
+        Me.Label1.Text = "Bookings"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Tw Cen MT Condensed", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(533, 161)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(72, 28)
+        Me.Label2.TabIndex = 4
+        Me.Label2.Text = "Tickets"
+        '
+        'Label6
+        '
+        Me.Label6.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label6.Font = New System.Drawing.Font("Tw Cen MT Condensed", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(250, 20)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(185, 36)
+        Me.Label6.TabIndex = 36
+        Me.Label6.Text = "Transaction History"
+        '
         'staffTransaction
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 575)
+        Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.DataGridView2)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.StaffMenuLayoutControl1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "staffTransaction"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "staffTransaction"
@@ -218,4 +230,5 @@ Partial Class staffTransaction
     Friend WithEvents ticketStatus As DataGridViewTextBoxColumn
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
+    Friend WithEvents Label6 As Label
 End Class

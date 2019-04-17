@@ -77,7 +77,7 @@ Partial Class PaymentMake
         Me.GroupBox2.Controls.Add(Me.Label6)
         Me.GroupBox2.Controls.Add(Me.Label2)
         Me.GroupBox2.Controls.Add(Me.lblPassengerName)
-        Me.GroupBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.GroupBox2.Font = New System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox2.Location = New System.Drawing.Point(360, 11)
         Me.GroupBox2.Margin = New System.Windows.Forms.Padding(2)
         Me.GroupBox2.Name = "GroupBox2"
@@ -123,7 +123,7 @@ Partial Class PaymentMake
         Me.dgvSeatPrice.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Seat, Me.Price})
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
         DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
         DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
@@ -305,7 +305,7 @@ Partial Class PaymentMake
         Me.grpPayment.Controls.Add(Me.lblCashPaidHint)
         Me.grpPayment.Controls.Add(Me.txtCashPaid)
         Me.grpPayment.Controls.Add(Me.Label5)
-        Me.grpPayment.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.grpPayment.Font = New System.Drawing.Font("Tw Cen MT Condensed", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.grpPayment.Location = New System.Drawing.Point(9, 10)
         Me.grpPayment.Margin = New System.Windows.Forms.Padding(2)
         Me.grpPayment.Name = "grpPayment"
@@ -403,7 +403,7 @@ Partial Class PaymentMake
         Me.txtCashPaid.Location = New System.Drawing.Point(132, 185)
         Me.txtCashPaid.Margin = New System.Windows.Forms.Padding(2)
         Me.txtCashPaid.Name = "txtCashPaid"
-        Me.txtCashPaid.Size = New System.Drawing.Size(138, 23)
+        Me.txtCashPaid.Size = New System.Drawing.Size(138, 24)
         Me.txtCashPaid.TabIndex = 19
         '
         'Label5

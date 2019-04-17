@@ -68,6 +68,7 @@ Partial Class StaffIndex
         '
         'btnExit
         '
+        Me.btnExit.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.btnExit.Font = New System.Drawing.Font("Tw Cen MT", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnExit.Location = New System.Drawing.Point(188, 299)
         Me.btnExit.Name = "btnExit"
@@ -159,6 +160,7 @@ Partial Class StaffIndex
         '
         'btnLogin
         '
+        Me.btnLogin.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.btnLogin.Font = New System.Drawing.Font("Tw Cen MT", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnLogin.Location = New System.Drawing.Point(84, 299)
         Me.btnLogin.Name = "btnLogin"
@@ -223,8 +225,10 @@ Partial Class StaffIndex
         '
         'StaffIndex
         '
+        Me.AcceptButton = Me.btnLogin
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.CancelButton = Me.btnExit
         Me.ClientSize = New System.Drawing.Size(353, 364)
         Me.Controls.Add(Me.BackPanel)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None

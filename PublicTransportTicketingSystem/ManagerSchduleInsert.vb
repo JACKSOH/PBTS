@@ -342,7 +342,6 @@
             TargetDateTime = TargetDateTime.AddDays(1)
         Loop While TargetDateTime < MaxDate
 
-        MessageBox.Show("Schedule hass been created for a week.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
     End Sub
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
         If cboOrigin.SelectedValue.ToString = cboDestination.SelectedValue.ToString Then

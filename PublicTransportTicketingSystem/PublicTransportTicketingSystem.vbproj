@@ -123,6 +123,12 @@
     <Compile Include="DailyTransactionReport.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="dailyTransactionReport11.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dailyTransactionReport1.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="DataSet1.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -194,12 +200,6 @@
     <Compile Include="ManagerManageSeat1.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ManagerManageSeat2.Designer.vb">
-      <DependentUpon>ManagerManageSeat2.vb</DependentUpon>
-    </Compile>
-    <Compile Include="ManagerManageSeat2.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="managerMenuLayoutControl.Designer.vb">
       <DependentUpon>managerMenuLayoutControl.vb</DependentUpon>
     </Compile>
@@ -246,6 +246,12 @@
       <DependentUpon>ManagerTranportInsert.vb</DependentUpon>
     </Compile>
     <Compile Include="ManagerTranportInsert.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerTransactionReport.Designer.vb">
+      <DependentUpon>ManagerTransactionReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerTransactionReport.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ManagerViewPromotion.Designer.vb">
@@ -326,8 +332,12 @@
     <EmbeddedResource Include="DailyTransactionReport.resx">
       <DependentUpon>DailyTransactionReport.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ManagerManageSeat2.resx">
-      <DependentUpon>ManagerManageSeat2.vb</DependentUpon>
+    <EmbeddedResource Include="dailyTransactionReport1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>dailyTransactionReport11.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerTransactionReport.resx">
+      <DependentUpon>ManagerTransactionReport.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MonthlyPromoReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

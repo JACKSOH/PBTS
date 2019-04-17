@@ -15,7 +15,7 @@
         Catch ex As Exception
 
         End Try
-        MessageBox.Show(transportColumn.ToString)
+
 
         Dim seatQuery = From seat In db.Seats
                         Where seat.scheduleID = selectedScheduleID
@@ -81,7 +81,7 @@
     End Sub
 
     Private Sub btnConfirm_Click(sender As Object, e As EventArgs) Handles btnConfirm.Click
-        MessageBox.Show("successful")
+
         Try
             For Each element In selectedSeat
                 Dim seatquery = From seat In db.Seats
@@ -94,12 +94,14 @@
                     s.seatStatus = "unavailable"
                     Try
                         db.SubmitChanges()
-                        MessageBox.Show("successful")
+
                     Catch ex As Exception
                         MessageBox.Show(ex.Message)
                     End Try
                 Next
             Next
+            MessageBox.Show("successful")
+            Me.Close()
         Catch ex As Exception
             MessageBox.Show(ex.Message)
         End Try
@@ -110,7 +112,4 @@
         BindSeat()
     End Sub
 
-    Private Sub ManagerManageSeat1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-    End Sub
 End Class

@@ -1,4 +1,4 @@
-﻿Public Class DailyTransactionReport
+﻿Public Class ManagerTransactionReport
     Private pttsDS As PTTSDataSet
     Private tTA As PTTSDataSetTableAdapters.TicketTableAdapter
     Public selectedMonth As Decimal
@@ -9,7 +9,7 @@
         Dim transReport As New dailyTransactionReport1
         pttsDS = New PTTSDataSet
         tTA = New PTTSDataSetTableAdapters.TicketTableAdapter
-        tTA.FillBy(pttsDS.Ticket, CInt(selectedMonth), CDec(selectedDay))
+        tTA.FillBy(pttsDS.Ticket, CInt(selectedDay), selectedMonth)
         transReport.SetDataSource(pttsDS)
 
 

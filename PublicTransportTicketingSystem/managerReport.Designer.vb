@@ -27,7 +27,7 @@ Partial Class managerReport
         Me.rbDailyBook = New System.Windows.Forms.RadioButton()
         Me.gbReport = New System.Windows.Forms.GroupBox()
         Me.lblTransport = New System.Windows.Forms.Label()
-        Me.rbMonthlyTransaction = New System.Windows.Forms.RadioButton()
+        Me.rbDailyTransaction = New System.Windows.Forms.RadioButton()
         Me.btnGenerate = New System.Windows.Forms.Button()
         Me.rbMonthlyPromotion = New System.Windows.Forms.RadioButton()
         Me.rbMonthlySchedule = New System.Windows.Forms.RadioButton()
@@ -71,7 +71,7 @@ Partial Class managerReport
         '
         Me.gbReport.Controls.Add(Me.lblTransport)
         Me.gbReport.Controls.Add(Label1)
-        Me.gbReport.Controls.Add(Me.rbMonthlyTransaction)
+        Me.gbReport.Controls.Add(Me.rbDailyTransaction)
         Me.gbReport.Controls.Add(Me.btnGenerate)
         Me.gbReport.Controls.Add(Me.rbMonthlyPromotion)
         Me.gbReport.Controls.Add(Me.rbMonthlySchedule)
@@ -94,17 +94,17 @@ Partial Class managerReport
         Me.lblTransport.Size = New System.Drawing.Size(125, 28)
         Me.lblTransport.TabIndex = 11
         '
-        'rbMonthlyTransaction
+        'rbDailyTransaction
         '
-        Me.rbMonthlyTransaction.AutoSize = True
-        Me.rbMonthlyTransaction.Font = New System.Drawing.Font("Tw Cen MT Condensed", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.rbMonthlyTransaction.Location = New System.Drawing.Point(30, 173)
-        Me.rbMonthlyTransaction.Name = "rbMonthlyTransaction"
-        Me.rbMonthlyTransaction.Size = New System.Drawing.Size(187, 23)
-        Me.rbMonthlyTransaction.TabIndex = 6
-        Me.rbMonthlyTransaction.TabStop = True
-        Me.rbMonthlyTransaction.Text = "Monthly &Transaction Report"
-        Me.rbMonthlyTransaction.UseVisualStyleBackColor = True
+        Me.rbDailyTransaction.AutoSize = True
+        Me.rbDailyTransaction.Font = New System.Drawing.Font("Tw Cen MT Condensed", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rbDailyTransaction.Location = New System.Drawing.Point(30, 173)
+        Me.rbDailyTransaction.Name = "rbDailyTransaction"
+        Me.rbDailyTransaction.Size = New System.Drawing.Size(170, 23)
+        Me.rbDailyTransaction.TabIndex = 6
+        Me.rbDailyTransaction.TabStop = True
+        Me.rbDailyTransaction.Text = "Daily &Transaction Report"
+        Me.rbDailyTransaction.UseVisualStyleBackColor = True
         '
         'btnGenerate
         '
@@ -180,7 +180,7 @@ Partial Class managerReport
     Friend WithEvents ManagerMenuLayoutControl1 As managerMenuLayoutControl
     Friend WithEvents rbDailyBook As RadioButton
     Friend WithEvents gbReport As GroupBox
-    Friend WithEvents rbMonthlyTransaction As RadioButton
+    Friend WithEvents rbDailyTransaction As RadioButton
     Friend WithEvents rbMonthlyPromotion As RadioButton
     Friend WithEvents rbMonthlySchedule As RadioButton
     Friend WithEvents btnGenerate As Button

@@ -50,6 +50,7 @@
 
     Public Event staffExitClick(ByVal sender As Object, ByVal e As System.EventArgs)
     Private Sub btnExitClick(sender As Object, e As EventArgs) Handles pbExit.Click
+        MessageBox.Show("Log out")
         ParentForm.Hide()
         StaffIndex.Show()
 

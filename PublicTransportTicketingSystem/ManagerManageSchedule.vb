@@ -170,10 +170,11 @@
         dgvSchedule.Columns.Add(col6)
         dgvSchedule.Columns.Add(col7)
         dgvSchedule.Columns(6).Visible = False
-        bindData()
+
 
 
     End Sub
+
     Private Sub ChaneTransport() Handles ts.TransportChange
         selectedType = ts.selectedType
         bindData()
@@ -203,9 +204,9 @@
     End Sub
 
     Private Sub dgvSchedule_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvSchedule.CellDoubleClick
-        ManagerManageSeat.selectedScheduleID = dgvSchedule.CurrentRow.Cells(0).Value.ToString
-        ManagerManageSeat.selectedTranportID = dgvSchedule.CurrentRow.Cells(6).Value.ToString
-        ManagerManageSeat.ShowDialog()
+        ManagerManageSeat1.selectedScheduleID = dgvSchedule.CurrentRow.Cells(0).Value.ToString
+        ManagerManageSeat1.selectedTranportID = dgvSchedule.CurrentRow.Cells(6).Value.ToString
+        ManagerManageSeat1.ShowDialog()
 
     End Sub
 

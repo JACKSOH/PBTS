@@ -90,7 +90,7 @@ Public Class StaffIndex
     Private Sub btnLogin_Click(sender As Object, e As EventArgs) Handles btnLogin.Click
         'retrieve password and ic and do checking
         lblError.Visible = False
-        MessageBox.Show(txtPassword.Text)
+
         If ICPasswordValidation() Then
             If CheckEmployeePasswordandIC(txtIC.Text, txtPassword.Text, "staff") Then
                 Me.Hide()

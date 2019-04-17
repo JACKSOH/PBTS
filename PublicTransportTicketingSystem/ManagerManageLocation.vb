@@ -101,13 +101,17 @@
         If dgv.CurrentCell.ColumnIndex = 2 And dgv.ReadOnly = False Then
 
             Dim locationType As String = dgv.Rows(dgv.CurrentCell.RowIndex).Cells(2).Value.ToString
+            Try
+                If locationType1.ToLower = "bus" Or locationType1.ToLower = "ferry" Or locationType1.ToLower = "train" Then
+                    err.SetError(dgv, Nothing)
+                Else
+                    err.SetError(dgv, "Location type should only be ferry, bus and train.")
 
-            If locationType1.ToLower = "bus" Or locationType1.ToLower = "ferry" Or locationType1.ToLower = "train" Then
-                err.SetError(dgv, Nothing)
-            Else
-                err.SetError(dgv, "Location type should only be ferry, bus and train.")
+                End If
+            Catch ex As Exception
 
-            End If
+            End Try
+
         End If
 
     End Sub

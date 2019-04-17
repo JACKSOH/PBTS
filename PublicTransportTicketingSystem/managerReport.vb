@@ -5,8 +5,8 @@ Public Class managerReport
 
     End Sub
 
-    Private Sub rbMonthlyTransaction_CheckedChanged(sender As Object, e As EventArgs) Handles rbMonthlyTransaction.CheckedChanged
-        If rbMonthlyTransaction.Checked Then
+    Private Sub rbMonthlyTransaction_CheckedChanged(sender As Object, e As EventArgs) Handles rbDailyTransaction.CheckedChanged
+        If rbDailyTransaction.Checked Then
             lblDescription.Text = "To view how many transaction made within today."
         End If
     End Sub
@@ -18,19 +18,19 @@ Public Class managerReport
     End Sub
 
     Private Sub tbDailySchedule_CheckedChanged(sender As Object, e As EventArgs) Handles rbMonthlySchedule.CheckedChanged
-        If rbMonthlyTransaction.Checked Then
+        If rbDailyTransaction.Checked Then
             lblDescription.Text = "Generate to know what schedule is assigned today."
         End If
     End Sub
 
     Private Sub rbDailyBook_CheckedChanged(sender As Object, e As EventArgs) Handles rbDailyBook.CheckedChanged
-        If rbMonthlyTransaction.Checked Then
+        If rbDailyTransaction.Checked Then
             lblDescription.Text = "Report that tells customer booking transaction during today."
         End If
     End Sub
 
     Private Sub Label2_Click(sender As Object, e As EventArgs) Handles lblTransport.Click
-        If rbMonthlyTransaction.Checked Then
+        If rbDailyTransaction.Checked Then
             lblDescription.Text = "To view how many transaction made within today."
         End If
     End Sub
@@ -78,8 +78,24 @@ Public Class managerReport
             Loop While month = "" Or CInt(month) = 0 Or CInt(month) > 12
             MonthlyPromotionReport.selectedMonth = CInt(month)
             MonthlyPromotionReport.ShowDialog()
-        ElseIf rbMonthlyTransaction.Checked Then
-            DailyTransactionReport.ShowDialog()
+        ElseIf rbDailyTransaction.Checked Then
+            Dim month As String
+            Dim day As String
+            Do
+                month = InputBox("Please enter the month(1-12).")
+                If month = "" Or CInt(month) = 0 Or CInt(month) > 12 Then
+                    MessageBox.Show("Please enter a proper month. E.g (1-12).", "Error")
+                End If
+            Loop While month = "" Or CInt(month) = 0 Or CInt(month) > 12
+            Do
+                day = InputBox("Please enter the day(1-31).")
+                If day = "" Or CInt(day) = 0 Or CInt(day) > 31 Then
+                    MessageBox.Show("Please enter a proper day. E.g (1-31).", "Error")
+                End If
+            Loop While day = "" Or CInt(day) = 0 Or CInt(day) > 31
+            ManagerTransactionReport.selectedDay = CDec(day)
+            ManagerTransactionReport.selectedMonth = CDec(month)
+            ManagerTransactionReport.ShowDialog()
         End If
     End Sub
     'End Here

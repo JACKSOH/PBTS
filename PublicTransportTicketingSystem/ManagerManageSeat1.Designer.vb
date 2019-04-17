@@ -70,7 +70,7 @@ Partial Class ManagerManageSeat1
         Me.btnConfirm.Name = "btnConfirm"
         Me.btnConfirm.Size = New System.Drawing.Size(114, 43)
         Me.btnConfirm.TabIndex = 41
-        Me.btnConfirm.Text = "&Update Seat Statussss"
+        Me.btnConfirm.Text = "&Update Seat Status"
         Me.btnConfirm.UseVisualStyleBackColor = False
         '
         'flpSeat
